@@ -1,0 +1,27 @@
+# Python virtual environment — never commit this
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter / analysis artifacts
+.ipynb_checkpoints/
+
+# Excel and CSV test files — personal data, not needed for deployment
+*.xlsx
+*.csv
+
+# Development / scratch scripts
+analyze_excel_structure.py
+compare_data_sources.py
+dcf_20_year_mapper.py
+read_excel.py
+update_excel_dcf.py
+test_finviz.py
+test_quarterly_balance_sheet.py
+test_yahoo_finance.py
+development_notes.md
+
+# OS files
+.DS_Store
+Thumbs.db
