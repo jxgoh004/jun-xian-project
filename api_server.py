@@ -4,15 +4,22 @@ Fetches stock data from Yahoo Finance (+ FinViz where available)
 and returns it as JSON for the web frontend.
 """
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import math
+import os
 
 from yahoo_finance_fetcher import YahooFinanceFetcher
 from finviz_fetcher import FinVizFetcher
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=BASE_DIR, static_url_path='')
 CORS(app)
+
+
+@app.route('/')
+def index():
+    return send_from_directory(BASE_DIR, 'index.html')
 
 
 def safe_float(val):
