@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True Value Finder — Intrinsic Value Calculator</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #21262d;
+      --surface3: #30363d;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-dim: #1f6feb;
+      --green: #3fb950;
+      --green-bg: rgba(13,42,13,0.8);
+      --red: #f85149;
+      --red-bg: rgba(42,13,13,0.8);
+      --yellow: #e3b341;
+      --yellow-bg: rgba(42,35,13,0.8);
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --text-bright: #f0f6fc;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .logo {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+    header h1 { font-size: 17px; font-weight: 600; color: var(--text-bright); }
+    .header-sub { font-size: 12px; color: var(--text-dim); margin-left: auto; }
+
+    .server-badge {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: var(--text-dim);
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+    .server-badge:hover { border-color: var(--accent); }
+    .server-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--text-dim);
+      transition: background .3s;
+    }
+    .server-dot.online  { background: var(--green); }
+    .server-dot.offline { background: var(--red); }
+
+    /* ── Startup overlay ── */
+    #startupOverlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(6px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 20px;
+      transition: opacity 0.4s ease;
+    }
+    #startupOverlay.hidden { opacity: 0; pointer-events: none; }
+    #startupOverlay .so-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 36px 48px;
+      text-align: center; max-width: 380px;
+    }
+    #startupOverlay .so-spinner {
+      width: 40px; height: 40px; margin: 0 auto 20px;
+      border: 3px solid var(--surface3);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    #startupOverlay h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 8px; }
+    #startupOverlay p  { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+    #startupOverlay .so-dot-row { display: flex; gap: 6px; justify-content: center; margin-top: 16px; }
+    #startupOverlay .so-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.3;
+      animation: pulse-dot 1.2s ease-in-out infinite;
+    }
+    #startupOverlay .so-dot:nth-child(2) { animation-delay: 0.2s; }
+    #startupOverlay .so-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes pulse-dot { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+    /* ── Layout ── */
+    .container { max-width: 1300px; margin: 0 auto; padding: 20px 24px; }
+
+    /* ── Ticker search bar (top) ── */
+    .search-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-bar .field-block { flex: 1; min-width: 140px; }
+    .search-bar label {
+      display: block;
+      font-size: 11px; font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 5px;
+    }
+    .search-bar input[type="text"] {
+      width: 100%; padding: 9px 12px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text-bright);
+      font-size: 15px; font-weight: 600;
+      font-family: inherit; outline: none;
+      transition: border-color .15s;
+      text-transform: uppercase;
+    }
+    .search-bar input[type="text"]:focus { border-color: var(--accent); }
+
+    .btn-fetch {
+      padding: 10px 22px;
+      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+      border: none; border-radius: 6px;
+      color: #fff; font-size: 14px; font-weight: 600;
+      cursor: pointer; white-space: nowrap;
+      transition: opacity .15s, transform .1s;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .btn-fetch:hover:not(:disabled) { opacity: 0.85; }
+    .btn-fetch:active:not(:disabled) { transform: scale(0.97); }
+    .btn-fetch:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn-calc {
+      padding: 10px 22px;
+      background: var(--green);
+      border: none; border-radius: 6px;
+      color: #0d1117; font-size: 14px; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
+      transition: opacity .15s, transform .1s;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .btn-calc:hover:not(:disabled) { opacity: 0.85; }
+    .btn-calc:active:not(:disabled) { transform: scale(0.97); }
+    .btn-calc:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ── Main grid ── */
+    .grid-main {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 960px) { .grid-main { grid-template-columns: 1fr; } }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card-header {
+      padding: 11px 16px;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px; font-weight: 600;
+      color: var(--text-bright);
+      text-transform: uppercase; letter-spacing: .5px;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .card-header .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .card-body { padding: 16px; }
+
+    /* ── Form fields ── */
+    .field-group { margin-bottom: 13px; }
+    .field-group:last-child { margin-bottom: 0; }
+    .field-group label {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 4px;
+    }
+    .field-hint { font-size: 10px; color: var(--text-dim); margin-top: 2px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+    /* ── Inline toggle (Actual / ≤25%) ── */
+    .label-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .cap-toggle { display: flex; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+    .cap-toggle button {
+      background: none; border: none; cursor: pointer;
+      font-size: 10px; padding: 2px 7px; color: var(--text-dim);
+      transition: background 0.15s, color 0.15s;
+      font-family: inherit; line-height: 1.4;
+    }
+    .cap-toggle button.active { background: var(--accent-dim); color: #fff; }
+    .cap-toggle button:not(.active):hover { background: var(--surface3); color: var(--text); }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+    input[type="text"], input[type="number"], select {
+      width: 100%; padding: 8px 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text-bright);
+      font-size: 13px; font-family: inherit; outline: none;
+      transition: border-color .15s, background .15s;
+    }
+    input:focus, select:focus { border-color: var(--accent); }
+    input.auto-filled {
+      border-color: rgba(88,166,255,0.5);
+      background: rgba(31,111,235,0.06);
+    }
+    input.auto-filled:focus { border-color: var(--accent); }
+    select option { background: var(--surface2); }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+    /* ── Verify panel ── */
+    #verifyPanel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      overflow: hidden;
+      display: none;
+    }
+    #verifyPanel.visible { display: block; }
+
+    .verify-header {
+      padding: 12px 16px;
+      background: rgba(227,179,65,0.12);
+      border-bottom: 1px solid rgba(227,179,65,0.25);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .verify-header h3 { font-size: 13px; font-weight: 600; color: var(--yellow); flex: 1; }
+    .verify-header .sources { display: flex; gap: 6px; }
+
+    .source-pill {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 10px;
+      font-size: 10px; font-weight: 600;
+    }
+    .source-pill.yf   { background: rgba(88,166,255,0.15); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
+    .source-pill.fv   { background: rgba(63,185,80,0.15);  color: var(--green);  border: 1px solid rgba(63,185,80,0.3); }
+    .source-pill.def  { background: rgba(139,148,158,0.15); color: var(--text-dim); border: 1px solid rgba(139,148,158,0.3); }
+
+    .verify-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+    }
+    .verify-cell {
+      background: var(--surface);
+      padding: 11px 14px;
+    }
+    .verify-cell .vc-label {
+      font-size: 10px; font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 2px;
+    }
+    .verify-cell .vc-value {
+      font-size: 15px; font-weight: 700;
+      color: var(--text-bright);
+      font-variant-numeric: tabular-nums;
+    }
+    .verify-cell .vc-sub {
+      font-size: 10px; color: var(--text-dim); margin-top: 1px;
+    }
+    .verify-cell .vc-badge {
+      display: inline-block;
+      padding: 1px 5px; border-radius: 4px;
+      font-size: 9px; font-weight: 600;
+      margin-left: 4px; vertical-align: middle;
+    }
+    .vc-badge.yf  { background: rgba(88,166,255,0.15); color: var(--accent); }
+    .vc-badge.fv  { background: rgba(63,185,80,0.15); color: var(--green); }
+    .vc-badge.def { background: rgba(139,148,158,0.15); color: var(--text-dim); }
+
+    .verify-footer {
+      padding: 10px 16px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+      background: var(--surface2);
+      flex-wrap: wrap;
+    }
+    .verify-note { font-size: 11px; color: var(--text-dim); flex: 1; }
+    .verify-links {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      padding: 8px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .verify-links a {
+      font-size: 11px; color: var(--accent);
+      text-decoration: none;
+      padding: 3px 8px;
+      border: 1px solid rgba(88,166,255,0.25);
+      border-radius: 4px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .verify-links a:hover {
+      background: rgba(88,166,255,0.1);
+      border-color: var(--accent);
+    }
+
+    /* ── Loading spinner ── */
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Result panel ── */
+    .result-hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .metric-card {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px; text-align: center;
+    }
+    .metric-card .label {
+      font-size: 10px; font-weight: 600; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px;
+    }
+    .metric-card .value {
+      font-size: 24px; font-weight: 700; color: var(--text-bright);
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-card .sub { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+    .metric-card.highlight { border-color: var(--accent); background: rgba(31,111,235,0.08); }
+    .metric-card.highlight .value { color: var(--accent); }
+    .metric-card.green  { border-color: var(--green); background: var(--green-bg); }
+    .metric-card.green  .value { color: var(--green); }
+    .metric-card.red    { border-color: var(--red);   background: var(--red-bg); }
+    .metric-card.red    .value { color: var(--red); }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .step-box {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 11px 13px;
+    }
+    .step-box .step-label { font-size: 10px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
+    .step-box .step-val   { font-size: 15px; font-weight: 700; color: var(--text-bright); font-variant-numeric: tabular-nums; }
+    .step-box .step-sub   { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+
+    .section-title {
+      font-size: 12px; font-weight: 600; color: var(--text-bright);
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+    .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; border-radius: 6px; border: 1px solid var(--border); margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+    thead th {
+      padding: 8px 11px; background: var(--surface2);
+      color: var(--text-dim); font-weight: 600; text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+    thead th:first-child { text-align: left; }
+    tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+    tbody tr:hover { background: rgba(255,255,255,0.035); }
+    tbody td {
+      padding: 7px 11px; text-align: right;
+      color: var(--text); border-bottom: 1px solid rgba(48,54,61,0.5);
+      font-variant-numeric: tabular-nums;
+    }
+    tbody td:first-child { text-align: left; color: var(--text-bright); font-weight: 500; }
+    .row-phase { background: rgba(88,166,255,0.05) !important; }
+    .row-phase td { color: var(--accent) !important; }
+    .row-sum { background: rgba(88,166,255,0.11) !important; border-top: 2px solid var(--accent-dim) !important; }
+    .row-sum td { font-weight: 700; color: var(--text-bright) !important; }
+
+    /* ── Rate reference ── */
+    .rate-table-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .rate-table-wrap { grid-template-columns: 1fr; } }
+    .rate-table h4 { font-size: 11px; font-weight: 600; color: var(--text-dim); margin-bottom: 7px; text-transform: uppercase; letter-spacing: .5px; }
+    .rate-table table { font-size: 11px; }
+    .rate-table thead th { padding: 5px 9px; }
+    .rate-table tbody td { padding: 4px 9px; }
+
+    /* ── Empty state ── */
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-dim); }
+    .empty-state .icon { font-size: 44px; margin-bottom: 12px; }
+    .empty-state p { font-size: 13px; }
+
+    /* ── MoS bar ── */
+    .mos-bar-wrap { margin-top: 6px; height: 5px; background: var(--surface3); border-radius: 3px; overflow: hidden; }
+    .mos-bar { height: 100%; border-radius: 3px; transition: width .4s ease; }
+
+    /* ── Misc ── */
+    .tag { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .tag-method { background: rgba(88,166,255,0.15); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
+    .text-dim { color: var(--text-dim); font-size: 11px; margin-bottom: 12px; }
+
+    /* ── Alert ── */
+    .alert {
+      padding: 10px 14px; border-radius: 6px; font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .alert-error { background: var(--red-bg); border: 1px solid rgba(248,81,73,0.35); color: var(--red); }
+    .alert-info  { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); color: var(--accent); }
+
+    /* ── Tooltip ── */
+    [data-tip] { position: relative; cursor: help; }
+    [data-tip]::after {
+      content: attr(data-tip);
+      position: absolute; bottom: calc(100% + 6px); left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface3); border: 1px solid var(--border);
+      color: var(--text); font-size: 10px; padding: 4px 7px;
+      border-radius: 4px; white-space: nowrap;
+      pointer-events: none; opacity: 0; transition: opacity .15s; z-index: 99;
+    }
+    [data-tip]:hover::after { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ── Server startup overlay (shown until API responds) ── -->
+<div id="startupOverlay">
+  <div class="so-card">
+    <div id="soSpinner" class="so-spinner"></div>
+    <h2 id="soTitle">Starting API Server…</h2>
+    <p id="soMsg">The server is warming up. This usually takes a few seconds.<br>The page will connect automatically.</p>
+    <div class="so-dot-row" id="soDots">
+      <div class="so-dot"></div><div class="so-dot"></div><div class="so-dot"></div>
+    </div>
+    <div id="soInstructions" style="display:none;margin-top:18px;text-align:left;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 14px;">
+      <p style="font-size:12px;color:var(--text-dim);margin-bottom:8px;">To start the server, run this file from the project folder:</p>
+      <code style="display:block;font-size:12px;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 10px;color:var(--accent);margin-bottom:10px;">start_server.bat</code>
+      <p style="font-size:11px;color:var(--text-dim);">Once running, this page will connect automatically — no need to refresh.</p>
+      <button onclick="checkServer()" style="margin-top:10px;width:100%;padding:7px;background:var(--accent-dim);border:none;border-radius:5px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;">Retry Connection</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo">📈</div>
+  <h1>True Value Finder</h1>
+  <span class="header-sub">20-Year Discounted Cash Flow Calculator</span>
+  <div class="server-badge" onclick="checkServer()" title="Click to check server status">
+    <div class="server-dot" id="serverDot"></div>
+    <span id="serverStatus">checking...</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ── Ticker Search ── -->
+  <div class="search-bar">
+    <div class="field-block" style="max-width:160px;">
+      <label>Ticker Symbol</label>
+      <input type="text" id="tickerInput" placeholder="AAPL" maxlength="10"
+             oninput="this.value=this.value.toUpperCase()"
+             onkeydown="if(event.key==='Enter') fetchStockData()" />
+    </div>
+    <div class="field-block" style="max-width:260px;">
+      <label>Company Name <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional — auto-filled)</span></label>
+      <input type="text" id="stockName" placeholder="e.g. Apple Inc." />
+    </div>
+    <div class="field-block" style="max-width:220px;">
+      <label>Valuation Method</label>
+      <select id="valuationMethod" onchange="onMethodChange()">
+        <option value="ocf">Operating Cash Flow</option>
+        <option value="ni">Net Income</option>
+        <option value="fcf">Free Cash Flow</option>
+      </select>
+    </div>
+    <button class="btn-fetch" id="fetchBtn" onclick="fetchStockData()">
+      <span id="fetchIcon">⬇</span>
+      <span id="fetchLabel">Fetch Data</span>
+    </button>
+    <button class="btn-calc" id="calcBtn" onclick="calculate()" disabled>
+      <span>▶</span> Calculate
+    </button>
+  </div>
+
+  <!-- ── Verification Panel ── -->
+  <div id="verifyPanel">
+    <div class="verify-header">
+      <span style="font-size:16px;">🔍</span>
+      <h3>Verify Fetched Data — edit any value before calculating</h3>
+      <div class="sources" id="sourcesList"></div>
+    </div>
+    <div class="verify-grid" id="verifyGrid"></div>
+    <div class="verify-links" id="verifyLinks"></div>
+    <div class="verify-footer">
+      <span class="verify-note" id="verifyNote"></span>
+      <button class="btn-calc" onclick="calculate()" style="padding:7px 18px;font-size:13px;">
+        ✓ Confirm &amp; Calculate
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Error alert ── -->
+  <div id="fetchError" class="alert alert-error" style="display:none;"></div>
+
+  <!-- ── Main grid ── -->
+  <div class="grid-main">
+
+    <!-- LEFT: Inputs -->
+    <div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span>Financial Inputs <span style="font-size:10px;color:var(--text-dim);font-weight:400;text-transform:none;letter-spacing:0;margin-left:auto;">values in millions</span></div>
+        <div class="card-body">
+
+          <div class="field-group">
+            <label id="cfLabel">Operating Cash Flow (Current / TTM)</label>
+            <input type="number" id="cashFlow" placeholder="e.g. 81945" />
+            <div class="field-hint">Most recent annual or TTM, in millions</div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label>Total Debt</label>
+              <input type="number" id="totalDebt" placeholder="e.g. 53288" />
+              <div class="field-hint">Short + long term debt</div>
+            </div>
+            <div class="field-group">
+              <label>Cash &amp; ST Investments</label>
+              <input type="number" id="cashAndInv" placeholder="e.g. 130584" />
+              <div class="field-hint">Cash + short-term investments</div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label>Shares Outstanding</label>
+              <input type="number" id="shares" placeholder="e.g. 7510" />
+              <div class="field-hint">In millions</div>
+            </div>
+            <div class="field-group">
+              <label>Last Close Price</label>
+              <input type="number" id="lastClose" placeholder="e.g. 213.49" />
+              <div class="field-hint">In listing currency</div>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <div class="section-title" style="font-size:11px;">Growth Rate Assumptions</div>
+
+          <div class="field-group">
+            <div class="label-row">
+              <label style="margin:0;">Years 1–5 Growth Rate (%)</label>
+              <div class="cap-toggle">
+                <button id="capActualBtn" class="active" onclick="setGrowthCap('actual')">Actual</button>
+                <button id="capCappedBtn"            onclick="setGrowthCap('capped')">≤ 25%</button>
+              </div>
+            </div>
+            <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" />
+            <div class="field-hint" id="growthHint">Actual value from source — toggle to cap at 25%</div>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label>Years 6–10 (%)</label>
+              <input type="number" id="growth6to10" placeholder="e.g. 6.56" step="0.01" />
+              <div class="field-hint">Typically ½ of Yr 1–5</div>
+            </div>
+            <div class="field-group">
+              <label>Years 11–20 (%)</label>
+              <input type="number" id="growth11to20" placeholder="e.g. 4.00" step="0.01" />
+              <div class="field-hint">Long-term / terminal</div>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <div class="section-title" style="font-size:11px;">Discount &amp; Currency</div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label>Discount Rate (%)</label>
+              <input type="number" id="discountRate" placeholder="e.g. 6.00" step="0.01" />
+            </div>
+            <div class="field-group">
+              <label>Base Year</label>
+              <input type="number" id="baseYear" value="2024" min="2000" max="2035" step="1" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label>Financial Currency</label>
+              <select id="fsCurrency">
+                <option value="USD">USD$</option><option value="EUR">EUR€</option>
+                <option value="GBP">GBP£</option><option value="HKD">HKD$</option>
+                <option value="CNY">CNY¥</option><option value="JPY">JPY¥</option>
+                <option value="AUD">AUD$</option><option value="CAD">CAD$</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Exchange Rate <span style="font-weight:400;text-transform:none;letter-spacing:0;">(FS→listing)</span></label>
+              <input type="number" id="exchangeRate" value="1" min="0.0001" step="0.001" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Discount Rate Reference -->
+      <div class="card">
+        <div class="card-header"><span class="dot"></span>Discount Rate Reference (CAPM)</div>
+        <div class="card-body">
+          <p class="text-dim">Rate = Risk-Free Rate + Beta × Market Risk Premium</p>
+          <div class="rate-table-wrap">
+            <div class="rate-table">
+              <h4>🇺🇸 US Stocks (RF 2.19%, MRP 3.70%)</h4>
+              <div class="table-wrap" style="margin-bottom:0;">
+                <table>
+                  <thead><tr><th>Beta</th><th>Rate</th></tr></thead>
+                  <tbody>
+                    <tr><td>&lt;0.80</td><td>5.15%</td></tr>
+                    <tr><td>1.0</td><td>5.89%</td></tr>
+                    <tr><td>1.1</td><td>6.26%</td></tr>
+                    <tr><td>1.2</td><td>6.63%</td></tr>
+                    <tr><td>1.3</td><td>7.00%</td></tr>
+                    <tr><td>1.4</td><td>7.37%</td></tr>
+                    <tr><td>1.5</td><td>7.74%</td></tr>
+                    <tr><td>&gt;1.6</td><td>8.11%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="rate-table">
+              <h4>🇨🇳 China/HK Stocks (RF 1.95%, MRP 7.41%)</h4>
+              <div class="table-wrap" style="margin-bottom:0;">
+                <table>
+                  <thead><tr><th>Beta</th><th>Rate</th></tr></thead>
+                  <tbody>
+                    <tr><td>&lt;0.80</td><td>7.88%</td></tr>
+                    <tr><td>1.0</td><td>9.36%</td></tr>
+                    <tr><td>1.1</td><td>10.10%</td></tr>
+                    <tr><td>1.2</td><td>10.84%</td></tr>
+                    <tr><td>1.3</td><td>11.58%</td></tr>
+                    <tr><td>1.4</td><td>12.32%</td></tr>
+                    <tr><td>1.5</td><td>13.07%</td></tr>
+                    <tr><td>&gt;1.6</td><td>13.81%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:10px;color:var(--text-dim);margin-top:9px;">Source: market-risk-premia.com (updated June 2023)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div id="resultsPanel">
+      <div class="empty-state">
+        <div class="icon">📊</div>
+        <p>Enter a ticker and click <strong>Fetch Data</strong> to auto-fill the inputs,<br>
+           or fill in the fields manually and click <strong>Calculate</strong>.</p>
+      </div>
+    </div>
+
+  </div><!-- /grid-main -->
+</div><!-- /container -->
+
+<script>
+const API = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5000'
+  : 'https://jun-xian-project.onrender.com';
+
+let lastData = null;          // last successful API response
+let growthCapMode = 'actual'; // 'actual' | 'capped'
+
+// ── Server health check ────────────────────────────────────────────────────
+async function checkServer() {
+  const dot    = document.getElementById('serverDot');
+  const status = document.getElementById('serverStatus');
+  try {
+    const r = await fetch(API + '/api/health', { signal: AbortSignal.timeout(3000) });
+    if (r.ok) {
+      dot.className    = 'server-dot online';
+      status.textContent = 'API online';
+      return true;
+    }
+  } catch {}
+  dot.className    = 'server-dot offline';
+  status.textContent = 'API offline';
+  return false;
+}
+// ── Startup: poll until the server is ready, then dismiss the overlay ─────
+(function waitForServer() {
+  const overlay      = document.getElementById('startupOverlay');
+  const soTitle      = document.getElementById('soTitle');
+  const soMsg        = document.getElementById('soMsg');
+  const soSpinner    = document.getElementById('soSpinner');
+  const soDots       = document.getElementById('soDots');
+  const soInstructions = document.getElementById('soInstructions');
+  let attempts = 0;
+  let instructionsShown = false;
+
+  async function poll() {
+    const online = await checkServer();
+    attempts++;
+    if (online) {
+      overlay.classList.add('hidden');
+      setTimeout(() => overlay.remove(), 450);
+    } else {
+      // After 5 failed attempts (~7 s), switch to "not found" mode
+      if (attempts >= 5 && !instructionsShown) {
+        instructionsShown = true;
+        soSpinner.style.display    = 'none';
+        soDots.style.display       = 'none';
+        soTitle.textContent        = 'Server Not Running';
+        soMsg.innerHTML            = 'The API server could not be reached.<br>Please start it using <strong style="color:var(--accent);">start_server.bat</strong> — this page will connect automatically once it\'s up.';
+        soInstructions.style.display = 'block';
+      }
+      // Keep retrying every 3 s so it auto-connects when the server starts
+      setTimeout(poll, 3000);
+    }
+  }
+
+  poll();
+})();
+
+// ── CF label + live method switch ─────────────────────────────────────────
+function updateCFLabel() {
+  const map = { ocf: 'Operating Cash Flow (Current / TTM)', ni: 'Net Income (Current / TTM)', fcf: 'Free Cash Flow (Current / TTM)' };
+  document.getElementById('cfLabel').textContent = map[document.getElementById('valuationMethod').value];
+}
+
+function onMethodChange() {
+  updateCFLabel();
+  if (!lastData) return;
+  const method = document.getElementById('valuationMethod').value;
+  const cfMap  = { ocf: lastData.ocf_millions, ni: lastData.ni_millions, fcf: lastData.fcf_millions };
+  const cfVal  = cfMap[method];
+  if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
+}
+
+// ── Growth cap toggle ──────────────────────────────────────────────────────
+function setGrowthCap(mode) {
+  growthCapMode = mode;
+  document.getElementById('capActualBtn').classList.toggle('active', mode === 'actual');
+  document.getElementById('capCappedBtn').classList.toggle('active', mode === 'capped');
+  document.getElementById('growthHint').textContent =
+    mode === 'actual' ? 'Actual value from source — toggle to cap at 25%'
+                      : 'Capped at 25% — toggle to use actual source value';
+  if (!lastData || lastData.growth_1_5_pct == null) return;
+  const raw = lastData.growth_1_5_pct;
+  const val = mode === 'capped' ? Math.min(raw, 25) : raw;
+  setField('growth1to5', val.toFixed(2));
+  setField('growth6to10', (val / 2).toFixed(2));
+}
+
+// ── Mark input as auto-filled ─────────────────────────────────────────────
+function setField(id, value, autoFilled = true) {
+  const el = document.getElementById(id);
+  if (el && value !== null && value !== undefined) {
+    el.value = value;
+    if (autoFilled) el.classList.add('auto-filled');
+    else            el.classList.remove('auto-filled');
+  }
+}
+
+function clearAutoFill() {
+  document.querySelectorAll('input.auto-filled').forEach(el => el.classList.remove('auto-filled'));
+}
+
+// ── Fetch stock data ────────────────────────────────────────────────────
+async function fetchStockData() {
+  const ticker = document.getElementById('tickerInput').value.trim().toUpperCase();
+  if (!ticker) { alert('Please enter a ticker symbol.'); return; }
+
+  // Check server first
+  const online = await checkServer();
+  if (!online) {
+    showError('The API server is not running. Please start it with start_server.bat and try again.');
+    return;
+  }
+
+  // Loading state
+  const btn  = document.getElementById('fetchBtn');
+  const icon = document.getElementById('fetchIcon');
+  const lbl  = document.getElementById('fetchLabel');
+  btn.disabled = true;
+  icon.innerHTML = '<span class="spinner"></span>';
+  lbl.textContent = 'Fetching…';
+  hideError();
+  document.getElementById('verifyPanel').classList.remove('visible');
+  document.getElementById('calcBtn').disabled = true;
+
+  try {
+    const resp = await fetch(`${API}/api/fetch-stock/${ticker}`);
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      showError(data.error || 'Failed to fetch data. Check the ticker symbol.');
+      return;
+    }
+
+    populateFromData(data);
+
+  } catch (err) {
+    showError('Network error: ' + err.message + '. Is the API server running?');
+  } finally {
+    btn.disabled = false;
+    icon.innerHTML = '⬇';
+    lbl.textContent = 'Fetch Data';
+  }
+}
+
+// ── Populate fields from API response ──────────────────────────────────────
+function populateFromData(d) {
+  clearAutoFill();
+  lastData = d;  // store for live method-switching and cap toggle
+
+  // Company info
+  setField('stockName', d.company_name);
+
+  // Always reset to recommended method on each new fetch
+  const methodSel = document.getElementById('valuationMethod');
+  methodSel.value = d.recommended_method || (d.auto_switch_to_fcf ? 'fcf' : 'ocf');
+  updateCFLabel();
+  const method = methodSel.value;
+
+  // Pick correct cash flow value based on recommended method
+  const cfMap = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions };
+  const cfVal = cfMap[method];
+  if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
+
+  // Balance sheet
+  if (d.debt_millions   != null) setField('totalDebt',  d.debt_millions.toFixed(2));
+  if (d.cash_millions   != null) setField('cashAndInv', d.cash_millions.toFixed(2));
+  if (d.shares_millions != null) setField('shares',     d.shares_millions.toFixed(4));
+  if (d.current_price   != null) setField('lastClose',  d.current_price.toFixed(2));
+
+  // Growth rates — apply current cap mode
+  if (d.growth_1_5_pct != null) {
+    const raw = d.growth_1_5_pct;
+    const g15 = growthCapMode === 'capped' ? Math.min(raw, 25) : raw;
+    setField('growth1to5',  g15.toFixed(2));
+    setField('growth6to10', (g15 / 2).toFixed(2));
+  }
+  setField('growth11to20', (d.growth_11_20_pct ?? 4.00).toFixed(2));
+
+  // Discount rate
+  if (d.discount_rate_pct != null) setField('discountRate', d.discount_rate_pct.toFixed(2));
+
+  // Currency
+  if (d.currency) {
+    const sel = document.getElementById('fsCurrency');
+    const opt = [...sel.options].find(o => o.value === d.currency);
+    if (opt) sel.value = d.currency;
+  }
+
+  // Base year
+  document.getElementById('baseYear').value = new Date().getFullYear() - 1;
+
+  // Show verification panel
+  showVerifyPanel(d, method);
+
+  // Enable/disable calculate based on DCF applicability
+  const calcBtn = document.getElementById('calcBtn');
+  if (d.dcf_not_applicable) {
+    calcBtn.disabled = true;
+    calcBtn.title    = 'DCF cannot be applied — all earnings metrics are negative';
+  } else {
+    calcBtn.disabled = false;
+    calcBtn.title    = '';
+  }
+}
+
+// ── Verification panel ────────────────────────────────────────────────────
+function showVerifyPanel(d, method) {
+  const panel = document.getElementById('verifyPanel');
+  panel.classList.add('visible');
+
+  // Sources pills
+  const sources = document.getElementById('sourcesList');
+  sources.innerHTML = '';
+  if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
+  if (d.sources.finviz)        sources.innerHTML += `<span class="source-pill fv">FinViz</span>`;
+  if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.35);">DCF Not Applicable</span>`;
+  else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.12);color:var(--red);border:1px solid rgba(248,81,73,0.3);">Negative Earnings → FCF</span>`;
+  else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:rgba(227,179,65,0.15);color:var(--yellow);border:1px solid rgba(227,179,65,0.35);">OCF Inflated → FCF</span>`;
+
+  // Auto-switch / warning banner
+  const grid = document.getElementById('verifyGrid');
+  let switchBanner = '';
+
+  if (d.dcf_not_applicable) {
+    // Hardest case: all earnings metrics negative — DCF cannot be applied
+    switchBanner = `
+      <div style="grid-column:1/-1;background:rgba(248,81,73,0.08);border-bottom:1px solid rgba(248,81,73,0.25);padding:10px 14px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">🚫</span>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--red);">DCF Valuation Not Applicable</div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
+            Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) <strong>and</strong> Free Cash Flow (${fmtM(d.fcf_millions)}) are both negative. A discounted cash flow model cannot produce a meaningful intrinsic value for a pre-profitability company. Consider using revenue-based multiples or EV/EBITDA comparables instead.
+          </div>
+        </div>
+      </div>`;
+  } else if (d.switch_reason === 'negative_earnings') {
+    // NI negative but FCF is positive — recommend FCF
+    switchBanner = `
+      <div style="grid-column:1/-1;background:rgba(248,81,73,0.06);border-bottom:1px solid rgba(248,81,73,0.2);padding:10px 14px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">⚠️</span>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--red);">Negative Earnings — Switched to Free Cash Flow</div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
+            Net Income from Continuing Operations is negative (${fmtM(d.ni_cont_ops_millions)}). The DCF (Net Income) method is not applicable. Using <strong style="color:var(--accent);">Free Cash Flow</strong> (${fmtM(d.fcf_millions)}) as the valuation basis — FCF can be positive even when GAAP earnings are negative due to non-cash charges.
+          </div>
+        </div>
+      </div>`;
+  } else if (d.switch_reason === 'ocf_inflated') {
+    const ratio = d.ocf_to_ni_ratio !== null ? d.ocf_to_ni_ratio.toFixed(2) : '—';
+    switchBanner = `
+      <div style="grid-column:1/-1;background:rgba(227,179,65,0.08);border-bottom:1px solid rgba(227,179,65,0.2);padding:10px 14px;display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">⚡</span>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--yellow);">Inflated OCF — Switched to Free Cash Flow</div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
+            Operating Cash Flow (${fmtM(d.ocf_millions)}) is <strong style="color:var(--yellow);">${ratio}×</strong> Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) — exceeds the 1.5× threshold, indicating OCF may be inflated. FCF is a more conservative basis.
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)' }[method];
+  const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions }[method];
+  const growthSrc   = d.sources.finviz && d.growth_source && d.growth_source.includes('FinViz') ? 'fv' : 'yf';
+
+  const cells = [
+    { label: 'Company',         value: d.company_name,                                               sub: d.sector,              src: 'yf'  },
+    { label: 'Current Price',   value: fmtPrice(d.current_price, d.currency),                        sub: d.currency,            src: 'yf'  },
+    { label: methodLabel,       value: fmtM(cfVal),                                                  sub: 'used for DCF',        src: 'yf'  },
+    { label: 'OCF (TTM)',       value: fmtM(d.ocf_millions),                                         sub: 'Operating Cash Flow', src: 'yf'  },
+    { label: 'NI Cont. Ops',    value: fmtM(d.ni_cont_ops_millions),                                sub: 'Net Income Cont. Ops TTM', src: 'yf' },
+    { label: 'Total Debt',      value: fmtM(d.debt_millions),                                        sub: 'Current + LT Debt',   src: 'yf'  },
+    { label: 'Cash & ST Inv',   value: fmtM(d.cash_millions),                                        sub: 'most recent quarter', src: 'yf'  },
+    { label: 'Shares Out.',     value: fmtShares(d.shares_millions),                                 sub: 'millions',            src: 'yf'  },
+    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: d.sources.finviz ? 'FinViz' : 'Yahoo', src: d.sources.finviz ? 'fv' : 'yf' },
+    { label: 'Discount Rate',   value: d.discount_rate_pct !== null ? d.discount_rate_pct.toFixed(2) + '%' : '—', sub: 'from beta table', src: 'yf' },
+    { label: 'Growth Yr 1–5',   value: d.growth_1_5_pct   !== null ? d.growth_1_5_pct.toFixed(2)   + '%' : '—', sub: d.growth_source,   src: growthSrc },
+    { label: 'Growth Yr 6–10',  value: d.growth_6_10_pct  !== null ? d.growth_6_10_pct.toFixed(2)  + '%' : '—', sub: '½ of Yr 1–5',     src: growthSrc },
+    { label: 'Growth Yr 11–20', value: '4.00%',                                                     sub: 'fixed (long-term)',   src: 'def' },
+    { label: 'Industry',        value: d.industry || '—',                                            sub: d.exchange,            src: 'yf'  },
+  ];
+
+  grid.innerHTML = switchBanner + cells.map(c => `
+    <div class="verify-cell">
+      <div class="vc-label">${c.label} <span class="vc-badge ${c.src}">${c.src === 'yf' ? 'YF' : c.src === 'fv' ? 'FV' : 'DEF'}</span></div>
+      <div class="vc-value">${c.value || '—'}</div>
+      ${c.sub ? `<div class="vc-sub">${c.sub}</div>` : ''}
+    </div>`).join('');
+
+  document.getElementById('verifyNote').textContent =
+    `Data fetched ${new Date().toLocaleTimeString()}. Fields highlighted in blue are auto-filled — you can edit them in the inputs panel before calculating.`;
+
+  // Verification links
+  const sym = d.symbol;
+  document.getElementById('verifyLinks').innerHTML = `
+    <a href="https://finance.yahoo.com/quote/${sym}/balance-sheet/" target="_blank" rel="noopener">
+      Balance Sheet (Yahoo Finance)
+    </a>
+    <a href="https://finance.yahoo.com/quote/${sym}/cash-flow/" target="_blank" rel="noopener">
+      Cash Flow (Yahoo Finance)
+    </a>
+    <a href="https://finviz.com/quote.ashx?t=${sym}&p=d" target="_blank" rel="noopener">
+      Beta &amp; EPS (FinViz)
+    </a>`;
+}
+
+// ── Error helpers ──────────────────────────────────────────────────────────
+function showError(msg) {
+  const el = document.getElementById('fetchError');
+  el.textContent = '⚠ ' + msg;
+  el.style.display = 'block';
+}
+function hideError() {
+  document.getElementById('fetchError').style.display = 'none';
+}
+
+// ── Formatters ────────────────────────────────────────────────────────────
+function fmt(n, dec = 2) {
+  if (n === null || n === undefined || isNaN(n)) return '—';
+  return n.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+}
+function fmtM(n) {
+  if (n === null || n === undefined) return '—';
+  if (Math.abs(n) >= 1000) return '$' + fmt(n / 1000, 2) + 'B';
+  return '$' + fmt(n, 0) + 'M';
+}
+function fmtPrice(n, cur) {
+  if (n === null || n === undefined) return '—';
+  return (cur === 'JPY' ? '¥' : cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$') + fmt(n, 2);
+}
+function fmtShares(n) {
+  if (n === null || n === undefined) return '—';
+  return fmt(n, 2) + 'M';
+}
+function getVal(id) { return parseFloat(document.getElementById(id).value); }
+
+// ── DCF engine (shared) ────────────────────────────────────────────────────
+function computeIV(CF, g1, g2, g3, r, debt, cash, shares, exchangeRate) {
+  let prevCF = CF, prevDF = 1, totalPV = 0;
+  for (let yr = 1; yr <= 20; yr++) {
+    const g    = yr <= 5 ? g1 : yr <= 10 ? g2 : g3;
+    const proj = prevCF * (1 + g);
+    const df   = prevDF / (1 + r);
+    totalPV   += proj * df;
+    prevCF = proj; prevDF = df;
+  }
+  const ivPS = (totalPV / shares - debt / shares + cash / shares) * exchangeRate;
+  return { totalPV, ivPS };
+}
+
+// ── Method comparison section ──────────────────────────────────────────────
+function buildMethodComparison(g1, g2, g3, r, debt, cash, shares, exchangeRate, sym, lastClose, activeMethod) {
+  if (!lastData) return '';
+  const cfSources = {
+    ocf: { label: 'Operating Cash Flow', val: lastData.ocf_millions },
+    ni:  { label: 'Net Income',           val: lastData.ni_millions  },
+    fcf: { label: 'Free Cash Flow',       val: lastData.fcf_millions },
+  };
+
+  const rows = Object.entries(cfSources).map(([key, src]) => {
+    if (src.val == null || isNaN(src.val)) {
+      return `<div class="step-box" style="${key === activeMethod ? 'border-color:var(--accent);background:rgba(31,111,235,0.08);' : ''}">
+        <div class="step-label">${src.label}${key === activeMethod ? ' <span style="font-size:9px;color:var(--accent);font-weight:700;letter-spacing:.3px;">ACTIVE</span>' : ''}</div>
+        <div class="step-val" style="font-size:14px;color:var(--text-dim);">—</div>
+        <div class="step-sub">No data</div>
+      </div>`;
+    }
+    if (src.val < 0) {
+      return `<div class="step-box" style="${key === activeMethod ? 'border-color:var(--red);background:rgba(42,13,13,0.5);' : ''}">
+        <div class="step-label">${src.label}${key === activeMethod ? ' <span style="font-size:9px;color:var(--red);font-weight:700;">ACTIVE</span>' : ''}</div>
+        <div class="step-val" style="font-size:14px;color:var(--red);">Negative</div>
+        <div class="step-sub">DCF not applicable</div>
+      </div>`;
+    }
+    const { ivPS } = computeIV(src.val, g1, g2, g3, r, debt, cash, shares, exchangeRate);
+    const disc = !isNaN(lastClose) && lastClose > 0 ? (lastClose / ivPS - 1) : null;
+    const discText = disc !== null
+      ? (disc < 0 ? `<span style="color:var(--green);">${fmt(Math.abs(disc)*100,1)}% under</span>`
+                  : `<span style="color:var(--red);">${fmt(disc*100,1)}% over</span>`)
+      : '';
+    const isActive = key === activeMethod;
+    return `<div class="step-box" style="${isActive ? 'border-color:var(--accent);background:rgba(31,111,235,0.08);' : ''}cursor:pointer;" onclick="switchMethod('${key}')" title="Click to switch to this method">
+      <div class="step-label">${src.label}${isActive ? ' <span style="font-size:9px;color:var(--accent);font-weight:700;letter-spacing:.3px;">ACTIVE</span>' : ''}</div>
+      <div class="step-val" style="font-size:18px;">${sym}${fmt(ivPS)}</div>
+      <div class="step-sub">CF: ${fmtM(src.val)} &nbsp;${discText}</div>
+    </div>`;
+  });
+
+  return `
+    <div class="section-title" style="margin-top:4px;">Method Comparison <span style="font-weight:400;font-size:10px;color:var(--text-dim);text-transform:none;letter-spacing:0;">— same growth &amp; discount rates, different CF basis · click any card to switch</span></div>
+    <div class="step-grid">${rows.join('')}</div>`;
+}
+
+// ── Switch method and recalculate ─────────────────────────────────────────
+function switchMethod(key) {
+  document.getElementById('valuationMethod').value = key;
+  onMethodChange();
+  calculate();
+}
+
+// ── Main calculation ───────────────────────────────────────────────────────
+function calculate() {
+  const stockName   = document.getElementById('stockName').value.trim() || 'Company';
+  const ticker      = document.getElementById('tickerInput').value.trim().toUpperCase() || '—';
+  const method      = document.getElementById('valuationMethod').value;
+  const methodLabel = { ocf: 'DCF (Operating)', ni: 'Net Income', fcf: 'Free Cash Flow' }[method];
+  const exchangeRate = getVal('exchangeRate') || 1;
+  const baseYear    = parseInt(document.getElementById('baseYear').value) || 2024;
+
+  const CF      = getVal('cashFlow');
+  const debt    = getVal('totalDebt');
+  const cash    = getVal('cashAndInv');
+  const shares  = getVal('shares');
+  const lastClose = getVal('lastClose');
+  const g1      = getVal('growth1to5')   / 100;
+  const g2      = getVal('growth6to10')  / 100;
+  const g3      = getVal('growth11to20') / 100;
+  const r       = getVal('discountRate') / 100;
+
+  const missing = [];
+  if (isNaN(CF))                      missing.push('Cash Flow');
+  if (isNaN(debt))                    missing.push('Total Debt');
+  if (isNaN(cash))                    missing.push('Cash & ST Investments');
+  if (isNaN(shares) || shares === 0)  missing.push('Shares Outstanding');
+  if (isNaN(g1))                      missing.push('Years 1–5 Growth Rate');
+  if (isNaN(g2))                      missing.push('Years 6–10 Growth Rate');
+  if (isNaN(g3))                      missing.push('Years 11–20 Growth Rate');
+  if (isNaN(r))                       missing.push('Discount Rate');
+  if (missing.length) { alert('Please fill in:\n\n• ' + missing.join('\n• ')); return; }
+
+  // ── Projection ──
+  const yearData = [];
+  let prevCF = CF, prevDF = 1;
+  for (let yr = 1; yr <= 20; yr++) {
+    const g      = yr <= 5 ? g1 : yr <= 10 ? g2 : g3;
+    const projCF = prevCF * (1 + g);
+    const df     = prevDF / (1 + r);
+    const discCF = projCF * df;
+    yearData.push({ year: baseYear + yr, yr, projCF, df, discCF, g });
+    prevCF = projCF; prevDF = df;
+  }
+
+  const totalPV        = yearData.reduce((s, d) => s + d.discCF, 0);
+  const ivBeforeAdj    = totalPV / shares;
+  const debtPS         = debt   / shares;
+  const cashPS         = cash   / shares;
+  const ivFS           = ivBeforeAdj - debtPS + cashPS;
+  const ivFinal        = ivFS * exchangeRate;
+  const discountPct    = isNaN(lastClose) ? null : (lastClose / ivFinal - 1);
+
+  const curr = document.getElementById('fsCurrency').value;
+  const sym  = { USD:'$', EUR:'€', GBP:'£', HKD:'$', CNY:'¥', JPY:'¥', AUD:'$', CAD:'$' }[curr] || '$';
+
+  let verdictClass = 'highlight', verdictText = 'No price', mosW = 0, mosColor = 'var(--accent)';
+  if (discountPct !== null) {
+    if (discountPct < 0) {
+      verdictClass = 'green';
+      verdictText  = `${fmt(Math.abs(discountPct) * 100, 1)}% Undervalued`;
+      mosW         = Math.min(Math.abs(discountPct) * 200, 100);
+      mosColor     = 'var(--green)';
+    } else {
+      verdictClass = 'red';
+      verdictText  = `${fmt(discountPct * 100, 1)}% Overvalued`;
+      mosW         = 0;
+      mosColor     = 'var(--red)';
+    }
+  }
+
+  let phase1 = 0, phase2 = 0, phase3 = 0;
+  let tableRows = '', runSum = 0;
+  yearData.forEach(d => {
+    runSum += d.discCF;
+    if (d.yr <= 5)       phase1 += d.discCF;
+    else if (d.yr <= 10) phase2 += d.discCF;
+    else                 phase3 += d.discCF;
+
+    tableRows += `<tr>
+      <td>Year ${d.yr} (${d.year})</td>
+      <td>${fmt(d.g * 100, 2)}%</td>
+      <td>${fmtM(d.projCF)}</td>
+      <td>${d.df.toFixed(6)}</td>
+      <td>${fmtM(d.discCF)}</td>
+      <td>${fmtM(runSum)}</td>
+    </tr>`;
+
+    if (d.yr === 5)  tableRows += `<tr class="row-phase"><td>▸ Phase 1 Subtotal (Yr 1–5)</td><td colspan="3"></td><td>${fmtM(phase1)}</td><td></td></tr>`;
+    if (d.yr === 10) tableRows += `<tr class="row-phase"><td>▸ Phase 2 Subtotal (Yr 6–10)</td><td colspan="3"></td><td>${fmtM(phase2)}</td><td></td></tr>`;
+  });
+  tableRows += `<tr class="row-phase"><td>▸ Phase 3 Subtotal (Yr 11–20)</td><td colspan="3"></td><td>${fmtM(phase3)}</td><td></td></tr>`;
+  tableRows += `<tr class="row-sum"><td>TOTAL PV (20 Years)</td><td colspan="3"></td><td>${fmtM(totalPV)}</td><td>${fmtM(totalPV)}</td></tr>`;
+
+  document.getElementById('resultsPanel').innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+      <div style="background:var(--accent-dim);border-radius:7px;padding:7px 13px;font-size:17px;font-weight:700;color:#fff;">${ticker}</div>
+      <div>
+        <div style="font-size:17px;font-weight:700;color:var(--text-bright);">${stockName}</div>
+        <span class="tag tag-method">${methodLabel}</span>
+        <span style="font-size:10px;color:var(--text-dim);margin-left:7px;">Base: ${baseYear}</span>
+      </div>
+    </div>
+
+    <div class="result-hero">
+      <div class="metric-card highlight">
+        <div class="label">Intrinsic Value / Share</div>
+        <div class="value">${sym}${fmt(ivFinal)}</div>
+        <div class="sub">${curr} × ${exchangeRate}</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">PV of 20-Yr Cash Flows</div>
+        <div class="value" style="font-size:19px;">${fmtM(totalPV)}</div>
+        <div class="sub">Before debt/cash adj.</div>
+      </div>
+      ${discountPct !== null ? `
+      <div class="metric-card ${verdictClass}">
+        <div class="label">Market vs Intrinsic</div>
+        <div class="value">${verdictText}</div>
+        <div class="sub">Last Close: ${sym}${fmt(lastClose)}</div>
+        <div class="mos-bar-wrap"><div class="mos-bar" style="width:${mosW}%;background:${mosColor};"></div></div>
+      </div>` : ''}
+    </div>
+
+    <div class="section-title">Per Share Breakdown</div>
+    <div class="step-grid">
+      <div class="step-box">
+        <div class="step-label">PV ÷ Shares</div>
+        <div class="step-val">${sym}${fmt(ivBeforeAdj)}</div>
+        <div class="step-sub">Before adjustments</div>
+      </div>
+      <div class="step-box">
+        <div class="step-label">− Debt / Share</div>
+        <div class="step-val" style="color:var(--red);">−${sym}${fmt(debtPS)}</div>
+        <div class="step-sub">Total Debt ÷ Shares</div>
+      </div>
+      <div class="step-box">
+        <div class="step-label">+ Cash / Share</div>
+        <div class="step-val" style="color:var(--green);">+${sym}${fmt(cashPS)}</div>
+        <div class="step-sub">Cash &amp; ST Inv. ÷ Shares</div>
+      </div>
+      <div class="step-box" style="border-color:var(--accent);background:rgba(31,111,235,0.08);">
+        <div class="step-label">= Intrinsic Value / Share</div>
+        <div class="step-val" style="color:var(--accent);">${sym}${fmt(ivFinal)}</div>
+        <div class="step-sub">${curr} adj. × ${exchangeRate}</div>
+      </div>
+    </div>
+
+    <div class="section-title">Phase Summary</div>
+    <div class="step-grid">
+      <div class="step-box">
+        <div class="step-label">Phase 1 PV (Yr 1–5)</div>
+        <div class="step-val">${fmtM(phase1)}</div>
+        <div class="step-sub">@${fmt(g1*100,2)}%/yr growth</div>
+      </div>
+      <div class="step-box">
+        <div class="step-label">Phase 2 PV (Yr 6–10)</div>
+        <div class="step-val">${fmtM(phase2)}</div>
+        <div class="step-sub">@${fmt(g2*100,2)}%/yr growth</div>
+      </div>
+      <div class="step-box">
+        <div class="step-label">Phase 3 PV (Yr 11–20)</div>
+        <div class="step-val">${fmtM(phase3)}</div>
+        <div class="step-sub">@${fmt(g3*100,2)}%/yr growth</div>
+      </div>
+      <div class="step-box">
+        <div class="step-label">Discount Rate</div>
+        <div class="step-val">${fmt(r*100,2)}%</div>
+        <div class="step-sub">Required return</div>
+      </div>
+    </div>
+
+    <div class="section-title">Year-by-Year Cash Flow Projection</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align:left;">Year</th>
+            <th>Growth Rate</th>
+            <th>Projected CF</th>
+            <th>Discount Factor</th>
+            <th>Discounted Value</th>
+            <th>Cumulative PV</th>
+          </tr>
+        </thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+
+    ${buildMethodComparison(g1, g2, g3, r, debt, cash, shares, exchangeRate, sym, lastClose, method)}
+
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>Formula Reference</div>
+      <div class="card-body" style="font-size:12px;color:var(--text-dim);line-height:2;">
+        <div><strong style="color:var(--text);">Projected CF (Yr N)</strong> = CF₀ × (1 + g)ᴺ</div>
+        <div><strong style="color:var(--text);">Discount Factor (Yr N)</strong> = 1 ÷ (1 + r)ᴺ</div>
+        <div><strong style="color:var(--text);">Discounted CF (Yr N)</strong> = Projected CF × Discount Factor</div>
+        <div><strong style="color:var(--text);">PV of 20 Years</strong> = Σ Discounted CF (Yr 1–20)</div>
+        <div><strong style="color:var(--text);">IV per Share</strong> = (PV ÷ Shares) − (Debt ÷ Shares) + (Cash ÷ Shares)</div>
+        <div><strong style="color:var(--text);">Final IV</strong> = IV per Share × Exchange Rate</div>
+        <hr class="divider" />
+        <div style="font-size:10px;">Based on VMI IV Calculator (20-year) methodology. Not financial advice.</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('calcBtn').disabled = false;
+}
+</script>
+</body>
+</html>
