@@ -27,11 +27,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Visiting the GitHub Pages URL loads a page (no 404, no broken deployment)
   2. The repository file structure separates the portfolio shell from project assets so adding a new project requires only adding files and a card entry
   3. The existing Render-hosted API is reachable from the static frontend (CORS verified)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Restructure repo for static GitHub Pages deployment and configure Pages settings
-- [ ] 01-02: Verify Render API CORS and document the frontend/backend split
+- [ ] 01-01-PLAN.md — Restructure repo into docs/ directory with portfolio shell and calculator project subfolder
+- [ ] 01-02-PLAN.md — Enable GitHub Pages deployment and verify Render API CORS
 
 ### Phase 2: Portfolio Shell
 **Goal**: Visitors can land on the home page, read who you are, and see the project grid
