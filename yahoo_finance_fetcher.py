@@ -1,19 +1,7 @@
 import yfinance as yf
 import pandas as pd
-import requests
 import time
 from datetime import datetime, timedelta
-
-_YF_SESSION = requests.Session()
-_YF_SESSION.headers.update({
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5",
-})
 
 class YahooFinanceFetcher:
     """Fetches financial data from Yahoo Finance for intrinsic value calculations"""
@@ -21,7 +9,7 @@ class YahooFinanceFetcher:
     def __init__(self, symbol):
         """Initialize with stock symbol"""
         self.symbol = symbol.upper()
-        self.ticker = yf.Ticker(self.symbol, session=_YF_SESSION)
+        self.ticker = yf.Ticker(self.symbol)  # yfinance manages its own curl_cffi/Chrome session
         self.info = None
         self.financials = None
         self.cash_flow = None
