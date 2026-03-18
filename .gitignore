@@ -26,5 +26,5 @@ development_notes.md
 .DS_Store
 Thumbs.db
 
-# Ignore for now
-img/
+# Root img is committed (logo assets)
+# docs/ is the GitHub Pages deployment root — always committed
