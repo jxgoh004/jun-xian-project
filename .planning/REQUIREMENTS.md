@@ -75,24 +75,24 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HOME-01 | — | Pending |
-| HOME-02 | — | Pending |
-| SHOW-01 | — | Pending |
-| SHOW-02 | — | Pending |
-| SHOW-03 | — | Pending |
-| NAV-01 | — | Pending |
-| NAV-02 | — | Pending |
-| PERF-01 | — | Pending |
-| PERF-02 | — | Pending |
-| PERF-03 | — | Pending |
-| DEPLOY-01 | — | Pending |
-| DEPLOY-02 | — | Pending |
+| HOME-01 | Phase 2 | Pending |
+| HOME-02 | Phase 2 | Pending |
+| SHOW-01 | Phase 2 | Pending |
+| SHOW-02 | Phase 2 | Pending |
+| SHOW-03 | Phase 3 | Pending |
+| NAV-01 | Phase 3 | Pending |
+| NAV-02 | Phase 3 | Pending |
+| PERF-01 | Phase 4 | Pending |
+| PERF-02 | Phase 4 | Pending |
+| PERF-03 | Phase 4 | Pending |
+| DEPLOY-01 | Phase 1 | Pending |
+| DEPLOY-02 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 12 total
-- Mapped to phases: 0 (roadmap pending)
-- Unmapped: 12 ⚠️
+- Mapped to phases: 12
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 after initial definition*
+*Last updated: 2026-03-18 after roadmap creation*
