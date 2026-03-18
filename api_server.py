@@ -182,7 +182,7 @@ def fetch_stock(symbol):
     # Beta (Yahoo Finance — may be overridden by FinViz below)
     beta = safe_float(info.get("beta"))
 
-    # ── 2. FinViz (optional, enhances growth + beta) ──────────────────────────
+    # ── 2. FinViz (optional, enhances growth + beta; fallback for price/shares) ─
     finviz_growth_5y = None
     finviz_beta      = None
     finviz_ok        = False
@@ -196,6 +196,14 @@ def fetch_stock(symbol):
 
             fv_val = fv.get_valuation_metrics()
             finviz_beta = safe_float(fv_val.get("Beta"))
+
+            fv_info = fv.get_company_info()
+
+            # Fallback: use FinViz price/shares when Yahoo Finance omits them
+            if current_price is None:
+                current_price = safe_float(fv_info.get("Current Price"))
+            if shares_millions is None:
+                shares_millions = to_millions_shares(fv_info.get("Shares Outstanding"))
     except Exception:
         pass
 
