@@ -73,6 +73,17 @@ class FinVizFetcher:
                                 if label and value and len(label) > 1:
                                     self.data[label] = value
 
+        # Sector and Industry appear as screener filter links, not in the snapshot table
+        for a in self.soup.find_all('a', href=True):
+            href = a.get('href', '')
+            text = a.get_text(strip=True)
+            if not text:
+                continue
+            if 'sec_' in href and 'Sector' not in self.data:
+                self.data['Sector'] = text
+            elif 'ind_' in href and 'Industry' not in self.data:
+                self.data['Industry'] = text
+
     def _parse_financial_value(self, value_str: str) -> Optional[float]:
         """Parse financial value string (handles B, M, K suffixes and percentages)"""
         if not value_str or value_str == '-' or value_str == 'N/A':

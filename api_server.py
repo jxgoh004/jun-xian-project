@@ -199,11 +199,15 @@ def fetch_stock(symbol):
 
             fv_info = fv.get_company_info()
 
-            # Fallback: use FinViz price/shares when Yahoo Finance omits them
+            # Fallback: use FinViz data when Yahoo Finance omits fields
             if current_price is None:
                 current_price = safe_float(fv_info.get("Current Price"))
             if shares_millions is None:
                 shares_millions = to_millions_shares(fv_info.get("Shares Outstanding"))
+            if sector == "N/A" and fv_info.get("Sector"):
+                sector = fv_info["Sector"]
+            if industry == "N/A" and fv_info.get("Industry"):
+                industry = fv_info["Industry"]
     except Exception:
         pass
 
