@@ -899,15 +899,9 @@ function populateFromData(d) {
   // Show verification panel
   showVerifyPanel(d, method);
 
-  // Enable/disable calculate based on DCF applicability
   const calcBtn = document.getElementById('calcBtn');
-  if (d.dcf_not_applicable) {
-    calcBtn.disabled = true;
-    calcBtn.title    = 'DCF cannot be applied — all earnings metrics are negative';
-  } else {
-    calcBtn.disabled = false;
-    calcBtn.title    = '';
-  }
+  calcBtn.disabled = false;
+  calcBtn.title    = '';
 }
 
 // ── Verification panel ────────────────────────────────────────────────────
@@ -920,7 +914,7 @@ function showVerifyPanel(d, method) {
   sources.innerHTML = '';
   if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
   if (d.sources.finviz)        sources.innerHTML += `<span class="source-pill fv">FinViz</span>`;
-  if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.35);">DCF Not Applicable</span>`;
+  if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.35);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.12);color:var(--red);border:1px solid rgba(248,81,73,0.3);">Negative Earnings → FCF</span>`;
   else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:rgba(227,179,65,0.15);color:var(--yellow);border:1px solid rgba(227,179,65,0.35);">OCF Inflated → FCF</span>`;
 
@@ -929,26 +923,24 @@ function showVerifyPanel(d, method) {
   let switchBanner = '';
 
   if (d.dcf_not_applicable) {
-    // Hardest case: all earnings metrics negative — DCF cannot be applied
     switchBanner = `
       <div style="grid-column:1/-1;background:rgba(248,81,73,0.08);border-bottom:1px solid rgba(248,81,73,0.25);padding:10px 14px;display:flex;align-items:center;gap:10px;">
-        <span style="font-size:16px;">🚫</span>
+        <span style="font-size:16px;">⚠️</span>
         <div>
-          <div style="font-size:12px;font-weight:600;color:var(--red);">DCF Valuation Not Applicable</div>
+          <div style="font-size:12px;font-weight:600;color:var(--red);">Warning: All Earnings Metrics Negative</div>
           <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
-            Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) <strong>and</strong> Free Cash Flow (${fmtM(d.fcf_millions)}) are both negative. A discounted cash flow model cannot produce a meaningful intrinsic value for a pre-profitability company. Consider using revenue-based multiples or EV/EBITDA comparables instead.
+            Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) <strong>and</strong> Free Cash Flow (${fmtM(d.fcf_millions)}) are both negative. A DCF model is unlikely to produce a meaningful intrinsic value. You may still calculate — but interpret the result with caution.
           </div>
         </div>
       </div>`;
   } else if (d.switch_reason === 'negative_earnings') {
-    // NI negative but FCF is positive — recommend FCF
     switchBanner = `
       <div style="grid-column:1/-1;background:rgba(248,81,73,0.06);border-bottom:1px solid rgba(248,81,73,0.2);padding:10px 14px;display:flex;align-items:center;gap:10px;">
-        <span style="font-size:16px;">⚠️</span>
+        <span style="font-size:16px;">ℹ️</span>
         <div>
-          <div style="font-size:12px;font-weight:600;color:var(--red);">Negative Earnings — Switched to Free Cash Flow</div>
+          <div style="font-size:12px;font-weight:600;color:var(--red);">Recommended: Free Cash Flow</div>
           <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
-            Net Income from Continuing Operations is negative (${fmtM(d.ni_cont_ops_millions)}). The DCF (Net Income) method is not applicable. Using <strong style="color:var(--accent);">Free Cash Flow</strong> (${fmtM(d.fcf_millions)}) as the valuation basis — FCF can be positive even when GAAP earnings are negative due to non-cash charges.
+            Net Income from Continuing Operations is negative (${fmtM(d.ni_cont_ops_millions)}), so <strong style="color:var(--accent);">Free Cash Flow</strong> (${fmtM(d.fcf_millions)}) is pre-selected as the valuation basis — FCF can be positive even when GAAP earnings are negative due to non-cash charges. You can change the method using the dropdown above.
           </div>
         </div>
       </div>`;
@@ -956,11 +948,11 @@ function showVerifyPanel(d, method) {
     const ratio = d.ocf_to_ni_ratio !== null ? d.ocf_to_ni_ratio.toFixed(2) : '—';
     switchBanner = `
       <div style="grid-column:1/-1;background:rgba(227,179,65,0.08);border-bottom:1px solid rgba(227,179,65,0.2);padding:10px 14px;display:flex;align-items:center;gap:10px;">
-        <span style="font-size:16px;">⚡</span>
+        <span style="font-size:16px;">ℹ️</span>
         <div>
-          <div style="font-size:12px;font-weight:600;color:var(--yellow);">Inflated OCF — Switched to Free Cash Flow</div>
+          <div style="font-size:12px;font-weight:600;color:var(--yellow);">Recommended: Free Cash Flow</div>
           <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">
-            Operating Cash Flow (${fmtM(d.ocf_millions)}) is <strong style="color:var(--yellow);">${ratio}×</strong> Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) — exceeds the 1.5× threshold, indicating OCF may be inflated. FCF is a more conservative basis.
+            Operating Cash Flow (${fmtM(d.ocf_millions)}) is <strong style="color:var(--yellow);">${ratio}×</strong> Net Income from Continuing Operations (${fmtM(d.ni_cont_ops_millions)}) — exceeds the 1.5× threshold, suggesting OCF may be inflated. Free Cash Flow is pre-selected as a more conservative basis. You can change the method using the dropdown above.
           </div>
         </div>
       </div>`;
