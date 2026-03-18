@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: planning
+stopped_at: Completed 01-static-foundation/01-01-PLAN.md
+last_updated: "2026-03-18T14:00:04.695Z"
+last_activity: 2026-03-18 — Roadmap created
+progress:
+  total_phases: 4
+  completed_phases: 0
+  total_plans: 2
+  completed_plans: 1
+  percent: 50
+---
+
 # Project State
 
 ## Project Reference
@@ -14,7 +30,7 @@ Plan: 0 of 2 in current phase
 Status: Ready to plan
 Last activity: 2026-03-18 — Roadmap created
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -34,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-static-foundation P01 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -47,6 +64,8 @@ Recent decisions affecting current work:
 - Vanilla JavaScript (no framework) — consistency with existing calculator, simplicity for small site
 - Single-page navigation — clean UX, fast transitions, no full page reloads
 - Cards/grid layout for projects — modern portfolio standard, scales as projects are added
+- [Phase 01-static-foundation]: Calculator frontend copied verbatim — API constant already handles localhost vs Render correctly
+- [Phase 01-static-foundation]: Extensibility pattern: add new project by creating docs/projects/{name}/ and one card entry in docs/index.html
 
 ### Pending Todos
 
@@ -58,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18
-Stopped at: Roadmap created, REQUIREMENTS.md traceability updated, STATE.md initialized
+Last session: 2026-03-18T14:00:04.693Z
+Stopped at: Completed 01-static-foundation/01-01-PLAN.md
 Resume file: None
