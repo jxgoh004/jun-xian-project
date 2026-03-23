@@ -775,6 +775,7 @@ function onMethodChange() {
   const cfMap  = { ocf: lastData.ocf_millions, ni: lastData.ni_millions, fcf: lastData.fcf_millions };
   const cfVal  = cfMap[method];
   if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
+  showVerifyPanel(lastData, method);
 }
 
 // ── Growth cap toggle ──────────────────────────────────────────────────────
