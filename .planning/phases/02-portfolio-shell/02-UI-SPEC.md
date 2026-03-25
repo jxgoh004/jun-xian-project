@@ -42,9 +42,11 @@ Declared values (must be multiples of 4):
 | 3xl | 64px | Main vertical margin (60px, rounds to 64px token) |
 
 Exceptions:
-- Header padding is 14px vertical (closest to sm=8 and md=16 midpoint) — preserve existing value, do not change
-- Card gap is 20px — preserve existing value, do not change
+- FROZEN LEGACY — out-of-scope preservation only. Do not use for new elements. Header vertical padding is 14px — this value exists in the inherited `docs/index.html` CSS and MUST NOT be used for any new spacing decisions in Phase 2. Preserve as-is for out-of-scope legacy element only.
+- FROZEN LEGACY — out-of-scope preservation only. Do not use for new elements. Card gap is 20px — this value exists in the inherited `docs/index.html` CSS and MUST NOT be used for any new spacing decisions in Phase 2. Preserve as-is for out-of-scope legacy element only.
 - Tag border-radius is 12px (pill shape) — not a spacing value, preserve
+
+All new spacing introduced in Phase 2 MUST use scale tokens only (multiples of 4). The frozen legacy values above are read-only carry-overs from existing code and are explicitly out of scope for reuse.
 
 ---
 
@@ -55,10 +57,10 @@ Exceptions:
 | Body | 16px | 400 (regular) | 1.6 | --text (#c9d1d9) |
 | Label / tag | 12px | 400 (regular) | 1.4 | --text-dim (#8b949e) |
 | Card description | 14px | 400 (regular) | 1.5 | --text-dim (#8b949e) |
-| Heading (card h3, header h1) | 17px (header), name heading see Display | 600 (semibold) | 1.2 | --text-bright (#f0f6fc) |
+| Heading (card h3, header h1, section-label) | 16px | 600 (semibold) | 1.2 | --text-bright (#f0f6fc) |
 | Display (hero name / page h2) | 28px | 600 (semibold) | 1.2 | --text-bright (#f0f6fc) |
 
-Source: docs/index.html CSS — sizes and weights extracted directly. Weights are 400 (regular) and 600 (semibold) only — no additional weights permitted in this phase.
+Source: docs/index.html CSS — sizes and weights extracted directly. Card titles, header h1, and section-label achieve visual distinction from body text via font-weight 600 alone at 16px. Weights are 400 (regular) and 600 (semibold) only — no additional weights permitted in this phase.
 
 ---
 
@@ -102,7 +104,7 @@ Components that must exist in `docs/index.html` after Phase 2 completes:
 - Existing card text content (h3, p, tags) unchanged
 
 ### Section heading
-- `<h3 class="section-label">Projects</h3>` replacing existing `<h2>Projects</h2>` placeholder — 17px, weight 600, color `--text-bright`, text-align left, margin-bottom 16px
+- `<h3 class="section-label">Projects</h3>` replacing existing `<h2>Projects</h2>` placeholder — 16px, weight 600, color `--text-bright`, text-align left, margin-bottom 16px
 - Note: the current `<h2>Projects</h2>` will be repurposed; the display-size h2 slot is reserved for the hero name
 
 ---
