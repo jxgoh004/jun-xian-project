@@ -41,10 +41,10 @@ Plans:
   1. The personal logo appears in the top-left corner of the home page
   2. The introduction section is visible with bio text, a list of technologies, and at least one contact link
   3. The project showcase grid is visible with at least one card displaying a title, thumbnail image, description, and category tags
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: Build home page HTML/CSS with logo, intro section, and project card grid
+- [ ] 02-01-PLAN.md — Add hero section with bio and LinkedIn link, section label, and card thumbnail support
 
 ### Phase 3: Calculator Integration
 **Goal**: Visitors can click the intrinsic value calculator card and use the full calculator without leaving the site, and can return home via the logo
