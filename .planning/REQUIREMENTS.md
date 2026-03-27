@@ -9,13 +9,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Home Page
 
-- [ ] **HOME-01**: Home page displays personal logo in top-left corner
-- [ ] **HOME-02**: Home page includes introduction section with bio, skills/technologies, and contact links
+- [x] **HOME-01**: Home page displays personal logo in top-left corner
+- [x] **HOME-02**: Home page includes introduction section with bio, skills/technologies, and contact links
 
 ### Project Showcase
 
-- [ ] **SHOW-01**: Home page displays project showcase section with visual card grid
-- [ ] **SHOW-02**: Each project card shows title, thumbnail image, description, and category tags
+- [x] **SHOW-01**: Home page displays project showcase section with visual card grid
+- [x] **SHOW-02**: Each project card shows title, thumbnail image, description, and category tags
 - [ ] **SHOW-03**: Intrinsic value calculator is integrated as the first featured project
 
 ### Navigation
@@ -75,10 +75,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HOME-01 | Phase 2 | Pending |
-| HOME-02 | Phase 2 | Pending |
-| SHOW-01 | Phase 2 | Pending |
-| SHOW-02 | Phase 2 | Pending |
+| HOME-01 | Phase 2 | Complete |
+| HOME-02 | Phase 2 | Complete |
+| SHOW-01 | Phase 2 | Complete |
+| SHOW-02 | Phase 2 | Complete |
 | SHOW-03 | Phase 3 | Pending |
 | NAV-01 | Phase 3 | Pending |
 | NAV-02 | Phase 3 | Pending |

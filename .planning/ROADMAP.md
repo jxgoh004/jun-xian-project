@@ -13,7 +13,7 @@ The project transforms an existing Flask-served intrinsic value calculator into 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Static Foundation** - Restructure project for GitHub Pages and establish deployment pipeline (completed 2026-03-23)
-- [ ] **Phase 2: Portfolio Shell** - Build home page with logo, bio, and project card grid
+- [x] **Phase 2: Portfolio Shell** - Build home page with logo, bio, and project card grid (completed 2026-03-27)
 - [ ] **Phase 3: Calculator Integration** - Wire intrinsic value calculator as first in-page project with navigation
 - [ ] **Phase 4: Design and Performance** - Polish styling, responsiveness, and Core Web Vitals
 
@@ -44,7 +44,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Add hero section with bio and LinkedIn link, section label, and card thumbnail support
+- [x] 02-01-PLAN.md — Add hero section with bio and LinkedIn link, section label, and card thumbnail support
 
 ### Phase 3: Calculator Integration
 **Goal**: Visitors can click the intrinsic value calculator card and use the full calculator without leaving the site, and can return home via the logo
@@ -82,6 +82,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Static Foundation | 2/2 | Complete   | 2026-03-23 |
-| 2. Portfolio Shell | 0/1 | Not started | - |
+| 2. Portfolio Shell | 1/1 | Complete   | 2026-03-27 |
 | 3. Calculator Integration | 0/2 | Not started | - |
 | 4. Design and Performance | 0/2 | Not started | - |
