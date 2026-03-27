@@ -64,6 +64,69 @@
       font-size: 12px;
       color: var(--text-dim);
     }
+
+    /* Hero section — per D-01 centered layout */
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .hero h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    /* IMPORTANT: .hero-bio MUST appear AFTER the broad `main p` rule to override
+       its color (--text-dim) and margin-bottom (40px). See RESEARCH.md Pitfall 1. */
+    .hero-bio {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 16px;
+    }
+    .hero a {
+      font-size: 16px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .hero a:hover { text-decoration: underline; }
+
+    /* Section label — replaces h2 Projects heading */
+    .section-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-bright);
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    /* Card thumbnail image — per D-05, D-07 */
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Card thumbnail placeholder — CSS-only fallback when screenshot absent */
+    .card-thumbnail-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #1c2128, #30363d);
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -72,10 +135,17 @@
     <h1>Portfolio</h1>
   </header>
   <main>
-    <h2>Projects</h2>
-    <p>Click a card to try the project.</p>
+    <section class="hero">
+      <h2><!-- TODO: Replace with your actual name --></h2>
+      <p class="hero-title">AI Engineer</p>
+      <p class="hero-bio">I spent years doing graph analytics and working closely with the Neo4j team as a data analyst. Now I'm building AI-powered tools — things I actually use and want to share. This is where they live.</p>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <!-- TODO: Replace YOUR-HANDLE with actual LinkedIn username -->
+    </section>
+    <h3 class="section-label">Projects</h3>
     <div class="projects">
       <a class="card" href="projects/calculator/index.html">
+        <div class="card-thumbnail-placeholder" aria-label="Intrinsic Value Calculator thumbnail — screenshot coming soon"></div>
         <h3>Intrinsic Value Calculator</h3>
         <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
         <div class="tags">
