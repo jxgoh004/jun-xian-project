@@ -16,12 +16,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **SHOW-01**: Home page displays project showcase section with visual card grid
 - [x] **SHOW-02**: Each project card shows title, thumbnail image, description, and category tags
-- [ ] **SHOW-03**: Intrinsic value calculator is integrated as the first featured project
+- [x] **SHOW-03**: Intrinsic value calculator is integrated as the first featured project
 
 ### Navigation
 
-- [ ] **NAV-01**: Clicking a project card loads that project running in-page (no new tab/window)
-- [ ] **NAV-02**: Clicking the logo returns user to home page from any project view
+- [x] **NAV-01**: Clicking a project card loads that project running in-page (no new tab/window)
+- [x] **NAV-02**: Clicking the logo returns user to home page from any project view
 
 ### Design & Performance
 
@@ -79,9 +79,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HOME-02 | Phase 2 | Complete |
 | SHOW-01 | Phase 2 | Complete |
 | SHOW-02 | Phase 2 | Complete |
-| SHOW-03 | Phase 3 | Pending |
-| NAV-01 | Phase 3 | Pending |
-| NAV-02 | Phase 3 | Pending |
+| SHOW-03 | Phase 3 | Complete |
+| NAV-01 | Phase 3 | Complete |
+| NAV-02 | Phase 3 | Complete |
 | PERF-01 | Phase 4 | Pending |
 | PERF-02 | Phase 4 | Pending |
 | PERF-03 | Phase 4 | Pending |

@@ -57,7 +57,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Implement hash routing, iframe calculator embed, and logo home link
+- [x] 03-01-PLAN.md — Implement hash routing, iframe calculator embed, and logo home link
 - [ ] 03-02-PLAN.md — Deploy and verify CORS on live GitHub Pages site
 
 ### Phase 4: Design and Performance
@@ -83,5 +83,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Static Foundation | 2/2 | Complete   | 2026-03-23 |
 | 2. Portfolio Shell | 1/1 | Complete   | 2026-03-27 |
-| 3. Calculator Integration | 0/2 | Not started | - |
+| 3. Calculator Integration | 1/2 | In Progress|  |
 | 4. Design and Performance | 0/2 | Not started | - |
