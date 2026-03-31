@@ -127,24 +127,41 @@
       border-radius: 4px;
       margin-bottom: 16px;
     }
+
+    /* Project view — full-height iframe container */
+    #project-view {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+    #project-view iframe {
+      width: 100%;
+      height: calc(100vh - 63px);
+      border: none;
+      display: block;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="projects/calculator/img/logo_2.png" alt="Logo">
+    <a href="#home" style="display:flex;align-items:center;"><img src="projects/calculator/img/logo_2.png" alt="Logo"></a>
     <h1>Portfolio</h1>
   </header>
   <main>
+    <section id="home-view">
     <section class="hero">
       <h2>Goh Jun Xian</h2>
       <p class="hero-title">AI Engineer</p>
-      <p class="hero-bio">I spent years doing graph analytics and working closely with the Neo4j team as a data analyst. Now I'm building AI-powered tools — things I actually use and want to share. This is where they live.</p>
+      <p class="hero-bio">I graduated with a Bachelor of Sciences with Business Analystics and have spent the past 2 years doing graph analytics with Neo4j as the organisation's chosen tool and dwell into projects involving the the use of LLMs as a data analyst. 
+        
+        I have also just completed a 3-month deep-skilling program as an Associate AI Engineer at AI Singapore. Using the knowledge gained from the program, I'm now building AI-powered tools — things I actually use and want to share. This is where they live.</p>
       <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <!-- TODO: Replace YOUR-HANDLE with actual LinkedIn username -->
     </section>
     <h3 class="section-label">Projects</h3>
     <div class="projects">
-      <a class="card" href="projects/calculator/index.html">
+      <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
         <img src="projects/calculator/thumbnail.png" alt="Intrinsic Value Calculator screenshot">
         <h3>Intrinsic Value Calculator</h3>
         <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
@@ -154,8 +171,67 @@
           <span class="tag">JavaScript</span>
           <span class="tag">Finance</span>
         </div>
-      </a>
+      </div>
     </div>
+    </section>
+    <section id="project-view" style="display:none;">
+      <!-- iframe inserted dynamically by JS -->
+    </section>
   </main>
+<script>
+(function() {
+  const homeView = document.getElementById('home-view');
+  const projectView = document.getElementById('project-view');
+
+  const projects = {
+    calculator: 'projects/calculator/index.html'
+  };
+
+  function navigate() {
+    const hash = location.hash.slice(1) || 'home';
+
+    if (projects[hash]) {
+      // Show project view
+      homeView.style.display = 'none';
+      projectView.style.display = 'block';
+
+      // Create iframe if not already present (per D-03)
+      if (!projectView.querySelector('iframe')) {
+        const iframe = document.createElement('iframe');
+        iframe.src = projects[hash];
+        iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
+        projectView.appendChild(iframe);
+      }
+    } else {
+      // Show home view
+      homeView.style.display = '';
+      projectView.style.display = 'none';
+
+      // Remove iframe to free resources
+      const iframe = projectView.querySelector('iframe');
+      if (iframe) iframe.remove();
+    }
+  }
+
+  // Card click handlers
+  document.querySelectorAll('.card[data-project]').forEach(function(card) {
+    card.addEventListener('click', function() {
+      location.hash = '#' + card.dataset.project;
+    });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        location.hash = '#' + card.dataset.project;
+      }
+    });
+  });
+
+  // Hash change listener (per D-05 — back button support)
+  window.addEventListener('hashchange', navigate);
+
+  // Initial route on page load (per D-06 — direct link support)
+  navigate();
+})();
+</script>
 </body>
 </html>
