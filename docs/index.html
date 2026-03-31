@@ -49,9 +49,9 @@
       text-align: left;
       text-decoration: none;
       color: var(--text);
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .card:hover { border-color: var(--accent); }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .card h3 { color: var(--text-bright); margin-bottom: 8px; }
     .card p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
     .tags { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -148,6 +148,15 @@
       display: block;
     }
 
+    /* View fade transition — per D-08, D-09 */
+    .view {
+      transition: opacity 0.2s ease;
+    }
+    .view.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* Mobile breakpoint — per D-04 */
     @media (max-width: 640px) {
       main {
@@ -168,7 +177,7 @@
     <h1>Portfolio</h1>
   </header>
   <main>
-    <section id="home-view">
+    <section id="home-view" class="view">
     <section class="hero">
       <h2>Goh Jun Xian</h2>
       <p class="hero-title">AI Engineer</p>
@@ -195,7 +204,7 @@
       </div>
     </div>
     </section>
-    <section id="project-view" style="display:none;">
+    <section id="project-view" class="view hidden" style="display:none;">
       <!-- iframe inserted dynamically by JS -->
     </section>
   </main>
@@ -208,29 +217,63 @@
     calculator: 'projects/calculator/index.html'
   };
 
+  let initialized = false;
+
+  function fadeOut(el, callback) {
+    el.classList.add('hidden');
+    setTimeout(callback, 200);
+  }
+
+  function fadeIn(el) {
+    el.classList.remove('hidden');
+  }
+
   function navigate() {
     const hash = location.hash.slice(1) || 'home';
 
-    if (projects[hash]) {
-      // Show project view
-      homeView.style.display = 'none';
-      projectView.style.display = 'block';
-
-      // Create iframe if not already present (per D-03)
-      if (!projectView.querySelector('iframe')) {
-        const iframe = document.createElement('iframe');
-        iframe.src = projects[hash];
-        iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
-        projectView.appendChild(iframe);
+    if (!initialized) {
+      // First paint: set views directly, skip fade to avoid flash-of-content
+      if (projects[hash]) {
+        homeView.style.display = 'none';
+        projectView.style.display = 'block';
+        projectView.classList.remove('hidden');
+        if (!projectView.querySelector('iframe')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = projects[hash];
+          iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
+          projectView.appendChild(iframe);
+        }
+      } else {
+        homeView.style.display = '';
+        homeView.classList.remove('hidden');
+        projectView.style.display = 'none';
       }
-    } else {
-      // Show home view
-      homeView.style.display = '';
-      projectView.style.display = 'none';
+      initialized = true;
+      return;
+    }
 
-      // Remove iframe to free resources
-      const iframe = projectView.querySelector('iframe');
-      if (iframe) iframe.remove();
+    if (projects[hash]) {
+      // Fade home out, then show project view faded in
+      fadeOut(homeView, function() {
+        homeView.style.display = 'none';
+        projectView.style.display = 'block';
+        if (!projectView.querySelector('iframe')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = projects[hash];
+          iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
+          projectView.appendChild(iframe);
+        }
+        requestAnimationFrame(function() { fadeIn(projectView); });
+      });
+    } else {
+      // Fade project out, then show home view faded in
+      fadeOut(projectView, function() {
+        projectView.style.display = 'none';
+        const iframe = projectView.querySelector('iframe');
+        if (iframe) iframe.remove();
+        homeView.style.display = '';
+        requestAnimationFrame(function() { fadeIn(homeView); });
+      });
     }
   }
 
