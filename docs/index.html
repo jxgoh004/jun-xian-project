@@ -34,7 +34,6 @@
     header img { width: 34px; height: 34px; border-radius: 8px; }
     header h1 { font-size: 17px; font-weight: 600; color: var(--text-bright); }
     main {
-      max-width: 900px;
       margin: 60px auto;
       padding: 0 24px;
       text-align: center;
@@ -100,6 +99,13 @@
     }
     .hero a:hover { text-decoration: underline; }
 
+    /* Card grid section wrapper — caps grid width for readability at ultra-wide viewports */
+    .projects-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
     /* Section label — replaces h2 Projects heading */
     .section-label {
       font-size: 16px;
@@ -159,17 +165,19 @@
       <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <!-- TODO: Replace YOUR-HANDLE with actual LinkedIn username -->
     </section>
-    <h3 class="section-label">Projects</h3>
-    <div class="projects">
-      <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
-        <img src="projects/calculator/thumbnail.png" alt="Intrinsic Value Calculator screenshot">
-        <h3>Intrinsic Value Calculator</h3>
-        <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Finance</span>
+    <div class="projects-section">
+      <h3 class="section-label">Projects</h3>
+      <div class="projects">
+        <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
+          <img src="projects/calculator/thumbnail.png" alt="Intrinsic Value Calculator screenshot">
+          <h3>Intrinsic Value Calculator</h3>
+          <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Finance</span>
+          </div>
         </div>
       </div>
     </div>
