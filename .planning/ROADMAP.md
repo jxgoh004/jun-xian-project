@@ -68,11 +68,11 @@ Plans:
   1. The site renders correctly and is usable on mobile (320px), tablet (768px), and desktop (1280px+) viewports
   2. The visual design uses consistent whitespace, typography, and color so the overall impression is clean and modern
   3. Lighthouse LCP is under 2.5s and images are optimized (compressed, correct format, lazy-loaded where appropriate)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Implement responsive layout and mobile breakpoints
-- [ ] 04-02: Apply design system (spacing, typography, color) and optimize images for Core Web Vitals
+- [ ] 04-01-PLAN.md — Responsive layout (full-width main, 1200px card grid cap), mobile breakpoint at 640px, fade view transition, card hover lift
+- [ ] 04-02-PLAN.md — Title tag and bio rewrite, WebP thumbnail conversion with picture element, lazy loading, Lighthouse LCP verification
 
 ## Progress
 
