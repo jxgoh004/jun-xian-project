@@ -54,11 +54,11 @@ Plans:
   1. Clicking the intrinsic value calculator card loads the calculator UI in-page (no new tab, no full page reload)
   2. The calculator fetches stock data from the Render API and displays results identically to the standalone version
   3. Clicking the logo from inside the calculator view returns the visitor to the home page
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Integrate calculator frontend into portfolio in-page navigation system
-- [ ] 03-02: Verify calculator API calls work end-to-end from GitHub Pages domain
+- [ ] 03-01-PLAN.md — Implement hash routing, iframe calculator embed, and logo home link
+- [ ] 03-02-PLAN.md — Deploy and verify CORS on live GitHub Pages site
 
 ### Phase 4: Design and Performance
 **Goal**: The site looks and feels professional on all screen sizes and loads fast enough to pass Core Web Vitals
