@@ -25,9 +25,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Design & Performance
 
-- [ ] **PERF-01**: Site uses modern, clean aesthetic with whitespace and professional styling
+- [x] **PERF-01**: Site uses modern, clean aesthetic with whitespace and professional styling
 - [ ] **PERF-02**: Site is fully responsive across mobile, tablet, and desktop
-- [ ] **PERF-03**: Site passes Core Web Vitals (optimized images, fast loading, LCP < 2.5s)
+- [x] **PERF-03**: Site passes Core Web Vitals (optimized images, fast loading, LCP < 2.5s)
 
 ### Deployment
 
@@ -82,9 +82,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SHOW-03 | Phase 3 | Complete |
 | NAV-01 | Phase 3 | Complete |
 | NAV-02 | Phase 3 | Complete |
-| PERF-01 | Phase 4 | Pending |
+| PERF-01 | Phase 4 | Complete |
 | PERF-02 | Phase 4 | Pending |
-| PERF-03 | Phase 4 | Pending |
+| PERF-03 | Phase 4 | Complete |
 | DEPLOY-01 | Phase 1 | Complete |
 | DEPLOY-02 | Phase 1 | Complete |
 

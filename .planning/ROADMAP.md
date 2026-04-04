@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Static Foundation** - Restructure project for GitHub Pages and establish deployment pipeline (completed 2026-03-23)
 - [x] **Phase 2: Portfolio Shell** - Build home page with logo, bio, and project card grid (completed 2026-03-27)
 - [x] **Phase 3: Calculator Integration** - Wire intrinsic value calculator as first in-page project with navigation (completed 2026-03-31)
-- [ ] **Phase 4: Design and Performance** - Polish styling, responsiveness, and Core Web Vitals
+- [x] **Phase 4: Design and Performance** - Polish styling, responsiveness, and Core Web Vitals (completed 2026-04-04)
 
 ## Phase Details
 
@@ -71,8 +71,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Responsive layout (full-width main, 1200px card grid cap), mobile breakpoint at 640px, fade view transition, card hover lift
-- [ ] 04-02-PLAN.md — Title tag and bio rewrite, WebP thumbnail conversion with picture element, lazy loading, Lighthouse LCP verification
+- [x] 04-01-PLAN.md — Responsive layout (full-width main, 1200px card grid cap), mobile breakpoint at 640px, fade view transition, card hover lift
+- [x] 04-02-PLAN.md — Title tag and bio rewrite, WebP thumbnail conversion with picture element, lazy loading, Lighthouse LCP verification
 
 ## Progress
 
@@ -84,4 +84,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Static Foundation | 2/2 | Complete   | 2026-03-23 |
 | 2. Portfolio Shell | 1/1 | Complete   | 2026-03-27 |
 | 3. Calculator Integration | 2/2 | Complete   | 2026-03-31 |
-| 4. Design and Performance | 0/2 | Not started | - |
+| 4. Design and Performance | 2/2 | Complete   | 2026-04-04 |
