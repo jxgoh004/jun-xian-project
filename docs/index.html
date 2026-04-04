@@ -34,7 +34,6 @@
     header img { width: 34px; height: 34px; border-radius: 8px; }
     header h1 { font-size: 17px; font-weight: 600; color: var(--text-bright); }
     main {
-      max-width: 900px;
       margin: 60px auto;
       padding: 0 24px;
       text-align: center;
@@ -50,9 +49,9 @@
       text-align: left;
       text-decoration: none;
       color: var(--text);
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .card:hover { border-color: var(--accent); }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .card h3 { color: var(--text-bright); margin-bottom: 8px; }
     .card p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
     .tags { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -100,6 +99,13 @@
     }
     .hero a:hover { text-decoration: underline; }
 
+    /* Card grid section wrapper — caps grid width for readability at ultra-wide viewports */
+    .projects-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
     /* Section label — replaces h2 Projects heading */
     .section-label {
       font-size: 16px;
@@ -141,6 +147,28 @@
       border: none;
       display: block;
     }
+
+    /* View fade transition — per D-08, D-09 */
+    .view {
+      transition: opacity 0.2s ease;
+    }
+    .view.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Mobile breakpoint — per D-04 */
+    @media (max-width: 640px) {
+      main {
+        padding: 0 16px;
+      }
+      .hero h2 {
+        font-size: 22px;
+      }
+      .hero-bio {
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -149,7 +177,7 @@
     <h1>Portfolio</h1>
   </header>
   <main>
-    <section id="home-view">
+    <section id="home-view" class="view">
     <section class="hero">
       <h2>Goh Jun Xian</h2>
       <p class="hero-title">AI Engineer</p>
@@ -159,22 +187,24 @@
       <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <!-- TODO: Replace YOUR-HANDLE with actual LinkedIn username -->
     </section>
-    <h3 class="section-label">Projects</h3>
-    <div class="projects">
-      <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
-        <img src="projects/calculator/thumbnail.png" alt="Intrinsic Value Calculator screenshot">
-        <h3>Intrinsic Value Calculator</h3>
-        <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Finance</span>
+    <div class="projects-section">
+      <h3 class="section-label">Projects</h3>
+      <div class="projects">
+        <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
+          <img src="projects/calculator/thumbnail.png" alt="Intrinsic Value Calculator screenshot">
+          <h3>Intrinsic Value Calculator</h3>
+          <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Finance</span>
+          </div>
         </div>
       </div>
     </div>
     </section>
-    <section id="project-view" style="display:none;">
+    <section id="project-view" class="view hidden" style="display:none;">
       <!-- iframe inserted dynamically by JS -->
     </section>
   </main>
@@ -187,29 +217,63 @@
     calculator: 'projects/calculator/index.html'
   };
 
+  let initialized = false;
+
+  function fadeOut(el, callback) {
+    el.classList.add('hidden');
+    setTimeout(callback, 200);
+  }
+
+  function fadeIn(el) {
+    el.classList.remove('hidden');
+  }
+
   function navigate() {
     const hash = location.hash.slice(1) || 'home';
 
-    if (projects[hash]) {
-      // Show project view
-      homeView.style.display = 'none';
-      projectView.style.display = 'block';
-
-      // Create iframe if not already present (per D-03)
-      if (!projectView.querySelector('iframe')) {
-        const iframe = document.createElement('iframe');
-        iframe.src = projects[hash];
-        iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
-        projectView.appendChild(iframe);
+    if (!initialized) {
+      // First paint: set views directly, skip fade to avoid flash-of-content
+      if (projects[hash]) {
+        homeView.style.display = 'none';
+        projectView.style.display = 'block';
+        projectView.classList.remove('hidden');
+        if (!projectView.querySelector('iframe')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = projects[hash];
+          iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
+          projectView.appendChild(iframe);
+        }
+      } else {
+        homeView.style.display = '';
+        homeView.classList.remove('hidden');
+        projectView.style.display = 'none';
       }
-    } else {
-      // Show home view
-      homeView.style.display = '';
-      projectView.style.display = 'none';
+      initialized = true;
+      return;
+    }
 
-      // Remove iframe to free resources
-      const iframe = projectView.querySelector('iframe');
-      if (iframe) iframe.remove();
+    if (projects[hash]) {
+      // Fade home out, then show project view faded in
+      fadeOut(homeView, function() {
+        homeView.style.display = 'none';
+        projectView.style.display = 'block';
+        if (!projectView.querySelector('iframe')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = projects[hash];
+          iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
+          projectView.appendChild(iframe);
+        }
+        requestAnimationFrame(function() { fadeIn(projectView); });
+      });
+    } else {
+      // Fade project out, then show home view faded in
+      fadeOut(projectView, function() {
+        projectView.style.display = 'none';
+        const iframe = projectView.querySelector('iframe');
+        if (iframe) iframe.remove();
+        homeView.style.display = '';
+        requestAnimationFrame(function() { fadeIn(homeView); });
+      });
     }
   }
 
