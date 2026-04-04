@@ -118,17 +118,17 @@
     /* Card thumbnail image — per D-05, D-07 */
     .card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 7;
       object-fit: cover;
       border-radius: 4px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       display: block;
     }
 
     /* Card thumbnail placeholder — CSS-only fallback when screenshot absent */
     .card-thumbnail-placeholder {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 7;
       background: linear-gradient(135deg, #1c2128, #30363d);
       border-radius: 4px;
       margin-bottom: 16px;
@@ -146,6 +146,15 @@
       height: calc(100vh - 63px);
       border: none;
       display: block;
+    }
+
+    /* Zero out main's margins when viewing a project so the iframe sits flush under the header */
+    body.viewing-project {
+      overflow: hidden;
+    }
+    body.viewing-project main {
+      margin: 0;
+      padding: 0;
     }
 
     /* View fade transition — per D-08, D-09 */
@@ -181,7 +190,9 @@
     <section class="hero">
       <h2>Goh Jun Xian</h2>
       <p class="hero-title">AI Engineer</p>
-      <p class="hero-bio">I'm a data analyst turned AI engineer — I spent two years doing graph analytics with Neo4j before completing the AISG Associate AI Engineer program. Now I'm building AI-powered tools I actually use and want to share.</p>
+      <p class="hero-bio">I graduated with a Bachelor of Sciences with Business Analytics and have spent the past 2 years doing graph analytics with Neo4j as the organisation's chosen tool and delved into projects involving the use of LLMs as a data analyst.
+
+        I have also just completed a 3-month deep-skilling program as an Associate AI Engineer at AI Singapore. Using the knowledge gained from the program, I'm now building AI-powered tools — things I actually use and want to share. This is where they live.</p>
       <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </section>
     <div class="projects-section">
@@ -240,6 +251,7 @@
       // First paint: set views directly, skip fade to avoid flash-of-content
       if (projects[hash]) {
         homeView.style.display = 'none';
+        document.body.classList.add('viewing-project');
         projectView.style.display = 'block';
         projectView.classList.remove('hidden');
         if (!projectView.querySelector('iframe')) {
@@ -261,6 +273,7 @@
       // Fade home out, then show project view faded in
       fadeOut(homeView, function() {
         homeView.style.display = 'none';
+        document.body.classList.add('viewing-project');
         projectView.style.display = 'block';
         if (!projectView.querySelector('iframe')) {
           const iframe = document.createElement('iframe');
@@ -274,6 +287,7 @@
       // Fade project out, then show home view faded in
       fadeOut(projectView, function() {
         projectView.style.display = 'none';
+        document.body.classList.remove('viewing-project');
         const iframe = projectView.querySelector('iframe');
         if (iframe) iframe.remove();
         homeView.style.display = '';
