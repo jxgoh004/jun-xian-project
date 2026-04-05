@@ -88,10 +88,10 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 ### Phase 5: S&P 500 Stock Screener Page
 
-**Goal:** [To be planned]
-**Requirements**: TBD
+**Goal:** Deliver a second portfolio project: an S&P 500 stock screener with pre-calculated DCF values, sortable/filterable table, and calculator link-through
 **Depends on:** Phase 4
-**Plans:** 2/2 plans complete
+**Plans:** 2/2 plans complete (completed 2026-04-05)
 
 Plans:
-- [x] TBD (run /gsd:plan-phase 5 to break down) (completed 2026-04-05)
+- [x] 05-01-PLAN.md — S&P 500 batch DCF pipeline (scripts/fetch_sp500.py + nightly GitHub Actions workflow)
+- [x] 05-02-PLAN.md — Screener frontend (docs/projects/screener/index.html)
