@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-05T03:35:46Z",
+  "updated_at": "2026-04-05T04:21:57Z",
   "stocks": [
     {
       "ticker": "MMM",
@@ -30,6 +30,5006 @@
       "discount_pct": 19.75,
       "method": "ocf",
       "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ABBV",
+      "company_name": "AbbVie Inc.",
+      "sector": "Healthcare",
+      "current_price": 208.84,
+      "intrinsic_value": 414.73,
+      "discount_pct": 49.64,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ACN",
+      "company_name": "Accenture plc",
+      "sector": "Technology",
+      "current_price": 201.33,
+      "intrinsic_value": 332.24,
+      "discount_pct": 39.4,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc.",
+      "sector": "Technology",
+      "current_price": 242.92,
+      "intrinsic_value": 545.1,
+      "discount_pct": 55.44,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AMD",
+      "company_name": "Advanced Micro Devices, Inc.",
+      "sector": "Technology",
+      "current_price": 217.5,
+      "intrinsic_value": 627.57,
+      "discount_pct": 65.34,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AES",
+      "company_name": "The AES Corporation",
+      "sector": "Utilities",
+      "current_price": 14.3,
+      "intrinsic_value": -72.15,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "AFL",
+      "company_name": "Aflac Incorporated",
+      "sector": "Financial Services",
+      "current_price": 110.48,
+      "intrinsic_value": 198.83,
+      "discount_pct": 44.43,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "A",
+      "company_name": "Agilent Technologies, Inc.",
+      "sector": "Healthcare",
+      "current_price": 115.48,
+      "intrinsic_value": 88.7,
+      "discount_pct": -30.19,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "APD",
+      "company_name": "Air Products and Chemicals, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 293.55,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "ABNB",
+      "company_name": "Airbnb, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 124.95,
+      "intrinsic_value": 382.86,
+      "discount_pct": 67.36,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AKAM",
+      "company_name": "Akamai Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 118.0,
+      "intrinsic_value": 74.81,
+      "discount_pct": -57.73,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ALB",
+      "company_name": "Albemarle Corporation",
+      "sector": "Basic Materials",
+      "current_price": 178.09,
+      "intrinsic_value": 19.55,
+      "discount_pct": -810.95,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ARE",
+      "company_name": "Alexandria Real Estate Equities, Inc.",
+      "sector": "Real Estate",
+      "current_price": 43.23,
+      "intrinsic_value": 3407.97,
+      "discount_pct": 98.73,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ALGN",
+      "company_name": "Align Technology, Inc.",
+      "sector": "Healthcare",
+      "current_price": 170.6,
+      "intrinsic_value": 152.88,
+      "discount_pct": -11.59,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "ALLE",
+      "company_name": "Allegion plc",
+      "sector": "Industrials",
+      "current_price": 141.06,
+      "intrinsic_value": 162.38,
+      "discount_pct": 13.13,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "LNT",
+      "company_name": "Alliant Energy Corporation",
+      "sector": "Utilities",
+      "current_price": 72.85,
+      "intrinsic_value": 47.98,
+      "discount_pct": -51.83,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ALL",
+      "company_name": "The Allstate Corporation",
+      "sector": "Financial Services",
+      "current_price": 207.03,
+      "intrinsic_value": 283.3,
+      "discount_pct": 26.92,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "current_price": 295.77,
+      "intrinsic_value": 719.14,
+      "discount_pct": 58.87,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GOOG",
+      "company_name": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "current_price": 294.46,
+      "intrinsic_value": 769.08,
+      "discount_pct": 61.71,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MO",
+      "company_name": "Altria Group, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 65.76,
+      "intrinsic_value": 79.05,
+      "discount_pct": 16.81,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "AMZN",
+      "company_name": "Amazon.com, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 209.77,
+      "intrinsic_value": 26.69,
+      "discount_pct": -685.95,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AMCR",
+      "company_name": "Amcor plc",
+      "sector": "Consumer Cyclical",
+      "current_price": 39.93,
+      "intrinsic_value": 11.05,
+      "discount_pct": -261.36,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AEE",
+      "company_name": "Ameren Corporation",
+      "sector": "Utilities",
+      "current_price": 111.68,
+      "intrinsic_value": -133.14,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "AEP",
+      "company_name": "American Electric Power Company, Inc.",
+      "sector": "Utilities",
+      "current_price": 132.68,
+      "intrinsic_value": -152.78,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "AXP",
+      "company_name": "American Express Company",
+      "sector": "Financial Services",
+      "current_price": 300.18,
+      "intrinsic_value": 621.46,
+      "discount_pct": 51.7,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AIG",
+      "company_name": "American International Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 75.42,
+      "intrinsic_value": 203.03,
+      "discount_pct": 62.85,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AMT",
+      "company_name": "American Tower Corporation",
+      "sector": "Real Estate",
+      "current_price": 173.73,
+      "intrinsic_value": 126.74,
+      "discount_pct": -37.08,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AWK",
+      "company_name": "American Water Works Company, Inc.",
+      "sector": "Utilities",
+      "current_price": 138.14,
+      "intrinsic_value": -214.25,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "AMP",
+      "company_name": "Ameriprise Financial, Inc.",
+      "sector": "Financial Services",
+      "current_price": 433.94,
+      "intrinsic_value": 2499.29,
+      "discount_pct": 82.64,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AME",
+      "company_name": "AMETEK, Inc.",
+      "sector": "Industrials",
+      "current_price": 218.29,
+      "intrinsic_value": 148.62,
+      "discount_pct": -46.88,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AMGN",
+      "company_name": "Amgen Inc.",
+      "sector": "Healthcare",
+      "current_price": 347.94,
+      "intrinsic_value": 217.19,
+      "discount_pct": -60.2,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "APH",
+      "company_name": "Amphenol Corporation",
+      "sector": "Technology",
+      "current_price": 128.0,
+      "intrinsic_value": 147.76,
+      "discount_pct": 13.37,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ADI",
+      "company_name": "Analog Devices, Inc.",
+      "sector": "Technology",
+      "current_price": 318.34,
+      "intrinsic_value": 407.12,
+      "discount_pct": 21.81,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "AON",
+      "company_name": "Aon plc",
+      "sector": "Financial Services",
+      "current_price": 323.14,
+      "intrinsic_value": 362.83,
+      "discount_pct": 10.94,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "APA",
+      "company_name": "APA Corporation",
+      "sector": "Energy",
+      "current_price": 42.04,
+      "intrinsic_value": 63.78,
+      "discount_pct": 34.09,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "APO",
+      "company_name": "Apollo Global Management, Inc.",
+      "sector": "Financial Services",
+      "current_price": 107.04,
+      "intrinsic_value": 703.05,
+      "discount_pct": 84.77,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "sector": "Technology",
+      "current_price": 255.92,
+      "intrinsic_value": 208.5,
+      "discount_pct": -22.74,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "AMAT",
+      "company_name": "Applied Materials, Inc.",
+      "sector": "Technology",
+      "current_price": 348.47,
+      "intrinsic_value": 307.13,
+      "discount_pct": -13.46,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "APP",
+      "company_name": "AppLovin Corporation",
+      "sector": "Communication Services",
+      "current_price": 386.37,
+      "intrinsic_value": 1046.98,
+      "discount_pct": 63.1,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "APTV",
+      "company_name": "Aptiv PLC",
+      "sector": "Consumer Cyclical",
+      "current_price": 60.99,
+      "intrinsic_value": 108.26,
+      "discount_pct": 43.66,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ACGL",
+      "company_name": "Arch Capital Group Ltd.",
+      "sector": "Financial Services",
+      "current_price": 96.74,
+      "intrinsic_value": 304.47,
+      "discount_pct": 68.23,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ADM",
+      "company_name": "Archer-Daniels-Midland Company",
+      "sector": "Consumer Defensive",
+      "current_price": 73.83,
+      "intrinsic_value": 262.28,
+      "discount_pct": 71.85,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ARES",
+      "company_name": "Ares Management Corporation",
+      "sector": "Financial Services",
+      "current_price": 102.43,
+      "intrinsic_value": 426.81,
+      "discount_pct": 76.0,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ANET",
+      "company_name": "Arista Networks, Inc.",
+      "sector": "Technology",
+      "current_price": 126.68,
+      "intrinsic_value": NaN,
+      "discount_pct": NaN,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AJG",
+      "company_name": "Arthur J. Gallagher & Co.",
+      "sector": "Financial Services",
+      "current_price": 217.61,
+      "intrinsic_value": 208.94,
+      "discount_pct": -4.15,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "AIZ",
+      "company_name": "Assurant, Inc.",
+      "sector": "Financial Services",
+      "current_price": 218.26,
+      "intrinsic_value": 640.69,
+      "discount_pct": 65.93,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "T",
+      "company_name": "AT&T Inc.",
+      "sector": "Communication Services",
+      "current_price": 28.33,
+      "intrinsic_value": 52.62,
+      "discount_pct": 46.16,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ATO",
+      "company_name": "Atmos Energy Corporation",
+      "sector": "Utilities",
+      "current_price": 188.97,
+      "intrinsic_value": -256.85,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "ADSK",
+      "company_name": "Autodesk, Inc.",
+      "sector": "Technology",
+      "current_price": 238.08,
+      "intrinsic_value": 288.14,
+      "discount_pct": 17.37,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ADP",
+      "company_name": "Automatic Data Processing, Inc.",
+      "sector": "Technology",
+      "current_price": 204.01,
+      "intrinsic_value": 262.3,
+      "discount_pct": 22.22,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "AZO",
+      "company_name": "AutoZone, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 3400.54,
+      "intrinsic_value": 3916.82,
+      "discount_pct": 13.18,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "AVB",
+      "company_name": "AvalonBay Communities, Inc.",
+      "sector": "Real Estate",
+      "current_price": 166.02,
+      "intrinsic_value": 15.34,
+      "discount_pct": -982.27,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "AVY",
+      "company_name": "Avery Dennison Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 171.47,
+      "intrinsic_value": 200.37,
+      "discount_pct": 14.42,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "AXON",
+      "company_name": "Axon Enterprise, Inc.",
+      "sector": "Industrials",
+      "current_price": 412.81,
+      "intrinsic_value": 39.99,
+      "discount_pct": -932.28,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "BKR",
+      "company_name": "Baker Hughes Company",
+      "sector": "Energy",
+      "current_price": 60.38,
+      "intrinsic_value": 78.97,
+      "discount_pct": 23.54,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "BALL",
+      "company_name": "Ball Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 59.97,
+      "intrinsic_value": 91.91,
+      "discount_pct": 34.75,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BAC",
+      "company_name": "Bank of America Corporation",
+      "sector": "Financial Services",
+      "current_price": 49.38,
+      "intrinsic_value": 29.38,
+      "discount_pct": -68.07,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "BAX",
+      "company_name": "Baxter International Inc.",
+      "sector": "Healthcare",
+      "current_price": 16.68,
+      "intrinsic_value": -5.96,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "BDX",
+      "company_name": "Becton, Dickinson and Company",
+      "sector": "Healthcare",
+      "current_price": 154.51,
+      "intrinsic_value": 133.48,
+      "discount_pct": -15.76,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "BRK-B",
+      "company_name": "Berkshire Hathaway Inc.",
+      "sector": "Financial Services",
+      "current_price": 477.35,
+      "intrinsic_value": 615.84,
+      "discount_pct": 22.49,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "BBY",
+      "company_name": "Best Buy Co., Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 64.5,
+      "intrinsic_value": 96.49,
+      "discount_pct": 33.15,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TECH",
+      "company_name": "Bio-Techne Corporation",
+      "sector": "Healthcare",
+      "current_price": 53.13,
+      "intrinsic_value": 29.55,
+      "discount_pct": -79.8,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "BIIB",
+      "company_name": "Biogen Inc.",
+      "sector": "Healthcare",
+      "current_price": 177.34,
+      "intrinsic_value": 218.07,
+      "discount_pct": 18.68,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "BLK",
+      "company_name": "BlackRock, Inc.",
+      "sector": "Financial Services",
+      "current_price": 966.56,
+      "intrinsic_value": 578.55,
+      "discount_pct": -67.07,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "BX",
+      "company_name": "Blackstone Inc.",
+      "sector": "Financial Services",
+      "current_price": 113.05,
+      "intrinsic_value": 136.98,
+      "discount_pct": 17.47,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "XYZ",
+      "company_name": "Block, Inc.",
+      "sector": "Technology",
+      "current_price": 59.78,
+      "intrinsic_value": 310.16,
+      "discount_pct": 80.73,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BK",
+      "company_name": "The Bank of New York Mellon Corporation",
+      "sector": "Financial Services",
+      "current_price": 122.13,
+      "intrinsic_value": 356.09,
+      "discount_pct": 65.7,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BA",
+      "company_name": "The Boeing Company",
+      "sector": "Industrials",
+      "current_price": 208.22,
+      "intrinsic_value": 1604.33,
+      "discount_pct": 87.02,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BKNG",
+      "company_name": "Booking Holdings Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 4194.31,
+      "intrinsic_value": 8603.04,
+      "discount_pct": 51.25,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BSX",
+      "company_name": "Boston Scientific Corporation",
+      "sector": "Healthcare",
+      "current_price": 62.82,
+      "intrinsic_value": 58.59,
+      "discount_pct": -7.22,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "BMY",
+      "company_name": "Bristol-Myers Squibb Company",
+      "sector": "Healthcare",
+      "current_price": 59.6,
+      "intrinsic_value": 50.16,
+      "discount_pct": -18.82,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "AVGO",
+      "company_name": "Broadcom Inc.",
+      "sector": "Technology",
+      "current_price": 314.55,
+      "intrinsic_value": 894.2,
+      "discount_pct": 64.82,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BR",
+      "company_name": "Broadridge Financial Solutions, Inc.",
+      "sector": "Technology",
+      "current_price": 160.93,
+      "intrinsic_value": 243.03,
+      "discount_pct": 33.78,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BRO",
+      "company_name": "Brown & Brown, Inc.",
+      "sector": "Financial Services",
+      "current_price": 65.95,
+      "intrinsic_value": 71.4,
+      "discount_pct": 7.63,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "BF-B",
+      "company_name": "Brown-Forman Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 26.75,
+      "intrinsic_value": 26.81,
+      "discount_pct": 0.22,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "BLDR",
+      "company_name": "Builders FirstSource, Inc.",
+      "sector": "Industrials",
+      "current_price": 79.12,
+      "intrinsic_value": 90.52,
+      "discount_pct": 12.59,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "BG",
+      "company_name": "Bunge Global SA",
+      "sector": "Consumer Defensive",
+      "current_price": 129.42,
+      "intrinsic_value": 57.41,
+      "discount_pct": -125.43,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "BXP",
+      "company_name": "BXP, Inc.",
+      "sector": "Real Estate",
+      "current_price": 51.78,
+      "intrinsic_value": 34.38,
+      "discount_pct": -50.61,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CHRW",
+      "company_name": "C.H. Robinson Worldwide, Inc.",
+      "sector": "Industrials",
+      "current_price": 167.84,
+      "intrinsic_value": 207.56,
+      "discount_pct": 19.14,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CDNS",
+      "company_name": "Cadence Design Systems, Inc.",
+      "sector": "Technology",
+      "current_price": 278.72,
+      "intrinsic_value": 154.34,
+      "discount_pct": -80.59,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CPT",
+      "company_name": "Camden Property Trust",
+      "sector": "Real Estate",
+      "current_price": 100.76,
+      "intrinsic_value": -23.06,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "CPB",
+      "company_name": "The Campbell's Company",
+      "sector": "Consumer Defensive",
+      "current_price": 22.01,
+      "intrinsic_value": -1.81,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "COF",
+      "company_name": "Capital One Financial Corporation",
+      "sector": "Financial Services",
+      "current_price": 181.92,
+      "intrinsic_value": 1038.45,
+      "discount_pct": 82.48,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CAH",
+      "company_name": "Cardinal Health, Inc.",
+      "sector": "Healthcare",
+      "current_price": 214.05,
+      "intrinsic_value": 242.22,
+      "discount_pct": 11.63,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CCL",
+      "company_name": "Carnival Corporation & plc",
+      "sector": "Consumer Cyclical",
+      "current_price": 25.64,
+      "intrinsic_value": 20.59,
+      "discount_pct": -24.53,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CARR",
+      "company_name": "Carrier Global Corporation",
+      "sector": "Industrials",
+      "current_price": 55.71,
+      "intrinsic_value": 42.45,
+      "discount_pct": -31.24,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CVNA",
+      "company_name": "Carvana Co.",
+      "sector": "Consumer Cyclical",
+      "current_price": 313.91,
+      "intrinsic_value": 176.19,
+      "discount_pct": -78.17,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CAT",
+      "company_name": "Caterpillar Inc.",
+      "sector": "Industrials",
+      "current_price": 717.22,
+      "intrinsic_value": 697.01,
+      "discount_pct": -2.9,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "CBOE",
+      "company_name": "Cboe Global Markets, Inc.",
+      "sector": "Financial Services",
+      "current_price": 289.95,
+      "intrinsic_value": 357.55,
+      "discount_pct": 18.91,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CBRE",
+      "company_name": "CBRE Group, Inc.",
+      "sector": "Real Estate",
+      "current_price": 136.6,
+      "intrinsic_value": 117.51,
+      "discount_pct": -16.25,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CDW",
+      "company_name": "CDW Corporation",
+      "sector": "Technology",
+      "current_price": 122.01,
+      "intrinsic_value": 135.37,
+      "discount_pct": 9.87,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "COR",
+      "company_name": "Cencora, Inc.",
+      "sector": "Healthcare",
+      "current_price": 324.8,
+      "intrinsic_value": 374.44,
+      "discount_pct": 13.26,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CNC",
+      "company_name": "Centene Corporation",
+      "sector": "Healthcare",
+      "current_price": 35.11,
+      "intrinsic_value": 944.97,
+      "discount_pct": 96.28,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CNP",
+      "company_name": "CenterPoint Energy, Inc.",
+      "sector": "Utilities",
+      "current_price": 43.71,
+      "intrinsic_value": -114.79,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "CF",
+      "company_name": "CF Industries Holdings, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 129.97,
+      "intrinsic_value": 107.98,
+      "discount_pct": -20.36,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CRL",
+      "company_name": "Charles River Laboratories International, Inc.",
+      "sector": "Healthcare",
+      "current_price": 173.89,
+      "intrinsic_value": 141.0,
+      "discount_pct": -23.33,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "SCHW",
+      "company_name": "The Charles Schwab Corporation",
+      "sector": "Financial Services",
+      "current_price": 93.77,
+      "intrinsic_value": 201.36,
+      "discount_pct": 53.43,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CHTR",
+      "company_name": "Charter Communications, Inc.",
+      "sector": "Communication Services",
+      "current_price": 219.79,
+      "intrinsic_value": 282.7,
+      "discount_pct": 22.25,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CVX",
+      "company_name": "Chevron Corporation",
+      "sector": "Energy",
+      "current_price": 198.97,
+      "intrinsic_value": 237.43,
+      "discount_pct": 16.2,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CMG",
+      "company_name": "Chipotle Mexican Grill, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 33.16,
+      "intrinsic_value": 34.55,
+      "discount_pct": 4.02,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "CB",
+      "company_name": "Chubb Limited",
+      "sector": "Financial Services",
+      "current_price": 328.33,
+      "intrinsic_value": 801.15,
+      "discount_pct": 59.02,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CHD",
+      "company_name": "Church & Dwight Co., Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 92.85,
+      "intrinsic_value": 84.09,
+      "discount_pct": -10.42,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CIEN",
+      "company_name": "Ciena Corporation",
+      "sector": "Technology",
+      "current_price": 447.76,
+      "intrinsic_value": 1467.68,
+      "discount_pct": 69.49,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CI",
+      "company_name": "The Cigna Group",
+      "sector": "Healthcare",
+      "current_price": 270.02,
+      "intrinsic_value": 567.96,
+      "discount_pct": 52.46,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CINF",
+      "company_name": "Cincinnati Financial Corporation",
+      "sector": "Financial Services",
+      "current_price": 158.41,
+      "intrinsic_value": 745.42,
+      "discount_pct": 78.75,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CTAS",
+      "company_name": "Cintas Corporation",
+      "sector": "Industrials",
+      "current_price": 174.34,
+      "intrinsic_value": 121.87,
+      "discount_pct": -43.05,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CSCO",
+      "company_name": "Cisco Systems, Inc.",
+      "sector": "Technology",
+      "current_price": 79.02,
+      "intrinsic_value": 69.97,
+      "discount_pct": -12.93,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "C",
+      "company_name": "Citigroup Inc.",
+      "sector": "Financial Services",
+      "current_price": 115.25,
+      "intrinsic_value": -2105.0,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "CFG",
+      "company_name": "Citizens Financial Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 60.99,
+      "intrinsic_value": 228.51,
+      "discount_pct": 73.31,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CLX",
+      "company_name": "The Clorox Company",
+      "sector": "Consumer Defensive",
+      "current_price": 101.14,
+      "intrinsic_value": 74.07,
+      "discount_pct": -36.55,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CME",
+      "company_name": "CME Group Inc.",
+      "sector": "Financial Services",
+      "current_price": 305.11,
+      "intrinsic_value": 240.52,
+      "discount_pct": -26.85,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CMS",
+      "company_name": "CMS Energy Corporation",
+      "sector": "Utilities",
+      "current_price": 78.58,
+      "intrinsic_value": -180.79,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "KO",
+      "company_name": "The Coca-Cola Company",
+      "sector": "Consumer Defensive",
+      "current_price": 76.72,
+      "intrinsic_value": 27.81,
+      "discount_pct": -175.87,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CTSH",
+      "company_name": "Cognizant Technology Solutions Corporation",
+      "sector": "Technology",
+      "current_price": 62.54,
+      "intrinsic_value": 121.93,
+      "discount_pct": 48.71,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "COHR",
+      "company_name": "Coherent Corp.",
+      "sector": "Technology",
+      "current_price": 258.16,
+      "intrinsic_value": 160.84,
+      "discount_pct": -60.51,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "COIN",
+      "company_name": "Coinbase Global, Inc.",
+      "sector": "Financial Services",
+      "current_price": 171.46,
+      "intrinsic_value": 394.07,
+      "discount_pct": 56.49,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CL",
+      "company_name": "Colgate-Palmolive Company",
+      "sector": "Consumer Defensive",
+      "current_price": 85.14,
+      "intrinsic_value": 78.3,
+      "discount_pct": -8.74,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "CMCSA",
+      "company_name": "Comcast Corporation",
+      "sector": "Communication Services",
+      "current_price": 27.93,
+      "intrinsic_value": 46.1,
+      "discount_pct": 39.41,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FIX",
+      "company_name": "Comfort Systems USA, Inc.",
+      "sector": "Industrials",
+      "current_price": 1417.19,
+      "intrinsic_value": 928.98,
+      "discount_pct": -52.55,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CAG",
+      "company_name": "Conagra Brands, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 15.72,
+      "intrinsic_value": 6.9,
+      "discount_pct": -127.83,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "COP",
+      "company_name": "ConocoPhillips",
+      "sector": "Energy",
+      "current_price": 130.52,
+      "intrinsic_value": 137.33,
+      "discount_pct": 4.96,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "ED",
+      "company_name": "Consolidated Edison, Inc.",
+      "sector": "Utilities",
+      "current_price": 115.43,
+      "intrinsic_value": -70.71,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "STZ",
+      "company_name": "Constellation Brands, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 151.2,
+      "intrinsic_value": 141.1,
+      "discount_pct": -7.16,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "CEG",
+      "company_name": "Constellation Energy Corporation",
+      "sector": "Utilities",
+      "current_price": 272.82,
+      "intrinsic_value": 134.39,
+      "discount_pct": -103.01,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "COO",
+      "company_name": "The Cooper Companies, Inc.",
+      "sector": "Healthcare",
+      "current_price": 70.17,
+      "intrinsic_value": 34.47,
+      "discount_pct": -103.57,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CPRT",
+      "company_name": "Copart, Inc.",
+      "sector": "Industrials",
+      "current_price": 33.4,
+      "intrinsic_value": 34.74,
+      "discount_pct": 3.86,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "GLW",
+      "company_name": "Corning Incorporated",
+      "sector": "Technology",
+      "current_price": 147.92,
+      "intrinsic_value": 68.32,
+      "discount_pct": -116.51,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CPAY",
+      "company_name": "Corpay, Inc.",
+      "sector": "Technology",
+      "current_price": 293.34,
+      "intrinsic_value": 682.96,
+      "discount_pct": 57.05,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CTVA",
+      "company_name": "Corteva, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 85.46,
+      "intrinsic_value": 107.02,
+      "discount_pct": 20.15,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CSGP",
+      "company_name": "CoStar Group, Inc.",
+      "sector": "Real Estate",
+      "current_price": 39.95,
+      "intrinsic_value": 10.46,
+      "discount_pct": -281.93,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "COST",
+      "company_name": "Costco Wholesale Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 1014.96,
+      "intrinsic_value": 438.04,
+      "discount_pct": -131.7,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CTRA",
+      "company_name": "Coterra Energy Inc.",
+      "sector": "Energy",
+      "current_price": 34.56,
+      "intrinsic_value": 66.22,
+      "discount_pct": 47.81,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CRH",
+      "company_name": "CRH plc",
+      "sector": "Basic Materials",
+      "current_price": 104.63,
+      "intrinsic_value": 155.66,
+      "discount_pct": 32.78,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CRWD",
+      "company_name": "CrowdStrike Holdings, Inc.",
+      "sector": "Technology",
+      "current_price": 399.12,
+      "intrinsic_value": 325.37,
+      "discount_pct": -22.67,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "CCI",
+      "company_name": "Crown Castle Inc.",
+      "sector": "Real Estate",
+      "current_price": 84.78,
+      "intrinsic_value": 866.48,
+      "discount_pct": 90.22,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "CSX",
+      "company_name": "CSX Corporation",
+      "sector": "Industrials",
+      "current_price": 41.22,
+      "intrinsic_value": 11.91,
+      "discount_pct": -246.1,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "CMI",
+      "company_name": "Cummins Inc.",
+      "sector": "Industrials",
+      "current_price": 549.68,
+      "intrinsic_value": 654.69,
+      "discount_pct": 16.04,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "CVS",
+      "company_name": "CVS Health Corporation",
+      "sector": "Healthcare",
+      "current_price": 73.49,
+      "intrinsic_value": 117.2,
+      "discount_pct": 37.3,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DHR",
+      "company_name": "Danaher Corporation",
+      "sector": "Healthcare",
+      "current_price": 191.12,
+      "intrinsic_value": 132.34,
+      "discount_pct": -44.42,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "DRI",
+      "company_name": "Darden Restaurants, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 196.33,
+      "intrinsic_value": 186.21,
+      "discount_pct": -5.43,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "DDOG",
+      "company_name": "Datadog, Inc.",
+      "sector": "Technology",
+      "current_price": 120.36,
+      "intrinsic_value": 82.22,
+      "discount_pct": -46.39,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "DVA",
+      "company_name": "DaVita Inc.",
+      "sector": "Healthcare",
+      "current_price": 145.58,
+      "intrinsic_value": 637.93,
+      "discount_pct": 77.18,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DECK",
+      "company_name": "Deckers Outdoor Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 98.31,
+      "intrinsic_value": 148.5,
+      "discount_pct": 33.8,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DE",
+      "company_name": "Deere & Company",
+      "sector": "Industrials",
+      "current_price": 575.71,
+      "intrinsic_value": 149.56,
+      "discount_pct": -284.94,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "DELL",
+      "company_name": "Dell Technologies Inc.",
+      "sector": "Technology",
+      "current_price": 174.37,
+      "intrinsic_value": 924.14,
+      "discount_pct": 81.13,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DAL",
+      "company_name": "Delta Air Lines, Inc.",
+      "sector": "Industrials",
+      "current_price": 66.76,
+      "intrinsic_value": 153.1,
+      "discount_pct": 56.39,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DVN",
+      "company_name": "Devon Energy Corporation",
+      "sector": "Energy",
+      "current_price": 49.49,
+      "intrinsic_value": 100.13,
+      "discount_pct": 50.57,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DXCM",
+      "company_name": "DexCom, Inc.",
+      "sector": "Healthcare",
+      "current_price": 62.22,
+      "intrinsic_value": 86.88,
+      "discount_pct": 28.38,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "FANG",
+      "company_name": "Diamondback Energy, Inc.",
+      "sector": "Energy",
+      "current_price": 193.88,
+      "intrinsic_value": -100.61,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "DLR",
+      "company_name": "Digital Realty Trust, Inc.",
+      "sector": "Real Estate",
+      "current_price": 181.69,
+      "intrinsic_value": 4.13,
+      "discount_pct": -4299.27,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "DG",
+      "company_name": "Dollar General Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 119.74,
+      "intrinsic_value": 223.61,
+      "discount_pct": 46.45,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DLTR",
+      "company_name": "Dollar Tree, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 108.44,
+      "intrinsic_value": 172.47,
+      "discount_pct": 37.13,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "D",
+      "company_name": "Dominion Energy, Inc.",
+      "sector": "Utilities",
+      "current_price": 62.77,
+      "intrinsic_value": -210.66,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "DPZ",
+      "company_name": "Domino's Pizza, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 370.82,
+      "intrinsic_value": 361.53,
+      "discount_pct": -2.57,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "DASH",
+      "company_name": "DoorDash, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 156.45,
+      "intrinsic_value": 559.14,
+      "discount_pct": 72.02,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DOV",
+      "company_name": "Dover Corporation",
+      "sector": "Industrials",
+      "current_price": 205.38,
+      "intrinsic_value": 182.54,
+      "discount_pct": -12.51,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "DOW",
+      "company_name": "Dow Inc.",
+      "sector": "Basic Materials",
+      "current_price": 41.4,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "DHI",
+      "company_name": "D.R. Horton, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 139.69,
+      "intrinsic_value": 200.2,
+      "discount_pct": 30.22,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "DTE",
+      "company_name": "DTE Energy Company",
+      "sector": "Utilities",
+      "current_price": 148.04,
+      "intrinsic_value": -221.05,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "DUK",
+      "company_name": "Duke Energy Corporation",
+      "sector": "Utilities",
+      "current_price": 132.22,
+      "intrinsic_value": -157.73,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "DD",
+      "company_name": "DuPont de Nemours, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 45.48,
+      "intrinsic_value": 8.41,
+      "discount_pct": -440.78,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ETN",
+      "company_name": "Eaton Corporation plc",
+      "sector": "Industrials",
+      "current_price": 361.1,
+      "intrinsic_value": 255.02,
+      "discount_pct": -41.6,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "EBAY",
+      "company_name": "eBay Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 94.14,
+      "intrinsic_value": 74.94,
+      "discount_pct": -25.62,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "SATS",
+      "company_name": "EchoStar Corporation",
+      "sector": "Communication Services",
+      "current_price": 128.68,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "ECL",
+      "company_name": "Ecolab Inc.",
+      "sector": "Basic Materials",
+      "current_price": 264.28,
+      "intrinsic_value": 240.73,
+      "discount_pct": -9.78,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "EIX",
+      "company_name": "Edison International",
+      "sector": "Utilities",
+      "current_price": 73.46,
+      "intrinsic_value": 118.07,
+      "discount_pct": 37.78,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EW",
+      "company_name": "Edwards Lifesciences Corporation",
+      "sector": "Healthcare",
+      "current_price": 81.05,
+      "intrinsic_value": 79.98,
+      "discount_pct": -1.34,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "EA",
+      "company_name": "Electronic Arts Inc.",
+      "sector": "Communication Services",
+      "current_price": 203.6,
+      "intrinsic_value": 217.47,
+      "discount_pct": 6.38,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "ELV",
+      "company_name": "Elevance Health, Inc.",
+      "sector": "Healthcare",
+      "current_price": 300.74,
+      "intrinsic_value": 350.47,
+      "discount_pct": 14.19,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "EME",
+      "company_name": "EMCOR Group, Inc.",
+      "sector": "Industrials",
+      "current_price": 756.3,
+      "intrinsic_value": 678.17,
+      "discount_pct": -11.52,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "EMR",
+      "company_name": "Emerson Electric Co.",
+      "sector": "Industrials",
+      "current_price": 131.7,
+      "intrinsic_value": 84.19,
+      "discount_pct": -56.43,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ETR",
+      "company_name": "Entergy Corporation",
+      "sector": "Utilities",
+      "current_price": 114.9,
+      "intrinsic_value": -226.38,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "EOG",
+      "company_name": "EOG Resources, Inc.",
+      "sector": "Energy",
+      "current_price": 142.64,
+      "intrinsic_value": 149.86,
+      "discount_pct": 4.82,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "EPAM",
+      "company_name": "EPAM Systems, Inc.",
+      "sector": "Technology",
+      "current_price": 137.99,
+      "intrinsic_value": 228.48,
+      "discount_pct": 39.61,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EQT",
+      "company_name": "EQT Corporation",
+      "sector": "Energy",
+      "current_price": 59.7,
+      "intrinsic_value": 210.57,
+      "discount_pct": 71.65,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EFX",
+      "company_name": "Equifax Inc.",
+      "sector": "Industrials",
+      "current_price": 182.39,
+      "intrinsic_value": 230.01,
+      "discount_pct": 20.7,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "EQIX",
+      "company_name": "Equinix, Inc.",
+      "sector": "Real Estate",
+      "current_price": 1000.37,
+      "intrinsic_value": -262.63,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "EQR",
+      "company_name": "Equity Residential",
+      "sector": "Real Estate",
+      "current_price": 60.27,
+      "intrinsic_value": 0.36,
+      "discount_pct": -16641.67,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ERIE",
+      "company_name": "Erie Indemnity Company",
+      "sector": "Financial Services",
+      "current_price": 249.51,
+      "intrinsic_value": NaN,
+      "discount_pct": NaN,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ESS",
+      "company_name": "Essex Property Trust, Inc.",
+      "sector": "Real Estate",
+      "current_price": 247.34,
+      "intrinsic_value": -14.44,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "EL",
+      "company_name": "The Est\u00e9e Lauder Companies Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 69.12,
+      "intrinsic_value": 188.47,
+      "discount_pct": 63.33,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EG",
+      "company_name": "Everest Group, Ltd.",
+      "sector": "Financial Services",
+      "current_price": 327.09,
+      "intrinsic_value": 3021.76,
+      "discount_pct": 89.18,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EVRG",
+      "company_name": "Evergy, Inc.",
+      "sector": "Utilities",
+      "current_price": 82.84,
+      "intrinsic_value": -137.54,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "ES",
+      "company_name": "Eversource Energy",
+      "sector": "Utilities",
+      "current_price": 69.47,
+      "intrinsic_value": -81.78,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "EXC",
+      "company_name": "Exelon Corporation",
+      "sector": "Utilities",
+      "current_price": 49.33,
+      "intrinsic_value": -89.25,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "EXE",
+      "company_name": "Expand Energy Corporation",
+      "sector": "Energy",
+      "current_price": 103.89,
+      "intrinsic_value": 199.85,
+      "discount_pct": 48.02,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EXPE",
+      "company_name": "Expedia Group, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 225.3,
+      "intrinsic_value": 850.02,
+      "discount_pct": 73.49,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "EXPD",
+      "company_name": "Expeditors International of Washington, Inc.",
+      "sector": "Industrials",
+      "current_price": 145.81,
+      "intrinsic_value": 122.67,
+      "discount_pct": -18.86,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "EXR",
+      "company_name": "Extra Space Storage Inc.",
+      "sector": "Real Estate",
+      "current_price": 133.86,
+      "intrinsic_value": 71.15,
+      "discount_pct": -88.14,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "XOM",
+      "company_name": "Exxon Mobil Corporation",
+      "sector": "Energy",
+      "current_price": 160.69,
+      "intrinsic_value": 157.72,
+      "discount_pct": -1.88,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "FFIV",
+      "company_name": "F5, Inc.",
+      "sector": "Technology",
+      "current_price": 303.35,
+      "intrinsic_value": 261.33,
+      "discount_pct": -16.08,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "FDS",
+      "company_name": "FactSet Research Systems Inc.",
+      "sector": "Financial Services",
+      "current_price": 227.68,
+      "intrinsic_value": 403.03,
+      "discount_pct": 43.51,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FICO",
+      "company_name": "Fair Isaac Corporation",
+      "sector": "Technology",
+      "current_price": 1089.76,
+      "intrinsic_value": 1416.69,
+      "discount_pct": 23.08,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "FAST",
+      "company_name": "Fastenal Company",
+      "sector": "Industrials",
+      "current_price": 46.3,
+      "intrinsic_value": 26.56,
+      "discount_pct": -74.32,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "FRT",
+      "company_name": "Federal Realty Investment Trust",
+      "sector": "Real Estate",
+      "current_price": 106.79,
+      "intrinsic_value": -4.72,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "FDX",
+      "company_name": "FedEx Corporation",
+      "sector": "Industrials",
+      "current_price": 361.63,
+      "intrinsic_value": 225.41,
+      "discount_pct": -60.43,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "FIS",
+      "company_name": "Fidelity National Information Services, Inc.",
+      "sector": "Technology",
+      "current_price": 46.29,
+      "intrinsic_value": 58.17,
+      "discount_pct": 20.42,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "FITB",
+      "company_name": "Fifth Third Bancorp",
+      "sector": "Financial Services",
+      "current_price": 47.11,
+      "intrinsic_value": 105.52,
+      "discount_pct": 55.35,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FSLR",
+      "company_name": "First Solar, Inc.",
+      "sector": "Technology",
+      "current_price": 195.32,
+      "intrinsic_value": 918.23,
+      "discount_pct": 78.73,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FE",
+      "company_name": "FirstEnergy Corp.",
+      "sector": "Utilities",
+      "current_price": 51.31,
+      "intrinsic_value": -81.64,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "FISV",
+      "company_name": "Fiserv, Inc.",
+      "sector": "N/A",
+      "current_price": 56.16,
+      "intrinsic_value": 104.49,
+      "discount_pct": 46.25,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "F",
+      "company_name": "Ford Motor Company",
+      "sector": "Consumer Cyclical",
+      "current_price": 11.6,
+      "intrinsic_value": 94.12,
+      "discount_pct": 87.68,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FTNT",
+      "company_name": "Fortinet, Inc.",
+      "sector": "Technology",
+      "current_price": 82.53,
+      "intrinsic_value": 80.49,
+      "discount_pct": -2.53,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "FTV",
+      "company_name": "Fortive Corporation",
+      "sector": "Technology",
+      "current_price": 56.08,
+      "intrinsic_value": 61.07,
+      "discount_pct": 8.17,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "FOXA",
+      "company_name": "Fox Corporation",
+      "sector": "Communication Services",
+      "current_price": 58.62,
+      "intrinsic_value": 180.33,
+      "discount_pct": 67.49,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "FOX",
+      "company_name": "Fox Corporation",
+      "sector": "Communication Services",
+      "current_price": 52.87,
+      "intrinsic_value": 165.07,
+      "discount_pct": 67.97,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "BEN",
+      "company_name": "Franklin Resources, Inc.",
+      "sector": "Financial Services",
+      "current_price": 23.4,
+      "intrinsic_value": 19.46,
+      "discount_pct": -20.25,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "FCX",
+      "company_name": "Freeport-McMoRan Inc.",
+      "sector": "Basic Materials",
+      "current_price": 61.38,
+      "intrinsic_value": 298.9,
+      "discount_pct": 79.46,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GRMN",
+      "company_name": "Garmin Ltd.",
+      "sector": "Technology",
+      "current_price": 237.65,
+      "intrinsic_value": 199.88,
+      "discount_pct": -18.9,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "IT",
+      "company_name": "Gartner, Inc.",
+      "sector": "Technology",
+      "current_price": 157.85,
+      "intrinsic_value": 317.6,
+      "discount_pct": 50.3,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GE",
+      "company_name": "GE Aerospace",
+      "sector": "Industrials",
+      "current_price": 281.16,
+      "intrinsic_value": 196.14,
+      "discount_pct": -43.35,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "GEHC",
+      "company_name": "GE HealthCare Technologies Inc.",
+      "sector": "Healthcare",
+      "current_price": 70.35,
+      "intrinsic_value": 77.68,
+      "discount_pct": 9.44,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "GEV",
+      "company_name": "GE Vernova Inc.",
+      "sector": "Industrials",
+      "current_price": 898.57,
+      "intrinsic_value": 736.61,
+      "discount_pct": -21.99,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "GEN",
+      "company_name": "Gen Digital Inc.",
+      "sector": "Technology",
+      "current_price": 18.89,
+      "intrinsic_value": 34.03,
+      "discount_pct": 44.49,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GNRC",
+      "company_name": "Generac Holdings Inc.",
+      "sector": "Industrials",
+      "current_price": 194.09,
+      "intrinsic_value": 183.32,
+      "discount_pct": -5.87,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "GD",
+      "company_name": "General Dynamics Corporation",
+      "sector": "Industrials",
+      "current_price": 349.09,
+      "intrinsic_value": 378.22,
+      "discount_pct": 7.7,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "GIS",
+      "company_name": "General Mills, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 37.42,
+      "intrinsic_value": 13.05,
+      "discount_pct": -186.74,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "GM",
+      "company_name": "General Motors Company",
+      "sector": "Consumer Cyclical",
+      "current_price": 72.54,
+      "intrinsic_value": -72.94,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "GPC",
+      "company_name": "Genuine Parts Company",
+      "sector": "Consumer Cyclical",
+      "current_price": 103.47,
+      "intrinsic_value": 34.85,
+      "discount_pct": -196.9,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "GILD",
+      "company_name": "Gilead Sciences, Inc.",
+      "sector": "Healthcare",
+      "current_price": 139.71,
+      "intrinsic_value": 166.47,
+      "discount_pct": 16.07,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "GPN",
+      "company_name": "Global Payments Inc.",
+      "sector": "Industrials",
+      "current_price": 64.05,
+      "intrinsic_value": 202.04,
+      "discount_pct": 68.3,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GL",
+      "company_name": "Globe Life Inc.",
+      "sector": "Financial Services",
+      "current_price": 142.6,
+      "intrinsic_value": 566.57,
+      "discount_pct": 74.83,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GDDY",
+      "company_name": "GoDaddy Inc.",
+      "sector": "Technology",
+      "current_price": 81.67,
+      "intrinsic_value": 409.78,
+      "discount_pct": 80.07,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GS",
+      "company_name": "The Goldman Sachs Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 863.04,
+      "intrinsic_value": -4029.31,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "HAL",
+      "company_name": "Halliburton Company",
+      "sector": "Energy",
+      "current_price": 38.17,
+      "intrinsic_value": 39.98,
+      "discount_pct": 4.53,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "HIG",
+      "company_name": "The Hartford Insurance Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 136.19,
+      "intrinsic_value": 442.96,
+      "discount_pct": 69.25,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HAS",
+      "company_name": "Hasbro, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 90.16,
+      "intrinsic_value": 83.17,
+      "discount_pct": -8.4,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "HCA",
+      "company_name": "HCA Healthcare, Inc.",
+      "sector": "Healthcare",
+      "current_price": 471.84,
+      "intrinsic_value": 447.48,
+      "discount_pct": -5.44,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "DOC",
+      "company_name": "Healthpeak Properties, Inc.",
+      "sector": "Real Estate",
+      "current_price": 16.52,
+      "intrinsic_value": 232.93,
+      "discount_pct": 92.91,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HSIC",
+      "company_name": "Henry Schein, Inc.",
+      "sector": "Healthcare",
+      "current_price": 73.94,
+      "intrinsic_value": 76.33,
+      "discount_pct": 3.13,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "HSY",
+      "company_name": "The Hershey Company",
+      "sector": "Consumer Defensive",
+      "current_price": 206.19,
+      "intrinsic_value": 449.83,
+      "discount_pct": 54.16,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HPE",
+      "company_name": "Hewlett Packard Enterprise Company",
+      "sector": "Technology",
+      "current_price": 24.61,
+      "intrinsic_value": 1.04,
+      "discount_pct": -2266.35,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HLT",
+      "company_name": "Hilton Worldwide Holdings Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 304.95,
+      "intrinsic_value": 193.3,
+      "discount_pct": -57.76,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HOLX",
+      "company_name": "Hologic, Inc.",
+      "sector": "Healthcare",
+      "current_price": 75.65,
+      "intrinsic_value": 78.86,
+      "discount_pct": 4.07,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "HD",
+      "company_name": "The Home Depot, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 321.63,
+      "intrinsic_value": 231.66,
+      "discount_pct": -38.84,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HON",
+      "company_name": "Honeywell International Inc.",
+      "sector": "Industrials",
+      "current_price": 229.45,
+      "intrinsic_value": 174.81,
+      "discount_pct": -31.26,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HRL",
+      "company_name": "Hormel Foods Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 22.09,
+      "intrinsic_value": 15.88,
+      "discount_pct": -39.11,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HST",
+      "company_name": "Host Hotels & Resorts, Inc.",
+      "sector": "Real Estate",
+      "current_price": 19.14,
+      "intrinsic_value": 10.98,
+      "discount_pct": -74.32,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HWM",
+      "company_name": "Howmet Aerospace Inc.",
+      "sector": "Industrials",
+      "current_price": 232.68,
+      "intrinsic_value": 149.8,
+      "discount_pct": -55.33,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HPQ",
+      "company_name": "HP Inc.",
+      "sector": "Technology",
+      "current_price": 19.51,
+      "intrinsic_value": 48.38,
+      "discount_pct": 59.67,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HUBB",
+      "company_name": "Hubbell Incorporated",
+      "sector": "Industrials",
+      "current_price": 494.25,
+      "intrinsic_value": 354.34,
+      "discount_pct": -39.48,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "HUM",
+      "company_name": "Humana Inc.",
+      "sector": "Healthcare",
+      "current_price": 177.83,
+      "intrinsic_value": 309.78,
+      "discount_pct": 42.59,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HBAN",
+      "company_name": "Huntington Bancshares Incorporated",
+      "sector": "Financial Services",
+      "current_price": 15.79,
+      "intrinsic_value": 33.4,
+      "discount_pct": 52.72,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "HII",
+      "company_name": "Huntington Ingalls Industries, Inc.",
+      "sector": "Industrials",
+      "current_price": 396.62,
+      "intrinsic_value": 588.12,
+      "discount_pct": 32.56,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "IBM",
+      "company_name": "International Business Machines Corporation",
+      "sector": "Technology",
+      "current_price": 248.16,
+      "intrinsic_value": 249.35,
+      "discount_pct": 0.48,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "IEX",
+      "company_name": "IDEX Corporation",
+      "sector": "Industrials",
+      "current_price": 190.47,
+      "intrinsic_value": 155.91,
+      "discount_pct": -22.17,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "IDXX",
+      "company_name": "IDEXX Laboratories, Inc.",
+      "sector": "Healthcare",
+      "current_price": 569.55,
+      "intrinsic_value": 301.27,
+      "discount_pct": -89.05,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ITW",
+      "company_name": "Illinois Tool Works Inc.",
+      "sector": "Industrials",
+      "current_price": 258.21,
+      "intrinsic_value": 164.34,
+      "discount_pct": -57.12,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "INCY",
+      "company_name": "Incyte Corporation",
+      "sector": "Healthcare",
+      "current_price": 95.93,
+      "intrinsic_value": 202.75,
+      "discount_pct": 52.69,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "IR",
+      "company_name": "Ingersoll Rand Inc.",
+      "sector": "Industrials",
+      "current_price": 77.91,
+      "intrinsic_value": 45.72,
+      "discount_pct": -70.41,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PODD",
+      "company_name": "Insulet Corporation",
+      "sector": "Healthcare",
+      "current_price": 204.31,
+      "intrinsic_value": 238.46,
+      "discount_pct": 14.32,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "INTC",
+      "company_name": "Intel Corporation",
+      "sector": "Technology",
+      "current_price": 50.38,
+      "intrinsic_value": -128.48,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "IBKR",
+      "company_name": "Interactive Brokers Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 67.74,
+      "intrinsic_value": 849.53,
+      "discount_pct": 92.03,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ICE",
+      "company_name": "Intercontinental Exchange, Inc.",
+      "sector": "Financial Services",
+      "current_price": 162.98,
+      "intrinsic_value": 162.84,
+      "discount_pct": -0.09,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "IFF",
+      "company_name": "International Flavors & Fragrances Inc.",
+      "sector": "Basic Materials",
+      "current_price": 72.43,
+      "intrinsic_value": -1.95,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "IP",
+      "company_name": "International Paper Company",
+      "sector": "Consumer Cyclical",
+      "current_price": 34.79,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "INTU",
+      "company_name": "Intuit Inc.",
+      "sector": "Technology",
+      "current_price": 422.48,
+      "intrinsic_value": 567.63,
+      "discount_pct": 25.57,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ISRG",
+      "company_name": "Intuitive Surgical, Inc.",
+      "sector": "Healthcare",
+      "current_price": 452.07,
+      "intrinsic_value": NaN,
+      "discount_pct": NaN,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "IVZ",
+      "company_name": "Invesco Ltd.",
+      "sector": "Financial Services",
+      "current_price": 24.14,
+      "intrinsic_value": 74.65,
+      "discount_pct": 67.66,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "INVH",
+      "company_name": "Invitation Homes Inc.",
+      "sector": "Real Estate",
+      "current_price": 25.55,
+      "intrinsic_value": 3.56,
+      "discount_pct": -617.7,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "IQV",
+      "company_name": "IQVIA Holdings Inc.",
+      "sector": "Healthcare",
+      "current_price": 173.26,
+      "intrinsic_value": 155.68,
+      "discount_pct": -11.29,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "IRM",
+      "company_name": "Iron Mountain Incorporated",
+      "sector": "Real Estate",
+      "current_price": 103.3,
+      "intrinsic_value": -132.74,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "JBHT",
+      "company_name": "J.B. Hunt Transport Services, Inc.",
+      "sector": "Industrials",
+      "current_price": 214.91,
+      "intrinsic_value": 286.39,
+      "discount_pct": 24.96,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "JBL",
+      "company_name": "Jabil Inc.",
+      "sector": "Technology",
+      "current_price": 268.55,
+      "intrinsic_value": 387.14,
+      "discount_pct": 30.63,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "JKHY",
+      "company_name": "Jack Henry & Associates, Inc.",
+      "sector": "Technology",
+      "current_price": 157.48,
+      "intrinsic_value": 202.79,
+      "discount_pct": 22.34,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "J",
+      "company_name": "Jacobs Solutions Inc.",
+      "sector": "Industrials",
+      "current_price": 128.02,
+      "intrinsic_value": 143.87,
+      "discount_pct": 11.02,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "JNJ",
+      "company_name": "Johnson & Johnson",
+      "sector": "Healthcare",
+      "current_price": 243.04,
+      "intrinsic_value": 209.1,
+      "discount_pct": -16.23,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "JCI",
+      "company_name": "Johnson Controls International plc",
+      "sector": "Industrials",
+      "current_price": 132.97,
+      "intrinsic_value": 68.6,
+      "discount_pct": -93.83,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "JPM",
+      "company_name": "JPMorgan Chase & Co.",
+      "sector": "Financial Services",
+      "current_price": 294.6,
+      "intrinsic_value": -1140.07,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "KVUE",
+      "company_name": "Kenvue Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 17.14,
+      "intrinsic_value": 18.43,
+      "discount_pct": 7.0,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "KDP",
+      "company_name": "Keurig Dr Pepper Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 25.31,
+      "intrinsic_value": 20.73,
+      "discount_pct": -22.09,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "KEY",
+      "company_name": "KeyCorp",
+      "sector": "Financial Services",
+      "current_price": 20.47,
+      "intrinsic_value": 52.76,
+      "discount_pct": 61.2,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "KEYS",
+      "company_name": "Keysight Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 291.24,
+      "intrinsic_value": 215.28,
+      "discount_pct": -35.28,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "KMB",
+      "company_name": "Kimberly-Clark Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 96.13,
+      "intrinsic_value": 112.69,
+      "discount_pct": 14.7,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "KIM",
+      "company_name": "Kimco Realty Corporation",
+      "sector": "Real Estate",
+      "current_price": 22.6,
+      "intrinsic_value": 11.96,
+      "discount_pct": -88.96,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "KMI",
+      "company_name": "Kinder Morgan, Inc.",
+      "sector": "Energy",
+      "current_price": 32.97,
+      "intrinsic_value": 11.29,
+      "discount_pct": -192.03,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "KKR",
+      "company_name": "KKR & Co. Inc.",
+      "sector": "Financial Services",
+      "current_price": 91.23,
+      "intrinsic_value": 107.35,
+      "discount_pct": 15.02,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "KLAC",
+      "company_name": "KLA Corporation",
+      "sector": "Technology",
+      "current_price": 1516.84,
+      "intrinsic_value": 1035.62,
+      "discount_pct": -46.47,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "KHC",
+      "company_name": "The Kraft Heinz Company",
+      "sector": "Consumer Defensive",
+      "current_price": 22.79,
+      "intrinsic_value": 15.06,
+      "discount_pct": -51.33,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "KR",
+      "company_name": "The Kroger Co.",
+      "sector": "Consumer Defensive",
+      "current_price": 72.35,
+      "intrinsic_value": 95.42,
+      "discount_pct": 24.18,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "LHX",
+      "company_name": "L3Harris Technologies, Inc.",
+      "sector": "Industrials",
+      "current_price": 356.0,
+      "intrinsic_value": 353.43,
+      "discount_pct": -0.73,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "LH",
+      "company_name": "Labcorp Holdings Inc.",
+      "sector": "Healthcare",
+      "current_price": 273.72,
+      "intrinsic_value": 236.69,
+      "discount_pct": -15.64,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "LRCX",
+      "company_name": "Lam Research Corporation",
+      "sector": "Technology",
+      "current_price": 218.44,
+      "intrinsic_value": 230.03,
+      "discount_pct": 5.04,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "LVS",
+      "company_name": "Las Vegas Sands Corp.",
+      "sector": "Consumer Cyclical",
+      "current_price": 54.34,
+      "intrinsic_value": 45.95,
+      "discount_pct": -18.26,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "LDOS",
+      "company_name": "Leidos Holdings, Inc.",
+      "sector": "Technology",
+      "current_price": 158.82,
+      "intrinsic_value": 211.58,
+      "discount_pct": 24.94,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "LEN",
+      "company_name": "Lennar Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 86.49,
+      "intrinsic_value": 5.64,
+      "discount_pct": -1433.51,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "LII",
+      "company_name": "Lennox International Inc.",
+      "sector": "Industrials",
+      "current_price": 454.64,
+      "intrinsic_value": 354.06,
+      "discount_pct": -28.41,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "LLY",
+      "company_name": "Eli Lilly and Company",
+      "sector": "Healthcare",
+      "current_price": 935.58,
+      "intrinsic_value": 1083.14,
+      "discount_pct": 13.62,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "LIN",
+      "company_name": "Linde plc",
+      "sector": "Basic Materials",
+      "current_price": 502.6,
+      "intrinsic_value": 459.99,
+      "discount_pct": -9.26,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "LYV",
+      "company_name": "Live Nation Entertainment, Inc.",
+      "sector": "Communication Services",
+      "current_price": 155.75,
+      "intrinsic_value": 4.67,
+      "discount_pct": -3235.12,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "LMT",
+      "company_name": "Lockheed Martin Corporation",
+      "sector": "Industrials",
+      "current_price": 622.79,
+      "intrinsic_value": 927.5,
+      "discount_pct": 32.85,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "L",
+      "company_name": "Loews Corporation",
+      "sector": "Financial Services",
+      "current_price": 107.69,
+      "intrinsic_value": 164.07,
+      "discount_pct": 34.36,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "LOW",
+      "company_name": "Lowe's Companies, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 231.03,
+      "intrinsic_value": 255.2,
+      "discount_pct": 9.47,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "LULU",
+      "company_name": "lululemon athletica inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 155.72,
+      "intrinsic_value": 211.77,
+      "discount_pct": 26.47,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "LITE",
+      "company_name": "Lumentum Holdings Inc.",
+      "sector": "Technology",
+      "current_price": 826.88,
+      "intrinsic_value": 7642.87,
+      "discount_pct": 89.18,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "LYB",
+      "company_name": "LyondellBasell Industries N.V.",
+      "sector": "Basic Materials",
+      "current_price": 79.6,
+      "intrinsic_value": 184.34,
+      "discount_pct": 56.82,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MTB",
+      "company_name": "M&T Bank Corporation",
+      "sector": "Financial Services",
+      "current_price": 210.16,
+      "intrinsic_value": 552.42,
+      "discount_pct": 61.96,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MPC",
+      "company_name": "Marathon Petroleum Corporation",
+      "sector": "Energy",
+      "current_price": 241.73,
+      "intrinsic_value": 727.07,
+      "discount_pct": 66.75,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MAR",
+      "company_name": "Marriott International, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 331.93,
+      "intrinsic_value": 235.48,
+      "discount_pct": -40.96,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MRSH",
+      "company_name": "Marsh & McLennan Companies, Inc.",
+      "sector": "Financial Services",
+      "current_price": 174.61,
+      "intrinsic_value": 197.11,
+      "discount_pct": 11.41,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "MLM",
+      "company_name": "Martin Marietta Materials, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 597.18,
+      "intrinsic_value": 473.65,
+      "discount_pct": -26.08,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "MAS",
+      "company_name": "Masco Corporation",
+      "sector": "Industrials",
+      "current_price": 59.12,
+      "intrinsic_value": 80.57,
+      "discount_pct": 26.62,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "MA",
+      "company_name": "Mastercard Incorporated",
+      "sector": "Financial Services",
+      "current_price": 493.44,
+      "intrinsic_value": 641.87,
+      "discount_pct": 23.12,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "MKC",
+      "company_name": "McCormick & Company, Incorporated",
+      "sector": "Consumer Defensive",
+      "current_price": 48.85,
+      "intrinsic_value": 51.24,
+      "discount_pct": 4.66,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "MCD",
+      "company_name": "McDonald's Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 307.14,
+      "intrinsic_value": 262.23,
+      "discount_pct": -17.13,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "MCK",
+      "company_name": "McKesson Corporation",
+      "sector": "Healthcare",
+      "current_price": 884.28,
+      "intrinsic_value": 1296.05,
+      "discount_pct": 31.77,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MDT",
+      "company_name": "Medtronic plc",
+      "sector": "Healthcare",
+      "current_price": 86.63,
+      "intrinsic_value": 60.66,
+      "discount_pct": -42.81,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MRK",
+      "company_name": "Merck & Co., Inc.",
+      "sector": "Healthcare",
+      "current_price": 120.87,
+      "intrinsic_value": 113.03,
+      "discount_pct": -6.94,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "sector": "Communication Services",
+      "current_price": 574.46,
+      "intrinsic_value": 711.88,
+      "discount_pct": 19.3,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "MET",
+      "company_name": "MetLife, Inc.",
+      "sector": "Financial Services",
+      "current_price": 70.72,
+      "intrinsic_value": 835.05,
+      "discount_pct": 91.53,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MTD",
+      "company_name": "Mettler-Toledo International Inc.",
+      "sector": "Healthcare",
+      "current_price": 1259.94,
+      "intrinsic_value": 803.18,
+      "discount_pct": -56.87,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MGM",
+      "company_name": "MGM Resorts International",
+      "sector": "Consumer Cyclical",
+      "current_price": 36.68,
+      "intrinsic_value": 39.92,
+      "discount_pct": 8.12,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "MCHP",
+      "company_name": "Microchip Technology Incorporated",
+      "sector": "Technology",
+      "current_price": 65.6,
+      "intrinsic_value": 131.1,
+      "discount_pct": 49.96,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MU",
+      "company_name": "Micron Technology, Inc.",
+      "sector": "Technology",
+      "current_price": 366.24,
+      "intrinsic_value": 50101.49,
+      "discount_pct": 99.27,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corporation",
+      "sector": "Technology",
+      "current_price": 373.46,
+      "intrinsic_value": 729.53,
+      "discount_pct": 48.81,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "MAA",
+      "company_name": "Mid-America Apartment Communities, Inc.",
+      "sector": "Real Estate",
+      "current_price": 124.88,
+      "intrinsic_value": 48.5,
+      "discount_pct": -157.48,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MRNA",
+      "company_name": "Moderna, Inc.",
+      "sector": "Healthcare",
+      "current_price": 49.2,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "TAP",
+      "company_name": "Molson Coors Beverage Company",
+      "sector": "Consumer Defensive",
+      "current_price": 44.04,
+      "intrinsic_value": 49.43,
+      "discount_pct": 10.9,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "MDLZ",
+      "company_name": "Mondelez International, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 57.54,
+      "intrinsic_value": 36.41,
+      "discount_pct": -58.03,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MPWR",
+      "company_name": "Monolithic Power Systems, Inc.",
+      "sector": "Technology",
+      "current_price": 1118.49,
+      "intrinsic_value": 574.88,
+      "discount_pct": -94.56,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MNST",
+      "company_name": "Monster Beverage Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 72.37,
+      "intrinsic_value": NaN,
+      "discount_pct": NaN,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MCO",
+      "company_name": "Moody's Corporation",
+      "sector": "Financial Services",
+      "current_price": 440.79,
+      "intrinsic_value": 320.36,
+      "discount_pct": -37.59,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MS",
+      "company_name": "Morgan Stanley",
+      "sector": "Financial Services",
+      "current_price": 165.81,
+      "intrinsic_value": -405.2,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "MOS",
+      "company_name": "The Mosaic Company",
+      "sector": "Basic Materials",
+      "current_price": 26.17,
+      "intrinsic_value": 13.72,
+      "discount_pct": -90.74,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MSI",
+      "company_name": "Motorola Solutions, Inc.",
+      "sector": "Technology",
+      "current_price": 438.96,
+      "intrinsic_value": 307.94,
+      "discount_pct": -42.55,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "MSCI",
+      "company_name": "MSCI Inc.",
+      "sector": "Financial Services",
+      "current_price": 544.78,
+      "intrinsic_value": 428.71,
+      "discount_pct": -27.07,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "NDAQ",
+      "company_name": "Nasdaq, Inc.",
+      "sector": "Financial Services",
+      "current_price": 86.65,
+      "intrinsic_value": 94.13,
+      "discount_pct": 7.95,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "NTAP",
+      "company_name": "NetApp, Inc.",
+      "sector": "Technology",
+      "current_price": 103.35,
+      "intrinsic_value": 173.42,
+      "discount_pct": 40.4,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NFLX",
+      "company_name": "Netflix, Inc.",
+      "sector": "Communication Services",
+      "current_price": 98.66,
+      "intrinsic_value": 78.45,
+      "discount_pct": -25.76,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "NEM",
+      "company_name": "Newmont Corporation",
+      "sector": "Basic Materials",
+      "current_price": 114.05,
+      "intrinsic_value": 359.96,
+      "discount_pct": 68.32,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NWSA",
+      "company_name": "News Corporation",
+      "sector": "Communication Services",
+      "current_price": 24.4,
+      "intrinsic_value": 49.8,
+      "discount_pct": 51.0,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NWS",
+      "company_name": "News Corporation",
+      "sector": "Communication Services",
+      "current_price": 28.11,
+      "intrinsic_value": 99.56,
+      "discount_pct": 71.77,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NEE",
+      "company_name": "NextEra Energy, Inc.",
+      "sector": "Utilities",
+      "current_price": 93.15,
+      "intrinsic_value": -10.96,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "NKE",
+      "company_name": "NIKE, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 44.19,
+      "intrinsic_value": 37.22,
+      "discount_pct": -18.73,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "NI",
+      "company_name": "NiSource Inc.",
+      "sector": "Utilities",
+      "current_price": 47.49,
+      "intrinsic_value": -69.73,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "NDSN",
+      "company_name": "Nordson Corporation",
+      "sector": "Industrials",
+      "current_price": 263.1,
+      "intrinsic_value": 225.94,
+      "discount_pct": -16.45,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "NSC",
+      "company_name": "Norfolk Southern Corporation",
+      "sector": "Industrials",
+      "current_price": 288.0,
+      "intrinsic_value": 80.36,
+      "discount_pct": -258.39,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "NTRS",
+      "company_name": "Northern Trust Corporation",
+      "sector": "Financial Services",
+      "current_price": 142.25,
+      "intrinsic_value": 825.34,
+      "discount_pct": 82.76,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NOC",
+      "company_name": "Northrop Grumman Corporation",
+      "sector": "Industrials",
+      "current_price": 702.5,
+      "intrinsic_value": 601.98,
+      "discount_pct": -16.7,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "NCLH",
+      "company_name": "Norwegian Cruise Line Holdings Ltd.",
+      "sector": "Consumer Cyclical",
+      "current_price": 18.93,
+      "intrinsic_value": -84.13,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "NRG",
+      "company_name": "NRG Energy, Inc.",
+      "sector": "Utilities",
+      "current_price": 152.69,
+      "intrinsic_value": 52.36,
+      "discount_pct": -191.62,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "NUE",
+      "company_name": "Nucor Corporation",
+      "sector": "Basic Materials",
+      "current_price": 172.46,
+      "intrinsic_value": -47.37,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corporation",
+      "sector": "Technology",
+      "current_price": 177.39,
+      "intrinsic_value": 348.14,
+      "discount_pct": 49.05,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "NVR",
+      "company_name": "NVR, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 6663.14,
+      "intrinsic_value": 7620.66,
+      "discount_pct": 12.56,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "NXPI",
+      "company_name": "NXP Semiconductors N.V.",
+      "sector": "Technology",
+      "current_price": 194.55,
+      "intrinsic_value": 292.86,
+      "discount_pct": 33.57,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ORLY",
+      "company_name": "O'Reilly Automotive, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 91.42,
+      "intrinsic_value": 69.44,
+      "discount_pct": -31.65,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "OXY",
+      "company_name": "Occidental Petroleum Corporation",
+      "sector": "Energy",
+      "current_price": 62.97,
+      "intrinsic_value": 94.86,
+      "discount_pct": 33.62,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ODFL",
+      "company_name": "Old Dominion Freight Line, Inc.",
+      "sector": "Industrials",
+      "current_price": 198.0,
+      "intrinsic_value": 152.41,
+      "discount_pct": -29.91,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "OMC",
+      "company_name": "Omnicom Group Inc.",
+      "sector": "Communication Services",
+      "current_price": 74.81,
+      "intrinsic_value": 358.27,
+      "discount_pct": 79.12,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "ON",
+      "company_name": "ON Semiconductor Corporation",
+      "sector": "Technology",
+      "current_price": 62.19,
+      "intrinsic_value": 196.15,
+      "discount_pct": 68.29,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "OKE",
+      "company_name": "ONEOK, Inc.",
+      "sector": "Energy",
+      "current_price": 88.3,
+      "intrinsic_value": 26.95,
+      "discount_pct": -227.64,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ORCL",
+      "company_name": "Oracle Corporation",
+      "sector": "Technology",
+      "current_price": 146.38,
+      "intrinsic_value": 237.05,
+      "discount_pct": 38.25,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "OTIS",
+      "company_name": "Otis Worldwide Corporation",
+      "sector": "Industrials",
+      "current_price": 77.86,
+      "intrinsic_value": 68.0,
+      "discount_pct": -14.5,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "PCAR",
+      "company_name": "PACCAR Inc",
+      "sector": "Industrials",
+      "current_price": 118.32,
+      "intrinsic_value": 135.28,
+      "discount_pct": 12.54,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "PKG",
+      "company_name": "Packaging Corporation of America",
+      "sector": "Consumer Cyclical",
+      "current_price": 204.46,
+      "intrinsic_value": 154.36,
+      "discount_pct": -32.46,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PLTR",
+      "company_name": "Palantir Technologies Inc.",
+      "sector": "Technology",
+      "current_price": 148.46,
+      "intrinsic_value": 148.54,
+      "discount_pct": 0.05,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "PANW",
+      "company_name": "Palo Alto Networks, Inc.",
+      "sector": "Technology",
+      "current_price": 163.21,
+      "intrinsic_value": 114.67,
+      "discount_pct": -42.33,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PSKY",
+      "company_name": "Paramount Skydance Corporation",
+      "sector": "Communication Services",
+      "current_price": 9.52,
+      "intrinsic_value": 36.34,
+      "discount_pct": 73.8,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PH",
+      "company_name": "Parker-Hannifin Corporation",
+      "sector": "Industrials",
+      "current_price": 908.06,
+      "intrinsic_value": 544.57,
+      "discount_pct": -66.75,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PAYX",
+      "company_name": "Paychex, Inc.",
+      "sector": "Technology",
+      "current_price": 91.7,
+      "intrinsic_value": 129.03,
+      "discount_pct": 28.93,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "PYPL",
+      "company_name": "PayPal Holdings, Inc.",
+      "sector": "Financial Services",
+      "current_price": 45.34,
+      "intrinsic_value": 109.61,
+      "discount_pct": 58.64,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PNR",
+      "company_name": "Pentair plc",
+      "sector": "Industrials",
+      "current_price": 85.82,
+      "intrinsic_value": 86.45,
+      "discount_pct": 0.73,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "PEP",
+      "company_name": "PepsiCo, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 157.01,
+      "intrinsic_value": 143.08,
+      "discount_pct": -9.74,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "PFE",
+      "company_name": "Pfizer Inc.",
+      "sector": "Healthcare",
+      "current_price": 28.32,
+      "intrinsic_value": 4.04,
+      "discount_pct": -600.99,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PCG",
+      "company_name": "PG&E Corporation",
+      "sector": "Utilities",
+      "current_price": 17.77,
+      "intrinsic_value": -59.6,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "PM",
+      "company_name": "Philip Morris International Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 158.1,
+      "intrinsic_value": 157.94,
+      "discount_pct": -0.1,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "PSX",
+      "company_name": "Phillips 66",
+      "sector": "Energy",
+      "current_price": 176.21,
+      "intrinsic_value": 741.55,
+      "discount_pct": 76.24,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PNW",
+      "company_name": "Pinnacle West Capital Corporation",
+      "sector": "Utilities",
+      "current_price": 102.7,
+      "intrinsic_value": -218.85,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "PNC",
+      "company_name": "The PNC Financial Services Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 211.7,
+      "intrinsic_value": 209.42,
+      "discount_pct": -1.09,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "POOL",
+      "company_name": "Pool Corporation",
+      "sector": "Industrials",
+      "current_price": 202.93,
+      "intrinsic_value": 141.6,
+      "discount_pct": -43.31,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PPG",
+      "company_name": "PPG Industries, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 103.24,
+      "intrinsic_value": 135.87,
+      "discount_pct": 24.02,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "PPL",
+      "company_name": "PPL Corporation",
+      "sector": "Utilities",
+      "current_price": 38.64,
+      "intrinsic_value": -63.89,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "PFG",
+      "company_name": "Principal Financial Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 90.1,
+      "intrinsic_value": 624.58,
+      "discount_pct": 85.57,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PG",
+      "company_name": "The Procter & Gamble Company",
+      "sector": "Consumer Defensive",
+      "current_price": 143.12,
+      "intrinsic_value": 130.43,
+      "discount_pct": -9.73,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "PGR",
+      "company_name": "The Progressive Corporation",
+      "sector": "Financial Services",
+      "current_price": 195.25,
+      "intrinsic_value": 330.75,
+      "discount_pct": 40.97,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PLD",
+      "company_name": "Prologis, Inc.",
+      "sector": "Real Estate",
+      "current_price": 133.77,
+      "intrinsic_value": 34.67,
+      "discount_pct": -285.84,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "PRU",
+      "company_name": "Prudential Financial, Inc.",
+      "sector": "Financial Services",
+      "current_price": 97.58,
+      "intrinsic_value": 434.35,
+      "discount_pct": 77.53,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "PEG",
+      "company_name": "Public Service Enterprise Group Incorporated",
+      "sector": "Utilities",
+      "current_price": 81.82,
+      "intrinsic_value": -46.94,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "PTC",
+      "company_name": "PTC Inc.",
+      "sector": "Technology",
+      "current_price": 142.65,
+      "intrinsic_value": 118.99,
+      "discount_pct": -19.88,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "PSA",
+      "company_name": "Public Storage",
+      "sector": "Real Estate",
+      "current_price": 280.35,
+      "intrinsic_value": 222.48,
+      "discount_pct": -26.01,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "PHM",
+      "company_name": "PulteGroup, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 117.29,
+      "intrinsic_value": 157.1,
+      "discount_pct": 25.34,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "PWR",
+      "company_name": "Quanta Services, Inc.",
+      "sector": "Industrials",
+      "current_price": 560.63,
+      "intrinsic_value": 350.2,
+      "discount_pct": -60.09,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "QCOM",
+      "company_name": "QUALCOMM Incorporated",
+      "sector": "Technology",
+      "current_price": 126.8,
+      "intrinsic_value": 139.02,
+      "discount_pct": 8.79,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "DGX",
+      "company_name": "Quest Diagnostics Incorporated",
+      "sector": "Healthcare",
+      "current_price": 198.02,
+      "intrinsic_value": 215.62,
+      "discount_pct": 8.16,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "Q",
+      "company_name": "Qnity Electronics, Inc.",
+      "sector": "Technology",
+      "current_price": 116.53,
+      "intrinsic_value": 99.84,
+      "discount_pct": -16.72,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "RL",
+      "company_name": "Ralph Lauren Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 348.02,
+      "intrinsic_value": 828.38,
+      "discount_pct": 57.99,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "RJF",
+      "company_name": "Raymond James Financial, Inc.",
+      "sector": "Financial Services",
+      "current_price": 142.2,
+      "intrinsic_value": 246.09,
+      "discount_pct": 42.22,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "RTX",
+      "company_name": "RTX Corporation",
+      "sector": "Industrials",
+      "current_price": 196.21,
+      "intrinsic_value": 162.82,
+      "discount_pct": -20.51,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "O",
+      "company_name": "Realty Income Corporation",
+      "sector": "Real Estate",
+      "current_price": 62.21,
+      "intrinsic_value": 119.28,
+      "discount_pct": 47.85,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "REG",
+      "company_name": "Regency Centers Corporation",
+      "sector": "Real Estate",
+      "current_price": 76.98,
+      "intrinsic_value": 30.08,
+      "discount_pct": -155.92,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "REGN",
+      "company_name": "Regeneron Pharmaceuticals, Inc.",
+      "sector": "Healthcare",
+      "current_price": 761.85,
+      "intrinsic_value": 1278.12,
+      "discount_pct": 40.39,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "RF",
+      "company_name": "Regions Financial Corporation",
+      "sector": "Financial Services",
+      "current_price": 26.47,
+      "intrinsic_value": 65.64,
+      "discount_pct": 59.67,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "RSG",
+      "company_name": "Republic Services, Inc.",
+      "sector": "Industrials",
+      "current_price": 223.19,
+      "intrinsic_value": 123.69,
+      "discount_pct": -80.44,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "RMD",
+      "company_name": "ResMed Inc.",
+      "sector": "Healthcare",
+      "current_price": 224.09,
+      "intrinsic_value": 329.75,
+      "discount_pct": 32.04,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "RVTY",
+      "company_name": "Revvity, Inc.",
+      "sector": "Healthcare",
+      "current_price": 88.94,
+      "intrinsic_value": 70.26,
+      "discount_pct": -26.59,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "HOOD",
+      "company_name": "Robinhood Markets, Inc.",
+      "sector": "Financial Services",
+      "current_price": 68.9,
+      "intrinsic_value": 58.46,
+      "discount_pct": -17.86,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "ROK",
+      "company_name": "Rockwell Automation, Inc.",
+      "sector": "Industrials",
+      "current_price": 365.02,
+      "intrinsic_value": 232.41,
+      "discount_pct": -57.06,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ROL",
+      "company_name": "Rollins, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 53.93,
+      "intrinsic_value": 35.54,
+      "discount_pct": -51.74,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "ROP",
+      "company_name": "Roper Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 357.88,
+      "intrinsic_value": 414.23,
+      "discount_pct": 13.6,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ROST",
+      "company_name": "Ross Stores, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 219.98,
+      "intrinsic_value": 214.08,
+      "discount_pct": -2.76,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "RCL",
+      "company_name": "Royal Caribbean Cruises Ltd.",
+      "sector": "Consumer Cyclical",
+      "current_price": 273.59,
+      "intrinsic_value": 30.43,
+      "discount_pct": -799.08,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SPGI",
+      "company_name": "S&P Global Inc.",
+      "sector": "Financial Services",
+      "current_price": 431.16,
+      "intrinsic_value": 403.23,
+      "discount_pct": -6.93,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "CRM",
+      "company_name": "Salesforce, Inc.",
+      "sector": "Technology",
+      "current_price": 187.18,
+      "intrinsic_value": 341.55,
+      "discount_pct": 45.2,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SNDK",
+      "company_name": "Sandisk Corporation",
+      "sector": "Technology",
+      "current_price": 701.59,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "SBAC",
+      "company_name": "SBA Communications Corporation",
+      "sector": "Real Estate",
+      "current_price": 204.04,
+      "intrinsic_value": 27.58,
+      "discount_pct": -639.81,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SLB",
+      "company_name": "SLB N.V.",
+      "sector": "Energy",
+      "current_price": 49.44,
+      "intrinsic_value": 60.59,
+      "discount_pct": 18.4,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "STX",
+      "company_name": "Seagate Technology Holdings plc",
+      "sector": "Technology",
+      "current_price": 429.36,
+      "intrinsic_value": 1075.77,
+      "discount_pct": 60.09,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SRE",
+      "company_name": "Sempra",
+      "sector": "Utilities",
+      "current_price": 99.2,
+      "intrinsic_value": -255.01,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "NOW",
+      "company_name": "ServiceNow, Inc.",
+      "sector": "Technology",
+      "current_price": 102.0,
+      "intrinsic_value": 176.68,
+      "discount_pct": 42.27,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SHW",
+      "company_name": "The Sherwin-Williams Company",
+      "sector": "Basic Materials",
+      "current_price": 318.0,
+      "intrinsic_value": 239.99,
+      "discount_pct": -32.51,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SPG",
+      "company_name": "Simon Property Group, Inc.",
+      "sector": "Real Estate",
+      "current_price": 188.67,
+      "intrinsic_value": -40.39,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "SWKS",
+      "company_name": "Skyworks Solutions, Inc.",
+      "sector": "Technology",
+      "current_price": 55.19,
+      "intrinsic_value": 83.32,
+      "discount_pct": 33.76,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SJM",
+      "company_name": "The J. M. Smucker Company",
+      "sector": "Consumer Defensive",
+      "current_price": 95.47,
+      "intrinsic_value": 50.28,
+      "discount_pct": -89.88,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SW",
+      "company_name": "Smurfit Westrock Plc",
+      "sector": "Consumer Cyclical",
+      "current_price": 39.29,
+      "intrinsic_value": 68.09,
+      "discount_pct": 42.3,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SNA",
+      "company_name": "Snap-on Incorporated",
+      "sector": "Industrials",
+      "current_price": 365.58,
+      "intrinsic_value": 738.6,
+      "discount_pct": 50.5,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SOLV",
+      "company_name": "Solventum Corporation",
+      "sector": "Healthcare",
+      "current_price": 63.57,
+      "intrinsic_value": 21.3,
+      "discount_pct": -198.45,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SO",
+      "company_name": "The Southern Company",
+      "sector": "Utilities",
+      "current_price": 97.45,
+      "intrinsic_value": -117.66,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "LUV",
+      "company_name": "Southwest Airlines Co.",
+      "sector": "Industrials",
+      "current_price": 37.6,
+      "intrinsic_value": -1051.71,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "SWK",
+      "company_name": "Stanley Black & Decker, Inc.",
+      "sector": "Industrials",
+      "current_price": 68.64,
+      "intrinsic_value": 83.47,
+      "discount_pct": 17.77,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "SBUX",
+      "company_name": "Starbucks Corporation",
+      "sector": "Consumer Cyclical",
+      "current_price": 90.37,
+      "intrinsic_value": 67.92,
+      "discount_pct": -33.05,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "STT",
+      "company_name": "State Street Corporation",
+      "sector": "Financial Services",
+      "current_price": 128.8,
+      "intrinsic_value": 1262.62,
+      "discount_pct": 89.8,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "STLD",
+      "company_name": "Steel Dynamics, Inc.",
+      "sector": "Basic Materials",
+      "current_price": 180.2,
+      "intrinsic_value": 433.72,
+      "discount_pct": 58.45,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "STE",
+      "company_name": "STERIS plc",
+      "sector": "Healthcare",
+      "current_price": 218.71,
+      "intrinsic_value": 155.16,
+      "discount_pct": -40.96,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SYK",
+      "company_name": "Stryker Corporation",
+      "sector": "Healthcare",
+      "current_price": 331.54,
+      "intrinsic_value": 232.36,
+      "discount_pct": -42.68,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SMCI",
+      "company_name": "Super Micro Computer, Inc.",
+      "sector": "Technology",
+      "current_price": 23.22,
+      "intrinsic_value": 23.57,
+      "discount_pct": 1.48,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "SYF",
+      "company_name": "Synchrony Financial",
+      "sector": "Financial Services",
+      "current_price": 68.42,
+      "intrinsic_value": 486.54,
+      "discount_pct": 85.94,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "SNPS",
+      "company_name": "Synopsys, Inc.",
+      "sector": "Technology",
+      "current_price": 395.95,
+      "intrinsic_value": 162.67,
+      "discount_pct": -143.41,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "SYY",
+      "company_name": "Sysco Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 71.16,
+      "intrinsic_value": 80.41,
+      "discount_pct": 11.5,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TMUS",
+      "company_name": "T-Mobile US, Inc.",
+      "sector": "Communication Services",
+      "current_price": 201.4,
+      "intrinsic_value": 488.93,
+      "discount_pct": 58.81,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TROW",
+      "company_name": "T. Rowe Price Group, Inc.",
+      "sector": "Financial Services",
+      "current_price": 90.17,
+      "intrinsic_value": 101.11,
+      "discount_pct": 10.82,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TTWO",
+      "company_name": "Take-Two Interactive Software, Inc.",
+      "sector": "Communication Services",
+      "current_price": 199.87,
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "TPR",
+      "company_name": "Tapestry, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 141.2,
+      "intrinsic_value": 130.25,
+      "discount_pct": -8.41,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "TRGP",
+      "company_name": "Targa Resources Corp.",
+      "sector": "Energy",
+      "current_price": 244.39,
+      "intrinsic_value": 7.7,
+      "discount_pct": -3073.9,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TGT",
+      "company_name": "Target Corporation",
+      "sector": "Consumer Defensive",
+      "current_price": 120.45,
+      "intrinsic_value": 85.61,
+      "discount_pct": -40.7,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TEL",
+      "company_name": "TE Connectivity plc",
+      "sector": "Technology",
+      "current_price": 209.07,
+      "intrinsic_value": 283.34,
+      "discount_pct": 26.21,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TDY",
+      "company_name": "Teledyne Technologies Incorporated",
+      "sector": "Technology",
+      "current_price": 623.13,
+      "intrinsic_value": 473.16,
+      "discount_pct": -31.7,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TER",
+      "company_name": "Teradyne, Inc.",
+      "sector": "Technology",
+      "current_price": 309.61,
+      "intrinsic_value": 344.99,
+      "discount_pct": 10.26,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TSLA",
+      "company_name": "Tesla, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 360.59,
+      "intrinsic_value": 97.19,
+      "discount_pct": -271.02,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TXN",
+      "company_name": "Texas Instruments Incorporated",
+      "sector": "Technology",
+      "current_price": 194.87,
+      "intrinsic_value": 262.22,
+      "discount_pct": 25.68,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TPL",
+      "company_name": "Texas Pacific Land Corporation",
+      "sector": "Energy",
+      "current_price": 444.24,
+      "intrinsic_value": 158.91,
+      "discount_pct": -179.55,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TXT",
+      "company_name": "Textron Inc.",
+      "sector": "Industrials",
+      "current_price": 88.05,
+      "intrinsic_value": 155.64,
+      "discount_pct": 43.43,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TMO",
+      "company_name": "Thermo Fisher Scientific Inc.",
+      "sector": "Healthcare",
+      "current_price": 491.46,
+      "intrinsic_value": 363.15,
+      "discount_pct": -35.33,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TJX",
+      "company_name": "The TJX Companies, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 161.29,
+      "intrinsic_value": 146.05,
+      "discount_pct": -10.43,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "TKO",
+      "company_name": "TKO Group Holdings, Inc.",
+      "sector": "Communication Services",
+      "current_price": 203.76,
+      "intrinsic_value": 2310.66,
+      "discount_pct": 91.18,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TTD",
+      "company_name": "The Trade Desk, Inc.",
+      "sector": "Communication Services",
+      "current_price": 22.05,
+      "intrinsic_value": 70.75,
+      "discount_pct": 68.83,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TSCO",
+      "company_name": "Tractor Supply Company",
+      "sector": "Consumer Cyclical",
+      "current_price": 43.82,
+      "intrinsic_value": 66.0,
+      "discount_pct": 33.61,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TT",
+      "company_name": "Trane Technologies plc",
+      "sector": "Industrials",
+      "current_price": 427.07,
+      "intrinsic_value": 343.58,
+      "discount_pct": -24.3,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "TDG",
+      "company_name": "TransDigm Group Incorporated",
+      "sector": "Industrials",
+      "current_price": 1167.0,
+      "intrinsic_value": 452.04,
+      "discount_pct": -158.16,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TRV",
+      "company_name": "The Travelers Companies, Inc.",
+      "sector": "Financial Services",
+      "current_price": 293.99,
+      "intrinsic_value": 789.08,
+      "discount_pct": 62.74,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TRMB",
+      "company_name": "Trimble Inc.",
+      "sector": "Technology",
+      "current_price": 65.12,
+      "intrinsic_value": 37.14,
+      "discount_pct": -75.34,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "TFC",
+      "company_name": "Truist Financial Corporation",
+      "sector": "Financial Services",
+      "current_price": 47.16,
+      "intrinsic_value": 123.35,
+      "discount_pct": 61.77,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "TYL",
+      "company_name": "Tyler Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 338.03,
+      "intrinsic_value": 391.05,
+      "discount_pct": 13.56,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "TSN",
+      "company_name": "Tyson Foods, Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 64.63,
+      "intrinsic_value": 77.74,
+      "discount_pct": 16.86,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "USB",
+      "company_name": "U.S. Bancorp",
+      "sector": "Financial Services",
+      "current_price": 52.95,
+      "intrinsic_value": 100.01,
+      "discount_pct": 47.06,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "UBER",
+      "company_name": "Uber Technologies, Inc.",
+      "sector": "Technology",
+      "current_price": 71.84,
+      "intrinsic_value": 73.28,
+      "discount_pct": 1.97,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "UDR",
+      "company_name": "UDR, Inc.",
+      "sector": "Real Estate",
+      "current_price": 34.64,
+      "intrinsic_value": -9.98,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "ULTA",
+      "company_name": "Ulta Beauty, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 537.39,
+      "intrinsic_value": 746.87,
+      "discount_pct": 28.05,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "UNP",
+      "company_name": "Union Pacific Corporation",
+      "sector": "Industrials",
+      "current_price": 244.71,
+      "intrinsic_value": 269.74,
+      "discount_pct": 9.28,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "UAL",
+      "company_name": "United Airlines Holdings, Inc.",
+      "sector": "Industrials",
+      "current_price": 92.21,
+      "intrinsic_value": 187.94,
+      "discount_pct": 50.94,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "UPS",
+      "company_name": "United Parcel Service, Inc.",
+      "sector": "Industrials",
+      "current_price": 98.18,
+      "intrinsic_value": 88.54,
+      "discount_pct": -10.89,
+      "method": "fcf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "URI",
+      "company_name": "United Rentals, Inc.",
+      "sector": "Industrials",
+      "current_price": 732.09,
+      "intrinsic_value": 5.4,
+      "discount_pct": -13457.22,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "UNH",
+      "company_name": "UnitedHealth Group Incorporated",
+      "sector": "Healthcare",
+      "current_price": 277.26,
+      "intrinsic_value": 460.63,
+      "discount_pct": 39.81,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "UHS",
+      "company_name": "Universal Health Services, Inc.",
+      "sector": "Healthcare",
+      "current_price": 176.7,
+      "intrinsic_value": 568.75,
+      "discount_pct": 68.93,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "VLO",
+      "company_name": "Valero Energy Corporation",
+      "sector": "Energy",
+      "current_price": 244.09,
+      "intrinsic_value": 505.2,
+      "discount_pct": 51.68,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "VTR",
+      "company_name": "Ventas, Inc.",
+      "sector": "Real Estate",
+      "current_price": 83.27,
+      "intrinsic_value": 179.6,
+      "discount_pct": 53.64,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "VLTO",
+      "company_name": "Veralto Corporation",
+      "sector": "Industrials",
+      "current_price": 88.01,
+      "intrinsic_value": 82.17,
+      "discount_pct": -7.11,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "VRSN",
+      "company_name": "VeriSign, Inc.",
+      "sector": "Technology",
+      "current_price": 259.85,
+      "intrinsic_value": 280.12,
+      "discount_pct": 7.24,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "VRSK",
+      "company_name": "Verisk Analytics, Inc.",
+      "sector": "Industrials",
+      "current_price": 185.08,
+      "intrinsic_value": 189.0,
+      "discount_pct": 2.07,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "VZ",
+      "company_name": "Verizon Communications Inc.",
+      "sector": "Communication Services",
+      "current_price": 49.4,
+      "intrinsic_value": 58.28,
+      "discount_pct": 15.24,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "VRTX",
+      "company_name": "Vertex Pharmaceuticals Incorporated",
+      "sector": "Healthcare",
+      "current_price": 438.71,
+      "intrinsic_value": 377.44,
+      "discount_pct": -16.23,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "VRT",
+      "company_name": "Vertiv Holdings Co",
+      "sector": "Industrials",
+      "current_price": 261.29,
+      "intrinsic_value": 308.22,
+      "discount_pct": 15.23,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "VTRS",
+      "company_name": "Viatris Inc.",
+      "sector": "Healthcare",
+      "current_price": 13.44,
+      "intrinsic_value": 25.64,
+      "discount_pct": 47.58,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "VICI",
+      "company_name": "VICI Properties Inc.",
+      "sector": "Real Estate",
+      "current_price": 27.66,
+      "intrinsic_value": 25.49,
+      "discount_pct": -8.51,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "V",
+      "company_name": "Visa Inc.",
+      "sector": "Financial Services",
+      "current_price": 300.8,
+      "intrinsic_value": 395.33,
+      "discount_pct": 23.91,
+      "method": "ocf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "VST",
+      "company_name": "Vistra Corp.",
+      "sector": "Utilities",
+      "current_price": 151.18,
+      "intrinsic_value": 2423.5,
+      "discount_pct": 93.76,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "VMC",
+      "company_name": "Vulcan Materials Company",
+      "sector": "Basic Materials",
+      "current_price": 279.88,
+      "intrinsic_value": 256.94,
+      "discount_pct": -8.93,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "WRB",
+      "company_name": "W. R. Berkley Corporation",
+      "sector": "Financial Services",
+      "current_price": 65.99,
+      "intrinsic_value": 234.84,
+      "discount_pct": 71.9,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "GWW",
+      "company_name": "W.W. Grainger, Inc.",
+      "sector": "Industrials",
+      "current_price": 1117.45,
+      "intrinsic_value": 870.96,
+      "discount_pct": -28.3,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "WAB",
+      "company_name": "Westinghouse Air Brake Technologies Corporation",
+      "sector": "Industrials",
+      "current_price": 253.91,
+      "intrinsic_value": 254.8,
+      "discount_pct": 0.35,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "WMT",
+      "company_name": "Walmart Inc.",
+      "sector": "Consumer Defensive",
+      "current_price": 125.79,
+      "intrinsic_value": 46.02,
+      "discount_pct": -173.34,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "DIS",
+      "company_name": "The Walt Disney Company",
+      "sector": "Communication Services",
+      "current_price": 96.61,
+      "intrinsic_value": 149.11,
+      "discount_pct": 35.21,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "WBD",
+      "company_name": "Warner Bros. Discovery, Inc.",
+      "sector": "Communication Services",
+      "current_price": 27.32,
+      "intrinsic_value": 1.73,
+      "discount_pct": -1479.19,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "WM",
+      "company_name": "Waste Management, Inc.",
+      "sector": "Industrials",
+      "current_price": 235.42,
+      "intrinsic_value": 120.34,
+      "discount_pct": -95.63,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "WAT",
+      "company_name": "Waters Corporation",
+      "sector": "Healthcare",
+      "current_price": 304.24,
+      "intrinsic_value": 137.18,
+      "discount_pct": -121.78,
+      "method": "ocf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "WEC",
+      "company_name": "WEC Energy Group, Inc.",
+      "sector": "Utilities",
+      "current_price": 117.58,
+      "intrinsic_value": -130.5,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "WFC",
+      "company_name": "Wells Fargo & Company",
+      "sector": "Financial Services",
+      "current_price": 80.6,
+      "intrinsic_value": -176.0,
+      "discount_pct": null,
+      "method": "ocf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "WELL",
+      "company_name": "Welltower Inc.",
+      "sector": "Real Estate",
+      "current_price": 202.33,
+      "intrinsic_value": 390.17,
+      "discount_pct": 48.14,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "WST",
+      "company_name": "West Pharmaceutical Services, Inc.",
+      "sector": "Healthcare",
+      "current_price": 254.8,
+      "intrinsic_value": 160.58,
+      "discount_pct": -58.67,
+      "method": "fcf",
+      "valuation_label": "Highly Overvalued"
+    },
+    {
+      "ticker": "WDC",
+      "company_name": "Western Digital Corporation",
+      "sector": "Technology",
+      "current_price": 294.97,
+      "intrinsic_value": 1215.91,
+      "discount_pct": 75.74,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "WY",
+      "company_name": "Weyerhaeuser Company",
+      "sector": "Real Estate",
+      "current_price": 24.43,
+      "intrinsic_value": -354.17,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "WSM",
+      "company_name": "Williams-Sonoma, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 180.17,
+      "intrinsic_value": 189.01,
+      "discount_pct": 4.68,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "WMB",
+      "company_name": "The Williams Companies, Inc.",
+      "sector": "Energy",
+      "current_price": 72.0,
+      "intrinsic_value": -2.04,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "WTW",
+      "company_name": "Willis Towers Watson Public Limited Company",
+      "sector": "Financial Services",
+      "current_price": 288.64,
+      "intrinsic_value": 533.23,
+      "discount_pct": 45.87,
+      "method": "ocf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "WDAY",
+      "company_name": "Workday, Inc.",
+      "sector": "Technology",
+      "current_price": 132.26,
+      "intrinsic_value": 369.17,
+      "discount_pct": 64.17,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "WYNN",
+      "company_name": "Wynn Resorts, Limited",
+      "sector": "Consumer Cyclical",
+      "current_price": 102.03,
+      "intrinsic_value": 160.35,
+      "discount_pct": 36.37,
+      "method": "fcf",
+      "valuation_label": "Highly Undervalued"
+    },
+    {
+      "ticker": "XEL",
+      "company_name": "Xcel Energy Inc.",
+      "sector": "Utilities",
+      "current_price": 80.74,
+      "intrinsic_value": -302.78,
+      "discount_pct": null,
+      "method": "fcf",
+      "valuation_label": "N/A"
+    },
+    {
+      "ticker": "XYL",
+      "company_name": "Xylem Inc.",
+      "sector": "Industrials",
+      "current_price": 121.26,
+      "intrinsic_value": 103.09,
+      "discount_pct": -17.63,
+      "method": "ocf",
+      "valuation_label": "Slightly Overvalued"
+    },
+    {
+      "ticker": "YUM",
+      "company_name": "Yum! Brands, Inc.",
+      "sector": "Consumer Cyclical",
+      "current_price": 156.09,
+      "intrinsic_value": 148.51,
+      "discount_pct": -5.1,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "ZBRA",
+      "company_name": "Zebra Technologies Corporation",
+      "sector": "Technology",
+      "current_price": 202.835,
+      "intrinsic_value": 283.29,
+      "discount_pct": 28.4,
+      "method": "fcf",
+      "valuation_label": "Slightly Undervalued"
+    },
+    {
+      "ticker": "ZBH",
+      "company_name": "Zimmer Biomet Holdings, Inc.",
+      "sector": "Healthcare",
+      "current_price": 90.89,
+      "intrinsic_value": 96.57,
+      "discount_pct": 5.88,
+      "method": "fcf",
+      "valuation_label": "Fairly Valued"
+    },
+    {
+      "ticker": "ZTS",
+      "company_name": "Zoetis Inc.",
+      "sector": "Healthcare",
+      "current_price": 117.94,
+      "intrinsic_value": 122.95,
+      "discount_pct": 4.07,
+      "method": "ocf",
+      "valuation_label": "Fairly Valued"
     }
   ]
 }
