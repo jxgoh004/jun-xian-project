@@ -1,0 +1,35 @@
+name: Nightly S&P 500 Screener Data
+
+on:
+  schedule:
+    - cron: '0 6 * * 1-5'  # 06:00 UTC weekdays only (after US market close)
+  workflow_dispatch:         # manual trigger for testing
+
+permissions:
+  contents: write            # required for git push with GITHUB_TOKEN
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch S&P 500 data
+        run: python scripts/fetch_sp500.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/projects/screener/data.json
+          git diff --staged --quiet || git commit -m "chore: nightly S&P 500 screener data update"
+          git push
