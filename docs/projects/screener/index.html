@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&amp;P 500 Stock Screener</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --text-dim: #8b949e;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 24px 24px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      padding: 16px 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .controls input[type="text"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .controls input[type="text"]:focus {
+      border-color: var(--accent);
+    }
+
+    .controls input[type="text"]::placeholder {
+      color: var(--text-dim);
+    }
+
+    .controls select {
+      min-width: 160px;
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .controls select:focus {
+      border-color: var(--accent);
+    }
+
+    #row-count {
+      color: var(--text-dim);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 24px 24px;
+    }
+
+    .screener-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .screener-table thead th {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      z-index: 10;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .screener-table thead th:hover {
+      color: var(--text-bright);
+    }
+
+    .screener-table thead th[data-sort="asc"]::after {
+      content: ' \2191';
+      color: var(--accent);
+    }
+
+    .screener-table thead th[data-sort="desc"]::after {
+      content: ' \2193';
+      color: var(--accent);
+    }
+
+    .screener-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .screener-table tbody tr:hover {
+      background: rgba(88, 166, 255, 0.04);
+    }
+
+    .screener-table td {
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+
+    .td-ticker {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    .td-company {
+      color: var(--text-bright);
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .td-number {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .td-dim {
+      color: var(--text-dim);
+    }
+
+    /* Valuation badges */
+    .badge {
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .badge-highly-undervalued {
+      background: rgba(63, 185, 80, 0.15);
+      color: #3fb950;
+      border: 1px solid rgba(63, 185, 80, 0.3);
+    }
+
+    .badge-slightly-undervalued {
+      background: rgba(63, 185, 80, 0.08);
+      color: #7ee787;
+      border: 1px solid rgba(63, 185, 80, 0.2);
+    }
+
+    .badge-fairly-valued {
+      background: rgba(139, 148, 158, 0.15);
+      color: #8b949e;
+      border: 1px solid rgba(139, 148, 158, 0.3);
+    }
+
+    .badge-slightly-overvalued {
+      background: rgba(248, 81, 73, 0.08);
+      color: #f0a3a0;
+      border: 1px solid rgba(248, 81, 73, 0.2);
+    }
+
+    .badge-highly-overvalued {
+      background: rgba(248, 81, 73, 0.15);
+      color: #f85149;
+      border: 1px solid rgba(248, 81, 73, 0.3);
+    }
+
+    .badge-na {
+      background: rgba(139, 148, 158, 0.10);
+      color: #8b949e;
+      border: 1px solid rgba(139, 148, 158, 0.2);
+    }
+
+    /* Error and empty states */
+    #error-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-dim);
+    }
+
+    #error-state p {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    #error-state .error-detail {
+      font-size: 13px;
+      color: var(--text-dim);
+      opacity: 0.7;
+    }
+
+    #loading-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    /* Mobile: hide sector and method columns */
+    @media (max-width: 640px) {
+      .col-sector,
+      .col-method {
+        display: none;
+      }
+
+      header {
+        padding: 16px 16px 0;
+      }
+
+      .controls {
+        padding: 12px 16px;
+        gap: 8px;
+      }
+
+      .table-scroll {
+        padding: 0 16px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>S&amp;P 500 Stock Screener</h1>
+    <p id="last-updated" class="subtitle">Loading data&hellip;</p>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search ticker or company&hellip;" autocomplete="off" />
+    <select id="sector-filter">
+      <option value="">All Sectors</option>
+    </select>
+    <span id="row-count"></span>
+  </div>
+
+  <div id="loading-state">Loading screener data&hellip;</div>
+
+  <div id="error-state" style="display:none;">
+    <p>Unable to load screener data. Please try again later.</p>
+    <p class="error-detail">The data file could not be fetched. It may not have been generated yet.</p>
+  </div>
+
+  <div class="table-scroll" id="table-wrap" style="display:none;">
+    <table class="screener-table">
+      <thead>
+        <tr>
+          <th data-col="ticker">Ticker</th>
+          <th data-col="company_name">Company</th>
+          <th data-col="sector" class="col-sector">Sector</th>
+          <th data-col="current_price">Price</th>
+          <th data-col="intrinsic_value">Intrinsic Value</th>
+          <th data-col="discount_pct">Discount %</th>
+          <th data-col="method" class="col-method">Method</th>
+          <th data-col="valuation_label">Valuation</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // ---------------------------------------------------------------------------
+    // State
+    // ---------------------------------------------------------------------------
+    var allStocks = [];
+    var sortCol = 'discount_pct';
+    var sortDir = -1; // -1 = descending (most undervalued first per D-13)
+    var filterText = '';
+    var filterSector = '';
+    var debounceTimer;
+
+    // ---------------------------------------------------------------------------
+    // Helpers
+    // ---------------------------------------------------------------------------
+    function debounce(fn, ms) {
+      return function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(fn.bind(this), ms);
+      };
+    }
+
+    function fmtPrice(val) {
+      if (val === null || val === undefined) return '—';
+      return '$' + Number(val).toFixed(2);
+    }
+
+    function fmtDiscount(val) {
+      if (val === null || val === undefined) return '—';
+      return Number(val).toFixed(1) + '%';
+    }
+
+    function fmtMethod(val) {
+      if (!val) return '—';
+      return String(val).toUpperCase();
+    }
+
+    function labelToSlug(label) {
+      if (!label || label === 'N/A') return 'na';
+      return label.toLowerCase().replace(/\s+/g, '-');
+    }
+
+    // ---------------------------------------------------------------------------
+    // Filter + sort
+    // ---------------------------------------------------------------------------
+    function getFiltered() {
+      return allStocks.filter(function (s) {
+        var q = filterText.toLowerCase();
+        var matchText = !q ||
+          s.ticker.toLowerCase().indexOf(q) !== -1 ||
+          s.company_name.toLowerCase().indexOf(q) !== -1;
+        var matchSector = !filterSector || s.sector === filterSector;
+        return matchText && matchSector;
+      }).sort(function (a, b) {
+        var av = a[sortCol];
+        var bv = b[sortCol];
+        if (av === null && bv === null) return 0;
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        if (typeof av === 'string') return sortDir * av.localeCompare(bv);
+        return sortDir * (av < bv ? -1 : av > bv ? 1 : 0);
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Render table
+    // ---------------------------------------------------------------------------
+    function renderTable() {
+      var rows = getFiltered();
+      var tbody = document.getElementById('table-body');
+
+      // Clear existing rows
+      while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+      }
+
+      rows.forEach(function (stock) {
+        var tr = document.createElement('tr');
+        tr.addEventListener('click', function () {
+          navigateToCalculator(stock.ticker);
+        });
+
+        // Ticker
+        var tdTicker = document.createElement('td');
+        tdTicker.className = 'td-ticker';
+        tdTicker.textContent = stock.ticker;
+        tr.appendChild(tdTicker);
+
+        // Company
+        var tdCompany = document.createElement('td');
+        tdCompany.className = 'td-company';
+        tdCompany.textContent = stock.company_name;
+        tr.appendChild(tdCompany);
+
+        // Sector
+        var tdSector = document.createElement('td');
+        tdSector.className = 'col-sector td-dim';
+        tdSector.textContent = stock.sector || '—';
+        tr.appendChild(tdSector);
+
+        // Current Price
+        var tdPrice = document.createElement('td');
+        tdPrice.className = 'td-number';
+        tdPrice.textContent = fmtPrice(stock.current_price);
+        tr.appendChild(tdPrice);
+
+        // Intrinsic Value
+        var tdIV = document.createElement('td');
+        tdIV.className = 'td-number';
+        tdIV.textContent = fmtPrice(stock.intrinsic_value);
+        tr.appendChild(tdIV);
+
+        // Discount %
+        var tdDiscount = document.createElement('td');
+        tdDiscount.className = 'td-number';
+        tdDiscount.textContent = fmtDiscount(stock.discount_pct);
+        tr.appendChild(tdDiscount);
+
+        // Method
+        var tdMethod = document.createElement('td');
+        tdMethod.className = 'col-method td-dim';
+        tdMethod.textContent = fmtMethod(stock.method);
+        tr.appendChild(tdMethod);
+
+        // Valuation badge
+        var tdVal = document.createElement('td');
+        var badge = document.createElement('span');
+        var slug = labelToSlug(stock.valuation_label);
+        badge.className = 'badge badge-' + slug;
+        badge.textContent = stock.valuation_label || 'N/A';
+        tdVal.appendChild(badge);
+        tr.appendChild(tdVal);
+
+        tbody.appendChild(tr);
+      });
+
+      // Update row count
+      var countEl = document.getElementById('row-count');
+      countEl.textContent = 'Showing ' + rows.length + ' of ' + allStocks.length + ' stocks';
+    }
+
+    // ---------------------------------------------------------------------------
+    // Sort header indicators
+    // ---------------------------------------------------------------------------
+    function updateSortIndicators() {
+      var headers = document.querySelectorAll('.screener-table thead th[data-col]');
+      headers.forEach(function (th) {
+        th.removeAttribute('data-sort');
+        if (th.getAttribute('data-col') === sortCol) {
+          th.setAttribute('data-sort', sortDir === 1 ? 'asc' : 'desc');
+        }
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Calculator link-through (D-16)
+    // ---------------------------------------------------------------------------
+    function navigateToCalculator(ticker) {
+      window.parent.postMessage(
+        { type: 'navigate', project: 'calculator', ticker: ticker },
+        '*'
+      );
+    }
+
+    // ---------------------------------------------------------------------------
+    // Populate sector dropdown
+    // ---------------------------------------------------------------------------
+    function populateSectors() {
+      var sectors = Array.from(
+        new Set(allStocks.map(function (s) { return s.sector; }))
+      ).filter(Boolean).sort();
+
+      var select = document.getElementById('sector-filter');
+      sectors.forEach(function (sector) {
+        var option = document.createElement('option');
+        option.value = sector;
+        option.textContent = sector;
+        select.appendChild(option);
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Display last-updated timestamp
+    // ---------------------------------------------------------------------------
+    function displayUpdatedAt(updatedAt) {
+      var el = document.getElementById('last-updated');
+      if (!updatedAt) {
+        el.textContent = 'No data yet — awaiting first update.';
+        return;
+      }
+      try {
+        var ts = new Date(updatedAt);
+        el.textContent = 'Data as of ' + ts.toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        });
+      } catch (e) {
+        el.textContent = 'Last updated: ' + updatedAt;
+      }
+    }
+
+    // ---------------------------------------------------------------------------
+    // Show/hide loading vs table
+    // ---------------------------------------------------------------------------
+    function showTable() {
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('error-state').style.display = 'none';
+      document.getElementById('table-wrap').style.display = '';
+    }
+
+    function showError() {
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('table-wrap').style.display = 'none';
+      document.getElementById('error-state').style.display = '';
+      document.getElementById('last-updated').textContent = 'Data unavailable.';
+    }
+
+    // ---------------------------------------------------------------------------
+    // Init on DOM ready
+    // ---------------------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // --- Fetch data ---
+      fetch('data.json')
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('HTTP ' + response.status);
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          allStocks = data.stocks || [];
+          displayUpdatedAt(data.updated_at);
+          populateSectors();
+          updateSortIndicators();
+          showTable();
+          renderTable();
+        })
+        .catch(function () {
+          showError();
+        });
+
+      // --- Search input with 150ms debounce ---
+      var searchInput = document.getElementById('search');
+      searchInput.addEventListener('input', debounce(function () {
+        filterText = this.value;
+        renderTable();
+      }, 150));
+
+      // --- Sector filter ---
+      var sectorSelect = document.getElementById('sector-filter');
+      sectorSelect.addEventListener('change', function () {
+        filterSector = this.value;
+        renderTable();
+      });
+
+      // --- Column header sort ---
+      var headers = document.querySelectorAll('.screener-table thead th[data-col]');
+      headers.forEach(function (th) {
+        th.addEventListener('click', function () {
+          var col = this.getAttribute('data-col');
+          if (col === sortCol) {
+            sortDir = sortDir === 1 ? -1 : 1;
+          } else {
+            sortCol = col;
+            sortDir = -1;
+          }
+          updateSortIndicators();
+          renderTable();
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
