@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import json
+import math
 import os
 import sys
 import time
@@ -178,11 +179,14 @@ def fetch_sp500_tickers():
 # ---------------------------------------------------------------------------
 
 def safe_float(value):
-    """Return float or None; swallow non-numeric sentinel 'N/A'."""
+    """Return float or None; swallow non-numeric sentinels and NaN/Inf."""
     if value is None or value == "N/A":
         return None
     try:
-        return float(value)
+        f = float(value)
+        if math.isnan(f) or math.isinf(f):
+            return None
+        return f
     except (TypeError, ValueError):
         return None
 
