@@ -551,7 +551,8 @@
           showTable();
           renderTable();
         })
-        .catch(function () {
+        .catch(function (err) {
+          console.error('Screener load error:', err);
           showError();
         });
 
