@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Milestone complete
-stopped_at: Completed 05-02-PLAN.md — Screener frontend SPA built and committed.
-last_updated: "2026-04-05T00:00:00Z"
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-04-05T03:37:15.746Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 7
-  completed_plans: 7
+  total_phases: 5
+  completed_phases: 5
+  total_plans: 9
+  completed_plans: 9
 ---
 
 # Project State
@@ -53,6 +53,7 @@ Plan: Not started
 | Phase 03-calculator-integration P02 | multi-session | 2 tasks | 0 files |
 | Phase 04 P04-02 | 2m | 2 tasks | 2 files |
 | Phase 04 P04-02 | multi-session | 3 tasks | 2 files |
+| Phase 05 P01 | 25 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,8 @@ Recent decisions affecting current work:
 - [Phase 04]: picture element pattern: WebP source + PNG fallback with loading=lazy and explicit dimensions for CLS prevention
 - [Phase 04]: WebP quality=80 for thumbnail conversion — balances file size reduction with visual fidelity
 - [Phase 04]: picture element pattern: WebP source + PNG fallback with loading=lazy and explicit dimensions for CLS prevention
+- [Phase 05]: Wikipedia 403 fix: download HTML via requests with Chrome UA before pd.read_html
+- [Phase 05]: DCF uses cumulative discount factor (prev_df/(1+r)) matching JS computeIV exactly
 
 ### Roadmap Evolution
 
@@ -94,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-05T00:00:00Z
-Stopped at: Completed 05-02-PLAN.md — Screener frontend SPA built and committed.
+Last session: 2026-04-05T03:37:15.742Z
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None

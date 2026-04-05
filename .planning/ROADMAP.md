@@ -85,3 +85,13 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 2. Portfolio Shell | 1/1 | Complete   | 2026-03-27 |
 | 3. Calculator Integration | 2/2 | Complete   | 2026-03-31 |
 | 4. Design and Performance | 2/2 | Complete   | 2026-04-04 |
+
+### Phase 5: S&P 500 Stock Screener Page
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 4
+**Plans:** 2/2 plans complete
+
+Plans:
+- [x] TBD (run /gsd:plan-phase 5 to break down) (completed 2026-04-05)
