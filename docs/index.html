@@ -198,6 +198,17 @@
     <div class="projects-section">
       <h3 class="section-label">Projects</h3>
       <div class="projects">
+        <div class="card" data-project="screener" role="link" tabindex="0" style="cursor:pointer;">
+          <div class="card-thumbnail-placeholder"></div>
+          <h3>S&amp;P 500 Stock Screener</h3>
+          <p>Browse pre-calculated DCF intrinsic values for all S&amp;P 500 stocks. Filter by sector, search by ticker, and jump straight to the full calculator.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Finance</span>
+            <span class="tag">Data</span>
+          </div>
+        </div>
         <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
           <picture>
             <source srcset="projects/calculator/thumbnail.webp" type="image/webp">
@@ -230,8 +241,11 @@
   const projectView = document.getElementById('project-view');
 
   const projects = {
-    calculator: 'projects/calculator/index.html'
+    calculator: 'projects/calculator/index.html',
+    screener:   'projects/screener/index.html'
   };
+
+  let pendingTicker = null;
 
   let initialized = false;
 
@@ -277,7 +291,9 @@
         projectView.style.display = 'block';
         if (!projectView.querySelector('iframe')) {
           const iframe = document.createElement('iframe');
-          iframe.src = projects[hash];
+          const ticker = (hash === 'calculator' && pendingTicker) ? pendingTicker : null;
+          pendingTicker = null;
+          iframe.src = projects[hash] + (ticker ? '?ticker=' + encodeURIComponent(ticker) : '');
           iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
           projectView.appendChild(iframe);
         }
@@ -307,6 +323,16 @@
         location.hash = '#' + card.dataset.project;
       }
     });
+  });
+
+  // Screener → calculator link-through (D-16): receive ticker from screener iframe
+  window.addEventListener('message', function(e) {
+    if (!e.data || e.data.type !== 'navigate' || e.data.project !== 'calculator') return;
+    pendingTicker = e.data.ticker || null;
+    // Remove any existing iframe so navigate() recreates it with the ticker param
+    const iframe = projectView.querySelector('iframe');
+    if (iframe) iframe.remove();
+    location.hash = '#calculator';
   });
 
   // Hash change listener (per D-05 — back button support)

@@ -1303,6 +1303,13 @@ function calculate() {
 
   document.getElementById('calcBtn').disabled = false;
 }
+
+// Pre-fill ticker from URL parameter (screener link-through)
+(function() {
+  const params = new URLSearchParams(location.search);
+  const t = params.get('ticker');
+  if (t) document.getElementById('tickerInput').value = t.toUpperCase();
+})();
 </script>
 </body>
 </html>
