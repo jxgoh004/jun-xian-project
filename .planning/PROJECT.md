@@ -37,6 +37,22 @@ Visitors can quickly understand who I am as a developer and interact with my wor
 - [ ] Site structure allows easy addition of future projects via code editing
 - [ ] Site is deployable to GitHub Pages as a static site
 
+### Active (Phase 6 — Marketing Revamp)
+
+- [ ] Hero section communicates platform purpose (useful tools for everyone) within 3 seconds — not a career bio summary
+- [ ] LinkedIn CTA is a styled button, not an inline text link
+- [ ] Every page has a unique `<meta name="description">` (155 chars)
+- [ ] All pages have Open Graph + Twitter Card meta tags with OG image
+- [ ] Heading hierarchy correct: single `<h1>` per page, `<h1>` is not "Portfolio" header label
+- [ ] Page titles are keyword-rich and unique per page
+- [ ] `robots.txt` and `sitemap.xml` exist in `docs/` root
+- [ ] `<link rel="canonical">` on every page
+- [ ] All interactive elements have visible `:focus-visible` styles
+- [ ] Project cards are `<a>` elements (not `<div role="link">`) for keyboard/AT semantics
+- [ ] Screener search and sector filter inputs have `<label>` elements
+- [ ] Valuation badges include text content, not color only
+- [ ] Screener and calculator pages have a "← Portfolio" back-link in header
+
 ### Out of Scope
 
 - Separate tab/window opening for projects — projects run in-page to maintain single-site experience

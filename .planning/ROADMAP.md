@@ -85,6 +85,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 2. Portfolio Shell | 1/1 | Complete   | 2026-03-27 |
 | 3. Calculator Integration | 2/2 | Complete   | 2026-03-31 |
 | 4. Design and Performance | 2/2 | Complete   | 2026-04-04 |
+| 5. S&P 500 Stock Screener | 2/2 | Complete   | 2026-04-05 |
+| 6. Website Marketing Revamp | 0/3 | Not started | — |
 
 ### Phase 5: S&P 500 Stock Screener Page
 
@@ -95,3 +97,21 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 Plans:
 - [x] 05-01-PLAN.md — S&P 500 batch DCF pipeline (scripts/fetch_sp500.py + nightly GitHub Actions workflow)
 - [x] 05-02-PLAN.md — Screener frontend (docs/projects/screener/index.html)
+
+### Phase 6: Website Marketing Revamp
+
+**Goal:** Elevate the portfolio to MNC production standards — fix SEO gaps, rewrite hero messaging to reflect the platform's true purpose (sharing useful tools with everyone), add proper CTAs, fix accessibility, and wire up Open Graph for professional sharing previews
+**Depends on:** Phase 5
+**Success Criteria** (what must be TRUE):
+  1. Sharing the portfolio URL on LinkedIn/Slack shows a rich preview with title, description, and OG image
+  2. The hero section communicates the platform's purpose (useful tools for everyone) within 3 seconds, not a career summary
+  3. There is a visible, styled CTA in the hero (LinkedIn button at minimum)
+  4. All interactive elements are keyboard-navigable with visible focus styles
+  5. Every page has a unique `<meta name="description">` and correct heading hierarchy (single `<h1>` per page)
+  6. `robots.txt` and `sitemap.xml` exist in the docs/ root
+**Plans**: 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Hero rewrite + CTA buttons (messaging, LinkedIn button, value prop)
+- [ ] 06-02-PLAN.md — SEO: meta descriptions, OG tags, heading hierarchy, page titles, robots.txt, sitemap.xml, canonical tags
+- [ ] 06-03-PLAN.md — Accessibility + UX: focus styles, card `<a>` elements, form labels, badge text, screener back-link
