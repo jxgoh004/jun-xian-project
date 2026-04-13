@@ -3,7 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goh Jun Xian — Portfolio</title>
+  <title>Goh Jun Xian — AI Engineer | Finance Tools &amp; Data Projects</title>
+  <meta name="description" content="Goh Jun Xian is an AI Engineer and AISG-certified graduate building AI-powered finance tools. Explore live projects: S&P 500 stock screener, intrinsic value calculator, and more.">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="projects/calculator/img/logo_2.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Goh Jun Xian — AI Engineer">
+  <meta property="og:description" content="AI-powered finance tools built with Python, Flask, and LLMs. Live projects you can use right now.">
+  <meta property="og:image" content="projects/calculator/thumbnail.png">
+  <meta property="og:url" content="https://gohjunxian.github.io/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Goh Jun Xian — AI Engineer">
+  <meta name="twitter:description" content="AI-powered finance tools built with Python, Flask, and LLMs.">
+  <meta name="twitter:image" content="projects/calculator/thumbnail.png">
+
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Goh Jun Xian",
+    "jobTitle": "AI Engineer",
+    "url": "https://gohjunxian.github.io/",
+    "sameAs": [
+      "https://linkedin.com/in/goh-jun-xian-5890ba10b/",
+      "https://github.com/gohjunxian"
+    ],
+    "knowsAbout": ["Artificial Intelligence", "Graph Analytics", "Neo4j", "Python", "Finance", "LLMs"]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -11,11 +44,44 @@
       --surface: #161b22;
       --border: #30363d;
       --accent: #58a6ff;
+      --accent-hover: #79b8ff;
       --text: #c9d1d9;
       --text-bright: #f0f6fc;
       --text-dim: #8b949e;
       --radius: 8px;
     }
+
+    /* ── Accessibility utilities ── */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 10000;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #0d1117;
+      font-weight: 600;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: top 0.1s;
+    }
+    .skip-nav:focus { top: 8px; }
+
+    /* ── Focus styles ── */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       background: var(--bg);
@@ -23,6 +89,8 @@
       line-height: 1.6;
       min-height: 100vh;
     }
+
+    /* ── Header ── */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -32,15 +100,155 @@
       gap: 12px;
     }
     header img { width: 34px; height: 34px; border-radius: 8px; }
-    header h1 { font-size: 17px; font-weight: 600; color: var(--text-bright); }
+    header .site-name { font-size: 17px; font-weight: 600; color: var(--text-bright); }
+    .back-btn {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--text-dim);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      margin-left: auto;
+    }
+    .back-btn:hover { color: var(--text-bright); border-color: var(--accent); }
+    body.viewing-project .back-btn { display: flex; }
+
+    /* ── Main layout ── */
     main {
       margin: 60px auto;
       padding: 0 24px;
       text-align: center;
     }
-    main h2 { font-size: 28px; color: var(--text-bright); margin-bottom: 12px; }
-    main p { color: var(--text-dim); margin-bottom: 40px; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .hero-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .hero-value-prop {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-bright);
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .hero-bullets {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+      margin: 0 auto 24px;
+      max-width: 480px;
+    }
+    .hero-bullets li {
+      font-size: 14px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .hero-bullets li::before {
+      content: "▸";
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Social proof strip ── */
+    .social-proof {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      padding: 14px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .proof-item {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .proof-item strong { color: var(--text-bright); }
+
+    /* ── CTA cluster ── */
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0d1117;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--text-bright); }
+
+    /* ── Projects section ── */
+    .projects-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .section-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-bright);
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -52,7 +260,13 @@
       transition: border-color 0.2s, transform 0.2s;
     }
     .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card h3 { color: var(--text-bright); margin-bottom: 8px; }
+    .card h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 6px; }
+    .card .card-benefit {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
     .card p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
     .tags { display: flex; gap: 6px; flex-wrap: wrap; }
     .tag {
@@ -64,58 +278,7 @@
       color: var(--text-dim);
     }
 
-    /* Hero section — per D-01 centered layout */
-    .hero {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .hero h2 {
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--text-bright);
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    .hero-title {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    /* IMPORTANT: .hero-bio MUST appear AFTER the broad `main p` rule to override
-       its color (--text-dim) and margin-bottom (40px). See RESEARCH.md Pitfall 1. */
-    .hero-bio {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.6;
-      max-width: 560px;
-      margin: 0 auto 16px;
-    }
-    .hero a {
-      font-size: 16px;
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .hero a:hover { text-decoration: underline; }
-
-    /* Card grid section wrapper — caps grid width for readability at ultra-wide viewports */
-    .projects-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    /* Section label — replaces h2 Projects heading */
-    .section-label {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-bright);
-      text-align: left;
-      margin-bottom: 16px;
-    }
-
-    /* Card thumbnail image — per D-05, D-07 */
+    /* ── Card thumbnail ── */
     .card img {
       width: 100%;
       aspect-ratio: 16 / 7;
@@ -124,8 +287,6 @@
       margin-bottom: 12px;
       display: block;
     }
-
-    /* Card thumbnail placeholder — CSS-only fallback when screenshot absent */
     .card-thumbnail-placeholder {
       width: 100%;
       aspect-ratio: 16 / 7;
@@ -134,7 +295,7 @@
       margin-bottom: 16px;
     }
 
-    /* Project view — full-height iframe container */
+    /* ── Project iframe view ── */
     #project-view {
       max-width: none;
       margin: 0;
@@ -147,107 +308,127 @@
       border: none;
       display: block;
     }
+    body.viewing-project { overflow: hidden; }
+    body.viewing-project main { margin: 0; padding: 0; }
 
-    /* Zero out main's margins when viewing a project so the iframe sits flush under the header */
-    body.viewing-project {
-      overflow: hidden;
-    }
-    body.viewing-project main {
-      margin: 0;
-      padding: 0;
-    }
+    /* ── View fade transition ── */
+    .view { transition: opacity 0.2s ease; }
+    .view.hidden { opacity: 0; pointer-events: none; }
 
-    /* View fade transition — per D-08, D-09 */
-    .view {
-      transition: opacity 0.2s ease;
-    }
-    .view.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* Mobile breakpoint — per D-04 */
+    /* ── Mobile ── */
     @media (max-width: 640px) {
-      main {
-        padding: 0 16px;
-      }
-      .hero h2 {
-        font-size: 22px;
-      }
-      .hero-bio {
-        font-size: 15px;
-      }
+      main { padding: 0 16px; }
+      .hero h1 { font-size: 26px; }
+      .hero-value-prop { font-size: 16px; }
+      .social-proof { gap: 14px; }
     }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
   <header>
-    <a href="#home" style="display:flex;align-items:center;"><img src="projects/calculator/img/logo_2.png" alt="Logo"></a>
-    <h1>Portfolio</h1>
+    <a href="#home" style="display:flex;align-items:center;">
+      <img src="projects/calculator/img/logo_2.png" alt="Goh Jun Xian portfolio home">
+    </a>
+    <span class="site-name">Portfolio</span>
+    <button class="back-btn" id="back-btn" aria-label="Back to portfolio">
+      ← Back
+    </button>
   </header>
-  <main>
-    <section id="home-view" class="view">
-    <section class="hero">
-      <h2>Goh Jun Xian</h2>
-      <p class="hero-title">AI Engineer</p>
-      <p class="hero-bio">I graduated with a Bachelor of Sciences with Business Analytics and have spent the past 2 years doing graph analytics with Neo4j as the organisation's chosen tool and delved into projects involving the use of LLMs as a data analyst.
 
-        I have also just completed a 3-month deep-skilling program as an Associate AI Engineer at AI Singapore. Using the knowledge gained from the program, I'm now building AI-powered tools — things I actually use and want to share. This is where they live.</p>
-      <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </section>
-    <div class="projects-section">
-      <h3 class="section-label">Projects</h3>
-      <div class="projects">
-        <div class="card" data-project="screener" role="link" tabindex="0" style="cursor:pointer;">
-          <div class="card-thumbnail-placeholder"></div>
-          <h3>S&amp;P 500 Stock Screener</h3>
-          <p>Browse pre-calculated DCF intrinsic values for all S&amp;P 500 stocks. Filter by sector, search by ticker, and jump straight to the full calculator.</p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Finance</span>
-            <span class="tag">Data</span>
-          </div>
+  <main id="main-content">
+    <section id="home-view" class="view">
+      <section class="hero">
+        <h1>Goh Jun Xian</h1>
+        <p class="hero-title">AI Engineer</p>
+        <p class="hero-value-prop">I turn data into investment decisions — building AI-powered finance tools that anyone can use, no Bloomberg terminal required.</p>
+        <ul class="hero-bullets">
+          <li>AISG-certified Associate AI Engineer — 3-month intensive deep-skilling program</li>
+          <li>2 years graph analytics with Neo4j and LLM-powered data analysis</li>
+          <li>BS Business Analytics — bridging data science and financial reasoning</li>
+        </ul>
+
+        <div class="social-proof" role="list" aria-label="Key credentials">
+          <div class="proof-item" role="listitem"><strong>2</strong> live tools</div>
+          <div class="proof-item" role="listitem"><strong>AISG</strong> certified</div>
+          <div class="proof-item" role="listitem"><strong>2 yrs</strong> Neo4j &amp; LLMs</div>
         </div>
-        <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;">
-          <picture>
-            <source srcset="projects/calculator/thumbnail.webp" type="image/webp">
-            <img
-              src="projects/calculator/thumbnail.png"
-              alt="Intrinsic Value Calculator screenshot"
-              loading="lazy"
-              width="1854"
-              height="771">
-          </picture>
-          <h3>Intrinsic Value Calculator</h3>
-          <p>Fetch live stock data and calculate intrinsic value using DCF analysis with 20-year projections.</p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Flask</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Finance</span>
+
+        <nav class="hero-ctas" aria-label="Contact and profile links">
+          <a href="mailto:gohjunxian@email.com" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-5.97 3.582L15 12.617V5.383zM1 12.617l5.97-3.632L1 5.383v7.234zm6.832-2.218L2.122 14H13.88l-5.71-3.601-.338.203a.5.5 0 01-.47 0l-.339-.203z"/></svg>
+            Get in touch
+          </a>
+          <a href="https://github.com/gohjunxian" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+            LinkedIn
+          </a>
+        </nav>
+      </section>
+
+      <div class="projects-section">
+        <h2 class="section-label">Projects</h2>
+        <div class="projects">
+          <div class="card" data-project="screener" role="link" tabindex="0" style="cursor:pointer;"
+               aria-label="Open S&P 500 Stock Screener project">
+            <div class="card-thumbnail-placeholder" role="img" aria-label="S&P 500 Stock Screener preview"></div>
+            <h2>S&amp;P 500 Stock Screener</h2>
+            <p class="card-benefit">Find undervalued stocks before the crowd does</p>
+            <p>DCF intrinsic values pre-calculated for every S&amp;P 500 company. Filter by sector, sort by discount, and jump straight to the full calculator.</p>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Finance</span>
+              <span class="tag">Data</span>
+            </div>
+          </div>
+          <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;"
+               aria-label="Open Intrinsic Value Calculator project">
+            <picture>
+              <source srcset="projects/calculator/thumbnail.webp" type="image/webp">
+              <img
+                src="projects/calculator/thumbnail.png"
+                alt="Intrinsic Value Calculator — DCF analysis dashboard showing stock valuation"
+                loading="lazy"
+                width="1854"
+                height="771">
+            </picture>
+            <h2>Intrinsic Value Calculator</h2>
+            <p class="card-benefit">Get a defensible stock valuation in seconds</p>
+            <p>Live data, 20-year DCF projections, margin-of-safety analysis — no spreadsheets needed.</p>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Finance</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
-    <section id="project-view" class="view hidden" style="display:none;">
+
+    <section id="project-view" class="view hidden" style="display:none;" aria-label="Project viewer">
       <!-- iframe inserted dynamically by JS -->
     </section>
   </main>
+
 <script>
 (function() {
-  const homeView = document.getElementById('home-view');
-  const projectView = document.getElementById('project-view');
+  var homeView    = document.getElementById('home-view');
+  var projectView = document.getElementById('project-view');
+  var backBtn     = document.getElementById('back-btn');
 
-  const projects = {
+  var projects = {
     calculator: 'projects/calculator/index.html',
     screener:   'projects/screener/index.html'
   };
 
-  let pendingTicker = null;
-
-  let initialized = false;
+  var pendingTicker = null;
+  var initialized   = false;
 
   function fadeOut(el, callback) {
     el.classList.add('hidden');
@@ -259,17 +440,16 @@
   }
 
   function navigate() {
-    const hash = location.hash.slice(1) || 'home';
+    var hash = location.hash.slice(1) || 'home';
 
     if (!initialized) {
-      // First paint: set views directly, skip fade to avoid flash-of-content
       if (projects[hash]) {
         homeView.style.display = 'none';
         document.body.classList.add('viewing-project');
         projectView.style.display = 'block';
         projectView.classList.remove('hidden');
         if (!projectView.querySelector('iframe')) {
-          const iframe = document.createElement('iframe');
+          var iframe = document.createElement('iframe');
           iframe.src = projects[hash];
           iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
           projectView.appendChild(iframe);
@@ -284,14 +464,13 @@
     }
 
     if (projects[hash]) {
-      // Fade home out, then show project view faded in
       fadeOut(homeView, function() {
         homeView.style.display = 'none';
         document.body.classList.add('viewing-project');
         projectView.style.display = 'block';
         if (!projectView.querySelector('iframe')) {
-          const iframe = document.createElement('iframe');
-          const ticker = (hash === 'calculator' && pendingTicker) ? pendingTicker : null;
+          var iframe = document.createElement('iframe');
+          var ticker = (hash === 'calculator' && pendingTicker) ? pendingTicker : null;
           pendingTicker = null;
           iframe.src = projects[hash] + (ticker ? '?ticker=' + encodeURIComponent(ticker) : '');
           iframe.title = hash.charAt(0).toUpperCase() + hash.slice(1);
@@ -300,17 +479,21 @@
         requestAnimationFrame(function() { fadeIn(projectView); });
       });
     } else {
-      // Fade project out, then show home view faded in
       fadeOut(projectView, function() {
         projectView.style.display = 'none';
         document.body.classList.remove('viewing-project');
-        const iframe = projectView.querySelector('iframe');
+        var iframe = projectView.querySelector('iframe');
         if (iframe) iframe.remove();
         homeView.style.display = '';
         requestAnimationFrame(function() { fadeIn(homeView); });
       });
     }
   }
+
+  // Back button
+  backBtn.addEventListener('click', function() {
+    location.hash = '#home';
+  });
 
   // Card click handlers
   document.querySelectorAll('.card[data-project]').forEach(function(card) {
@@ -325,20 +508,16 @@
     });
   });
 
-  // Screener → calculator link-through (D-16): receive ticker from screener iframe
+  // Screener → calculator link-through: receive ticker from screener iframe
   window.addEventListener('message', function(e) {
     if (!e.data || e.data.type !== 'navigate' || e.data.project !== 'calculator') return;
     pendingTicker = e.data.ticker || null;
-    // Remove any existing iframe so navigate() recreates it with the ticker param
-    const iframe = projectView.querySelector('iframe');
+    var iframe = projectView.querySelector('iframe');
     if (iframe) iframe.remove();
     location.hash = '#calculator';
   });
 
-  // Hash change listener (per D-05 — back button support)
   window.addEventListener('hashchange', navigate);
-
-  // Initial route on page load (per D-06 — direct link support)
   navigate();
 })();
 </script>
