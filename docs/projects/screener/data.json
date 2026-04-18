@@ -9,7 +9,9 @@
       "intrinsic_value": 71.76,
       "discount_pct": -109.8,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": "Narrow",
+      "moat_score": 4.2
     },
     {
       "ticker": "AOS",
@@ -19,7 +21,9 @@
       "intrinsic_value": 85.55,
       "discount_pct": 26.03,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": "Narrow",
+      "moat_score": 5.9
     },
     {
       "ticker": "ABT",
@@ -29,7 +33,9 @@
       "intrinsic_value": 127.01,
       "discount_pct": 24.83,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": "Wide",
+      "moat_score": 7.3
     },
     {
       "ticker": "ABBV",
@@ -39,7 +45,9 @@
       "intrinsic_value": 415.23,
       "discount_pct": 49.67,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": "Narrow",
+      "moat_score": 5.6
     },
     {
       "ticker": "ACN",
@@ -49,7 +57,9 @@
       "intrinsic_value": 330.61,
       "discount_pct": 41.32,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": "Narrow",
+      "moat_score": 5.1
     },
     {
       "ticker": "ADBE",
@@ -59,7 +69,9 @@
       "intrinsic_value": 546.58,
       "discount_pct": 54.6,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMD",
@@ -69,7 +81,9 @@
       "intrinsic_value": 626.97,
       "discount_pct": 55.62,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AES",
@@ -79,7 +93,9 @@
       "intrinsic_value": -73.86,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AFL",
@@ -89,7 +105,9 @@
       "intrinsic_value": 197.71,
       "discount_pct": 42.49,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "A",
@@ -99,7 +117,9 @@
       "intrinsic_value": 88.23,
       "discount_pct": -34.02,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APD",
@@ -109,7 +129,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ABNB",
@@ -119,7 +141,9 @@
       "intrinsic_value": 379.91,
       "discount_pct": 63.73,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AKAM",
@@ -129,7 +153,9 @@
       "intrinsic_value": 73.52,
       "discount_pct": -31.68,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALB",
@@ -139,7 +165,9 @@
       "intrinsic_value": 19.55,
       "discount_pct": -1002.92,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARE",
@@ -149,7 +177,9 @@
       "intrinsic_value": 3411.38,
       "discount_pct": 98.59,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALGN",
@@ -159,7 +189,9 @@
       "intrinsic_value": 154.21,
       "discount_pct": -19.98,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALLE",
@@ -169,7 +201,9 @@
       "intrinsic_value": 164.85,
       "discount_pct": 14.15,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LNT",
@@ -179,7 +213,9 @@
       "intrinsic_value": 48.03,
       "discount_pct": -51.51,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALL",
@@ -189,7 +225,9 @@
       "intrinsic_value": 284.57,
       "discount_pct": 24.84,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOGL",
@@ -199,7 +237,9 @@
       "intrinsic_value": 730.99,
       "discount_pct": 54.03,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOG",
@@ -209,7 +249,9 @@
       "intrinsic_value": 780.05,
       "discount_pct": 57.34,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MO",
@@ -219,7 +261,9 @@
       "intrinsic_value": 79.13,
       "discount_pct": 17.93,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMZN",
@@ -229,7 +273,9 @@
       "intrinsic_value": 26.58,
       "discount_pct": -839.43,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMCR",
@@ -239,7 +285,9 @@
       "intrinsic_value": 10.72,
       "discount_pct": -274.81,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEE",
@@ -249,7 +297,9 @@
       "intrinsic_value": -133.06,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEP",
@@ -259,7 +309,9 @@
       "intrinsic_value": -152.96,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXP",
@@ -269,7 +321,9 @@
       "intrinsic_value": 614.81,
       "discount_pct": 47.01,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIG",
@@ -279,7 +333,9 @@
       "intrinsic_value": 203.25,
       "discount_pct": 61.52,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMT",
@@ -289,7 +345,9 @@
       "intrinsic_value": 142.28,
       "discount_pct": -25.53,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AWK",
@@ -299,7 +357,9 @@
       "intrinsic_value": -214.25,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMP",
@@ -309,7 +369,9 @@
       "intrinsic_value": 2403.55,
       "discount_pct": 80.9,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AME",
@@ -319,7 +381,9 @@
       "intrinsic_value": 148.53,
       "discount_pct": -55.01,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMGN",
@@ -329,7 +393,9 @@
       "intrinsic_value": 219.8,
       "discount_pct": -58.96,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APH",
@@ -339,7 +405,9 @@
       "intrinsic_value": 148.39,
       "discount_pct": -0.38,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADI",
@@ -349,7 +417,9 @@
       "intrinsic_value": 407.12,
       "discount_pct": 13.1,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AON",
@@ -359,7 +429,9 @@
       "intrinsic_value": 366.42,
       "discount_pct": 8.48,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APA",
@@ -369,7 +441,9 @@
       "intrinsic_value": 95.54,
       "discount_pct": 60.33,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APO",
@@ -379,7 +453,9 @@
       "intrinsic_value": 689.66,
       "discount_pct": 82.48,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AAPL",
@@ -389,7 +465,9 @@
       "intrinsic_value": 206.63,
       "discount_pct": -27.47,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": "Wide",
+      "moat_score": 8.3
     },
     {
       "ticker": "AMAT",
@@ -399,7 +477,9 @@
       "intrinsic_value": 311.24,
       "discount_pct": -25.27,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APP",
@@ -409,7 +489,9 @@
       "intrinsic_value": 1064.58,
       "discount_pct": 56.22,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APTV",
@@ -419,7 +501,9 @@
       "intrinsic_value": 79.09,
       "discount_pct": 27.27,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ACGL",
@@ -429,7 +513,9 @@
       "intrinsic_value": 298.28,
       "discount_pct": 67.45,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADM",
@@ -439,7 +525,9 @@
       "intrinsic_value": 262.66,
       "discount_pct": 73.85,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARES",
@@ -449,7 +537,9 @@
       "intrinsic_value": 420.46,
       "discount_pct": 72.36,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ANET",
@@ -459,7 +549,9 @@
       "intrinsic_value": 120.77,
       "discount_pct": -33.32,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AJG",
@@ -469,7 +561,9 @@
       "intrinsic_value": 206.68,
       "discount_pct": -8.42,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIZ",
@@ -479,7 +573,9 @@
       "intrinsic_value": 620.55,
       "discount_pct": 63.8,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "T",
@@ -489,7 +585,9 @@
       "intrinsic_value": 52.5,
       "discount_pct": 49.71,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ATO",
@@ -499,7 +597,9 @@
       "intrinsic_value": -256.85,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADSK",
@@ -509,7 +609,9 @@
       "intrinsic_value": 287.52,
       "discount_pct": 15.43,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADP",
@@ -519,7 +621,9 @@
       "intrinsic_value": 262.3,
       "discount_pct": 23.6,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AZO",
@@ -529,7 +633,9 @@
       "intrinsic_value": 3916.82,
       "discount_pct": 10.92,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVB",
@@ -539,7 +645,9 @@
       "intrinsic_value": 13.8,
       "discount_pct": -1129.2,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVY",
@@ -549,7 +657,9 @@
       "intrinsic_value": 201.06,
       "discount_pct": 17.3,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXON",
@@ -559,7 +669,9 @@
       "intrinsic_value": 41.55,
       "discount_pct": -846.04,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKR",
@@ -569,7 +681,9 @@
       "intrinsic_value": 83.98,
       "discount_pct": 27.84,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BALL",
@@ -579,7 +693,9 @@
       "intrinsic_value": 92.35,
       "discount_pct": 31.38,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAC",
@@ -589,7 +705,9 @@
       "intrinsic_value": 28.13,
       "discount_pct": -90.22,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAX",
@@ -599,7 +717,9 @@
       "intrinsic_value": -6.14,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BDX",
@@ -609,7 +729,9 @@
       "intrinsic_value": 133.25,
       "discount_pct": -16.19,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRK-B",
@@ -619,7 +741,9 @@
       "intrinsic_value": 615.84,
       "discount_pct": 22.85,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BBY",
@@ -629,7 +753,9 @@
       "intrinsic_value": 98.55,
       "discount_pct": 34.38,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TECH",
@@ -639,7 +765,9 @@
       "intrinsic_value": 29.37,
       "discount_pct": -95.3,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BIIB",
@@ -649,7 +777,9 @@
       "intrinsic_value": 222.55,
       "discount_pct": 20.91,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLK",
@@ -659,7 +789,9 @@
       "intrinsic_value": 565.44,
       "discount_pct": -81.27,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BX",
@@ -669,7 +801,9 @@
       "intrinsic_value": 136.57,
       "discount_pct": 6.18,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYZ",
@@ -679,7 +813,9 @@
       "intrinsic_value": 316.9,
       "discount_pct": 78.33,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BK",
@@ -689,7 +825,9 @@
       "intrinsic_value": 376.04,
       "discount_pct": 64.14,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BA",
@@ -699,7 +837,9 @@
       "intrinsic_value": 1308.43,
       "discount_pct": 83.27,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKNG",
@@ -709,7 +849,9 @@
       "intrinsic_value": 337.92,
       "discount_pct": 45.38,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BSX",
@@ -719,7 +861,9 @@
       "intrinsic_value": 58.16,
       "discount_pct": -9.04,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BMY",
@@ -729,7 +873,9 @@
       "intrinsic_value": 49.28,
       "discount_pct": -19.64,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVGO",
@@ -739,7 +885,9 @@
       "intrinsic_value": 893.08,
       "discount_pct": 55.38,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BR",
@@ -749,7 +897,9 @@
       "intrinsic_value": 242.73,
       "discount_pct": 33.09,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRO",
@@ -759,7 +909,9 @@
       "intrinsic_value": 73.33,
       "discount_pct": 6.15,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BF-B",
@@ -769,7 +921,9 @@
       "intrinsic_value": 26.81,
       "discount_pct": -9.88,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLDR",
@@ -779,7 +933,9 @@
       "intrinsic_value": 83.33,
       "discount_pct": -0.68,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BG",
@@ -789,7 +945,9 @@
       "intrinsic_value": 57.32,
       "discount_pct": -114.6,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BXP",
@@ -799,7 +957,9 @@
       "intrinsic_value": 34.38,
       "discount_pct": -63.38,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHRW",
@@ -809,7 +969,9 @@
       "intrinsic_value": 206.84,
       "discount_pct": 12.2,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDNS",
@@ -819,7 +981,9 @@
       "intrinsic_value": 150.6,
       "discount_pct": -103.82,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPT",
@@ -829,7 +993,9 @@
       "intrinsic_value": -23.45,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPB",
@@ -839,7 +1005,9 @@
       "intrinsic_value": -1.72,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COF",
@@ -849,7 +1017,9 @@
       "intrinsic_value": 986.65,
       "discount_pct": 79.66,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAH",
@@ -859,7 +1029,9 @@
       "intrinsic_value": 242.37,
       "discount_pct": 12.08,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCL",
@@ -869,7 +1041,9 @@
       "intrinsic_value": 19.02,
       "discount_pct": -43.59,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CARR",
@@ -879,7 +1053,9 @@
       "intrinsic_value": 42.35,
       "discount_pct": -40.99,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVNA",
@@ -889,7 +1065,9 @@
       "intrinsic_value": 166.51,
       "discount_pct": -117.55,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CASY",
@@ -899,7 +1077,9 @@
       "intrinsic_value": 440.08,
       "discount_pct": -67.52,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAT",
@@ -909,7 +1089,9 @@
       "intrinsic_value": 731.08,
       "discount_pct": -5.69,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBOE",
@@ -919,7 +1101,9 @@
       "intrinsic_value": 378.62,
       "discount_pct": 18.29,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBRE",
@@ -929,7 +1113,9 @@
       "intrinsic_value": 122.32,
       "discount_pct": -20.83,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDW",
@@ -939,7 +1125,9 @@
       "intrinsic_value": 136.45,
       "discount_pct": 2.3,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COR",
@@ -949,7 +1137,9 @@
       "intrinsic_value": 371.23,
       "discount_pct": 13.16,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNC",
@@ -959,7 +1149,9 @@
       "intrinsic_value": 1027.48,
       "discount_pct": 96.2,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNP",
@@ -969,7 +1161,9 @@
       "intrinsic_value": -114.79,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CF",
@@ -979,7 +1173,9 @@
       "intrinsic_value": 129.32,
       "discount_pct": 3.56,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRL",
@@ -989,7 +1185,9 @@
       "intrinsic_value": 147.55,
       "discount_pct": -19.92,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SCHW",
@@ -999,7 +1197,9 @@
       "intrinsic_value": 215.6,
       "discount_pct": 57.04,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHTR",
@@ -1009,7 +1209,9 @@
       "intrinsic_value": 288.59,
       "discount_pct": 18.23,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVX",
@@ -1019,7 +1221,9 @@
       "intrinsic_value": 288.93,
       "discount_pct": 34.88,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMG",
@@ -1029,7 +1233,9 @@
       "intrinsic_value": 34.46,
       "discount_pct": -1.8,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CB",
@@ -1039,7 +1245,9 @@
       "intrinsic_value": 798.98,
       "discount_pct": 58.9,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHD",
@@ -1049,7 +1257,9 @@
       "intrinsic_value": 83.72,
       "discount_pct": -12.92,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CIEN",
@@ -1059,7 +1269,9 @@
       "intrinsic_value": 1729.61,
       "discount_pct": 71.37,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CI",
@@ -1069,7 +1281,9 @@
       "intrinsic_value": 567.96,
       "discount_pct": 51.34,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CINF",
@@ -1079,7 +1293,9 @@
       "intrinsic_value": 745.42,
       "discount_pct": 78.08,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTAS",
@@ -1089,7 +1305,9 @@
       "intrinsic_value": 122.4,
       "discount_pct": -45.03,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSCO",
@@ -1099,7 +1317,9 @@
       "intrinsic_value": 70.05,
       "discount_pct": -20.63,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "C",
@@ -1109,7 +1329,9 @@
       "intrinsic_value": -2118.11,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CFG",
@@ -1119,7 +1341,9 @@
       "intrinsic_value": 233.67,
       "discount_pct": 72.44,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CLX",
@@ -1129,7 +1353,9 @@
       "intrinsic_value": 73.63,
       "discount_pct": -39.05,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CME",
@@ -1139,7 +1365,9 @@
       "intrinsic_value": 241.34,
       "discount_pct": -22.74,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMS",
@@ -1149,7 +1377,9 @@
       "intrinsic_value": -181.0,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KO",
@@ -1159,7 +1389,9 @@
       "intrinsic_value": 27.63,
       "discount_pct": -172.1,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTSH",
@@ -1169,7 +1401,9 @@
       "intrinsic_value": 121.19,
       "discount_pct": 50.05,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COHR",
@@ -1179,7 +1413,9 @@
       "intrinsic_value": 172.22,
       "discount_pct": -90.45,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COIN",
@@ -1189,7 +1425,9 @@
       "intrinsic_value": 258.19,
       "discount_pct": 22.61,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CL",
@@ -1199,7 +1437,9 @@
       "intrinsic_value": 75.96,
       "discount_pct": -10.08,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMCSA",
@@ -1209,7 +1449,9 @@
       "intrinsic_value": 45.69,
       "discount_pct": 35.76,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIX",
@@ -1219,7 +1461,9 @@
       "intrinsic_value": 928.74,
       "discount_pct": -72.92,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAG",
@@ -1229,7 +1473,9 @@
       "intrinsic_value": 7.57,
       "discount_pct": -94.19,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COP",
@@ -1239,7 +1485,9 @@
       "intrinsic_value": 160.49,
       "discount_pct": 24.25,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ED",
@@ -1249,7 +1497,9 @@
       "intrinsic_value": -69.34,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STZ",
@@ -1259,7 +1509,9 @@
       "intrinsic_value": 131.95,
       "discount_pct": -24.48,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CEG",
@@ -1269,7 +1521,9 @@
       "intrinsic_value": 136.03,
       "discount_pct": -119.91,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COO",
@@ -1279,7 +1533,9 @@
       "intrinsic_value": 36.29,
       "discount_pct": -91.18,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPRT",
@@ -1289,7 +1545,9 @@
       "intrinsic_value": 34.33,
       "discount_pct": 3.09,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GLW",
@@ -1299,7 +1557,9 @@
       "intrinsic_value": 70.28,
       "discount_pct": -136.31,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPAY",
@@ -1309,7 +1569,9 @@
       "intrinsic_value": 702.78,
       "discount_pct": 52.75,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTVA",
@@ -1319,7 +1581,9 @@
       "intrinsic_value": 107.44,
       "discount_pct": 24.46,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSGP",
@@ -1329,7 +1593,9 @@
       "intrinsic_value": 11.3,
       "discount_pct": -254.34,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COST",
@@ -1339,7 +1605,9 @@
       "intrinsic_value": 438.27,
       "discount_pct": -125.25,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTRA",
@@ -1349,7 +1617,9 @@
       "intrinsic_value": 60.23,
       "discount_pct": 46.92,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRH",
@@ -1359,7 +1629,9 @@
       "intrinsic_value": 156.68,
       "discount_pct": 27.01,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRWD",
@@ -1369,7 +1641,9 @@
       "intrinsic_value": 325.05,
       "discount_pct": -28.66,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCI",
@@ -1379,7 +1653,9 @@
       "intrinsic_value": 865.89,
       "discount_pct": 89.97,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSX",
@@ -1389,7 +1665,9 @@
       "intrinsic_value": 11.77,
       "discount_pct": -262.96,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMI",
@@ -1399,7 +1677,9 @@
       "intrinsic_value": 650.51,
       "discount_pct": 6.4,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVS",
@@ -1409,7 +1689,9 @@
       "intrinsic_value": 117.33,
       "discount_pct": 34.55,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHR",
@@ -1419,7 +1701,9 @@
       "intrinsic_value": 130.39,
       "discount_pct": -48.62,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DRI",
@@ -1429,7 +1713,9 @@
       "intrinsic_value": 186.67,
       "discount_pct": -5.35,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DDOG",
@@ -1439,7 +1725,9 @@
       "intrinsic_value": 82.22,
       "discount_pct": -50.17,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVA",
@@ -1449,7 +1737,9 @@
       "intrinsic_value": 651.9,
       "discount_pct": 77.28,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DECK",
@@ -1459,7 +1749,9 @@
       "intrinsic_value": 148.04,
       "discount_pct": 26.82,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DE",
@@ -1469,7 +1761,9 @@
       "intrinsic_value": 150.34,
       "discount_pct": -288.58,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DELL",
@@ -1479,7 +1773,9 @@
       "intrinsic_value": 930.75,
       "discount_pct": 79.25,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DAL",
@@ -1489,7 +1785,9 @@
       "intrinsic_value": 156.19,
       "discount_pct": 55.25,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVN",
@@ -1499,7 +1797,9 @@
       "intrinsic_value": 114.31,
       "discount_pct": 59.95,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DXCM",
@@ -1509,7 +1809,9 @@
       "intrinsic_value": 89.23,
       "discount_pct": 31.38,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FANG",
@@ -1519,7 +1821,9 @@
       "intrinsic_value": -104.15,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLR",
@@ -1529,7 +1833,9 @@
       "intrinsic_value": 3.26,
       "discount_pct": -6005.83,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DG",
@@ -1539,7 +1845,9 @@
       "intrinsic_value": 221.98,
       "discount_pct": 44.38,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLTR",
@@ -1549,7 +1857,9 @@
       "intrinsic_value": 172.47,
       "discount_pct": 42.06,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "D",
@@ -1559,7 +1869,9 @@
       "intrinsic_value": -209.5,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DPZ",
@@ -1569,7 +1881,9 @@
       "intrinsic_value": 357.91,
       "discount_pct": -3.1,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DASH",
@@ -1579,7 +1893,9 @@
       "intrinsic_value": 557.79,
       "discount_pct": 67.85,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOV",
@@ -1589,7 +1905,9 @@
       "intrinsic_value": 181.78,
       "discount_pct": -17.82,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOW",
@@ -1599,7 +1917,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHI",
@@ -1609,7 +1929,9 @@
       "intrinsic_value": 192.68,
       "discount_pct": 25.6,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DTE",
@@ -1619,7 +1941,9 @@
       "intrinsic_value": -221.21,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DUK",
@@ -1629,7 +1953,9 @@
       "intrinsic_value": -157.73,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DD",
@@ -1639,7 +1965,9 @@
       "intrinsic_value": 8.88,
       "discount_pct": -426.46,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETN",
@@ -1649,7 +1977,9 @@
       "intrinsic_value": 256.1,
       "discount_pct": -53.35,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EBAY",
@@ -1659,7 +1989,9 @@
       "intrinsic_value": 75.31,
       "discount_pct": -35.39,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SATS",
@@ -1669,7 +2001,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ECL",
@@ -1679,7 +2013,9 @@
       "intrinsic_value": 243.74,
       "discount_pct": -10.46,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EIX",
@@ -1689,7 +2025,9 @@
       "intrinsic_value": 117.95,
       "discount_pct": 39.3,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EW",
@@ -1699,7 +2037,9 @@
       "intrinsic_value": 85.74,
       "discount_pct": 7.8,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EA",
@@ -1709,7 +2049,9 @@
       "intrinsic_value": 217.47,
       "discount_pct": 6.48,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ELV",
@@ -1719,7 +2061,9 @@
       "intrinsic_value": 350.85,
       "discount_pct": 9.98,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EME",
@@ -1729,7 +2073,9 @@
       "intrinsic_value": 678.17,
       "discount_pct": -16.82,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EMR",
@@ -1739,7 +2085,9 @@
       "intrinsic_value": 84.42,
       "discount_pct": -66.28,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETR",
@@ -1749,7 +2097,9 @@
       "intrinsic_value": -227.21,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EOG",
@@ -1759,7 +2109,9 @@
       "intrinsic_value": 167.6,
       "discount_pct": 20.01,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EPAM",
@@ -1769,7 +2121,9 @@
       "intrinsic_value": 233.9,
       "discount_pct": 45.78,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQT",
@@ -1779,7 +2133,9 @@
       "intrinsic_value": 214.51,
       "discount_pct": 72.78,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EFX",
@@ -1789,7 +2145,9 @@
       "intrinsic_value": 230.35,
       "discount_pct": 17.35,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQIX",
@@ -1799,7 +2157,9 @@
       "intrinsic_value": -262.97,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQR",
@@ -1809,7 +2169,9 @@
       "intrinsic_value": 0.36,
       "discount_pct": -16702.78,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ERIE",
@@ -1819,7 +2181,9 @@
       "intrinsic_value": 748.31,
       "discount_pct": 67.76,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ESS",
@@ -1829,7 +2193,9 @@
       "intrinsic_value": -15.73,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EL",
@@ -1839,7 +2205,9 @@
       "intrinsic_value": 186.56,
       "discount_pct": 59.62,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EG",
@@ -1849,7 +2217,9 @@
       "intrinsic_value": 2935.13,
       "discount_pct": 88.27,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EVRG",
@@ -1859,7 +2229,9 @@
       "intrinsic_value": -137.75,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ES",
@@ -1869,7 +2241,9 @@
       "intrinsic_value": -81.75,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXC",
@@ -1879,7 +2253,9 @@
       "intrinsic_value": -89.25,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXE",
@@ -1889,7 +2265,9 @@
       "intrinsic_value": 211.64,
       "discount_pct": 54.0,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPE",
@@ -1899,7 +2277,9 @@
       "intrinsic_value": 876.64,
       "discount_pct": 70.98,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPD",
@@ -1909,7 +2289,9 @@
       "intrinsic_value": 132.5,
       "discount_pct": -10.95,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXR",
@@ -1919,7 +2301,9 @@
       "intrinsic_value": 69.87,
       "discount_pct": -102.72,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XOM",
@@ -1929,7 +2313,9 @@
       "intrinsic_value": 171.98,
       "discount_pct": 11.63,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FFIV",
@@ -1939,7 +2325,9 @@
       "intrinsic_value": 261.33,
       "discount_pct": -17.88,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDS",
@@ -1949,7 +2337,9 @@
       "intrinsic_value": 433.33,
       "discount_pct": 46.5,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FICO",
@@ -1959,7 +2349,9 @@
       "intrinsic_value": 1572.5,
       "discount_pct": 31.96,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FAST",
@@ -1969,7 +2361,9 @@
       "intrinsic_value": 27.64,
       "discount_pct": -61.79,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FRT",
@@ -1979,7 +2373,9 @@
       "intrinsic_value": -4.72,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDX",
@@ -1989,7 +2385,9 @@
       "intrinsic_value": 238.13,
       "discount_pct": -59.95,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIS",
@@ -1999,7 +2397,9 @@
       "intrinsic_value": 58.03,
       "discount_pct": 16.22,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FITB",
@@ -2009,7 +2409,9 @@
       "intrinsic_value": 108.49,
       "discount_pct": 54.36,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FSLR",
@@ -2019,7 +2421,9 @@
       "intrinsic_value": 889.86,
       "discount_pct": 78.46,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FE",
@@ -2029,7 +2433,9 @@
       "intrinsic_value": -81.62,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FISV",
@@ -2039,7 +2445,9 @@
       "intrinsic_value": 103.96,
       "discount_pct": 39.94,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "F",
@@ -2049,7 +2457,9 @@
       "intrinsic_value": 92.01,
       "discount_pct": 86.48,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTNT",
@@ -2059,7 +2469,9 @@
       "intrinsic_value": 80.49,
       "discount_pct": -2.37,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTV",
@@ -2069,7 +2481,9 @@
       "intrinsic_value": 61.18,
       "discount_pct": 2.5,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOXA",
@@ -2079,7 +2493,9 @@
       "intrinsic_value": 180.33,
       "discount_pct": 64.22,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOX",
@@ -2089,7 +2505,9 @@
       "intrinsic_value": 165.07,
       "discount_pct": 64.92,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BEN",
@@ -2099,7 +2517,9 @@
       "intrinsic_value": 18.64,
       "discount_pct": -42.44,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FCX",
@@ -2109,7 +2529,9 @@
       "intrinsic_value": 326.33,
       "discount_pct": 79.08,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GRMN",
@@ -2119,7 +2541,9 @@
       "intrinsic_value": 199.88,
       "discount_pct": -32.26,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IT",
@@ -2129,7 +2553,9 @@
       "intrinsic_value": 358.21,
       "discount_pct": 56.58,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GE",
@@ -2139,7 +2565,9 @@
       "intrinsic_value": 197.91,
       "discount_pct": -50.72,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEHC",
@@ -2149,7 +2577,9 @@
       "intrinsic_value": 79.67,
       "discount_pct": 8.12,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEV",
@@ -2159,7 +2589,9 @@
       "intrinsic_value": 769.43,
       "discount_pct": -27.15,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEN",
@@ -2169,7 +2601,9 @@
       "intrinsic_value": 36.97,
       "discount_pct": 46.5,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GNRC",
@@ -2179,7 +2613,9 @@
       "intrinsic_value": 183.32,
       "discount_pct": -13.14,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GD",
@@ -2189,7 +2625,9 @@
       "intrinsic_value": 378.0,
       "discount_pct": 11.4,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GIS",
@@ -2199,7 +2637,9 @@
       "intrinsic_value": 12.96,
       "discount_pct": -172.53,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GM",
@@ -2209,7 +2649,9 @@
       "intrinsic_value": -71.26,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPC",
@@ -2219,7 +2661,9 @@
       "intrinsic_value": 33.58,
       "discount_pct": -231.09,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GILD",
@@ -2229,7 +2673,9 @@
       "intrinsic_value": 165.25,
       "discount_pct": 16.16,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPN",
@@ -2239,7 +2685,9 @@
       "intrinsic_value": 205.15,
       "discount_pct": 65.47,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GL",
@@ -2249,7 +2697,9 @@
       "intrinsic_value": 567.62,
       "discount_pct": 73.63,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GDDY",
@@ -2259,7 +2709,9 @@
       "intrinsic_value": 425.17,
       "discount_pct": 80.18,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GS",
@@ -2269,7 +2721,9 @@
       "intrinsic_value": -4018.47,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAL",
@@ -2279,7 +2733,9 @@
       "intrinsic_value": 41.44,
       "discount_pct": 7.94,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HIG",
@@ -2289,7 +2745,9 @@
       "intrinsic_value": 449.79,
       "discount_pct": 69.26,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAS",
@@ -2299,7 +2757,9 @@
       "intrinsic_value": 85.83,
       "discount_pct": -8.76,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HCA",
@@ -2309,7 +2769,9 @@
       "intrinsic_value": 469.97,
       "discount_pct": -2.77,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOC",
@@ -2319,7 +2781,9 @@
       "intrinsic_value": 232.93,
       "discount_pct": 92.62,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSIC",
@@ -2329,7 +2793,9 @@
       "intrinsic_value": 77.53,
       "discount_pct": 0.41,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSY",
@@ -2339,7 +2805,9 @@
       "intrinsic_value": 450.89,
       "discount_pct": 57.56,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPE",
@@ -2349,7 +2817,9 @@
       "intrinsic_value": 1.07,
       "discount_pct": -2319.63,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HLT",
@@ -2359,7 +2829,9 @@
       "intrinsic_value": 195.75,
       "discount_pct": -68.78,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HD",
@@ -2369,7 +2841,9 @@
       "intrinsic_value": 231.81,
       "discount_pct": -45.44,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HON",
@@ -2379,7 +2853,9 @@
       "intrinsic_value": 175.01,
       "discount_pct": -31.07,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HRL",
@@ -2389,7 +2865,9 @@
       "intrinsic_value": 15.26,
       "discount_pct": -36.96,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HST",
@@ -2399,7 +2877,9 @@
       "intrinsic_value": 5.41,
       "discount_pct": -280.22,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HWM",
@@ -2409,7 +2889,9 @@
       "intrinsic_value": 154.59,
       "discount_pct": -60.17,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPQ",
@@ -2419,7 +2901,9 @@
       "intrinsic_value": 48.32,
       "discount_pct": 59.19,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUBB",
@@ -2429,7 +2913,9 @@
       "intrinsic_value": 354.34,
       "discount_pct": -47.23,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUM",
@@ -2439,7 +2925,9 @@
       "intrinsic_value": 312.43,
       "discount_pct": 35.74,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HBAN",
@@ -2449,7 +2937,9 @@
       "intrinsic_value": 33.48,
       "discount_pct": 50.51,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HII",
@@ -2459,7 +2949,9 @@
       "intrinsic_value": 587.77,
       "discount_pct": 32.6,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBM",
@@ -2469,7 +2961,9 @@
       "intrinsic_value": 250.54,
       "discount_pct": -0.18,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IEX",
@@ -2479,7 +2973,9 @@
       "intrinsic_value": 155.03,
       "discount_pct": -29.47,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IDXX",
@@ -2489,7 +2985,9 @@
       "intrinsic_value": 297.94,
       "discount_pct": -91.3,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ITW",
@@ -2499,7 +2997,9 @@
       "intrinsic_value": 164.45,
       "discount_pct": -61.51,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INCY",
@@ -2509,7 +3009,9 @@
       "intrinsic_value": 202.22,
       "discount_pct": 52.86,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IR",
@@ -2519,7 +3021,9 @@
       "intrinsic_value": 47.12,
       "discount_pct": -77.57,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PODD",
@@ -2529,7 +3033,9 @@
       "intrinsic_value": 241.71,
       "discount_pct": 16.65,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTC",
@@ -2539,7 +3045,9 @@
       "intrinsic_value": -159.9,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBKR",
@@ -2549,7 +3057,9 @@
       "intrinsic_value": 865.8,
       "discount_pct": 90.83,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ICE",
@@ -2559,7 +3069,9 @@
       "intrinsic_value": 168.81,
       "discount_pct": 3.0,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IFF",
@@ -2569,7 +3081,9 @@
       "intrinsic_value": -2.15,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IP",
@@ -2579,7 +3093,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTU",
@@ -2589,7 +3105,9 @@
       "intrinsic_value": 589.42,
       "discount_pct": 34.32,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ISRG",
@@ -2599,7 +3117,9 @@
       "intrinsic_value": 202.24,
       "discount_pct": -126.5,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IVZ",
@@ -2609,7 +3129,9 @@
       "intrinsic_value": 62.88,
       "discount_pct": 61.82,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INVH",
@@ -2619,7 +3141,9 @@
       "intrinsic_value": 3.37,
       "discount_pct": -679.53,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IQV",
@@ -2629,7 +3153,9 @@
       "intrinsic_value": 155.03,
       "discount_pct": -10.91,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IRM",
@@ -2639,7 +3165,9 @@
       "intrinsic_value": -132.74,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBHT",
@@ -2649,7 +3177,9 @@
       "intrinsic_value": 313.9,
       "discount_pct": 24.08,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBL",
@@ -2659,7 +3189,9 @@
       "intrinsic_value": 380.55,
       "discount_pct": 18.51,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JKHY",
@@ -2669,7 +3201,9 @@
       "intrinsic_value": 202.91,
       "discount_pct": 24.03,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "J",
@@ -2679,7 +3213,9 @@
       "intrinsic_value": 144.04,
       "discount_pct": 12.35,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JNJ",
@@ -2689,7 +3225,9 @@
       "intrinsic_value": 217.28,
       "discount_pct": -7.94,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JCI",
@@ -2699,7 +3237,9 @@
       "intrinsic_value": 69.05,
       "discount_pct": -99.2,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JPM",
@@ -2709,7 +3249,9 @@
       "intrinsic_value": -1192.22,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KVUE",
@@ -2719,7 +3261,9 @@
       "intrinsic_value": 18.25,
       "discount_pct": 4.33,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KDP",
@@ -2729,7 +3273,9 @@
       "intrinsic_value": 20.86,
       "discount_pct": -24.83,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEY",
@@ -2739,7 +3285,9 @@
       "intrinsic_value": 55.19,
       "discount_pct": 60.74,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEYS",
@@ -2749,7 +3297,9 @@
       "intrinsic_value": 217.68,
       "discount_pct": -51.58,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMB",
@@ -2759,7 +3309,9 @@
       "intrinsic_value": 108.88,
       "discount_pct": 10.02,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KIM",
@@ -2769,7 +3321,9 @@
       "intrinsic_value": 12.17,
       "discount_pct": -95.15,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMI",
@@ -2779,7 +3333,9 @@
       "intrinsic_value": 11.29,
       "discount_pct": -181.58,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KKR",
@@ -2789,7 +3345,9 @@
       "intrinsic_value": 106.76,
       "discount_pct": 4.44,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KLAC",
@@ -2799,7 +3357,9 @@
       "intrinsic_value": 1036.74,
       "discount_pct": -67.34,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KHC",
@@ -2809,7 +3369,9 @@
       "intrinsic_value": 15.11,
       "discount_pct": -49.5,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KR",
@@ -2819,7 +3381,9 @@
       "intrinsic_value": 95.64,
       "discount_pct": 29.14,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LHX",
@@ -2829,7 +3393,9 @@
       "intrinsic_value": 353.64,
       "discount_pct": 0.07,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LH",
@@ -2839,7 +3405,9 @@
       "intrinsic_value": 237.13,
       "discount_pct": -12.33,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LRCX",
@@ -2849,7 +3417,9 @@
       "intrinsic_value": 267.31,
       "discount_pct": 2.38,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LVS",
@@ -2859,7 +3429,9 @@
       "intrinsic_value": 44.15,
       "discount_pct": -28.45,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LDOS",
@@ -2869,7 +3441,9 @@
       "intrinsic_value": 225.57,
       "discount_pct": 30.63,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LEN",
@@ -2879,7 +3453,9 @@
       "intrinsic_value": -8.26,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LII",
@@ -2889,7 +3465,9 @@
       "intrinsic_value": 353.91,
       "discount_pct": -35.41,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LLY",
@@ -2899,7 +3477,9 @@
       "intrinsic_value": 1080.72,
       "discount_pct": 16.35,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LIN",
@@ -2909,7 +3489,9 @@
       "intrinsic_value": 461.43,
       "discount_pct": -8.19,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYV",
@@ -2919,7 +3501,9 @@
       "intrinsic_value": 4.93,
       "discount_pct": -3157.4,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LMT",
@@ -2929,7 +3513,9 @@
       "intrinsic_value": 939.36,
       "discount_pct": 35.33,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "L",
@@ -2939,7 +3525,9 @@
       "intrinsic_value": 164.3,
       "discount_pct": 33.15,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LOW",
@@ -2949,7 +3537,9 @@
       "intrinsic_value": 255.75,
       "discount_pct": 5.21,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LULU",
@@ -2959,7 +3549,9 @@
       "intrinsic_value": 211.65,
       "discount_pct": 23.02,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LITE",
@@ -2969,7 +3561,9 @@
       "intrinsic_value": 12070.5,
       "discount_pct": 92.62,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYB",
@@ -2979,7 +3573,9 @@
       "intrinsic_value": 215.55,
       "discount_pct": 65.07,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTB",
@@ -2989,7 +3585,9 @@
       "intrinsic_value": 537.62,
       "discount_pct": 59.65,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPC",
@@ -2999,7 +3597,9 @@
       "intrinsic_value": 954.72,
       "discount_pct": 76.3,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAR",
@@ -3009,7 +3609,9 @@
       "intrinsic_value": 241.11,
       "discount_pct": -50.31,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRSH",
@@ -3019,7 +3621,9 @@
       "intrinsic_value": 201.01,
       "discount_pct": 9.17,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MLM",
@@ -3029,7 +3633,9 @@
       "intrinsic_value": 452.21,
       "discount_pct": -34.45,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAS",
@@ -3039,7 +3645,9 @@
       "intrinsic_value": 80.34,
       "discount_pct": 20.67,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MA",
@@ -3049,7 +3657,9 @@
       "intrinsic_value": 642.23,
       "discount_pct": 19.26,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MKC",
@@ -3059,7 +3669,9 @@
       "intrinsic_value": 50.93,
       "discount_pct": -4.59,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCD",
@@ -3069,7 +3681,9 @@
       "intrinsic_value": 261.36,
       "discount_pct": -17.45,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCK",
@@ -3079,7 +3693,9 @@
       "intrinsic_value": 1293.82,
       "discount_pct": 32.96,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDT",
@@ -3089,7 +3705,9 @@
       "intrinsic_value": 60.27,
       "discount_pct": -42.11,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRK",
@@ -3099,7 +3717,9 @@
       "intrinsic_value": 112.42,
       "discount_pct": -2.7,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "META",
@@ -3109,7 +3729,9 @@
       "intrinsic_value": 707.71,
       "discount_pct": 4.36,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MET",
@@ -3119,7 +3741,9 @@
       "intrinsic_value": 822.0,
       "discount_pct": 90.62,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTD",
@@ -3129,7 +3753,9 @@
       "intrinsic_value": 797.72,
       "discount_pct": -61.82,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MGM",
@@ -3139,7 +3765,9 @@
       "intrinsic_value": 29.33,
       "discount_pct": -31.23,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCHP",
@@ -3149,7 +3777,9 @@
       "intrinsic_value": 132.23,
       "discount_pct": 41.87,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MU",
@@ -3159,7 +3789,9 @@
       "intrinsic_value": 59190.28,
       "discount_pct": 99.23,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": "Narrow",
+      "moat_score": 5.9
     },
     {
       "ticker": "MSFT",
@@ -3169,7 +3801,9 @@
       "intrinsic_value": 729.53,
       "discount_pct": 42.39,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAA",
@@ -3179,7 +3813,9 @@
       "intrinsic_value": 47.54,
       "discount_pct": -158.94,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRNA",
@@ -3189,7 +3825,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TAP",
@@ -3199,7 +3837,9 @@
       "intrinsic_value": 48.87,
       "discount_pct": 9.62,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDLZ",
@@ -3209,7 +3849,9 @@
       "intrinsic_value": 36.34,
       "discount_pct": -57.04,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPWR",
@@ -3219,7 +3861,9 @@
       "intrinsic_value": 555.46,
       "discount_pct": -152.55,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MNST",
@@ -3229,7 +3873,9 @@
       "intrinsic_value": 57.67,
       "discount_pct": -30.67,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCO",
@@ -3239,7 +3885,9 @@
       "intrinsic_value": 319.61,
       "discount_pct": -40.3,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MS",
@@ -3249,7 +3897,9 @@
       "intrinsic_value": -416.24,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MOS",
@@ -3259,7 +3909,9 @@
       "intrinsic_value": 16.55,
       "discount_pct": -49.43,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSI",
@@ -3269,7 +3921,9 @@
       "intrinsic_value": 306.94,
       "discount_pct": -44.8,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSCI",
@@ -3279,7 +3933,9 @@
       "intrinsic_value": 446.12,
       "discount_pct": -26.63,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDAQ",
@@ -3289,7 +3945,9 @@
       "intrinsic_value": 91.95,
       "discount_pct": 3.35,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTAP",
@@ -3299,7 +3957,9 @@
       "intrinsic_value": 179.76,
       "discount_pct": 42.32,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NFLX",
@@ -3309,7 +3969,9 @@
       "intrinsic_value": 79.8,
       "discount_pct": -35.08,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEM",
@@ -3319,7 +3981,9 @@
       "intrinsic_value": 440.32,
       "discount_pct": 74.24,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWSA",
@@ -3329,7 +3993,9 @@
       "intrinsic_value": 55.76,
       "discount_pct": 53.75,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWS",
@@ -3339,7 +4005,9 @@
       "intrinsic_value": 111.48,
       "discount_pct": 73.4,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEE",
@@ -3349,7 +4017,9 @@
       "intrinsic_value": -10.55,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NKE",
@@ -3359,7 +4029,9 @@
       "intrinsic_value": 20.07,
       "discount_pct": -127.7,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NI",
@@ -3369,7 +4041,9 @@
       "intrinsic_value": -69.86,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDSN",
@@ -3379,7 +4053,9 @@
       "intrinsic_value": 225.5,
       "discount_pct": -22.71,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NSC",
@@ -3389,7 +4065,9 @@
       "intrinsic_value": 80.44,
       "discount_pct": -276.22,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTRS",
@@ -3399,7 +4077,9 @@
       "intrinsic_value": 819.36,
       "discount_pct": 80.87,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOC",
@@ -3409,7 +4089,9 @@
       "intrinsic_value": 601.89,
       "discount_pct": -11.78,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NCLH",
@@ -3419,7 +4101,9 @@
       "intrinsic_value": -76.32,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NRG",
@@ -3429,7 +4113,9 @@
       "intrinsic_value": 50.63,
       "discount_pct": -232.81,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NUE",
@@ -3439,7 +4125,9 @@
       "intrinsic_value": -48.85,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVDA",
@@ -3449,7 +4137,9 @@
       "intrinsic_value": 360.54,
       "discount_pct": 44.99,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVR",
@@ -3459,7 +4149,9 @@
       "intrinsic_value": 7876.18,
       "discount_pct": 14.89,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NXPI",
@@ -3469,7 +4161,9 @@
       "intrinsic_value": 292.86,
       "discount_pct": 27.02,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORLY",
@@ -3479,7 +4173,9 @@
       "intrinsic_value": 69.35,
       "discount_pct": -33.68,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OXY",
@@ -3489,7 +4185,9 @@
       "intrinsic_value": 163.08,
       "discount_pct": 65.13,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ODFL",
@@ -3499,7 +4197,9 @@
       "intrinsic_value": 157.36,
       "discount_pct": -35.72,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OMC",
@@ -3509,7 +4209,9 @@
       "intrinsic_value": 357.46,
       "discount_pct": 77.97,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ON",
@@ -3519,7 +4221,9 @@
       "intrinsic_value": 196.49,
       "discount_pct": 59.32,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OKE",
@@ -3529,7 +4233,9 @@
       "intrinsic_value": 25.6,
       "discount_pct": -232.85,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORCL",
@@ -3539,7 +4245,9 @@
       "intrinsic_value": 237.05,
       "discount_pct": 24.77,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OTIS",
@@ -3549,7 +4257,9 @@
       "intrinsic_value": 67.85,
       "discount_pct": -18.92,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCAR",
@@ -3559,7 +4269,9 @@
       "intrinsic_value": 137.41,
       "discount_pct": 9.49,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PKG",
@@ -3569,7 +4281,9 @@
       "intrinsic_value": 139.26,
       "discount_pct": -49.09,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLTR",
@@ -3579,7 +4293,9 @@
       "intrinsic_value": 148.54,
       "discount_pct": 3.89,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PANW",
@@ -3589,7 +4305,9 @@
       "intrinsic_value": 114.67,
       "discount_pct": -45.61,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSKY",
@@ -3599,7 +4317,9 @@
       "intrinsic_value": 31.06,
       "discount_pct": 62.23,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PH",
@@ -3609,7 +4329,9 @@
       "intrinsic_value": 547.65,
       "discount_pct": -74.75,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PAYX",
@@ -3619,7 +4341,9 @@
       "intrinsic_value": 129.03,
       "discount_pct": 28.6,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PYPL",
@@ -3629,7 +4353,9 @@
       "intrinsic_value": 112.54,
       "discount_pct": 55.74,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNR",
@@ -3639,7 +4365,9 @@
       "intrinsic_value": 85.91,
       "discount_pct": -3.29,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEP",
@@ -3649,7 +4377,9 @@
       "intrinsic_value": 152.6,
       "discount_pct": -3.79,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFE",
@@ -3659,7 +4389,9 @@
       "intrinsic_value": 3.79,
       "discount_pct": -618.21,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCG",
@@ -3669,7 +4401,9 @@
       "intrinsic_value": -59.58,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PM",
@@ -3679,7 +4413,9 @@
       "intrinsic_value": 154.8,
       "discount_pct": -0.93,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSX",
@@ -3689,7 +4425,9 @@
       "intrinsic_value": 806.69,
       "discount_pct": 79.75,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNW",
@@ -3699,7 +4437,9 @@
       "intrinsic_value": -218.78,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNC",
@@ -3709,7 +4449,9 @@
       "intrinsic_value": 217.63,
       "discount_pct": -1.12,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "POOL",
@@ -3719,7 +4461,9 @@
       "intrinsic_value": 141.31,
       "discount_pct": -59.68,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPG",
@@ -3729,7 +4473,9 @@
       "intrinsic_value": 135.25,
       "discount_pct": 17.07,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPL",
@@ -3739,7 +4485,9 @@
       "intrinsic_value": -64.02,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFG",
@@ -3749,7 +4497,9 @@
       "intrinsic_value": 617.89,
       "discount_pct": 84.79,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PG",
@@ -3759,7 +4509,9 @@
       "intrinsic_value": 127.61,
       "discount_pct": -12.15,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PGR",
@@ -3769,7 +4521,9 @@
       "intrinsic_value": 329.48,
       "discount_pct": 38.25,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLD",
@@ -3779,7 +4533,9 @@
       "intrinsic_value": 34.67,
       "discount_pct": -310.07,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PRU",
@@ -3789,7 +4545,9 @@
       "intrinsic_value": 447.52,
       "discount_pct": 77.7,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEG",
@@ -3799,7 +4557,9 @@
       "intrinsic_value": -46.93,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PTC",
@@ -3809,7 +4569,9 @@
       "intrinsic_value": 123.79,
       "discount_pct": -11.7,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSA",
@@ -3819,7 +4581,9 @@
       "intrinsic_value": 225.18,
       "discount_pct": -34.0,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PHM",
@@ -3829,7 +4593,9 @@
       "intrinsic_value": 155.91,
       "discount_pct": 22.73,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PWR",
@@ -3839,7 +4605,9 @@
       "intrinsic_value": 351.09,
       "discount_pct": -67.31,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "QCOM",
@@ -3849,7 +4617,9 @@
       "intrinsic_value": 143.53,
       "discount_pct": 6.31,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DGX",
@@ -3859,7 +4629,9 @@
       "intrinsic_value": 215.53,
       "discount_pct": 11.17,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "Q",
@@ -3869,7 +4641,9 @@
       "intrinsic_value": 100.33,
       "discount_pct": -30.87,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RL",
@@ -3879,7 +4653,9 @@
       "intrinsic_value": 865.2,
       "discount_pct": 57.27,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RJF",
@@ -3889,7 +4665,9 @@
       "intrinsic_value": 237.41,
       "discount_pct": 36.46,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RTX",
@@ -3899,7 +4677,9 @@
       "intrinsic_value": 163.03,
       "discount_pct": -20.13,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "O",
@@ -3909,7 +4689,9 @@
       "intrinsic_value": 119.78,
       "discount_pct": 46.03,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REG",
@@ -3919,7 +4701,9 @@
       "intrinsic_value": 30.08,
       "discount_pct": -164.79,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REGN",
@@ -3929,7 +4713,9 @@
       "intrinsic_value": 1257.66,
       "discount_pct": 40.68,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RF",
@@ -3939,7 +4725,9 @@
       "intrinsic_value": 65.28,
       "discount_pct": 57.23,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RSG",
@@ -3949,7 +4737,9 @@
       "intrinsic_value": 123.97,
       "discount_pct": -69.12,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RMD",
@@ -3959,7 +4749,9 @@
       "intrinsic_value": 329.2,
       "discount_pct": 31.74,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RVTY",
@@ -3969,7 +4761,9 @@
       "intrinsic_value": 71.38,
       "discount_pct": -25.43,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HOOD",
@@ -3979,7 +4773,9 @@
       "intrinsic_value": 47.63,
       "discount_pct": -82.34,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROK",
@@ -3989,7 +4785,9 @@
       "intrinsic_value": 232.55,
       "discount_pct": -73.21,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROL",
@@ -3999,7 +4797,9 @@
       "intrinsic_value": 34.36,
       "discount_pct": -58.59,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROP",
@@ -4009,7 +4809,9 @@
       "intrinsic_value": 427.22,
       "discount_pct": 15.29,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROST",
@@ -4019,7 +4821,9 @@
       "intrinsic_value": 229.96,
       "discount_pct": 3.47,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RCL",
@@ -4029,7 +4833,9 @@
       "intrinsic_value": 21.63,
       "discount_pct": -1129.54,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPGI",
@@ -4039,7 +4845,9 @@
       "intrinsic_value": 420.21,
       "discount_pct": -3.95,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRM",
@@ -4049,7 +4857,9 @@
       "intrinsic_value": 353.97,
       "discount_pct": 48.8,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNDK",
@@ -4059,7 +4869,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBAC",
@@ -4069,7 +4881,9 @@
       "intrinsic_value": 18.36,
       "discount_pct": -1107.84,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SLB",
@@ -4079,7 +4893,9 @@
       "intrinsic_value": 61.94,
       "discount_pct": 16.48,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STX",
@@ -4089,7 +4905,9 @@
       "intrinsic_value": 1137.67,
       "discount_pct": 53.25,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SRE",
@@ -4099,7 +4917,9 @@
       "intrinsic_value": -254.55,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOW",
@@ -4109,7 +4929,9 @@
       "intrinsic_value": 177.69,
       "discount_pct": 45.73,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SHW",
@@ -4119,7 +4941,9 @@
       "intrinsic_value": 237.95,
       "discount_pct": -40.09,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPG",
@@ -4129,7 +4953,9 @@
       "intrinsic_value": -36.66,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWKS",
@@ -4139,7 +4965,9 @@
       "intrinsic_value": 83.31,
       "discount_pct": 29.54,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SJM",
@@ -4149,7 +4977,9 @@
       "intrinsic_value": 52.27,
       "discount_pct": -79.72,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SW",
@@ -4159,7 +4989,9 @@
       "intrinsic_value": 66.98,
       "discount_pct": 38.49,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNA",
@@ -4169,7 +5001,9 @@
       "intrinsic_value": 738.6,
       "discount_pct": 50.33,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SOLV",
@@ -4179,7 +5013,9 @@
       "intrinsic_value": 20.94,
       "discount_pct": -228.94,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SO",
@@ -4189,7 +5025,9 @@
       "intrinsic_value": -116.89,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LUV",
@@ -4199,7 +5037,9 @@
       "intrinsic_value": -984.88,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWK",
@@ -4209,7 +5049,9 @@
       "intrinsic_value": 88.12,
       "discount_pct": 22.3,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBUX",
@@ -4219,7 +5061,9 @@
       "intrinsic_value": 67.19,
       "discount_pct": -46.39,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STT",
@@ -4229,7 +5073,9 @@
       "intrinsic_value": 1271.32,
       "discount_pct": 88.84,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STLD",
@@ -4239,7 +5085,9 @@
       "intrinsic_value": 436.15,
       "discount_pct": 55.12,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STE",
@@ -4249,7 +5097,9 @@
       "intrinsic_value": 155.16,
       "discount_pct": -41.77,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYK",
@@ -4259,7 +5109,9 @@
       "intrinsic_value": 252.72,
       "discount_pct": -33.9,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SMCI",
@@ -4269,7 +5121,9 @@
       "intrinsic_value": 23.13,
       "discount_pct": -22.78,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYF",
@@ -4279,7 +5133,9 @@
       "intrinsic_value": 470.71,
       "discount_pct": 84.03,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNPS",
@@ -4289,7 +5145,9 @@
       "intrinsic_value": 162.67,
       "discount_pct": -171.19,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYY",
@@ -4299,7 +5157,9 @@
       "intrinsic_value": 80.16,
       "discount_pct": 7.62,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMUS",
@@ -4309,7 +5169,9 @@
       "intrinsic_value": 486.13,
       "discount_pct": 59.45,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TROW",
@@ -4319,7 +5181,9 @@
       "intrinsic_value": 91.63,
       "discount_pct": -4.5,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTWO",
@@ -4329,7 +5193,9 @@
       "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPR",
@@ -4339,7 +5205,9 @@
       "intrinsic_value": 137.9,
       "discount_pct": -9.27,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRGP",
@@ -4349,7 +5217,9 @@
       "intrinsic_value": 12.94,
       "discount_pct": -1753.25,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TGT",
@@ -4359,7 +5229,9 @@
       "intrinsic_value": 85.61,
       "discount_pct": -44.74,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TEL",
@@ -4369,7 +5241,9 @@
       "intrinsic_value": 285.63,
       "discount_pct": 17.21,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDY",
@@ -4379,7 +5253,9 @@
       "intrinsic_value": 464.46,
       "discount_pct": -36.88,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TER",
@@ -4389,7 +5265,9 @@
       "intrinsic_value": 344.98,
       "discount_pct": -6.07,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSLA",
@@ -4399,7 +5277,9 @@
       "intrinsic_value": 85.78,
       "discount_pct": -353.37,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXN",
@@ -4409,7 +5289,9 @@
       "intrinsic_value": 264.48,
       "discount_pct": 15.65,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPL",
@@ -4419,7 +5301,9 @@
       "intrinsic_value": 158.91,
       "discount_pct": -168.25,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXT",
@@ -4429,7 +5313,9 @@
       "intrinsic_value": 156.58,
       "discount_pct": 42.35,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMO",
@@ -4439,7 +5325,9 @@
       "intrinsic_value": 365.01,
       "discount_pct": -41.37,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TJX",
@@ -4449,7 +5337,9 @@
       "intrinsic_value": 146.53,
       "discount_pct": -7.47,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TKO",
@@ -4459,7 +5349,9 @@
       "intrinsic_value": 2301.24,
       "discount_pct": 91.99,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTD",
@@ -4469,7 +5361,9 @@
       "intrinsic_value": 71.31,
       "discount_pct": 68.08,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSCO",
@@ -4479,7 +5373,9 @@
       "intrinsic_value": 65.84,
       "discount_pct": 32.21,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TT",
@@ -4489,7 +5385,9 @@
       "intrinsic_value": 346.75,
       "discount_pct": -32.74,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDG",
@@ -4499,7 +5397,9 @@
       "intrinsic_value": 452.57,
       "discount_pct": -171.39,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRV",
@@ -4509,7 +5409,9 @@
       "intrinsic_value": 804.91,
       "discount_pct": 62.87,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRMB",
@@ -4519,7 +5421,9 @@
       "intrinsic_value": 35.77,
       "discount_pct": -89.18,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TFC",
@@ -4529,7 +5433,9 @@
       "intrinsic_value": 120.51,
       "discount_pct": 58.98,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TYL",
@@ -4539,7 +5445,9 @@
       "intrinsic_value": 420.35,
       "discount_pct": 19.15,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSN",
@@ -4549,7 +5457,9 @@
       "intrinsic_value": 77.91,
       "discount_pct": 17.87,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "USB",
@@ -4559,7 +5469,9 @@
       "intrinsic_value": 102.15,
       "discount_pct": 45.69,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UBER",
@@ -4569,7 +5481,9 @@
       "intrinsic_value": 72.98,
       "discount_pct": -4.8,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UDR",
@@ -4579,7 +5493,9 @@
       "intrinsic_value": -10.27,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ULTA",
@@ -4589,7 +5505,9 @@
       "intrinsic_value": 754.33,
       "discount_pct": 28.49,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNP",
@@ -4599,7 +5517,9 @@
       "intrinsic_value": 265.79,
       "discount_pct": 5.54,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UAL",
@@ -4609,7 +5529,9 @@
       "intrinsic_value": 186.12,
       "discount_pct": 48.94,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UPS",
@@ -4619,7 +5541,9 @@
       "intrinsic_value": 89.05,
       "discount_pct": -17.98,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "URI",
@@ -4629,7 +5553,9 @@
       "intrinsic_value": -0.35,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNH",
@@ -4639,7 +5565,9 @@
       "intrinsic_value": 477.45,
       "discount_pct": 33.73,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UHS",
@@ -4649,7 +5577,9 @@
       "intrinsic_value": 592.2,
       "discount_pct": 69.82,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLO",
@@ -4659,7 +5589,9 @@
       "intrinsic_value": 565.43,
       "discount_pct": 57.25,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTR",
@@ -4669,7 +5601,9 @@
       "intrinsic_value": 179.41,
       "discount_pct": 52.34,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLTO",
@@ -4679,7 +5613,9 @@
       "intrinsic_value": 81.98,
       "discount_pct": -10.44,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSN",
@@ -4689,7 +5625,9 @@
       "intrinsic_value": 281.92,
       "discount_pct": 2.86,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSK",
@@ -4699,7 +5637,9 @@
       "intrinsic_value": 200.26,
       "discount_pct": 10.96,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VZ",
@@ -4709,7 +5649,9 @@
       "intrinsic_value": 59.12,
       "discount_pct": 20.87,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRTX",
@@ -4719,7 +5661,9 @@
       "intrinsic_value": 374.12,
       "discount_pct": -16.45,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRT",
@@ -4729,7 +5673,9 @@
       "intrinsic_value": 319.4,
       "discount_pct": 7.91,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTRS",
@@ -4739,7 +5685,9 @@
       "intrinsic_value": 25.36,
       "discount_pct": 44.76,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VICI",
@@ -4749,7 +5697,9 @@
       "intrinsic_value": 26.36,
       "discount_pct": -7.74,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "V",
@@ -4759,7 +5709,9 @@
       "intrinsic_value": 396.23,
       "discount_pct": 20.48,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VST",
@@ -4769,7 +5721,9 @@
       "intrinsic_value": 2508.22,
       "discount_pct": 93.4,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VMC",
@@ -4779,7 +5733,9 @@
       "intrinsic_value": 254.88,
       "discount_pct": -12.12,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WRB",
@@ -4789,7 +5745,9 @@
       "intrinsic_value": 235.23,
       "discount_pct": 71.83,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GWW",
@@ -4799,7 +5757,9 @@
       "intrinsic_value": 874.52,
       "discount_pct": -29.62,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAB",
@@ -4809,7 +5769,9 @@
       "intrinsic_value": 256.74,
       "discount_pct": 0.48,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMT",
@@ -4819,7 +5781,9 @@
       "intrinsic_value": 45.53,
       "discount_pct": -174.15,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DIS",
@@ -4829,7 +5793,9 @@
       "intrinsic_value": 154.84,
       "discount_pct": 32.9,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WBD",
@@ -4839,7 +5805,9 @@
       "intrinsic_value": 1.73,
       "discount_pct": -1483.24,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WM",
@@ -4849,7 +5817,9 @@
       "intrinsic_value": 120.27,
       "discount_pct": -86.31,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAT",
@@ -4859,7 +5829,9 @@
       "intrinsic_value": 136.85,
       "discount_pct": -133.13,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WEC",
@@ -4869,7 +5841,9 @@
       "intrinsic_value": -130.5,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WFC",
@@ -4879,7 +5853,9 @@
       "intrinsic_value": -173.13,
       "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WELL",
@@ -4889,7 +5865,9 @@
       "intrinsic_value": 386.41,
       "discount_pct": 44.49,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WST",
@@ -4899,7 +5877,9 @@
       "intrinsic_value": 158.38,
       "discount_pct": -70.36,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued"
+      "valuation_label": "Highly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDC",
@@ -4909,7 +5889,9 @@
       "intrinsic_value": 1416.03,
       "discount_pct": 74.46,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WY",
@@ -4919,7 +5901,9 @@
       "intrinsic_value": -332.89,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WSM",
@@ -4929,7 +5913,9 @@
       "intrinsic_value": 189.64,
       "discount_pct": -0.98,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMB",
@@ -4939,7 +5925,9 @@
       "intrinsic_value": -1.91,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WTW",
@@ -4949,7 +5937,9 @@
       "intrinsic_value": 538.67,
       "discount_pct": 45.08,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDAY",
@@ -4959,7 +5949,9 @@
       "intrinsic_value": 382.49,
       "discount_pct": 67.35,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued"
+      "valuation_label": "Highly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WYNN",
@@ -4969,7 +5961,9 @@
       "intrinsic_value": 145.76,
       "discount_pct": 26.72,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XEL",
@@ -4979,7 +5973,9 @@
       "intrinsic_value": -303.77,
       "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "N/A"
+      "valuation_label": "N/A",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYL",
@@ -4989,7 +5985,9 @@
       "intrinsic_value": 102.57,
       "discount_pct": -22.07,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued"
+      "valuation_label": "Slightly Overvalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "YUM",
@@ -4999,7 +5997,9 @@
       "intrinsic_value": 149.29,
       "discount_pct": -6.85,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBRA",
@@ -5009,7 +6009,9 @@
       "intrinsic_value": 278.78,
       "discount_pct": 16.41,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued"
+      "valuation_label": "Slightly Undervalued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBH",
@@ -5019,7 +6021,9 @@
       "intrinsic_value": 99.61,
       "discount_pct": 4.85,
       "method": "fcf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZTS",
@@ -5029,7 +6033,9 @@
       "intrinsic_value": 125.07,
       "discount_pct": 4.82,
       "method": "ocf",
-      "valuation_label": "Fairly Valued"
+      "valuation_label": "Fairly Valued",
+      "moat": null,
+      "moat_score": null
     }
   ]
 }
