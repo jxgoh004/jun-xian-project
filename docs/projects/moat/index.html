@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Economic Moat Analysis</title>
+  <meta name="description" content="AI-powered economic moat analysis across 5 competitive advantage dimensions." />
+  <meta name="theme-color" content="#080c12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #080c12;
+      --surface:      #0f1520;
+      --surface2:     #161e2e;
+      --surface3:     #1e2840;
+      --border:       #1e2840;
+      --border-mid:   #2a3550;
+      --accent:       #58a6ff;
+      --accent-dim:   #1f6feb;
+      --accent-glow:  rgba(88,166,255,0.18);
+      --green:        #3fb950;
+      --green-bg:     rgba(63,185,80,0.08);
+      --green-border: rgba(63,185,80,0.25);
+      --green-glow:   rgba(63,185,80,0.15);
+      --yellow:       #e3b341;
+      --yellow-bg:    rgba(227,179,65,0.08);
+      --yellow-border:rgba(227,179,65,0.25);
+      --yellow-glow:  rgba(227,179,65,0.15);
+      --red:          #f85149;
+      --red-bg:       rgba(248,81,73,0.08);
+      --red-border:   rgba(248,81,73,0.25);
+      --red-glow:     rgba(248,81,73,0.15);
+      --text:         #a8b4c8;
+      --text-dim:     #546278;
+      --text-bright:  #e8edf5;
+      --mono:         'DM Mono', monospace;
+      --sans:         'DM Sans', sans-serif;
+      --display:      'Syne', sans-serif;
+      --radius:       12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      /* Subtle dot-grid background */
+      background-image: radial-gradient(circle, #1e2840 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-attachment: fixed;
+    }
+
+    /* Solid background overlay so content sits on grid cleanly */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(8,12,18,0.97) 0%, rgba(8,12,18,0.93) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body > * { position: relative; z-index: 1; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Top nav ── */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 28px;
+      height: 52px;
+      background: rgba(8,12,18,0.92);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .5px;
+      color: var(--text-bright);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo-mark {
+      width: 26px; height: 26px;
+      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .nav-divider { width: 1px; height: 18px; background: var(--border-mid); margin: 0 2px; }
+    .nav-section { font-size: 12px; color: var(--text-dim); font-family: var(--mono); letter-spacing: .3px; }
+    .nav-ticker-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid rgba(88,166,255,0.2);
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+    .nav-spacer { flex: 1; }
+    .btn-back {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 14px;
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: var(--mono);
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
+      text-decoration: none;
+      letter-spacing: .3px;
+    }
+    .btn-back:hover { border-color: var(--accent); color: var(--text-bright); background: var(--accent-glow); text-decoration: none; }
+
+    /* ── Container ── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 36px 24px 80px; }
+
+    /* ── Page-load animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim { animation: fadeUp .5s ease both; }
+    .anim-1 { animation-delay: .05s; }
+    .anim-2 { animation-delay: .12s; }
+    .anim-3 { animation-delay: .19s; }
+    .anim-4 { animation-delay: .26s; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      border: 1px solid var(--border-mid);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: var(--surface);
+    }
+    /* Ambient glow behind hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: .4;
+      filter: blur(80px);
+    }
+    .hero.wide-glow::before   { background: var(--green); }
+    .hero.narrow-glow::before { background: var(--yellow); }
+    .hero.none-glow::before   { background: var(--red); }
+    .hero.na-glow::before     { background: var(--accent); }
+
+    .hero-inner {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 32px 36px;
+      flex-wrap: wrap;
+    }
+    .hero-left { flex: 1; min-width: 260px; }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--text-dim);
+    }
+
+    .hero-company {
+      font-family: var(--display);
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--text-bright);
+      line-height: 1.1;
+      letter-spacing: -.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .meta-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 4px;
+      letter-spacing: .3px;
+    }
+
+    .hero-implication {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 560px;
+      border-left: 2px solid var(--accent-dim);
+      padding-left: 16px;
+      font-weight: 300;
+    }
+
+    /* Right column: verdict + meta */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      min-width: 200px;
+    }
+
+    /* Moat verdict ring */
+    .verdict-ring-wrap {
+      position: relative;
+      width: 140px; height: 140px;
+    }
+    #verdict-ring { position: absolute; inset: 0; }
+    .verdict-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+    }
+    .verdict-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .verdict-text {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+      line-height: 1;
+    }
+    .verdict-score {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .verdict-wide   { color: var(--green); }
+    .verdict-narrow { color: var(--yellow); }
+    .verdict-none   { color: var(--red); }
+    .verdict-na     { color: var(--accent); }
+
+    /* Key info pills */
+    .info-pills { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .info-pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .ip-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-dim);
+    }
+    .ip-value {
+      font-size: 12px;
+      color: var(--text-bright);
+      line-height: 1.4;
+    }
+
+    /* ── Two-col section: radar + scores ── */
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+      align-items: start;
+    }
+    @media (max-width: 800px) { .analysis-grid { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .panel-header-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+    .panel-header-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-dim);
+    }
+    .panel-body { padding: 20px; }
+
+    /* Radar canvas */
+    #radar-canvas { display: block; margin: 0 auto; }
+
+    /* Score rows */
+    .score-rows { display: flex; flex-direction: column; gap: 2px; }
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .score-row:last-child { border-bottom: none; }
+    .sr-label {
+      font-size: 13px;
+      color: var(--text);
+    }
+    .sr-bar-track {
+      width: 100px;
+      height: 4px;
+      background: var(--surface3);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .sr-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      width: 0;
+      transition: width .8s cubic-bezier(.4,0,.2,1);
+    }
+    .sr-num {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-bright);
+      min-width: 30px;
+      text-align: right;
+    }
+
+    /* ── Criterion cards ── */
+    .criteria-section { display: flex; flex-direction: column; gap: 14px; }
+
+    .criterion-card {
+      background: var(--surface);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border-left-width: 3px;
+      transition: border-color .2s;
+    }
+
+    .criterion-header {
+      padding: 18px 24px 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .criterion-header:hover { background: rgba(255,255,255,0.02); }
+
+    /* Large ghost number behind header */
+    .criterion-num {
+      position: absolute;
+      right: 90px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--display);
+      font-size: 80px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .criterion-icon-wrap {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      flex-shrink: 0;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .criterion-name-wrap { flex: 1; }
+    .criterion-name {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1.2;
+    }
+    .criterion-conf {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .conf-high   { color: var(--green); }
+    .conf-medium { color: var(--yellow); }
+    .conf-low    { color: var(--red); }
+
+    .criterion-score-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .criterion-score-num {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text-bright);
+    }
+    .criterion-score-denom {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: var(--mono);
+    }
+
+    /* Thin score bar under header */
+    .criterion-bar {
+      height: 3px;
+      background: var(--surface3);
+      position: relative;
+    }
+    .criterion-bar-fill {
+      height: 100%;
+      width: 0;
+      transition: width .8s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* Expand toggle */
+    .expand-icon {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      color: var(--text-dim);
+      transition: transform .25s, background .2s;
+      line-height: 1;
+    }
+    .criterion-header[aria-expanded="true"] .expand-icon {
+      transform: rotate(90deg);
+      background: var(--surface3);
+    }
+
+    /* Collapsible body using max-height */
+    .criterion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s cubic-bezier(.4,0,.2,1);
+    }
+    .criterion-body.open { max-height: 600px; }
+
+    .criterion-body-inner {
+      padding: 20px 24px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 640px) { .criterion-body-inner { grid-template-columns: 1fr; } }
+
+    .evidence-col h4, .risks-col h4 {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .evidence-col h4::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .risks-col h4::after    { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .ev-list, .rk-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ev-list li, .rk-list li {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+    .ev-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 8px; height: 1px;
+      background: var(--green);
+    }
+    .rk-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 8px; height: 1px;
+      background: var(--yellow);
+    }
+
+    .sources-strip {
+      grid-column: 1 / -1;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .sources-strip-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-right: 4px;
+    }
+    .source-chip {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border-mid);
+      border-radius: 4px;
+      color: var(--accent);
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: border-color .15s, background .15s;
+    }
+    .source-chip:hover { border-color: var(--accent); background: var(--accent-glow); text-decoration: none; }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: .2px;
+    }
+    .btn-calc {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .15s, transform .1s;
+      box-shadow: 0 4px 20px rgba(88,166,255,0.25);
+    }
+    .btn-calc:hover { opacity: .88; text-decoration: none; transform: translateY(-1px); }
+    .btn-calc:active { transform: translateY(0); }
+
+    /* ── Empty / error ── */
+    #empty-state, #error-state {
+      text-align: center;
+      padding: 100px 24px;
+    }
+    #empty-state h2, #error-state h2 {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 10px;
+    }
+    #empty-state p, #error-state p { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
+    #empty-state code, #error-state code {
+      font-family: var(--mono);
+      font-size: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+
+    /* ── Accessibility ── */
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav" aria-label="Page navigation">
+    <div class="nav-logo">
+      <div class="nav-logo-mark" aria-hidden="true">🏰</div>
+      Moat Intelligence
+    </div>
+    <div class="nav-divider" aria-hidden="true"></div>
+    <span class="nav-section">S&amp;P 500 Analysis</span>
+    <span class="nav-ticker-label" id="nav-ticker">—</span>
+    <span class="nav-spacer"></span>
+    <a href="../screener/index.html" class="btn-back">← Screener</a>
+  </nav>
+
+  <div class="container">
+
+    <div id="empty-state" style="display:none;">
+      <h2>No moat data yet</h2>
+      <p>Run the monthly batch analysis to generate moat reports.<br><br>
+         <code>python economic-moat/run_moat_analysis.py --ticker &lt;TICKER&gt;</code></p>
+    </div>
+
+    <div id="error-state" style="display:none;">
+      <h2>Analysis not found</h2>
+      <p id="error-detail">This ticker has no moat analysis yet.</p>
+    </div>
+
+    <div id="main-content" style="display:none;">
+
+      <!-- Hero -->
+      <section class="hero anim anim-1" id="hero-section" aria-label="Company summary">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="hero-eyebrow">Economic Moat Assessment</div>
+            <h1 class="hero-company" id="hero-company">—</h1>
+            <div class="hero-meta" id="hero-meta"></div>
+            <p class="hero-implication" id="hero-implication"></p>
+          </div>
+          <div class="hero-right">
+            <div class="verdict-ring-wrap" aria-label="Moat verdict">
+              <canvas id="verdict-ring" width="140" height="140"></canvas>
+              <div class="verdict-center">
+                <span class="verdict-label">Moat</span>
+                <span class="verdict-text" id="verdict-text">—</span>
+                <span class="verdict-score" id="verdict-score"></span>
+              </div>
+            </div>
+            <div class="info-pills">
+              <div class="info-pill">
+                <span class="ip-label">Key Strength</span>
+                <span class="ip-value" id="pill-strength">—</span>
+              </div>
+              <div class="info-pill">
+                <span class="ip-label">Key Risk</span>
+                <span class="ip-value" id="pill-risk">—</span>
+              </div>
+              <div class="info-pill">
+                <span class="ip-label">Analysed</span>
+                <span class="ip-value" id="pill-date">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Radar + Score breakdown -->
+      <div class="analysis-grid anim anim-2">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-dot"></div>
+            <span class="panel-header-title">Moat Radar</span>
+          </div>
+          <div class="panel-body">
+            <canvas id="radar-canvas" width="280" height="280" aria-label="Moat radar chart showing scores across 5 dimensions"></canvas>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-dot"></div>
+            <span class="panel-header-title">Criterion Breakdown</span>
+          </div>
+          <div class="panel-body">
+            <div class="score-rows" id="score-rows"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Criterion detail cards -->
+      <section class="criteria-section anim anim-3" id="criteria-section" aria-label="Criterion details"></section>
+
+      <!-- Footer -->
+      <footer class="page-footer anim anim-4">
+        <p class="footer-note" id="footer-note"></p>
+        <a href="#" class="btn-calc" id="btn-calculator">Open in Calculator →</a>
+      </footer>
+
+    </div><!-- /main-content -->
+  </div>
+
+  <script>
+  (function () {
+
+    var CRITERION_ORDER = [
+      'brand_loyalty',
+      'barriers_to_entry',
+      'switching_costs',
+      'network_effects',
+      'economies_of_scale'
+    ];
+    var CRITERION_LABELS = {
+      brand_loyalty:      'Brand Loyalty & Pricing Power',
+      barriers_to_entry:  'High Barriers to Entry',
+      switching_costs:    'High Switching Costs',
+      network_effects:    'Network Effects',
+      economies_of_scale: 'Economies of Scale'
+    };
+    var CRITERION_ICONS = {
+      brand_loyalty:      '🏷️',
+      barriers_to_entry:  '🔒',
+      switching_costs:    '🔗',
+      network_effects:    '🌐',
+      economies_of_scale: '📦'
+    };
+
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+    var ticker = (getParam('ticker') || '').toUpperCase();
+
+    // ── Color helpers ──────────────────────────────────────────────────────────
+    function scoreColor(score) {
+      if (score >= 7) return '#3fb950';
+      if (score >= 4) return '#e3b341';
+      return '#f85149';
+    }
+    function moatColor(moat) {
+      if (!moat) return '#58a6ff';
+      switch (moat.toLowerCase()) {
+        case 'wide':   return '#3fb950';
+        case 'narrow': return '#e3b341';
+        case 'none':   return '#f85149';
+        default:       return '#58a6ff';
+      }
+    }
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      try {
+        return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      } catch(e) { return iso; }
+    }
+    function hostname(url) {
+      try { return new URL(url).hostname.replace(/^www\./, ''); }
+      catch(e) { return url; }
+    }
+    function escHtml(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Verdict ring (SVG arc on Canvas) ───────────────────────────────────────
+    function drawVerdictRing(canvas, score, color) {
+      var dpr = window.devicePixelRatio || 1;
+      var size = 140;
+      canvas.width  = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width  = size + 'px';
+      canvas.style.height = size + 'px';
+      var ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      var cx = size / 2, cy = size / 2, R = 58;
+
+      // Track
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, -Math.PI * 0.75, Math.PI * 0.75);
+      ctx.strokeStyle = '#1e2840';
+      ctx.lineWidth = 8;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+
+      // Fill arc — animate
+      var target = (score / 10) * 1.5 * Math.PI;
+      var start  = -Math.PI * 0.75;
+      var current = 0;
+      var duration = 900;
+      var startTime = null;
+
+      function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+      function draw(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var t = Math.min((timestamp - startTime) / duration, 1);
+        current = ease(t) * target;
+
+        ctx.clearRect(0, 0, size, size);
+
+        // Track
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, -Math.PI * 0.75, Math.PI * 0.75);
+        ctx.strokeStyle = '#1e2840';
+        ctx.lineWidth = 8;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        // Filled arc
+        if (current > 0) {
+          var grad = ctx.createLinearGradient(cx - R, cy, cx + R, cy);
+          grad.addColorStop(0, color + 'aa');
+          grad.addColorStop(1, color);
+          ctx.beginPath();
+          ctx.arc(cx, cy, R, start, start + current);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 8;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+
+          // Glow
+          ctx.beginPath();
+          ctx.arc(cx, cy, R, start, start + current);
+          ctx.strokeStyle = color + '33';
+          ctx.lineWidth = 16;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+        }
+
+        if (t < 1) requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    }
+
+    // ── Radar chart ────────────────────────────────────────────────────────────
+    function drawRadar(canvas, scores, colors) {
+      var dpr = window.devicePixelRatio || 1;
+      var size = 280;
+      canvas.width  = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width  = size + 'px';
+      canvas.style.height = size + 'px';
+      var ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      var cx = size/2, cy = size/2;
+      var R = 94;
+      var N = scores.length;
+
+      function angle(i) { return (Math.PI * 2 * i / N) - Math.PI / 2; }
+      function pt(i, r) {
+        var a = angle(i);
+        return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+      }
+
+      // Rings
+      [2,4,6,8,10].forEach(function(level) {
+        ctx.beginPath();
+        for (var i = 0; i < N; i++) {
+          var p = pt(i, R * level / 10);
+          i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = level === 10 ? '#2a3550' : '#1e2840';
+        ctx.lineWidth = level === 10 ? 1 : 0.75;
+        ctx.stroke();
+      });
+
+      // Axes
+      for (var i = 0; i < N; i++) {
+        var p = pt(i, R);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(p.x, p.y);
+        ctx.strokeStyle = '#1e2840';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Animate data fill
+      var duration = 900;
+      var startTime = null;
+      function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+      function draw(ts) {
+        if (!startTime) startTime = ts;
+        var t = ease(Math.min((ts - startTime) / duration, 1));
+
+        // Clear & redraw rings/axes (already above, but need to redraw on each frame)
+        ctx.clearRect(0, 0, size, size);
+
+        [2,4,6,8,10].forEach(function(level) {
+          ctx.beginPath();
+          for (var i = 0; i < N; i++) {
+            var p = pt(i, R * level / 10);
+            i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+          }
+          ctx.closePath();
+          ctx.strokeStyle = level === 10 ? '#2a3550' : '#1e2840';
+          ctx.lineWidth = level === 10 ? 1 : 0.75;
+          ctx.stroke();
+        });
+        for (var i = 0; i < N; i++) {
+          var p = pt(i, R);
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(p.x, p.y);
+          ctx.strokeStyle = '#1e2840'; ctx.lineWidth = 1; ctx.stroke();
+        }
+
+        // Animated data polygon
+        var pts = [];
+        for (var i = 0; i < N; i++) {
+          pts.push(pt(i, R * Math.min(scores[i], 10) / 10 * t));
+        }
+
+        // Fill
+        ctx.beginPath();
+        pts.forEach(function(p, i) { i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y); });
+        ctx.closePath();
+        var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
+        grad.addColorStop(0, 'rgba(88,166,255,0.04)');
+        grad.addColorStop(1, 'rgba(88,166,255,0.18)');
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Stroke
+        ctx.beginPath();
+        pts.forEach(function(p, i) { i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y); });
+        ctx.closePath();
+        ctx.strokeStyle = '#58a6ff';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Data dots
+        if (t > 0.5) {
+          pts.forEach(function(p, i) {
+            var dotAlpha = (t - 0.5) * 2;
+            var sc = colors[i];
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = sc;
+            ctx.globalAlpha = dotAlpha;
+            ctx.fill();
+
+            // Glow ring
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 7, 0, Math.PI * 2);
+            ctx.strokeStyle = sc;
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = dotAlpha * 0.3;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          });
+        }
+
+        // Labels
+        var LABELS = ['Brand\nLoyalty', 'Barriers\nEntry', 'Switching\nCosts', 'Network\nEffects', 'Scale'];
+        ctx.font = '500 10px "DM Mono", monospace';
+        ctx.fillStyle = '#546278';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        for (var i = 0; i < N; i++) {
+          var p = pt(i, R + 24);
+          var lines = LABELS[i].split('\n');
+          lines.forEach(function(line, li) {
+            ctx.fillText(line, p.x, p.y + (li - (lines.length-1)/2) * 12);
+          });
+        }
+
+        // Score values at vertices (fade in)
+        if (t > 0.7) {
+          var valAlpha = (t - 0.7) / 0.3;
+          ctx.font = '500 10px "DM Mono", monospace';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          for (var i = 0; i < N; i++) {
+            var p = pt(i, R * Math.min(scores[i],10)/10 * t);
+            var sc = scores[i];
+            ctx.globalAlpha = valAlpha;
+            // Small white label
+            ctx.fillStyle = '#e8edf5';
+            ctx.font = '500 9px "DM Mono", monospace';
+            // Tiny offset to avoid overlap with dot
+            var a = angle(i);
+            var ox = Math.cos(a) * 14, oy = Math.sin(a) * 14;
+            ctx.fillText(sc.toFixed(1), p.x + ox, p.y + oy);
+            ctx.globalAlpha = 1;
+          }
+        }
+
+        if (t < 1) requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    }
+
+    // ── Score rows ─────────────────────────────────────────────────────────────
+    function renderScoreRows(criteria) {
+      var container = document.getElementById('score-rows');
+      container.innerHTML = '';
+      CRITERION_ORDER.forEach(function(key, idx) {
+        var c = criteria[key] || {};
+        var score = c.score != null ? c.score : 0;
+        var color = scoreColor(score);
+        var row = document.createElement('div');
+        row.className = 'score-row';
+        row.innerHTML =
+          '<span class="sr-label">' + CRITERION_LABELS[key] + '</span>' +
+          '<div class="sr-bar-track"><div class="sr-bar-fill" id="bar-' + key + '" style="background:' + color + '"></div></div>' +
+          '<span class="sr-num">' + score.toFixed(1) + '</span>';
+        container.appendChild(row);
+        // Animate bar after a short delay
+        setTimeout(function() {
+          var bar = document.getElementById('bar-' + key);
+          if (bar) bar.style.width = (score * 10) + '%';
+        }, 200 + idx * 60);
+      });
+    }
+
+    // ── Criterion cards ─────────────────────────────────────────────────────────
+    function renderCriteria(criteria) {
+      var section = document.getElementById('criteria-section');
+      section.innerHTML = '';
+      CRITERION_ORDER.forEach(function(key, idx) {
+        var c = criteria[key] || {};
+        var score    = c.score    != null ? c.score : 0;
+        var conf     = c.confidence || 'low';
+        var evidence = c.evidence   || [];
+        var risks    = c.risks      || [];
+        var sources  = c.sources    || [];
+        var color    = scoreColor(score);
+        var num      = String(idx + 1).padStart(2, '0');
+
+        var card = document.createElement('article');
+        card.className = 'criterion-card anim';
+        card.style.animationDelay = (0.3 + idx * 0.07) + 's';
+        card.style.borderLeftColor = color;
+
+        // Header
+        var header = document.createElement('div');
+        header.className = 'criterion-header';
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'false');
+        header.setAttribute('tabindex', '0');
+        header.innerHTML =
+          '<span class="criterion-num" aria-hidden="true">' + num + '</span>' +
+          '<div class="criterion-icon-wrap" aria-hidden="true">' + (CRITERION_ICONS[key] || '') + '</div>' +
+          '<div class="criterion-name-wrap">' +
+            '<div class="criterion-name">' + CRITERION_LABELS[key] + '</div>' +
+            '<div class="criterion-conf conf-' + conf + '">' + conf + ' confidence</div>' +
+          '</div>' +
+          '<div class="criterion-score-wrap">' +
+            '<span class="criterion-score-num" style="color:' + color + '">' + score.toFixed(1) + '</span>' +
+            '<span class="criterion-score-denom"> /10</span>' +
+          '</div>' +
+          '<div class="expand-icon" aria-hidden="true">›</div>';
+
+        // Score bar
+        var bar = document.createElement('div');
+        bar.className = 'criterion-bar';
+        var fill = document.createElement('div');
+        fill.className = 'criterion-bar-fill';
+        fill.style.background = color;
+        fill.id = 'cbar-' + key;
+        bar.appendChild(fill);
+
+        // Body
+        var body = document.createElement('div');
+        body.className = 'criterion-body';
+        var inner = document.createElement('div');
+        inner.className = 'criterion-body-inner';
+
+        var evHtml = '<div class="evidence-col"><h4>Evidence</h4><ul class="ev-list">';
+        if (evidence.length) {
+          evidence.forEach(function(e) { evHtml += '<li>' + escHtml(e) + '</li>'; });
+        } else { evHtml += '<li style="color:#546278">No evidence recorded.</li>'; }
+        evHtml += '</ul></div>';
+
+        var rkHtml = '<div class="risks-col"><h4>Risks</h4><ul class="rk-list">';
+        if (risks.length) {
+          risks.forEach(function(r) { rkHtml += '<li>' + escHtml(r) + '</li>'; });
+        } else { rkHtml += '<li style="color:#546278">No risks recorded.</li>'; }
+        rkHtml += '</ul></div>';
+
+        inner.innerHTML = evHtml + rkHtml;
+
+        if (sources.length) {
+          var srcStrip = document.createElement('div');
+          srcStrip.className = 'sources-strip';
+          srcStrip.innerHTML = '<span class="sources-strip-label">Sources</span>';
+          sources.forEach(function(url) {
+            var a = document.createElement('a');
+            a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+            a.className = 'source-chip';
+            a.textContent = hostname(url); a.title = url;
+            srcStrip.appendChild(a);
+          });
+          inner.appendChild(srcStrip);
+        }
+
+        body.appendChild(inner);
+
+        // Toggle
+        header.addEventListener('click', function() {
+          var open = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', String(!open));
+          body.classList.toggle('open', !open);
+        });
+        header.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); header.click(); }
+        });
+
+        card.appendChild(header);
+        card.appendChild(bar);
+        card.appendChild(body);
+        section.appendChild(card);
+
+        // Animate bar after layout
+        setTimeout(function() {
+          var b = document.getElementById('cbar-' + key);
+          if (b) b.style.width = (score * 10) + '%';
+        }, 300 + idx * 60);
+      });
+    }
+
+    // ── Populate page ──────────────────────────────────────────────────────────
+    function populatePage(stock) {
+      var moat     = stock.overall_moat  || 'N/A';
+      var score    = stock.overall_score != null ? stock.overall_score : 0;
+      var criteria = stock.criteria || {};
+      var color    = moatColor(moat);
+
+      document.title = 'Moat — ' + (stock.company_name || stock.ticker);
+      document.getElementById('nav-ticker').textContent = stock.ticker || '—';
+
+      // Hero glow class
+      var heroEl = document.getElementById('hero-section');
+      heroEl.classList.add(moat.toLowerCase() === 'wide'   ? 'wide-glow'   :
+                           moat.toLowerCase() === 'narrow' ? 'narrow-glow' :
+                           moat.toLowerCase() === 'none'   ? 'none-glow'   : 'na-glow');
+
+      document.getElementById('hero-company').textContent     = stock.company_name || stock.ticker;
+      document.getElementById('hero-implication').textContent = stock.investment_implication || '';
+
+      // Meta tags
+      var metaEl = document.getElementById('hero-meta');
+      [stock.ticker, stock.sector, stock.industry].filter(Boolean).forEach(function(v) {
+        var s = document.createElement('span');
+        s.className = 'meta-tag'; s.textContent = v;
+        metaEl.appendChild(s);
+      });
+
+      // Verdict ring
+      var verdictEl = document.getElementById('verdict-text');
+      verdictEl.textContent = moat;
+      verdictEl.className = 'verdict-text verdict-' + moat.toLowerCase();
+      document.getElementById('verdict-score').textContent = score.toFixed(1) + ' / 10';
+      drawVerdictRing(document.getElementById('verdict-ring'), score, color);
+
+      // Pills
+      document.getElementById('pill-strength').textContent = stock.key_strength || '—';
+      document.getElementById('pill-risk').textContent     = stock.key_risk     || '—';
+      document.getElementById('pill-date').textContent     = fmtDate(stock.analyzed_at);
+
+      // Score rows
+      renderScoreRows(criteria);
+
+      // Radar
+      var scores = CRITERION_ORDER.map(function(k) {
+        return criteria[k] && criteria[k].score != null ? criteria[k].score : 0;
+      });
+      var colors = scores.map(scoreColor);
+      drawRadar(document.getElementById('radar-canvas'), scores, colors);
+
+      // Criterion cards
+      renderCriteria(criteria);
+
+      // Footer
+      document.getElementById('footer-note').textContent =
+        'AI analysis · gpt-5.4-nano + web search · ' + fmtDate(stock.analyzed_at);
+      document.getElementById('btn-calculator').href =
+        '../../index.html?ticker=' + encodeURIComponent(stock.ticker);
+
+      document.getElementById('main-content').style.display = '';
+    }
+
+    // ── Load ───────────────────────────────────────────────────────────────────
+    function showError(msg) {
+      document.getElementById('error-detail').textContent = msg || 'Unknown error.';
+      document.getElementById('error-state').style.display = '';
+    }
+
+    fetch('data.json')
+      .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(data) {
+        var stocks = data.stocks || [];
+        if (!stocks.length) { document.getElementById('empty-state').style.display = ''; return; }
+        if (!ticker) { showError('No ticker specified. Add ?ticker=AAPL to the URL.'); return; }
+        var stock = stocks.find(function(s) { return s.ticker === ticker; });
+        if (!stock) { showError(ticker + ' has no moat analysis yet.'); return; }
+        populatePage(stock);
+      })
+      .catch(function(err) { showError('Could not load moat data: ' + err.message); });
+
+  })();
+  </script>
+</body>
+</html>

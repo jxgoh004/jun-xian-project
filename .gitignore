@@ -26,5 +26,12 @@ development_notes.md
 .DS_Store
 Thumbs.db
 
+# Skills
+/.claude/
+
 # Root img is committed (logo assets)
 # docs/ is the GitHub Pages deployment root — always committed
+
+# Environment variables — never commit API keys
+.env
+.venv/

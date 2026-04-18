@@ -225,6 +225,24 @@
       border: 1px solid rgba(139, 148, 158, 0.2);
     }
 
+    /* Moat badges */
+    .moat-badge {
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .moat-badge:hover { opacity: 0.8; text-decoration: none; }
+    .moat-wide   { background: rgba(63,185,80,0.15);  color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .moat-narrow { background: rgba(227,179,65,0.15); color: #e3b341; border: 1px solid rgba(227,179,65,0.3); }
+    .moat-none   { background: rgba(248,81,73,0.15);  color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+    .moat-na     { background: rgba(139,148,158,0.10); color: #8b949e; border: 1px solid rgba(139,148,158,0.2); cursor: default; }
+
     /* Error and empty states */
     #error-state {
       text-align: center;
@@ -265,10 +283,11 @@
       outline-offset: 2px;
     }
 
-    /* Mobile: hide sector and method columns */
+    /* Mobile: hide sector, method, and moat columns */
     @media (max-width: 640px) {
       .col-sector,
-      .col-method {
+      .col-method,
+      .col-moat {
         display: none;
       }
 
@@ -302,6 +321,13 @@
     <select id="sector-filter">
       <option value="">All Sectors</option>
     </select>
+    <label for="moat-filter" class="sr-only">Filter by moat</label>
+    <select id="moat-filter">
+      <option value="">All Moats</option>
+      <option value="Wide">Wide</option>
+      <option value="Narrow">Narrow</option>
+      <option value="None">None</option>
+    </select>
     <span id="row-count" aria-live="polite"></span>
   </div>
 
@@ -324,6 +350,7 @@
           <th data-col="discount_pct">Discount %</th>
           <th data-col="method" class="col-method">Method</th>
           <th data-col="valuation_label">Valuation</th>
+          <th data-col="moat" class="col-moat">Moat</th>
         </tr>
       </thead>
       <tbody id="table-body"></tbody>
@@ -339,6 +366,7 @@
     var sortDir = -1; // -1 = descending (most undervalued first per D-13)
     var filterText = '';
     var filterSector = '';
+    var filterMoat = '';
     var debounceTimer;
 
     // ---------------------------------------------------------------------------
@@ -381,7 +409,8 @@
           s.ticker.toLowerCase().indexOf(q) !== -1 ||
           s.company_name.toLowerCase().indexOf(q) !== -1;
         var matchSector = !filterSector || s.sector === filterSector;
-        return matchText && matchSector;
+        var matchMoat   = !filterMoat   || s.moat   === filterMoat;
+        return matchText && matchSector && matchMoat;
       }).sort(function (a, b) {
         var av = a[sortCol];
         var bv = b[sortCol];
@@ -461,6 +490,26 @@
         badge.textContent = stock.valuation_label || 'N/A';
         tdVal.appendChild(badge);
         tr.appendChild(tdVal);
+
+        // Moat badge
+        var tdMoat = document.createElement('td');
+        tdMoat.className = 'col-moat';
+        if (stock.moat) {
+          var moatLink = document.createElement('a');
+          moatLink.href = '../moat/index.html?ticker=' + encodeURIComponent(stock.ticker);
+          moatLink.target = '_blank';
+          moatLink.rel = 'noopener noreferrer';
+          moatLink.className = 'moat-badge moat-' + stock.moat.toLowerCase();
+          moatLink.textContent = stock.moat;
+          moatLink.addEventListener('click', function (e) { e.stopPropagation(); });
+          tdMoat.appendChild(moatLink);
+        } else {
+          var moatEmpty = document.createElement('span');
+          moatEmpty.className = 'moat-badge moat-na';
+          moatEmpty.textContent = '—';
+          tdMoat.appendChild(moatEmpty);
+        }
+        tr.appendChild(tdMoat);
 
         tbody.appendChild(tr);
       });
@@ -586,6 +635,13 @@
       var sectorSelect = document.getElementById('sector-filter');
       sectorSelect.addEventListener('change', function () {
         filterSector = this.value;
+        renderTable();
+      });
+
+      // --- Moat filter ---
+      var moatSelect = document.getElementById('moat-filter');
+      moatSelect.addEventListener('change', function () {
+        filterMoat = this.value;
         renderTable();
       });
 
