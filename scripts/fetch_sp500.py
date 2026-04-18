@@ -396,6 +396,20 @@ def main():
         print(f"Seed data.json written to {output_path}")
         return
 
+    # Preserve moat fields from the existing screener data before overwriting
+    existing_moat = {}
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, encoding="utf-8") as f:
+                existing = json.load(f)
+            existing_moat = {
+                s["ticker"]: {"moat": s.get("moat"), "moat_score": s.get("moat_score")}
+                for s in existing.get("stocks", [])
+                if s.get("moat") is not None or s.get("moat_score") is not None
+            }
+        except Exception:
+            pass
+
     # Fetch ticker list
     print("Fetching S&P 500 ticker list from Wikipedia...")
     tickers = fetch_sp500_tickers()
@@ -411,10 +425,9 @@ def main():
     for i, ticker in enumerate(tickers, start=1):
         try:
             record = process_ticker(ticker, i, total)
-            stocks.append(record)
         except Exception as exc:
             print(f"[{i}/{total}] {ticker}: unexpected error — {exc}")
-            stocks.append({
+            record = {
                 "ticker": ticker,
                 "company_name": ticker,
                 "sector": "N/A",
@@ -423,7 +436,13 @@ def main():
                 "discount_pct": None,
                 "method": "N/A",
                 "valuation_label": "N/A",
-            })
+            }
+
+        if ticker in existing_moat:
+            record["moat"]       = existing_moat[ticker]["moat"]
+            record["moat_score"] = existing_moat[ticker]["moat_score"]
+
+        stocks.append(record)
 
         # Rate limiting — avoid Yahoo Finance 429 errors
         if i < total:

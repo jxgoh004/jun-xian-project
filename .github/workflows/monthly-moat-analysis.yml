@@ -1,0 +1,37 @@
+name: Monthly Economic Moat Analysis
+
+on:
+  schedule:
+    - cron: '0 8 1 * *'  # 08:00 UTC on the 1st of every month
+  workflow_dispatch:       # manual trigger for testing
+
+permissions:
+  contents: write          # required for git push with GITHUB_TOKEN
+
+jobs:
+  moat-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run moat analysis
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python economic-moat/run_moat_analysis.py
+
+      - name: Commit updated moat data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/projects/moat/data.json docs/projects/screener/data.json
+          git diff --staged --quiet || git commit -m "chore: monthly economic moat analysis update"
+          git push
