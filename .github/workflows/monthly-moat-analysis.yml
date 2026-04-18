@@ -26,7 +26,7 @@ jobs:
       - name: Run moat analysis
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python economic-moat/run_moat_analysis.py
+        run: python economic-moat/run_moat_analysis.py --limit 5
 
       - name: Commit updated moat data
         run: |
