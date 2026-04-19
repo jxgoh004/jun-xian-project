@@ -510,13 +510,12 @@
       background: var(--surface3);
     }
 
-    /* Collapsible body using max-height */
+    /* Collapsible body using explicit height driven by JS scrollHeight */
     .criterion-body {
-      max-height: 0;
+      height: 0;
       overflow: hidden;
-      transition: max-height .35s cubic-bezier(.4,0,.2,1);
+      transition: height .35s cubic-bezier(.4,0,.2,1);
     }
-    .criterion-body.open { max-height: 600px; }
 
     .criterion-body-inner {
       padding: 20px 24px 24px;
@@ -1171,7 +1170,7 @@
         header.addEventListener('click', function() {
           var open = header.getAttribute('aria-expanded') === 'true';
           header.setAttribute('aria-expanded', String(!open));
-          body.classList.toggle('open', !open);
+          body.style.height = open ? '0' : body.scrollHeight + 'px';
         });
         header.addEventListener('keydown', function(e) {
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); header.click(); }
