@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>True Value Finder — Intrinsic Value Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=IBM+Plex+Mono:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -13,8 +16,8 @@
       --surface2: #21262d;
       --surface3: #30363d;
       --border: #30363d;
-      --accent: #58a6ff;
-      --accent-dim: #1f6feb;
+      --accent: #E8A838;
+      --accent-dim: #B87A1E;
       --green: #3fb950;
       --green-bg: rgba(13,42,13,0.8);
       --red: #f85149;
@@ -28,8 +31,9 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse 100% 60% at 50% -5%, rgba(30,50,80,0.3) 0%, transparent 70%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -54,7 +58,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 17px;
     }
-    header h1 { font-size: 17px; font-weight: 600; color: var(--text-bright); }
+    header h1 { font-size: 18px; font-weight: 400; color: var(--text-bright); font-family: 'Instrument Serif', serif; font-style: italic; }
     .header-sub { font-size: 12px; color: var(--text-dim); margin-left: auto; }
 
     .server-badge {
@@ -232,8 +236,8 @@
     }
     input:focus, select:focus { border-color: var(--accent); }
     input.auto-filled {
-      border-color: rgba(88,166,255,0.5);
-      background: rgba(31,111,235,0.06);
+      border-color: rgba(232,168,56,0.5);
+      background: rgba(232,168,56,0.06);
     }
     input.auto-filled:focus { border-color: var(--accent); }
     select option { background: var(--surface2); }
@@ -265,7 +269,7 @@
       padding: 2px 8px; border-radius: 10px;
       font-size: 10px; font-weight: 600;
     }
-    .source-pill.yf   { background: rgba(88,166,255,0.15); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
+    .source-pill.yf   { background: rgba(232,168,56,0.15); color: var(--accent); border: 1px solid rgba(232,168,56,0.3); }
     .source-pill.fv   { background: rgba(63,185,80,0.15);  color: var(--green);  border: 1px solid rgba(63,185,80,0.3); }
     .source-pill.def  { background: rgba(139,148,158,0.15); color: var(--text-dim); border: 1px solid rgba(139,148,158,0.3); }
 
@@ -299,7 +303,7 @@
       font-size: 9px; font-weight: 600;
       margin-left: 4px; vertical-align: middle;
     }
-    .vc-badge.yf  { background: rgba(88,166,255,0.15); color: var(--accent); }
+    .vc-badge.yf  { background: rgba(232,168,56,0.15); color: var(--accent); }
     .vc-badge.fv  { background: rgba(63,185,80,0.15); color: var(--green); }
     .vc-badge.def { background: rgba(139,148,158,0.15); color: var(--text-dim); }
 
@@ -321,12 +325,12 @@
       font-size: 11px; color: var(--accent);
       text-decoration: none;
       padding: 3px 8px;
-      border: 1px solid rgba(88,166,255,0.25);
+      border: 1px solid rgba(232,168,56,0.25);
       border-radius: 4px;
       transition: background 0.15s, border-color 0.15s;
     }
     .verify-links a:hover {
-      background: rgba(88,166,255,0.1);
+      background: rgba(232,168,56,0.1);
       border-color: var(--accent);
     }
 
@@ -361,7 +365,7 @@
       font-variant-numeric: tabular-nums;
     }
     .metric-card .sub { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
-    .metric-card.highlight { border-color: var(--accent); background: rgba(31,111,235,0.08); }
+    .metric-card.highlight { border-color: var(--accent); background: rgba(184,122,30,0.08); }
     .metric-card.highlight .value { color: var(--accent); }
     .metric-card.green  { border-color: var(--green); background: var(--green-bg); }
     .metric-card.green  .value { color: var(--green); }
@@ -406,9 +410,9 @@
       font-variant-numeric: tabular-nums;
     }
     tbody td:first-child { text-align: left; color: var(--text-bright); font-weight: 500; }
-    .row-phase { background: rgba(88,166,255,0.05) !important; }
+    .row-phase { background: rgba(232,168,56,0.05) !important; }
     .row-phase td { color: var(--accent) !important; }
-    .row-sum { background: rgba(88,166,255,0.11) !important; border-top: 2px solid var(--accent-dim) !important; }
+    .row-sum { background: rgba(232,168,56,0.11) !important; border-top: 2px solid var(--accent-dim) !important; }
     .row-sum td { font-weight: 700; color: var(--text-bright) !important; }
 
     /* ── Rate reference ── */
@@ -430,7 +434,7 @@
 
     /* ── Misc ── */
     .tag { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; }
-    .tag-method { background: rgba(88,166,255,0.15); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
+    .tag-method { background: rgba(232,168,56,0.15); color: var(--accent); border: 1px solid rgba(232,168,56,0.3); }
     .text-dim { color: var(--text-dim); font-size: 11px; margin-bottom: 12px; }
 
     /* ── Alert ── */
@@ -439,7 +443,90 @@
       margin-bottom: 12px;
     }
     .alert-error { background: var(--red-bg); border: 1px solid rgba(248,81,73,0.35); color: var(--red); }
-    .alert-info  { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); color: var(--accent); }
+    .alert-info  { background: rgba(232,168,56,0.08); border: 1px solid rgba(232,168,56,0.25); color: var(--accent); }
+
+    /* ── IBM Plex Mono on numeric data ── */
+    .metric-card .value,
+    .step-box .step-val,
+    .vc-value,
+    table tbody td { font-family: 'IBM Plex Mono', monospace; }
+
+    /* ── IV Hero ── */
+    .iv-hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px 22px;
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      --iv-glow: transparent;
+    }
+    .iv-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 120%, var(--iv-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .iv-hero.highlight { border-color: var(--accent); --iv-glow: rgba(232,168,56,0.18); }
+    .iv-hero.green     { border-color: var(--green);  --iv-glow: rgba(63,185,80,0.18);  }
+    .iv-hero.red       { border-color: var(--red);    --iv-glow: rgba(248,81,73,0.18);  }
+    .iv-hero-label {
+      font-size: 11px; font-weight: 600; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: .8px; margin-bottom: 12px;
+    }
+    .iv-hero-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(44px, 5.5vw, 64px);
+      font-weight: 700; letter-spacing: -1.5px; line-height: 1;
+      color: var(--text-bright);
+    }
+    .iv-hero.highlight .iv-hero-number { color: var(--accent); }
+    .iv-hero.green .iv-hero-number     { color: var(--green);  }
+    .iv-hero.red .iv-hero-number       { color: var(--red);    }
+    .iv-verdict-line {
+      margin-top: 12px; font-size: 13px; color: var(--text-dim);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .iv-verdict-text { font-weight: 600; }
+    .iv-hero.green .iv-verdict-text     { color: var(--green);  }
+    .iv-hero.red .iv-verdict-text       { color: var(--red);    }
+    .iv-hero.highlight .iv-verdict-text { color: var(--accent); }
+
+    /* ── Result header ── */
+    .result-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .result-ticker-badge {
+      background: var(--accent-dim); border-radius: 7px;
+      padding: 7px 13px; font-size: 16px; font-weight: 700;
+      color: #fff; font-family: 'IBM Plex Mono', monospace; letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .result-company-name { font-size: 17px; font-weight: 700; color: var(--text-bright); margin-bottom: 3px; }
+
+    /* ── Staggered reveal animation ── */
+    .result-section { animation: rsReveal 0.4s ease both; }
+    @keyframes rsReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Quick-try buttons ── */
+    .quick-try { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+    .quick-try-btn {
+      padding: 7px 16px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text-dim);
+      font-size: 12px; font-weight: 700;
+      font-family: 'IBM Plex Mono', monospace;
+      cursor: pointer; letter-spacing: .5px;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .quick-try-btn:hover {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(232,168,56,0.08);
+    }
 
     /* ── Tooltip ── */
     [data-tip] { position: relative; cursor: help; }
@@ -682,9 +769,14 @@
     <!-- RIGHT: Results -->
     <div id="resultsPanel">
       <div class="empty-state">
-        <div class="icon">📊</div>
-        <p>Enter a ticker and click <strong>Fetch Data</strong> to auto-fill the inputs,<br>
-           or fill in the fields manually and click <strong>Calculate</strong>.</p>
+        <div class="icon" style="font-family:'IBM Plex Mono',monospace;font-size:32px;letter-spacing:-2px;color:var(--text-dim);">◈</div>
+        <p>Enter any ticker and click <strong>Fetch Data</strong>,<br>or try a quick example:</p>
+        <div class="quick-try">
+          <button class="quick-try-btn" onclick="quickFetch('AAPL')">AAPL</button>
+          <button class="quick-try-btn" onclick="quickFetch('MSFT')">MSFT</button>
+          <button class="quick-try-btn" onclick="quickFetch('NVDA')">NVDA</button>
+          <button class="quick-try-btn" onclick="quickFetch('BRK-B')">BRK-B</button>
+        </div>
       </div>
     </div>
 
@@ -1051,7 +1143,7 @@ function buildMethodComparison(g1, g2, g3, r, debt, cash, shares, exchangeRate, 
 
   const rows = Object.entries(cfSources).map(([key, src]) => {
     if (src.val == null || isNaN(src.val)) {
-      return `<div class="step-box" style="${key === activeMethod ? 'border-color:var(--accent);background:rgba(31,111,235,0.08);' : ''}">
+      return `<div class="step-box" style="${key === activeMethod ? 'border-color:var(--accent);background:rgba(184,122,30,0.08);' : ''}">
         <div class="step-label">${src.label}${key === activeMethod ? ' <span style="font-size:9px;color:var(--accent);font-weight:700;letter-spacing:.3px;">ACTIVE</span>' : ''}</div>
         <div class="step-val" style="font-size:14px;color:var(--text-dim);">—</div>
         <div class="step-sub">No data</div>
@@ -1071,7 +1163,7 @@ function buildMethodComparison(g1, g2, g3, r, debt, cash, shares, exchangeRate, 
                   : `<span style="color:var(--red);">${fmt(disc*100,1)}% over</span>`)
       : '';
     const isActive = key === activeMethod;
-    return `<div class="step-box" style="${isActive ? 'border-color:var(--accent);background:rgba(31,111,235,0.08);' : ''}cursor:pointer;" onclick="switchMethod('${key}')" title="Click to switch to this method">
+    return `<div class="step-box" style="${isActive ? 'border-color:var(--accent);background:rgba(184,122,30,0.08);' : ''}cursor:pointer;" onclick="switchMethod('${key}')" title="Click to switch to this method">
       <div class="step-label">${src.label}${isActive ? ' <span style="font-size:9px;color:var(--accent);font-weight:700;letter-spacing:.3px;">ACTIVE</span>' : ''}</div>
       <div class="step-val" style="font-size:18px;">${sym}${fmt(ivPS)}</div>
       <div class="step-sub">CF: ${fmtM(src.val)} &nbsp;${discText}</div>
@@ -1182,33 +1274,40 @@ function calculate() {
   tableRows += `<tr class="row-sum"><td>TOTAL PV (20 Years)</td><td colspan="3"></td><td>${fmtM(totalPV)}</td><td>${fmtM(totalPV)}</td></tr>`;
 
   document.getElementById('resultsPanel').innerHTML = `
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-      <div style="background:var(--accent-dim);border-radius:7px;padding:7px 13px;font-size:17px;font-weight:700;color:#fff;">${ticker}</div>
+    <div class="result-header result-section" style="animation-delay:0s;">
+      <div class="result-ticker-badge">${ticker}</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--text-bright);">${stockName}</div>
+        <div class="result-company-name">${stockName}</div>
         <span class="tag tag-method">${methodLabel}</span>
         <span style="font-size:10px;color:var(--text-dim);margin-left:7px;">Base: ${baseYear}</span>
       </div>
     </div>
 
-    <div class="result-hero">
-      <div class="metric-card highlight">
-        <div class="label">Intrinsic Value / Share</div>
-        <div class="value">${sym}${fmt(ivFinal)}</div>
-        <div class="sub">${curr} × ${exchangeRate}</div>
+    <div class="iv-hero ${verdictClass} result-section" style="animation-delay:0.06s;">
+      <div class="iv-hero-label">Intrinsic Value / Share</div>
+      <div class="iv-hero-number">${sym}<span id="ivHeroNum">${fmt(ivFinal)}</span></div>
+      ${discountPct !== null ? `
+      <div class="iv-verdict-line">
+        <span class="iv-verdict-text">${verdictText}</span>
+        <span style="color:var(--surface3);">·</span>
+        <span>Last Close: ${sym}${fmt(lastClose)}</span>
       </div>
+      <div class="mos-bar-wrap" style="max-width:280px;margin:12px auto 0;height:4px;"><div class="mos-bar" style="width:${mosW}%;background:${mosColor};"></div></div>
+      ` : ''}
+      <div style="margin-top:10px;font-size:11px;color:var(--text-dim);">${curr} · exchange ×${exchangeRate}</div>
+    </div>
+
+    <div class="result-hero result-section" style="animation-delay:0.12s;">
       <div class="metric-card">
         <div class="label">PV of 20-Yr Cash Flows</div>
         <div class="value" style="font-size:19px;">${fmtM(totalPV)}</div>
         <div class="sub">Before debt/cash adj.</div>
       </div>
-      ${discountPct !== null ? `
-      <div class="metric-card ${verdictClass}">
-        <div class="label">Market vs Intrinsic</div>
-        <div class="value">${verdictText}</div>
-        <div class="sub">Last Close: ${sym}${fmt(lastClose)}</div>
-        <div class="mos-bar-wrap"><div class="mos-bar" style="width:${mosW}%;background:${mosColor};"></div></div>
-      </div>` : ''}
+      <div class="metric-card">
+        <div class="label">CF Basis (TTM)</div>
+        <div class="value" style="font-size:18px;">${fmtM(CF)}</div>
+        <div class="sub">${methodLabel}</div>
+      </div>
     </div>
 
     <div class="section-title">Per Share Breakdown</div>
@@ -1228,7 +1327,7 @@ function calculate() {
         <div class="step-val" style="color:var(--green);">+${sym}${fmt(cashPS)}</div>
         <div class="step-sub">Cash &amp; ST Inv. ÷ Shares</div>
       </div>
-      <div class="step-box" style="border-color:var(--accent);background:rgba(31,111,235,0.08);">
+      <div class="step-box" style="border-color:var(--accent);background:rgba(184,122,30,0.08);">
         <div class="step-label">= Intrinsic Value / Share</div>
         <div class="step-val" style="color:var(--accent);">${sym}${fmt(ivFinal)}</div>
         <div class="step-sub">${curr} adj. × ${exchangeRate}</div>
@@ -1294,6 +1393,28 @@ function calculate() {
   `;
 
   document.getElementById('calcBtn').disabled = false;
+
+  // Animate IV hero number counting up
+  (function() {
+    const el = document.getElementById('ivHeroNum');
+    if (!el) return;
+    const target = ivFinal;
+    const start = performance.now();
+    const dur = 700;
+    function tick(now) {
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = fmt(target * eased, 2);
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = fmt(target, 2);
+    }
+    requestAnimationFrame(tick);
+  })();
+}
+
+function quickFetch(ticker) {
+  document.getElementById('tickerInput').value = ticker;
+  fetchStockData();
 }
 </script>
 </body>
