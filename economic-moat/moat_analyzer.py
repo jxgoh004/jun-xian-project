@@ -111,10 +111,14 @@ async def _run_synthesizer(
     fallback_score = round(sum(scores) / len(scores), 1) if scores else 0.0
     overall_score = float(result.get("overall_score", fallback_score))
 
-    if overall_score >= 7.0:
+    if overall_score >= 8.0:
         moat = "Wide"
-    elif overall_score >= 4.0:
+    elif overall_score >= 7.0:
+        moat = "Wide-Narrow"
+    elif overall_score >= 5.0:
         moat = "Narrow"
+    elif overall_score >= 4.0:
+        moat = "Narrow-None"
     else:
         moat = "None"
 

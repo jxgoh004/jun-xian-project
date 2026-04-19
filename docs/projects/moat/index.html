@@ -167,10 +167,12 @@
       opacity: .4;
       filter: blur(80px);
     }
-    .hero.wide-glow::before   { background: var(--green); }
-    .hero.narrow-glow::before { background: var(--yellow); }
-    .hero.none-glow::before   { background: var(--red); }
-    .hero.na-glow::before     { background: var(--accent); }
+    .hero.wide-glow::before         { background: var(--green); }
+    .hero.wide-narrow-glow::before  { background: linear-gradient(135deg, var(--green), var(--yellow)); }
+    .hero.narrow-glow::before       { background: var(--yellow); }
+    .hero.narrow-none-glow::before  { background: linear-gradient(135deg, var(--yellow), var(--red)); }
+    .hero.none-glow::before         { background: var(--red); }
+    .hero.na-glow::before           { background: var(--accent); }
 
     .hero-inner {
       position: relative;
@@ -281,10 +283,12 @@
       font-size: 13px;
       color: var(--text-dim);
     }
-    .verdict-wide   { color: var(--green); }
-    .verdict-narrow { color: var(--yellow); }
-    .verdict-none   { color: var(--red); }
-    .verdict-na     { color: var(--accent); }
+    .verdict-wide         { color: var(--green); }
+    .verdict-wide-narrow  { color: #8fd67a; }
+    .verdict-narrow       { color: var(--yellow); }
+    .verdict-narrow-none  { color: #e88a45; }
+    .verdict-none         { color: var(--red); }
+    .verdict-na           { color: var(--accent); }
 
     /* Key info pills */
     .info-pills { display: flex; flex-direction: column; gap: 8px; width: 100%; }
@@ -796,17 +800,21 @@
 
     // ── Color helpers ──────────────────────────────────────────────────────────
     function scoreColor(score) {
-      if (score >= 7) return '#3fb950';
-      if (score >= 4) return '#e3b341';
+      if (score >= 8) return '#3fb950';
+      if (score >= 7) return '#8fd67a';
+      if (score >= 5) return '#e3b341';
+      if (score >= 4) return '#e88a45';
       return '#f85149';
     }
     function moatColor(moat) {
       if (!moat) return '#58a6ff';
       switch (moat.toLowerCase()) {
-        case 'wide':   return '#3fb950';
-        case 'narrow': return '#e3b341';
-        case 'none':   return '#f85149';
-        default:       return '#58a6ff';
+        case 'wide':         return '#3fb950';
+        case 'wide-narrow':  return '#8fd67a';
+        case 'narrow':       return '#e3b341';
+        case 'narrow-none':  return '#e88a45';
+        case 'none':         return '#f85149';
+        default:             return '#58a6ff';
       }
     }
     function fmtDate(iso) {
@@ -1194,9 +1202,11 @@
 
       // Hero glow class
       var heroEl = document.getElementById('hero-section');
-      heroEl.classList.add(moat.toLowerCase() === 'wide'   ? 'wide-glow'   :
-                           moat.toLowerCase() === 'narrow' ? 'narrow-glow' :
-                           moat.toLowerCase() === 'none'   ? 'none-glow'   : 'na-glow');
+      heroEl.classList.add(moat.toLowerCase() === 'wide'         ? 'wide-glow'         :
+                           moat.toLowerCase() === 'wide-narrow'  ? 'wide-narrow-glow'  :
+                           moat.toLowerCase() === 'narrow'       ? 'narrow-glow'       :
+                           moat.toLowerCase() === 'narrow-none'  ? 'narrow-none-glow'  :
+                           moat.toLowerCase() === 'none'         ? 'none-glow'         : 'na-glow');
 
       document.getElementById('hero-company').textContent     = stock.company_name || stock.ticker;
       document.getElementById('hero-implication').textContent = stock.investment_implication || '';

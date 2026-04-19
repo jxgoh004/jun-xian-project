@@ -238,10 +238,12 @@
       transition: opacity 0.15s;
     }
     .moat-badge:hover { opacity: 0.8; text-decoration: none; }
-    .moat-wide   { background: rgba(63,185,80,0.15);  color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
-    .moat-narrow { background: rgba(227,179,65,0.15); color: #e3b341; border: 1px solid rgba(227,179,65,0.3); }
-    .moat-none   { background: rgba(248,81,73,0.15);  color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
-    .moat-na     { background: rgba(139,148,158,0.10); color: #8b949e; border: 1px solid rgba(139,148,158,0.2); cursor: default; }
+    .moat-wide        { background: rgba(63,185,80,0.15);   color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .moat-wide-narrow { background: linear-gradient(135deg, rgba(63,185,80,0.15), rgba(227,179,65,0.15)); color: #8fd67a; border: 1px solid rgba(140,182,63,0.3); }
+    .moat-narrow      { background: rgba(227,179,65,0.15);  color: #e3b341; border: 1px solid rgba(227,179,65,0.3); }
+    .moat-narrow-none { background: linear-gradient(135deg, rgba(227,179,65,0.15), rgba(248,81,73,0.15)); color: #e88a45; border: 1px solid rgba(238,130,57,0.3); }
+    .moat-none        { background: rgba(248,81,73,0.15);   color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+    .moat-na          { background: rgba(139,148,158,0.10); color: #8b949e; border: 1px solid rgba(139,148,158,0.2); cursor: default; }
 
     /* Error and empty states */
     #error-state {
@@ -325,7 +327,9 @@
     <select id="moat-filter">
       <option value="">All Moats</option>
       <option value="Wide">Wide</option>
+      <option value="Wide-Narrow">Wide-Narrow</option>
       <option value="Narrow">Narrow</option>
+      <option value="Narrow-None">Narrow-None</option>
       <option value="None">None</option>
     </select>
     <span id="row-count" aria-live="polite"></span>
