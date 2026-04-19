@@ -10,7 +10,7 @@
       "discount_pct": -109.8,
       "method": "ocf",
       "valuation_label": "Highly Overvalued",
-      "moat": "Narrow",
+      "moat": "Narrow-None",
       "moat_score": 4.2
     },
     {
@@ -34,7 +34,7 @@
       "discount_pct": 24.83,
       "method": "ocf",
       "valuation_label": "Slightly Undervalued",
-      "moat": "Wide",
+      "moat": "Wide-Narrow",
       "moat_score": 7.3
     },
     {

@@ -227,7 +227,7 @@
     {
       "ticker": "MMM",
       "company_name": "3M Company",
-      "overall_moat": "Narrow",
+      "overall_moat": "Narrow-None",
       "overall_score": 4.2,
       "investment_implication": "3M\u2019s moat appears more segment-specific and execution-dependent than structurally entrenched: barriers, scale, and some qualification frictions support profitability, but the evidence for durable pricing power and true customer lock-in is not consistently strong. For long-term investors, the key is whether management can sustain operating efficiency and pricing while limiting competitive erosion from substitutes, requalification dynamics, and regulatory/litigation-driven portfolio shifts that can pressure returns on invested capital.",
       "key_strength": "Economies of Scale \u2014 3M\u2019s large revenue base and improved 2024 profitability/operating leverage indicate it can generate meaningful operating income from a substantial cost base (though not consistently across all years).",
@@ -445,7 +445,7 @@
     {
       "ticker": "ABT",
       "company_name": "Abbott Laboratories",
-      "overall_moat": "Wide",
+      "overall_moat": "Wide-Narrow",
       "overall_score": 7.3,
       "investment_implication": "Abbott\u2019s moat is durable because multiple value-capture channels reinforce each other: scale and regulatory/operational complexity support strong economics, while installed bases (especially in Diabetes Care) and contractual frictions help sustain customer pull-through. For long-term investors, this combination implies more resilient returns on invested capital, with competitive positioning strongest where Abbott can pair clinically-gated products with large operating footprints and embedded workflows.",
       "key_strength": "Economies of Scale \u2014 Abbott\u2019s large, profitable manufacturing and device/diabetes businesses show operating leverage and margin support as volumes scale, enabling sustained cost advantages and reinvestment capacity.",
