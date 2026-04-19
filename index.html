@@ -539,6 +539,16 @@
       background: rgba(232,168,56,0.08);
     }
 
+    /* ── DCF table phase bands ── */
+    tr.phase-1 td:first-child { border-left: 3px solid var(--accent); }
+    tr.phase-2 td:first-child { border-left: 3px solid rgba(232,168,56,0.4); }
+    tr.phase-3 td:first-child { border-left: 3px solid rgba(232,168,56,0.18); }
+
+    /* ── Startup overlay feature list ── */
+    .so-features { display: flex; flex-direction: column; gap: 7px; margin: 14px 0 4px; text-align: left; }
+    .so-feature  { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); }
+    .so-feat-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
     /* ── Tooltip ── */
     [data-tip] { position: relative; cursor: help; }
     [data-tip]::after {
@@ -559,8 +569,13 @@
 <div id="startupOverlay">
   <div class="so-card">
     <div id="soSpinner" class="so-spinner"></div>
-    <h2 id="soTitle">Warming up…</h2>
-    <p id="soMsg">The server was sleeping. First visits typically take 20–30 seconds.<br>The page will connect automatically.</p>
+    <h2 id="soTitle">Starting up…</h2>
+    <p id="soMsg" style="margin-bottom:0;">The server is waking from sleep — first visits take ~20 seconds.</p>
+    <div class="so-features">
+      <div class="so-feature"><span class="so-feat-dot"></span>20-year multi-phase DCF model</div>
+      <div class="so-feature"><span class="so-feat-dot"></span>Live data via Yahoo Finance &amp; FinViz</div>
+      <div class="so-feature"><span class="so-feat-dot"></span>AI economic moat analysis for S&amp;P 500</div>
+    </div>
     <div id="soTimer">Elapsed: <span id="soElapsed">0s</span></div>
   </div>
 </div>
@@ -619,18 +634,20 @@
 
   <!-- ── Verification Panel ── -->
   <div id="verifyPanel">
-    <div class="verify-header">
-      <span style="font-size:16px;">🔍</span>
-      <h3>Verify Fetched Data — edit any value before calculating</h3>
+    <div class="verify-header" onclick="toggleVerify()" style="cursor:pointer;" title="Click to expand / collapse">
+      <span style="font-size:13px;color:var(--accent);">◈</span>
+      <h3>Fetched Data <span id="verifyToggleLabel" style="font-weight:400;color:var(--text-dim);">— review ▾</span></h3>
       <div class="sources" id="sourcesList"></div>
-    </div>
-    <div class="verify-grid" id="verifyGrid"></div>
-    <div class="verify-links" id="verifyLinks"></div>
-    <div class="verify-footer">
-      <span class="verify-note" id="verifyNote"></span>
-      <button class="btn-calc" onclick="calculate()" style="padding:7px 18px;font-size:13px;">
-        ✓ Confirm &amp; Calculate
+      <button class="btn-calc" onclick="event.stopPropagation();calculate()" style="padding:6px 16px;font-size:13px;margin-left:auto;">
+        ✓ Calculate
       </button>
+    </div>
+    <div id="verifyExpandable" style="display:none;">
+      <div class="verify-grid" id="verifyGrid"></div>
+      <div class="verify-links" id="verifyLinks"></div>
+      <div class="verify-footer">
+        <span class="verify-note" id="verifyNote"></span>
+      </div>
     </div>
   </div>
 
@@ -1015,6 +1032,8 @@ function populateFromData(d) {
 function showVerifyPanel(d, method) {
   const panel = document.getElementById('verifyPanel');
   panel.classList.add('visible');
+  document.getElementById('verifyExpandable').style.display = 'none';
+  document.getElementById('verifyToggleLabel').textContent  = '— review ▾';
 
   // Sources pills
   const sources = document.getElementById('sourcesList');
@@ -1280,20 +1299,23 @@ function calculate() {
     else if (d.yr <= 10) phase2 += d.discCF;
     else                 phase3 += d.discCF;
 
-    tableRows += `<tr>
+    const phaseClass = d.yr <= 5 ? 'phase-1' : d.yr <= 10 ? 'phase-2' : 'phase-3';
+    const pct = totalPV > 0 ? d.discCF / totalPV * 100 : 0;
+    tableRows += `<tr class="${phaseClass}">
       <td>Year ${d.yr} (${d.year})</td>
       <td>${fmt(d.g * 100, 2)}%</td>
       <td>${fmtM(d.projCF)}</td>
       <td>${d.df.toFixed(6)}</td>
       <td>${fmtM(d.discCF)}</td>
       <td>${fmtM(runSum)}</td>
+      <td style="font-size:11px;color:var(--text-dim);">${fmt(pct,1)}%</td>
     </tr>`;
 
-    if (d.yr === 5)  tableRows += `<tr class="row-phase"><td>▸ Phase 1 Subtotal (Yr 1–5)</td><td colspan="3"></td><td>${fmtM(phase1)}</td><td></td></tr>`;
-    if (d.yr === 10) tableRows += `<tr class="row-phase"><td>▸ Phase 2 Subtotal (Yr 6–10)</td><td colspan="3"></td><td>${fmtM(phase2)}</td><td></td></tr>`;
+    if (d.yr === 5)  tableRows += `<tr class="row-phase phase-1"><td>▸ Phase 1 Subtotal (Yr 1–5)</td><td colspan="3"></td><td>${fmtM(phase1)}</td><td></td><td></td></tr>`;
+    if (d.yr === 10) tableRows += `<tr class="row-phase phase-2"><td>▸ Phase 2 Subtotal (Yr 6–10)</td><td colspan="3"></td><td>${fmtM(phase2)}</td><td></td><td></td></tr>`;
   });
-  tableRows += `<tr class="row-phase"><td>▸ Phase 3 Subtotal (Yr 11–20)</td><td colspan="3"></td><td>${fmtM(phase3)}</td><td></td></tr>`;
-  tableRows += `<tr class="row-sum"><td>TOTAL PV (20 Years)</td><td colspan="3"></td><td>${fmtM(totalPV)}</td><td>${fmtM(totalPV)}</td></tr>`;
+  tableRows += `<tr class="row-phase phase-3"><td>▸ Phase 3 Subtotal (Yr 11–20)</td><td colspan="3"></td><td>${fmtM(phase3)}</td><td></td><td></td></tr>`;
+  tableRows += `<tr class="row-sum"><td>TOTAL PV (20 Years)</td><td colspan="3"></td><td>${fmtM(totalPV)}</td><td>${fmtM(totalPV)}</td><td style="font-size:11px;color:var(--text-dim);">100%</td></tr>`;
 
   document.getElementById('resultsPanel').innerHTML = `
     <div class="result-header result-section" style="animation-delay:0s;">
@@ -1391,6 +1413,7 @@ function calculate() {
             <th>Discount Factor</th>
             <th>Discounted Value</th>
             <th>Cumulative PV</th>
+            <th>% Share</th>
           </tr>
         </thead>
         <tbody>${tableRows}</tbody>
@@ -1437,6 +1460,14 @@ function calculate() {
 function quickFetch(ticker) {
   document.getElementById('tickerInput').value = ticker;
   fetchStockData();
+}
+
+function toggleVerify() {
+  const el    = document.getElementById('verifyExpandable');
+  const label = document.getElementById('verifyToggleLabel');
+  const open  = el.style.display !== 'none';
+  el.style.display  = open ? 'none' : 'block';
+  label.textContent = open ? '— review ▾' : '— collapse ▲';
 }
 </script>
 </body>
