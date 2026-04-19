@@ -100,15 +100,11 @@
     }
     #startupOverlay h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 8px; }
     #startupOverlay p  { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
-    #startupOverlay .so-dot-row { display: flex; gap: 6px; justify-content: center; margin-top: 16px; }
-    #startupOverlay .so-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent); opacity: 0.3;
-      animation: pulse-dot 1.2s ease-in-out infinite;
+    #soTimer {
+      margin-top: 18px; font-size: 12px; color: var(--text-dim);
+      display: none;
     }
-    #startupOverlay .so-dot:nth-child(2) { animation-delay: 0.2s; }
-    #startupOverlay .so-dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes pulse-dot { 0%,100%{opacity:0.3} 50%{opacity:1} }
+    #soTimer span { color: var(--accent); font-weight: 600; }
 
     /* ── Layout ── */
     .container { max-width: 1300px; margin: 0 auto; padding: 20px 24px; }
@@ -465,17 +461,9 @@
 <div id="startupOverlay">
   <div class="so-card">
     <div id="soSpinner" class="so-spinner"></div>
-    <h2 id="soTitle">Starting API Server…</h2>
-    <p id="soMsg">The server is warming up. This usually takes a few seconds.<br>The page will connect automatically.</p>
-    <div class="so-dot-row" id="soDots">
-      <div class="so-dot"></div><div class="so-dot"></div><div class="so-dot"></div>
-    </div>
-    <div id="soInstructions" style="display:none;margin-top:18px;text-align:left;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 14px;">
-      <p style="font-size:12px;color:var(--text-dim);margin-bottom:8px;">To start the server, run this file from the project folder:</p>
-      <code style="display:block;font-size:12px;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:6px 10px;color:var(--accent);margin-bottom:10px;">start_server.bat</code>
-      <p style="font-size:11px;color:var(--text-dim);">Once running, this page will connect automatically — no need to refresh.</p>
-      <button onclick="checkServer()" style="margin-top:10px;width:100%;padding:7px;background:var(--accent-dim);border:none;border-radius:5px;color:#fff;font-size:12px;font-weight:600;cursor:pointer;">Retry Connection</button>
-    </div>
+    <h2 id="soTitle">Warming up…</h2>
+    <p id="soMsg">The server was sleeping. First visits typically take 20–30 seconds.<br>The page will connect automatically.</p>
+    <div id="soTimer">Elapsed: <span id="soElapsed">0s</span></div>
   </div>
 </div>
 
@@ -716,7 +704,7 @@ async function checkServer() {
   const dot    = document.getElementById('serverDot');
   const status = document.getElementById('serverStatus');
   try {
-    const r = await fetch(API + '/api/health', { signal: AbortSignal.timeout(3000) });
+    const r = await fetch(API + '/api/health', { signal: AbortSignal.timeout(12000) });
     if (r.ok) {
       dot.className    = 'server-dot online';
       status.textContent = 'API online';
@@ -729,34 +717,39 @@ async function checkServer() {
 }
 // ── Startup: poll until the server is ready, then dismiss the overlay ─────
 (function waitForServer() {
-  const overlay      = document.getElementById('startupOverlay');
-  const soTitle      = document.getElementById('soTitle');
-  const soMsg        = document.getElementById('soMsg');
-  const soSpinner    = document.getElementById('soSpinner');
-  const soDots       = document.getElementById('soDots');
-  const soInstructions = document.getElementById('soInstructions');
-  let attempts = 0;
-  let instructionsShown = false;
+  const overlay   = document.getElementById('startupOverlay');
+  const soTitle   = document.getElementById('soTitle');
+  const soMsg     = document.getElementById('soMsg');
+  const soTimer   = document.getElementById('soTimer');
+  const soElapsed = document.getElementById('soElapsed');
+  const startedAt = Date.now();
+  let slowShown   = false;
+  let done        = false;
+
+  function elapsedSec() { return Math.round((Date.now() - startedAt) / 1000); }
+
+  // Tick the elapsed counter every second
+  const ticker = setInterval(() => {
+    if (done) { clearInterval(ticker); return; }
+    const s = elapsedSec();
+    if (s >= 3) soTimer.style.display = 'block';
+    soElapsed.textContent = s + 's';
+    if (s >= 15 && !slowShown) {
+      slowShown = true;
+      soTitle.textContent = 'Almost there…';
+      soMsg.textContent   = 'The server was sleeping. It should be ready any moment now.';
+    }
+  }, 1000);
 
   async function poll() {
     const online = await checkServer();
-    attempts++;
     if (online) {
+      done = true;
       overlay.classList.add('hidden');
       setTimeout(() => overlay.remove(), 450);
-    } else {
-      // After 5 failed attempts (~7 s), switch to "not found" mode
-      if (attempts >= 5 && !instructionsShown) {
-        instructionsShown = true;
-        soSpinner.style.display    = 'none';
-        soDots.style.display       = 'none';
-        soTitle.textContent        = 'Server Not Running';
-        soMsg.innerHTML            = 'The API server could not be reached.<br>Please start it using <strong style="color:var(--accent);">start_server.bat</strong> — this page will connect automatically once it\'s up.';
-        soInstructions.style.display = 'block';
-      }
-      // Keep retrying every 3 s so it auto-connects when the server starts
-      setTimeout(poll, 3000);
+      return;
     }
+    setTimeout(poll, 3000);
   }
 
   poll();
