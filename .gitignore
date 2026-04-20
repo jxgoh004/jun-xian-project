@@ -35,3 +35,7 @@ Thumbs.db
 # Environment variables — never commit API keys
 .env
 .venv/
+# Added by code-review-graph
+.code-review-graph/
+# Sample images
+.ui_example/
