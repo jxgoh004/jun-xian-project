@@ -1085,8 +1085,13 @@
 
     // ── TradingView chart ────────────────────────────────────────────────────
     function initChart(sym) {
-      var container = document.getElementById('tv-chart');
-      container.innerHTML = '';
+      var outer = document.getElementById('tv-chart');
+      outer.innerHTML = '';
+
+      var container = document.createElement('div');
+      container.className = 'tradingview-widget-container';
+      container.style.cssText = 'width:100%;height:100%;min-height:340px;';
+      outer.appendChild(container);
 
       var widgetDiv = document.createElement('div');
       widgetDiv.className = 'tradingview-widget-container__widget';
@@ -1117,7 +1122,7 @@
       script.textContent = JSON.stringify(config);
 
       script.onerror = function() {
-        container.innerHTML =
+        outer.innerHTML =
           '<div class="chart-fallback">' +
           '<span style="font-size:24px">📊</span>' +
           '<span>Chart unavailable offline</span>' +
