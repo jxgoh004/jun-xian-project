@@ -205,7 +205,8 @@ def process_ticker(ticker, index, total):
 
     Fields returned:
         ticker, company_name, sector, current_price,
-        intrinsic_value, discount_pct, method, valuation_label
+        intrinsic_value, discount_pct, method, valuation_label,
+        plus enriched fields for the stock overview page.
     """
     null_record = {
         "ticker": ticker,
@@ -216,6 +217,30 @@ def process_ticker(ticker, index, total):
         "discount_pct": None,
         "method": "N/A",
         "valuation_label": "N/A",
+        "industry": "N/A",
+        "beta": None,
+        "market_cap_m": None,
+        "pe_ratio": None,
+        "forward_pe": None,
+        "eps_ttm": None,
+        "forward_eps": None,
+        "peg_ratio": None,
+        "dividend_yield_pct": None,
+        "wk52_high": None,
+        "wk52_low": None,
+        "book_value_per_share": None,
+        "return_on_equity": None,
+        "debt_to_equity": None,
+        "revenue_per_share": None,
+        "revenue_ttm_m": None,
+        "shares_outstanding_m": None,
+        "ocf_m": None,
+        "fcf_m": None,
+        "ni_ttm_m": None,
+        "debt_m": None,
+        "cash_m": None,
+        "growth_1_5_pct": None,
+        "discount_rate_pct": None,
     }
 
     # ── Yahoo Finance ────────────────────────────────────────────────────────
@@ -341,6 +366,24 @@ def process_ticker(ticker, index, total):
                 intrinsic_value, current_price
             )
 
+    # ── Enriched fields for stock overview page ──────────────────────────────
+    industry = info.get("industry") or "N/A"
+    market_cap_m = to_millions(info.get("marketCap"))
+    pe_ratio = safe_float(info.get("trailingPE"))
+    forward_pe = safe_float(info.get("forwardPE"))
+    eps_ttm = safe_float(info.get("trailingEps"))
+    forward_eps = safe_float(info.get("forwardEps"))
+    peg_ratio = safe_float(info.get("pegRatio"))
+    div_yield_raw = safe_float(info.get("dividendYield"))
+    dividend_yield_pct = round(div_yield_raw * 100, 4) if div_yield_raw is not None else None
+    wk52_high = safe_float(info.get("fiftyTwoWeekHigh"))
+    wk52_low = safe_float(info.get("fiftyTwoWeekLow"))
+    book_value_per_share = safe_float(info.get("bookValue"))
+    return_on_equity = safe_float(info.get("returnOnEquity"))
+    debt_to_equity = safe_float(info.get("debtToEquity"))
+    revenue_per_share = safe_float(info.get("revenuePerShare"))
+    revenue_ttm_m = to_millions(info.get("totalRevenue"))
+
     result_str = (
         f"IV={intrinsic_value}, label={valuation_label}"
         if intrinsic_value is not None
@@ -357,6 +400,30 @@ def process_ticker(ticker, index, total):
         "discount_pct": discount_pct,
         "method": method,
         "valuation_label": valuation_label,
+        "industry": industry,
+        "beta": best_beta,
+        "market_cap_m": market_cap_m,
+        "pe_ratio": pe_ratio,
+        "forward_pe": forward_pe,
+        "eps_ttm": eps_ttm,
+        "forward_eps": forward_eps,
+        "peg_ratio": peg_ratio,
+        "dividend_yield_pct": dividend_yield_pct,
+        "wk52_high": wk52_high,
+        "wk52_low": wk52_low,
+        "book_value_per_share": book_value_per_share,
+        "return_on_equity": return_on_equity,
+        "debt_to_equity": debt_to_equity,
+        "revenue_per_share": revenue_per_share,
+        "revenue_ttm_m": revenue_ttm_m,
+        "shares_outstanding_m": shares_millions,
+        "ocf_m": ocf_m,
+        "fcf_m": fcf_m,
+        "ni_ttm_m": ni_cont_ops_m,
+        "debt_m": debt_m,
+        "cash_m": cash_m,
+        "growth_1_5_pct": growth_1_5_pct,
+        "discount_rate_pct": discount_rate_pct,
     }
 
 
@@ -436,6 +503,17 @@ def main():
                 "discount_pct": None,
                 "method": "N/A",
                 "valuation_label": "N/A",
+                "industry": "N/A",
+                "beta": None, "market_cap_m": None, "pe_ratio": None,
+                "forward_pe": None, "eps_ttm": None, "forward_eps": None,
+                "peg_ratio": None, "dividend_yield_pct": None,
+                "wk52_high": None, "wk52_low": None,
+                "book_value_per_share": None, "return_on_equity": None,
+                "debt_to_equity": None, "revenue_per_share": None,
+                "revenue_ttm_m": None, "shares_outstanding_m": None,
+                "ocf_m": None, "fcf_m": None, "ni_ttm_m": None,
+                "debt_m": None, "cash_m": None,
+                "growth_1_5_pct": None, "discount_rate_pct": None,
             }
 
         if ticker in existing_moat:

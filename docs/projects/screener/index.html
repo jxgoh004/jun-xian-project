@@ -537,13 +537,10 @@
     }
 
     // ---------------------------------------------------------------------------
-    // Calculator link-through (D-16)
+    // Stock overview navigation
     // ---------------------------------------------------------------------------
     function navigateToCalculator(ticker) {
-      window.parent.postMessage(
-        { type: 'navigate', project: 'calculator', ticker: ticker },
-        '*'
-      );
+      window.location.href = 'stock.html?ticker=' + encodeURIComponent(ticker);
     }
 
     // ---------------------------------------------------------------------------
