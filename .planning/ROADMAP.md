@@ -112,6 +112,6 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Hero rewrite + CTA buttons (messaging, LinkedIn button, value prop)
-- [ ] 06-02-PLAN.md — SEO: meta descriptions, OG tags, heading hierarchy, page titles, robots.txt, sitemap.xml, canonical tags
-- [ ] 06-03-PLAN.md — Accessibility + UX: focus styles, card `<a>` elements, form labels, badge text, screener back-link
+- [x] 06-01-PLAN.md — Hero rewrite + CTA buttons (messaging, LinkedIn button, value prop)
+- [x] 06-02-PLAN.md — SEO: meta descriptions, OG tags, heading hierarchy, page titles, robots.txt, sitemap.xml, canonical tags
+- [x] 06-03-PLAN.md — Accessibility + UX: focus styles, card `<a>` elements, form labels, badge text, screener back-link
