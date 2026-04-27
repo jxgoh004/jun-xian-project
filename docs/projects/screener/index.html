@@ -38,6 +38,20 @@
       min-height: 100vh;
     }
 
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      transition: opacity 0.15s;
+    }
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
     header {
       padding: 24px 24px 0;
       text-align: center;
@@ -80,6 +94,9 @@
     .controls input[type="text"]:focus {
       border-color: var(--accent);
     }
+    .controls input[type="text"]:focus-visible {
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
+    }
 
     .controls input[type="text"]::placeholder {
       color: var(--text-dim);
@@ -101,6 +118,9 @@
 
     .controls select:focus {
       border-color: var(--accent);
+    }
+    .controls select:focus-visible {
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
     }
 
     #row-count {
@@ -322,6 +342,7 @@
   <a href="#table-wrap" style="position:absolute;top:-100%;left:16px;z-index:10000;padding:8px 16px;background:var(--accent);color:#0d1117;font-weight:600;border-radius:8px;text-decoration:none;" onfocus="this.style.top='8px'" onblur="this.style.top='-100%'">Skip to screener</a>
 
   <header>
+    <a href="javascript:void(0)" class="back-link" id="back-to-portfolio">&larr; Portfolio</a>
     <h1>S&amp;P 500 Stock Screener</h1>
     <p id="last-updated" class="subtitle">Loading data&hellip;</p>
   </header>
@@ -498,10 +519,12 @@
 
         // Valuation badge
         var tdVal = document.createElement('td');
+        var valLabel = stock.valuation_label || 'N/A';
+        tdVal.setAttribute('aria-label', 'Valuation: ' + valLabel);
         var badge = document.createElement('span');
         var slug = labelToSlug(stock.valuation_label);
         badge.className = 'badge badge-' + slug;
-        badge.textContent = stock.valuation_label || 'N/A';
+        badge.textContent = valLabel;
         tdVal.appendChild(badge);
         tr.appendChild(tdVal);
 
@@ -670,6 +693,12 @@
           updateSortIndicators();
           renderTable();
         });
+      });
+
+      // --- Back-link to portfolio hub ---
+      document.getElementById('back-to-portfolio').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.parent.postMessage({ type: 'navigate', project: null }, '*');
       });
     });
   </script>
