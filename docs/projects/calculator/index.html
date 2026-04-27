@@ -90,37 +90,6 @@
     .server-dot.online  { background: var(--green); }
     .server-dot.offline { background: var(--red); }
 
-    /* ── Startup overlay ── */
-    #startupOverlay {
-      position: fixed; inset: 0; z-index: 9999;
-      background: rgba(13,17,23,0.92);
-      backdrop-filter: blur(6px);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 20px;
-      transition: opacity 0.4s ease;
-    }
-    #startupOverlay.hidden { opacity: 0; pointer-events: none; }
-    #startupOverlay .so-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 36px 48px;
-      text-align: center; max-width: 380px;
-    }
-    #startupOverlay .so-spinner {
-      width: 40px; height: 40px; margin: 0 auto 20px;
-      border: 3px solid var(--surface3);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
-    }
-    #startupOverlay h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 8px; }
-    #startupOverlay p  { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
-    #soTimer {
-      margin-top: 18px; font-size: 12px; color: var(--text-dim);
-      display: none;
-    }
-    #soTimer span { color: var(--accent); font-weight: 600; }
-
     /* ── Layout ── */
     .container { max-width: 1300px; margin: 0 auto; padding: 20px 24px; }
 
@@ -545,9 +514,6 @@
     tr.phase-3 td:first-child { border-left: 3px solid rgba(232,168,56,0.18); }
 
     /* ── Startup overlay feature list ── */
-    .so-features { display: flex; flex-direction: column; gap: 7px; margin: 14px 0 4px; text-align: left; }
-    .so-feature  { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); }
-    .so-feat-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
     /* ── Tooltip ── */
     [data-tip] { position: relative; cursor: help; }
@@ -565,20 +531,6 @@
 </head>
 <body>
 
-<!-- ── Server startup overlay (shown until API responds) ── -->
-<div id="startupOverlay">
-  <div class="so-card">
-    <div id="soSpinner" class="so-spinner"></div>
-    <h2 id="soTitle">Starting up…</h2>
-    <p id="soMsg" style="margin-bottom:0;">The server is waking from sleep — first visits take ~20 seconds.</p>
-    <div class="so-features">
-      <div class="so-feature"><span class="so-feat-dot"></span>20-year multi-phase DCF model</div>
-      <div class="so-feature"><span class="so-feat-dot"></span>Live data via Yahoo Finance &amp; FinViz</div>
-      <div class="so-feature"><span class="so-feat-dot"></span>AI economic moat analysis for S&amp;P 500</div>
-    </div>
-    <div id="soTimer">Elapsed: <span id="soElapsed">0s</span></div>
-  </div>
-</div>
 
 <header>
   <div class="logo">
@@ -846,44 +798,14 @@ async function checkServer() {
   status.textContent = 'API offline';
   return false;
 }
-// ── Startup: poll until the server is ready, then dismiss the overlay ─────
-(function waitForServer() {
-  const overlay   = document.getElementById('startupOverlay');
-  const soTitle   = document.getElementById('soTitle');
-  const soMsg     = document.getElementById('soMsg');
-  const soTimer   = document.getElementById('soTimer');
-  const soElapsed = document.getElementById('soElapsed');
-  const startedAt = Date.now();
-  let slowShown   = false;
-  let done        = false;
-
-  function elapsedSec() { return Math.round((Date.now() - startedAt) / 1000); }
-
-  // Tick the elapsed counter every second
-  const ticker = setInterval(() => {
-    if (done) { clearInterval(ticker); return; }
-    const s = elapsedSec();
-    if (s >= 3) soTimer.style.display = 'block';
-    soElapsed.textContent = s + 's';
-    if (s >= 15 && !slowShown) {
-      slowShown = true;
-      soTitle.textContent = 'Almost there…';
-      soMsg.textContent   = 'The server was sleeping. It should be ready any moment now.';
-    }
-  }, 1000);
-
-  async function poll() {
-    const online = await checkServer();
-    if (online) {
-      done = true;
-      overlay.classList.add('hidden');
-      setTimeout(() => overlay.remove(), 450);
-      return;
-    }
-    setTimeout(poll, 3000);
-  }
-
-  poll();
+// ── Startup: load nightly cache + passive server health check ─────────────
+let calcCache = null;
+(async function init() {
+  try {
+    const r = await fetch('../screener/calculator_cache.json');
+    if (r.ok) calcCache = await r.json();
+  } catch {}
+  checkServer();
 })();
 
 // ── CF label + live method switch ─────────────────────────────────────────
@@ -930,19 +852,69 @@ function clearAutoFill() {
   document.querySelectorAll('input.auto-filled').forEach(el => el.classList.remove('auto-filled'));
 }
 
+// ── Translate nightly cache entry → API response shape ───────────────────
+function cacheEntryToApiData(ticker, e) {
+  const negEarnings = e.ni_ttm_m !== null && e.ni_ttm_m < 0;
+  const fcfNeg      = e.fcf_m    !== null && e.fcf_m    < 0;
+  const ocfInflated = e.ocf_m && e.ni_ttm_m && e.ni_ttm_m > 0 && e.ocf_m > 1.5 * e.ni_ttm_m;
+  const switchReason = e.method === 'fcf'
+    ? (negEarnings ? 'negative_earnings' : (ocfInflated ? 'ocf_inflated' : null))
+    : null;
+  return {
+    symbol:               ticker,
+    company_name:         e.company_name,
+    sector:               e.sector,
+    industry:             e.industry,
+    currency:             'USD',
+    exchange:             '',
+    current_price:        e.current_price,
+    shares_millions:      e.shares_outstanding_m,
+    ocf_millions:         e.ocf_m,
+    ni_cont_ops_millions: e.ni_ttm_m,
+    ni_millions:          e.ni_ttm_m,
+    fcf_millions:         e.fcf_m,
+    recommended_method:   e.method,
+    auto_switch_to_fcf:   e.method === 'fcf',
+    switch_reason:        switchReason,
+    negative_earnings:    negEarnings,
+    dcf_not_applicable:   negEarnings && (e.fcf_m === null || fcfNeg),
+    ocf_to_ni_ratio:      (e.ocf_m && e.ni_ttm_m && e.ni_ttm_m > 0)
+                            ? Math.round(e.ocf_m / e.ni_ttm_m * 100) / 100 : null,
+    debt_millions:        e.debt_m,
+    cash_millions:        e.cash_m,
+    growth_1_5_pct:       e.growth_1_5_pct,
+    growth_6_10_pct:      e.growth_1_5_pct !== null
+                            ? Math.round(e.growth_1_5_pct / 2 * 100) / 100 : null,
+    growth_11_20_pct:     4.0,
+    growth_source:        'Nightly batch (S&P 500 snapshot)',
+    beta:                 e.beta,
+    discount_rate_pct:    e.discount_rate_pct,
+    sources:              { yahoo_finance: true, finviz: true },
+    _from_cache:          true,
+    _cache_updated_at:    calcCache.updated_at,
+  };
+}
+
 // ── Fetch stock data ────────────────────────────────────────────────────
 async function fetchStockData() {
   const ticker = document.getElementById('tickerInput').value.trim().toUpperCase();
   if (!ticker) { alert('Please enter a ticker symbol.'); return; }
 
-  // Check server first
-  const online = await checkServer();
-  if (!online) {
-    showError('The API server is not running. Please start it with start_server.bat and try again.');
+  // S&P 500 nightly cache — instant, no server needed
+  if (calcCache?.stocks?.[ticker]) {
+    hideError();
+    document.getElementById('verifyPanel').classList.remove('visible');
+    populateFromData(cacheEntryToApiData(ticker, calcCache.stocks[ticker]));
     return;
   }
 
-  // Loading state
+  // Fall back to live API for non-S&P 500 tickers
+  const online = await checkServer();
+  if (!online) {
+    showError(`"${ticker}" isn't in the nightly S&P 500 cache and the live server is offline. Try an S&P 500 ticker, or check back later.`);
+    return;
+  }
+
   const btn  = document.getElementById('fetchBtn');
   const icon = document.getElementById('fetchIcon');
   const lbl  = document.getElementById('fetchLabel');
@@ -956,14 +928,11 @@ async function fetchStockData() {
   try {
     const resp = await fetch(`${API}/api/fetch-stock/${ticker}`);
     const data = await resp.json();
-
     if (!resp.ok) {
       showError(data.error || 'Failed to fetch data. Check the ticker symbol.');
       return;
     }
-
     populateFromData(data);
-
   } catch (err) {
     showError('Network error: ' + err.message + '. Is the API server running?');
   } finally {
@@ -1038,8 +1007,15 @@ function showVerifyPanel(d, method) {
   // Sources pills
   const sources = document.getElementById('sourcesList');
   sources.innerHTML = '';
-  if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
-  if (d.sources.finviz)        sources.innerHTML += `<span class="source-pill fv">FinViz</span>`;
+  if (d._from_cache) {
+    const dateStr = d._cache_updated_at
+      ? new Date(d._cache_updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      : '';
+    sources.innerHTML = `<span class="source-pill" style="background:rgba(63,185,80,0.12);color:var(--green);border:1px solid rgba(63,185,80,0.3);">S&amp;P 500 cache${dateStr ? ' · ' + dateStr : ''}</span>`;
+  } else {
+    if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
+    if (d.sources.finviz)        sources.innerHTML += `<span class="source-pill fv">FinViz</span>`;
+  }
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.35);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:rgba(248,81,73,0.12);color:var(--red);border:1px solid rgba(248,81,73,0.3);">Negative Earnings → FCF</span>`;
   else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:rgba(227,179,65,0.15);color:var(--yellow);border:1px solid rgba(227,179,65,0.35);">OCF Inflated → FCF</span>`;
@@ -1112,8 +1088,9 @@ function showVerifyPanel(d, method) {
       ${c.sub ? `<div class="vc-sub">${c.sub}</div>` : ''}
     </div>`).join('');
 
-  document.getElementById('verifyNote').textContent =
-    `Data fetched ${new Date().toLocaleTimeString()}. Fields highlighted in blue are auto-filled — you can edit them in the inputs panel before calculating.`;
+  document.getElementById('verifyNote').textContent = d._from_cache
+    ? `Loaded from nightly S&P 500 snapshot (updated ${new Date(d._cache_updated_at).toLocaleDateString()}). Fields highlighted in blue are auto-filled — you can edit them before calculating.`
+    : `Data fetched ${new Date().toLocaleTimeString()}. Fields highlighted in blue are auto-filled — you can edit them in the inputs panel before calculating.`;
 
   // Verification links
   const sym = d.symbol;

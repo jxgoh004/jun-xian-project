@@ -241,6 +241,7 @@ def process_ticker(ticker, index, total):
         "cash_m": None,
         "growth_1_5_pct": None,
         "discount_rate_pct": None,
+        "trends": None,
     }
 
     # ── Yahoo Finance ────────────────────────────────────────────────────────
@@ -277,6 +278,13 @@ def process_ticker(ticker, index, total):
     growth_rates = yf.estimate_growth_rates()
     yf_growth_cf = safe_float(growth_rates.get("cash_flow_growth"))
     yf_growth_eps = safe_float(growth_rates.get("eps_growth"))
+
+    # Historical trend series for the Financial Trends charts
+    try:
+        trends = yf.get_financial_trends()
+    except Exception as exc:
+        print(f"[{index}/{total}] {ticker}: trend extraction failed — {exc}")
+        trends = None
 
     beta = safe_float(info.get("beta"))
 
@@ -424,6 +432,7 @@ def process_ticker(ticker, index, total):
         "cash_m": cash_m,
         "growth_1_5_pct": growth_1_5_pct,
         "discount_rate_pct": discount_rate_pct,
+        "trends": trends,
     }
 
 
@@ -514,6 +523,7 @@ def main():
                 "ocf_m": None, "fcf_m": None, "ni_ttm_m": None,
                 "debt_m": None, "cash_m": None,
                 "growth_1_5_pct": None, "discount_rate_pct": None,
+                "trends": None,
             }
 
         if ticker in existing_moat:
@@ -532,7 +542,26 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
 
+    # Slim calculator cache — all DCF inputs, no trend arrays, keyed by ticker
+    calc_fields = (
+        "company_name", "sector", "industry", "current_price",
+        "ocf_m", "fcf_m", "ni_ttm_m", "debt_m", "cash_m",
+        "shares_outstanding_m", "beta", "growth_1_5_pct",
+        "discount_rate_pct", "method",
+    )
+    calc_cache = {
+        "updated_at": updated_at,
+        "stocks": {
+            s["ticker"]: {k: s.get(k) for k in calc_fields}
+            for s in stocks
+        },
+    }
+    calc_cache_path = os.path.join(output_dir, "calculator_cache.json")
+    with open(calc_cache_path, "w", encoding="utf-8") as f:
+        json.dump(calc_cache, f, separators=(",", ":"))
+
     print(f"\nDone. {len(stocks)} stocks written to {output_path}")
+    print(f"Calculator cache written to {calc_cache_path}")
     print(f"updated_at: {updated_at}")
 
 

@@ -120,6 +120,11 @@ def fetch_stock(symbol):
     shares_raw = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
     shares_millions = to_millions_shares(shares_raw)
 
+    # Guard: yfinance returns an empty object for invalid tickers without raising.
+    # Reject if the response has no price and no shares — minimum viable data.
+    if current_price is None and shares_millions is None and company_name == symbol:
+        return jsonify({"error": f"No data found for '{symbol}'. Check the ticker symbol."}), 404
+
     # Cash flow values (in millions)
     ocf_raw          = yf.get_operating_cash_flow()           # TTM Operating Cash Flow
     ni_cont_ops_raw  = yf.get_net_income_continuing_ops_ttm() # TTM Net Income from Continuing Ops
