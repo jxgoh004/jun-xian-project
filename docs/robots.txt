@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jxgoh004.github.io/jun-xian-project/sitemap.xml
