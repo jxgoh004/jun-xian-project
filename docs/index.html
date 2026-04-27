@@ -141,62 +141,30 @@
       font-size: 16px;
       font-weight: 400;
       color: var(--accent);
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
-    .hero-value-prop {
+    .hero-credential {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+    .hero-bio {
       font-size: 18px;
       font-weight: 500;
       color: var(--text-bright);
       max-width: 600px;
-      margin: 0 auto 20px;
+      margin: 0 auto 12px;
       line-height: 1.5;
     }
-    .hero-bullets {
-      list-style: none;
-      display: inline-flex;
-      flex-direction: column;
-      gap: 6px;
-      text-align: left;
-      margin: 0 auto 24px;
-      max-width: 480px;
-    }
-    .hero-bullets li {
+    .hero-bio-secondary {
       font-size: 14px;
+      font-weight: 400;
       color: var(--text-dim);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 16px;
     }
-    .hero-bullets li::before {
-      content: "▸";
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    /* ── Social proof strip ── */
-    .social-proof {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-      padding: 14px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .proof-item {
-      font-size: 13px;
-      color: var(--text-dim);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .proof-item strong { color: var(--text-bright); }
 
     /* ── CTA cluster ── */
     .hero-ctas {
@@ -319,8 +287,8 @@
     @media (max-width: 640px) {
       main { padding: 0 16px; }
       .hero h1 { font-size: 26px; }
-      .hero-value-prop { font-size: 16px; }
-      .social-proof { gap: 14px; }
+      .hero-bio { font-size: 16px; }
+      .hero-bio-secondary { font-size: 13px; }
     }
   </style>
 </head>
@@ -340,19 +308,10 @@
     <section id="home-view" class="view">
       <section class="hero">
         <h1>Goh Jun Xian</h1>
-        <p class="hero-title">AI Engineer</p>
-        <p class="hero-value-prop">I turn data into investment decisions — building AI-powered finance tools that anyone can use, no Bloomberg terminal required.</p>
-        <ul class="hero-bullets">
-          <li>AISG-certified Associate AI Engineer — 3-month intensive deep-skilling program</li>
-          <li>2 years graph analytics with Neo4j and LLM-powered data analysis</li>
-          <li>BS Business Analytics — bridging data science and financial reasoning</li>
-        </ul>
-
-        <div class="social-proof" role="list" aria-label="Key credentials">
-          <div class="proof-item" role="listitem"><strong>2</strong> live tools</div>
-          <div class="proof-item" role="listitem"><strong>AISG</strong> certified</div>
-          <div class="proof-item" role="listitem"><strong>2 yrs</strong> Neo4j &amp; LLMs</div>
-        </div>
+        <p class="hero-title">AI Engineer &middot; Graph Analytics &middot; LLM Applications</p>
+        <p class="hero-credential">AI Singapore Associate AI Engineer (2025)</p>
+        <p class="hero-bio">I build useful tools &mdash; things I use every day and want to share with everyone. This is where they live.</p>
+        <p class="hero-bio-secondary">BSc Business Analytics graduate with 2 years of graph analytics (Neo4j) and LLM application experience. Recently completed AI Singapore's Associate AI Engineer deep-skilling program.</p>
 
         <nav class="hero-ctas" aria-label="Contact and profile links">
           <a href="mailto:gohjunxian@email.com" class="btn btn-primary">
