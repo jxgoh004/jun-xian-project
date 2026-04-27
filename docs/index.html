@@ -78,6 +78,16 @@
       outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
+    /* Accessibility: visible keyboard focus ring on all interactive elements */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    [tabindex]:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
+      border-radius: 4px;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -239,6 +249,8 @@
       text-decoration: none;
       color: var(--text);
       transition: border-color 0.2s, transform 0.2s;
+      display: block;
+      cursor: pointer;
     }
     .card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .card h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 6px; }
@@ -342,7 +354,7 @@
       <div class="projects-section">
         <h2 class="section-label">Projects</h2>
         <div class="projects">
-          <div class="card" data-project="screener" role="link" tabindex="0" style="cursor:pointer;"
+          <a href="#screener" class="card" data-project="screener"
                aria-label="Open S&P 500 Stock Screener project">
             <div class="card-thumbnail-placeholder" role="img" aria-label="S&P 500 Stock Screener preview"></div>
             <h2>S&amp;P 500 Stock Screener</h2>
@@ -354,8 +366,8 @@
               <span class="tag">Finance</span>
               <span class="tag">Data</span>
             </div>
-          </div>
-          <div class="card" data-project="calculator" role="link" tabindex="0" style="cursor:pointer;"
+          </a>
+          <a href="#calculator" class="card" data-project="calculator"
                aria-label="Open Intrinsic Value Calculator project">
             <picture>
               <source srcset="projects/calculator/thumbnail.webp" type="image/webp">
@@ -375,7 +387,7 @@
               <span class="tag">JavaScript</span>
               <span class="tag">Finance</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -464,26 +476,20 @@
     location.hash = '#home';
   });
 
-  // Card click handlers
-  document.querySelectorAll('.card[data-project]').forEach(function(card) {
-    card.addEventListener('click', function() {
-      location.hash = '#' + card.dataset.project;
-    });
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        location.hash = '#' + card.dataset.project;
-      }
-    });
-  });
-
-  // Screener → calculator link-through: receive ticker from screener iframe
+  // Screener → calculator link-through and back-link navigation from sub-pages
   window.addEventListener('message', function(e) {
-    if (!e.data || e.data.type !== 'navigate' || e.data.project !== 'calculator') return;
-    pendingTicker = e.data.ticker || null;
-    var iframe = projectView.querySelector('iframe');
-    if (iframe) iframe.remove();
-    location.hash = '#calculator';
+    if (!e.data || e.data.type !== 'navigate') return;
+    if (e.data.project === null || e.data.project === undefined) {
+      // Back-link from sub-page: navigate home
+      location.hash = '#home';
+      return;
+    }
+    if (e.data.project === 'calculator') {
+      pendingTicker = e.data.ticker || null;
+      var iframe = projectView.querySelector('iframe');
+      if (iframe) iframe.remove();
+      location.hash = '#calculator';
+    }
   });
 
   window.addEventListener('hashchange', navigate);
