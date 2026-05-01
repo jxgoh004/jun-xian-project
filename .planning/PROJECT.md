@@ -53,7 +53,7 @@ Visitors can quickly understand who I am as a developer and interact with my wor
 
 ### Active (Milestone v2.0 — Inside Bar Pattern Scanner)
 
-- [ ] **PAT-01**: Pattern detection engine identifies bullish inside bar spring setups across S&P 500 tickers using the defined 5-bar ruleset
+- [x] **PAT-01**: Pattern detection engine identifies bullish inside bar spring setups across S&P 500 tickers using the defined 5-bar ruleset _(Validated in Phase 7: Detection Engine — DET-01..DET-04 covered by 12 unit tests + 11 live integration tests over user-approved KNOWN_SETUPS)_
 - [ ] **PAT-02**: Training dataset generator renders 2D OHLC chart images and produces YOLOv8-compatible annotations
 - [ ] **PAT-03**: YOLOv8 model is trained on annotated data and exported as ONNX for offline inference
 - [ ] **PAT-04**: Backtesting engine computes win rate, average return, and hold period stats per detected setup over 10-year history
@@ -125,4 +125,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-01 — Milestone v2.0 started*
+*Last updated: 2026-05-02 — Phase 7 (Detection Engine) complete*
