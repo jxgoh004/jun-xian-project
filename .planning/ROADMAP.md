@@ -12,10 +12,22 @@ The project transforms an existing Flask-served intrinsic value calculator into 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
+### Milestone v1.0 — Portfolio Site
+
 - [x] **Phase 1: Static Foundation** - Restructure project for GitHub Pages and establish deployment pipeline (completed 2026-03-23)
 - [x] **Phase 2: Portfolio Shell** - Build home page with logo, bio, and project card grid (completed 2026-03-27)
 - [x] **Phase 3: Calculator Integration** - Wire intrinsic value calculator as first in-page project with navigation (completed 2026-03-31)
 - [x] **Phase 4: Design and Performance** - Polish styling, responsiveness, and Core Web Vitals (completed 2026-04-04)
+- [x] **Phase 5: S&P 500 Stock Screener** - Add screener pipeline and frontend as second portfolio project (completed 2026-04-05)
+- [x] **Phase 6: Website Marketing Revamp** - Elevate to MNC standards: SEO, OG tags, CTAs, accessibility (completed 2026-05-01)
+
+### Milestone v2.0 — Inside Bar Pattern Scanner
+
+- [ ] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters
+- [ ] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact
+- [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
+- [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
+- [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
 
 ## Phase Details
 
@@ -77,7 +89,9 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11
+
+### Milestone v1.0 Progress
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -115,3 +129,88 @@ Plans:
 - [x] 06-01-PLAN.md — Hero rewrite + CTA buttons (messaging, LinkedIn button, value prop)
 - [x] 06-02-PLAN.md — SEO: meta descriptions, OG tags, heading hierarchy, page titles, robots.txt, sitemap.xml, canonical tags
 - [x] 06-03-PLAN.md — Accessibility + UX: focus styles, card `<a>` elements, form labels, badge text, screener back-link
+
+---
+
+## Milestone v2.0 — Inside Bar Pattern Scanner
+
+### Overview
+
+Adds a computer-vision-powered inside bar spring setup scanner as a new portfolio project. The work separates three concerns strictly: offline training (algorithmic detection engine feeds YOLOv8 training), nightly inference (ONNX-only, no torch in CI), and a static frontend that reads a pre-written data.json. Phases run sequentially with Phase 9 (backtesting) depending only on Phase 7 so it could notionally overlap Phase 8, but standard granularity keeps them sequential for clarity.
+
+### Phase Checklist (v2.0)
+
+- [ ] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters
+- [ ] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact
+- [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
+- [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
+- [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
+
+### Milestone v2.0 Progress
+
+| Phase | Plans Complete | Status | Completed |
+|-------|----------------|--------|-----------|
+| 7. Detection Engine | 0/? | Not started | — |
+| 8. Training Pipeline | 0/? | Not started | — |
+| 9. Backtesting Engine | 0/? | Not started | — |
+| 10. Batch Pipeline | 0/? | Not started | — |
+| 11. Frontend | 0/? | Not started | — |
+
+## Phase Details (v2.0)
+
+### Phase 7: Detection Engine
+**Goal**: The algorithmic 5-bar inside bar spring detector exists as a standalone Python module that correctly identifies setups in historical OHLC data with no look-ahead bias
+**Depends on**: Phase 6 (milestone v1.0 complete)
+**Requirements**: DET-01, DET-02, DET-03, DET-04
+**Success Criteria** (what must be TRUE):
+  1. Running the detector on 10 years of any S&P 500 ticker produces a list of detections where each detection includes ticker, confirmation date, confirmation type (Pin / Mark Up / Ice-cream), and the 5-bar OHLC context
+  2. The detector correctly identifies the spring case where the break-below bar and confirmation bar are the same bar
+  3. All three trend filters (HH/HL uptrend, price above 50-SMA, cluster near 20/50-SMA retracement) are evaluated using only data available at pattern-end bar — no future bars referenced
+  4. A manually reviewed sample of at least 5 known setups from historical data confirms the detector flags them and does not flag the bars immediately adjacent
+**Plans**: TBD
+
+### Phase 8: Training Pipeline
+**Goal**: A YOLOv8n model trained on algorithmically-annotated chart images exists as a committed ONNX artifact at `models/inside_bar_v1.onnx` and can be loaded by onnxruntime without torch
+**Depends on**: Phase 7
+**Requirements**: TRAIN-01, TRAIN-02, TRAIN-03, TRAIN-04
+**Success Criteria** (what must be TRUE):
+  1. The chart renderer produces a 2D OHLC candlestick PNG from any yfinance DataFrame using mplfinance, with rendering style (DPI, figsize, candle width) randomised across training images to prevent style memorisation
+  2. The training data generator outputs a dataset with YOLOv8 directory structure (`images/train`, `labels/train`, `data.yaml`) where negative samples are capped at 10:1 ratio relative to positives
+  3. YOLOv8n training completes without out-of-memory errors, and the exported ONNX model loads successfully in onnxruntime (no torch) and produces bounding box output for a known positive test image
+  4. The ONNX export opset version is logged and a round-trip test confirms inference output in a clean venv before the model is committed
+**Plans**: TBD
+**UI hint**: no
+
+### Phase 9: Backtesting Engine
+**Goal**: Per-detection forward-return statistics are precomputed over 10-year history and written to a cached JSON file, with a hard train/test split preventing any in-sample leakage
+**Depends on**: Phase 7
+**Requirements**: BT-01, BT-02, BT-03
+**Success Criteria** (what must be TRUE):
+  1. The backtester computes win rate (with N count), average return %, and median hold period for each confirmation type using entry at open of confirmation+1 bar and a fixed hold period
+  2. The train/test cutoff date is defined in a single shared config referenced by both `data.yaml` (training config) and the backtester — no detections from the training period appear in backtest results
+  3. Results are written to `_dev/backtest_cache.json` and the file can be inspected to confirm at least one confirmation type has N >= 10 detections
+**Plans**: TBD
+
+### Phase 10: Batch Pipeline
+**Goal**: A nightly GitHub Actions workflow runs the full detection and inference pipeline across S&P 500 tickers and writes results atomically so the frontend always sees a consistent data.json
+**Depends on**: Phase 8, Phase 9
+**Requirements**: PIPE-01, PIPE-02, PIPE-03, PIPE-04
+**Success Criteria** (what must be TRUE):
+  1. The workflow runs successfully end-to-end on a manual trigger, producing `docs/projects/patterns/data.json` with a `detections` array and a `pipeline_status` object containing a `completed` boolean
+  2. `data.json` is written atomically via a temp-file-then-rename pattern — a simulated mid-run kill does not leave a partial JSON file visible to the frontend
+  3. Annotated chart PNGs are written to `docs/projects/patterns/charts/` and stale PNGs from previous runs are deleted before new charts are written
+  4. The workflow is scheduled at 07:00 UTC on weekdays and installs only onnxruntime inference dependencies (no torch, no ultralytics) at runtime
+**Plans**: TBD
+
+### Phase 11: Frontend
+**Goal**: Visitors to the portfolio can see current inside bar spring detections in a filterable table, drill into any detection to see the annotated chart and backtest stats, and find the scanner via the portfolio home page card
+**Depends on**: Phase 10
+**Requirements**: UI-01, UI-02, UI-03, UI-04, UI-05
+**Success Criteria** (what must be TRUE):
+  1. The screener page (`docs/projects/patterns/index.html`) displays a sortable, filterable table of current detections with columns for ticker, company, sector, detection date, confirmation type, confidence badge (green/yellow/red tiers), and current price
+  2. A static pattern legend above the screener table explains the 5-bar structure in plain language so a first-time visitor understands what they are looking at without prior knowledge
+  3. The per-stock drilldown (`docs/projects/patterns/stock.html`) shows the annotated YOLOv8 detection image, a 5-bar anatomy table with dates and OHLC per bar, and backtest stat cards (win rate with N, avg return %, median hold days)
+  4. The drilldown page includes a cross-link to the DCF screener drilldown for any ticker present in the screener's `data.json`
+  5. The portfolio home page displays a pattern scanner project card that navigates to the screener in-page
+**Plans**: TBD
+**UI hint**: yes

@@ -113,31 +113,31 @@ Updated during roadmap creation. Each v2.0 requirement maps to exactly one phase
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DET-01 | TBD | Pending roadmap |
-| DET-02 | TBD | Pending roadmap |
-| DET-03 | TBD | Pending roadmap |
-| DET-04 | TBD | Pending roadmap |
-| TRAIN-01 | TBD | Pending roadmap |
-| TRAIN-02 | TBD | Pending roadmap |
-| TRAIN-03 | TBD | Pending roadmap |
-| TRAIN-04 | TBD | Pending roadmap |
-| BT-01 | TBD | Pending roadmap |
-| BT-02 | TBD | Pending roadmap |
-| BT-03 | TBD | Pending roadmap |
-| PIPE-01 | TBD | Pending roadmap |
-| PIPE-02 | TBD | Pending roadmap |
-| PIPE-03 | TBD | Pending roadmap |
-| PIPE-04 | TBD | Pending roadmap |
-| UI-01 | TBD | Pending roadmap |
-| UI-02 | TBD | Pending roadmap |
-| UI-03 | TBD | Pending roadmap |
-| UI-04 | TBD | Pending roadmap |
-| UI-05 | TBD | Pending roadmap |
+| DET-01 | Phase 7 | Pending |
+| DET-02 | Phase 7 | Pending |
+| DET-03 | Phase 7 | Pending |
+| DET-04 | Phase 7 | Pending |
+| TRAIN-01 | Phase 8 | Pending |
+| TRAIN-02 | Phase 8 | Pending |
+| TRAIN-03 | Phase 8 | Pending |
+| TRAIN-04 | Phase 8 | Pending |
+| BT-01 | Phase 9 | Pending |
+| BT-02 | Phase 9 | Pending |
+| BT-03 | Phase 9 | Pending |
+| PIPE-01 | Phase 10 | Pending |
+| PIPE-02 | Phase 10 | Pending |
+| PIPE-03 | Phase 10 | Pending |
+| PIPE-04 | Phase 10 | Pending |
+| UI-01 | Phase 11 | Pending |
+| UI-02 | Phase 11 | Pending |
+| UI-03 | Phase 11 | Pending |
+| UI-04 | Phase 11 | Pending |
+| UI-05 | Phase 11 | Pending |
 
 **Coverage (v2.0):**
 - Total requirements: 20
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 20
+- Mapped to phases: 20
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-18 (v1.0) · Updated: 2026-05-01 (v2.0)*
