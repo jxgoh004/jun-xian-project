@@ -1,5 +1,19 @@
 # Personal Portfolio Website
 
+## Current Milestone: v2.0 Inside Bar Pattern Scanner
+
+**Goal:** Add a computer-vision-powered inside bar spring setup scanner as a new portfolio project — algorithmic detection, YOLOv8 training, backtesting, and a live-updating frontend screener.
+
+**Target features:**
+- Algorithmic pattern detection engine (Python, full inside bar spring ruleset)
+- Training dataset generation (2D OHLC chart rendering + auto-annotation)
+- YOLOv8 model training & ONNX export
+- Backtesting engine (10-year historical — win rate, avg return, hold period)
+- Nightly batch pipeline via GitHub Actions → `docs/projects/patterns/data.json`
+- Frontend portfolio page (screener table + per-stock drilldown with chart, confidence, stats)
+
+---
+
 ## What This Is
 
 A personal portfolio website that showcases my projects and introduces who I am. The site features a clean, modern home page with a brief bio, technical skills, and contact information, along with a visual grid of project cards. Visitors can click on any project card to view and interact with that project directly within the site. The intrinsic value calculator is the first featured project, with the structure designed to easily accommodate future projects.
@@ -37,21 +51,16 @@ Visitors can quickly understand who I am as a developer and interact with my wor
 - [ ] Site structure allows easy addition of future projects via code editing
 - [ ] Site is deployable to GitHub Pages as a static site
 
-### Active (Phase 6 — Marketing Revamp)
+### Active (Milestone v2.0 — Inside Bar Pattern Scanner)
 
-- [ ] Hero section communicates platform purpose (useful tools for everyone) within 3 seconds — not a career bio summary
-- [ ] LinkedIn CTA is a styled button, not an inline text link
-- [ ] Every page has a unique `<meta name="description">` (155 chars)
-- [ ] All pages have Open Graph + Twitter Card meta tags with OG image
-- [ ] Heading hierarchy correct: single `<h1>` per page, `<h1>` is not "Portfolio" header label
-- [ ] Page titles are keyword-rich and unique per page
-- [ ] `robots.txt` and `sitemap.xml` exist in `docs/` root
-- [ ] `<link rel="canonical">` on every page
-- [ ] All interactive elements have visible `:focus-visible` styles
-- [ ] Project cards are `<a>` elements (not `<div role="link">`) for keyboard/AT semantics
-- [ ] Screener search and sector filter inputs have `<label>` elements
-- [ ] Valuation badges include text content, not color only
-- [ ] Screener and calculator pages have a "← Portfolio" back-link in header
+- [ ] **PAT-01**: Pattern detection engine identifies bullish inside bar spring setups across S&P 500 tickers using the defined 5-bar ruleset
+- [ ] **PAT-02**: Training dataset generator renders 2D OHLC chart images and produces YOLOv8-compatible annotations
+- [ ] **PAT-03**: YOLOv8 model is trained on annotated data and exported as ONNX for offline inference
+- [ ] **PAT-04**: Backtesting engine computes win rate, average return, and hold period stats per detected setup over 10-year history
+- [ ] **PAT-05**: Nightly GitHub Actions pipeline runs detection across S&P 500 and writes results to `docs/projects/patterns/data.json`
+- [ ] **PAT-06**: Frontend screener page lists current detections in a filterable/sortable table
+- [ ] **PAT-07**: Per-stock drilldown shows annotated chart, detection confidence score, and backtest stats
+- [ ] **PAT-08**: Pattern scanner is added as a project card on the portfolio home page
 
 ### Out of Scope
 
@@ -98,5 +107,22 @@ Visitors can quickly understand who I am as a developer and interact with my wor
 | Single-page navigation | Clean UX, fast transitions, avoids full page reloads, maintains context | — Pending |
 | Cards/grid layout for projects | Modern standard for portfolios, visually appealing, scales well as projects are added | — Pending |
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd-complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-03-17 after initialization*
+*Last updated: 2026-05-01 — Milestone v2.0 started*
