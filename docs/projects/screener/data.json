@@ -145,7 +145,9 @@
       "cash_m": 5257.0,
       "growth_1_5_pct": 21.38,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": "Narrow",
+      "moat_score": 5.6
     },
     {
       "ticker": "ACN",
@@ -180,7 +182,9 @@
       "cash_m": 9405.596,
       "growth_1_5_pct": 7.92,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": "Narrow",
+      "moat_score": 5.1
     },
     {
       "ticker": "ADBE",
@@ -215,7 +219,9 @@
       "cash_m": 6890.0,
       "growth_1_5_pct": 12.36,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMD",
@@ -250,7 +256,9 @@
       "cash_m": 10552.0,
       "growth_1_5_pct": 51.65,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AES",
@@ -285,7 +293,9 @@
       "cash_m": 1556.0,
       "growth_1_5_pct": 3.03,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AFL",
@@ -320,7 +330,9 @@
       "cash_m": 70398.0,
       "growth_1_5_pct": 2.66,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "A",
@@ -355,7 +367,9 @@
       "cash_m": 1758.0,
       "growth_1_5_pct": 9.23,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APD",
@@ -390,7 +404,9 @@
       "cash_m": 1026.4,
       "growth_1_5_pct": 8.74,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ABNB",
@@ -425,7 +441,9 @@
       "cash_m": 11014.0,
       "growth_1_5_pct": 19.11,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AKAM",
@@ -460,7 +478,9 @@
       "cash_m": 1186.533,
       "growth_1_5_pct": 6.69,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALB",
@@ -495,7 +515,9 @@
       "cash_m": 1618.001,
       "growth_1_5_pct": -12.41,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARE",
@@ -530,7 +552,9 @@
       "cash_m": 418.72,
       "growth_1_5_pct": 70.95,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALGN",
@@ -565,7 +589,9 @@
       "cash_m": 1094.908,
       "growth_1_5_pct": 9.0,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALLE",
@@ -600,7 +626,9 @@
       "cash_m": 308.9,
       "growth_1_5_pct": 8.54,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LNT",
@@ -635,7 +663,9 @@
       "cash_m": 556.0,
       "growth_1_5_pct": 7.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALL",
@@ -670,7 +700,9 @@
       "cash_m": 5402.0,
       "growth_1_5_pct": -10.16,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOGL",
@@ -705,7 +737,9 @@
       "cash_m": 126843.0,
       "growth_1_5_pct": 15.19,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOG",
@@ -740,7 +774,9 @@
       "cash_m": 126843.0,
       "growth_1_5_pct": 15.2,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MO",
@@ -775,7 +811,9 @@
       "cash_m": 4474.0,
       "growth_1_5_pct": 3.72,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMZN",
@@ -810,7 +848,9 @@
       "cash_m": 123029.0,
       "growth_1_5_pct": 20.6,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMCR",
@@ -845,7 +885,9 @@
       "cash_m": 1057.0,
       "growth_1_5_pct": 9.71,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEE",
@@ -880,7 +922,9 @@
       "cash_m": 13.0,
       "growth_1_5_pct": 7.72,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEP",
@@ -915,7 +959,9 @@
       "cash_m": 417.0,
       "growth_1_5_pct": 8.14,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXP",
@@ -950,7 +996,9 @@
       "cash_m": 53647.0,
       "growth_1_5_pct": 14.28,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIG",
@@ -985,7 +1033,9 @@
       "cash_m": 38408.0,
       "growth_1_5_pct": 10.2,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMT",
@@ -1020,7 +1070,9 @@
       "cash_m": 1608.8,
       "growth_1_5_pct": 12.22,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AWK",
@@ -1055,7 +1107,9 @@
       "cash_m": 137.0,
       "growth_1_5_pct": 7.9,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMP",
@@ -1090,7 +1144,9 @@
       "cash_m": 63694.0,
       "growth_1_5_pct": 10.82,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AME",
@@ -1125,7 +1181,9 @@
       "cash_m": 457.951,
       "growth_1_5_pct": 8.4,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMGN",
@@ -1160,7 +1218,9 @@
       "cash_m": 9129.0,
       "growth_1_5_pct": 4.02,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APH",
@@ -1195,7 +1255,9 @@
       "cash_m": 11434.2,
       "growth_1_5_pct": 22.11,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADI",
@@ -1230,7 +1292,9 @@
       "cash_m": 4048.847,
       "growth_1_5_pct": 25.43,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AON",
@@ -1265,7 +1329,9 @@
       "cash_m": 2798.0,
       "growth_1_5_pct": 11.73,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APA",
@@ -1300,7 +1366,9 @@
       "cash_m": 516.0,
       "growth_1_5_pct": 9.42,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APO",
@@ -1335,7 +1403,9 @@
       "cash_m": 248060.0,
       "growth_1_5_pct": 13.72,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AAPL",
@@ -1370,7 +1440,9 @@
       "cash_m": 66907.0,
       "growth_1_5_pct": 11.44,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": "Wide",
+      "moat_score": 8.3
     },
     {
       "ticker": "AMAT",
@@ -1405,7 +1477,9 @@
       "cash_m": 8511.0,
       "growth_1_5_pct": 18.33,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APP",
@@ -1440,7 +1514,9 @@
       "cash_m": 2487.096,
       "growth_1_5_pct": 40.04,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APTV",
@@ -1475,7 +1551,9 @@
       "cash_m": 1851.0,
       "growth_1_5_pct": 5.46,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ACGL",
@@ -1510,7 +1588,9 @@
       "cash_m": 11543.0,
       "growth_1_5_pct": 2.75,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADM",
@@ -1545,7 +1625,9 @@
       "cash_m": 1047.0,
       "growth_1_5_pct": 15.62,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARES",
@@ -1580,7 +1662,9 @@
       "cash_m": 1447.984,
       "growth_1_5_pct": 21.62,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ANET",
@@ -1615,7 +1699,9 @@
       "cash_m": 10743.0,
       "growth_1_5_pct": 20.92,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AJG",
@@ -1650,7 +1736,9 @@
       "cash_m": 1396.0,
       "growth_1_5_pct": 16.17,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIZ",
@@ -1685,7 +1773,9 @@
       "cash_m": 4552.0,
       "growth_1_5_pct": 5.05,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "T",
@@ -1720,7 +1810,9 @@
       "cash_m": 18234.0,
       "growth_1_5_pct": 10.87,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ATO",
@@ -1755,7 +1847,9 @@
       "cash_m": 367.023,
       "growth_1_5_pct": 8.77,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADSK",
@@ -1790,7 +1884,9 @@
       "cash_m": 2597.0,
       "growth_1_5_pct": 15.58,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADP",
@@ -1825,7 +1921,9 @@
       "cash_m": 2470.4,
       "growth_1_5_pct": 9.79,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AZO",
@@ -1860,7 +1958,9 @@
       "cash_m": 285.492,
       "growth_1_5_pct": 10.52,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVB",
@@ -1895,7 +1995,9 @@
       "cash_m": 187.234,
       "growth_1_5_pct": -9.23,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVY",
@@ -1930,7 +2032,9 @@
       "cash_m": 202.8,
       "growth_1_5_pct": 9.23,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXON",
@@ -1965,7 +2069,9 @@
       "cash_m": 1733.777,
       "growth_1_5_pct": 26.72,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKR",
@@ -2000,7 +2106,9 @@
       "cash_m": 14764.0,
       "growth_1_5_pct": 7.88,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BALL",
@@ -2035,7 +2143,9 @@
       "cash_m": 1212.0,
       "growth_1_5_pct": 12.29,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAC",
@@ -2070,7 +2180,9 @@
       "cash_m": 239319.0,
       "growth_1_5_pct": 14.99,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAX",
@@ -2105,7 +2217,9 @@
       "cash_m": 1966.0,
       "growth_1_5_pct": -0.19,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BDX",
@@ -2140,7 +2254,9 @@
       "cash_m": 751.0,
       "growth_1_5_pct": 8.07,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRK-B",
@@ -2175,7 +2291,9 @@
       "cash_m": 373311.0,
       "growth_1_5_pct": 3.36,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BBY",
@@ -2210,7 +2328,9 @@
       "cash_m": 1738.0,
       "growth_1_5_pct": 6.04,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TECH",
@@ -2245,7 +2365,9 @@
       "cash_m": 172.879,
       "growth_1_5_pct": 9.74,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BIIB",
@@ -2280,7 +2402,9 @@
       "cash_m": 4282.7,
       "growth_1_5_pct": 5.73,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLK",
@@ -2315,7 +2439,9 @@
       "cash_m": 14257.0,
       "growth_1_5_pct": 13.18,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BX",
@@ -2350,7 +2476,9 @@
       "cash_m": 2631.241,
       "growth_1_5_pct": 15.29,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYZ",
@@ -2385,7 +2513,9 @@
       "cash_m": 11963.929,
       "growth_1_5_pct": 35.86,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BK",
@@ -2420,7 +2550,9 @@
       "cash_m": 128669.0,
       "growth_1_5_pct": 12.9,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BA",
@@ -2455,7 +2587,9 @@
       "cash_m": 20905.0,
       "growth_1_5_pct": 87.03,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKNG",
@@ -2490,7 +2624,9 @@
       "cash_m": 16024.0,
       "growth_1_5_pct": 16.38,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BSX",
@@ -2525,7 +2661,9 @@
       "cash_m": 1965.0,
       "growth_1_5_pct": 11.35,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BMY",
@@ -2560,7 +2698,9 @@
       "cash_m": 10673.0,
       "growth_1_5_pct": -4.13,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVGO",
@@ -2595,7 +2735,9 @@
       "cash_m": 14174.0,
       "growth_1_5_pct": 48.64,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BR",
@@ -2630,7 +2772,9 @@
       "cash_m": 370.8,
       "growth_1_5_pct": 10.13,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRO",
@@ -2665,7 +2809,9 @@
       "cash_m": 1003.0,
       "growth_1_5_pct": 7.69,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BF-B",
@@ -2700,7 +2846,9 @@
       "cash_m": 383.0,
       "growth_1_5_pct": -2.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLDR",
@@ -2735,7 +2883,9 @@
       "cash_m": 181.753,
       "growth_1_5_pct": 4.68,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BG",
@@ -2770,7 +2920,9 @@
       "cash_m": 1701.0,
       "growth_1_5_pct": 14.1,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BXP",
@@ -2805,7 +2957,9 @@
       "cash_m": 1478.206,
       "growth_1_5_pct": 4.91,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHRW",
@@ -2840,7 +2994,9 @@
       "cash_m": 160.871,
       "growth_1_5_pct": 15.8,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDNS",
@@ -2875,7 +3031,9 @@
       "cash_m": 3155.53,
       "growth_1_5_pct": 15.06,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPT",
@@ -2910,7 +3068,9 @@
       "cash_m": 25.203,
       "growth_1_5_pct": -22.84,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPB",
@@ -2945,7 +3105,9 @@
       "cash_m": 561.0,
       "growth_1_5_pct": -8.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COF",
@@ -2980,7 +3142,9 @@
       "cash_m": 57434.0,
       "growth_1_5_pct": 12.43,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAH",
@@ -3015,7 +3179,9 @@
       "cash_m": 2777.0,
       "growth_1_5_pct": 17.27,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCL",
@@ -3050,7 +3216,9 @@
       "cash_m": 1424.0,
       "growth_1_5_pct": 10.27,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CARR",
@@ -3085,7 +3253,9 @@
       "cash_m": 1555.0,
       "growth_1_5_pct": 11.7,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVNA",
@@ -3120,7 +3290,9 @@
       "cash_m": 2902.0,
       "growth_1_5_pct": 17.75,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CASY",
@@ -3155,7 +3327,9 @@
       "cash_m": 465.019,
       "growth_1_5_pct": 14.95,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAT",
@@ -3190,7 +3364,9 @@
       "cash_m": 9980.0,
       "growth_1_5_pct": 21.36,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBOE",
@@ -3225,7 +3401,9 @@
       "cash_m": 2252.6,
       "growth_1_5_pct": 9.57,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBRE",
@@ -3260,7 +3438,9 @@
       "cash_m": 1664.0,
       "growth_1_5_pct": 15.74,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDW",
@@ -3295,7 +3475,9 @@
       "cash_m": 618.7,
       "growth_1_5_pct": 7.01,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COR",
@@ -3330,7 +3512,9 @@
       "cash_m": 1753.122,
       "growth_1_5_pct": 10.58,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNC",
@@ -3365,7 +3549,9 @@
       "cash_m": 23741.0,
       "growth_1_5_pct": 41.63,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNP",
@@ -3400,7 +3586,9 @@
       "cash_m": 1194.0,
       "growth_1_5_pct": 8.78,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CF",
@@ -3435,7 +3623,9 @@
       "cash_m": 1982.0,
       "growth_1_5_pct": -0.41,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRL",
@@ -3470,7 +3660,9 @@
       "cash_m": 213.77,
       "growth_1_5_pct": 9.03,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SCHW",
@@ -3505,7 +3697,9 @@
       "cash_m": 46030.0,
       "growth_1_5_pct": 18.89,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHTR",
@@ -3540,7 +3734,9 @@
       "cash_m": 517.0,
       "growth_1_5_pct": 14.0,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVX",
@@ -3575,7 +3771,9 @@
       "cash_m": 6297.0,
       "growth_1_5_pct": 18.12,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMG",
@@ -3610,7 +3808,9 @@
       "cash_m": 1044.607,
       "growth_1_5_pct": 11.07,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CB",
@@ -3645,7 +3845,9 @@
       "cash_m": 43373.0,
       "growth_1_5_pct": 8.71,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHD",
@@ -3680,7 +3882,9 @@
       "cash_m": 409.0,
       "growth_1_5_pct": 6.77,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CIEN",
@@ -3715,7 +3919,9 @@
       "cash_m": 1299.728,
       "growth_1_5_pct": 67.77,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CI",
@@ -3750,7 +3956,9 @@
       "cash_m": 8646.0,
       "growth_1_5_pct": 7.53,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CINF",
@@ -3785,7 +3993,9 @@
       "cash_m": 2097.0,
       "growth_1_5_pct": 14.89,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTAS",
@@ -3820,7 +4030,9 @@
       "cash_m": 183.204,
       "growth_1_5_pct": 11.04,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSCO",
@@ -3855,7 +4067,9 @@
       "cash_m": 15777.0,
       "growth_1_5_pct": 8.57,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "C",
@@ -3890,7 +4104,9 @@
       "cash_m": 349579.0,
       "growth_1_5_pct": 27.26,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CFG",
@@ -3925,7 +4141,9 @@
       "cash_m": 13688.0,
       "growth_1_5_pct": 23.09,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CLX",
@@ -3960,7 +4178,9 @@
       "cash_m": 227.0,
       "growth_1_5_pct": -3.4,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CME",
@@ -3995,7 +4215,9 @@
       "cash_m": 2515.4,
       "growth_1_5_pct": 6.8,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMS",
@@ -4030,7 +4252,9 @@
       "cash_m": 175.0,
       "growth_1_5_pct": 7.68,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KO",
@@ -4065,7 +4289,9 @@
       "cash_m": 15806.0,
       "growth_1_5_pct": 7.36,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTSH",
@@ -4100,7 +4326,9 @@
       "cash_m": 1517.0,
       "growth_1_5_pct": 8.88,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COHR",
@@ -4135,7 +4363,9 @@
       "cash_m": 863.739,
       "growth_1_5_pct": 43.01,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COIN",
@@ -4170,7 +4400,9 @@
       "cash_m": 11914.066,
       "growth_1_5_pct": 12.98,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CL",
@@ -4205,7 +4437,9 @@
       "cash_m": 1288.0,
       "growth_1_5_pct": 5.5,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMCSA",
@@ -4240,7 +4474,9 @@
       "cash_m": 9468.0,
       "growth_1_5_pct": -0.83,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIX",
@@ -4275,7 +4511,9 @@
       "cash_m": 1050.164,
       "growth_1_5_pct": 31.77,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAG",
@@ -4310,7 +4548,9 @@
       "cash_m": 55.1,
       "growth_1_5_pct": -8.4,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COP",
@@ -4345,7 +4585,9 @@
       "cash_m": 6981.0,
       "growth_1_5_pct": 13.3,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ED",
@@ -4380,7 +4622,9 @@
       "cash_m": 1629.0,
       "growth_1_5_pct": 6.57,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STZ",
@@ -4415,7 +4659,9 @@
       "cash_m": 102.4,
       "growth_1_5_pct": 4.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CEG",
@@ -4450,7 +4696,9 @@
       "cash_m": 3641.0,
       "growth_1_5_pct": 22.29,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COO",
@@ -4485,7 +4733,9 @@
       "cash_m": 124.9,
       "growth_1_5_pct": 9.81,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPRT",
@@ -4520,7 +4770,9 @@
       "cash_m": 5101.821,
       "growth_1_5_pct": 4.45,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GLW",
@@ -4555,7 +4807,9 @@
       "cash_m": 1526.0,
       "growth_1_5_pct": 26.82,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPAY",
@@ -4590,7 +4844,9 @@
       "cash_m": 2408.097,
       "growth_1_5_pct": 17.8,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTVA",
@@ -4625,7 +4881,9 @@
       "cash_m": 4530.0,
       "growth_1_5_pct": 10.79,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSGP",
@@ -4660,7 +4918,9 @@
       "cash_m": 1215.0,
       "growth_1_5_pct": 37.14,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COST",
@@ -4695,7 +4955,9 @@
       "cash_m": 18240.0,
       "growth_1_5_pct": 10.93,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTRA",
@@ -4730,7 +4992,9 @@
       "cash_m": 114.0,
       "growth_1_5_pct": 14.96,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRH",
@@ -4765,7 +5029,9 @@
       "cash_m": 3240.0,
       "growth_1_5_pct": 10.41,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRWD",
@@ -4800,7 +5066,9 @@
       "cash_m": 5230.125,
       "growth_1_5_pct": 29.11,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCI",
@@ -4835,7 +5103,9 @@
       "cash_m": 99.0,
       "growth_1_5_pct": 43.91,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSX",
@@ -4870,7 +5140,9 @@
       "cash_m": 1109.0,
       "growth_1_5_pct": 13.51,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMI",
@@ -4905,7 +5177,9 @@
       "cash_m": 3609.0,
       "growth_1_5_pct": 14.22,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVS",
@@ -4940,7 +5214,9 @@
       "cash_m": 10598.0,
       "growth_1_5_pct": 11.76,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHR",
@@ -4975,7 +5251,9 @@
       "cash_m": 5701.0,
       "growth_1_5_pct": 8.55,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DRI",
@@ -5010,7 +5288,9 @@
       "cash_m": 240.4,
       "growth_1_5_pct": 9.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DDOG",
@@ -5045,7 +5325,9 @@
       "cash_m": 4474.836,
       "growth_1_5_pct": 16.09,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVA",
@@ -5080,7 +5362,9 @@
       "cash_m": 700.741,
       "growth_1_5_pct": 19.58,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DECK",
@@ -5115,7 +5399,9 @@
       "cash_m": 2086.746,
       "growth_1_5_pct": 8.63,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DE",
@@ -5150,7 +5436,9 @@
       "cash_m": 8196.0,
       "growth_1_5_pct": 15.14,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DELL",
@@ -5185,7 +5473,9 @@
       "cash_m": 11528.0,
       "growth_1_5_pct": 18.38,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DAL",
@@ -5220,7 +5510,9 @@
       "cash_m": 5053.0,
       "growth_1_5_pct": 16.82,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVN",
@@ -5255,7 +5547,9 @@
       "cash_m": 1434.0,
       "growth_1_5_pct": 13.82,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DXCM",
@@ -5290,7 +5584,9 @@
       "cash_m": 1998.7,
       "growth_1_5_pct": 19.94,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FANG",
@@ -5325,7 +5621,9 @@
       "cash_m": 104.0,
       "growth_1_5_pct": 9.71,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLR",
@@ -5360,7 +5658,9 @@
       "cash_m": 3451.647,
       "growth_1_5_pct": -10.04,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DG",
@@ -5395,7 +5695,9 @@
       "cash_m": 1138.501,
       "growth_1_5_pct": 8.59,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLTR",
@@ -5430,7 +5732,9 @@
       "cash_m": 717.8,
       "growth_1_5_pct": 11.33,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "D",
@@ -5465,7 +5769,9 @@
       "cash_m": 250.0,
       "growth_1_5_pct": 5.81,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DPZ",
@@ -5500,7 +5806,9 @@
       "cash_m": 232.922,
       "growth_1_5_pct": 9.19,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DASH",
@@ -5535,7 +5843,9 @@
       "cash_m": 5506.0,
       "growth_1_5_pct": 47.41,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOV",
@@ -5570,7 +5880,9 @@
       "cash_m": 1641.916,
       "growth_1_5_pct": 9.21,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOW",
@@ -5605,7 +5917,9 @@
       "cash_m": 3851.0,
       "growth_1_5_pct": -48.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHI",
@@ -5640,7 +5954,9 @@
       "cash_m": 1917.9,
       "growth_1_5_pct": 6.22,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DTE",
@@ -5675,7 +5991,9 @@
       "cash_m": 208.0,
       "growth_1_5_pct": 7.06,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DUK",
@@ -5710,7 +6028,9 @@
       "cash_m": 245.0,
       "growth_1_5_pct": 6.64,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DD",
@@ -5745,7 +6065,9 @@
       "cash_m": 715.0,
       "growth_1_5_pct": 18.59,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETN",
@@ -5780,7 +6102,9 @@
       "cash_m": 803.0,
       "growth_1_5_pct": 13.01,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EBAY",
@@ -5815,7 +6139,9 @@
       "cash_m": 3860.0,
       "growth_1_5_pct": 10.45,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SATS",
@@ -5850,7 +6176,9 @@
       "cash_m": 2983.965,
       "growth_1_5_pct": -4.3,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ECL",
@@ -5885,7 +6213,9 @@
       "cash_m": 646.2,
       "growth_1_5_pct": 12.8,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EIX",
@@ -5920,7 +6250,9 @@
       "cash_m": 168.0,
       "growth_1_5_pct": 1.84,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EW",
@@ -5955,7 +6287,9 @@
       "cash_m": 4226.3,
       "growth_1_5_pct": 13.9,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EA",
@@ -5990,7 +6324,9 @@
       "cash_m": 2899.0,
       "growth_1_5_pct": 13.42,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ELV",
@@ -6025,7 +6361,9 @@
       "cash_m": 35562.0,
       "growth_1_5_pct": 4.02,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EME",
@@ -6060,7 +6398,9 @@
       "cash_m": 916.42,
       "growth_1_5_pct": 12.22,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EMR",
@@ -6095,7 +6435,9 @@
       "cash_m": 1748.0,
       "growth_1_5_pct": 9.72,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETR",
@@ -6130,7 +6472,9 @@
       "cash_m": 1928.916,
       "growth_1_5_pct": 13.39,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EOG",
@@ -6165,7 +6509,9 @@
       "cash_m": 3396.0,
       "growth_1_5_pct": 13.02,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EPAM",
@@ -6200,7 +6546,9 @@
       "cash_m": 1296.077,
       "growth_1_5_pct": 10.12,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQT",
@@ -6235,7 +6583,9 @@
       "cash_m": 326.568,
       "growth_1_5_pct": 22.08,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EFX",
@@ -6270,7 +6620,9 @@
       "cash_m": 183.4,
       "growth_1_5_pct": 17.76,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQIX",
@@ -6305,7 +6657,9 @@
       "cash_m": 3054.0,
       "growth_1_5_pct": 14.66,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQR",
@@ -6340,7 +6694,9 @@
       "cash_m": 55.904,
       "growth_1_5_pct": -17.22,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ERIE",
@@ -6375,7 +6731,9 @@
       "cash_m": 338.349,
       "growth_1_5_pct": 23.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ESS",
@@ -6410,7 +6768,9 @@
       "cash_m": 134.526,
       "growth_1_5_pct": -13.97,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EL",
@@ -6445,7 +6805,9 @@
       "cash_m": 3082.0,
       "growth_1_5_pct": 33.92,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EG",
@@ -6480,7 +6842,9 @@
       "cash_m": 19513.0,
       "growth_1_5_pct": 16.29,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EVRG",
@@ -6515,7 +6879,9 @@
       "cash_m": 19.8,
       "growth_1_5_pct": 8.77,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ES",
@@ -6550,7 +6916,9 @@
       "cash_m": 135.351,
       "growth_1_5_pct": 3.33,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXC",
@@ -6585,7 +6953,9 @@
       "cash_m": 626.0,
       "growth_1_5_pct": 5.56,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXE",
@@ -6620,7 +6990,9 @@
       "cash_m": 2220.0,
       "growth_1_5_pct": 16.28,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPE",
@@ -6655,7 +7027,9 @@
       "cash_m": 5733.0,
       "growth_1_5_pct": 19.9,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPD",
@@ -6690,7 +7064,9 @@
       "cash_m": 1314.285,
       "growth_1_5_pct": 5.16,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXR",
@@ -6725,7 +7101,9 @@
       "cash_m": 138.92,
       "growth_1_5_pct": 3.93,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XOM",
@@ -6760,7 +7138,9 @@
       "cash_m": 10681.0,
       "growth_1_5_pct": 15.44,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FFIV",
@@ -6795,7 +7175,9 @@
       "cash_m": 1199.734,
       "growth_1_5_pct": 4.51,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDS",
@@ -6830,7 +7212,9 @@
       "cash_m": 285.267,
       "growth_1_5_pct": 7.98,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FICO",
@@ -6865,7 +7249,9 @@
       "cash_m": 219.419,
       "growth_1_5_pct": 28.52,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FAST",
@@ -6900,7 +7286,9 @@
       "cash_m": 308.6,
       "growth_1_5_pct": 10.5,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FRT",
@@ -6935,7 +7323,9 @@
       "cash_m": 107.415,
       "growth_1_5_pct": -9.99,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDX",
@@ -6970,7 +7360,9 @@
       "cash_m": 6570.0,
       "growth_1_5_pct": 13.44,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIS",
@@ -7005,7 +7397,9 @@
       "cash_m": 599.0,
       "growth_1_5_pct": 9.43,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FITB",
@@ -7040,7 +7434,9 @@
       "cash_m": 3499.0,
       "growth_1_5_pct": 14.94,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FSLR",
@@ -7075,7 +7471,9 @@
       "cash_m": 2855.363,
       "growth_1_5_pct": 26.17,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FE",
@@ -7110,7 +7508,9 @@
       "cash_m": 52.0,
       "growth_1_5_pct": 7.62,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FISV",
@@ -7145,7 +7545,9 @@
       "cash_m": 798.0,
       "growth_1_5_pct": 6.06,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "F",
@@ -7180,7 +7582,9 @@
       "cash_m": 38487.0,
       "growth_1_5_pct": 23.71,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTNT",
@@ -7215,7 +7619,9 @@
       "cash_m": 3582.5,
       "growth_1_5_pct": 9.99,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTV",
@@ -7250,7 +7656,9 @@
       "cash_m": 375.5,
       "growth_1_5_pct": 8.68,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOXA",
@@ -7285,7 +7693,9 @@
       "cash_m": 2017.0,
       "growth_1_5_pct": 1.94,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOX",
@@ -7320,7 +7730,9 @@
       "cash_m": 2017.0,
       "growth_1_5_pct": 2.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BEN",
@@ -7355,7 +7767,9 @@
       "cash_m": 3569.0,
       "growth_1_5_pct": 11.89,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FCX",
@@ -7390,7 +7804,9 @@
       "cash_m": 3824.0,
       "growth_1_5_pct": 37.73,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GRMN",
@@ -7425,7 +7841,9 @@
       "cash_m": 2700.95,
       "growth_1_5_pct": 9.6,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IT",
@@ -7460,7 +7878,9 @@
       "cash_m": 1722.521,
       "growth_1_5_pct": 9.11,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GE",
@@ -7495,7 +7915,9 @@
       "cash_m": 10981.0,
       "growth_1_5_pct": 15.45,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEHC",
@@ -7530,7 +7952,9 @@
       "cash_m": 2261.0,
       "growth_1_5_pct": 9.65,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEV",
@@ -7565,7 +7989,9 @@
       "cash_m": 10172.0,
       "growth_1_5_pct": 24.09,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEN",
@@ -7600,7 +8026,9 @@
       "cash_m": 616.0,
       "growth_1_5_pct": 12.85,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GNRC",
@@ -7635,7 +8063,9 @@
       "cash_m": 341.413,
       "growth_1_5_pct": 27.4,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GD",
@@ -7670,7 +8100,9 @@
       "cash_m": 3654.0,
       "growth_1_5_pct": 8.17,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GIS",
@@ -7705,7 +8137,9 @@
       "cash_m": 785.5,
       "growth_1_5_pct": -6.82,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GM",
@@ -7740,7 +8174,9 @@
       "cash_m": 24418.0,
       "growth_1_5_pct": 11.81,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPC",
@@ -7775,7 +8211,9 @@
       "cash_m": 500.023,
       "growth_1_5_pct": 7.91,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GILD",
@@ -7810,7 +8248,9 @@
       "cash_m": 9613.0,
       "growth_1_5_pct": 8.81,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPN",
@@ -7845,7 +8285,9 @@
       "cash_m": 8336.402,
       "growth_1_5_pct": 16.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GL",
@@ -7880,7 +8322,9 @@
       "cash_m": 18048.757,
       "growth_1_5_pct": 7.74,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GDDY",
@@ -7915,7 +8359,9 @@
       "cash_m": 1080.9,
       "growth_1_5_pct": 19.67,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GS",
@@ -7950,7 +8396,9 @@
       "cash_m": 164259.0,
       "growth_1_5_pct": 11.36,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAL",
@@ -7985,7 +8433,9 @@
       "cash_m": 2003.0,
       "growth_1_5_pct": 10.92,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HIG",
@@ -8020,7 +8470,9 @@
       "cash_m": 22150.0,
       "growth_1_5_pct": 5.2,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAS",
@@ -8055,7 +8507,9 @@
       "cash_m": 881.6,
       "growth_1_5_pct": 8.05,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HCA",
@@ -8090,7 +8544,9 @@
       "cash_m": 940.0,
       "growth_1_5_pct": 10.0,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOC",
@@ -8125,7 +8581,9 @@
       "cash_m": 467.457,
       "growth_1_5_pct": 31.04,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSIC",
@@ -8160,7 +8618,9 @@
       "cash_m": 156.0,
       "growth_1_5_pct": 9.28,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSY",
@@ -8195,7 +8655,9 @@
       "cash_m": 925.859,
       "growth_1_5_pct": 19.62,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPE",
@@ -8230,7 +8692,9 @@
       "cash_m": 4841.0,
       "growth_1_5_pct": 16.27,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HLT",
@@ -8265,7 +8729,9 @@
       "cash_m": 564.0,
       "growth_1_5_pct": 13.73,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HD",
@@ -8300,7 +8766,9 @@
       "cash_m": 1389.0,
       "growth_1_5_pct": 6.5,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HON",
@@ -8335,7 +8803,9 @@
       "cash_m": 12390.0,
       "growth_1_5_pct": 8.91,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HRL",
@@ -8370,7 +8840,9 @@
       "cash_m": 901.208,
       "growth_1_5_pct": 6.47,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HST",
@@ -8405,7 +8877,9 @@
       "cash_m": 768.0,
       "growth_1_5_pct": -4.77,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HWM",
@@ -8440,7 +8914,9 @@
       "cash_m": 742.0,
       "growth_1_5_pct": 20.07,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPQ",
@@ -8475,7 +8951,9 @@
       "cash_m": 3154.0,
       "growth_1_5_pct": 1.85,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUBB",
@@ -8510,7 +8988,9 @@
       "cash_m": 497.9,
       "growth_1_5_pct": 8.75,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUM",
@@ -8545,7 +9025,9 @@
       "cash_m": 21965.0,
       "growth_1_5_pct": 14.79,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HBAN",
@@ -8580,7 +9062,9 @@
       "cash_m": 14078.0,
       "growth_1_5_pct": 14.7,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HII",
@@ -8615,7 +9099,9 @@
       "cash_m": 774.0,
       "growth_1_5_pct": 15.09,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBM",
@@ -8650,7 +9136,9 @@
       "cash_m": 11783.0,
       "growth_1_5_pct": 8.54,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IEX",
@@ -8685,7 +9173,9 @@
       "cash_m": 580.0,
       "growth_1_5_pct": 7.44,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IDXX",
@@ -8720,7 +9210,9 @@
       "cash_m": 180.07,
       "growth_1_5_pct": 12.5,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ITW",
@@ -8755,7 +9247,9 @@
       "cash_m": 851.0,
       "growth_1_5_pct": 6.88,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INCY",
@@ -8790,7 +9284,9 @@
       "cash_m": 4015.825,
       "growth_1_5_pct": 11.75,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IR",
@@ -8825,7 +9321,9 @@
       "cash_m": 1274.4,
       "growth_1_5_pct": 7.79,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PODD",
@@ -8860,7 +9358,9 @@
       "cash_m": 716.1,
       "growth_1_5_pct": 27.5,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTC",
@@ -8895,7 +9395,9 @@
       "cash_m": 32789.0,
       "growth_1_5_pct": 71.47,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBKR",
@@ -8930,7 +9432,9 @@
       "cash_m": 4963.0,
       "growth_1_5_pct": 13.93,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ICE",
@@ -8965,7 +9469,9 @@
       "cash_m": 3616.0,
       "growth_1_5_pct": 11.81,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IFF",
@@ -9000,7 +9506,9 @@
       "cash_m": 590.0,
       "growth_1_5_pct": 7.38,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IP",
@@ -9035,7 +9543,9 @@
       "cash_m": 1145.0,
       "growth_1_5_pct": -7.91,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTU",
@@ -9070,7 +9580,9 @@
       "cash_m": 2975.0,
       "growth_1_5_pct": 14.51,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ISRG",
@@ -9105,7 +9617,9 @@
       "cash_m": 4517.3,
       "growth_1_5_pct": 14.34,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IVZ",
@@ -9140,7 +9654,9 @@
       "cash_m": 1979.8,
       "growth_1_5_pct": 17.67,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INVH",
@@ -9175,7 +9691,9 @@
       "cash_m": 129.971,
       "growth_1_5_pct": -4.85,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IQV",
@@ -9210,7 +9728,9 @@
       "cash_m": 2141.0,
       "growth_1_5_pct": 9.52,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IRM",
@@ -9245,7 +9765,9 @@
       "cash_m": 158.535,
       "growth_1_5_pct": 13.48,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBHT",
@@ -9280,7 +9802,9 @@
       "cash_m": 4.563,
       "growth_1_5_pct": 18.49,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBL",
@@ -9315,7 +9839,9 @@
       "cash_m": 1830.0,
       "growth_1_5_pct": 20.22,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JKHY",
@@ -9350,7 +9876,9 @@
       "cash_m": 28.216,
       "growth_1_5_pct": 7.65,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "J",
@@ -9385,7 +9913,9 @@
       "cash_m": 1552.913,
       "growth_1_5_pct": 13.81,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JNJ",
@@ -9420,7 +9950,9 @@
       "cash_m": 22051.0,
       "growth_1_5_pct": 9.25,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JCI",
@@ -9455,7 +9987,9 @@
       "cash_m": 552.0,
       "growth_1_5_pct": 18.41,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JPM",
@@ -9490,7 +10024,9 @@
       "cash_m": 343338.0,
       "growth_1_5_pct": 8.79,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KVUE",
@@ -9525,7 +10061,9 @@
       "cash_m": 1062.0,
       "growth_1_5_pct": 6.39,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KDP",
@@ -9560,7 +10098,9 @@
       "cash_m": 898.0,
       "growth_1_5_pct": 9.13,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEY",
@@ -9595,7 +10135,9 @@
       "cash_m": 1287.0,
       "growth_1_5_pct": 17.26,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEYS",
@@ -9630,7 +10172,9 @@
       "cash_m": 2178.0,
       "growth_1_5_pct": 16.52,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMB",
@@ -9665,7 +10209,9 @@
       "cash_m": 542.0,
       "growth_1_5_pct": 2.43,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KIM",
@@ -9700,7 +10246,9 @@
       "cash_m": 211.648,
       "growth_1_5_pct": 2.53,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMI",
@@ -9735,7 +10283,9 @@
       "cash_m": 72.0,
       "growth_1_5_pct": 7.23,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KKR",
@@ -9770,7 +10320,9 @@
       "cash_m": 132713.162,
       "growth_1_5_pct": 21.41,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KLAC",
@@ -9805,7 +10357,9 @@
       "cash_m": 4957.938,
       "growth_1_5_pct": 20.31,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KHC",
@@ -9840,7 +10394,9 @@
       "cash_m": 3675.0,
       "growth_1_5_pct": -5.64,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KR",
@@ -9875,7 +10431,9 @@
       "cash_m": 4578.0,
       "growth_1_5_pct": 7.22,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LHX",
@@ -9910,7 +10468,9 @@
       "cash_m": 1069.0,
       "growth_1_5_pct": 13.39,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LH",
@@ -9945,7 +10505,9 @@
       "cash_m": 532.3,
       "growth_1_5_pct": 8.77,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LRCX",
@@ -9980,7 +10542,9 @@
       "cash_m": 4750.936,
       "growth_1_5_pct": 32.18,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LVS",
@@ -10015,7 +10579,9 @@
       "cash_m": 3330.0,
       "growth_1_5_pct": 9.26,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LDOS",
@@ -10050,7 +10616,9 @@
       "cash_m": 1108.0,
       "growth_1_5_pct": 5.57,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LEN",
@@ -10085,7 +10653,9 @@
       "cash_m": 2391.297,
       "growth_1_5_pct": 4.61,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LII",
@@ -10120,7 +10690,9 @@
       "cash_m": 50.2,
       "growth_1_5_pct": 7.86,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LLY",
@@ -10155,7 +10727,9 @@
       "cash_m": 7268.0,
       "growth_1_5_pct": 27.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LIN",
@@ -10190,7 +10764,9 @@
       "cash_m": 5056.0,
       "growth_1_5_pct": 9.35,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYV",
@@ -10225,7 +10801,9 @@
       "cash_m": 7094.2,
       "growth_1_5_pct": -8.73,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LMT",
@@ -10260,7 +10838,9 @@
       "cash_m": 1894.0,
       "growth_1_5_pct": 16.57,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "L",
@@ -10295,7 +10875,9 @@
       "cash_m": 7928.0,
       "growth_1_5_pct": -0.35,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LOW",
@@ -10330,7 +10912,9 @@
       "cash_m": 982.0,
       "growth_1_5_pct": 6.87,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LULU",
@@ -10365,7 +10949,9 @@
       "cash_m": 1807.202,
       "growth_1_5_pct": 2.7,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LITE",
@@ -10400,7 +10986,9 @@
       "cash_m": 1155.3,
       "growth_1_5_pct": 134.74,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYB",
@@ -10435,7 +11023,9 @@
       "cash_m": 3443.0,
       "growth_1_5_pct": 51.66,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTB",
@@ -10470,7 +11060,9 @@
       "cash_m": 18769.0,
       "growth_1_5_pct": 10.56,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPC",
@@ -10505,7 +11097,9 @@
       "cash_m": 3672.0,
       "growth_1_5_pct": 18.39,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAR",
@@ -10540,7 +11134,9 @@
       "cash_m": 358.0,
       "growth_1_5_pct": 12.9,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRSH",
@@ -10575,7 +11171,9 @@
       "cash_m": 1611.0,
       "growth_1_5_pct": 8.13,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MLM",
@@ -10610,7 +11208,9 @@
       "cash_m": 67.0,
       "growth_1_5_pct": 18.98,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAS",
@@ -10645,7 +11245,9 @@
       "cash_m": 388.0,
       "growth_1_5_pct": 9.27,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MA",
@@ -10680,7 +11282,9 @@
       "cash_m": 10898.0,
       "growth_1_5_pct": 15.84,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MKC",
@@ -10715,7 +11319,9 @@
       "cash_m": 177.7,
       "growth_1_5_pct": 6.76,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCD",
@@ -10750,7 +11356,9 @@
       "cash_m": 774.0,
       "growth_1_5_pct": 8.1,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCK",
@@ -10785,7 +11393,9 @@
       "cash_m": 2959.0,
       "growth_1_5_pct": 14.78,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDT",
@@ -10820,7 +11430,9 @@
       "cash_m": 8383.0,
       "growth_1_5_pct": 5.84,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRK",
@@ -10855,7 +11467,9 @@
       "cash_m": 14565.0,
       "growth_1_5_pct": 6.3,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "META",
@@ -10890,7 +11504,9 @@
       "cash_m": 81592.0,
       "growth_1_5_pct": 19.51,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MET",
@@ -10925,7 +11541,9 @@
       "cash_m": 118317.0,
       "growth_1_5_pct": 11.38,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTD",
@@ -10960,7 +11578,9 @@
       "cash_m": 66.888,
       "growth_1_5_pct": 9.92,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MGM",
@@ -10995,7 +11615,9 @@
       "cash_m": 2292.83,
       "growth_1_5_pct": -4.86,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCHP",
@@ -11030,7 +11652,9 @@
       "cash_m": 250.7,
       "growth_1_5_pct": 42.01,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MU",
@@ -11065,7 +11689,9 @@
       "cash_m": 14589.0,
       "growth_1_5_pct": 116.54,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": "Narrow",
+      "moat_score": 5.9
     },
     {
       "ticker": "MSFT",
@@ -11100,7 +11726,9 @@
       "cash_m": 78228.0,
       "growth_1_5_pct": 18.51,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAA",
@@ -11135,7 +11763,9 @@
       "cash_m": 60.258,
       "growth_1_5_pct": 2.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRNA",
@@ -11170,7 +11800,9 @@
       "cash_m": 5799.0,
       "growth_1_5_pct": 25.37,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TAP",
@@ -11205,7 +11837,9 @@
       "cash_m": 896.5,
       "growth_1_5_pct": -0.32,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDLZ",
@@ -11240,7 +11874,9 @@
       "cash_m": 1524.0,
       "growth_1_5_pct": 7.79,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPWR",
@@ -11275,7 +11911,9 @@
       "cash_m": 1256.545,
       "growth_1_5_pct": 23.91,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MNST",
@@ -11310,7 +11948,9 @@
       "cash_m": 2765.201,
       "growth_1_5_pct": 11.29,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCO",
@@ -11345,7 +11985,9 @@
       "cash_m": 1510.0,
       "growth_1_5_pct": 11.41,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MS",
@@ -11380,7 +12022,9 @@
       "cash_m": 81310.0,
       "growth_1_5_pct": 10.68,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MOS",
@@ -11415,7 +12059,9 @@
       "cash_m": 276.6,
       "growth_1_5_pct": -1.83,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSI",
@@ -11450,7 +12096,9 @@
       "cash_m": 1163.0,
       "growth_1_5_pct": 8.97,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSCI",
@@ -11485,7 +12133,9 @@
       "cash_m": 381.7,
       "growth_1_5_pct": 13.7,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDAQ",
@@ -11520,7 +12170,9 @@
       "cash_m": 2380.0,
       "growth_1_5_pct": 13.26,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTAP",
@@ -11555,7 +12207,9 @@
       "cash_m": 3008.0,
       "growth_1_5_pct": 9.08,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NFLX",
@@ -11590,7 +12244,9 @@
       "cash_m": 12288.45,
       "growth_1_5_pct": 21.89,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEM",
@@ -11625,7 +12281,9 @@
       "cash_m": 8779.0,
       "growth_1_5_pct": 22.41,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWSA",
@@ -11660,7 +12318,9 @@
       "cash_m": 2051.0,
       "growth_1_5_pct": 17.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWS",
@@ -11695,7 +12355,9 @@
       "cash_m": 2051.0,
       "growth_1_5_pct": 17.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEE",
@@ -11730,7 +12392,9 @@
       "cash_m": 1998.0,
       "growth_1_5_pct": 8.74,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NKE",
@@ -11765,7 +12429,9 @@
       "cash_m": 8057.0,
       "growth_1_5_pct": 3.38,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NI",
@@ -11800,7 +12466,9 @@
       "cash_m": 110.1,
       "growth_1_5_pct": 8.65,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDSN",
@@ -11835,7 +12503,9 @@
       "cash_m": 120.392,
       "growth_1_5_pct": 8.84,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NSC",
@@ -11870,7 +12540,9 @@
       "cash_m": 1341.0,
       "growth_1_5_pct": 5.74,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTRS",
@@ -11905,7 +12577,9 @@
       "cash_m": 61127.4,
       "growth_1_5_pct": 12.96,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOC",
@@ -11940,7 +12614,9 @@
       "cash_m": 2090.0,
       "growth_1_5_pct": 7.51,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NCLH",
@@ -11975,7 +12651,9 @@
       "cash_m": 209.893,
       "growth_1_5_pct": 9.44,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NRG",
@@ -12010,7 +12688,9 @@
       "cash_m": 4708.0,
       "growth_1_5_pct": 17.84,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NUE",
@@ -12045,7 +12725,9 @@
       "cash_m": 2699.0,
       "growth_1_5_pct": 28.83,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVDA",
@@ -12080,7 +12762,9 @@
       "cash_m": 62556.0,
       "growth_1_5_pct": 39.38,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVR",
@@ -12115,7 +12799,9 @@
       "cash_m": 1916.486,
       "growth_1_5_pct": 5.59,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NXPI",
@@ -12150,7 +12836,9 @@
       "cash_m": 3382.0,
       "growth_1_5_pct": 20.15,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORLY",
@@ -12185,7 +12873,9 @@
       "cash_m": 193.793,
       "growth_1_5_pct": 10.28,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OXY",
@@ -12220,7 +12910,9 @@
       "cash_m": 1968.0,
       "growth_1_5_pct": 21.25,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ODFL",
@@ -12255,7 +12947,9 @@
       "cash_m": 120.091,
       "growth_1_5_pct": 13.34,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OMC",
@@ -12290,7 +12984,9 @@
       "cash_m": 4288.1,
       "growth_1_5_pct": 17.2,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ON",
@@ -12325,7 +13021,9 @@
       "cash_m": 2547.6,
       "growth_1_5_pct": 31.11,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OKE",
@@ -12360,7 +13058,9 @@
       "cash_m": 172.0,
       "growth_1_5_pct": 7.15,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORCL",
@@ -12395,7 +13095,9 @@
       "cash_m": 39132.0,
       "growth_1_5_pct": 21.31,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OTIS",
@@ -12430,7 +13132,9 @@
       "cash_m": 834.0,
       "growth_1_5_pct": 8.77,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCAR",
@@ -12465,7 +13169,9 @@
       "cash_m": 8858.3,
       "growth_1_5_pct": 15.48,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PKG",
@@ -12500,7 +13206,9 @@
       "cash_m": 600.8,
       "growth_1_5_pct": 10.0,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLTR",
@@ -12535,7 +13243,9 @@
       "cash_m": 7177.043,
       "growth_1_5_pct": 52.41,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PANW",
@@ -12570,7 +13280,9 @@
       "cash_m": 4536.0,
       "growth_1_5_pct": 11.4,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSKY",
@@ -12605,7 +13317,9 @@
       "cash_m": 3274.0,
       "growth_1_5_pct": 41.98,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PH",
@@ -12640,7 +13354,9 @@
       "cash_m": 427.0,
       "growth_1_5_pct": 11.09,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PAYX",
@@ -12675,7 +13391,9 @@
       "cash_m": 1780.6,
       "growth_1_5_pct": 8.11,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PYPL",
@@ -12710,7 +13428,9 @@
       "cash_m": 10422.0,
       "growth_1_5_pct": 5.91,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNR",
@@ -12745,7 +13465,9 @@
       "cash_m": 67.7,
       "growth_1_5_pct": 8.38,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEP",
@@ -12780,7 +13502,9 @@
       "cash_m": 10828.0,
       "growth_1_5_pct": 6.19,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFE",
@@ -12815,7 +13539,9 @@
       "cash_m": 13596.0,
       "growth_1_5_pct": -8.85,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCG",
@@ -12850,7 +13576,9 @@
       "cash_m": 1131.0,
       "growth_1_5_pct": 9.49,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PM",
@@ -12885,7 +13613,9 @@
       "cash_m": 5450.0,
       "growth_1_5_pct": 9.72,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSX",
@@ -12920,7 +13650,9 @@
       "cash_m": 5150.0,
       "growth_1_5_pct": 29.01,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNW",
@@ -12955,7 +13687,9 @@
       "cash_m": 6.604,
       "growth_1_5_pct": 6.47,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNC",
@@ -12990,7 +13724,9 @@
       "cash_m": 39713.0,
       "growth_1_5_pct": 11.59,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "POOL",
@@ -13025,7 +13761,9 @@
       "cash_m": 64.458,
       "growth_1_5_pct": 7.1,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPG",
@@ -13060,7 +13798,9 @@
       "cash_m": 2219.0,
       "growth_1_5_pct": 7.49,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPL",
@@ -13095,7 +13835,9 @@
       "cash_m": 1071.0,
       "growth_1_5_pct": 8.17,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFG",
@@ -13130,7 +13872,9 @@
       "cash_m": 31664.6,
       "growth_1_5_pct": 10.1,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PG",
@@ -13165,7 +13909,9 @@
       "cash_m": 12306.0,
       "growth_1_5_pct": 3.39,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PGR",
@@ -13200,7 +13946,9 @@
       "cash_m": 19836.0,
       "growth_1_5_pct": -4.04,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLD",
@@ -13235,7 +13983,9 @@
       "cash_m": 1145.647,
       "growth_1_5_pct": 3.95,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PRU",
@@ -13270,7 +14020,9 @@
       "cash_m": 73025.0,
       "growth_1_5_pct": 3.49,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEG",
@@ -13305,7 +14057,9 @@
       "cash_m": 132.0,
       "growth_1_5_pct": 7.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PTC",
@@ -13340,7 +14094,9 @@
       "cash_m": 209.736,
       "growth_1_5_pct": 5.9,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSA",
@@ -13375,7 +14131,9 @@
       "cash_m": 134.609,
       "growth_1_5_pct": 4.43,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PHM",
@@ -13410,7 +14168,9 @@
       "cash_m": 2316.29,
       "growth_1_5_pct": 5.77,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PWR",
@@ -13445,7 +14205,9 @@
       "cash_m": 439.508,
       "growth_1_5_pct": 20.27,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "QCOM",
@@ -13480,7 +14242,9 @@
       "cash_m": 9799.0,
       "growth_1_5_pct": -0.63,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DGX",
@@ -13515,7 +14279,9 @@
       "cash_m": 393.0,
       "growth_1_5_pct": 8.83,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "Q",
@@ -13550,7 +14316,9 @@
       "cash_m": 915.0,
       "growth_1_5_pct": 12.03,
       "discount_rate_pct": 6.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RL",
@@ -13585,7 +14353,9 @@
       "cash_m": 2250.8,
       "growth_1_5_pct": 17.38,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RJF",
@@ -13620,7 +14390,9 @@
       "cash_m": 9890.0,
       "growth_1_5_pct": 12.6,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RTX",
@@ -13655,7 +14427,9 @@
       "cash_m": 6818.0,
       "growth_1_5_pct": 10.1,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "O",
@@ -13690,7 +14464,9 @@
       "cash_m": 434.842,
       "growth_1_5_pct": 16.33,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REG",
@@ -13725,7 +14501,9 @@
       "cash_m": 104.657,
       "growth_1_5_pct": -0.64,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REGN",
@@ -13760,7 +14538,9 @@
       "cash_m": 8753.7,
       "growth_1_5_pct": 11.66,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RF",
@@ -13795,7 +14575,9 @@
       "cash_m": 10907.0,
       "growth_1_5_pct": 10.63,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RSG",
@@ -13830,7 +14612,9 @@
       "cash_m": 76.0,
       "growth_1_5_pct": 8.3,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RMD",
@@ -13865,7 +14649,9 @@
       "cash_m": 1417.069,
       "growth_1_5_pct": 11.83,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RVTY",
@@ -13900,7 +14686,9 @@
       "cash_m": 919.86,
       "growth_1_5_pct": 9.07,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HOOD",
@@ -13935,7 +14723,9 @@
       "cash_m": 12186.0,
       "growth_1_5_pct": 14.33,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROK",
@@ -13970,7 +14760,9 @@
       "cash_m": 444.0,
       "growth_1_5_pct": 13.28,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROL",
@@ -14005,7 +14797,9 @@
       "cash_m": 116.543,
       "growth_1_5_pct": 10.98,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROP",
@@ -14040,7 +14834,9 @@
       "cash_m": 297.4,
       "growth_1_5_pct": 8.41,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROST",
@@ -14075,7 +14871,9 @@
       "cash_m": 4594.392,
       "growth_1_5_pct": 11.41,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RCL",
@@ -14110,7 +14908,9 @@
       "cash_m": 825.0,
       "growth_1_5_pct": 13.5,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPGI",
@@ -14145,7 +14945,9 @@
       "cash_m": 1810.0,
       "growth_1_5_pct": 12.38,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRM",
@@ -14180,7 +14982,9 @@
       "cash_m": 9565.0,
       "growth_1_5_pct": 12.07,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNDK",
@@ -14215,7 +15019,9 @@
       "cash_m": 1539.0,
       "growth_1_5_pct": 251.0,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBAC",
@@ -14250,7 +15056,9 @@
       "cash_m": 271.216,
       "growth_1_5_pct": -2.28,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SLB",
@@ -14285,7 +15093,9 @@
       "cash_m": 3387.0,
       "growth_1_5_pct": 9.23,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STX",
@@ -14320,7 +15130,9 @@
       "cash_m": 1146.0,
       "growth_1_5_pct": 67.34,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SRE",
@@ -14355,7 +15167,9 @@
       "cash_m": 29.0,
       "growth_1_5_pct": 8.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOW",
@@ -14390,7 +15204,9 @@
       "cash_m": 5182.0,
       "growth_1_5_pct": 20.25,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SHW",
@@ -14425,7 +15241,9 @@
       "cash_m": 216.9,
       "growth_1_5_pct": 9.51,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPG",
@@ -14460,7 +15278,9 @@
       "cash_m": 823.147,
       "growth_1_5_pct": -19.77,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWKS",
@@ -14495,7 +15315,9 @@
       "cash_m": 1558.7,
       "growth_1_5_pct": -0.42,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SJM",
@@ -14530,7 +15352,9 @@
       "cash_m": 52.8,
       "growth_1_5_pct": 2.64,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SW",
@@ -14565,7 +15389,9 @@
       "cash_m": 892.0,
       "growth_1_5_pct": 20.51,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNA",
@@ -14600,7 +15426,9 @@
       "cash_m": 1753.3,
       "growth_1_5_pct": 17.01,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SOLV",
@@ -14635,7 +15463,9 @@
       "cash_m": 878.0,
       "growth_1_5_pct": 7.98,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SO",
@@ -14670,7 +15500,9 @@
       "cash_m": 981.0,
       "growth_1_5_pct": 7.68,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LUV",
@@ -14705,7 +15537,9 @@
       "cash_m": 3328.0,
       "growth_1_5_pct": 76.75,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWK",
@@ -14740,7 +15574,9 @@
       "cash_m": 333.7,
       "growth_1_5_pct": 14.4,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBUX",
@@ -14775,7 +15611,9 @@
       "cash_m": 1700.3,
       "growth_1_5_pct": 19.88,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STT",
@@ -14810,7 +15648,9 @@
       "cash_m": 130092.0,
       "growth_1_5_pct": 15.12,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STLD",
@@ -14845,7 +15685,9 @@
       "cash_m": 556.527,
       "growth_1_5_pct": 29.67,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STE",
@@ -14880,7 +15722,9 @@
       "cash_m": 423.7,
       "growth_1_5_pct": 9.53,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYK",
@@ -14915,7 +15759,9 @@
       "cash_m": 4100.0,
       "growth_1_5_pct": 11.18,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SMCI",
@@ -14950,7 +15796,9 @@
       "cash_m": 4091.083,
       "growth_1_5_pct": 17.4,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYF",
@@ -14985,7 +15833,9 @@
       "cash_m": 20559.0,
       "growth_1_5_pct": 8.15,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNPS",
@@ -15020,7 +15870,9 @@
       "cash_m": 2203.482,
       "growth_1_5_pct": 16.2,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYY",
@@ -15055,7 +15907,9 @@
       "cash_m": 1900.0,
       "growth_1_5_pct": 6.1,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMUS",
@@ -15090,7 +15944,9 @@
       "cash_m": 3520.0,
       "growth_1_5_pct": 19.84,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TROW",
@@ -15125,7 +15981,9 @@
       "cash_m": 3378.2,
       "growth_1_5_pct": -1.15,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTWO",
@@ -15160,7 +16018,9 @@
       "cash_m": 2359.0,
       "growth_1_5_pct": 61.35,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPR",
@@ -15195,7 +16055,9 @@
       "cash_m": 1077.7,
       "growth_1_5_pct": 16.91,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRGP",
@@ -15230,7 +16092,9 @@
       "cash_m": 166.1,
       "growth_1_5_pct": 16.42,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TGT",
@@ -15265,7 +16129,9 @@
       "cash_m": 5488.0,
       "growth_1_5_pct": 5.99,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TEL",
@@ -15300,7 +16166,9 @@
       "cash_m": 1110.0,
       "growth_1_5_pct": 16.69,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDY",
@@ -15335,7 +16203,9 @@
       "cash_m": 521.4,
       "growth_1_5_pct": 8.46,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TER",
@@ -15370,7 +16240,9 @@
       "cash_m": 321.998,
       "growth_1_5_pct": 46.57,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSLA",
@@ -15405,7 +16277,9 @@
       "cash_m": 44743.0,
       "growth_1_5_pct": 24.29,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXN",
@@ -15440,7 +16314,9 @@
       "cash_m": 5103.0,
       "growth_1_5_pct": 22.21,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPL",
@@ -15475,7 +16351,9 @@
       "cash_m": 144.809,
       "growth_1_5_pct": 6.88,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXT",
@@ -15510,7 +16388,9 @@
       "cash_m": 2025.0,
       "growth_1_5_pct": 10.03,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMO",
@@ -15545,7 +16425,9 @@
       "cash_m": 10105.0,
       "growth_1_5_pct": 9.59,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TJX",
@@ -15580,7 +16462,9 @@
       "cash_m": 6230.0,
       "growth_1_5_pct": 9.56,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TKO",
@@ -15615,7 +16499,9 @@
       "cash_m": 831.1,
       "growth_1_5_pct": 46.0,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTD",
@@ -15650,7 +16536,9 @@
       "cash_m": 1303.057,
       "growth_1_5_pct": 19.88,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSCO",
@@ -15685,7 +16573,9 @@
       "cash_m": 194.109,
       "growth_1_5_pct": 7.64,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TT",
@@ -15720,7 +16610,9 @@
       "cash_m": 1763.3,
       "growth_1_5_pct": 13.72,
       "discount_rate_pct": 7.0,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDG",
@@ -15755,7 +16647,9 @@
       "cash_m": 2528.0,
       "growth_1_5_pct": 12.27,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRV",
@@ -15790,7 +16684,9 @@
       "cash_m": 98011.0,
       "growth_1_5_pct": 1.48,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRMB",
@@ -15825,7 +16721,9 @@
       "cash_m": 253.4,
       "growth_1_5_pct": 15.09,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TFC",
@@ -15860,7 +16758,9 @@
       "cash_m": 36377.0,
       "growth_1_5_pct": 14.67,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TYL",
@@ -15895,7 +16795,9 @@
       "cash_m": 346.354,
       "growth_1_5_pct": 13.11,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSN",
@@ -15930,7 +16832,9 @@
       "cash_m": 1278.0,
       "growth_1_5_pct": 10.71,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "USB",
@@ -15965,7 +16869,9 @@
       "cash_m": 46890.0,
       "growth_1_5_pct": 10.65,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UBER",
@@ -16000,7 +16906,9 @@
       "cash_m": 7633.0,
       "growth_1_5_pct": 4.38,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UDR",
@@ -16035,7 +16943,9 @@
       "cash_m": 1.222,
       "growth_1_5_pct": -21.35,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ULTA",
@@ -16070,7 +16980,9 @@
       "cash_m": 494.243,
       "growth_1_5_pct": 10.8,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNP",
@@ -16105,7 +17017,9 @@
       "cash_m": 1035.0,
       "growth_1_5_pct": 8.77,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UAL",
@@ -16140,7 +17054,9 @@
       "cash_m": 14167.0,
       "growth_1_5_pct": 16.6,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UPS",
@@ -16175,7 +17091,9 @@
       "cash_m": 5887.0,
       "growth_1_5_pct": 6.2,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "URI",
@@ -16210,7 +17128,9 @@
       "cash_m": 156.0,
       "growth_1_5_pct": 12.92,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNH",
@@ -16245,7 +17165,9 @@
       "cash_m": 28121.0,
       "growth_1_5_pct": 14.71,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UHS",
@@ -16280,7 +17202,9 @@
       "cash_m": 137.797,
       "growth_1_5_pct": 9.73,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLO",
@@ -16315,7 +17239,9 @@
       "cash_m": 4688.0,
       "growth_1_5_pct": 16.89,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTR",
@@ -16350,7 +17276,9 @@
       "cash_m": 183.613,
       "growth_1_5_pct": 35.85,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLTO",
@@ -16385,7 +17313,9 @@
       "cash_m": 1431.0,
       "growth_1_5_pct": 9.18,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSN",
@@ -16420,7 +17350,9 @@
       "cash_m": 556.4,
       "growth_1_5_pct": 12.08,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSK",
@@ -16455,7 +17387,9 @@
       "cash_m": 524.5,
       "growth_1_5_pct": 10.76,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VZ",
@@ -16490,7 +17424,9 @@
       "cash_m": 19048.0,
       "growth_1_5_pct": 6.57,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRTX",
@@ -16525,7 +17461,9 @@
       "cash_m": 6608.1,
       "growth_1_5_pct": 10.72,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRT",
@@ -16560,7 +17498,9 @@
       "cash_m": 2500.5,
       "growth_1_5_pct": 36.96,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTRS",
@@ -16595,7 +17535,9 @@
       "cash_m": 1513.0,
       "growth_1_5_pct": 8.56,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VICI",
@@ -16630,7 +17572,9 @@
       "cash_m": 480.206,
       "growth_1_5_pct": 5.06,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "V",
@@ -16665,7 +17609,9 @@
       "cash_m": 13913.0,
       "growth_1_5_pct": 13.35,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VST",
@@ -16700,7 +17646,9 @@
       "cash_m": 785.0,
       "growth_1_5_pct": 81.89,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VMC",
@@ -16735,7 +17683,9 @@
       "cash_m": 140.2,
       "growth_1_5_pct": 17.94,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WRB",
@@ -16770,7 +17720,9 @@
       "cash_m": 27556.994,
       "growth_1_5_pct": 5.97,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GWW",
@@ -16805,7 +17757,9 @@
       "cash_m": 585.0,
       "growth_1_5_pct": 10.22,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAB",
@@ -16840,7 +17794,9 @@
       "cash_m": 531.0,
       "growth_1_5_pct": 14.76,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMT",
@@ -16875,7 +17831,9 @@
       "cash_m": 10727.0,
       "growth_1_5_pct": 12.05,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DIS",
@@ -16910,7 +17868,9 @@
       "cash_m": 5678.0,
       "growth_1_5_pct": 10.85,
       "discount_rate_pct": 7.37,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WBD",
@@ -16945,7 +17905,9 @@
       "cash_m": 4566.0,
       "growth_1_5_pct": 0.12,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WM",
@@ -16980,7 +17942,9 @@
       "cash_m": 158.0,
       "growth_1_5_pct": 10.88,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAT",
@@ -17015,7 +17979,9 @@
       "cash_m": 587.831,
       "growth_1_5_pct": 11.12,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WEC",
@@ -17050,7 +18016,9 @@
       "cash_m": 27.6,
       "growth_1_5_pct": 7.23,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WFC",
@@ -17085,7 +18053,9 @@
       "cash_m": 174784.0,
       "growth_1_5_pct": 13.49,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WELL",
@@ -17120,7 +18090,9 @@
       "cash_m": 4703.775,
       "growth_1_5_pct": 39.55,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WST",
@@ -17155,7 +18127,9 @@
       "cash_m": 521.4,
       "growth_1_5_pct": 13.73,
       "discount_rate_pct": 6.63,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDC",
@@ -17190,7 +18164,9 @@
       "cash_m": 4043.0,
       "growth_1_5_pct": 60.71,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WY",
@@ -17225,7 +18201,9 @@
       "cash_m": 464.0,
       "growth_1_5_pct": 75.69,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WSM",
@@ -17260,7 +18238,9 @@
       "cash_m": 1019.801,
       "growth_1_5_pct": 9.55,
       "discount_rate_pct": 7.74,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMB",
@@ -17295,7 +18275,9 @@
       "cash_m": 63.0,
       "growth_1_5_pct": 14.34,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WTW",
@@ -17330,7 +18312,9 @@
       "cash_m": 3165.0,
       "growth_1_5_pct": 14.2,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDAY",
@@ -17365,7 +18349,9 @@
       "cash_m": 5443.0,
       "growth_1_5_pct": 15.01,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WYNN",
@@ -17400,7 +18386,9 @@
       "cash_m": 2065.198,
       "growth_1_5_pct": 17.89,
       "discount_rate_pct": 5.89,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XEL",
@@ -17435,7 +18423,9 @@
       "cash_m": 274.0,
       "growth_1_5_pct": 9.54,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYL",
@@ -17470,7 +18460,9 @@
       "cash_m": 808.0,
       "growth_1_5_pct": 9.69,
       "discount_rate_pct": 6.26,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "YUM",
@@ -17505,7 +18497,9 @@
       "cash_m": 709.0,
       "growth_1_5_pct": 11.49,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBRA",
@@ -17540,7 +18534,9 @@
       "cash_m": 125.0,
       "growth_1_5_pct": 11.13,
       "discount_rate_pct": 8.11,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBH",
@@ -17575,7 +18571,9 @@
       "cash_m": 591.9,
       "growth_1_5_pct": 5.59,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZTS",
@@ -17610,7 +18608,9 @@
       "cash_m": 2310.0,
       "growth_1_5_pct": 8.69,
       "discount_rate_pct": 5.15,
-      "trends": null
+      "trends": null,
+      "moat": null,
+      "moat_score": null
     }
   ]
 }
