@@ -167,7 +167,11 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
   2. The detector correctly identifies the spring case where the break-below bar and confirmation bar are the same bar
   3. All three trend filters (HH/HL uptrend, price above 50-SMA, cluster near 20/50-SMA retracement) are evaluated using only data available at pattern-end bar — no future bars referenced
   4. A manually reviewed sample of at least 5 known setups from historical data confirms the detector flags them and does not flag the bars immediately adjacent
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Detection module + Wave 0 pytest scaffold + DET-01..DET-04 unit tests (Detection dataclass, classifiers, ATR/SMA/swing pivots, detect() loop with spring case, CLI ticker validation)
+- [ ] 07-02-PLAN.md — Live yfinance known-setup regression suite (>=5 user-approved historical setups, adjacent-bar negative test, truncation-invariance test)
 
 ### Phase 8: Training Pipeline
 **Goal**: A YOLOv8n model trained on algorithmically-annotated chart images exists as a committed ONNX artifact at `models/inside_bar_v1.onnx` and can be loaded by onnxruntime without torch
