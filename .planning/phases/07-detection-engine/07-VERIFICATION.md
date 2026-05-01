@@ -1,8 +1,8 @@
 ---
 phase: 07-detection-engine
 verified: 2026-05-02T00:00:00Z
-status: human_needed
-score: 4/4 success criteria objectively verified from artifacts; 1 live smoke test deferred to human
+status: passed
+score: 4/4 success criteria verified (live smoke + integration suite confirmed by user 2026-05-02)
 overrides_applied: 0
 human_verification:
   - test: "Live 10y detection smoke run on an S&P 500 ticker"
