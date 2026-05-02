@@ -99,7 +99,7 @@ Expected: 12 + 11 = 23 tests pass (or 12 pass + 11 skip if `-m "not network"`). 
 
 - [ ] All Phase 8 tasks have `<automated>` verify or Wave 0 dependencies
 - [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all 5 missing test files + 1 fixture PNG
+- [ ] Wave 0 covers all 4 missing test files + 1 fixture PNG
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 30s for unit tests
 - [ ] `nyquist_compliant: true` set in frontmatter when above are checked

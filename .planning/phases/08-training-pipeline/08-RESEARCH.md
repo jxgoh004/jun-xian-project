@@ -1149,37 +1149,44 @@ Expected: 12 + 11 = 23 tests pass (or 12 pass + 11 skip if `--no-network`). Any 
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Bbox computation approach (Approach A vs Approach B)**
    - What we know: Both produce correct bboxes; A is the canonical CV-pipeline pattern; B is simpler.
    - What's unclear: Whether matplotlib's `transData.transform()` produces deterministic pixel coordinates after `bbox_inches="tight"` cropping.
    - Recommendation: Plan a Wave 0 spike (one task, ~15 min): render one chart with Approach A, log computed bbox; render the same chart with bbox-marker injection; compare. If A is within ±2 px of B, ship A.
+   - **RESOLVED:** Approach A (transform-based; spike requirement added in Plan 02 revision per Warning #8).
 
 2. **Initial yolov8n.pt source**
    - What we know: ultralytics auto-downloads from `https://github.com/ultralytics/assets/releases/...` on first call.
    - What's unclear: Whether the user's local environment can reach that URL during the planned execution window.
    - Recommendation: Plan a Wave 0 connectivity check (one Bash task): `curl -I https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt` returns 200/302.
+   - **RESOLVED:** ultralytics auto-download from official CDN; connectivity check task already in Plan 01.
 
 3. **Local hardware: GPU available?**
    - What we know: D-16 says "Local CPU/GPU; ultralytics auto-detects."
    - What's unclear: Whether this machine has CUDA-capable GPU. CPU training of YOLOv8n on ~11k 640×640 images for ~50 epochs is roughly 4-8 hours.
    - Recommendation: Plan should include a GPU-check task (`python -c "import torch; print(torch.cuda.is_available(), torch.cuda.device_count())"`) before kicking off the long training run, and document in 08-SUMMARY.
+   - **RESOLVED:** Detect at runtime via `torch.cuda.is_available()`; CPU acceptable per D-16; documented in Plan 04 Task 1.
 
 4. **Multi-style augmentation factor**
    - What we know: D-08 says "trigger if positives < 1000". CONTEXT says "multiple randomised styles."
    - What's unclear: Exact augmentation factor (2 styles? 3? 5?). Implementation detail.
    - Recommendation: Define in plan: if positives ≥ 1000, use 1 style per sample. If positives < 1000, use `ceil(1000 / N) + 1` styles per sample, capped at len(STYLES) = 3. Escalate to user if even 3× < 1000.
+   - **RESOLVED:** 1 style per sample if positives ≥ 1000; if positives < 1000, use `ceil(1000 / N) + 1` styles per sample, capped at 3; if even 3× < 1000, escalate to user.
 
 5. **Should the committed `.onnx` be tracked in git or via Git LFS?**
    - What we know: D-13 says "no Git LFS." 6-12 MB is well under GitHub's 100 MB hard limit and 50 MB soft warning.
    - What's unclear: GitHub Pages bandwidth/repo size impact on cloning experience.
    - Recommendation: Honor D-13 (regular git). At 12 MB, repo growth is negligible.
+   - **RESOLVED:** Regular git per CONTEXT D-13 (~6–12 MB is acceptable).
 
 6. **ONNX opset 12 vs 17**
    - What we know: opset 12 is broadly safe; opset 17 is required for TensorRT 10.7 (not relevant here) and offers some perf wins on newer onnxruntime.
    - What's unclear: Whether onnxruntime 1.19+ is stable on opset 12 for YOLOv8n inference.
    - Recommendation: Lock opset 12. Revisit only if Phase 10 inference shows perf issues.
+   - **RESOLVED:** opset=12, locked at three sites (`scripts/pattern_scanner/train.py`, `models/training_summary.json`, `tests/test_onnx_round_trip.py::test_opset_recorded`).
+
 
 ---
 
