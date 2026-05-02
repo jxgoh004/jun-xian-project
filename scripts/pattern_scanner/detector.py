@@ -302,13 +302,19 @@ def _build_detection(
 
 
 # ── Public API ──────────────────────────────────────────────────────────────
-def detect(df: pd.DataFrame, ticker: str) -> List[Detection]:
+def detect(df: pd.DataFrame, ticker: str,
+           apply_trend_filters: bool = True) -> List[Detection]:
     """Detect bullish inside bar spring setups in daily OHLC data.
 
     Args:
         df: DataFrame with flat columns Open/High/Low/Close and a tz-naive
             DatetimeIndex (yfinance auto_adjust + tz_localize(None) format).
         ticker: uppercase symbol; included in each Detection record.
+        apply_trend_filters: when True (default — Phase 7 contract), only
+            emit detections whose three trend filters all pass. When False
+            (Phase 8 hard-negative pool — D-10), emit every detection that
+            passes the cluster shape rules regardless of filter state.
+            Per-filter booleans are still recorded in either mode.
 
     Returns:
         List of Detection records, one per emitted setup. Empty list if the
@@ -364,7 +370,9 @@ def detect(df: pd.DataFrame, ticker: str) -> List[Detection]:
                     conf_idx=conf_idx,
                     conf_type=conf_type,
                 )
-                if (
+                if not apply_trend_filters:
+                    detections.append(detection)
+                elif (
                     detection.filters["hh_hl"]
                     and detection.filters["above_50sma"]
                     and detection.filters["sma_cluster"]
