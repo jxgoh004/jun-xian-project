@@ -39,3 +39,7 @@ Thumbs.db
 .code-review-graph/
 # Sample images
 .ui_example/
+
+# Phase 8 — training pipeline artifacts (regenerable; CONTEXT D-13/D-14)
+_dev/training_dataset/
+yolov8n.pt

@@ -1,0 +1,3 @@
+# Training-only dependencies. Never install in production / nightly CI.
+# Install via: source .venv/Scripts/activate && pip install -r requirements-training.txt
+ultralytics>=8.4.0,<9.0
