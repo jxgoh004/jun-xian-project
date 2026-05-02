@@ -319,6 +319,296 @@ class YahooFinanceFetcher:
                 
         return 'N/A'
     
+    def get_financial_trends(self):
+        """
+        Extract annual historical trends + TTM for the financial overview charts.
+
+        Returns a dict with:
+            years: list of year labels (ints for annual, 'TTM' for trailing twelve months)
+            revenue, operating_income, net_income,
+            operating_cash_flow, free_cash_flow, stock_based_compensation,
+            cash_and_st_investments, total_debt, net_accounts_receivable:
+                parallel lists of floats in millions (None if missing).
+
+        Annual columns come from .financials / .cash_flow / .balance_sheet
+        (most recent first in yfinance; reversed here to oldest-first).
+        TTM is appended as the final point when quarterly data is available
+        (sum of last 4 quarters for flow items; most recent quarter for stock items).
+        """
+        if self.financials is None:
+            self.fetch_all_data()
+
+        def _pick_row(frame, candidates):
+            if frame is None or frame.empty:
+                return None
+            for name in candidates:
+                if name in frame.index:
+                    return frame.loc[name]
+            return None
+
+        def _annual_series(frame, candidates):
+            row = _pick_row(frame, candidates)
+            if row is None:
+                return [], []
+            row = row.dropna()
+            if row.empty:
+                return [], []
+            # yfinance returns most-recent-first; reverse to oldest-first
+            row = row.iloc[::-1]
+            years = []
+            values = []
+            for col, val in row.items():
+                try:
+                    year = int(pd.Timestamp(col).year)
+                except Exception:
+                    continue
+                if isinstance(val, (int, float)) and not pd.isna(val):
+                    years.append(year)
+                    values.append(float(val) / 1_000_000)
+                else:
+                    years.append(year)
+                    values.append(None)
+            return years, values
+
+        def _ttm_sum(frame, candidates):
+            """Sum last 4 quarters for a flow-statement row (in millions)."""
+            row = _pick_row(frame, candidates)
+            if row is None:
+                return None
+            row = row.dropna()
+            if len(row) < 4:
+                return None
+            total = row.iloc[:4].sum()
+            if pd.isna(total):
+                return None
+            return float(total) / 1_000_000
+
+        def _latest_quarter(frame, candidates):
+            """Most recent quarterly value for a balance-sheet row (in millions)."""
+            row = _pick_row(frame, candidates)
+            if row is None:
+                return None
+            row = row.dropna()
+            if row.empty:
+                return None
+            val = row.iloc[0]
+            if pd.isna(val):
+                return None
+            return float(val) / 1_000_000
+
+        def _total_debt_from_bs(frame):
+            """Sum current + long-term debt from a balance sheet frame."""
+            cur = _pick_row(frame, [
+                'Current Debt', 'Current Debt And Capital Lease Obligation',
+                'Short Long Term Debt', 'Current Portion Of Long Term Debt',
+            ])
+            lt = _pick_row(frame, [
+                'Long Term Debt', 'Long Term Debt And Capital Lease Obligation',
+                'Long Term Debt Excl Capital Leases',
+            ])
+            total_alt = _pick_row(frame, ['Total Debt'])
+            if total_alt is not None:
+                series = total_alt.dropna()
+                if not series.empty:
+                    # Convert to millions column-by-column
+                    series = series.iloc[::-1]
+                    out_years, out_vals = [], []
+                    for col, v in series.items():
+                        try:
+                            out_years.append(int(pd.Timestamp(col).year))
+                        except Exception:
+                            continue
+                        out_vals.append(float(v) / 1_000_000 if isinstance(v, (int, float)) and not pd.isna(v) else None)
+                    return out_years, out_vals
+            # Otherwise sum current + long-term
+            if cur is None and lt is None:
+                return [], []
+            dates = set()
+            if cur is not None:
+                dates.update(cur.dropna().index)
+            if lt is not None:
+                dates.update(lt.dropna().index)
+            # Sort ascending
+            dates = sorted(dates)
+            years, values = [], []
+            for d in dates:
+                try:
+                    years.append(int(pd.Timestamp(d).year))
+                except Exception:
+                    continue
+                c_val = 0.0
+                l_val = 0.0
+                if cur is not None and d in cur.index and isinstance(cur.loc[d], (int, float)) and not pd.isna(cur.loc[d]):
+                    c_val = float(cur.loc[d])
+                if lt is not None and d in lt.index and isinstance(lt.loc[d], (int, float)) and not pd.isna(lt.loc[d]):
+                    l_val = float(lt.loc[d])
+                total = c_val + l_val
+                values.append(total / 1_000_000 if total else None)
+            return years, values
+
+        # ── Annual series from the three primary frames ─────────────────────
+        rev_years, rev_vals = _annual_series(self.financials, [
+            'Total Revenue', 'Revenue', 'Operating Revenue',
+        ])
+        op_years, op_vals = _annual_series(self.financials, [
+            'Operating Income', 'Operating Income Loss',
+        ])
+        ni_years, ni_vals = _annual_series(self.financials, [
+            'Net Income', 'Net Income Common Stockholders',
+            'Net Income From Continuing Operations',
+        ])
+
+        ocf_years, ocf_vals = _annual_series(self.cash_flow, [
+            'Operating Cash Flow', 'Total Cash From Operating Activities',
+            'Cash From Operating Activities',
+        ])
+        fcf_years, fcf_vals = _annual_series(self.cash_flow, ['Free Cash Flow'])
+        # If FCF row missing, derive from OCF - CapEx
+        if not fcf_years and self.cash_flow is not None and not self.cash_flow.empty:
+            capex_row = _pick_row(self.cash_flow, [
+                'Capital Expenditure', 'Capital Expenditures', 'Capex',
+            ])
+            if capex_row is not None and ocf_years:
+                capex_row = capex_row.iloc[::-1]
+                fcf_years = list(ocf_years)
+                fcf_vals = []
+                for yr, ocf_v in zip(ocf_years, ocf_vals):
+                    capex_v = None
+                    # Find matching year column
+                    for col, v in capex_row.items():
+                        try:
+                            if int(pd.Timestamp(col).year) == yr:
+                                if isinstance(v, (int, float)) and not pd.isna(v):
+                                    capex_v = float(v) / 1_000_000
+                                break
+                        except Exception:
+                            continue
+                    if ocf_v is None or capex_v is None:
+                        fcf_vals.append(None)
+                    else:
+                        fcf_vals.append(ocf_v - abs(capex_v))
+
+        sbc_years, sbc_vals = _annual_series(self.cash_flow, [
+            'Stock Based Compensation', 'Stock Based Compensation Expense',
+        ])
+
+        cash_years, cash_vals = _annual_series(self.balance_sheet, [
+            'Cash Cash Equivalents And Short Term Investments',
+            'Cash, Cash Equivalents & Short Term Investments',
+            'Cash And Cash Equivalents',
+            'Cash And Short Term Investments',
+            'Total Cash', 'Cash And Equivalents', 'Cash',
+        ])
+        debt_years, debt_vals = _total_debt_from_bs(self.balance_sheet)
+        ar_years, ar_vals = _annual_series(self.balance_sheet, [
+            'Accounts Receivable', 'Net Accounts Receivable', 'Receivables',
+            'Gross Accounts Receivable',
+        ])
+
+        # ── Union of all observed years, sorted ascending ───────────────────
+        all_years = sorted(set(
+            rev_years + op_years + ni_years +
+            ocf_years + fcf_years + sbc_years +
+            cash_years + debt_years + ar_years
+        ))
+
+        def _align(yrs, vals):
+            lookup = dict(zip(yrs, vals))
+            return [lookup.get(y) for y in all_years]
+
+        revenue = _align(rev_years, rev_vals)
+        operating_income = _align(op_years, op_vals)
+        net_income = _align(ni_years, ni_vals)
+        operating_cash_flow = _align(ocf_years, ocf_vals)
+        free_cash_flow = _align(fcf_years, fcf_vals)
+        stock_based_compensation = _align(sbc_years, sbc_vals)
+        cash_and_st_investments = _align(cash_years, cash_vals)
+        total_debt = _align(debt_years, debt_vals)
+        net_accounts_receivable = _align(ar_years, ar_vals)
+
+        years = list(all_years)
+
+        # ── TTM column (last 4 quarters / most recent quarter) ──────────────
+        ttm_rev = _ttm_sum(self.ticker.quarterly_financials if hasattr(self.ticker, 'quarterly_financials') else None, [
+            'Total Revenue', 'Revenue', 'Operating Revenue',
+        ])
+        ttm_op = _ttm_sum(self.ticker.quarterly_financials if hasattr(self.ticker, 'quarterly_financials') else None, [
+            'Operating Income', 'Operating Income Loss',
+        ])
+        ttm_ni = _ttm_sum(self.quarterly_cashflow, [
+            'Net Income From Continuing Operations',
+            'Net Income Continuing Operations', 'Net Income',
+        ])
+        ttm_ocf = _ttm_sum(self.quarterly_cashflow, [
+            'Operating Cash Flow', 'Total Cash From Operating Activities',
+            'Cash From Operating Activities',
+        ])
+        ttm_fcf = _ttm_sum(self.quarterly_cashflow, ['Free Cash Flow'])
+        if ttm_fcf is None and ttm_ocf is not None:
+            capex_ttm = _ttm_sum(self.quarterly_cashflow, [
+                'Capital Expenditure', 'Capital Expenditures', 'Capex',
+            ])
+            if capex_ttm is not None:
+                ttm_fcf = ttm_ocf - abs(capex_ttm)
+        ttm_sbc = _ttm_sum(self.quarterly_cashflow, [
+            'Stock Based Compensation', 'Stock Based Compensation Expense',
+        ])
+
+        ttm_cash = _latest_quarter(self.quarterly_balance_sheet, [
+            'Cash Cash Equivalents And Short Term Investments',
+            'Cash, Cash Equivalents & Short Term Investments',
+            'Cash And Cash Equivalents',
+            'Cash And Short Term Investments',
+            'Total Cash', 'Cash And Equivalents', 'Cash',
+        ])
+        # Total debt TTM (most recent quarter, sum of components)
+        q_cur = _latest_quarter(self.quarterly_balance_sheet, [
+            'Current Debt', 'Current Debt And Capital Lease Obligation',
+            'Short Long Term Debt', 'Current Portion Of Long Term Debt',
+        ]) or 0.0
+        q_lt = _latest_quarter(self.quarterly_balance_sheet, [
+            'Long Term Debt', 'Long Term Debt And Capital Lease Obligation',
+            'Long Term Debt Excl Capital Leases',
+        ]) or 0.0
+        ttm_debt_total = _latest_quarter(self.quarterly_balance_sheet, ['Total Debt'])
+        if ttm_debt_total is None:
+            ttm_debt = (q_cur + q_lt) if (q_cur or q_lt) else None
+        else:
+            ttm_debt = ttm_debt_total
+        ttm_ar = _latest_quarter(self.quarterly_balance_sheet, [
+            'Accounts Receivable', 'Net Accounts Receivable', 'Receivables',
+            'Gross Accounts Receivable',
+        ])
+
+        have_ttm = any(v is not None for v in [
+            ttm_rev, ttm_op, ttm_ni, ttm_ocf, ttm_fcf, ttm_sbc,
+            ttm_cash, ttm_debt, ttm_ar,
+        ])
+        if have_ttm:
+            years.append('TTM')
+            revenue.append(ttm_rev)
+            operating_income.append(ttm_op)
+            net_income.append(ttm_ni)
+            operating_cash_flow.append(ttm_ocf)
+            free_cash_flow.append(ttm_fcf)
+            stock_based_compensation.append(ttm_sbc)
+            cash_and_st_investments.append(ttm_cash)
+            total_debt.append(ttm_debt)
+            net_accounts_receivable.append(ttm_ar)
+
+        return {
+            'years': years,
+            'revenue': revenue,
+            'operating_income': operating_income,
+            'net_income': net_income,
+            'operating_cash_flow': operating_cash_flow,
+            'free_cash_flow': free_cash_flow,
+            'stock_based_compensation': stock_based_compensation,
+            'cash_and_st_investments': cash_and_st_investments,
+            'total_debt': total_debt,
+            'net_accounts_receivable': net_accounts_receivable,
+        }
+
     def get_financial_ratios(self):
         """Get key financial ratios"""
         if not self.info:

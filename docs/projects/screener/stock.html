@@ -139,6 +139,7 @@
     .anim-2 { animation-delay: .12s; }
     .anim-3 { animation-delay: .19s; }
     .anim-4 { animation-delay: .26s; }
+    .anim-5 { animation-delay: .33s; }
 
     /* ── Hero ── */
     .hero {
@@ -470,6 +471,98 @@
       color: var(--text-dim);
     }
 
+    /* ── Financial Trends section ── */
+    .trends-section { margin-bottom: 20px; }
+    .trends-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .trends-tabs {
+      display: flex;
+      gap: 4px;
+      margin-left: auto;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+    .trend-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .3px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+    }
+    .trend-tab:hover { color: var(--text-bright); }
+    .trend-tab.active {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+    .trends-body { padding: 20px; }
+    .trend-view { display: none; }
+    .trend-view.active { display: block; }
+    .trend-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 860px) { .trend-row { grid-template-columns: 1fr; } }
+    .trend-chart-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .trend-canvas-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      min-height: 240px;
+    }
+    .trend-canvas-box canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .trend-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      padding-top: 2px;
+    }
+    .trend-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text);
+    }
+    .trend-legend-swatch {
+      width: 11px;
+      height: 11px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .trend-empty {
+      text-align: center;
+      padding: 40px 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
     /* ── Moat section ── */
     .moat-section {
       margin-bottom: 20px;
@@ -686,8 +779,48 @@
         </div>
       </div>
 
+      <!-- Financial Trends (tabbed) -->
+      <section class="panel trends-section anim anim-4" id="trends-section" style="display:none;" aria-label="Financial trend charts">
+        <div class="trends-header">
+          <div class="panel-header-dot"></div>
+          <span class="panel-header-title">Financial Trends</span>
+          <div class="trends-tabs" role="tablist" aria-label="Financial trend views">
+            <button type="button" class="trend-tab active" role="tab" aria-selected="true" data-view="income">Income &amp; Cash Flow</button>
+            <button type="button" class="trend-tab" role="tab" aria-selected="false" data-view="balance">Balance Sheet</button>
+            <button type="button" class="trend-tab" role="tab" aria-selected="false" data-view="receivables">Revenue &amp; Receivables</button>
+          </div>
+        </div>
+        <div class="trends-body">
+          <div id="trend-view-income" class="trend-view active" role="tabpanel">
+            <div class="trend-row">
+              <div class="trend-chart-wrap">
+                <div class="trend-canvas-box"><canvas id="trend-canvas-income" aria-label="Revenue, operating income, and net income trend"></canvas></div>
+                <div class="trend-legend" id="trend-legend-income"></div>
+              </div>
+              <div class="trend-chart-wrap">
+                <div class="trend-canvas-box"><canvas id="trend-canvas-cashflow" aria-label="Cash flow and stock-based compensation trend"></canvas></div>
+                <div class="trend-legend" id="trend-legend-cashflow"></div>
+              </div>
+            </div>
+          </div>
+          <div id="trend-view-balance" class="trend-view" role="tabpanel">
+            <div class="trend-chart-wrap">
+              <div class="trend-canvas-box"><canvas id="trend-canvas-balance" aria-label="Cash and total debt trend"></canvas></div>
+              <div class="trend-legend" id="trend-legend-balance"></div>
+            </div>
+          </div>
+          <div id="trend-view-receivables" class="trend-view" role="tabpanel">
+            <div class="trend-chart-wrap">
+              <div class="trend-canvas-box"><canvas id="trend-canvas-receivables" aria-label="Revenue vs. accounts receivable trend"></canvas></div>
+              <div class="trend-legend" id="trend-legend-receivables"></div>
+            </div>
+          </div>
+          <div id="trend-empty" class="trend-empty" style="display:none;">Historical trend data not available for this ticker.</div>
+        </div>
+      </section>
+
       <!-- Moat section (conditional) -->
-      <section class="moat-section panel anim anim-4" id="moat-section" style="display:none;" aria-label="Economic moat summary">
+      <section class="moat-section panel anim anim-5" id="moat-section" style="display:none;" aria-label="Economic moat summary">
         <div class="panel-header">
           <div class="panel-header-dot"></div>
           <span class="panel-header-title">Economic Moat Analysis</span>
@@ -1023,6 +1156,321 @@
       requestAnimationFrame(draw);
     }
 
+    // ── Financial trend charts ───────────────────────────────────────────────
+    // Input values come in millions of USD. The reference screenshots label
+    // axes with "k" to mean "thousands of millions" (i.e. billions), so
+    // 500k ≈ $500B. Large trillion-scale values fall back to "M".
+    function fmtTrendAxis(v) {
+      if (v == null) return '';
+      if (v === 0)  return '0';
+      var abs = Math.abs(v);
+      var sign = v < 0 ? '-' : '';
+      if (abs >= 1000000) {
+        var m = abs / 1000000;
+        return sign + (m >= 10 ? Math.round(m) : m.toFixed(1)) + 'M';
+      }
+      if (abs >= 1000) {
+        var k = abs / 1000;
+        if (k >= 100) return sign + Math.round(k) + 'k';
+        if (k >= 10)  return sign + k.toFixed(0) + 'k';
+        return sign + k.toFixed(1) + 'k';
+      }
+      return sign + Math.round(abs);
+    }
+
+    function niceScale(minVal, maxVal) {
+      // Choose a clean [min, max] and step for the y-axis
+      if (minVal === maxVal) {
+        if (minVal === 0) { minVal = -1; maxVal = 1; }
+        else { var pad = Math.abs(minVal) * 0.15 || 1; minVal -= pad; maxVal += pad; }
+      }
+      if (minVal > 0) minVal = 0; // Anchor to zero when all positive (like the reference)
+      var range = maxVal - minVal;
+      var rough = range / 5;
+      var mag = Math.pow(10, Math.floor(Math.log10(rough)));
+      var norm = rough / mag;
+      var step;
+      if      (norm < 1.5) step = 1 * mag;
+      else if (norm < 3)   step = 2 * mag;
+      else if (norm < 7)   step = 5 * mag;
+      else                 step = 10 * mag;
+      var niceMin = Math.floor(minVal / step) * step;
+      var niceMax = Math.ceil(maxVal / step) * step;
+      if (niceMax === niceMin) niceMax = niceMin + step;
+      return { min: niceMin, max: niceMax, step: step };
+    }
+
+    function drawTrendChart(canvas, years, series) {
+      // series: [{ label, color, values: [...], shape: 'circle'|'diamond'|'triangle' }]
+      if (!canvas) return;
+      var dpr = window.devicePixelRatio || 1;
+      var rect = canvas.getBoundingClientRect();
+      var W = Math.max(rect.width, 320);
+      var H = Math.max(rect.height, 200);
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      var ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, W, H);
+
+      var padL = 54, padR = 16, padT = 14, padB = 32;
+      var plotW = W - padL - padR;
+      var plotH = H - padT - padB;
+
+      // Value range across all series
+      var vals = [];
+      series.forEach(function (s) {
+        (s.values || []).forEach(function (v) { if (v != null && isFinite(v)) vals.push(v); });
+      });
+      if (!vals.length || !years.length) {
+        ctx.font = '12px "DM Mono", monospace';
+        ctx.fillStyle = '#546278';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('No data', W / 2, H / 2);
+        return;
+      }
+      var vmin = Math.min.apply(null, vals);
+      var vmax = Math.max.apply(null, vals);
+      var scale = niceScale(vmin, vmax);
+
+      function xFor(i) {
+        if (years.length === 1) return padL + plotW / 2;
+        return padL + (plotW * i) / (years.length - 1);
+      }
+      function yFor(v) {
+        var t = (v - scale.min) / (scale.max - scale.min);
+        return padT + plotH - t * plotH;
+      }
+
+      // Grid + y-axis labels
+      ctx.font = '500 10px "DM Mono", monospace';
+      ctx.fillStyle = '#546278';
+      ctx.strokeStyle = 'rgba(42, 53, 80, 0.6)';
+      ctx.lineWidth = 1;
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      var ticks = Math.round((scale.max - scale.min) / scale.step);
+      for (var i = 0; i <= ticks; i++) {
+        var v = scale.min + scale.step * i;
+        var y = yFor(v);
+        ctx.beginPath();
+        ctx.setLineDash(i === 0 ? [] : [3, 4]);
+        ctx.moveTo(padL, y);
+        ctx.lineTo(padL + plotW, y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillText(fmtTrendAxis(v), padL - 8, y);
+      }
+
+      // X-axis labels
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = '#546278';
+      for (var j = 0; j < years.length; j++) {
+        ctx.fillText(String(years[j]), xFor(j), padT + plotH + 10);
+      }
+
+      // Series lines + markers
+      series.forEach(function (s) {
+        var color = s.color;
+        var shape = s.shape || 'circle';
+
+        // Line
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.8;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        var started = false;
+        for (var i = 0; i < years.length; i++) {
+          var v = s.values[i];
+          if (v == null || !isFinite(v)) { started = false; continue; }
+          var x = xFor(i), y = yFor(v);
+          if (!started) { ctx.moveTo(x, y); started = true; }
+          else          { ctx.lineTo(x, y); }
+        }
+        ctx.stroke();
+
+        // Markers
+        ctx.fillStyle = color;
+        for (var k = 0; k < years.length; k++) {
+          var vv = s.values[k];
+          if (vv == null || !isFinite(vv)) continue;
+          var xx = xFor(k), yy = yFor(vv);
+          drawMarker(ctx, xx, yy, shape, color);
+        }
+      });
+    }
+
+    function drawMarker(ctx, x, y, shape, color) {
+      var r = 3.6;
+      ctx.save();
+      ctx.fillStyle = color;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.4;
+      if (shape === 'diamond') {
+        ctx.beginPath();
+        ctx.moveTo(x, y - r);
+        ctx.lineTo(x + r, y);
+        ctx.lineTo(x, y + r);
+        ctx.lineTo(x - r, y);
+        ctx.closePath();
+        ctx.fill();
+      } else if (shape === 'triangle') {
+        var rr = r * 1.1;
+        ctx.beginPath();
+        ctx.moveTo(x, y - rr);
+        ctx.lineTo(x + rr, y + rr * 0.85);
+        ctx.lineTo(x - rr, y + rr * 0.85);
+        ctx.closePath();
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function renderTrendLegend(containerId, series) {
+      var host = document.getElementById(containerId);
+      if (!host) return;
+      host.innerHTML = '';
+      series.forEach(function (s) {
+        var item = document.createElement('span');
+        item.className = 'trend-legend-item';
+        var swatch = document.createElement('span');
+        swatch.className = 'trend-legend-swatch';
+        swatch.style.background = s.color;
+        var label = document.createElement('span');
+        label.textContent = s.label;
+        item.appendChild(swatch);
+        item.appendChild(label);
+        host.appendChild(item);
+      });
+    }
+
+    var TREND_COLORS = {
+      revenue:        '#3b9dff',
+      opIncome:       '#f39261',
+      netIncome:      '#7ed06f',
+      netIncomeSoft:  '#9fd18e',
+      ocf:            '#ff6a3d',
+      fcf:            '#2f6b2d',
+      sbc:            '#f4b4c3',
+      cash:           '#4eb665',
+      debt:           '#c33e3e',
+      ar:             '#ffb0bf',
+    };
+
+    // Keep references so we can redraw on tab switch / resize
+    var TREND_CTX = null;
+
+    function allNull(arr) {
+      if (!arr || !arr.length) return true;
+      for (var i = 0; i < arr.length; i++) if (arr[i] != null) return false;
+      return true;
+    }
+
+    function buildTrendSeries(trends) {
+      if (!trends || !trends.years || !trends.years.length) return null;
+      var y = trends.years;
+
+      var income = [
+        { label: 'Revenue',          color: TREND_COLORS.revenue,   shape: 'circle',   values: trends.revenue || [] },
+        { label: 'Operating Income', color: TREND_COLORS.opIncome,  shape: 'circle',   values: trends.operating_income || [] },
+        { label: 'Net Income',       color: TREND_COLORS.netIncome, shape: 'circle',   values: trends.net_income || [] },
+      ].filter(function (s) { return !allNull(s.values); });
+
+      var cash = [
+        { label: 'Net Operating Cash Flow', color: TREND_COLORS.ocf,           shape: 'circle',   values: trends.operating_cash_flow || [] },
+        { label: 'Free Cash Flow',          color: TREND_COLORS.fcf,           shape: 'diamond',  values: trends.free_cash_flow || [] },
+        { label: 'Net Income',              color: TREND_COLORS.netIncomeSoft, shape: 'circle',   values: trends.net_income || [] },
+        { label: 'Stock-Based Compensation',color: TREND_COLORS.sbc,           shape: 'triangle', values: trends.stock_based_compensation || [] },
+      ].filter(function (s) { return !allNull(s.values); });
+
+      var balance = [
+        { label: 'Cash & Short Term Investments', color: TREND_COLORS.cash, shape: 'circle',  values: trends.cash_and_st_investments || [] },
+        { label: 'Total Debt',                    color: TREND_COLORS.debt, shape: 'diamond', values: trends.total_debt || [] },
+      ].filter(function (s) { return !allNull(s.values); });
+
+      var receivables = [
+        { label: 'Revenue',                color: TREND_COLORS.revenue, shape: 'circle', values: trends.revenue || [] },
+        { label: 'Net Accounts Receivable',color: TREND_COLORS.ar,      shape: 'circle', values: trends.net_accounts_receivable || [] },
+      ].filter(function (s) { return !allNull(s.values); });
+
+      return { years: y, income: income, cashflow: cash, balance: balance, receivables: receivables };
+    }
+
+    function drawAllTrends() {
+      if (!TREND_CTX) return;
+      var t = TREND_CTX;
+      drawTrendChart(document.getElementById('trend-canvas-income'),      t.years, t.income);
+      drawTrendChart(document.getElementById('trend-canvas-cashflow'),    t.years, t.cashflow);
+      drawTrendChart(document.getElementById('trend-canvas-balance'),     t.years, t.balance);
+      drawTrendChart(document.getElementById('trend-canvas-receivables'), t.years, t.receivables);
+    }
+
+    function initTrends(trends) {
+      var section = document.getElementById('trends-section');
+      if (!section) return;
+
+      // No trends field at all → hide the whole panel (keeps old data.json clean)
+      if (!trends || !trends.years || !trends.years.length) {
+        section.style.display = 'none';
+        return;
+      }
+
+      var built = buildTrendSeries(trends);
+      var hasAny = built && (
+        built.income.length || built.cashflow.length ||
+        built.balance.length || built.receivables.length
+      );
+
+      section.style.display = '';
+
+      if (!hasAny) {
+        document.querySelectorAll('.trend-view').forEach(function (el) { el.style.display = 'none'; });
+        document.getElementById('trend-empty').style.display = '';
+        return;
+      }
+
+      TREND_CTX = built;
+
+      // Render legends once (don't depend on visible state)
+      renderTrendLegend('trend-legend-income',      built.income);
+      renderTrendLegend('trend-legend-cashflow',    built.cashflow);
+      renderTrendLegend('trend-legend-balance',     built.balance);
+      renderTrendLegend('trend-legend-receivables', built.receivables);
+
+      // Tab switching
+      var tabs = section.querySelectorAll('.trend-tab');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.getAttribute('data-view');
+          tabs.forEach(function (t2) {
+            var active = t2 === tab;
+            t2.classList.toggle('active', active);
+            t2.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          document.querySelectorAll('.trend-view').forEach(function (v) {
+            v.classList.toggle('active', v.id === 'trend-view-' + target);
+          });
+          // Canvases only know real size once visible → redraw after swap
+          requestAnimationFrame(drawAllTrends);
+        });
+      });
+
+      // Initial draw + redraw on resize (canvas measurement changes with layout)
+      requestAnimationFrame(drawAllTrends);
+      var resizeTimer = null;
+      window.addEventListener('resize', function () {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(drawAllTrends, 120);
+      });
+    }
+
     // ── Score rows ───────────────────────────────────────────────────────────
     var SCORE_ROW_LABELS = [
       'Predictability',
@@ -1281,6 +1729,9 @@
           if (marker) marker.style.left = Math.min(100, Math.max(0, wk52Pct)) + '%';
         }, 300);
       }
+
+      // Financial Trends
+      initTrends(stock.trends);
 
       // Moat section
       if (moatData) {
