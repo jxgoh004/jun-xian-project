@@ -182,7 +182,15 @@ Plans:
   2. The training data generator outputs a dataset with YOLOv8 directory structure (`images/train`, `labels/train`, `data.yaml`) where negative samples are capped at 10:1 ratio relative to positives
   3. YOLOv8n training completes without out-of-memory errors, and the exported ONNX model loads successfully in onnxruntime (no torch) and produces bounding box output for a known positive test image
   4. The ONNX export opset version is logged and a round-trip test confirms inference output in a clean venv before the model is committed
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 08-01-PLAN.md — Phase 7 detect() kwarg + split_config + Wave 0 test scaffolding + connectivity/GPU spike
+- [ ] 08-02-PLAN.md — renderer.py (mplfinance Agg + 3 styles + bbox computation) + 5 unit tests
+- [ ] 08-03-PLAN.md — generate_training_data.py orchestrator (cutoff, 10:1 cap, hard-negatives, manifest) + 8 unit tests
+- [ ] 08-04-PLAN.md — Full S&P 500 dataset run + YOLOv8n training + ONNX export (opset 12) + commit artifacts (autonomous: false)
+- [ ] 08-05-PLAN.md — verify_onnx.py clean-venv round-trip + committed fixture PNG + closeout
+
 **UI hint**: no
 
 ### Phase 9: Backtesting Engine

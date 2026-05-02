@@ -37,6 +37,8 @@ Thumbs.db
 .venv/
 # Added by code-review-graph
 .code-review-graph/
+# Personal MCP server config — paths are machine-specific (see CLAUDE.md for setup)
+.mcp.json
 # Sample images
 .ui_example/
 

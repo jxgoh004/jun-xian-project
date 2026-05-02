@@ -10,5 +10,16 @@
     "verifier": true,
     "nyquist_validation": true,
     "_auto_chain_active": false
+  },
+  "agent_skills": {
+    "gsd-executor": [
+      ".claude/skills/mnc-website-marketing-auditor"
+    ],
+    "gsd-verifier": [
+      ".claude/skills/mnc-website-marketing-auditor"
+    ],
+    "gsd-ui-checker": [
+      ".claude/skills/mnc-website-marketing-auditor"
+    ]
   }
 }
