@@ -201,7 +201,13 @@ Plans:
   1. The backtester computes win rate (with N count), average return %, and median hold period for each confirmation type using entry at open of confirmation+1 bar and a fixed hold period
   2. The train/test cutoff date is defined in a single shared config referenced by both `data.yaml` (training config) and the backtester — no detections from the training period appear in backtest results
   3. Results are written to `_dev/backtest_cache.json` and the file can be inspected to confirm at least one confirmation type has N >= 10 detections
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 09-01-PLAN.md — Pure-function core: simulate_trade + aggregate + Wave 0 test scaffolding (5 of 8 D-17 tests)
+- [ ] 09-02-PLAN.md — Orchestrator main(): _fetch_ohlc, cutoff partition, filter ablation, JSON writer, T-9-01 CLI security (yolo_conf=null placeholder; 7 of 8 D-17 tests)
+- [ ] 09-03-PLAN.md — ONNX overlay: _load_onnx_session, _score_detection, --no-onnx flag, D-14 fallback (all 8 D-17 tests green)
+- [ ] 09-04-PLAN.md — Full S&P 500 empirical run, BT-03 N>=10 verification, cutoff revision decision, Phase 9 SUMMARY (autonomous: false)
 
 ### Phase 10: Batch Pipeline
 **Goal**: A nightly GitHub Actions workflow runs the full detection and inference pipeline across S&P 500 tickers and writes results atomically so the frontend always sees a consistent data.json
