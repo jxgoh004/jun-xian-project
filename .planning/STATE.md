@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
-status: planning
-stopped_at: Phase 9 context gathered
-last_updated: "2026-05-08T15:49:02.316Z"
-last_activity: 2026-05-08
+status: in_progress
+stopped_at: Phase 9 Plan 01 complete
+last_updated: "2026-05-09T00:00:00.000Z"
+last_activity: 2026-05-09
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 4
+  completed_plans: 1
 ---
 
 # Project State
@@ -25,15 +25,15 @@ See: .planning/PROJECT.md (updated 2026-05-01)
 ## Current Position
 
 Phase: 09
-Plan: Not started
-Status: Phase 8 complete (5/5 plans, all spec gates met). Ready to plan Phase 9.
-Last activity: 2026-05-08
+Plan: 02 (next)
+Status: Phase 9 Plan 01 complete (pure-function backtest core: simulate_trade + aggregate; 5 of 8 D-17 tests green; Wave 0 stubs scaffolded). Plan 02 to wire the orchestrator (CLI, _fetch_ohlc, cutoff partition, filter ablation, JSON writer).
+Last activity: 2026-05-09
 
 ```
 Milestone v2.0 progress:
 Phase 7  [##########] Complete (2026-05-01)
 Phase 8  [##########] Complete (2026-05-08)
-Phase 9  [          ] Not started
+Phase 9  [###       ] 1/4 plans complete
 Phase 10 [          ] Not started
 Phase 11 [          ] Not started
 ```
@@ -82,6 +82,7 @@ Phase 11 [          ] Not started
 | Phase 04 P04-02 | 2m | 2 tasks | 2 files |
 | Phase 04 P04-02 | multi-session | 3 tasks | 2 files |
 | Phase 05 P01 | 25 | 2 tasks | 3 files |
+| Phase 09 P01 | 22m | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -114,6 +115,9 @@ Recent decisions affecting current work:
 - [v2.0 Roadmap]: Single GitHub Actions job (sequential), scheduled 07:00 UTC weekdays — 1h after DCF screener at 06:00 UTC
 - [v2.0 Roadmap]: data.json schema uses detections array (only tickers with active setups, typically 5-30)
 - [v2.0 Roadmap]: Hard train/test split date defined in single shared config — used by data.yaml and backtester
+- [Phase 09-01]: simulate_trade encodes D-01..D-05 (entry=open of conf+1, three-bucket outcome, pessimistic intrabar, gap-down handling, R-multiples)
+- [Phase 09-01]: aggregate uses str-coerced composite keys ('pin_True') for D-09 four-slice rollup; cells with n<1 omitted
+- [Phase 09-01]: Pure-function core (simulate_trade + aggregate) committed without TRAIN_TEST_CUTOFF import — cutoff wiring deferred to Plan 09-02
 
 ### Open Questions (v2.0)
 
@@ -137,7 +141,7 @@ None at roadmap stage. See open questions above.
 
 ## Session Continuity
 
-Last session: 2026-05-08T15:49:02.306Z
-Stopped at: Phase 9 context gathered
-Resume file: .planning/phases/09-backtesting-engine/09-CONTEXT.md
-Next action: /gsd-plan-phase 7
+Last session: 2026-05-09T00:00:00.000Z
+Stopped at: Phase 9 Plan 01 complete
+Resume file: .planning/phases/09-backtesting-engine/09-02-PLAN.md
+Next action: /gsd-execute-plan 09-02
