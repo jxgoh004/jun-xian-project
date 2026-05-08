@@ -1,0 +1,12 @@
+{
+  "opset": 12,
+  "imgsz": 640,
+  "fliplr": 0.0,
+  "cls_pw": 1.0,
+  "seed": 42,
+  "epochs_run": 100,
+  "best_map50": 0.7896839911275666,
+  "best_map50_95": 0.6080266047931815,
+  "wall_time_s": 11118.734999999986,
+  "ultralytics_save_dir": "C:\\Users\\User\\Desktop\\Personal Project\\Auto Intrinsic Value\\runs\\detect\\train-2"
+}
