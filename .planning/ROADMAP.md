@@ -23,8 +23,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### Milestone v2.0 — Inside Bar Pattern Scanner
 
-- [ ] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters
-- [ ] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact
+- [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
+- [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
 - [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
 - [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
@@ -140,8 +140,8 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 
 ### Phase Checklist (v2.0)
 
-- [ ] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters
-- [ ] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact
+- [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
+- [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
 - [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
 - [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
@@ -150,8 +150,8 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 7. Detection Engine | 0/? | Not started | — |
-| 8. Training Pipeline | 0/? | Not started | — |
+| 7. Detection Engine | 2/2 | Complete   | 2026-05-01 |
+| 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
 | 9. Backtesting Engine | 0/? | Not started | — |
 | 10. Batch Pipeline | 0/? | Not started | — |
 | 11. Frontend | 0/? | Not started | — |

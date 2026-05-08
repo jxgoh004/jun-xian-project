@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: — Portfolio Site
-status: planning
-stopped_at: Phase 8 context gathered
-last_updated: "2026-05-02T10:35:51.502Z"
-last_activity: 2026-05-01
+milestone: v2.0
+milestone_name: — Inside Bar Pattern Scanner
+status: in_progress
+stopped_at: Phase 8 complete; ready for Phase 9
+last_updated: "2026-05-08T21:00:00.000Z"
+last_activity: 2026-05-08
 progress:
-  total_phases: 2
-  completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
-  percent: 100
+  total_phases: 5
+  completed_phases: 2
+  total_plans: 7
+  completed_plans: 7
+  percent: 40
 ---
 
 # Project State
@@ -21,19 +21,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-01)
 
 **Core value:** Visitors quickly understand who I am as a developer and interact with my working projects in a professional, accessible, single-page experience.
-**Current focus:** Phase 07 — Detection Engine (v2.0 start)
+**Current focus:** Phase 09 — Backtesting Engine (v2.0)
 
 ## Current Position
 
-Phase: 07
+Phase: 09
 Plan: Not started
-Status: Roadmap defined — ready to plan Phase 7
-Last activity: 2026-05-01
+Status: Phase 8 complete (5/5 plans, all spec gates met). Ready to plan Phase 9.
+Last activity: 2026-05-08
 
 ```
 Milestone v2.0 progress:
-Phase 7  [          ] Not started
-Phase 8  [          ] Not started
+Phase 7  [##########] Complete (2026-05-01)
+Phase 8  [##########] Complete (2026-05-08)
 Phase 9  [          ] Not started
 Phase 10 [          ] Not started
 Phase 11 [          ] Not started
