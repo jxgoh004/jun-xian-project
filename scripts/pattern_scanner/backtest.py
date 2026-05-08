@@ -337,3 +337,161 @@ def _stop_for(detection: Detection) -> float:
 def _target_for(entry_open: float, stop: float) -> float:
     """D-01: target = entry + 2 * (entry - stop). float-coerced."""
     return float(entry_open + 2.0 * (entry_open - stop))
+
+
+# ── Orchestration ───────────────────────────────────────────────────────────
+def _build_record(detection: Detection, df: pd.DataFrame, yolo_conf=None) -> dict:
+    """Compute stop/target from D-01 rule, run simulate_trade, attach yolo_conf placeholder.
+
+    yolo_conf is None in this plan (Plan 09-02). Plan 09-03 will populate it from
+    the ONNX overlay; the schema field is committed now so downstream readers can
+    rely on its presence.
+    """
+    stop = _stop_for(detection)
+    entry_idx = detection.confirmation_bar_index + 1
+    if entry_idx < len(df):
+        entry_open_preview = float(df.iloc[entry_idx]["Open"])
+    else:
+        # Detection at last bar: simulate_trade returns 'open' with risk=0; target value irrelevant.
+        entry_open_preview = float(df.iloc[-1]["Close"])
+    target = _target_for(entry_open_preview, stop)
+    rec = simulate_trade(df, detection, stop, target)
+    rec["yolo_conf"] = yolo_conf
+    return rec
+
+
+def _sample_block(records: list[dict]) -> dict:
+    """Compose {detections, aggregates: {all, by_confirmation_type, by_is_spring, by_type_x_spring}}."""
+    all_cell = aggregate(records, []).get("all", {})
+    return {
+        "detections": records,
+        "aggregates": {
+            "all": all_cell,
+            "by_confirmation_type": aggregate(records, ["confirmation_type"]),
+            "by_is_spring": aggregate(records, ["is_spring"]),
+            "by_type_x_spring": aggregate(records, ["confirmation_type", "is_spring"]),
+        },
+    }
+
+
+def _build_strategy_block(records: list[dict], cutoff_str: str) -> dict:
+    """Compose {rule, in_sample, out_of_sample} for one strategy."""
+    in_sample, out_of_sample = _partition_cutoff(records, cutoff_str)
+    return {
+        "rule": {
+            "stop": "min(bar.low for bar in detection.bars)",
+            "target_R": 2.0,
+            "intrabar": "pessimistic",
+            "timeout": "none",
+        },
+        "in_sample": _sample_block(in_sample),
+        "out_of_sample": _sample_block(out_of_sample),
+    }
+
+
+def _sort_key(rec: dict) -> tuple:
+    """Risk 6: deterministic record ordering."""
+    return (rec["ticker"], rec["confirmation_date"], rec["mother_bar_index"])
+
+
+def _onnx_sha256(path: Path) -> str | None:
+    """Hash the ONNX file for cache-header reproducibility tuple. Returns None if absent."""
+    if not path.exists():
+        return None
+    import hashlib
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def main(argv: list[str] | None = None) -> int:
+    """CLI entry. Returns 0 on success.
+
+    Mirrors generate_training_data argparse shape (D-16):
+        --seed     required int
+        --tickers  'all' (default) or comma-list (validated against _TICKER_RE)
+        --limit    optional int (smoke-test slice)
+        --out      Path; default _dev/backtest_cache.json
+        --no-onnx  bool flag; honoured in Plan 09-03 (this plan logs intent only)
+
+    Single-pass detection per ticker (RESEARCH §"Anti-Patterns to Avoid"):
+    we call the detector once with apply_trend_filters=False and partition
+    the resulting list via _is_filtered. yolo_conf is None on every record
+    in this plan (Plan 09-03 wires the ONNX overlay).
+    """
+    parser = argparse.ArgumentParser(
+        description="Backtest the inside bar spring strategy across the S&P 500."
+    )
+    parser.add_argument("--seed", type=int, required=True,
+                        help="Deterministic seed; recorded in cache header.")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Process only the first N tickers (smoke-test).")
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT,
+                        help="Output JSON path.")
+    parser.add_argument("--no-onnx", action="store_true",
+                        help="Force yolo_conf=null even if ONNX model exists "
+                             "(Plan 09-03 will honor this flag; in 09-02 yolo_conf is always null).")
+    parser.add_argument("--tickers", type=_parse_tickers_arg, default="all",
+                        help="'all' for full S&P 500, or comma-separated tokens "
+                             "(validated against _TICKER_RE before any yfinance call).")
+    args = parser.parse_args(argv)
+
+    if args.tickers == "all":
+        tickers = _load_tickers(args.limit)
+    else:
+        tickers = args.tickers if args.limit is None else args.tickers[: args.limit]
+
+    total = len(tickers)
+    filtered_records: list[dict] = []
+    unfiltered_records: list[dict] = []
+
+    for i, ticker in enumerate(tickers, start=1):
+        try:
+            df = _fetch_ohlc(ticker)
+            if len(df) < 60:
+                print(f"[{i}/{total}] {ticker}: insufficient history ({len(df)} bars) — skip")
+            else:
+                # Single detect() call — RESEARCH §Filter ablation.
+                all_dets = detect(df, ticker, apply_trend_filters=False)
+                f_dets = [d for d in all_dets if _is_filtered(d)]
+                f_recs = [_build_record(d, df, yolo_conf=None) for d in f_dets]
+                u_recs = [_build_record(d, df, yolo_conf=None) for d in all_dets]
+                filtered_records.extend(f_recs)
+                unfiltered_records.extend(u_recs)
+                print(f"[{i}/{total}] {ticker}: filtered={len(f_recs)} unfiltered={len(u_recs)}")
+        except Exception as exc:  # broad except — match gen_training_data.py L224-227
+            print(f"[{i}/{total}] {ticker}: unexpected error — {exc}")
+        if i < total:
+            time.sleep(RATE_LIMIT_SLEEP)
+
+    filtered_records.sort(key=_sort_key)
+    unfiltered_records.sort(key=_sort_key)
+
+    cache = {
+        "schema_version": 1,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "train_test_cutoff": TRAIN_TEST_CUTOFF,
+        "seed": int(args.seed),
+        "ticker_list": list(tickers),
+        "ticker_count": len(tickers),
+        "onnx_sha256": _onnx_sha256(ONNX_PATH),
+        "strategies": {
+            STRATEGY_FILTERED: _build_strategy_block(filtered_records, TRAIN_TEST_CUTOFF),
+            STRATEGY_UNFILTERED: _build_strategy_block(unfiltered_records, TRAIN_TEST_CUTOFF),
+        },
+    }
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, sort_keys=True, default=str)
+        f.write("\n")
+    print(f"wrote {out_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main(sys.argv[1:]))

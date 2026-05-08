@@ -45,3 +45,6 @@ Thumbs.db
 # Phase 8 — training pipeline artifacts (regenerable; CONTEXT D-13/D-14)
 _dev/training_dataset/
 yolov8n.pt
+
+# Phase 9 — backtesting cache (regenerable; CONTEXT D-06)
+_dev/backtest_cache.json
