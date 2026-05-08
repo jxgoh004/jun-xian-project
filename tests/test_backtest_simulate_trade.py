@@ -23,6 +23,7 @@ def _make_detection(mother_idx: int, conf_idx: int, *,
         confirmation_bar_index=conf_idx,
         bars=bars,
         filters={"hh_hl": True, "above_50sma": True, "sma_cluster": True},
+        sma_levels={"sma20": 10.0, "sma50": 10.0, "atr14": 0.5},
     )
 
 
