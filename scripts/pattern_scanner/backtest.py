@@ -12,8 +12,10 @@ Plan 09-02 adds: _fetch_ohlc, _load_tickers, _validate_ticker_token,
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import time
+import warnings
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -339,13 +341,105 @@ def _target_for(entry_open: float, stop: float) -> float:
     return float(entry_open + 2.0 * (entry_open - stop))
 
 
-# ── Orchestration ───────────────────────────────────────────────────────────
-def _build_record(detection: Detection, df: pd.DataFrame, yolo_conf=None) -> dict:
-    """Compute stop/target from D-01 rule, run simulate_trade, attach yolo_conf placeholder.
+# ── Plan 09-03 ONNX overlay helpers ─────────────────────────────────────────
+def _load_onnx_session(model_path: Path):
+    """D-14 graceful fallback: returns None if model file is absent. Single warning emitted.
 
-    yolo_conf is None in this plan (Plan 09-02). Plan 09-03 will populate it from
-    the ONNX overlay; the schema field is committed now so downstream readers can
-    rely on its presence.
+    onnxruntime is imported INSIDE this function (Pitfall 3 — module must be importable
+    without onnxruntime installed). Created ONCE per main() invocation and reused
+    across all detections (RESEARCH §Pattern 3).
+    """
+    if not model_path.exists():
+        warnings.warn(
+            f"ONNX model not found at {model_path}; yolo_conf will be null for all records.",
+            UserWarning,
+            stacklevel=2,
+        )
+        return None
+    try:
+        import onnxruntime as ort  # deferred (Pitfall 3)
+    except ImportError:
+        warnings.warn(
+            "onnxruntime not installed; yolo_conf will be null for all records.",
+            UserWarning,
+            stacklevel=2,
+        )
+        return None
+    try:
+        return ort.InferenceSession(str(model_path), providers=["CPUExecutionProvider"])
+    except Exception as exc:
+        warnings.warn(
+            f"Failed to create ONNX session ({exc}); yolo_conf will be null for all records.",
+            UserWarning,
+            stacklevel=2,
+        )
+        return None
+
+
+def _window_for(detection: Detection, df: pd.DataFrame) -> "pd.DataFrame | None":
+    """Right-aligned 60-bar window. Returns None when conf_idx < 59 (insufficient history).
+
+    Per RESEARCH Open Question Q3: detections with confirmation_bar_index < 59 cannot
+    produce a 60-bar window without left-padding, so yolo_conf is None for those.
+    """
+    conf_idx = detection.confirmation_bar_index
+    if conf_idx < 59:
+        return None
+    return df.iloc[conf_idx - 59 : conf_idx + 1]
+
+
+def _score_detection(window, sess) -> "float | None":
+    """Render window with STYLES[0] (D-13 deterministic), run inference, return max-confidence score.
+
+    Returns None when sess is None (D-14 fallback) or window is None (insufficient history).
+    Reuses verify_onnx.py preprocessing verbatim: [1,3,640,640] float32 RGB tensor.
+    Inference-level failures (single-window) emit a warning and return None for that record
+    without aborting the whole run (T-9-04 mitigation).
+    """
+    if sess is None or window is None:
+        return None
+    try:
+        from PIL import Image
+        import numpy as np
+        from scripts.pattern_scanner.renderer import render, STYLES
+    except ImportError as exc:
+        warnings.warn(
+            f"ML overlay deps missing ({exc}); yolo_conf will be null.",
+            UserWarning,
+            stacklevel=2,
+        )
+        return None
+
+    try:
+        png_bytes = render(window, STYLES[0])
+        img = Image.open(io.BytesIO(png_bytes)).convert("RGB").resize((640, 640), Image.LANCZOS)
+        arr = np.asarray(img).astype(np.float32) / 255.0
+        arr = arr.transpose(2, 0, 1)[None, ...]  # [1, 3, 640, 640]
+        inp_name = sess.get_inputs()[0].name
+        raw = sess.run(None, {inp_name: arr})[0]
+        # YOLOv8 ONNX output: (1, 4+nc, num_anchors); for nc=1 -> (1, 5, N).
+        # raw[0].T -> (N, 5+) with score column at index 4 (verify_onnx.py L74-76).
+        pred = raw[0].T
+        scores = pred[:, 4]
+        if scores.size == 0:
+            return float(0.0)
+        return float(scores.max())
+    except Exception as exc:
+        # Inference-level failure on a single detection should NOT abort the whole run.
+        warnings.warn(
+            f"ONNX inference failed for one window ({exc}); yolo_conf=null for this record.",
+            UserWarning,
+            stacklevel=2,
+        )
+        return None
+
+
+# ── Orchestration ───────────────────────────────────────────────────────────
+def _build_record(detection: Detection, df: pd.DataFrame, sess=None) -> dict:
+    """Compute stop/target from D-01 rule, run simulate_trade, attach yolo_conf via _score_detection.
+
+    The ONNX session (created ONCE in main()) is threaded through here so each detection's
+    60-bar window can be scored. When sess is None (no model OR --no-onnx), yolo_conf=None.
     """
     stop = _stop_for(detection)
     entry_idx = detection.confirmation_bar_index + 1
@@ -356,7 +450,7 @@ def _build_record(detection: Detection, df: pd.DataFrame, yolo_conf=None) -> dic
         entry_open_preview = float(df.iloc[-1]["Close"])
     target = _target_for(entry_open_preview, stop)
     rec = simulate_trade(df, detection, stop, target)
-    rec["yolo_conf"] = yolo_conf
+    rec["yolo_conf"] = _score_detection(_window_for(detection, df), sess)
     return rec
 
 
@@ -432,7 +526,7 @@ def main(argv: list[str] | None = None) -> int:
                         help="Output JSON path.")
     parser.add_argument("--no-onnx", action="store_true",
                         help="Force yolo_conf=null even if ONNX model exists "
-                             "(Plan 09-03 will honor this flag; in 09-02 yolo_conf is always null).")
+                             "(bypass session loading entirely; no warning emitted).")
     parser.add_argument("--tickers", type=_parse_tickers_arg, default="all",
                         help="'all' for full S&P 500, or comma-separated tokens "
                              "(validated against _TICKER_RE before any yfinance call).")
@@ -442,6 +536,10 @@ def main(argv: list[str] | None = None) -> int:
         tickers = _load_tickers(args.limit)
     else:
         tickers = args.tickers if args.limit is None else args.tickers[: args.limit]
+
+    # Plan 09-03: load ONNX session ONCE per run (RESEARCH §Pattern 3).
+    # --no-onnx bypasses session loading entirely (no warning, no session object).
+    sess = None if args.no_onnx else _load_onnx_session(ONNX_PATH)
 
     total = len(tickers)
     filtered_records: list[dict] = []
@@ -456,8 +554,8 @@ def main(argv: list[str] | None = None) -> int:
                 # Single detect() call — RESEARCH §Filter ablation.
                 all_dets = detect(df, ticker, apply_trend_filters=False)
                 f_dets = [d for d in all_dets if _is_filtered(d)]
-                f_recs = [_build_record(d, df, yolo_conf=None) for d in f_dets]
-                u_recs = [_build_record(d, df, yolo_conf=None) for d in all_dets]
+                f_recs = [_build_record(d, df, sess=sess) for d in f_dets]
+                u_recs = [_build_record(d, df, sess=sess) for d in all_dets]
                 filtered_records.extend(f_recs)
                 unfiltered_records.extend(u_recs)
                 print(f"[{i}/{total}] {ticker}: filtered={len(f_recs)} unfiltered={len(u_recs)}")
@@ -476,7 +574,7 @@ def main(argv: list[str] | None = None) -> int:
         "seed": int(args.seed),
         "ticker_list": list(tickers),
         "ticker_count": len(tickers),
-        "onnx_sha256": _onnx_sha256(ONNX_PATH),
+        "onnx_sha256": (None if args.no_onnx else _onnx_sha256(ONNX_PATH)),
         "strategies": {
             STRATEGY_FILTERED: _build_strategy_block(filtered_records, TRAIN_TEST_CUTOFF),
             STRATEGY_UNFILTERED: _build_strategy_block(unfiltered_records, TRAIN_TEST_CUTOFF),
