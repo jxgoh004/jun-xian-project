@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
 status: in_progress
-stopped_at: Phase 9 Plan 02 complete
-last_updated: "2026-05-09T00:00:00.000Z"
+stopped_at: Phase 9 Plan 03 complete
+last_updated: "2026-05-09T02:30:00.000Z"
 last_activity: 2026-05-09
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # Project State
@@ -25,15 +25,15 @@ See: .planning/PROJECT.md (updated 2026-05-01)
 ## Current Position
 
 Phase: 09
-Plan: 03 (next)
-Status: Phase 9 Plan 02 complete (orchestrator wired end-to-end: main() CLI, _fetch_ohlc, cutoff partition, filter ablation, JSON writer; T-9-01 ticker validation; 7 of 8 D-17 tests green; yolo_conf=null placeholder). Plan 03 to wire the ONNX overlay and the 8th D-17 test.
+Plan: 04 (next)
+Status: Phase 9 Plan 03 complete (ONNX yolo_conf overlay wired: _load_onnx_session lazy-imports onnxruntime, _window_for slices the right-aligned 60-bar window, _score_detection uses STYLES[0] + verify_onnx.py preprocessing, --no-onnx bypasses session loading entirely; all 8 D-17 tests green; full suite 56 passed). Plan 04 is the empirical full-S&P-500 run + BT-03 N>=10 verification + Phase 9 SUMMARY (autonomous: false).
 Last activity: 2026-05-09
 
 ```
 Milestone v2.0 progress:
 Phase 7  [##########] Complete (2026-05-01)
 Phase 8  [##########] Complete (2026-05-08)
-Phase 9  [#####     ] 2/4 plans complete
+Phase 9  [########  ] 3/4 plans complete
 Phase 10 [          ] Not started
 Phase 11 [          ] Not started
 ```
@@ -84,6 +84,7 @@ Phase 11 [          ] Not started
 | Phase 05 P01 | 25 | 2 tasks | 3 files |
 | Phase 09 P01 | 22m | 3 tasks | 6 files |
 | Phase 09 P02 | 16m | 2 tasks | 4 files |
+| Phase 09 P03 | 12m | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -122,6 +123,11 @@ Recent decisions affecting current work:
 - [Phase 09-02]: main() orchestrator runs detect() ONCE per ticker with apply_trend_filters=False, partitions via _is_filtered (D-12 superset semantics enforced)
 - [Phase 09-02]: Strategy keys committed as module constants (STRATEGY_FILTERED, STRATEGY_UNFILTERED) — schema is forward-compatible with future strategies
 - [Phase 09-02]: T-9-01 ticker validation runs before any yfinance call via argparse type=callable; mirrors detector.main() L411-414
+- [Phase 09-03]: onnxruntime is imported lazily INSIDE _load_onnx_session — backtest module remains importable without onnxruntime installed (Pitfall 3)
+- [Phase 09-03]: ONNX session created ONCE per main() invocation and threaded through _build_record (RESEARCH §Pattern 3 — sessions are thread-safe but construction is expensive)
+- [Phase 09-03]: STYLES[0] used at inference time for D-13 deterministic rendering; verify_onnx.py preprocessing reused verbatim ([1,3,640,640] tensor recipe)
+- [Phase 09-03]: Three-layer ONNX load fallback (file-missing → ImportError → InferenceSession-construction-failure) plus per-window try/except; corrupt model never aborts the run (T-9-04)
+- [Phase 09-03]: --no-onnx forces both yolo_conf=null on every record AND onnx_sha256=null in cache header (intentional bypass advertises itself)
 
 ### Open Questions (v2.0)
 
@@ -145,7 +151,7 @@ None at roadmap stage. See open questions above.
 
 ## Session Continuity
 
-Last session: 2026-05-09T00:00:00.000Z
-Stopped at: Phase 9 Plan 02 complete
-Resume file: .planning/phases/09-backtesting-engine/09-03-PLAN.md
-Next action: /gsd-execute-plan 09-03
+Last session: 2026-05-09T02:30:00.000Z
+Stopped at: Phase 9 Plan 03 complete
+Resume file: .planning/phases/09-backtesting-engine/09-04-PLAN.md
+Next action: /gsd-execute-plan 09-04

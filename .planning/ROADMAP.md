@@ -206,7 +206,7 @@ Plans:
 Plans:
 - [x] 09-01-PLAN.md — Pure-function core: simulate_trade + aggregate + Wave 0 test scaffolding (5 of 8 D-17 tests)
 - [x] 09-02-PLAN.md — Orchestrator main(): _fetch_ohlc, cutoff partition, filter ablation, JSON writer, T-9-01 CLI security (yolo_conf=null placeholder; 7 of 8 D-17 tests)
-- [ ] 09-03-PLAN.md — ONNX overlay: _load_onnx_session, _score_detection, --no-onnx flag, D-14 fallback (all 8 D-17 tests green)
+- [x] 09-03-PLAN.md — ONNX overlay: _load_onnx_session, _score_detection, --no-onnx flag, D-14 fallback (all 8 D-17 tests green)
 - [ ] 09-04-PLAN.md — Full S&P 500 empirical run, BT-03 N>=10 verification, cutoff revision decision, Phase 9 SUMMARY (autonomous: false)
 
 ### Phase 10: Batch Pipeline
