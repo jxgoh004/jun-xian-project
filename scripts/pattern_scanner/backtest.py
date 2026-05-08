@@ -189,3 +189,49 @@ def simulate_trade(
         "hold_days": int((df.index[-1] - entry_date).days),
         "R": float(R_open),
     }
+
+
+def aggregate(records: list[dict], group_keys: list[str]) -> dict:
+    """Single-pass groupby. Empty group_keys -> returns {'all': cell}.
+
+    For multi-key grouping, key is "_".join(str(r[k]) for k in group_keys).
+    Cells with n < 1 are omitted on output (D-09).
+
+    Each cell carries: n, n_resolved, win_rate, avg_return_r, median_hold_days,
+    target_count, stop_count, open_count.
+    """
+    buckets: dict[str, list[dict]] = defaultdict(list)
+    for r in records:
+        if not group_keys:
+            key = "all"
+        elif len(group_keys) == 1:
+            key = str(r[group_keys[0]])
+        else:
+            key = "_".join(str(r[k]) for k in group_keys)
+        buckets[key].append(r)
+
+    out: dict[str, Any] = {}
+    for key in sorted(buckets):
+        rs = buckets[key]
+        n = len(rs)
+        if n < 1:
+            continue
+        resolved = [r for r in rs if r["exit_reason"] != "open"]
+        n_resolved = len(resolved)
+        target_count = sum(1 for r in rs if r["exit_reason"] == "target")
+        stop_count = sum(1 for r in rs if r["exit_reason"] == "stop")
+        open_count = sum(1 for r in rs if r["exit_reason"] == "open")
+        win_rate = (target_count / n_resolved) if n_resolved > 0 else None
+        avg_return_r = sum(r["R"] for r in rs) / n
+        median_hold_days = median(r["hold_days"] for r in resolved) if n_resolved > 0 else None
+        out[key] = {
+            "n": int(n),
+            "n_resolved": int(n_resolved),
+            "win_rate": (float(win_rate) if win_rate is not None else None),
+            "avg_return_r": float(avg_return_r),
+            "median_hold_days": (int(median_hold_days) if median_hold_days is not None else None),
+            "target_count": int(target_count),
+            "stop_count": int(stop_count),
+            "open_count": int(open_count),
+        }
+    return out
