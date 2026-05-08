@@ -152,7 +152,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 |-------|----------------|--------|-----------|
 | 7. Detection Engine | 2/2 | Complete   | 2026-05-01 |
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
-| 9. Backtesting Engine | 1/4 | In Progress | — |
+| 9. Backtesting Engine | 2/4 | In Progress | — |
 | 10. Batch Pipeline | 0/? | Not started | — |
 | 11. Frontend | 0/? | Not started | — |
 
@@ -205,7 +205,7 @@ Plans:
 
 Plans:
 - [x] 09-01-PLAN.md — Pure-function core: simulate_trade + aggregate + Wave 0 test scaffolding (5 of 8 D-17 tests)
-- [ ] 09-02-PLAN.md — Orchestrator main(): _fetch_ohlc, cutoff partition, filter ablation, JSON writer, T-9-01 CLI security (yolo_conf=null placeholder; 7 of 8 D-17 tests)
+- [x] 09-02-PLAN.md — Orchestrator main(): _fetch_ohlc, cutoff partition, filter ablation, JSON writer, T-9-01 CLI security (yolo_conf=null placeholder; 7 of 8 D-17 tests)
 - [ ] 09-03-PLAN.md — ONNX overlay: _load_onnx_session, _score_detection, --no-onnx flag, D-14 fallback (all 8 D-17 tests green)
 - [ ] 09-04-PLAN.md — Full S&P 500 empirical run, BT-03 N>=10 verification, cutoff revision decision, Phase 9 SUMMARY (autonomous: false)
 

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
 status: in_progress
-stopped_at: Phase 9 Plan 01 complete
+stopped_at: Phase 9 Plan 02 complete
 last_updated: "2026-05-09T00:00:00.000Z"
 last_activity: 2026-05-09
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 4
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -25,15 +25,15 @@ See: .planning/PROJECT.md (updated 2026-05-01)
 ## Current Position
 
 Phase: 09
-Plan: 02 (next)
-Status: Phase 9 Plan 01 complete (pure-function backtest core: simulate_trade + aggregate; 5 of 8 D-17 tests green; Wave 0 stubs scaffolded). Plan 02 to wire the orchestrator (CLI, _fetch_ohlc, cutoff partition, filter ablation, JSON writer).
+Plan: 03 (next)
+Status: Phase 9 Plan 02 complete (orchestrator wired end-to-end: main() CLI, _fetch_ohlc, cutoff partition, filter ablation, JSON writer; T-9-01 ticker validation; 7 of 8 D-17 tests green; yolo_conf=null placeholder). Plan 03 to wire the ONNX overlay and the 8th D-17 test.
 Last activity: 2026-05-09
 
 ```
 Milestone v2.0 progress:
 Phase 7  [##########] Complete (2026-05-01)
 Phase 8  [##########] Complete (2026-05-08)
-Phase 9  [###       ] 1/4 plans complete
+Phase 9  [#####     ] 2/4 plans complete
 Phase 10 [          ] Not started
 Phase 11 [          ] Not started
 ```
@@ -83,6 +83,7 @@ Phase 11 [          ] Not started
 | Phase 04 P04-02 | multi-session | 3 tasks | 2 files |
 | Phase 05 P01 | 25 | 2 tasks | 3 files |
 | Phase 09 P01 | 22m | 3 tasks | 6 files |
+| Phase 09 P02 | 16m | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -118,6 +119,9 @@ Recent decisions affecting current work:
 - [Phase 09-01]: simulate_trade encodes D-01..D-05 (entry=open of conf+1, three-bucket outcome, pessimistic intrabar, gap-down handling, R-multiples)
 - [Phase 09-01]: aggregate uses str-coerced composite keys ('pin_True') for D-09 four-slice rollup; cells with n<1 omitted
 - [Phase 09-01]: Pure-function core (simulate_trade + aggregate) committed without TRAIN_TEST_CUTOFF import — cutoff wiring deferred to Plan 09-02
+- [Phase 09-02]: main() orchestrator runs detect() ONCE per ticker with apply_trend_filters=False, partitions via _is_filtered (D-12 superset semantics enforced)
+- [Phase 09-02]: Strategy keys committed as module constants (STRATEGY_FILTERED, STRATEGY_UNFILTERED) — schema is forward-compatible with future strategies
+- [Phase 09-02]: T-9-01 ticker validation runs before any yfinance call via argparse type=callable; mirrors detector.main() L411-414
 
 ### Open Questions (v2.0)
 
@@ -142,6 +146,6 @@ None at roadmap stage. See open questions above.
 ## Session Continuity
 
 Last session: 2026-05-09T00:00:00.000Z
-Stopped at: Phase 9 Plan 01 complete
-Resume file: .planning/phases/09-backtesting-engine/09-02-PLAN.md
-Next action: /gsd-execute-plan 09-02
+Stopped at: Phase 9 Plan 02 complete
+Resume file: .planning/phases/09-backtesting-engine/09-03-PLAN.md
+Next action: /gsd-execute-plan 09-03
