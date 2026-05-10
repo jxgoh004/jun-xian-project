@@ -16,7 +16,10 @@ findings:
   warning: 6
   info: 5
   total: 12
-status: issues_found
+  resolved:
+    - CR-01
+    - WR-02
+status: partially_resolved
 ---
 
 # Phase 9: Code Review Report
@@ -38,7 +41,9 @@ Additional concerns: (1) `_validate_ticker_token` accepts strings starting with 
 
 ## Critical Issues
 
-### CR-01: D-04 gap-down stop returns R = +1.0 (booked as a win), not "worse than -1.0R"
+### CR-01: D-04 gap-down stop returns R = +1.0 (booked as a win), not "worse than -1.0R" [RESOLVED]
+
+**Resolution (2026-05-10, commit 7f152d7):** D-04 branch reordered to fire BEFORE the `risk <= 0` guard (was unreachable dead code). 1R reference now anchored to the confirmation bar's close — a stable pre-gap value already on `df`. Gap-throughs now record R < -1.0 with magnitude proportional to the gap. Added regression tests `test_simulate_trade_gap_down_through_stop` (R = -2.0) and `test_simulate_trade_gap_down_exactly_at_stop` (R = 0.0; confirms div-by-zero hazard gone). All 28 backtest tests pass.
 
 **File:** `scripts/pattern_scanner/backtest.py:115-130`
 **Issue:** The D-04 branch handles `entry_open <= stop_price` (gap-down at or through the stop on the entry bar). Per the docstring (line 70): "D-04 entry-bar gap-down: open <= stop -> recorded as 'stop' with possibly worse-than-1R R." The intent is clearly that `R` should be `<= -1.0` (a gap *through* the stop is worse than a clean stop).
@@ -96,7 +101,9 @@ This is exactly what `_partition_filtered(all_dets, _is_filtered)` returns. Two 
 f_dets, all_dets = _partition_filtered(detect(df, ticker, apply_trend_filters=False), _is_filtered)
 ```
 
-### WR-02: `_validate_ticker_token` accepts leading-`.` and leading-`-` ticker strings
+### WR-02: `_validate_ticker_token` accepts leading-`.` and leading-`-` ticker strings [RESOLVED]
+
+**Resolution (2026-05-10, commit 59f5d0e):** Tightened `_TICKER_RE` in `detector.py` (the single source of truth — `backtest.py` imports it) to `^[A-Z0-9][A-Z0-9.-]{0,9}$`. Leading `.` and `-` now rejected; internal punctuation preserved (BRK.B / BRK-B still valid). Added parametrized `test_invalid_ticker_leading_punct` covering `-AAPL`, `.A`, `..`, `--`, `.`, `-`, `.AAPL`, `-A`. All 61 detector + backtest tests pass.
 
 **File:** `scripts/pattern_scanner/backtest.py:287-297` (regex inherited from `detector.py:48`)
 **Issue:** `_TICKER_RE = re.compile(r"^[A-Z0-9.-]{1,10}$")` — the character class permits `.` and `-` anywhere, so `.A`, `-AAPL`, `..`, `--`, `-` all pass validation. T-9-01 mitigation rationale is "before any yfinance call", but yfinance/curl-style argv injection is not the only concern: leading-`-` tokens like `-AAPL` could be parsed as flags by some downstream tool, and `..` clearly looks path-traversal-shaped. The test at `test_backtest_cli.py:9-17` does not include these adversarial cases.
