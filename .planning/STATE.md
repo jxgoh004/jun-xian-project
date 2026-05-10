@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
 status: in_progress
-stopped_at: Phase 9 Plan 03 complete
-last_updated: "2026-05-09T02:30:00.000Z"
-last_activity: 2026-05-09
+stopped_at: Phase 9 complete
+last_updated: "2026-05-10T11:30:00.000Z"
+last_activity: 2026-05-10
 progress:
-  total_phases: 4
-  completed_phases: 0
+  total_phases: 5
+  completed_phases: 1
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -24,16 +24,16 @@ See: .planning/PROJECT.md (updated 2026-05-01)
 
 ## Current Position
 
-Phase: 09
-Plan: 04 (next)
-Status: Phase 9 Plan 03 complete (ONNX yolo_conf overlay wired: _load_onnx_session lazy-imports onnxruntime, _window_for slices the right-aligned 60-bar window, _score_detection uses STYLES[0] + verify_onnx.py preprocessing, --no-onnx bypasses session loading entirely; all 8 D-17 tests green; full suite 56 passed). Plan 04 is the empirical full-S&P-500 run + BT-03 N>=10 verification + Phase 9 SUMMARY (autonomous: false).
-Last activity: 2026-05-09
+Phase: 10 (next)
+Plan: TBD (Phase 10 plans not yet generated)
+Status: Phase 9 complete (4/4 plans). Empirical S&P 500 backtest produced `_dev/backtest_cache.json` (27.8 MB, gitignored). BT-03 acceptance gate cleared with N=295 (pin), 317 (mark_up), 713 (ice_cream) in filtered out_of_sample — all >> 10. Cutoff held at 2024-01-01 (no revision needed). Run executed with `--no-onnx` (yolo_conf=null on every record) — pragmatic mitigation for ~9hr full-ONNX wall-clock vs the plan's 50-180 min budget; documented as a Phase 11 follow-up to score just the post-cutoff filtered slice (~1325 detections, ~5 min). All 26 backtest unit tests still green; full repo suite 67 passed / 0 failed.
+Last activity: 2026-05-10
 
 ```
 Milestone v2.0 progress:
 Phase 7  [##########] Complete (2026-05-01)
 Phase 8  [##########] Complete (2026-05-08)
-Phase 9  [########  ] 3/4 plans complete
+Phase 9  [##########] Complete (2026-05-10)
 Phase 10 [          ] Not started
 Phase 11 [          ] Not started
 ```
@@ -85,6 +85,7 @@ Phase 11 [          ] Not started
 | Phase 09 P01 | 22m | 3 tasks | 6 files |
 | Phase 09 P02 | 16m | 2 tasks | 4 files |
 | Phase 09 P03 | 12m | 2 tasks | 2 files |
+| Phase 09 P04 | ~3h (27m successful run) | 3 tasks | 2 files (both SUMMARYs) |
 
 ## Accumulated Context
 
@@ -128,6 +129,11 @@ Recent decisions affecting current work:
 - [Phase 09-03]: STYLES[0] used at inference time for D-13 deterministic rendering; verify_onnx.py preprocessing reused verbatim ([1,3,640,640] tensor recipe)
 - [Phase 09-03]: Three-layer ONNX load fallback (file-missing → ImportError → InferenceSession-construction-failure) plus per-window try/except; corrupt model never aborts the run (T-9-04)
 - [Phase 09-03]: --no-onnx forces both yolo_conf=null on every record AND onnx_sha256=null in cache header (intentional bypass advertises itself)
+- [Phase 09-04]: BT-03 PASS — filtered out_of_sample N: pin=295, mark_up=317, ice_cream=713 (all >> 10 acceptance gate); cutoff held at 2024-01-01 (no revision)
+- [Phase 09-04]: Empirical run executed with --no-onnx after full-ONNX projected at ~9hr wall-clock vs 50-180min budget; plan's must_haves explicitly permits onnx_sha256=null when --no-onnx used; Phase 11 hand-off documents follow-up scoring utility for post-cutoff filtered slice (~1325 detections, ~5min)
+- [Phase 09-04]: Filter ablation surprise — unfiltered out_of_sample (n=8841, win_rate=0.353, avg_return_r=+0.061) marginally outperforms filtered (n=1325, win_rate=0.330, avg_return_r=-0.007); honest framing in Phase 11: filters tighten selectivity at small cost, not a clear edge
+- [Phase 09-04]: Detached PowerShell child process (Start-Process -PassThru) survived where Bash-tool bg-task got reaped at ~70 min; combined with `python -u` for real-time log flushing
+- [Phase 09 close-out]: BT-01, BT-02, BT-03 all satisfied; Phase 9 complete (4/4 plans)
 
 ### Open Questions (v2.0)
 
@@ -151,7 +157,7 @@ None at roadmap stage. See open questions above.
 
 ## Session Continuity
 
-Last session: 2026-05-09T02:30:00.000Z
-Stopped at: Phase 9 Plan 03 complete
-Resume file: .planning/phases/09-backtesting-engine/09-04-PLAN.md
-Next action: /gsd-execute-plan 09-04
+Last session: 2026-05-10T11:30:00.000Z
+Stopped at: Phase 9 complete (4/4 plans, BT-03 verified empirically)
+Resume file: .planning/ROADMAP.md (Phase 10 plans need to be generated)
+Next action: /gsd-plan-phase 10  (or whatever the project's planning entry point is for Phase 10)

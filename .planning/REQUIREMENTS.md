@@ -47,9 +47,9 @@
 
 ### Backtesting Engine
 
-- [ ] **BT-01**: Backtester computes 10-year forward-return stats per detection using a fixed entry rule (open of confirmation+1) and fixed hold period
-- [ ] **BT-02**: Backtester enforces a hard time-based train/test split shared between training config and backtest config to prevent in-sample leakage
-- [ ] **BT-03**: Backtester outputs win rate (with N), avg return %, and median hold period to a cached JSON file (`_dev/backtest_cache.json`)
+- [x] **BT-01**: Backtester computes 10-year forward-return stats per detection using a fixed entry rule (open of confirmation+1) and fixed hold period (Phase 9, completed 2026-05-10)
+- [x] **BT-02**: Backtester enforces a hard time-based train/test split shared between training config and backtest config to prevent in-sample leakage (Phase 9, completed 2026-05-10)
+- [x] **BT-03**: Backtester outputs win rate (with N), avg return %, and median hold period to a cached JSON file (`_dev/backtest_cache.json`) (Phase 9, completed 2026-05-10)
 
 ### Batch Pipeline
 
@@ -121,9 +121,9 @@ Updated during roadmap creation. Each v2.0 requirement maps to exactly one phase
 | TRAIN-02 | Phase 8 | Pending |
 | TRAIN-03 | Phase 8 | Pending |
 | TRAIN-04 | Phase 8 | Pending |
-| BT-01 | Phase 9 | Pending |
-| BT-02 | Phase 9 | Pending |
-| BT-03 | Phase 9 | Pending |
+| BT-01 | Phase 9 | Complete (2026-05-10) |
+| BT-02 | Phase 9 | Complete (2026-05-10) |
+| BT-03 | Phase 9 | Complete (2026-05-10) |
 | PIPE-01 | Phase 10 | Pending |
 | PIPE-02 | Phase 10 | Pending |
 | PIPE-03 | Phase 10 | Pending |

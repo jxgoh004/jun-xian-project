@@ -25,7 +25,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
 - [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
-- [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
+- [x] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail (completed 2026-05-10)
 - [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
 
@@ -142,7 +142,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 
 - [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
 - [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
-- [ ] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail
+- [x] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail (completed 2026-05-10)
 - [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
 
@@ -152,7 +152,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 |-------|----------------|--------|-----------|
 | 7. Detection Engine | 2/2 | Complete   | 2026-05-01 |
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
-| 9. Backtesting Engine | 2/4 | In Progress | — |
+| 9. Backtesting Engine | 4/4 | Complete   | 2026-05-10 |
 | 10. Batch Pipeline | 0/? | Not started | — |
 | 11. Frontend | 0/? | Not started | — |
 
@@ -207,7 +207,7 @@ Plans:
 - [x] 09-01-PLAN.md — Pure-function core: simulate_trade + aggregate + Wave 0 test scaffolding (5 of 8 D-17 tests)
 - [x] 09-02-PLAN.md — Orchestrator main(): _fetch_ohlc, cutoff partition, filter ablation, JSON writer, T-9-01 CLI security (yolo_conf=null placeholder; 7 of 8 D-17 tests)
 - [x] 09-03-PLAN.md — ONNX overlay: _load_onnx_session, _score_detection, --no-onnx flag, D-14 fallback (all 8 D-17 tests green)
-- [ ] 09-04-PLAN.md — Full S&P 500 empirical run, BT-03 N>=10 verification, cutoff revision decision, Phase 9 SUMMARY (autonomous: false)
+- [x] 09-04-PLAN.md — Full S&P 500 empirical run, BT-03 N>=10 verification (PASS: pin=295, mark_up=317, ice_cream=713), cutoff held at 2024-01-01, Phase 9 SUMMARY (run executed with --no-onnx for tractable wall-clock)
 
 ### Phase 10: Batch Pipeline
 **Goal**: A nightly GitHub Actions workflow runs the full detection and inference pipeline across S&P 500 tickers and writes results atomically so the frontend always sees a consistent data.json
