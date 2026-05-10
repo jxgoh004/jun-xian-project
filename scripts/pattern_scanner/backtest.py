@@ -67,7 +67,10 @@ def simulate_trade(
       * Entry = open of conf+1 bar.
       * D-02 three-bucket outcome: {stop, target, open}; no timeout.
       * D-03 pessimistic intrabar: same-bar stop+target -> stop wins.
-      * D-04 entry-bar gap-down: open <= stop -> recorded as 'stop' with possibly worse-than-1R R.
+      * D-04 entry-bar gap-down: open <= stop -> recorded as 'stop' with possibly
+        worse-than-1R R. The 1R reference is anchored to the *confirmation bar's
+        close* (a stable pre-gap reference), so a gap that exceeds the planned
+        risk-distance produces R < -1.0.
       * D-05 R-multiples: stop = -1.0R, target = +2.0R, open = (last_close - entry) / risk.
 
     All numeric fields are coerced via float(); all dates are YYYY-MM-DD strings (Pitfall 1, 2, 7).
@@ -95,26 +98,38 @@ def simulate_trade(
     entry_date = df.index[entry_idx]
     risk = entry_open - float(stop_price)
 
-    # Pathological: stop at or above entry. Treat as immediate stop with R from gap.
+    # D-04: entry bar gap-down at or below stop -> recorded as 'stop' with
+    # possibly worse-than-1R R. Anchor 1R to the *pre-gap* planned risk —
+    # using the confirmation bar's close (a stable pre-entry reference) as
+    # the intended-entry proxy. This gives R = -1.0 when the gap lands
+    # exactly at the planned-1R distance below the confirmation close, and
+    # R < -1.0 when the gap exceeds it. Must be evaluated BEFORE the
+    # `risk <= 0` pathological guard, otherwise this branch is unreachable.
+    if entry_open <= float(stop_price):
+        conf_close = float(df.iloc[detection.confirmation_bar_index]["Close"])
+        intended_risk = conf_close - float(stop_price)
+        if intended_risk > 0:
+            R = (entry_open - float(stop_price)) / intended_risk
+            return {
+                **_identity(detection),
+                "entry_date": _iso(entry_date),
+                "entry_price": entry_open,
+                "stop_price": float(stop_price),
+                "target_price": float(target_price),
+                "risk": float(intended_risk),  # reflects pre-gap planned risk
+                "exit_date": _iso(entry_date),
+                "exit_price": entry_open,
+                "exit_reason": "stop",
+                "hold_days": 0,
+                "R": float(R),
+            }
+        # else: even the confirmation close is at/below stop — truly pathological.
+        # Fall through to the risk<=0 branch below.
+
+    # Pathological: stop at or above entry AND no usable pre-gap reference.
+    # Treat as immediate stop with R = -1.0 (sentinel; magnitude not meaningful).
     if risk <= 0:
         R = (entry_open - float(stop_price)) / max(abs(entry_open - float(stop_price)), 1e-9)
-        return {
-            **_identity(detection),
-            "entry_date": _iso(entry_date),
-            "entry_price": entry_open,
-            "stop_price": float(stop_price),
-            "target_price": float(target_price),
-            "risk": float(risk),
-            "exit_date": _iso(entry_date),
-            "exit_price": entry_open,
-            "exit_reason": "stop",
-            "hold_days": 0,
-            "R": float(R),
-        }
-
-    # D-04: entry bar gap-down at or below stop -> recorded as 'stop' (R can be < -1.0).
-    if entry_open <= float(stop_price):
-        R = (entry_open - float(stop_price)) / risk
         return {
             **_identity(detection),
             "entry_date": _iso(entry_date),

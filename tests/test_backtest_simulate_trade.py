@@ -80,6 +80,60 @@ def test_simulate_trade_intrabar_pessimistic(synthetic_ohlc):
     assert rec["R"] == -1.0
 
 
+def test_simulate_trade_gap_down_through_stop(synthetic_ohlc):
+    """D-04: entry bar gaps down THROUGH the stop (open < stop). The recorded R
+    must be < -1.0 — a gap-through is strictly worse than a clean -1R stop.
+
+    Setup:
+      - confirmation bar (idx=2): close = 10.0  (pre-gap reference)
+      - entry bar (idx=3): open = 8.5  (gap-down well below stop=9.5)
+      - stop = 9.5, target = 12.0
+      - intended_risk = conf_close - stop = 10.0 - 9.5 = 0.5
+      - R = (entry_open - stop) / intended_risk = (8.5 - 9.5) / 0.5 = -2.0
+    """
+    df = synthetic_ohlc([
+        (10.0, 11.0, 9.5, 10.5),
+        (10.5, 11.0, 10.0, 10.5),
+        (10.5, 11.0, 9.8, 10.0),   # confirmation bar — Close = 10.0
+        (8.5, 9.0, 8.0, 8.2),      # entry bar gaps down through stop
+        (8.5, 9.0, 8.0, 8.2),
+    ])
+    det = _make_detection(mother_idx=0, conf_idx=2)
+    rec = simulate_trade(df, det, stop_price=9.5, target_price=12.0)
+    assert rec["exit_reason"] == "stop"
+    assert rec["R"] == pytest.approx(-2.0)
+    assert rec["R"] < -1.0, f"gap-through must record R < -1.0, got {rec['R']}"
+    assert rec["entry_price"] == 8.5
+    assert rec["exit_price"] == 8.5  # exit at entry_open per D-04
+    assert rec["hold_days"] == 0
+    assert type(rec["R"]) is float
+
+
+def test_simulate_trade_gap_down_exactly_at_stop(synthetic_ohlc):
+    """D-04 boundary: entry_open == stop_price. R must equal 0.0 exactly when
+    the gap lands precisely at the stop (zero realized loss vs. the planned
+    1R reference). Confirms the divide-by-zero hazard from the prior code is
+    gone (now uses pre-gap intended_risk, not entry_open - stop).
+
+    Setup:
+      - confirmation close = 10.5, stop = 9.5 -> intended_risk = 1.0
+      - entry_open = 9.5 (gap exactly to stop) -> R = (9.5 - 9.5) / 1.0 = 0.0
+    """
+    df = synthetic_ohlc([
+        (10.0, 11.0, 9.5, 10.5),
+        (10.5, 11.0, 10.0, 10.5),
+        (10.5, 11.0, 9.8, 10.5),   # confirmation close = 10.5
+        (9.5, 10.0, 9.0, 9.2),     # entry_open == stop
+        (9.0, 9.5, 8.5, 8.8),
+    ])
+    det = _make_detection(mother_idx=0, conf_idx=2)
+    rec = simulate_trade(df, det, stop_price=9.5, target_price=12.5)
+    assert rec["exit_reason"] == "stop"
+    # entry_open == stop -> numerator zero -> R == 0.0 (no divide-by-zero)
+    assert rec["R"] == pytest.approx(0.0)
+    assert rec["hold_days"] == 0
+
+
 def test_simulate_trade_open_outcome(synthetic_ohlc):
     # No bar hits stop=9.0 or target=12.0; ends 'open' with R = (last_close - entry) / risk.
     df = synthetic_ohlc([
