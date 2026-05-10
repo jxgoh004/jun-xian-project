@@ -25,8 +25,9 @@ No-look-ahead invariant:
 CLI:
     python scripts/pattern_scanner/detector.py AAPL
 
-The CLI ticker arg is validated against `^[A-Z0-9.-]{1,10}$` before being passed
-to yfinance (T-07-01 mitigation).
+The CLI ticker arg is validated against `^[A-Z0-9][A-Z0-9.-]{0,9}$` before
+being passed to yfinance (T-07-01 mitigation; leading punctuation rejected
+to defend against argv-flag confusion and path-traversal-shaped tokens).
 """
 from __future__ import annotations
 
@@ -45,7 +46,7 @@ _LOOKBACK = 60
 _ATR_PERIOD = 14
 _SMA20 = 20
 _SMA50 = 50
-_TICKER_RE = re.compile(r"^[A-Z0-9.-]{1,10}$")
+_TICKER_RE = re.compile(r"^[A-Z0-9][A-Z0-9.-]{0,9}$")
 
 
 # ── Detection record (D-10, D-11) ───────────────────────────────────────────

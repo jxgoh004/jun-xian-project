@@ -21,6 +21,19 @@ def test_invalid_ticker_rejected(bad_token):
         _validate_ticker_token(bad_token)
 
 
+@pytest.mark.parametrize("bad_token", ["-AAPL", ".A", "..", "--", ".", "-", ".AAPL", "-A"])
+def test_invalid_ticker_leading_punct(bad_token):
+    """WR-02: tokens beginning with `.` or `-` must be rejected.
+
+    Leading-`-` could be parsed as a flag by some downstream tool; leading-`.`
+    looks path-traversal-shaped. Tightens beyond the original regex which
+    permitted them. _TICKER_RE is shared with detector.py — both modules
+    benefit from this hardening.
+    """
+    with pytest.raises(argparse.ArgumentTypeError):
+        _validate_ticker_token(bad_token)
+
+
 @pytest.mark.parametrize("good_token,expected", [
     ("AAPL", "AAPL"),
     ("aapl", "AAPL"),         # lowercase upper()d before regex (parser is case-permissive)
