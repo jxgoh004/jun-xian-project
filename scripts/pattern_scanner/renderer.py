@@ -69,6 +69,26 @@ STYLES: Tuple[RenderStyle, ...] = (
 )
 
 
+# ── Phase 10 publication style (D-14) ───────────────────────────────────────
+# Used exclusively by render_publication_chart for the live-screener PNGs at
+# docs/projects/patterns/charts/. NOT part of STYLES — backtest._score_detection
+# (Phase 9) uses STYLES[0] by integer index, and generate_training_data.py
+# (Phase 8) randomizes across STYLES[0..2]. Mutating STYLES would break both
+# call-sites.
+PUBLICATION_STYLE: RenderStyle = RenderStyle(
+    name="publication",
+    base_style="nightclouds",     # mplfinance built-in dark theme
+    figsize=(8.0, 5.0),           # 4:3 horizontal — wider than training square
+    dpi=150,                      # D-14 explicit DPI target
+    candle_width=0.6,             # matches style_a for visual continuity
+    facecolor="#0d1117",          # GitHub dark theme tone — matches portfolio palette
+)
+
+# Algorithmic-bbox stroke styling (D-13 — algorithmic 5-bar bbox, NOT YOLO bbox).
+PUBLICATION_BBOX_COLOR = "#ffd166"   # saturated yellow — high contrast on dark, neutral re P/L
+PUBLICATION_BBOX_LINEWIDTH = 2.0
+
+
 # ── Internal helpers ────────────────────────────────────────────────────────
 def _validate_frame(df: pd.DataFrame) -> None:
     """Raise ValueError if df is not a 60-bar OHLC frame."""
@@ -233,6 +253,94 @@ def compute_bbox_normalized(
             raise ValueError(f"bbox component {label}={value} outside [0, 1]")
 
     return (cx, cy, w, h)
+
+
+def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> None:
+    """Render a 60-bar candlestick window with the algorithmic 5-bar bbox overlaid.
+
+    D-13: bbox geometry comes from detection.bars (5 dicts with low/high/open/close/date),
+          NOT from a YOLO model output. The bbox is exact and free.
+    D-14: Uses PUBLICATION_STYLE (deterministic, dark theme, 150 DPI). NOT STYLES[0].
+    D-15: Output PNG MUST be byte-deterministic — same input produces same bytes so the
+          set-difference cleanup in run_pipeline.main() never sees spurious changes.
+
+    Args:
+        df: DataFrame of exactly 60 rows with columns [Open, High, Low, Close]. The caller
+            (run_pipeline._render_publication_chart wrapper) is responsible for slicing the
+            full-history df down to the 60-bar window ending AT the confirmation bar (D-03
+            right-aligned framing from Phase 8).
+        detection: A Detection-like object with attributes:
+                   - bars: list[dict] of length 5 (the 5-bar cluster)
+                   - mother_bar_index: int  (index into the FULL df — translate to window index)
+                   - confirmation_bar_index: int  (index into the FULL df)
+        out_path: Path to write the PNG to. Parent directory will be created if missing.
+
+    Raises:
+        ValueError: if df does not have exactly 60 rows (delegated to _validate_frame).
+    """
+    from matplotlib.patches import Rectangle
+
+    _validate_frame(df)  # asserts len(df) == 60 + required columns
+
+    # Translate full-df bar indices into 60-bar window indices.
+    # The window is df.iloc[conf_idx - 59 : conf_idx + 1], so window index 59 IS the
+    # confirmation bar and window index 59 - (conf_idx - mother_idx) IS the mother bar.
+    full_mother_idx = detection.mother_bar_index
+    full_conf_idx = detection.confirmation_bar_index
+    offset = full_conf_idx - 59
+    mother_idx_in_window = full_mother_idx - offset
+    conf_idx_in_window = full_conf_idx - offset
+
+    # D-13 bbox geometry from detection.bars
+    candle_w = PUBLICATION_STYLE.candle_width
+    x0 = mother_idx_in_window - candle_w / 2
+    x1 = conf_idx_in_window + candle_w / 2
+    y0 = min(float(b["low"]) for b in detection.bars)
+    y1 = max(float(b["high"]) for b in detection.bars)
+
+    # mplfinance market colors — saturated tones suitable for the dark portfolio palette
+    mc = mpf.make_marketcolors(
+        up="#26a69a", down="#ef5350",
+        edge="inherit",
+        wick={"up": "#26a69a", "down": "#ef5350"},
+        volume="in",
+    )
+    style = mpf.make_mpf_style(
+        base_mpf_style=PUBLICATION_STYLE.base_style,
+        marketcolors=mc,
+        facecolor=PUBLICATION_STYLE.facecolor,
+        rc={"font.family": _FONT_FAMILY},
+    )
+
+    fig, axes = mpf.plot(
+        df,
+        type="candle",
+        style=style,
+        figsize=PUBLICATION_STYLE.figsize,
+        returnfig=True,
+        axisoff=False,
+        update_width_config={"candle_width": PUBLICATION_STYLE.candle_width},
+    )
+    ax = axes[0]  # main price axis
+    rect = Rectangle(
+        (x0, y0), x1 - x0, y1 - y0,
+        linewidth=PUBLICATION_BBOX_LINEWIDTH,
+        edgecolor=PUBLICATION_BBOX_COLOR,
+        facecolor="none",
+    )
+    ax.add_patch(rect)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    # Lock determinism: strip metadata fields that mention creation time / software.
+    # Live-verified 2026-05-11: matplotlib 3.10.9 + mplfinance 0.12.10b0 produce
+    # byte-identical PNGs by default, but the metadata kwarg is belt-and-suspenders
+    # against future matplotlib upgrades (RESEARCH §Pattern 3 L378-381).
+    fig.savefig(
+        out_path,
+        dpi=PUBLICATION_STYLE.dpi,
+        metadata={"Software": None, "Creation Time": None},
+    )
+    plt.close("all")  # RESEARCH Pitfall 4 / L308 — unbounded memory leak otherwise
 
 
 # ── CLI helpers ─────────────────────────────────────────────────────────────
