@@ -24,7 +24,7 @@ findings:
   medium: 7
   low: 4
   total: 20
-status: has_findings
+status: clean
 fix_pass:
   ran_at: 2026-05-13T00:00:00Z
   scope: blocker_high
@@ -53,6 +53,22 @@ fix_pass:
     - LO-02
     - LO-03
     - LO-04
+fix_pass_2:
+  ran_at: 2026-05-13T00:00:00Z
+  scope: medium_low
+  fixed:
+    - ME-01
+    - ME-02
+    - ME-03
+    - ME-04
+    - ME-05
+    - ME-06
+    - ME-07
+    - LO-01
+    - LO-02
+    - LO-03
+    - LO-04
+  remaining: []
 ---
 
 # Phase 10: Code Review Report
@@ -60,7 +76,7 @@ fix_pass:
 **Reviewed:** 2026-05-12T00:00:00Z
 **Depth:** standard
 **Files Reviewed:** 11 source files + 7 test files (+ 1 data file + 1 GHA workflow)
-**Status:** has_findings
+**Status:** clean (all 20 findings resolved across 2 fix passes — see footer)
 
 ## Summary
 
@@ -582,3 +598,91 @@ failed. Targeted runs (`test_run_pipeline_pending.py`,
 _Fix-pass: 2026-05-13_
 _Fixer: Claude (gsd-code-fixer)_
 _Scope: BLOCKER + HIGH only_
+
+---
+
+## Fix Pass 2 — 2026-05-13 (ME/LO sweep)
+
+Scope: MEDIUM + LOW (the `--all` sweep). Picks up the 7 + 4 findings the
+first pass deferred. No BLOCKER / HIGH item is revisited here — those
+were closed by Fix Pass 1 and verified by the same test suite.
+
+**Fixed (11):**
+
+- **ME-01** — `build_data_json` now accepts `now_utc: datetime | None` and
+  derives both `generated_at` and `as_of_date` from that single anchor.
+  `main()` captures `now_utc = datetime.now(timezone.utc)` once and threads
+  it through; `today` is also derived from the same anchor so the window
+  cutoff cannot land on a different UTC day than the data.json header.
+  Default-None preserves back-compat for any non-`main()` caller. Commit
+  `40254e1`.
+- **ME-02** — `_window_cutoff` switched from `BDay` to
+  `CustomBusinessDay(calendar=USFederalHolidayCalendar())`. Thanksgiving /
+  Christmas weeks no longer silently shift the effective window by 2-3
+  trading days. Good Friday is the only NYSE-only closure not covered —
+  accepted as within the documented resolution-coverage buffer. Commit
+  `a54332e`.
+- **ME-03** — `nightly-pattern-scanner.yml` gains a `Verify pipeline
+  completed` step that reads the freshly-written `data.json`, surfaces a
+  `::warning::` if `pipeline_status.completed=False`, and exits 1. The
+  step runs `continue-on-error: true` so the commit step still preserves
+  the partial data on disk; a final `Fail workflow if pipeline did not
+  complete` step re-raises the failure so GitHub Actions shows red and
+  emails the owner. Commit `a21701f`.
+- **ME-04** — `pipeline_status.style_substitutions` (list of {requested,
+  substituted, reason}) is now persisted into `data.json` from
+  `_render_substitutions`, so a thin-mplfinance install (missing
+  `nightclouds`) is visible in the committed JSON instead of trapped in
+  90-day CI log retention. Threaded via a new
+  `style_substitutions: list[dict] | None` kwarg on `build_data_json`.
+  Commit `c7462cc`.
+- **ME-05** — `export_aggregates.py` now writes via sibling-tmp +
+  `os.replace`, matching the contract of `run_pipeline._atomic_write_json`.
+  Kept inline (not extracted to a shared util) to avoid a cross-module
+  dependency on a script's internals. `.tmp` is unlinked on any exception
+  before re-raise. Commit `8aa8a39`.
+- **ME-06** — `errors[].message` capped at 500 chars now appends a `...`
+  sentinel when truncation actually happens (`msg[:497] + "..."`), so a
+  downstream reader can distinguish "this is the whole error" from "this
+  is the head of a longer error". Commit `cf12218`.
+- **ME-07** — `renderer.render_publication_chart` grew a keyword-only
+  `style: RenderStyle | None = None` parameter; the wrapper in
+  `run_pipeline._render_publication_chart` now passes the resolved style
+  EXPLICITLY instead of rebinding the module-level
+  `renderer.PUBLICATION_STYLE` constant. Concurrency-safe under
+  pytest-xdist or any future parallel renderer call. Commit `a3ed793`.
+- **LO-01** — `_load_company_lookup` is now lazy-loaded via a closure
+  cache (`_company_lookup_cache: dict | None`). A 1-ticker smoke test
+  no longer parses the full screener `data.json`; the lookup is built
+  only on the first detection-bearing ticker. Commit `5fb13e6`.
+- **LO-02** — `--no-onnx` now prints a `log.warning` at startup making
+  it impossible to silently ship a `yolo_conf: null`-everywhere
+  `data.json` to production. Commit `8d10280`.
+- **LO-03** — `test_main_smoke_with_synthetic_ohlc` now explicitly
+  asserts `len(data["detections"]) == 0` for the monotonic-rising
+  synthetic fixture (which cannot produce pin/mark_up/ice_cream
+  detections), with a clear message instructing future fixture
+  swaps. Locks the empty-path contract so a future detector change
+  that starts emitting from this fixture fails loudly. Commit
+  `0d9e95c`.
+- **LO-04** — Per-ticker progress + final summary now routed through
+  `log = logging.getLogger(__name__)`. The `__main__` block configures a
+  stdout-bound INFO handler with `format="[run_pipeline] %(message)s"`
+  so CLI output is byte-similar to the previous `print()`-based form.
+  An importing consumer (future orchestrator) gets a default-quiet
+  logger they can wire as they please. Commit `81d611a`.
+
+**Remaining (0):** All MEDIUM and LOW findings are resolved. Phase 10
+review is fully closed.
+
+**Test results:** full quick suite passes — 84 passed, 11 skipped, 0
+failed (76 + 8 split across two pytest invocations; second run was the
+`test_generate_training_data.py` subset, which renders real PNGs and
+takes ~23 min on this host). Per-finding targeted runs were green
+before each commit. The deprecation warning from
+`generate_training_data.utcnow()` is pre-existing (Phase 8) and out of
+scope for this pass.
+
+_Fix-pass 2: 2026-05-13_
+_Fixer: Claude (gsd-code-fixer)_
+_Scope: MEDIUM + LOW (`--all` sweep)_
