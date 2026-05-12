@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -80,10 +81,24 @@ def main(argv=None) -> int:
     cache = json.loads(args.inp.read_text(encoding="utf-8"))
     out = project_aggregates(cache, args.strategy, args.sample)
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(
-        json.dumps(out, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
+    # ME-05: atomic write via sibling tmp + os.replace. The output file is
+    # git-tracked; a partial write here would commit a corrupted JSON. Mirrors
+    # the contract of run_pipeline._atomic_write_json (kept local instead of
+    # imported to avoid a cross-module dependency on a script's internals).
+    tmp = args.out.with_suffix(args.out.suffix + ".tmp")
+    try:
+        tmp.write_text(
+            json.dumps(out, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        os.replace(tmp, args.out)
+    except Exception:
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
+        raise
     n_all = out["aggregates"].get("all", {}).get("n", 0)
     print(
         f"[export_aggregates] OK: wrote {args.out} "
