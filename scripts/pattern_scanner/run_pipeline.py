@@ -269,13 +269,14 @@ def _resolve_publication_base_style() -> str:
     return fallback
 
 
-def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> None:
+def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> bool:
     """Wrapper: slice the 60-bar window, probe style, delegate to renderer.
 
     Reads detection.confirmation_bar_index and slices df.iloc[conf-59 : conf+1].
     If the slice is shorter than 60 (insufficient history), logs warning and
-    returns WITHOUT raising — main()'s broad-except is for failures the renderer
-    cannot recover from; short history is recoverable by skipping the chart.
+    returns False WITHOUT raising — main()'s broad-except is for failures the
+    renderer cannot recover from; short history is recoverable by skipping the
+    chart. Returns True on successful render (PNG written to out_path).
 
     On the first call, probes mplfinance for style availability. If
     PUBLICATION_STYLE.base_style is absent, picks a fallback and records the
@@ -285,6 +286,12 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> No
         df: full OHLC dataframe (NOT yet sliced to 60 bars).
         detection: Detection-like object with .confirmation_bar_index.
         out_path: target PNG path. Parent dirs are created.
+
+    Returns:
+        True if the PNG was rendered; False if the render was skipped
+        (insufficient history or anomalous slice). The caller MUST gate
+        `chart_path` assignment on this return value (BL-02): writing
+        chart_path into data.json for a skipped render produces frontend 404s.
     """
     from scripts.pattern_scanner.renderer import (
         render_publication_chart as _render_impl,
@@ -300,7 +307,7 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> No
             f"skipping {out_path.name}.",
             UserWarning,
         )
-        return
+        return False
     window = df.iloc[start : conf_idx + 1]
     if len(window) != 60:
         warnings.warn(
@@ -308,7 +315,7 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> No
             f"(expected 60); skipping {out_path.name}.",
             UserWarning,
         )
-        return
+        return False
 
     # Probe + cache style fallback on first call.
     resolved = _resolve_publication_base_style()
@@ -322,7 +329,7 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> No
 
     if resolved == PUBLICATION_STYLE.base_style:
         _render_impl(window, detection, out_path)
-        return
+        return True
 
     original = _renderer_mod.PUBLICATION_STYLE
     try:
@@ -330,6 +337,7 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> No
         _render_impl(window, detection, out_path)
     finally:
         _renderer_mod.PUBLICATION_STYLE = original
+    return True
 
 
 # ── PIPE-02: build_data_json — assemble the atomic-write payload ─────────────
@@ -590,15 +598,19 @@ def main(argv: list[str] | None = None) -> int:
             for d in dets_in_window:
                 rec = _resolve_status(df, d)  # D-02 wrapper
                 rec["yolo_conf"] = _score_detection(_window_for(d, df), sess)
-                rec["chart_path"] = f"charts/{rec['ticker']}_{rec['confirmation_date']}.png"
                 rec["current_price"] = float(df.iloc[-1]["Close"])
                 rec["filters"] = dict(getattr(d, "filters", None) or {})
                 rec["bars"] = [dict(b) for b in (d.bars or [])]
                 company_name, sector = company_lookup.get(ticker.upper(), (ticker, ""))
                 rec["company_name"] = company_name
                 rec["sector"] = sector
+                # BL-02: only set chart_path AFTER a successful render. If the
+                # render is skipped (insufficient history, anomalous slice),
+                # leave chart_path None so the frontend renders a placeholder
+                # instead of fetching a non-existent PNG (404 on the live site).
                 out_png = charts_dir / f"{rec['ticker']}_{rec['confirmation_date']}.png"
-                _render_publication_chart(df, d, out_png)
+                rendered = _render_publication_chart(df, d, out_png)
+                rec["chart_path"] = f"charts/{out_png.name}" if rendered else None
                 rows.append(rec)
             succeeded += 1
             print(f"[{i}/{total}] {ticker}: {len(dets_in_window)} in-window")
@@ -614,9 +626,13 @@ def main(argv: list[str] | None = None) -> int:
         if i < total:
             time.sleep(RATE_LIMIT_SLEEP)
 
-    # D-15 stale-PNG cleanup
+    # D-15 stale-PNG cleanup. BL-02: only count rows whose render succeeded
+    # (chart_path is not None) as "expected" — a skipped render means no PNG
+    # exists for that detection, and we should not pretend one is expected.
     expected_filenames = {
-        f"{r['ticker']}_{r['confirmation_date']}.png" for r in rows
+        f"{r['ticker']}_{r['confirmation_date']}.png"
+        for r in rows
+        if r.get("chart_path") is not None
     }
     deleted_count = _cleanup_stale_pngs(charts_dir, expected_filenames)
 
