@@ -412,6 +412,7 @@ def build_data_json(
     succeeded: int,
     failed: int,
     window_days: int,
+    now_utc: datetime | None = None,
 ) -> dict:
     """Pure: assemble the data.json payload per RESEARCH §Schema Designs L781-826.
 
@@ -438,15 +439,21 @@ def build_data_json(
         succeeded: count of tickers processed without exception.
         failed: count of tickers that raised.
         window_days: int, from CLI --window-days (D-01).
+        now_utc: ME-01 — the run's single anchor timestamp. When None, falls
+            back to `datetime.now(timezone.utc)` (kept for back-compat with
+            unit tests that call build_data_json directly). main() threads its
+            own anchor through so generated_at, as_of_date, and the window
+            cutoff all share one moment in time.
 
     Returns:
         dict matching the RESEARCH §Schema Designs L781-826 shape.
     """
     total = succeeded + failed
     success_rate = succeeded / max(total, 1)
-    now_utc = datetime.now(timezone.utc)
+    if now_utc is None:
+        now_utc = datetime.now(timezone.utc)
     generated_at = now_utc.isoformat()
-    as_of_date = pd.Timestamp.now(tz="UTC").normalize().strftime("%Y-%m-%d")
+    as_of_date = now_utc.strftime("%Y-%m-%d")
 
     return {
         "schema_version": 1,
@@ -626,7 +633,11 @@ def main(argv: list[str] | None = None) -> int:
     # D-08 / D-06: load ONNX session once (warn-once if missing).
     # --no-onnx forces graceful-fallback path without attempting to load.
     sess = None if args.no_onnx else _load_onnx_session(ONNX_PATH)
-    today = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+    # ME-01: capture ONE anchor timestamp for the entire run so generated_at,
+    # as_of_date, and the window cutoff cannot land on different sides of
+    # midnight UTC during a slow run. Threaded through build_data_json below.
+    now_utc = datetime.now(timezone.utc)
+    today = pd.Timestamp(now_utc).tz_convert("UTC").normalize().tz_localize(None)
     cutoff = _window_cutoff(today, args.window_days)
     company_lookup = _load_company_lookup()
     # Reset module-level substitutions per run so SUMMARY doesn't accumulate stale state.
@@ -720,7 +731,9 @@ def main(argv: list[str] | None = None) -> int:
 
     # Build + atomic write data.json (PIPE-02)
     run_id = os.environ.get("GITHUB_RUN_ID") or str(uuid.uuid4())
-    data = build_data_json(rows, errors, run_id, succeeded, failed, args.window_days)
+    data = build_data_json(
+        rows, errors, run_id, succeeded, failed, args.window_days, now_utc=now_utc,
+    )
     data["pipeline_status"]["errors_truncated"] = errors_truncated_count
     _atomic_write_json(args.out_dir / "data.json", data)
 
