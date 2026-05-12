@@ -133,6 +133,25 @@ def _resolve_status(df: pd.DataFrame, detection) -> dict:
     return rec
 
 
+# ── HI-03: strict JSON serializer ───────────────────────────────────────────
+def _json_default(obj):
+    """Strict serializer for JSON dump. Explicitly handles known types; raises
+    TypeError on anything else.
+
+    HI-03: the previous `default=str` was a silent type-coercion footgun — it
+    would happily turn a `pd.Timestamp` into `'2024-01-10 00:00:00'`
+    (path-hostile, masked BL-01 in testing). The replacement fails loudly on
+    unexpected types so the bad value is caught at write time.
+    """
+    if isinstance(obj, pd.Timestamp):
+        return obj.strftime("%Y-%m-%d")
+    if isinstance(obj, datetime):
+        return obj.isoformat()
+    raise TypeError(
+        f"Unexpected type {type(obj).__name__} in data.json payload: {obj!r}"
+    )
+
+
 # ── D-17: atomic JSON write (temp + fsync + os.replace) ─────────────────────
 def _atomic_write_json(path: Path, obj: dict) -> None:
     """Write JSON atomically. A reader sees either the previous file or the complete
@@ -150,7 +169,7 @@ def _atomic_write_json(path: Path, obj: dict) -> None:
     # additionally unlink the tmp path on any exception before re-raising.
     try:
         with tmp.open("w", encoding="utf-8") as f:
-            json.dump(obj, f, indent=2, sort_keys=True, default=str)
+            json.dump(obj, f, indent=2, sort_keys=True, default=_json_default)
             f.write("\n")
             f.flush()
             os.fsync(f.fileno())  # durability hygiene (not load-bearing for atomicity)
