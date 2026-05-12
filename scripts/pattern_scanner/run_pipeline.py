@@ -645,7 +645,18 @@ def main(argv: list[str] | None = None) -> int:
     tickers = _resolve_universe(args.tickers, args.limit)
     # D-08 / D-06: load ONNX session once (warn-once if missing).
     # --no-onnx forces graceful-fallback path without attempting to load.
-    sess = None if args.no_onnx else _load_onnx_session(ONNX_PATH)
+    if args.no_onnx:
+        # LO-02: noisy startup notice so an operator who passed --no-onnx for
+        # debugging cannot silently ship a `yolo_conf: null`-everywhere
+        # data.json to production. The only previous signal was the absence
+        # of yolo_conf values, which is invisible until inspection.
+        print(
+            "[run_pipeline] --no-onnx: ONNX scoring disabled; "
+            "yolo_conf will be null on every detection row."
+        )
+        sess = None
+    else:
+        sess = _load_onnx_session(ONNX_PATH)
     # ME-01: capture ONE anchor timestamp for the entire run so generated_at,
     # as_of_date, and the window cutoff cannot land on different sides of
     # midnight UTC during a slow run. Threaded through build_data_json below.
