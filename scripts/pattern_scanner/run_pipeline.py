@@ -9,9 +9,6 @@ See .planning/phases/10-batch-pipeline/10-CONTEXT.md for D-01..D-24.
 CLI:
     python -m scripts.pattern_scanner.run_pipeline \
         --tickers all --window-days 20 --out-dir docs/projects/patterns
-
-main() body lives in Plan 10-06; this module currently exposes the helpers
-and the CLI scaffolding.
 """
 from __future__ import annotations
 
@@ -162,6 +159,166 @@ def _cleanup_stale_pngs(charts_dir: Path, expected_filenames: set[str]) -> int:
     return deleted
 
 
+# ── Company / sector enrichment from the DCF screener snapshot (RESEARCH OQ#3) ──
+SCREENER_DATA_PATH = Path("docs/projects/screener/data.json")
+
+
+def _load_company_lookup(path: Path | None = None) -> dict[str, tuple[str, str]]:
+    """Build {ticker: (company_name, sector)} from the DCF screener snapshot.
+
+    D-19 enrichment per RESEARCH Open Question #3:
+        - Reads docs/projects/screener/data.json (the existing committed snapshot
+          from Phase 5's screener pipeline; refreshed nightly by nightly-screener.yml
+          at 06:00 UTC — Phase 10 runs at 07:00 UTC, so the data is fresh).
+        - Returns {} on any IO / JSON failure (caller defaults to (ticker, "")).
+        - Tolerant of partial rows: a row missing company_name or sector yields ""
+          for the missing field.
+    """
+    target = path or SCREENER_DATA_PATH
+    if not target.exists():
+        return {}
+    try:
+        data = json.loads(target.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    lookup: dict[str, tuple[str, str]] = {}
+    for row in data.get("stocks", []):
+        ticker = row.get("ticker")
+        if not ticker:
+            continue
+        lookup[str(ticker).upper()] = (
+            str(row.get("company_name") or ""),
+            str(row.get("sector") or ""),
+        )
+    return lookup
+
+
+# ── D-14 + D-15: publication-chart render wrapper with style-fallback probe ───
+_PREFERRED_PUBLICATION_FALLBACKS = ("binance-dark", "checkers", "starsandstripes", "blueskies")
+_resolved_publication_base_style: str | None = None
+_render_substitutions: list[dict] = []
+
+
+def _resolve_publication_base_style() -> str:
+    """Probe mpf.available_styles() once per process. Returns the base_style to use.
+
+    Strategy:
+        1. If PUBLICATION_STYLE.base_style is in mpf.available_styles() -> use it
+           (the common case; nightclouds is documented in mplfinance 0.12.10b0).
+        2. Otherwise, walk _PREFERRED_PUBLICATION_FALLBACKS and pick the first match.
+        3. If none matches (extremely unlikely — mplfinance ships ~14 named styles),
+           pick the FIRST entry in mpf.available_styles() and record a loud warning.
+
+    Records the substitution to _render_substitutions for SUMMARY surfacing.
+    Caches the result globally so the probe runs ONCE per process.
+    """
+    global _resolved_publication_base_style
+    if _resolved_publication_base_style is not None:
+        return _resolved_publication_base_style
+
+    from scripts.pattern_scanner.renderer import PUBLICATION_STYLE
+    import mplfinance as mpf
+
+    available = set(mpf.available_styles())
+    wanted = PUBLICATION_STYLE.base_style
+    if wanted in available:
+        _resolved_publication_base_style = wanted
+        return wanted
+
+    for candidate in _PREFERRED_PUBLICATION_FALLBACKS:
+        if candidate in available:
+            _render_substitutions.append({
+                "requested": wanted,
+                "substituted": candidate,
+                "reason": "preferred fallback (nightclouds absent from this mplfinance install)",
+            })
+            warnings.warn(
+                f"mplfinance base_style {wanted!r} not available; substituting {candidate!r}.",
+                UserWarning,
+            )
+            _resolved_publication_base_style = candidate
+            return candidate
+
+    # Last-resort: pick whatever exists. Order is implementation-defined but
+    # mplfinance always exposes >=1 style.
+    fallback = sorted(available)[0]
+    _render_substitutions.append({
+        "requested": wanted,
+        "substituted": fallback,
+        "reason": "no preferred fallback matched — picked first available style",
+    })
+    warnings.warn(
+        f"mplfinance base_style {wanted!r} not available AND none of preferred fallbacks "
+        f"{_PREFERRED_PUBLICATION_FALLBACKS} matched; using {fallback!r}.",
+        UserWarning,
+    )
+    _resolved_publication_base_style = fallback
+    return fallback
+
+
+def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> None:
+    """Wrapper: slice the 60-bar window, probe style, delegate to renderer.
+
+    Reads detection.confirmation_bar_index and slices df.iloc[conf-59 : conf+1].
+    If the slice is shorter than 60 (insufficient history), logs warning and
+    returns WITHOUT raising — main()'s broad-except is for failures the renderer
+    cannot recover from; short history is recoverable by skipping the chart.
+
+    On the first call, probes mplfinance for style availability. If
+    PUBLICATION_STYLE.base_style is absent, picks a fallback and records the
+    substitution (visible to main() for the SUMMARY).
+
+    Args:
+        df: full OHLC dataframe (NOT yet sliced to 60 bars).
+        detection: Detection-like object with .confirmation_bar_index.
+        out_path: target PNG path. Parent dirs are created.
+    """
+    from scripts.pattern_scanner.renderer import (
+        render_publication_chart as _render_impl,
+        PUBLICATION_STYLE,
+    )
+
+    conf_idx = detection.confirmation_bar_index
+    start = conf_idx - 59
+    if start < 0:
+        warnings.warn(
+            f"_render_publication_chart: insufficient history "
+            f"(conf_idx={conf_idx}, need 60 bars; only {conf_idx + 1} available); "
+            f"skipping {out_path.name}.",
+            UserWarning,
+        )
+        return
+    window = df.iloc[start : conf_idx + 1]
+    if len(window) != 60:
+        warnings.warn(
+            f"_render_publication_chart: window slice produced {len(window)} bars "
+            f"(expected 60); skipping {out_path.name}.",
+            UserWarning,
+        )
+        return
+
+    # Probe + cache style fallback on first call.
+    resolved = _resolve_publication_base_style()
+
+    # If the resolved style differs from PUBLICATION_STYLE.base_style, we patch
+    # the module-level constant in `renderer` for the duration of this call so
+    # the delegate uses the resolved style. RenderStyle is a frozen dataclass
+    # (immutable VALUES) but the module attribute itself is rebindable.
+    from dataclasses import replace
+    from scripts.pattern_scanner import renderer as _renderer_mod
+
+    if resolved == PUBLICATION_STYLE.base_style:
+        _render_impl(window, detection, out_path)
+        return
+
+    original = _renderer_mod.PUBLICATION_STYLE
+    try:
+        _renderer_mod.PUBLICATION_STYLE = replace(original, base_style=resolved)
+        _render_impl(window, detection, out_path)
+    finally:
+        _renderer_mod.PUBLICATION_STYLE = original
+
+
 # ── PIPE-02: build_data_json — assemble the atomic-write payload ─────────────
 def build_data_json(
     detections: list[dict],
@@ -212,6 +369,7 @@ def build_data_json(
         "window_days": int(window_days),
         "as_of_date": as_of_date,
         "pipeline_status": {
+            "schema_version": 1,
             "completed": bool(success_rate >= 0.95),
             "succeeded_count": int(succeeded),
             "failed_count": int(failed),
@@ -342,8 +500,153 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     return p.parse_args(argv)
 
 
+# ── Universe resolver — tests monkeypatch fetch_sp500_tickers on this module ───
+def _resolve_universe(tickers_arg, limit: int | None) -> list[str]:
+    """Resolve the --tickers argparse output into a concrete list of symbols.
+
+    `tickers_arg` is the output of _parse_tickers_arg: either the literal string
+    "all" or a list[str] (already token-validated). When "all", call
+    fetch_sp500_tickers() (which tests can monkeypatch on run_pipeline_mod).
+    Apply --limit slicing AFTER resolving the universe.
+    """
+    if tickers_arg == "all":
+        tickers = list(fetch_sp500_tickers())
+    else:
+        tickers = list(tickers_arg)
+    if limit is not None:
+        tickers = tickers[:limit]
+    return tickers
+
+
 def main(argv: list[str] | None = None) -> int:
-    raise NotImplementedError("main() body lands in Plan 10-06 (orchestrator wave).")
+    """Orchestrate the nightly pattern-scanner pipeline (D-19).
+
+    Sequence (RESEARCH §Pattern 1 L242-307):
+        1. Parse CLI.
+        2. Resolve universe; apply --limit slice.
+        3. Load ONNX session once (D-06); warn-once if absent (D-08).
+        4. Compute today + cutoff via BDay (D-01).
+        5. Load company / sector lookup from the DCF screener snapshot.
+        6. Iterate tickers with 0.5s rate-limit:
+            - fetch OHLC, detect (filtered default, D-04), window-filter, resolve status,
+              score with ONNX, render chart, attach company_name + sector + filters + bars.
+            - On exception: append to errors[], increment failed, never re-raise.
+        7. Stale-PNG cleanup via set-difference (D-15).
+        8. Truncate errors at ERRORS_TRUNCATE_CAP (D-16 / Claude's Discretion).
+        9. build_data_json + atomic write data.json.
+       10. Read _backtest_aggregates.json, build_stats_json, atomic write stats.json.
+    """
+    args = _parse_args(argv)
+    tickers = _resolve_universe(args.tickers, args.limit)
+    # D-08 / D-06: load ONNX session once (warn-once if missing).
+    # --no-onnx forces graceful-fallback path without attempting to load.
+    sess = None if args.no_onnx else _load_onnx_session(ONNX_PATH)
+    today = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+    cutoff = _window_cutoff(today, args.window_days)
+    company_lookup = _load_company_lookup()
+    # Reset module-level substitutions per run so SUMMARY doesn't accumulate stale state.
+    _render_substitutions.clear()
+
+    rows: list[dict] = []
+    errors: list[dict] = []
+    succeeded = failed = 0
+    total = len(tickers)
+
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    charts_dir = args.out_dir / "charts"
+    charts_dir.mkdir(parents=True, exist_ok=True)
+
+    # Sequential iteration is contractual: tests assert errors[0].ticker == "A001".
+    # Preserve insertion order on errors[] — do NOT parallelize without updating
+    # tests/test_run_pipeline_main.py.
+    for i, ticker in enumerate(tickers, start=1):
+        try:
+            df = _fetch_ohlc(ticker, period="6mo")
+            if len(df) < 60:
+                print(f"[{i}/{total}] {ticker}: insufficient history ({len(df)} bars) — skip")
+                succeeded += 1  # not an error — just no data this run
+                if i < total:
+                    time.sleep(RATE_LIMIT_SLEEP)
+                continue
+
+            dets = detect(df, ticker)  # D-04 — filtered default
+            dets_in_window = [
+                d for d in dets
+                if pd.Timestamp(d.confirmation_date) >= cutoff
+            ]
+            for d in dets_in_window:
+                rec = _resolve_status(df, d)  # D-02 wrapper
+                rec["yolo_conf"] = _score_detection(_window_for(d, df), sess)
+                rec["chart_path"] = f"charts/{rec['ticker']}_{rec['confirmation_date']}.png"
+                rec["current_price"] = float(df.iloc[-1]["Close"])
+                rec["filters"] = dict(getattr(d, "filters", None) or {})
+                rec["bars"] = [dict(b) for b in (d.bars or [])]
+                company_name, sector = company_lookup.get(ticker.upper(), (ticker, ""))
+                rec["company_name"] = company_name
+                rec["sector"] = sector
+                out_png = charts_dir / f"{rec['ticker']}_{rec['confirmation_date']}.png"
+                _render_publication_chart(df, d, out_png)
+                rows.append(rec)
+            succeeded += 1
+            print(f"[{i}/{total}] {ticker}: {len(dets_in_window)} in-window")
+        except Exception as exc:  # noqa: BLE001 — D-16 broad except; never re-raise
+            failed += 1
+            errors.append({
+                "ticker": ticker,
+                "stage": "fetch_or_detect",
+                "message": str(exc)[:500],
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            })
+            print(f"[{i}/{total}] {ticker}: ERROR — {exc}")
+        if i < total:
+            time.sleep(RATE_LIMIT_SLEEP)
+
+    # D-15 stale-PNG cleanup
+    expected_filenames = {
+        f"{r['ticker']}_{r['confirmation_date']}.png" for r in rows
+    }
+    deleted_count = _cleanup_stale_pngs(charts_dir, expected_filenames)
+
+    # D-16 errors truncation
+    errors_truncated_count = max(0, len(errors) - ERRORS_TRUNCATE_CAP)
+    if errors_truncated_count > 0:
+        errors = errors[:ERRORS_TRUNCATE_CAP]
+
+    # Build + atomic write data.json (PIPE-02)
+    run_id = os.environ.get("GITHUB_RUN_ID") or str(uuid.uuid4())
+    data = build_data_json(rows, errors, run_id, succeeded, failed, args.window_days)
+    data["pipeline_status"]["errors_truncated"] = errors_truncated_count
+    _atomic_write_json(args.out_dir / "data.json", data)
+
+    # Build + atomic write stats.json (D-09 / D-10)
+    aggregates_path = args.out_dir / "_backtest_aggregates.json"
+    if aggregates_path.exists():
+        try:
+            aggregates = json.loads(aggregates_path.read_text(encoding="utf-8"))
+            stats = build_stats_json(aggregates)
+            _atomic_write_json(args.out_dir / "stats.json", stats)
+        except (json.JSONDecodeError, OSError) as exc:
+            warnings.warn(
+                f"Failed to build stats.json from {aggregates_path}: {exc}; "
+                f"stats.json not written.",
+                UserWarning,
+            )
+    else:
+        warnings.warn(
+            f"_backtest_aggregates.json not found at {aggregates_path}; "
+            f"stats.json not written.",
+            UserWarning,
+        )
+
+    # Final-line summary for human + log greppability
+    print(
+        f"[run_pipeline] complete: "
+        f"succeeded={succeeded} failed={failed} "
+        f"detections={len(rows)} stale_pngs_deleted={deleted_count} "
+        f"errors_truncated={errors_truncated_count} "
+        f"style_substitutions={len(_render_substitutions)}"
+    )
+    return 0
 
 
 if __name__ == "__main__":
