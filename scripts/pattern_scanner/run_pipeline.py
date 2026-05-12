@@ -720,10 +720,17 @@ def main(argv: list[str] | None = None) -> int:
             print(f"[{i}/{total}] {ticker}: {len(dets_in_window)} in-window")
         except Exception as exc:  # noqa: BLE001 — D-16 broad except; never re-raise
             failed += 1
+            # ME-06: cap message at 500 chars but append a sentinel when
+            # truncation actually happens, so a downstream reader can tell
+            # "this is the whole error" from "this is the head of a longer
+            # error". Cheap and forensically useful.
+            msg = str(exc)
+            if len(msg) > 500:
+                msg = msg[:497] + "..."
             errors.append({
                 "ticker": ticker,
                 "stage": "fetch_or_detect",
-                "message": str(exc)[:500],
+                "message": msg,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             })
             print(f"[{i}/{total}] {ticker}: ERROR — {exc}")
