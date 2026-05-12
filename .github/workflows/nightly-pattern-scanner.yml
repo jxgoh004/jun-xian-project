@@ -36,6 +36,29 @@ jobs:
       - name: Run nightly pattern scanner
         run: python -m scripts.pattern_scanner.run_pipeline --tickers all --window-days 20 --out-dir docs/projects/patterns
 
+      # ME-03: Surface pipeline_status.completed=False as a workflow failure.
+      # run_pipeline.py always exits 0 (errors are logged into data.json, not
+      # raised), so without this gate a sub-95% night still commits and pushes
+      # silently. With this gate the workflow itself fails, GitHub emails the
+      # repo owner, and the bad data is still committed (next step runs after
+      # the verification result — we still want the partial data on disk for
+      # forensic analysis).
+      - name: Verify pipeline completed
+        id: verify_pipeline
+        continue-on-error: true
+        run: |
+          python -c "
+          import json, sys
+          data = json.load(open('docs/projects/patterns/data.json'))
+          ps = data['pipeline_status']
+          if not ps['completed']:
+              print(f'::warning::pipeline_status.completed=False: '
+                    f\"succeeded={ps['succeeded_count']} failed={ps['failed_count']}\")
+              sys.exit(1)
+          print(f'pipeline_status.completed=True (succeeded={ps[\"succeeded_count\"]} '
+                f'failed={ps[\"failed_count\"]})')
+          "
+
       - name: Commit updated pattern scanner data
         run: |
           git config user.name "github-actions[bot]"
@@ -59,4 +82,14 @@ jobs:
             echo "push attempt $i failed; retrying after 5s"
             sleep 5
           done
+          exit 1
+
+      # ME-03: re-raise the verify_pipeline failure so the workflow as a whole
+      # shows red in GitHub Actions when the pipeline did not complete cleanly.
+      # We deliberately run this AFTER the commit step so the failure signal
+      # fires only once the partial data has been preserved on disk.
+      - name: Fail workflow if pipeline did not complete
+        if: steps.verify_pipeline.outcome == 'failure'
+        run: |
+          echo "::error::Pipeline did not complete cleanly — see Verify pipeline completed step."
           exit 1
