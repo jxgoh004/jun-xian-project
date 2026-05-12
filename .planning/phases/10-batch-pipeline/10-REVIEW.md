@@ -25,6 +25,34 @@ findings:
   low: 4
   total: 20
 status: has_findings
+fix_pass:
+  ran_at: 2026-05-13T00:00:00Z
+  scope: blocker_high
+  fixed:
+    - BL-01
+    - BL-02
+    - BL-03
+    - BL-04
+    - HI-01
+    - HI-02
+    - HI-03
+    - HI-04
+    - HI-05
+  remaining:
+    medium: 7
+    low: 4
+  remaining_ids:
+    - ME-01
+    - ME-02
+    - ME-03
+    - ME-04
+    - ME-05
+    - ME-06
+    - ME-07
+    - LO-01
+    - LO-02
+    - LO-03
+    - LO-04
 ---
 
 # Phase 10: Code Review Report
@@ -488,3 +516,69 @@ else:
 _Reviewed: 2026-05-12_
 _Reviewer: Claude (gsd-code-reviewer)_
 _Depth: standard_
+
+---
+
+## Fix Pass — 2026-05-13
+
+Scope: BLOCKER + HIGH (default `--fix` scope). MEDIUM + LOW intentionally
+deferred per scope.
+
+**Fixed (9):**
+- **BL-01** — `_resolve_status` now normalizes `confirmation_date` via
+  `pd.Timestamp(...).strftime("%Y-%m-%d")` once at the boundary; both the
+  pending branch and the `simulate_trade` delegated branch emit a
+  filesystem-safe `YYYY-MM-DD` string. Assertion guards against space/colon
+  contamination. Commit `dbdb6d8`.
+- **BL-02** — `_render_publication_chart` now returns `bool`; `main()` gates
+  `chart_path` on a successful render (`None` if skipped). Stale-PNG cleanup's
+  `expected_filenames` also excludes rows whose render was skipped, so the
+  set-difference logic doesn't falsely mark missing PNGs as "expected".
+  Commit `89864ba`.
+- **BL-03** — `_cleanup_stale_pngs` now guards on `.suffix.lower() == ".png"`;
+  `.gitkeep`, READMEs, thumbnails, and any other non-PNG artefact in
+  `charts/` survive nightly runs. Commit `8945d2b`.
+- **BL-04** — `nightly-pattern-scanner.yml` gains `fetch-depth: 0` on
+  checkout, a 3-attempt `git pull --rebase origin main && git push` retry
+  loop, `[skip ci]` on the bot commit, and a `concurrency:` group keyed
+  on `nightly-pattern-scanner` (`cancel-in-progress: false`). Commit `dd0ebb9`.
+- **HI-01** — Per-ticker rows now accumulate in a local `ticker_rows` list;
+  `rows.extend(ticker_rows)` runs only after the ticker fully succeeds, so a
+  mid-ticker render exception no longer ghosts partial detections into
+  `data.json`. Commit `16405a2`.
+- **HI-02** — `_atomic_write_json` wraps the temp-write in `try/except` and
+  unlinks the `.tmp` sibling on any exception before re-raising. Commit
+  `aff242a`.
+- **HI-03** — `default=str` replaced with `_json_default(obj)` which
+  explicitly handles `pd.Timestamp` (→ `%Y-%m-%d`) and `datetime` (→
+  isoformat) and raises `TypeError` on anything else. Future masked-coercion
+  bugs (like BL-01) now fail loudly at write time. Commit `235477e`.
+- **HI-04** — `_load_company_lookup` now validates that the top-level
+  payload is a dict, that `stocks` is a list, and that each row is a dict
+  with a string `ticker`. The except clause catches
+  `(JSONDecodeError, OSError, AttributeError, TypeError)` with a
+  `UserWarning` and graceful `{}` fallback. Commit `f1bb693`.
+- **HI-05** — `_resolved_publication_base_style` global is now reset to
+  `None` at the top of `main()`, alongside `_render_substitutions.clear()`.
+  Removes the cross-test cache-bleed surface. Commit `195c7c6`.
+
+**Remaining (11) — deferred:**
+- **ME-01..ME-07** — `now()` divergence, BDay vs. CustomBusinessDay,
+  GHA failure-observability, `_render_substitutions` not persisted,
+  `export_aggregates.py` non-atomic write, UTF-8 truncation sentinel,
+  `renderer.PUBLICATION_STYLE` rebinding concurrency. None gate the
+  phase's correctness on the 07:00 UTC cron path.
+- **LO-01..LO-04** — Eager `_load_company_lookup`, silent `--no-onnx`,
+  smoke-test detection-count assertion, `print()` vs `logging`. Cosmetic
+  /  hygiene; carry into a future phase.
+
+**Test results:** full quick suite passes — 84 passed, 11 skipped, 0
+failed. Targeted runs (`test_run_pipeline_pending.py`,
+`test_run_pipeline_charts.py`, `test_run_pipeline_main.py`,
+`test_run_pipeline_atomic.py`, `test_run_pipeline_stats.py`,
+`test_run_pipeline_onnx_fallback.py`, `test_run_pipeline_window.py`,
+`test_workflow_yaml.py`) all pass.
+
+_Fix-pass: 2026-05-13_
+_Fixer: Claude (gsd-code-fixer)_
+_Scope: BLOCKER + HIGH only_
