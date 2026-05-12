@@ -424,6 +424,7 @@ def build_data_json(
     failed: int,
     window_days: int,
     now_utc: datetime | None = None,
+    style_substitutions: list[dict] | None = None,
 ) -> dict:
     """Pure: assemble the data.json payload per RESEARCH §Schema Designs L781-826.
 
@@ -480,6 +481,10 @@ def build_data_json(
             "errors_truncated": 0,  # truncation, if any, happened in the caller
             "run_id": str(run_id),
             "generated_at": generated_at,
+            # ME-04: persist style substitutions so a thin-mplfinance install
+            # (no `nightclouds`) is visible in the committed data.json instead
+            # of being trapped in 90-day CI log retention.
+            "style_substitutions": list(style_substitutions or []),
         },
         "detections": list(detections),
     }
@@ -743,7 +748,9 @@ def main(argv: list[str] | None = None) -> int:
     # Build + atomic write data.json (PIPE-02)
     run_id = os.environ.get("GITHUB_RUN_ID") or str(uuid.uuid4())
     data = build_data_json(
-        rows, errors, run_id, succeeded, failed, args.window_days, now_utc=now_utc,
+        rows, errors, run_id, succeeded, failed, args.window_days,
+        now_utc=now_utc,
+        style_substitutions=list(_render_substitutions),
     )
     data["pipeline_status"]["errors_truncated"] = errors_truncated_count
     _atomic_write_json(args.out_dir / "data.json", data)
