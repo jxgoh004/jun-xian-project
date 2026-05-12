@@ -652,7 +652,17 @@ def main(argv: list[str] | None = None) -> int:
     now_utc = datetime.now(timezone.utc)
     today = pd.Timestamp(now_utc).tz_convert("UTC").normalize().tz_localize(None)
     cutoff = _window_cutoff(today, args.window_days)
-    company_lookup = _load_company_lookup()
+    # LO-01: lazy-load the screener company lookup on first hit. The full
+    # screener data.json is ~<500KB but parsing it for a 1-ticker smoke test
+    # is wasted I/O. Wrapping in a 1-element cache avoids touching disk until
+    # we actually need a name/sector for a detection-bearing ticker.
+    _company_lookup_cache: dict | None = None
+
+    def _get_company_lookup() -> dict[str, tuple[str, str]]:
+        nonlocal _company_lookup_cache
+        if _company_lookup_cache is None:
+            _company_lookup_cache = _load_company_lookup()
+        return _company_lookup_cache
     # Reset module-level substitutions per run so SUMMARY doesn't accumulate stale state.
     _render_substitutions.clear()
     # HI-05: also reset the cached style probe so back-to-back `main()` calls
@@ -701,7 +711,7 @@ def main(argv: list[str] | None = None) -> int:
                 rec["current_price"] = float(df.iloc[-1]["Close"])
                 rec["filters"] = dict(getattr(d, "filters", None) or {})
                 rec["bars"] = [dict(b) for b in (d.bars or [])]
-                company_name, sector = company_lookup.get(ticker.upper(), (ticker, ""))
+                company_name, sector = _get_company_lookup().get(ticker.upper(), (ticker, ""))
                 rec["company_name"] = company_name
                 rec["sector"] = sector
                 # BL-02: only set chart_path AFTER a successful render. If the
