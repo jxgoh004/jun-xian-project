@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import time
 import uuid
@@ -21,6 +22,13 @@ import warnings
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+# LO-04: route per-ticker progress + final summary through logging so an
+# in-process consumer (e.g. a future orchestrator that imports main()) can
+# suppress or redirect these messages. The __main__ entrypoint configures a
+# stdout-bound INFO handler so direct CLI invocation is byte-identical to
+# the previous print()-based output.
+log = logging.getLogger(__name__)
 
 import pandas as pd
 from pandas.tseries.holiday import USFederalHolidayCalendar
@@ -650,9 +658,8 @@ def main(argv: list[str] | None = None) -> int:
         # debugging cannot silently ship a `yolo_conf: null`-everywhere
         # data.json to production. The only previous signal was the absence
         # of yolo_conf values, which is invisible until inspection.
-        print(
-            "[run_pipeline] --no-onnx: ONNX scoring disabled; "
-            "yolo_conf will be null on every detection row."
+        log.warning(
+            "--no-onnx: ONNX scoring disabled; yolo_conf will be null on every detection row."
         )
         sess = None
     else:
@@ -698,7 +705,8 @@ def main(argv: list[str] | None = None) -> int:
         try:
             df = _fetch_ohlc(ticker, period="6mo")
             if len(df) < 60:
-                print(f"[{i}/{total}] {ticker}: insufficient history ({len(df)} bars) — skip")
+                log.info("[%d/%d] %s: insufficient history (%d bars) — skip",
+                         i, total, ticker, len(df))
                 succeeded += 1  # not an error — just no data this run
                 if i < total:
                     time.sleep(RATE_LIMIT_SLEEP)
@@ -735,7 +743,7 @@ def main(argv: list[str] | None = None) -> int:
                 ticker_rows.append(rec)
             rows.extend(ticker_rows)  # atomic per-ticker append (HI-01)
             succeeded += 1
-            print(f"[{i}/{total}] {ticker}: {len(dets_in_window)} in-window")
+            log.info("[%d/%d] %s: %d in-window", i, total, ticker, len(dets_in_window))
         except Exception as exc:  # noqa: BLE001 — D-16 broad except; never re-raise
             failed += 1
             # ME-06: cap message at 500 chars but append a sentinel when
@@ -751,7 +759,7 @@ def main(argv: list[str] | None = None) -> int:
                 "message": msg,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             })
-            print(f"[{i}/{total}] {ticker}: ERROR — {exc}")
+            log.warning("[%d/%d] %s: ERROR — %s", i, total, ticker, exc)
         if i < total:
             time.sleep(RATE_LIMIT_SLEEP)
 
@@ -801,16 +809,23 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     # Final-line summary for human + log greppability
-    print(
-        f"[run_pipeline] complete: "
-        f"succeeded={succeeded} failed={failed} "
-        f"detections={len(rows)} stale_pngs_deleted={deleted_count} "
-        f"errors_truncated={errors_truncated_count} "
-        f"style_substitutions={len(_render_substitutions)}"
+    log.info(
+        "complete: succeeded=%d failed=%d detections=%d "
+        "stale_pngs_deleted=%d errors_truncated=%d style_substitutions=%d",
+        succeeded, failed, len(rows), deleted_count,
+        errors_truncated_count, len(_render_substitutions),
     )
     return 0
 
 
 if __name__ == "__main__":
     import sys
+    # LO-04: configure a stdout-bound INFO handler ONLY at the CLI entrypoint.
+    # An importing consumer (future orchestrator) gets a default-quiet
+    # `logging.getLogger("scripts.pattern_scanner.run_pipeline")` and can wire
+    # its own handlers / levels / filters as it sees fit.
+    logging.basicConfig(
+        level=logging.INFO,
+        format="[run_pipeline] %(message)s",
+    )
     sys.exit(main(sys.argv[1:]))
