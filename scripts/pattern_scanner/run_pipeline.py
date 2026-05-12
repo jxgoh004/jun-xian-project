@@ -166,7 +166,13 @@ def _cleanup_stale_pngs(charts_dir: Path, expected_filenames: set[str]) -> int:
     charts_dir.mkdir(parents=True, exist_ok=True)
     deleted = 0
     for f in charts_dir.iterdir():
-        if f.is_file() and f.name not in expected_filenames:
+        # BL-03: only consider .png files — never touch .gitkeep, README,
+        # thumbnails, or any other artefact placed in charts/. The previous
+        # implementation deleted any file not in expected_filenames, which
+        # would silently kill .gitkeep on every nightly run.
+        if not (f.is_file() and f.suffix.lower() == ".png"):
+            continue
+        if f.name not in expected_filenames:
             f.unlink()
             deleted += 1
     return deleted
