@@ -601,6 +601,13 @@ def main(argv: list[str] | None = None) -> int:
                 d for d in dets
                 if pd.Timestamp(d.confirmation_date) >= cutoff
             ]
+            # HI-01: accumulate per-ticker rows in a local list and extend
+            # the master `rows` only after this ticker completes. If a later
+            # detection raises mid-ticker, the broad-except below will record
+            # the ticker as `failed` WITHOUT polluting `rows` with the earlier
+            # partial detections (which would skew the 95% completion
+            # threshold and leave inconsistent state in data.json).
+            ticker_rows: list[dict] = []
             for d in dets_in_window:
                 rec = _resolve_status(df, d)  # D-02 wrapper
                 rec["yolo_conf"] = _score_detection(_window_for(d, df), sess)
@@ -617,7 +624,8 @@ def main(argv: list[str] | None = None) -> int:
                 out_png = charts_dir / f"{rec['ticker']}_{rec['confirmation_date']}.png"
                 rendered = _render_publication_chart(df, d, out_png)
                 rec["chart_path"] = f"charts/{out_png.name}" if rendered else None
-                rows.append(rec)
+                ticker_rows.append(rec)
+            rows.extend(ticker_rows)  # atomic per-ticker append (HI-01)
             succeeded += 1
             print(f"[{i}/{total}] {ticker}: {len(dets_in_window)} in-window")
         except Exception as exc:  # noqa: BLE001 — D-16 broad except; never re-raise
