@@ -153,6 +153,18 @@ def test_main_smoke_with_synthetic_ohlc(
 
     data = json.loads(data_path.read_text())
     assert isinstance(data["detections"], list)
+    # LO-03: lock the empty-detections contract for THIS fixture. The
+    # synthetic OHLC at line ~45 above is monotonic-rising and will not
+    # produce a pin/mark_up/ice_cream pattern; if a future detector change
+    # starts emitting detections here, the test will fail loudly and we
+    # know to either swap to a setup-bearing fixture or update the
+    # assertion. Without this, the smoke test silently validates the
+    # empty-path rather than the populated-path.
+    assert len(data["detections"]) == 0, (
+        f"smoke fixture unexpectedly produced {len(data['detections'])} "
+        "detections; pick a setup-bearing fixture to exercise the populated "
+        "path, or update this assertion."
+    )
 
     ps = data["pipeline_status"]
     required_keys = {
