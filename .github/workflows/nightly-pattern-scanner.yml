@@ -1,0 +1,35 @@
+name: Nightly Pattern Scanner Data
+
+on:
+  schedule:
+    - cron: '0 7 * * 1-5'  # 07:00 UTC weekdays — 1h after the DCF screener (06:00 UTC)
+  workflow_dispatch:         # manual trigger for testing
+
+permissions:
+  contents: write            # required for git push with GITHUB_TOKEN
+
+jobs:
+  pattern-scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run nightly pattern scanner
+        run: python -m scripts.pattern_scanner.run_pipeline --tickers all --window-days 20 --out-dir docs/projects/patterns
+
+      - name: Commit updated pattern scanner data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/projects/patterns/data.json docs/projects/patterns/stats.json docs/projects/patterns/charts/
+          git diff --staged --quiet || git commit -m "chore: nightly pattern scanner data update"
+          git push

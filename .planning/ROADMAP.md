@@ -153,7 +153,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 | 7. Detection Engine | 2/2 | Complete   | 2026-05-01 |
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
 | 9. Backtesting Engine | 4/4 | Complete   | 2026-05-10 |
-| 10. Batch Pipeline | 0/? | Not started | — |
+| 10. Batch Pipeline | 0/7 | In progress | — |
 | 11. Frontend | 0/? | Not started | — |
 
 ## Phase Details (v2.0)
@@ -218,7 +218,7 @@ Plans:
   2. `data.json` is written atomically via a temp-file-then-rename pattern — a simulated mid-run kill does not leave a partial JSON file visible to the frontend
   3. Annotated chart PNGs are written to `docs/projects/patterns/charts/` and stale PNGs from previous runs are deleted before new charts are written
   4. The workflow is scheduled at 07:00 UTC on weekdays and installs only onnxruntime inference dependencies (no torch, no ultralytics) at runtime
-**Plans**: TBD
+**Plans**: 7 plans (10-01..10-07)
 
 ### Phase 11: Frontend
 **Goal**: Visitors to the portfolio can see current inside bar spring detections in a filterable table, drill into any detection to see the annotated chart and backtest stats, and find the scanner via the portfolio home page card
