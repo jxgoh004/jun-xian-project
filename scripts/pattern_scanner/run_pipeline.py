@@ -395,23 +395,20 @@ def _render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> bo
     # Probe + cache style fallback on first call.
     resolved = _resolve_publication_base_style()
 
-    # If the resolved style differs from PUBLICATION_STYLE.base_style, we patch
-    # the module-level constant in `renderer` for the duration of this call so
-    # the delegate uses the resolved style. RenderStyle is a frozen dataclass
-    # (immutable VALUES) but the module attribute itself is rebindable.
-    from dataclasses import replace
-    from scripts.pattern_scanner import renderer as _renderer_mod
-
+    # ME-07: pass the resolved style EXPLICITLY rather than rebinding
+    # renderer.PUBLICATION_STYLE for the duration of the call. The previous
+    # rebind approach was correct for sequential single-threaded use, but a
+    # parallel renderer.render_publication_chart call (pytest-xdist, future
+    # ThreadPoolExecutor) would see the mutated module-level constant. The
+    # explicit-arg form is concurrency-safe.
     if resolved == PUBLICATION_STYLE.base_style:
         _render_impl(window, detection, out_path)
         return True
 
-    original = _renderer_mod.PUBLICATION_STYLE
-    try:
-        _renderer_mod.PUBLICATION_STYLE = replace(original, base_style=resolved)
-        _render_impl(window, detection, out_path)
-    finally:
-        _renderer_mod.PUBLICATION_STYLE = original
+    from dataclasses import replace
+
+    resolved_style = replace(PUBLICATION_STYLE, base_style=resolved)
+    _render_impl(window, detection, out_path, style=resolved_style)
     return True
 
 

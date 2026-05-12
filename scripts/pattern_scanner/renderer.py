@@ -255,7 +255,13 @@ def compute_bbox_normalized(
     return (cx, cy, w, h)
 
 
-def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> None:
+def render_publication_chart(
+    df: pd.DataFrame,
+    detection,
+    out_path: Path,
+    *,
+    style: RenderStyle | None = None,
+) -> None:
     """Render a 60-bar candlestick window with the algorithmic 5-bar bbox overlaid.
 
     D-13: bbox geometry comes from detection.bars (5 dicts with low/high/open/close/date),
@@ -274,6 +280,10 @@ def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> Non
                    - mother_bar_index: int  (index into the FULL df — translate to window index)
                    - confirmation_bar_index: int  (index into the FULL df)
         out_path: Path to write the PNG to. Parent directory will be created if missing.
+        style: ME-07 — optional RenderStyle override. Defaults to PUBLICATION_STYLE.
+            Passing the resolved style explicitly lets the run_pipeline wrapper avoid
+            rebinding the module-level PUBLICATION_STYLE constant (concurrency-hostile
+            under pytest-xdist or any future parallel renderer call).
 
     Raises:
         ValueError: if df does not have exactly 60 rows (delegated to _validate_frame).
@@ -281,6 +291,9 @@ def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> Non
     from matplotlib.patches import Rectangle
 
     _validate_frame(df)  # asserts len(df) == 60 + required columns
+
+    if style is None:
+        style = PUBLICATION_STYLE
 
     # Translate full-df bar indices into 60-bar window indices.
     # The window is df.iloc[conf_idx - 59 : conf_idx + 1], so window index 59 IS the
@@ -292,7 +305,7 @@ def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> Non
     conf_idx_in_window = full_conf_idx - offset
 
     # D-13 bbox geometry from detection.bars
-    candle_w = PUBLICATION_STYLE.candle_width
+    candle_w = style.candle_width
     x0 = mother_idx_in_window - candle_w / 2
     x1 = conf_idx_in_window + candle_w / 2
     y0 = min(float(b["low"]) for b in detection.bars)
@@ -305,21 +318,21 @@ def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> Non
         wick={"up": "#26a69a", "down": "#ef5350"},
         volume="in",
     )
-    style = mpf.make_mpf_style(
-        base_mpf_style=PUBLICATION_STYLE.base_style,
+    mpf_style = mpf.make_mpf_style(
+        base_mpf_style=style.base_style,
         marketcolors=mc,
-        facecolor=PUBLICATION_STYLE.facecolor,
+        facecolor=style.facecolor,
         rc={"font.family": _FONT_FAMILY},
     )
 
     fig, axes = mpf.plot(
         df,
         type="candle",
-        style=style,
-        figsize=PUBLICATION_STYLE.figsize,
+        style=mpf_style,
+        figsize=style.figsize,
         returnfig=True,
         axisoff=False,
-        update_width_config={"candle_width": PUBLICATION_STYLE.candle_width},
+        update_width_config={"candle_width": style.candle_width},
     )
     ax = axes[0]  # main price axis
     rect = Rectangle(
@@ -337,7 +350,7 @@ def render_publication_chart(df: pd.DataFrame, detection, out_path: Path) -> Non
     # against future matplotlib upgrades (RESEARCH §Pattern 3 L378-381).
     fig.savefig(
         out_path,
-        dpi=PUBLICATION_STYLE.dpi,
+        dpi=style.dpi,
         metadata={"Software": None, "Creation Time": None},
     )
     plt.close("all")  # RESEARCH Pitfall 4 / L308 — unbounded memory leak otherwise
