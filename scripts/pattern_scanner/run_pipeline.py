@@ -631,6 +631,11 @@ def main(argv: list[str] | None = None) -> int:
     company_lookup = _load_company_lookup()
     # Reset module-level substitutions per run so SUMMARY doesn't accumulate stale state.
     _render_substitutions.clear()
+    # HI-05: also reset the cached style probe so back-to-back `main()` calls
+    # in the same process (typically tests) re-probe mpf.available_styles()
+    # rather than reusing a value computed under a different monkeypatch.
+    global _resolved_publication_base_style
+    _resolved_publication_base_style = None
 
     rows: list[dict] = []
     errors: list[dict] = []
