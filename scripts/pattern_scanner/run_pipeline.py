@@ -88,6 +88,16 @@ def _resolve_status(df: pd.DataFrame, detection) -> dict:
     """
     entry_idx = detection.confirmation_bar_index + 1
     stop_price = _stop_for(detection)
+    # BL-01: normalize confirmation_date once at the boundary. The detector
+    # promises YYYY-MM-DD strings (detector.py L58, L290), but the upstream
+    # pipeline-window filter uses pd.Timestamp() to coerce, which means an
+    # accidental Timestamp leaking in would produce "2024-01-10 00:00:00" —
+    # a filesystem-hostile filename containing a space and colons.
+    # Normalize defensively so chart_path / out_png are always safe.
+    conf_date_str = pd.Timestamp(detection.confirmation_date).strftime("%Y-%m-%d")
+    assert " " not in conf_date_str and ":" not in conf_date_str, (
+        f"confirmation_date {conf_date_str!r} contains space/colon — filesystem-hostile"
+    )
     if entry_idx >= len(df):
         # PENDING: entry has not happened yet (today IS the confirmation day, or
         # there is no next bar in the fetched slice yet). Compute a "would-be"
@@ -96,7 +106,7 @@ def _resolve_status(df: pd.DataFrame, detection) -> dict:
         target_price = _target_for(last_close, stop_price)
         return {
             "ticker": str(detection.ticker),
-            "confirmation_date": str(detection.confirmation_date),
+            "confirmation_date": conf_date_str,
             "confirmation_type": str(detection.confirmation_type),
             "is_spring": bool(detection.is_spring),
             "status": "pending",
@@ -117,6 +127,9 @@ def _resolve_status(df: pd.DataFrame, detection) -> dict:
     rec = simulate_trade(df, detection, stop_price, target_price)
     # Public Phase 10 contract: status replaces exit_reason (D-02).
     rec["status"] = rec.pop("exit_reason")
+    # BL-01: force the same shape on the delegated path as well, so both
+    # branches of _resolve_status emit a path-safe YYYY-MM-DD string.
+    rec["confirmation_date"] = conf_date_str
     return rec
 
 
