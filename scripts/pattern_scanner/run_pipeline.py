@@ -23,7 +23,8 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from pandas.tseries.offsets import BDay
+from pandas.tseries.holiday import USFederalHolidayCalendar
+from pandas.tseries.offsets import CustomBusinessDay
 
 # ── Re-exports from Phase 9 (D-06 single inference session + D-08 fallback) ──
 # Imported here so tests can monkeypatch on this module's namespace.
@@ -65,14 +66,24 @@ def _fetch_ohlc(ticker: str, period: str = "6mo") -> pd.DataFrame:
 
 
 # ── D-01: 20-trading-day window cutoff ──────────────────────────────────────
+# ME-02: use CustomBusinessDay with the US Federal holiday calendar so months
+# with Thanksgiving / Christmas don't silently shift the effective cutoff by
+# 2-3 trading days. USFederalHolidayCalendar covers all NYSE-closed federal
+# holidays (New Year's, MLK, Presidents', Memorial, Independence, Labor,
+# Thanksgiving, Christmas) — the only NYSE-only closure it misses is Good
+# Friday, which we accept as within the resolution-coverage buffer.
+_US_BDAY = CustomBusinessDay(calendar=USFederalHolidayCalendar())
+
+
 def _window_cutoff(today: pd.Timestamp, window_days: int) -> pd.Timestamp:
     """Compute the cutoff timestamp: detections with confirmation_date < cutoff are dropped.
 
-    Uses pandas business-day offsets (BDay). Saturday/Sunday `today` is rolled back to
-    the previous business day before subtracting window_days. Does NOT account for US
-    market holidays — within resolution-coverage buffer (RESEARCH §A6).
+    Uses pandas CustomBusinessDay seeded with USFederalHolidayCalendar so the
+    cutoff skips Saturday/Sunday AND US federal market holidays. Saturday/Sunday
+    or holiday `today` is rolled back to the previous trading day before
+    subtracting window_days.
     """
-    return today - BDay(window_days)
+    return today - window_days * _US_BDAY
 
 
 # ── D-02: pending pre-check wrapper for simulate_trade ──────────────────────
