@@ -227,20 +227,47 @@ def _load_company_lookup(path: Path | None = None) -> dict[str, tuple[str, str]]
     target = path or SCREENER_DATA_PATH
     if not target.exists():
         return {}
+    # HI-04: defensively validate the top-level shape and each row before
+    # calling .get / .upper. The previous implementation caught only
+    # json.JSONDecodeError + OSError, so a future schema change in the DCF
+    # screener (e.g. top-level list instead of dict, or rows missing keys)
+    # would raise AttributeError mid-iteration and abort the entire
+    # pattern-scanner run.
     try:
         data = json.loads(target.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
-    lookup: dict[str, tuple[str, str]] = {}
-    for row in data.get("stocks", []):
-        ticker = row.get("ticker")
-        if not ticker:
-            continue
-        lookup[str(ticker).upper()] = (
-            str(row.get("company_name") or ""),
-            str(row.get("sector") or ""),
+        if not isinstance(data, dict):
+            warnings.warn(
+                f"{target}: expected dict at top level, got "
+                f"{type(data).__name__}; company/sector enrichment skipped.",
+                UserWarning,
+            )
+            return {}
+        stocks = data.get("stocks", [])
+        if not isinstance(stocks, list):
+            warnings.warn(
+                f"{target}: 'stocks' is {type(stocks).__name__}, expected list; "
+                f"company/sector enrichment skipped.",
+                UserWarning,
+            )
+            return {}
+        lookup: dict[str, tuple[str, str]] = {}
+        for row in stocks:
+            if not isinstance(row, dict):
+                continue
+            ticker = row.get("ticker")
+            if not ticker or not isinstance(ticker, str):
+                continue
+            lookup[ticker.upper()] = (
+                str(row.get("company_name") or ""),
+                str(row.get("sector") or ""),
+            )
+        return lookup
+    except (json.JSONDecodeError, OSError, AttributeError, TypeError) as exc:
+        warnings.warn(
+            f"Failed to load company lookup from {target}: {exc}",
+            UserWarning,
         )
-    return lookup
+        return {}
 
 
 # ── D-14 + D-15: publication-chart render wrapper with style-fallback probe ───
