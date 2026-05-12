@@ -144,12 +144,24 @@ def _atomic_write_json(path: Path, obj: dict) -> None:
     """
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    with tmp.open("w", encoding="utf-8") as f:
-        json.dump(obj, f, indent=2, sort_keys=True, default=str)
-        f.write("\n")
-        f.flush()
-        os.fsync(f.fileno())  # durability hygiene (not load-bearing for atomicity)
-    os.replace(tmp, path)
+    # HI-02: clean up the .tmp sibling if json.dump / fsync raises, so a
+    # failed write doesn't leave disk-litter that future readers can mistake
+    # for diagnostics. The `with` block already closes the file handle; we
+    # additionally unlink the tmp path on any exception before re-raising.
+    try:
+        with tmp.open("w", encoding="utf-8") as f:
+            json.dump(obj, f, indent=2, sort_keys=True, default=str)
+            f.write("\n")
+            f.flush()
+            os.fsync(f.fileno())  # durability hygiene (not load-bearing for atomicity)
+        os.replace(tmp, path)
+    except Exception:
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
+        raise
 
 
 # ── D-15: stale-PNG cleanup via set difference ──────────────────────────────
