@@ -154,7 +154,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
 | 9. Backtesting Engine | 4/4 | Complete   | 2026-05-10 |
 | 10. Batch Pipeline | 7/7 | Complete   | 2026-05-15 |
-| 11. Frontend | 0/? | Not started | — |
+| 11. Frontend | 2/3 | In Progress|  |
 
 ## Phase Details (v2.0)
 
@@ -230,5 +230,10 @@ Plans:
   3. The per-stock drilldown (`docs/projects/patterns/stock.html`) shows the annotated YOLOv8 detection image, a 5-bar anatomy table with dates and OHLC per bar, and backtest stat cards (win rate with N, avg return %, median hold days)
   4. The drilldown page includes a cross-link to the DCF screener drilldown for any ticker present in the screener's `data.json`
   5. The portfolio home page displays a pattern scanner project card that navigates to the screener in-page
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [x] 11-01-PLAN.md — Patterns screener index.html (UI-01, UI-02) — sortable/filterable detections table with Pattern Quality + Status badges, status filter chips, 5-bar SVG legend, stale banner, empty state
+- [x] 11-02-PLAN.md — Patterns drilldown stock.html (UI-03, UI-04) — annotated PNG hero (LCP), TradingView interval D, 5-bar anatomy table, resolution card, 3-up backtest stat cards with fallback chain, DCF cross-link card
+- [ ] 11-03-PLAN.md — Home-page card + sitemap + og-image (UI-05) — third project card on docs/index.html (patterns first), patterns registry entry, og-image.png export, sitemap entries, robots.txt verify
 **UI hint**: yes

@@ -62,8 +62,8 @@
 
 - [ ] **UI-01**: Pattern scanner page (`docs/projects/patterns/index.html`) shows a sortable, filterable table of current detections — ticker, company, sector, detection date, confirmation type, confidence badge, current price
 - [ ] **UI-02**: Static pattern legend above the table explains the 5-bar structure for first-time visitors
-- [ ] **UI-03**: Per-stock drilldown (`docs/projects/patterns/stock.html`) shows hero (ticker/company/badges), TradingView chart, annotated YOLOv8 detection image, 5-bar pattern anatomy table, and backtest stat cards (win rate, avg return, median hold)
-- [ ] **UI-04**: Drilldown cross-links to the DCF screener drilldown when the ticker is present in screener `data.json`
+- [x] **UI-03**: Per-stock drilldown (`docs/projects/patterns/stock.html`) shows hero (ticker/company/badges), TradingView chart, annotated YOLOv8 detection image, 5-bar pattern anatomy table, and backtest stat cards (win rate, avg return, median hold)
+- [x] **UI-04**: Drilldown cross-links to the DCF screener drilldown when the ticker is present in screener `data.json`
 - [ ] **UI-05**: Pattern scanner is added as a project card on the portfolio home page
 
 ---
@@ -130,8 +130,8 @@ Updated during roadmap creation. Each v2.0 requirement maps to exactly one phase
 | PIPE-04 | Phase 10 | Pending |
 | UI-01 | Phase 11 | Pending |
 | UI-02 | Phase 11 | Pending |
-| UI-03 | Phase 11 | Pending |
-| UI-04 | Phase 11 | Pending |
+| UI-03 | Phase 11 | Complete |
+| UI-04 | Phase 11 | Complete |
 | UI-05 | Phase 11 | Pending |
 
 **Coverage (v2.0):**

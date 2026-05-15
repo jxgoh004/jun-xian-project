@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
-status: in-progress
-stopped_at: Phase 10 complete (7/7 plans, PIPE-01 §1 verified via 3 green nightly cron runs)
-last_updated: "2026-05-16T00:00:00.000Z"
-last_activity: 2026-05-16
+status: executing
+stopped_at: Phase 9 complete (4/4 plans, BT-03 verified empirically)
+last_updated: "2026-05-15T19:52:54.993Z"
+last_activity: 2026-05-15
 progress:
-  total_phases: 5
-  completed_phases: 4
-  total_plans: 18
-  completed_plans: 18
+  total_phases: 4
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-01)
 
 **Core value:** Visitors quickly understand who I am as a developer and interact with my working projects in a professional, accessible, single-page experience.
-**Current focus:** Phase 11 — Frontend (v2.0)
+**Current focus:** Phase 11 — frontend
 
 ## Current Position
 
-Phase: 11 (next)
-Plan: TBD (Phase 11 plans not yet generated)
-Status: Phase 10 complete (7/7 plans). Nightly pattern-scanner GHA workflow live and producing data — three green cron runs through 2026-05-15: 503/503 tickers succeeded, 44 detections in the current 20-day window, 41 PNG charts committed, `pipeline_status.completed: true`. All 39/39 must-haves verified (PIPE-01 SC-1 confirmed end-to-end on real GHA runner); 20/20 code review findings resolved across two fix passes (REVIEW.md status: clean); 84 passed / 11 skipped / 0 failed in repo suite. data.json + stats.json + charts/ now feed Phase 11 frontend.
-Last activity: 2026-05-16
+Phase: 11 (frontend) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-05-15
 
 ```
 Milestone v2.0 progress:
@@ -86,6 +86,7 @@ Phase 11 [          ] Not started
 | Phase 09 P02 | 16m | 2 tasks | 4 files |
 | Phase 09 P03 | 12m | 2 tasks | 2 files |
 | Phase 09 P04 | ~3h (27m successful run) | 3 tasks | 2 files (both SUMMARYs) |
+| Phase 11-frontend P02 | 25m | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -134,6 +135,7 @@ Recent decisions affecting current work:
 - [Phase 09-04]: Filter ablation surprise — unfiltered out_of_sample (n=8841, win_rate=0.353, avg_return_r=+0.061) marginally outperforms filtered (n=1325, win_rate=0.330, avg_return_r=-0.007); honest framing in Phase 11: filters tighten selectivity at small cost, not a clear edge
 - [Phase 09-04]: Detached PowerShell child process (Start-Process -PassThru) survived where Bash-tool bg-task got reaped at ~70 min; combined with `python -u` for real-time log flushing
 - [Phase 09 close-out]: BT-01, BT-02, BT-03 all satisfied; Phase 9 complete (4/4 plans)
+- [Phase ?]: [Phase 11-02]: Drilldown stock.html — PNG hero above TradingView (D-07); TradingView interval='D' (D-08 flip); exitCopy() derives from {status, exit_date, exit_price} — never reads exit_reason (Pitfall 1); DCF cross-link via on-demand fetch with silent absence (D-14)
 
 ### Open Questions (v2.0)
 
@@ -157,7 +159,7 @@ None at roadmap stage. See open questions above.
 
 ## Session Continuity
 
-Last session: 2026-05-10T11:30:00.000Z
+Last session: 2026-05-15T19:51:55.699Z
 Stopped at: Phase 9 complete (4/4 plans, BT-03 verified empirically)
-Resume file: .planning/ROADMAP.md (Phase 10 plans need to be generated)
+Resume file: None
 Next action: /gsd-plan-phase 10  (or whatever the project's planning entry point is for Phase 10)
