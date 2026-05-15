@@ -354,6 +354,19 @@
       <div class="projects-section">
         <h2 class="section-label">Projects</h2>
         <div class="projects">
+          <a href="#patterns" class="card" data-project="patterns"
+               aria-label="Open Inside Bar Pattern Scanner project">
+            <div class="card-thumbnail-placeholder" role="img" aria-label="Inside Bar Pattern Scanner preview"></div>
+            <h2>Inside Bar Pattern Scanner</h2>
+            <p class="card-benefit">AI-curated chart setups, updated every trading day</p>
+            <p>Computer-vision-graded inside-bar-spring detections across the S&amp;P 500, with backtested outcomes per setup type.</p>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">Python</span>
+              <span class="tag">ONNX</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Finance</span>
+            </div>
+          </a>
           <a href="#screener" class="card" data-project="screener"
                aria-label="Open S&P 500 Stock Screener project">
             <div class="card-thumbnail-placeholder" role="img" aria-label="S&P 500 Stock Screener preview"></div>
@@ -404,8 +417,9 @@
   var backBtn     = document.getElementById('back-btn');
 
   var projects = {
-    calculator: 'projects/calculator/index.html',
-    screener:   'projects/screener/index.html'
+    patterns:   'projects/patterns/index.html',
+    screener:   'projects/screener/index.html',
+    calculator: 'projects/calculator/index.html'
   };
 
   var pendingTicker = null;
