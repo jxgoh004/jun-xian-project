@@ -439,7 +439,322 @@
   </div>
 
   <script>
-    // Task 2: data-load + render + filter + sort wired here.
+    // ---------------------------------------------------------------------------
+    // State
+    // ---------------------------------------------------------------------------
+    var detections = [];
+    var sortCol = 'confirmation_date';
+    var sortDir = -1;                          // -1 = desc; D-12 default
+    var filterStatus = '';                     // '' = All; D-11
+    var filterSector = '';
+    var searchQuery = '';
+
+    // ---------------------------------------------------------------------------
+    // Helpers
+    // ---------------------------------------------------------------------------
+    function tierFor(yolo_conf) {              // D-02; RESEARCH Pitfall 8 (inclusive >= boundaries)
+      if (yolo_conf === null || yolo_conf === undefined) return 'na';
+      if (yolo_conf >= 0.50) return 'green';
+      if (yolo_conf >= 0.25) return 'yellow';
+      return 'red';
+    }
+
+    function tierLabel(tier, score) {          // UI-SPEC Pattern Quality badge label text
+      if (tier === 'na')     return '—';
+      if (tier === 'green')  return 'Clean ' + Number(score).toFixed(2);
+      if (tier === 'yellow') return 'Standard ' + Number(score).toFixed(2);
+      return 'Loose ' + Number(score).toFixed(2);
+    }
+
+    function statusLabel(s) {                  // UI-SPEC Status pill label text
+      if (s === 'target')  return 'Target';
+      if (s === 'stop')    return 'Stop';
+      if (s === 'open')    return 'Open';
+      if (s === 'pending') return 'Pending';
+      return '—';
+    }
+
+    function typeLabel(t, isSpring) {
+      var base;
+      if (t === 'pin')        base = 'Pin';
+      else if (t === 'mark_up') base = 'Mark Up';
+      else if (t === 'ice_cream') base = 'Ice Cream';
+      else base = String(t || '—');
+      return isSpring ? base + ' · spring' : base;
+    }
+
+    function fmtPrice(val) {
+      if (val === null || val === undefined) return '—';
+      return '$' + Number(val).toFixed(2);
+    }
+
+    function debounce(fn, ms) {
+      var t;
+      return function () {
+        var a = arguments, ctx = this;
+        clearTimeout(t);
+        t = setTimeout(function () { fn.apply(ctx, a); }, ms);
+      };
+    }
+
+    // ---------------------------------------------------------------------------
+    // Filter + sort pipeline
+    // ---------------------------------------------------------------------------
+    function getFiltered() {
+      return detections.filter(function (row) {
+        var status = (row.status || '').toLowerCase();
+        var q = searchQuery;
+        var matchText = !q ||
+          (row.ticker && row.ticker.toLowerCase().indexOf(q) !== -1) ||
+          (row.company_name && row.company_name.toLowerCase().indexOf(q) !== -1);
+        var matchSector = !filterSector || row.sector === filterSector;
+        var matchStatus = !filterStatus || status === filterStatus;
+        return matchText && matchSector && matchStatus;
+      });
+    }
+
+    function getSorted(rows) {
+      var col = sortCol;
+      var dir = sortDir;
+      var numericCols = { current_price: 1, yolo_conf: 1 };
+      return rows.slice().sort(function (a, b) {
+        var av = a[col];
+        var bv = b[col];
+        if (numericCols[col]) {
+          var an = (av === null || av === undefined) ? -Infinity : Number(av);
+          var bn = (bv === null || bv === undefined) ? -Infinity : Number(bv);
+          if (an < bn) return -1 * dir;
+          if (an > bn) return  1 * dir;
+          return 0;
+        }
+        // string / date-ISO compare; missing values sort last (desc) / first (asc)
+        if ((av === null || av === undefined) && (bv === null || bv === undefined)) return 0;
+        if (av === null || av === undefined) return 1;
+        if (bv === null || bv === undefined) return -1;
+        var as = String(av);
+        var bs = String(bv);
+        return dir * as.localeCompare(bs);
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Render table
+    // ---------------------------------------------------------------------------
+    function renderTable() {
+      var rows = getSorted(getFiltered());
+      var tbody = document.getElementById('tbody');
+      while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+      rows.forEach(function (row) {
+        var tr = document.createElement('tr');
+        tr.style.cursor = 'pointer';
+        tr.addEventListener('click', function () {
+          window.location.href = 'stock.html?ticker=' + encodeURIComponent(row.ticker);
+        });
+
+        // 1. Ticker
+        var tdTicker = document.createElement('td');
+        var tickerSpan = document.createElement('span');
+        tickerSpan.style.color = 'var(--accent)';
+        tickerSpan.style.fontWeight = '600';
+        tickerSpan.textContent = row.ticker || '—';
+        tdTicker.appendChild(tickerSpan);
+        tr.appendChild(tdTicker);
+
+        // 2. Company
+        var tdCompany = document.createElement('td');
+        tdCompany.className = 'col-company td-company';
+        tdCompany.textContent = row.company_name || '—';
+        tr.appendChild(tdCompany);
+
+        // 3. Sector
+        var tdSector = document.createElement('td');
+        tdSector.className = 'col-sector td-dim';
+        tdSector.textContent = row.sector || '—';
+        tr.appendChild(tdSector);
+
+        // 4. Date
+        var tdDate = document.createElement('td');
+        tdDate.textContent = row.confirmation_date || '—';
+        tr.appendChild(tdDate);
+
+        // 5. Type
+        var tdType = document.createElement('td');
+        tdType.className = 'td-dim';
+        tdType.textContent = typeLabel(row.confirmation_type, !!row.is_spring);
+        tr.appendChild(tdType);
+
+        // 6. Pattern Quality
+        var tdQual = document.createElement('td');
+        var tier = tierFor(row.yolo_conf);
+        var qBadge = document.createElement('span');
+        qBadge.className = 'badge badge-quality-' + tier;
+        qBadge.textContent = tierLabel(tier, row.yolo_conf);
+        qBadge.setAttribute('aria-label', 'Pattern Quality: ' + qBadge.textContent);
+        tdQual.appendChild(qBadge);
+        tr.appendChild(tdQual);
+
+        // 7. Price
+        var tdPrice = document.createElement('td');
+        tdPrice.className = 'td-number';
+        tdPrice.style.fontVariantNumeric = 'tabular-nums';
+        tdPrice.textContent = fmtPrice(row.current_price);
+        tr.appendChild(tdPrice);
+
+        // 8. Status
+        var tdStatus = document.createElement('td');
+        var s = (row.status || '').toLowerCase();
+        var sBadge = document.createElement('span');
+        sBadge.className = 'badge badge-status-' + (s || 'pending');
+        sBadge.textContent = statusLabel(s);
+        sBadge.setAttribute('aria-label', 'Status: ' + sBadge.textContent);
+        tdStatus.appendChild(sBadge);
+        tr.appendChild(tdStatus);
+
+        tbody.appendChild(tr);
+      });
+
+      var n = rows.length;
+      document.getElementById('row-count').textContent =
+        n + ' detection' + (n === 1 ? '' : 's');
+    }
+
+    // ---------------------------------------------------------------------------
+    // Sort indicators on thead
+    // ---------------------------------------------------------------------------
+    function updateSortIndicators() {
+      var headers = document.querySelectorAll('.screener-table thead th[data-col]');
+      headers.forEach(function (th) {
+        if (th.getAttribute('data-col') === sortCol) {
+          th.setAttribute('data-sort', sortDir === 1 ? 'asc' : 'desc');
+          th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+        } else {
+          th.removeAttribute('data-sort');
+          th.setAttribute('aria-sort', 'none');
+        }
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Init on DOM ready
+    // ---------------------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+
+      fetch('./data.json')
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          detections = (data && data.detections) || [];
+
+          // Subtitle
+          var subtitle = document.getElementById('last-updated');
+          subtitle.textContent = 'Last updated: ' + ((data && data.as_of_date) || '—');
+
+          // Stale-data banner (D-15) — pipeline_status.completed === false
+          if (data && data.pipeline_status && data.pipeline_status.completed === false) {
+            var failed = (data.pipeline_status.failed_count !== undefined) ? data.pipeline_status.failed_count : 0;
+            var banner = document.getElementById('stale-banner');
+            var bannerText = document.getElementById('stale-banner-text');
+            bannerText.textContent = 'Data may be stale — last nightly pipeline run reported ' + failed + ' ticker failures.';
+            banner.style.display = '';
+          }
+
+          // Populate sector select (dynamic options).
+          var sectorSet = {};
+          detections.forEach(function (d) { if (d.sector) sectorSet[d.sector] = true; });
+          var sectors = Object.keys(sectorSet).sort();
+          var sectorSelect = document.getElementById('sector');
+          sectors.forEach(function (sec) {
+            var opt = document.createElement('option');
+            opt.value = sec;
+            opt.textContent = sec;
+            sectorSelect.appendChild(opt);
+          });
+
+          // Empty case (D-16) — keep legend visible
+          if (detections.length === 0) {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('detection-table').style.display = 'none';
+            document.getElementById('empty-state').style.display = '';
+            document.getElementById('row-count').textContent = '0 detections';
+            return;
+          }
+
+          // Chip counts (D-11) — full dataset, lowercased compare (Pitfall 5)
+          var statusCounts = { '': detections.length, open: 0, target: 0, stop: 0, pending: 0 };
+          detections.forEach(function (d) {
+            var s = (d.status || '').toLowerCase();
+            if (statusCounts[s] !== undefined) statusCounts[s]++;
+          });
+          var labels = { '': 'All', open: 'Open', target: 'Target', stop: 'Stop', pending: 'Pending' };
+          document.querySelectorAll('.chip').forEach(function (c) {
+            var key = c.getAttribute('data-status');
+            c.textContent = labels[key] + ' (' + (statusCounts[key] || 0) + ')';
+          });
+
+          // Show table
+          document.getElementById('loading-state').style.display = 'none';
+          document.getElementById('detection-table').style.display = '';
+          updateSortIndicators();
+          renderTable();
+        })
+        .catch(function (err) {
+          document.getElementById('loading-state').style.display = 'none';
+          document.getElementById('detection-table').style.display = 'none';
+          var errEl = document.getElementById('error-state');
+          errEl.style.display = '';
+          var detail = errEl.querySelector('.error-detail');
+          if (detail) detail.textContent = (err && err.message) ? err.message : String(err);
+        });
+
+      // Search input — 150ms debounce
+      var searchInput = document.getElementById('search');
+      searchInput.addEventListener('input', debounce(function (e) {
+        searchQuery = (e.target.value || '').toLowerCase().trim();
+        renderTable();
+      }, 150));
+
+      // Sector filter
+      document.getElementById('sector').addEventListener('change', function (e) {
+        filterSector = e.target.value;
+        renderTable();
+      });
+
+      // Status filter chips — radio-style toggle
+      var chips = document.querySelectorAll('.chip');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+          chip.setAttribute('aria-pressed', 'true');
+          filterStatus = chip.getAttribute('data-status') || '';
+          renderTable();
+        });
+      });
+
+      // Column-header sort
+      var headers = document.querySelectorAll('.screener-table thead th[data-col]');
+      headers.forEach(function (th) {
+        th.addEventListener('click', function () {
+          var col = this.getAttribute('data-col');
+          if (col === sortCol) {
+            sortDir = sortDir === 1 ? -1 : 1;
+          } else {
+            sortCol = col;
+            sortDir = -1;
+          }
+          updateSortIndicators();
+          renderTable();
+        });
+      });
+
+      // Back-link to portfolio shell (postMessage)
+      document.getElementById('back-to-portfolio').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.parent.postMessage({ type: 'navigate', project: null }, '*');
+      });
+    });
   </script>
 
 </body>
