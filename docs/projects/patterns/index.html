@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inside Bar Pattern Scanner — AI-graded chart setups | Goh Jun Xian</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daily-updated inside-bar-spring detections across the S&amp;P 500, computer-vision-graded for pattern quality, with backtested outcomes per setup type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jxgoh004.github.io/jun-xian-project/projects/patterns/">
+  <meta property="og:title" content="Inside Bar Pattern Scanner — AI-graded chart setups | Goh Jun Xian">
+  <meta property="og:description" content="Daily-updated inside-bar-spring detections across the S&amp;P 500, computer-vision-graded for pattern quality, with backtested outcomes per setup type.">
+  <meta property="og:image" content="https://jxgoh004.github.io/jun-xian-project/projects/patterns/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inside Bar Pattern Scanner — AI-graded chart setups | Goh Jun Xian">
+  <meta name="twitter:description" content="Daily-updated inside-bar-spring detections across the S&amp;P 500, computer-vision-graded for pattern quality, with backtested outcomes per setup type.">
+  <meta name="twitter:image" content="https://jxgoh004.github.io/jun-xian-project/projects/patterns/og-image.png">
+  <link rel="canonical" href="https://jxgoh004.github.io/jun-xian-project/projects/patterns/">
+  <meta name="theme-color" content="#0d1117">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --text-dim: #8b949e;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      transition: opacity 0.15s;
+    }
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    header {
+      padding: 24px 24px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    /* Stale-data banner (D-15) */
+    .stale-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 24px 0;
+      padding: 10px 14px;
+      background: rgba(227,179,65,0.15);
+      border: 1px solid rgba(227,179,65,0.3);
+      border-radius: var(--radius);
+      color: #e3b341;
+      font-size: 13px;
+    }
+    .stale-banner-icon { font-size: 16px; line-height: 1; }
+
+    /* Legend band (D-04) */
+    .legend-band {
+      padding: 16px 24px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .legend-band svg {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .legend-caption {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-top: 4px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .legend-caption strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+    @media (max-width: 480px) {
+      .legend-band svg { display: none; }
+      .legend-caption { padding: 16px; margin-top: 0; }
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      padding: 16px 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .controls input[type="text"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .controls input[type="text"]:focus { border-color: var(--accent); }
+    .controls input[type="text"]:focus-visible {
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
+    }
+    .controls input[type="text"]::placeholder { color: var(--text-dim); }
+
+    .controls select {
+      min-width: 160px;
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .controls select:focus { border-color: var(--accent); }
+    .controls select:focus-visible {
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
+    }
+
+    /* Status filter chips (D-11) */
+    .status-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      display: inline-block;
+      cursor: pointer;
+      background: var(--surface);
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .chip:hover { color: var(--text-bright); }
+    .chip[aria-pressed="true"] {
+      background: rgba(88,166,255,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(88,166,255,0.3);
+    }
+    .chip:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    #row-count {
+      color: var(--text-dim);
+      font-size: 13px;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 24px 24px;
+    }
+
+    .screener-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .screener-table thead th {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      z-index: 10;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .screener-table thead th:hover { color: var(--text-bright); }
+    .screener-table thead th[data-sort="asc"]::after {
+      content: ' \2191';
+      color: var(--accent);
+    }
+    .screener-table thead th[data-sort="desc"]::after {
+      content: ' \2193';
+      color: var(--accent);
+    }
+
+    .screener-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .screener-table tbody tr:hover { background: rgba(88, 166, 255, 0.04); }
+
+    .screener-table td {
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+
+    .td-ticker {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 13px;
+    }
+    .td-company {
+      color: var(--text-bright);
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .td-number {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .td-dim { color: var(--text-dim); }
+
+    /* Badge geometry (shared) */
+    .badge {
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* Pattern Quality tier badges (D-02, D-03) */
+    .badge-quality-green  { background: rgba(63,185,80,0.15);   color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .badge-quality-yellow { background: rgba(227,179,65,0.15);  color: #e3b341; border: 1px solid rgba(227,179,65,0.3); }
+    .badge-quality-red    { background: rgba(248,81,73,0.15);   color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+    .badge-quality-na     { background: rgba(139,148,158,0.10); color: #8b949e; border: 1px solid rgba(139,148,158,0.2); }
+
+    /* Status pill variants (D-10) */
+    .badge-status-target  { background: rgba(63,185,80,0.15);   color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .badge-status-stop    { background: rgba(248,81,73,0.15);   color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+    .badge-status-open    { background: rgba(88,166,255,0.15);  color: #58a6ff; border: 1px solid rgba(88,166,255,0.3); }
+    .badge-status-pending { background: rgba(139,148,158,0.10); color: #8b949e; border: 1px solid rgba(139,148,158,0.3); }
+
+    /* Loading / error / empty states */
+    #error-state, #empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-dim);
+    }
+    #error-state p, #empty-state p {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    #error-state .error-detail {
+      font-size: 13px;
+      color: var(--text-dim);
+      opacity: 0.7;
+    }
+    #loading-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    /* Accessibility utilities */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Mobile breakpoint */
+    @media (max-width: 640px) {
+      .col-sector,
+      .col-company {
+        display: none;
+      }
+      header { padding: 16px 16px 0; }
+      .controls { padding: 12px 16px; gap: 8px; }
+      .table-scroll { padding: 0 16px 16px; }
+      .stale-banner { margin: 12px 16px 0; }
+      .legend-band { padding: 12px 16px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#detection-table" style="position:absolute;top:-100%;left:16px;z-index:10000;padding:8px 16px;background:var(--accent);color:#0d1117;font-weight:600;border-radius:8px;text-decoration:none;" onfocus="this.style.top='8px'" onblur="this.style.top='-100%'">Skip to detections</a>
+
+  <header>
+    <a href="javascript:void(0)" class="back-link" id="back-to-portfolio">&larr; Back to portfolio</a>
+    <h1>Inside Bar Pattern Scanner</h1>
+    <p id="last-updated" class="subtitle">Loading data&hellip;</p>
+  </header>
+
+  <div class="stale-banner" role="status" aria-live="polite" id="stale-banner" style="display:none;">
+    <span class="stale-banner-icon" aria-hidden="true">&#9888;</span>
+    <span id="stale-banner-text">Data may be stale.</span>
+  </div>
+
+  <section class="legend-band" aria-label="Inside bar spring 5-bar structure">
+    <svg viewBox="0 0 600 140" role="img" aria-labelledby="legend-title legend-desc">
+      <title id="legend-title">Inside bar spring — 5-bar pattern diagram</title>
+      <desc id="legend-desc">A bullish reversal pattern: a wide mother bar, a narrow inside bar within its range, a brief break below the mother low, a reversal confirmation bar (pin, mark-up, or ice-cream), and a continuation bar.</desc>
+
+      <!-- Dashed mother-low reference line at y=92, spanning x=40..520 -->
+      <line x1="40" y1="92" x2="520" y2="92" stroke="#8b949e" stroke-dasharray="4,3" stroke-width="1"/>
+      <text x="528" y="95" font-family="-apple-system, sans-serif" font-size="10" fill="#8b949e">mother low</text>
+
+      <!-- Bar 1: Mother — wide bullish body (open 80 → close 38), wick top 22 to bottom 92 -->
+      <line x1="80" y1="22" x2="80" y2="92" stroke="#8b949e" stroke-width="1"/>
+      <rect x="68" y="38" width="24" height="42" fill="rgba(63,185,80,0.5)" stroke="#30363d" stroke-width="1"/>
+
+      <!-- Bar 2: Inside — narrower body fully inside Bar 1 range (top 48, bottom 78) -->
+      <line x1="180" y1="48" x2="180" y2="78" stroke="#8b949e" stroke-width="1"/>
+      <rect x="172" y="55" width="16" height="18" fill="rgba(63,185,80,0.5)" stroke="#30363d" stroke-width="1"/>
+
+      <!-- Bar 3: Break — bearish body dips below mother low (body 70→104, wick 60→112) -->
+      <line x1="280" y1="60" x2="280" y2="112" stroke="#8b949e" stroke-width="1"/>
+      <rect x="270" y="70" width="20" height="34" fill="rgba(248,81,73,0.5)" stroke="#30363d" stroke-width="1"/>
+
+      <!-- Bar 4: Confirm — bullish reversal, body closes back above mother low (body 88→40, wick 100→32) -->
+      <line x1="380" y1="32" x2="380" y2="100" stroke="#8b949e" stroke-width="1"/>
+      <rect x="368" y="40" width="24" height="48" fill="rgba(63,185,80,0.5)" stroke="#30363d" stroke-width="1"/>
+
+      <!-- Bar 5: Continuation — bullish smaller body above bar 4 (body 50→28, wick 60→22) -->
+      <line x1="480" y1="22" x2="480" y2="60" stroke="#8b949e" stroke-width="1"/>
+      <rect x="470" y="28" width="20" height="22" fill="rgba(63,185,80,0.5)" stroke="#30363d" stroke-width="1"/>
+
+      <!-- Bar labels under each candle -->
+      <text x="80"  y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#f0f6fc" text-anchor="middle">Mother</text>
+      <text x="180" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#f0f6fc" text-anchor="middle">Inside</text>
+      <text x="280" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#f0f6fc" text-anchor="middle">Break</text>
+      <text x="380" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#f0f6fc" text-anchor="middle">Confirm</text>
+      <text x="480" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#f0f6fc" text-anchor="middle">Continuation</text>
+    </svg>
+    <p class="legend-caption"><strong>Inside bar spring</strong> &mdash; a brief break-below after a tight pullback, recovered by the next bar.</p>
+  </section>
+
+  <div class="controls">
+    <label for="search" class="sr-only">Search ticker or company</label>
+    <input type="text" id="search" placeholder="Search ticker or company" autocomplete="off" />
+    <label for="sector" class="sr-only">Filter by sector</label>
+    <select id="sector">
+      <option value="">All sectors</option>
+    </select>
+    <div class="status-chips" role="group" aria-label="Filter by status">
+      <button class="chip" type="button" data-status="" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-status="open" aria-pressed="false">Open</button>
+      <button class="chip" type="button" data-status="target" aria-pressed="false">Target</button>
+      <button class="chip" type="button" data-status="stop" aria-pressed="false">Stop</button>
+      <button class="chip" type="button" data-status="pending" aria-pressed="false">Pending</button>
+    </div>
+    <span id="row-count" aria-live="polite">0 detections</span>
+  </div>
+
+  <div id="loading-state">Loading detections&hellip;</div>
+
+  <div id="error-state" style="display:none;">
+    <p>Couldn't load detections. Try refreshing.</p>
+    <p class="error-detail"></p>
+  </div>
+
+  <div id="empty-state" style="display:none;">
+    <p>No active inside-bar-spring setups in the last 20 trading days.</p>
+  </div>
+
+  <div class="table-scroll">
+    <table class="screener-table" id="detection-table" style="display:none;">
+      <thead>
+        <tr>
+          <th data-col="ticker" aria-sort="none">Ticker</th>
+          <th data-col="company_name" class="col-company" aria-sort="none">Company</th>
+          <th data-col="sector" class="col-sector" aria-sort="none">Sector</th>
+          <th data-col="confirmation_date" aria-sort="descending" data-sort="desc">Date</th>
+          <th data-col="confirmation_type" aria-sort="none">Type</th>
+          <th data-col="yolo_conf" aria-sort="none">Pattern Quality</th>
+          <th data-col="current_price" aria-sort="none">Price</th>
+          <th data-col="status" aria-sort="none">Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // Task 2: data-load + render + filter + sort wired here.
+  </script>
+
+</body>
+</html>
