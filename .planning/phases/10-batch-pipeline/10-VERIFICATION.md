@@ -1,8 +1,8 @@
 ---
 phase: 10-batch-pipeline
 verified: 2026-05-12T00:00:00Z
-status: human_needed
-score: 38/39 must-haves verified (one PARTIAL pending human GHA run)
+status: passed
+score: 39/39 must-haves verified (PIPE-01 SC-1 confirmed via three green nightly cron runs through 2026-05-15)
 overrides_applied: 0
 re_verification:
   previous_status: null

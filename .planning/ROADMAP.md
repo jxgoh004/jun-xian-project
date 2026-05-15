@@ -26,7 +26,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
 - [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
 - [x] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail (completed 2026-05-10)
-- [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
+- [x] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results (completed 2026-05-15)
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
 
 ## Phase Details
@@ -143,7 +143,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 - [x] **Phase 7: Detection Engine** - Implement the algorithmic 5-bar inside bar spring detector with full ruleset and trend filters (completed 2026-05-01)
 - [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
 - [x] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail (completed 2026-05-10)
-- [ ] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results
+- [x] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results (completed 2026-05-15)
 - [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
 
 ### Milestone v2.0 Progress
@@ -153,7 +153,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 | 7. Detection Engine | 2/2 | Complete   | 2026-05-01 |
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
 | 9. Backtesting Engine | 4/4 | Complete   | 2026-05-10 |
-| 10. Batch Pipeline | 0/7 | In progress | — |
+| 10. Batch Pipeline | 7/7 | Complete   | 2026-05-15 |
 | 11. Frontend | 0/? | Not started | — |
 
 ## Phase Details (v2.0)

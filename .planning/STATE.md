@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: — Inside Bar Pattern Scanner
-status: completed
-stopped_at: Phase 9 complete (4/4 plans, BT-03 verified empirically)
-last_updated: "2026-05-10T18:23:20.343Z"
-last_activity: 2026-05-10
+status: in-progress
+stopped_at: Phase 10 complete (7/7 plans, PIPE-01 §1 verified via 3 green nightly cron runs)
+last_updated: "2026-05-16T00:00:00.000Z"
+last_activity: 2026-05-16
 progress:
-  total_phases: 4
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_phases: 5
+  completed_phases: 4
+  total_plans: 18
+  completed_plans: 18
 ---
 
 # Project State
@@ -20,21 +20,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-01)
 
 **Core value:** Visitors quickly understand who I am as a developer and interact with my working projects in a professional, accessible, single-page experience.
-**Current focus:** Phase 09 — Backtesting Engine (v2.0)
+**Current focus:** Phase 11 — Frontend (v2.0)
 
 ## Current Position
 
-Phase: 10 (next)
-Plan: TBD (Phase 10 plans not yet generated)
-Status: Phase 9 complete (4/4 plans). Empirical S&P 500 backtest produced `_dev/backtest_cache.json` (27.8 MB, gitignored). BT-03 acceptance gate cleared with N=295 (pin), 317 (mark_up), 713 (ice_cream) in filtered out_of_sample — all >> 10. Cutoff held at 2024-01-01 (no revision needed). Run executed with `--no-onnx` (yolo_conf=null on every record) — pragmatic mitigation for ~9hr full-ONNX wall-clock vs the plan's 50-180 min budget; documented as a Phase 11 follow-up to score just the post-cutoff filtered slice (~1325 detections, ~5 min). All 26 backtest unit tests still green; full repo suite 67 passed / 0 failed.
-Last activity: 2026-05-10
+Phase: 11 (next)
+Plan: TBD (Phase 11 plans not yet generated)
+Status: Phase 10 complete (7/7 plans). Nightly pattern-scanner GHA workflow live and producing data — three green cron runs through 2026-05-15: 503/503 tickers succeeded, 44 detections in the current 20-day window, 41 PNG charts committed, `pipeline_status.completed: true`. All 39/39 must-haves verified (PIPE-01 SC-1 confirmed end-to-end on real GHA runner); 20/20 code review findings resolved across two fix passes (REVIEW.md status: clean); 84 passed / 11 skipped / 0 failed in repo suite. data.json + stats.json + charts/ now feed Phase 11 frontend.
+Last activity: 2026-05-16
 
 ```
 Milestone v2.0 progress:
 Phase 7  [##########] Complete (2026-05-01)
 Phase 8  [##########] Complete (2026-05-08)
 Phase 9  [##########] Complete (2026-05-10)
-Phase 10 [          ] Not started
+Phase 10 [##########] Complete (2026-05-15)
 Phase 11 [          ] Not started
 ```
 
