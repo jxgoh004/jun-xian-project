@@ -643,6 +643,369 @@
 
   </main>
 
-  <script></script>
+  <script>
+  (function () {
+    'use strict';
+
+    // ── URL param parsing ────────────────────────────────────────────────────
+    var params = new URLSearchParams(window.location.search);
+    var ticker = (params.get('ticker') || '').toUpperCase();
+
+    var navTicker = document.getElementById('nav-ticker');
+    if (navTicker) navTicker.textContent = ticker || '—';
+
+    if (!ticker) {
+      showError(new Error('No ticker specified in URL (?ticker=SYMBOL).'));
+      return;
+    }
+
+    // ── Helpers ─────────────────────────────────────────────────────────────
+    function tierFor(yolo_conf) {
+      // RESEARCH Pitfall 8 — inclusive >= boundaries
+      if (yolo_conf === null || yolo_conf === undefined) return 'na';
+      if (yolo_conf >= 0.50) return 'green';
+      if (yolo_conf >= 0.25) return 'yellow';
+      return 'red';
+    }
+
+    function tierLabel(tier, score) {
+      if (tier === 'na')     return '—';
+      if (tier === 'green')  return 'Clean ' + Number(score).toFixed(2);
+      if (tier === 'yellow') return 'Standard ' + Number(score).toFixed(2);
+      return 'Loose ' + Number(score).toFixed(2);
+    }
+
+    function statusLabel(s) {
+      if (s === 'target')  return 'Target';
+      if (s === 'stop')    return 'Stop';
+      if (s === 'open')    return 'Open';
+      if (s === 'pending') return 'Pending';
+      return '—';
+    }
+
+    function exitCopy(row) {
+      // RESEARCH Pitfall 1 — derive from status + exit_date + exit_price.
+      // NEVER read exit_reason — that field does not exist on disk.
+      var s = (row.status || '').toLowerCase();
+      if (s === 'target')  return 'Hit target at $' + Number(row.exit_price).toFixed(2) + ' on ' + row.exit_date;
+      if (s === 'stop')    return 'Stopped out at $' + Number(row.exit_price).toFixed(2) + ' on ' + row.exit_date;
+      if (s === 'open')    return 'Open trade — entered ' + row.entry_date + ', ' + row.hold_days + ' days held';
+      if (s === 'pending') return 'Pending entry — confirmation just printed; entry at next open';
+      return '—';
+    }
+
+    function typeLabel(t, is_spring) {
+      var m = { pin: 'Pin', mark_up: 'Mark Up', ice_cream: 'Ice Cream' };
+      return (m[t] || t) + (is_spring ? ' · Spring' : '');
+    }
+
+    function fmtR(v) {
+      if (v === null || v === undefined) return '—';
+      var n = Number(v);
+      if (isNaN(n)) return '—';
+      var s = n.toFixed(2);
+      if (n >= 0) s = '+' + s;
+      return s + 'R';
+    }
+
+    function fmtPrice(v) {
+      if (v === null || v === undefined) return '—';
+      var n = Number(v);
+      if (isNaN(n)) return '—';
+      return '$' + n.toFixed(2);
+    }
+
+    function statsFor(detection, stats) {
+      // D-13 fallback chain — verbatim from RESEARCH §Pattern 4
+      var key = detection.confirmation_type + (detection.is_spring ? '_spring' : '_extended');
+      var floor = (stats && stats.n_floor) || 10;
+      var byTypeSpring = (stats && stats.stats && stats.stats.by_type_x_spring) || {};
+      var byType       = (stats && stats.stats && stats.stats.by_confirmation_type) || {};
+      var all          = (stats && stats.stats && stats.stats.all) || null;
+      var cells = [
+        { cut: 'by_type_x_spring',     label: 'out-of-sample ' + key,                              data: byTypeSpring[key] },
+        { cut: 'by_confirmation_type', label: 'out-of-sample ' + detection.confirmation_type,       data: byType[detection.confirmation_type] },
+        { cut: 'all',                  label: 'out-of-sample all-type',                            data: all }
+      ];
+      for (var i = 0; i < cells.length; i++) {
+        if (cells[i].data && cells[i].data.n_resolved >= floor) return cells[i];
+      }
+      return cells[cells.length - 1];
+    }
+
+    function showError(err) {
+      var loading = document.getElementById('loading-state');
+      var errEl   = document.getElementById('error-state');
+      var detail  = document.getElementById('error-detail');
+      var main    = document.getElementById('main-content');
+      if (loading) loading.style.display = 'none';
+      if (main)    main.style.display    = 'none';
+      if (errEl)   errEl.style.display   = '';
+      if (detail && err && err.message) detail.textContent = err.message;
+      if (window.console && window.console.error) console.error(err);
+    }
+
+    // ── TradingView chart (verbatim from screener/stock.html, flip interval D-08) ──
+    function initChart(sym) {
+      var outer = document.getElementById('tv-chart');
+      if (!outer) return;
+      outer.innerHTML = '';
+
+      var container = document.createElement('div');
+      container.className = 'tradingview-widget-container';
+      container.style.cssText = 'width:100%;height:100%;min-height:360px;';
+      outer.appendChild(container);
+
+      var widgetDiv = document.createElement('div');
+      widgetDiv.className = 'tradingview-widget-container__widget';
+      widgetDiv.style.cssText = 'width:100%;height:100%;min-height:360px;';
+      container.appendChild(widgetDiv);
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+      script.async = true;
+      var config = {
+        autosize: true,
+        symbol: sym.replace(/-/g, '.'),
+        interval: 'D',             // D-08: daily bars (analog used 'W')
+        timezone: 'Etc/UTC',
+        theme: 'dark',
+        style: '1',
+        locale: 'en',
+        hide_top_toolbar: false,
+        hide_legend: false,
+        save_image: false,
+        calendar: false,
+        allow_symbol_change: false,
+        backgroundColor: 'rgba(8,12,18,1)',
+        gridColor: 'rgba(30,40,64,0.5)',
+        support_host: 'https://www.tradingview.com'
+      };
+      script.textContent = JSON.stringify(config);
+
+      script.onerror = function () {
+        outer.innerHTML =
+          '<div class="chart-fallback">' +
+          '<span style="font-size:24px">📊</span>' +
+          '<span>Live chart unavailable offline.</span>' +
+          '</div>';
+      };
+      container.appendChild(script);
+    }
+
+    // ── Render: hero ─────────────────────────────────────────────────────────
+    function renderHero(row) {
+      var s = (row.status || '').toLowerCase();
+      var tier = tierFor(row.yolo_conf);
+
+      document.getElementById('hero-ticker').textContent  = ticker;
+      document.getElementById('hero-company').textContent = row.company_name || '—';
+      document.getElementById('hero-sector').textContent  = (row.sector || '—') + ' · ' + typeLabel(row.confirmation_type, row.is_spring);
+
+      var statusEl = document.getElementById('hero-status');
+      statusEl.className   = 'badge badge-status-' + (s || 'pending');
+      statusEl.textContent = statusLabel(s);
+
+      var qualityEl = document.getElementById('hero-quality');
+      qualityEl.className   = 'badge badge-quality-' + tier;
+      qualityEl.textContent = tierLabel(tier, row.yolo_conf || 0);
+
+      document.getElementById('hero-price').textContent = fmtPrice(row.current_price);
+
+      // Hero glow per status
+      var heroEl = document.getElementById('hero-section');
+      heroEl.classList.remove('glow-green', 'glow-red', 'glow-blue', 'glow-yellow');
+      if (s === 'target')      heroEl.classList.add('glow-green');
+      else if (s === 'stop')   heroEl.classList.add('glow-red');
+      else if (s === 'open')   heroEl.classList.add('glow-blue');
+      else if (s === 'pending')heroEl.classList.add('glow-yellow');
+
+      // Filter pills
+      var filtersEl = document.getElementById('hero-filters');
+      filtersEl.innerHTML = '';
+      var f = row.filters || {};
+      var pills = [
+        { label: 'Trend',        ok: !!f.hh_hl },
+        { label: 'Above 50-SMA', ok: !!f.above_50sma },
+        { label: 'Cluster',      ok: !!f.sma_cluster }
+      ];
+      for (var i = 0; i < pills.length; i++) {
+        var p = document.createElement('span');
+        p.className = 'filter-pill ' + (pills[i].ok ? 'ok' : 'fail');
+        p.textContent = pills[i].label + ' ' + (pills[i].ok ? '✓' : '✗');
+        filtersEl.appendChild(p);
+      }
+      filtersEl.style.display = '';
+    }
+
+    // ── Render: annotated PNG ────────────────────────────────────────────────
+    function renderAnnotated(row) {
+      var img = document.getElementById('annotated-img');
+      // chart_path is relative to docs/projects/patterns/ (e.g. "charts/APD_2026-04-20.png")
+      img.src = row.chart_path;
+      img.alt = 'Annotated 5-bar inside bar spring detection for ' + ticker + ' on ' + row.confirmation_date;
+      document.getElementById('annotated-caption').textContent =
+        'Algorithmic 5-bar bbox · ' + row.confirmation_date + ' · ' + typeLabel(row.confirmation_type, row.is_spring);
+    }
+
+    // ── Render: 5-bar anatomy table ──────────────────────────────────────────
+    function renderAnatomy(row) {
+      var tbody = document.getElementById('anatomy-tbody');
+      tbody.innerHTML = '';
+      var labels = ['Mother', 'Inside', 'Break', 'Confirm', 'Continuation'];
+      var bars = row.bars || [];
+      for (var i = 0; i < labels.length; i++) {
+        var bar = bars[i] || {};
+        var tr = document.createElement('tr');
+        var cells = [
+          labels[i],
+          bar.date || '—',
+          bar.open !== undefined ? Number(bar.open).toFixed(2) : '—',
+          bar.high !== undefined ? Number(bar.high).toFixed(2) : '—',
+          bar.low  !== undefined ? Number(bar.low).toFixed(2)  : '—',
+          bar.close !== undefined ? Number(bar.close).toFixed(2) : '—'
+        ];
+        for (var j = 0; j < cells.length; j++) {
+          var td = document.createElement('td');
+          td.textContent = cells[j];
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+    }
+
+    // ── Render: resolution card ──────────────────────────────────────────────
+    function renderResolution(row) {
+      var s = (row.status || '').toLowerCase();
+      var card = document.getElementById('resolution-card');
+      card.className = 'resolution-card status-' + (s || 'pending');
+
+      document.getElementById('resolution-headline').textContent = exitCopy(row);
+
+      var grid = document.getElementById('resolution-grid');
+      grid.innerHTML = '';
+      var rows = [
+        ['Entry date',   row.entry_date || '—'],
+        ['Entry price',  fmtPrice(row.entry_price)],
+        ['Stop price',   fmtPrice(row.stop_price)],
+        ['Target price', fmtPrice(row.target_price)],
+        ['Exit date',    row.exit_date || '—'],
+        ['Exit price',   (row.exit_price !== null && row.exit_price !== undefined) ? fmtPrice(row.exit_price) : '—'],
+        ['Hold days',    (row.hold_days !== null && row.hold_days !== undefined) ? String(row.hold_days) : '—'],
+        ['R-multiple',   fmtR(row.R)]
+      ];
+      for (var i = 0; i < rows.length; i++) {
+        var dt = document.createElement('dt');
+        dt.textContent = rows[i][0];
+        var dd = document.createElement('dd');
+        dd.textContent = rows[i][1];
+        grid.appendChild(dt);
+        grid.appendChild(dd);
+      }
+    }
+
+    // ── Render: backtest stat cards ──────────────────────────────────────────
+    function renderStats(row, stats) {
+      var cell = statsFor(row, stats);
+      var d = cell && cell.data;
+      var floor = (stats && stats.n_floor) || 10;
+
+      var wrEl  = document.getElementById('stat-winrate');
+      var arEl  = document.getElementById('stat-avgreturn');
+      var mhEl  = document.getElementById('stat-medianhold');
+      var subEl = document.getElementById('stats-subtitle');
+
+      if (d && d.n_resolved >= floor) {
+        wrEl.textContent = (d.win_rate !== null && d.win_rate !== undefined)
+          ? (Number(d.win_rate) * 100).toFixed(1) + '%' : '—';
+        arEl.textContent = (d.avg_return_r !== null && d.avg_return_r !== undefined)
+          ? fmtR(d.avg_return_r) : '—';
+        mhEl.textContent = (d.median_hold_days !== null && d.median_hold_days !== undefined)
+          ? d.median_hold_days + ' days' : '—';
+      } else {
+        wrEl.textContent = '—';
+        arEl.textContent = '—';
+        mhEl.textContent = '—';
+      }
+
+      var n = (d && d.n_resolved) || 0;
+      subEl.textContent = 'Based on N=' + n + ' ' + cell.label + ' detections';
+    }
+
+    // ── DCF cross-link (UI-04, on-demand fetch of screener/data.json) ───────
+    function maybeShowCrossLink(t) {
+      // RESEARCH Pitfall 2: actual ~1.23 MB on disk; ~250 KB gzipped.
+      // Fetched ONLY on drilldown (NOT on screener index).
+      fetch('../screener/data.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (dcf) {
+          if (!dcf || !Array.isArray(dcf.stocks)) return;
+          var hit = dcf.stocks.some(function (s) {
+            return (s.ticker || '').toUpperCase() === t;
+          });
+          if (!hit) return;  // Silent absence per D-14
+          var sec = document.getElementById('cross-link-section');
+          var a   = document.getElementById('cross-link-anchor');
+          document.getElementById('cross-link-ticker').textContent = t;
+          a.setAttribute('href', '../screener/stock.html?ticker=' + encodeURIComponent(t));
+          sec.style.display = '';
+        })
+        .catch(function () { /* silent — cross-link is opportunistic */ });
+    }
+
+    // ── Orchestration ────────────────────────────────────────────────────────
+    function renderDrilldown(row, stats) {
+      // Post-fetch title rewrite (analog pattern)
+      document.title = ticker + ' — ' + (row.company_name || ticker) + ' | Pattern Scanner';
+
+      renderHero(row);
+      renderAnnotated(row);
+      renderAnatomy(row);
+      renderResolution(row);
+      renderStats(row, stats);
+
+      // Reveal main content, hide loading
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('main-content').style.display  = '';
+    }
+
+    function boot() {
+      var dataPromise = fetch('./data.json').then(function (r) {
+        if (!r.ok) throw new Error('Failed to load data.json (HTTP ' + r.status + ').');
+        return r.json();
+      }).then(function (data) {
+        var detections = (data && data.detections) || [];
+        for (var i = 0; i < detections.length; i++) {
+          if ((detections[i].ticker || '').toUpperCase() === ticker) {
+            return detections[i];
+          }
+        }
+        throw new Error('No active detection for ' + ticker + '.');
+      });
+
+      var statsPromise = fetch('./stats.json').then(function (r) {
+        if (!r.ok) throw new Error('Failed to load stats.json (HTTP ' + r.status + ').');
+        return r.json();
+      });
+
+      Promise.all([dataPromise, statsPromise])
+        .then(function (results) {
+          var detection = results[0];
+          var stats     = results[1];
+          renderDrilldown(detection, stats);
+          initChart(ticker);
+          maybeShowCrossLink(ticker);
+        })
+        .catch(showError);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot);
+    } else {
+      boot();
+    }
+  })();
+  </script>
 </body>
 </html>
