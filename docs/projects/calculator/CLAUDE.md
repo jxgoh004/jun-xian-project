@@ -28,10 +28,10 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
 ## Key files
 
 ```
-index.html                    # This page — all UI logic in vanilla JS
-api_server.py                 # Flask endpoint: /api/fetch-stock/<symbol>
-yahoo_finance_fetcher.py      # Pulls TTM/annual financials
-finviz_fetcher.py             # Pulls beta, P/E, 5Y growth estimate
+index.html                          # This page — all UI logic in vanilla JS
+api_server.py                       # Flask endpoint: /api/fetch-stock/<symbol>
+shared/fetchers/yahoo_finance.py    # Pulls TTM/annual financials
+shared/fetchers/finviz.py           # Pulls beta, P/E, 5Y growth estimate
 ```
 
 ## UI layout

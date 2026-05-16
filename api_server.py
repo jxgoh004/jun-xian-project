@@ -9,8 +9,7 @@ from flask_cors import CORS
 import math
 import os
 
-from yahoo_finance_fetcher import YahooFinanceFetcher
-from finviz_fetcher import FinVizFetcher
+from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=BASE_DIR, static_url_path='')

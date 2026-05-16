@@ -38,8 +38,11 @@ Runs the same DCF model as the calculator across all ~500 S&P 500 companies via 
 
 ```
 api_server.py                  # Flask API — live backend for the calculator
-yahoo_finance_fetcher.py        # TTM/annual financials from Yahoo Finance
-finviz_fetcher.py              # Valuation metrics + beta from FinViz
+
+shared/                        # cross-project code (imported by multiple projects)
+  fetchers/
+    yahoo_finance.py           # TTM/annual financials from Yahoo Finance
+    finviz.py                  # Valuation metrics + beta from FinViz
 
 economic-moat/
   moat_analyzer.py             # Async orchestrator: 5 criterion agents + synthesizer

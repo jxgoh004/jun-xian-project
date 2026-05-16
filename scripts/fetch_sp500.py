@@ -24,8 +24,7 @@ import pandas as pd
 # Add project root to sys.path so fetcher modules resolve correctly
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from yahoo_finance_fetcher import YahooFinanceFetcher
-from finviz_fetcher import FinVizFetcher
+from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
 
 # ---------------------------------------------------------------------------
 # Discount-rate lookup table (copied from api_server.py)
