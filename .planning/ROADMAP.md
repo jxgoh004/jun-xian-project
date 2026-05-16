@@ -27,7 +27,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 8: Training Pipeline** - Generate annotated training data and train YOLOv8n model, exporting ONNX artifact (completed 2026-05-08)
 - [x] **Phase 9: Backtesting Engine** - Compute 10-year forward-return statistics per detection with train/test split guardrail (completed 2026-05-10)
 - [x] **Phase 10: Batch Pipeline** - Nightly GitHub Actions workflow running detection + ONNX inference and writing results (completed 2026-05-15)
-- [ ] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card
+- [x] **Phase 11: Frontend** - Pattern scanner screener page, per-stock drilldown, and portfolio home page card (completed 2026-05-16)
 
 ## Phase Details
 
@@ -154,7 +154,7 @@ Adds a computer-vision-powered inside bar spring setup scanner as a new portfoli
 | 8. Training Pipeline | 5/5 | Complete   | 2026-05-08 |
 | 9. Backtesting Engine | 4/4 | Complete   | 2026-05-10 |
 | 10. Batch Pipeline | 7/7 | Complete   | 2026-05-15 |
-| 11. Frontend | 2/3 | In Progress|  |
+| 11. Frontend | 3/3 | Complete   | 2026-05-16 |
 
 ## Phase Details (v2.0)
 
@@ -235,5 +235,5 @@ Plans:
 Plans:
 - [x] 11-01-PLAN.md — Patterns screener index.html (UI-01, UI-02) — sortable/filterable detections table with Pattern Quality + Status badges, status filter chips, 5-bar SVG legend, stale banner, empty state
 - [x] 11-02-PLAN.md — Patterns drilldown stock.html (UI-03, UI-04) — annotated PNG hero (LCP), TradingView interval D, 5-bar anatomy table, resolution card, 3-up backtest stat cards with fallback chain, DCF cross-link card
-- [ ] 11-03-PLAN.md — Home-page card + sitemap + og-image (UI-05) — third project card on docs/index.html (patterns first), patterns registry entry, og-image.png export, sitemap entries, robots.txt verify
+- [x] 11-03-PLAN.md — Home-page card + sitemap + og-image (UI-05) — third project card on docs/index.html (patterns first), patterns registry entry, og-image.png export, sitemap entries, robots.txt verify
 **UI hint**: yes

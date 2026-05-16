@@ -1013,27 +1013,31 @@ DCF cross-link UX precedent: the existing portfolio cross-links pattern → DCF/
 | A7 | Phase 10's `style_substitutions` and `errors_truncated` fields in `pipeline_status` are non-essential for the frontend | Code Example 8 | Frontend ignores them — banner only renders on `completed === false`. No risk. |
 | A8 | A static `<title>` fallback like `"Inside Bar Pattern Detail | Goh Jun Xian"` reads acceptably in crawler / pre-JS contexts | Pitfall 3 | Suboptimal SEO if a crawler indexes the pre-JS page. Mitigated by JS rewrite on fetch (same risk DCF stock.html already carries). |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should the home-page card thumbnail ship with a real PNG or with the placeholder?**
    - What we know: CONTEXT D-17 explicitly defers a real thumbnail to a future revision and prescribes the placeholder div for v1.
    - What's unclear: Whether the planner wants to compress the deferral by exporting one polished PNG at the same time as the og-image.png (since the work overlaps).
    - Recommendation: Ship with the placeholder per D-17. If the og-image export produces an obviously-card-worthy crop, the planner may opt to commit a second PNG cropped to card aspect (~1.85:1 for the existing `.card` thumbnail style) and skip the placeholder — but this is a stretch goal, not blocking.
+   - **RESOLVED:** Ship with `card-thumbnail-placeholder` per D-17 Deferred Ideas. Encoded in plan `11-03` Task 1. Real PNG export deferred.
 
 2. **Where exactly should the status filter chips sit in the controls strip?**
    - What we know: CONTEXT D-11 says "in the existing controls strip alongside the search input and sector dropdown — design judgement on exact placement."
    - What's unclear: Whether chips go LEFT of search (filter-first UX), RIGHT of sector dropdown (most-recently-added control), or BELOW the controls row (full-width chip bar).
    - Recommendation: Below the controls row, full-width, scroll-x on mobile. Reasoning: chips are visual + tap-friendly, and putting them inline with text inputs creates cognitive clutter. Planner decides; UI checker / MNC audit will validate.
+   - **RESOLVED:** Chips placed inside `.controls` strip with `overflow-x: auto` on narrow viewports (chip bar collapses gracefully at ≤640px). Encoded in plan `11-01` Task 1.
 
 3. **Should the drilldown's filter strip (Claude's Discretion: show the 3 booleans) be a row of pills or a compact line of text?**
    - What we know: All 44 current detections have all 3 filters = true. The strip is currently informational only.
    - What's unclear: Whether visual emphasis (pills) is warranted when the data is uniformly true today.
    - Recommendation: Pill row at low visual weight (smaller, grey-toned). Once a detection with mixed filter state appears (Phase 10 filtered=true mandate suggests never, but graceful display matters), pills give immediate signal. Suggest deferring to planner judgement.
+   - **RESOLVED:** Low-weight pill row (`Trend ✓ / Above 50-SMA ✓ / Cluster ✓`), grey-toned, rendered in the drilldown hero band. Encoded in plan `11-02` Task 2.
 
 4. **For the "View DCF analysis for {TICKER}" cross-link card icon (Claude's Discretion D-14 prose):**
    - What we know: No portfolio cross-link card precedent today. DCF screener has a `moat-badge` in-row link, but that's badge-style not card-style.
    - What's unclear: Whether the card should include any iconography.
    - Recommendation: Lightweight: a small `<svg>` chart-line icon (12 lines of SVG) inside the card. Avoid emojis (DCF stock.html uses `📈` in nav and `📊` in chart-fallback, but the inline SVG approach scales better and respects dark-mode glyph rendering). Planner decides.
+   - **RESOLVED:** Arrow-only, no chart-line icon — minimal visual weight, matches DCF screener's link styling. Encoded in plan `11-02` Task 1 (`.cross-link-card .arrow` CSS).
 
 ## Environment Availability
 
