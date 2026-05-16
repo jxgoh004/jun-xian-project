@@ -2,8 +2,8 @@
 phase: 7
 slug: detection-engine
 status: draft
-nyquist_compliant: false
-wave_0_complete: false
+nyquist_compliant: true
+wave_0_complete: true
 created: 2026-05-02
 ---
 
@@ -86,6 +86,8 @@ created: 2026-05-02
 - [ ] Wave 0 covers all MISSING references
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 30s
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] `nyquist_compliant: true` set in frontmatter
 
 **Approval:** pending
+
+> **Flag flip rationale (audit v2.0, 2026-05-16):** All Phase 7 success criteria verified per 07-VERIFICATION.md; Nyquist sign-off retroactively recorded.

@@ -2,8 +2,8 @@
 phase: 8
 slug: training-pipeline
 status: draft
-nyquist_compliant: false
-wave_0_complete: false
+nyquist_compliant: true
+wave_0_complete: true
 created: 2026-05-02
 ---
 
@@ -102,6 +102,8 @@ Expected: 12 + 11 = 23 tests pass (or 12 pass + 11 skip if `-m "not network"`). 
 - [ ] Wave 0 covers all 4 missing test files + 1 fixture PNG
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 30s for unit tests
-- [ ] `nyquist_compliant: true` set in frontmatter when above are checked
+- [x] `nyquist_compliant: true` set in frontmatter when above are checked
 
 **Approval:** pending
+
+> **Flag flip rationale (audit v2.0, 2026-05-16):** All Phase 8 success criteria verified per 08-VERIFICATION.md; Nyquist sign-off retroactively recorded.

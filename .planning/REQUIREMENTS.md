@@ -113,21 +113,21 @@ Updated during roadmap creation. Each v2.0 requirement maps to exactly one phase
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DET-01 | Phase 7 | Pending |
-| DET-02 | Phase 7 | Pending |
-| DET-03 | Phase 7 | Pending |
-| DET-04 | Phase 7 | Pending |
-| TRAIN-01 | Phase 8 | Pending |
-| TRAIN-02 | Phase 8 | Pending |
-| TRAIN-03 | Phase 8 | Pending |
-| TRAIN-04 | Phase 8 | Pending |
+| DET-01 | Phase 7 | Complete (2026-05-16) |
+| DET-02 | Phase 7 | Complete (2026-05-16) |
+| DET-03 | Phase 7 | Complete (2026-05-16) |
+| DET-04 | Phase 7 | Complete (2026-05-16) |
+| TRAIN-01 | Phase 8 | Complete (2026-05-16) |
+| TRAIN-02 | Phase 8 | Complete (2026-05-16) |
+| TRAIN-03 | Phase 8 | Complete (2026-05-16) |
+| TRAIN-04 | Phase 8 | Complete (2026-05-16) |
 | BT-01 | Phase 9 | Complete (2026-05-10) |
 | BT-02 | Phase 9 | Complete (2026-05-10) |
 | BT-03 | Phase 9 | Complete (2026-05-10) |
-| PIPE-01 | Phase 10 | Pending |
-| PIPE-02 | Phase 10 | Pending |
-| PIPE-03 | Phase 10 | Pending |
-| PIPE-04 | Phase 10 | Pending |
+| PIPE-01 | Phase 10 | Complete (2026-05-16) |
+| PIPE-02 | Phase 10 | Complete (2026-05-16) |
+| PIPE-03 | Phase 10 | Complete (2026-05-16) |
+| PIPE-04 | Phase 10 | Complete (2026-05-16) |
 | UI-01 | Phase 11 | Complete |
 | UI-02 | Phase 11 | Complete |
 | UI-03 | Phase 11 | Complete |
