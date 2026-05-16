@@ -48,3 +48,6 @@ yolov8n.pt
 
 # Phase 9 — backtesting cache (regenerable; CONTEXT D-06)
 _dev/backtest_cache.json
+
+# Scratch / one-shot dev artifacts (logs, smoke runs, training tarball, helper scripts)
+_dev/
