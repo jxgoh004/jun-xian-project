@@ -116,6 +116,110 @@
       .legend-caption { padding: 16px; margin-top: 0; }
     }
 
+    /* Strategy explainer (collapsible "How the strategy works" + aggregate stats) */
+    .strategy-explainer {
+      padding: 8px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .strategy-explainer details {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .strategy-explainer summary {
+      cursor: pointer;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      list-style: none;
+      user-select: none;
+    }
+    .strategy-explainer summary::-webkit-details-marker { display: none; }
+    .strategy-explainer summary::before {
+      content: '\25B6';
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 10px;
+      transition: transform 0.15s ease;
+    }
+    .strategy-explainer details[open] summary::before { transform: rotate(90deg); }
+    .strategy-explainer summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .strategy-explainer .explainer-body {
+      padding: 12px 0 4px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .strategy-explainer .explainer-body p { margin: 0 0 12px; }
+    .strategy-explainer .explainer-body strong { color: var(--text-bright); font-weight: 600; }
+    .strategy-explainer .rule-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 4px 12px;
+      font-size: 12px;
+    }
+    .strategy-explainer .rule-list dt {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .strategy-explainer .rule-list dd {
+      margin: 0;
+      color: var(--text);
+    }
+    .strategy-explainer .stats-caption {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin: 8px 0 6px;
+    }
+    .strategy-explainer table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    .strategy-explainer th,
+    .strategy-explainer td {
+      padding: 6px 10px;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+    .strategy-explainer th:first-child,
+    .strategy-explainer td:first-child {
+      text-align: left;
+      color: var(--text);
+    }
+    .strategy-explainer thead th {
+      font-weight: 500;
+      color: var(--text-dim);
+      border-bottom-color: var(--text-dim);
+    }
+    .strategy-explainer tbody tr.row-all td {
+      color: var(--text-bright);
+      font-weight: 600;
+      border-bottom: 1px solid var(--text-dim);
+    }
+    .strategy-explainer .return-positive { color: #3fb950; }
+    .strategy-explainer .return-negative { color: #f85149; }
+    .strategy-explainer .footnote {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin: 12px 0 0;
+      line-height: 1.55;
+    }
+    @media (max-width: 640px) {
+      .strategy-explainer { padding: 8px 16px 12px; }
+      .strategy-explainer .rule-list { grid-template-columns: 1fr; gap: 2px 0; }
+      .strategy-explainer .rule-list dt { margin-top: 4px; }
+    }
+
     .controls {
       display: flex;
       gap: 12px;
@@ -392,6 +496,45 @@
     <p class="legend-caption"><strong>Inside bar spring</strong> &mdash; a brief break-below after a tight pullback, recovered by the next bar.</p>
   </section>
 
+  <section class="strategy-explainer" aria-label="How the strategy works">
+    <details>
+      <summary aria-controls="explainer-body">How the strategy works</summary>
+      <div class="explainer-body" id="explainer-body">
+        <p>The inside bar spring is a bullish reversal pattern. After a wide <strong>mother bar</strong>, price coils into a narrow <strong>inside bar</strong>, then briefly breaks below the mother low (the <strong>spring</strong>) and is recovered by the next bar &mdash; the <strong>confirmation</strong>. We simulate buying at the open of the bar after confirmation, with stop at the lowest low of the 5-bar window and target at twice the risk (1:2 R-multiple).</p>
+
+        <dl class="rule-list">
+          <dt>Entry</dt><dd>Open of the bar after confirmation</dd>
+          <dt>Stop</dt><dd>Min(low) across the 5-bar pattern window</dd>
+          <dt>Target</dt><dd>Entry + 2 &times; (entry &minus; stop)</dd>
+          <dt>Timeout</dt><dd>None &mdash; held until stop or target hits</dd>
+          <dt>Intrabar</dt><dd>Pessimistic &mdash; stop wins ties when both hit in one bar</dd>
+          <dt>Confirmation types</dt><dd>Pin, Mark-up, Ice cream &mdash; three bullish recovery shapes</dd>
+        </dl>
+
+        <p class="stats-caption" id="stats-caption">Backtest &mdash; out-of-sample, filtered setups</p>
+        <table aria-label="Aggregate backtest results">
+          <thead>
+            <tr>
+              <th scope="col">Setup</th>
+              <th scope="col">n</th>
+              <th scope="col">Win rate</th>
+              <th scope="col">Avg return (R)</th>
+              <th scope="col">Median hold</th>
+            </tr>
+          </thead>
+          <tbody id="strategy-stats-body">
+            <tr class="row-all"><td>All setups</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr><td>Pin</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr><td>Mark-up</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr><td>Ice cream</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+
+        <p class="footnote">Honest framing: the filtered baseline tightens selectivity at a small cost in raw edge versus unfiltered candidates (n&nbsp;=&nbsp;8,841, win&nbsp;rate&nbsp;35.3%, avg&nbsp;+0.06R). The edge is modest, not dramatic &mdash; these are setup candidates, not signals. Per-setup outcomes for the live detections above are shown on each drilldown page.</p>
+      </div>
+    </details>
+  </section>
+
   <div class="controls">
     <label for="search" class="sr-only">Search ticker or company</label>
     <input type="text" id="search" placeholder="Search ticker or company" autocomplete="off" />
@@ -638,7 +781,73 @@
     // ---------------------------------------------------------------------------
     // Init on DOM ready
     // ---------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
+    // Strategy explainer — populate aggregate stats table from stats.json
+    // ---------------------------------------------------------------------------
+    function populateStrategyStats() {
+      fetch('./stats.json')
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (statsDoc) {
+          var s = statsDoc && statsDoc.stats;
+          if (!s || !s.all || !s.by_confirmation_type) return;
+
+          function fmtN(n) {
+            return Number(n).toLocaleString('en-US');
+          }
+          function fmtPct(r) {
+            return (Number(r) * 100).toFixed(1) + '%';
+          }
+          function fmtR(r) {
+            var v = Number(r);
+            var sign = v > 0 ? '+' : '';
+            return sign + v.toFixed(2) + 'R';
+          }
+          function fmtDays(d) {
+            return Number(d) + (Number(d) === 1 ? ' day' : ' days');
+          }
+          function colorClass(r) {
+            return Number(r) >= 0 ? 'return-positive' : 'return-negative';
+          }
+          function rowHTML(label, row, isAll) {
+            if (!row) {
+              return '<tr' + (isAll ? ' class="row-all"' : '') + '><td>' + label + '</td><td colspan="4">&mdash;</td></tr>';
+            }
+            return '<tr' + (isAll ? ' class="row-all"' : '') + '>' +
+              '<td>' + label + '</td>' +
+              '<td>' + fmtN(row.n) + '</td>' +
+              '<td>' + fmtPct(row.win_rate) + '</td>' +
+              '<td class="' + colorClass(row.avg_return_r) + '">' + fmtR(row.avg_return_r) + '</td>' +
+              '<td>' + fmtDays(row.median_hold_days) + '</td>' +
+              '</tr>';
+          }
+
+          var bct = s.by_confirmation_type;
+          var html = '' +
+            rowHTML('All setups', s.all, true) +
+            rowHTML('Pin', bct.pin, false) +
+            rowHTML('Mark-up', bct.mark_up, false) +
+            rowHTML('Ice cream', bct.ice_cream, false);
+          var body = document.getElementById('strategy-stats-body');
+          if (body) body.innerHTML = html;
+
+          // Caption: prepend cutoff source if available.
+          var caption = document.getElementById('stats-caption');
+          if (caption && statsDoc.source) {
+            caption.textContent = 'Backtest — ' + statsDoc.source + ' (n=' + fmtN(s.all.n) + ')';
+          }
+        })
+        .catch(function (err) {
+          // Silent failure — explainer table just shows em-dashes. Not load-bearing.
+          if (window.console) console.warn('stats.json fetch failed:', err.message || err);
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+
+      populateStrategyStats();
 
       fetch('./data.json')
         .then(function (response) {
