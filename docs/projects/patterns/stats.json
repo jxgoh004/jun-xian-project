@@ -4,7 +4,7 @@
     "by_confirmation_type",
     "all"
   ],
-  "generated_at": "2026-06-09T10:38:37.680039+00:00",
+  "generated_at": "2026-06-10T11:01:25.453227+00:00",
   "n_floor": 10,
   "rule": {
     "intrabar": "pessimistic",
