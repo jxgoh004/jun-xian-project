@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-07-03",
+  "as_of_date": "2026-07-06",
   "detections": [
     {
       "R": -1.0,
@@ -389,7 +389,7 @@
       "stop_price": 383.32000732421875,
       "target_price": 432.03997802734375,
       "ticker": "ADI",
-      "yolo_conf": 0.6004915237426758
+      "yolo_conf": 0.5874648690223694
     },
     {
       "R": -1.0,
@@ -519,7 +519,7 @@
       "stop_price": 161.0399932861328,
       "target_price": 170.94000244140625,
       "ticker": "AVY",
-      "yolo_conf": 0.4790939390659332
+      "yolo_conf": 0.4526687264442444
     },
     {
       "R": -1.0,
@@ -1364,7 +1364,7 @@
       "stop_price": 159.97000122070312,
       "target_price": 172.05999755859375,
       "ticker": "EXPD",
-      "yolo_conf": 0.6763366460800171
+      "yolo_conf": 0.7042485475540161
     },
     {
       "R": -1.0,
@@ -2462,7 +2462,7 @@
       "stop_price": 28.479999542236328,
       "target_price": 29.5,
       "ticker": "RF",
-      "yolo_conf": 0.6828737258911133
+      "yolo_conf": 0.668449342250824
     },
     {
       "R": 2.0,
@@ -2985,14 +2985,14 @@
       "yolo_conf": 0.22155019640922546
     }
   ],
-  "generated_at": "2026-07-03T09:54:25.645796+00:00",
+  "generated_at": "2026-07-06T11:25:43.989150+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-07-03T09:54:25.645796+00:00",
-    "run_id": "28652895702",
+    "generated_at": "2026-07-06T11:25:43.989150+00:00",
+    "run_id": "28788066459",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
