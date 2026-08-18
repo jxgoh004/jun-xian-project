@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-08-17",
+  "as_of_date": "2026-08-18",
   "detections": [
     {
       "R": -1.0,
@@ -41,11 +41,11 @@
         }
       ],
       "chart_path": "charts/AIG_2026-08-04.png",
-      "company_name": "American International Group, I",
-      "confirmation_bar_index": 116,
+      "company_name": "American International Group, Inc.",
+      "confirmation_bar_index": 113,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "mark_up",
-      "current_price": 76.63999938964844,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 79.66000366210938,
       "exit_date": "2026-08-10",
@@ -57,14 +57,14 @@
       },
       "hold_days": 5,
       "is_spring": true,
-      "mother_bar_index": 113,
+      "mother_bar_index": 110,
       "risk": 2.470001220703125,
       "sector": "Financial Services",
       "status": "stop",
       "stop_price": 77.19000244140625,
       "target_price": 84.60000610351562,
       "ticker": "AIG",
-      "yolo_conf": 0.672584593296051
+      "yolo_conf": 0.6571602821350098
     },
     {
       "R": 2.0,
@@ -84,13 +84,6 @@
           "open": 367.95001220703125
         },
         {
-          "close": 366.239990234375,
-          "date": "2026-07-21",
-          "high": 368.9100036621094,
-          "low": 362.1400146484375,
-          "open": 365.0899963378906
-        },
-        {
           "close": 366.04998779296875,
           "date": "2026-07-22",
           "high": 371.0,
@@ -103,14 +96,21 @@
           "high": 371.8399963378906,
           "low": 359.2099914550781,
           "open": 359.9800109863281
+        },
+        {
+          "close": 376.0400085449219,
+          "date": "2026-07-24",
+          "high": 379.4100036621094,
+          "low": 372.1600036621094,
+          "open": 372.7300109863281
         }
       ],
       "chart_path": "charts/AMGN_2026-07-23.png",
       "company_name": "Amgen Inc.",
-      "confirmation_bar_index": 108,
+      "confirmation_bar_index": 106,
       "confirmation_date": "2026-07-23",
       "confirmation_type": "mark_up",
-      "current_price": 415.2099914550781,
+      "current_price": NaN,
       "entry_date": "2026-07-24",
       "entry_price": 372.7300109863281,
       "exit_date": "2026-08-05",
@@ -122,79 +122,79 @@
       },
       "hold_days": 12,
       "is_spring": true,
-      "mother_bar_index": 104,
+      "mother_bar_index": 103,
       "risk": 13.52001953125,
       "sector": "Healthcare",
       "status": "target",
       "stop_price": 359.2099914550781,
       "target_price": 399.7700500488281,
       "ticker": "AMGN",
-      "yolo_conf": 0.5825563073158264
+      "yolo_conf": 0.43958017230033875
     },
     {
-      "R": -1.0,
+      "R": 2.0,
       "bars": [
         {
-          "close": 365.736328125,
-          "date": "2026-07-30",
-          "high": 369.64739593531664,
-          "low": 357.6746871762549,
-          "open": 366.35491320584384
+          "close": 125.43000030517578,
+          "date": "2026-07-16",
+          "high": 127.46499633789062,
+          "low": 122.1500015258789,
+          "open": 123.6500015258789
         },
         {
-          "close": 359.7300109863281,
-          "date": "2026-07-31",
-          "high": 364.1898463563844,
-          "low": 358.9617731116216,
-          "open": 362.25425594399115
+          "close": 125.68000030517578,
+          "date": "2026-07-17",
+          "high": 127.0,
+          "low": 122.4000015258789,
+          "open": 122.4000015258789
         },
         {
-          "close": 357.6300048828125,
-          "date": "2026-08-03",
-          "high": 366.32000732421875,
-          "low": 356.1199951171875,
-          "open": 362.0400085449219
+          "close": 121.2699966430664,
+          "date": "2026-07-20",
+          "high": 125.44999694824219,
+          "low": 120.42500305175781,
+          "open": 125.33000183105469
         },
         {
-          "close": 356.6499938964844,
-          "date": "2026-08-04",
-          "high": 357.0899963378906,
-          "low": 350.2300109863281,
-          "open": 353.3699951171875
+          "close": 121.27999877929688,
+          "date": "2026-07-23",
+          "high": 123.86000061035156,
+          "low": 117.42500305175781,
+          "open": 117.9800033569336
         },
         {
-          "close": 359.9700012207031,
-          "date": "2026-08-05",
-          "high": 360.6000061035156,
-          "low": 355.2200012207031,
-          "open": 356.9599914550781
+          "close": 126.51000213623047,
+          "date": "2026-07-24",
+          "high": 126.58000183105469,
+          "low": 120.62000274658203,
+          "open": 121.4800033569336
         }
       ],
-      "chart_path": "charts/AON_2026-08-05.png",
-      "company_name": "Aon plc",
-      "confirmation_bar_index": 117,
-      "confirmation_date": "2026-08-05",
-      "confirmation_type": "ice_cream",
-      "current_price": 355.8299865722656,
-      "entry_date": "2026-08-06",
-      "entry_price": 362.95001220703125,
-      "exit_date": "2026-08-12",
-      "exit_price": 350.2300109863281,
+      "chart_path": "charts/ARES_2026-07-24.png",
+      "company_name": "Ares Management Corporation",
+      "confirmation_bar_index": 106,
+      "confirmation_date": "2026-07-24",
+      "confirmation_type": "mark_up",
+      "current_price": NaN,
+      "entry_date": "2026-07-27",
+      "entry_price": 126.51000213623047,
+      "exit_date": "2026-08-05",
+      "exit_price": 144.68000030517578,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 6,
+      "hold_days": 9,
       "is_spring": false,
-      "mother_bar_index": 113,
-      "risk": 12.720001220703125,
+      "mother_bar_index": 102,
+      "risk": 9.084999084472656,
       "sector": "Financial Services",
-      "status": "stop",
-      "stop_price": 350.2300109863281,
-      "target_price": 388.3900146484375,
-      "ticker": "AON",
-      "yolo_conf": 0.597733199596405
+      "status": "target",
+      "stop_price": 117.42500305175781,
+      "target_price": 144.68000030517578,
+      "ticker": "ARES",
+      "yolo_conf": 0.47416606545448303
     },
     {
       "R": 2.0,
@@ -237,10 +237,10 @@
       ],
       "chart_path": "charts/BX_2026-07-23.png",
       "company_name": "Blackstone Inc.",
-      "confirmation_bar_index": 108,
+      "confirmation_bar_index": 107,
       "confirmation_date": "2026-07-23",
       "confirmation_type": "ice_cream",
-      "current_price": 143.92999267578125,
+      "current_price": NaN,
       "entry_date": "2026-07-24",
       "entry_price": 123.93573808670581,
       "exit_date": "2026-08-03",
@@ -252,7 +252,7 @@
       },
       "hold_days": 10,
       "is_spring": false,
-      "mother_bar_index": 105,
+      "mother_bar_index": 104,
       "risk": 5.266275458814661,
       "sector": "Financial Services",
       "status": "target",
@@ -302,10 +302,10 @@
       ],
       "chart_path": "charts/BRO_2026-08-07.png",
       "company_name": "Brown & Brown, Inc.",
-      "confirmation_bar_index": 119,
+      "confirmation_bar_index": 116,
       "confirmation_date": "2026-08-07",
       "confirmation_type": "ice_cream",
-      "current_price": 70.54000091552734,
+      "current_price": NaN,
       "entry_date": "2026-08-10",
       "entry_price": 70.51675800352649,
       "exit_date": "2026-08-12",
@@ -317,14 +317,14 @@
       },
       "hold_days": 2,
       "is_spring": true,
-      "mother_bar_index": 116,
+      "mother_bar_index": 113,
       "risk": 0.7183417636935587,
       "sector": "Financial Services",
       "status": "stop",
       "stop_price": 69.79841623983293,
       "target_price": 71.95344153091361,
       "ticker": "BRO",
-      "yolo_conf": 0.5167585015296936
+      "yolo_conf": 0.4845876693725586
     },
     {
       "R": 2.0,
@@ -351,48 +351,48 @@
           "open": 234.5500030517578
         },
         {
-          "close": 232.50999450683594,
-          "date": "2026-07-31",
-          "high": 237.05999755859375,
-          "low": 230.05999755859375,
-          "open": 235.7100067138672
-        },
-        {
           "close": 230.8699951171875,
           "date": "2026-08-03",
           "high": 235.6999969482422,
           "low": 228.00999450683594,
           "open": 233.2899932861328
+        },
+        {
+          "close": 234.1199951171875,
+          "date": "2026-08-04",
+          "high": 237.24000549316406,
+          "low": 228.52000427246094,
+          "open": 234.3300018310547
         }
       ],
       "chart_path": "charts/CRL_2026-07-30.png",
       "company_name": "Charles River Laboratories Inte",
-      "confirmation_bar_index": 113,
+      "confirmation_bar_index": 111,
       "confirmation_date": "2026-07-30",
       "confirmation_type": "pin",
-      "current_price": 280.04998779296875,
-      "entry_date": "2026-07-31",
-      "entry_price": 235.7100067138672,
+      "current_price": NaN,
+      "entry_date": "2026-08-03",
+      "entry_price": 233.2899932861328,
       "exit_date": "2026-08-05",
-      "exit_price": 252.37001037597656,
+      "exit_price": 245.10997009277344,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 5,
+      "hold_days": 2,
       "is_spring": true,
-      "mother_bar_index": 111,
-      "risk": 8.330001831054688,
+      "mother_bar_index": 109,
+      "risk": 5.9099884033203125,
       "sector": "Healthcare",
       "status": "target",
       "stop_price": 227.3800048828125,
-      "target_price": 252.37001037597656,
+      "target_price": 245.10997009277344,
       "ticker": "CRL",
-      "yolo_conf": 0.5183271169662476
+      "yolo_conf": 0.44982829689979553
     },
     {
-      "R": -0.8005597750612924,
+      "R": NaN,
       "bars": [
         {
           "close": 350.1499938964844,
@@ -432,22 +432,22 @@
       ],
       "chart_path": "charts/CB_2026-08-04.png",
       "company_name": "Chubb Limited",
-      "confirmation_bar_index": 115,
+      "confirmation_bar_index": 114,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "ice_cream",
-      "current_price": 343.6400146484375,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 349.3399963378906,
-      "exit_date": "2026-08-14",
-      "exit_price": 343.6400146484375,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 9,
+      "hold_days": 12,
       "is_spring": false,
-      "mother_bar_index": 112,
+      "mother_bar_index": 111,
       "risk": 7.1199951171875,
       "sector": "Financial Services",
       "status": "open",
@@ -481,113 +481,48 @@
           "open": 179.9199981689453
         },
         {
-          "close": 177.67999267578125,
-          "date": "2026-07-31",
-          "high": 177.9499969482422,
-          "low": 172.8699951171875,
-          "open": 173.6199951171875
-        },
-        {
           "close": 178.02999877929688,
           "date": "2026-08-03",
           "high": 179.5500030517578,
           "low": 176.4499969482422,
           "open": 178.30999755859375
+        },
+        {
+          "close": 179.4199981689453,
+          "date": "2026-08-04",
+          "high": 179.67999267578125,
+          "low": 174.61000061035156,
+          "open": 175.5399932861328
         }
       ],
-      "chart_path": "charts/CINF_2026-07-31.png",
+      "chart_path": "charts/CINF_2026-08-04.png",
       "company_name": "Cincinnati Financial Corporation",
-      "confirmation_bar_index": 114,
-      "confirmation_date": "2026-07-31",
+      "confirmation_bar_index": 112,
+      "confirmation_date": "2026-08-04",
       "confirmation_type": "mark_up",
-      "current_price": 173.1699981689453,
-      "entry_date": "2026-08-03",
-      "entry_price": 178.30999755859375,
-      "exit_date": "2026-08-11",
-      "exit_price": 172.8699951171875,
+      "current_price": NaN,
+      "entry_date": "2026-08-05",
+      "entry_price": 180.83999633789062,
+      "exit_date": "2026-08-10",
+      "exit_price": 173.89999389648438,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 8,
+      "hold_days": 5,
       "is_spring": false,
-      "mother_bar_index": 111,
-      "risk": 5.44000244140625,
+      "mother_bar_index": 108,
+      "risk": 6.94000244140625,
       "sector": "Financial Services",
       "status": "stop",
-      "stop_price": 172.8699951171875,
-      "target_price": 189.19000244140625,
+      "stop_price": 173.89999389648438,
+      "target_price": 194.72000122070312,
       "ticker": "CINF",
-      "yolo_conf": 0.44669976830482483
+      "yolo_conf": 0.4737125039100647
     },
     {
-      "R": -1.0,
-      "bars": [
-        {
-          "close": 202.52391052246094,
-          "date": "2026-08-07",
-          "high": 203.47144607553042,
-          "low": 199.7112096979395,
-          "open": 200.110182449248
-        },
-        {
-          "close": 202.18479919433594,
-          "date": "2026-08-10",
-          "high": 203.05254021472322,
-          "low": 200.37947599419277,
-          "open": 201.16743768195644
-        },
-        {
-          "close": 204.7481231689453,
-          "date": "2026-08-11",
-          "high": 206.38387335905395,
-          "low": 201.5663859482407,
-          "open": 201.5663859482407
-        },
-        {
-          "close": 202.9827117919922,
-          "date": "2026-08-12",
-          "high": 204.67831936497112,
-          "low": 199.52170114528323,
-          "open": 202.09501833967877
-        },
-        {
-          "close": 200.17999267578125,
-          "date": "2026-08-13",
-          "high": 204.8578435409819,
-          "low": 200.06030846031055,
-          "open": 204.0898343134516
-        }
-      ],
-      "chart_path": "charts/CTAS_2026-08-12.png",
-      "company_name": "Cintas Corporation",
-      "confirmation_bar_index": 122,
-      "confirmation_date": "2026-08-12",
-      "confirmation_type": "ice_cream",
-      "current_price": 199.52000427246094,
-      "entry_date": "2026-08-13",
-      "entry_price": 204.0898343134516,
-      "exit_date": "2026-08-14",
-      "exit_price": 199.52170114528323,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 1,
-      "is_spring": true,
-      "mother_bar_index": 119,
-      "risk": 4.568133168168373,
-      "sector": "Industrials",
-      "status": "stop",
-      "stop_price": 199.52170114528323,
-      "target_price": 213.22610064978835,
-      "ticker": "CTAS",
-      "yolo_conf": 0.3635222315788269
-    },
-    {
-      "R": 0.003608119646349189,
+      "R": NaN,
       "bars": [
         {
           "close": 93.48999786376953,
@@ -627,32 +562,32 @@
       ],
       "chart_path": "charts/CL_2026-08-04.png",
       "company_name": "Colgate-Palmolive Company",
-      "confirmation_bar_index": 116,
+      "confirmation_bar_index": 114,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "mark_up",
-      "current_price": 91.94999694824219,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 91.94000244140625,
-      "exit_date": "2026-08-14",
-      "exit_price": 91.94999694824219,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 9,
+      "hold_days": 12,
       "is_spring": false,
-      "mother_bar_index": 112,
+      "mother_bar_index": 110,
       "risk": 2.7700042724609375,
       "sector": "Consumer Defensive",
       "status": "open",
       "stop_price": 89.16999816894531,
       "target_price": 97.48001098632812,
       "ticker": "CL",
-      "yolo_conf": 0.42932772636413574
+      "yolo_conf": 0.40821006894111633
     },
     {
-      "R": -0.5403718025267029,
+      "R": NaN,
       "bars": [
         {
           "close": 50.189998626708984,
@@ -692,22 +627,22 @@
       ],
       "chart_path": "charts/CSX_2026-08-04.png",
       "company_name": "CSX Corporation",
-      "confirmation_bar_index": 116,
+      "confirmation_bar_index": 115,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "mark_up",
-      "current_price": 50.15999984741211,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 51.029998779296875,
-      "exit_date": "2026-08-14",
-      "exit_price": 50.15999984741211,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 9,
+      "hold_days": 12,
       "is_spring": false,
-      "mother_bar_index": 113,
+      "mother_bar_index": 112,
       "risk": 1.6100006103515625,
       "sector": "Industrials",
       "status": "open",
@@ -717,137 +652,7 @@
       "yolo_conf": 0.6891816258430481
     },
     {
-      "R": -1.0,
-      "bars": [
-        {
-          "close": 240.9600067138672,
-          "date": "2026-07-29",
-          "high": 244.49000549316406,
-          "low": 238.67999267578125,
-          "open": 241.13999938964844
-        },
-        {
-          "close": 238.86000061035156,
-          "date": "2026-07-30",
-          "high": 241.77000427246094,
-          "low": 238.7899932861328,
-          "open": 239.64999389648438
-        },
-        {
-          "close": 240.08999633789062,
-          "date": "2026-07-31",
-          "high": 240.91000366210938,
-          "low": 236.08999633789062,
-          "open": 237.80999755859375
-        },
-        {
-          "close": 233.67999267578125,
-          "date": "2026-08-03",
-          "high": 247.49000549316406,
-          "low": 231.97000122070312,
-          "open": 245.0
-        },
-        {
-          "close": 227.99000549316406,
-          "date": "2026-08-04",
-          "high": 234.25999450683594,
-          "low": 222.8000030517578,
-          "open": 228.0
-        }
-      ],
-      "chart_path": "charts/DVA_2026-07-31.png",
-      "company_name": "DaVita Inc.",
-      "confirmation_bar_index": 114,
-      "confirmation_date": "2026-07-31",
-      "confirmation_type": "ice_cream",
-      "current_price": 180.05999755859375,
-      "entry_date": "2026-08-03",
-      "entry_price": 245.0,
-      "exit_date": "2026-08-04",
-      "exit_price": 222.8000030517578,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 1,
-      "is_spring": true,
-      "mother_bar_index": 112,
-      "risk": 22.199996948242188,
-      "sector": "Healthcare",
-      "status": "stop",
-      "stop_price": 222.8000030517578,
-      "target_price": 289.3999938964844,
-      "ticker": "DVA",
-      "yolo_conf": 0.5594014525413513
-    },
-    {
-      "R": 0.5379574564714402,
-      "bars": [
-        {
-          "close": 326.3399963378906,
-          "date": "2026-07-21",
-          "high": 336.5899963378906,
-          "low": 317.5400085449219,
-          "open": 327.3900146484375
-        },
-        {
-          "close": 319.8299865722656,
-          "date": "2026-07-22",
-          "high": 331.6400146484375,
-          "low": 318.6400146484375,
-          "open": 331.6400146484375
-        },
-        {
-          "close": 323.25,
-          "date": "2026-07-23",
-          "high": 323.5899963378906,
-          "low": 315.67999267578125,
-          "open": 320.2699890136719
-        },
-        {
-          "close": 332.9700012207031,
-          "date": "2026-07-24",
-          "high": 335.8900146484375,
-          "low": 322.2300109863281,
-          "open": 322.2300109863281
-        },
-        {
-          "close": 343.5299987792969,
-          "date": "2026-07-27",
-          "high": 348.6000061035156,
-          "low": 335.57000732421875,
-          "open": 335.57000732421875
-        }
-      ],
-      "chart_path": "charts/DPZ_2026-07-24.png",
-      "company_name": "Domino's Pizza Inc",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 346.2699890136719,
-      "entry_date": "2026-07-27",
-      "entry_price": 335.57000732421875,
-      "exit_date": "2026-08-14",
-      "exit_price": 346.2699890136719,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 18,
-      "is_spring": false,
-      "mother_bar_index": 106,
-      "risk": 19.8900146484375,
-      "sector": "Consumer Cyclical",
-      "status": "open",
-      "stop_price": 315.67999267578125,
-      "target_price": 375.35003662109375,
-      "ticker": "DPZ",
-      "yolo_conf": 0.3509560525417328
-    },
-    {
-      "R": null,
+      "R": NaN,
       "bars": [
         {
           "close": 31.260000228881836,
@@ -876,226 +681,235 @@
           "high": 31.200000762939453,
           "low": 30.6299991607666,
           "open": 30.690000534057617
+        },
+        {
+          "close": NaN,
+          "date": "2026-08-17",
+          "high": NaN,
+          "low": NaN,
+          "open": NaN
         }
       ],
       "chart_path": "charts/DOW_2026-08-14.png",
       "company_name": "Dow Inc.",
+      "confirmation_bar_index": 123,
       "confirmation_date": "2026-08-14",
       "confirmation_type": "ice_cream",
-      "current_price": 31.06999969482422,
-      "entry_date": null,
-      "entry_price": null,
-      "exit_date": null,
-      "exit_price": null,
+      "current_price": NaN,
+      "entry_date": "2026-08-17",
+      "entry_price": NaN,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": null,
+      "hold_days": 0,
       "is_spring": false,
-      "risk": null,
+      "mother_bar_index": 120,
+      "risk": NaN,
       "sector": "Basic Materials",
-      "status": "pending",
+      "status": "open",
       "stop_price": 30.184999465942383,
-      "target_price": 32.84000015258789,
+      "target_price": NaN,
       "ticker": "DOW",
       "yolo_conf": 0.27793020009994507
     },
     {
-      "R": 0.850422758431447,
+      "R": -1.0,
       "bars": [
         {
-          "close": 155.44000244140625,
-          "date": "2026-07-31",
-          "high": 156.16000366210938,
-          "low": 152.13999938964844,
-          "open": 153.74000549316406
+          "close": 375.3599853515625,
+          "date": "2026-07-30",
+          "high": 388.9700012207031,
+          "low": 368.3299865722656,
+          "open": 378.6300048828125
         },
         {
-          "close": 155.05999755859375,
+          "close": 372.04998779296875,
           "date": "2026-08-03",
-          "high": 155.91000366210938,
-          "low": 152.64999389648438,
-          "open": 153.4600067138672
+          "high": 379.0,
+          "low": 370.19000244140625,
+          "open": 374.30999755859375
         },
         {
-          "close": 153.9600067138672,
+          "close": 369.2099914550781,
           "date": "2026-08-04",
-          "high": 154.83999633789062,
-          "low": 149.08999633789062,
-          "open": 151.6199951171875
+          "high": 370.3800048828125,
+          "low": 364.3599853515625,
+          "open": 365.0
         },
         {
-          "close": 151.6300048828125,
+          "close": 373.2799987792969,
           "date": "2026-08-05",
-          "high": 155.0399932861328,
-          "low": 151.14999389648438,
-          "open": 155.0399932861328
+          "high": 376.1199951171875,
+          "low": 369.5400085449219,
+          "open": 373.739990234375
         },
         {
-          "close": 154.83999633789062,
+          "close": 370.3500061035156,
           "date": "2026-08-06",
-          "high": 154.8699951171875,
-          "low": 151.83999633789062,
-          "open": 154.22000122070312
+          "high": 376.6300048828125,
+          "low": 368.9700012207031,
+          "open": 375.17999267578125
+        }
+      ],
+      "chart_path": "charts/EG_2026-08-04.png",
+      "company_name": "Everest Group, Ltd.",
+      "confirmation_bar_index": 112,
+      "confirmation_date": "2026-08-04",
+      "confirmation_type": "mark_up",
+      "current_price": NaN,
+      "entry_date": "2026-08-05",
+      "entry_price": 373.739990234375,
+      "exit_date": "2026-08-12",
+      "exit_price": 364.3599853515625,
+      "filters": {
+        "above_50sma": true,
+        "hh_hl": true,
+        "sma_cluster": true
+      },
+      "hold_days": 7,
+      "is_spring": true,
+      "mother_bar_index": 110,
+      "risk": 9.3800048828125,
+      "sector": "Financial Services",
+      "status": "stop",
+      "stop_price": 364.3599853515625,
+      "target_price": 392.5,
+      "ticker": "EG",
+      "yolo_conf": 0.5684977769851685
+    },
+    {
+      "R": NaN,
+      "bars": [
+        {
+          "close": 154.4399871826172,
+          "date": "2026-07-31",
+          "high": 155.1553563125088,
+          "low": 151.16121453071767,
+          "open": 152.7509270772818
+        },
+        {
+          "close": 154.0624237060547,
+          "date": "2026-08-03",
+          "high": 154.90696132074848,
+          "low": 151.66792473036153,
+          "open": 152.4727263545316
+        },
+        {
+          "close": 152.96951293945312,
+          "date": "2026-08-04",
+          "high": 153.84384119554895,
+          "low": 148.13083352442996,
+          "open": 150.6445556868725
+        },
+        {
+          "close": 150.6544952392578,
+          "date": "2026-08-05",
+          "high": 154.04254552700252,
+          "low": 150.17757239730147,
+          "open": 154.04254552700252
+        },
+        {
+          "close": 153.84384155273438,
+          "date": "2026-08-06",
+          "high": 153.87364733649875,
+          "low": 150.8631418913171,
+          "open": 153.227835140774
         }
       ],
       "chart_path": "charts/XOM_2026-08-04.png",
       "company_name": "ExxonMobil Holdings Corporation",
-      "confirmation_bar_index": 116,
+      "confirmation_bar_index": 115,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "ice_cream",
-      "current_price": 160.10000610351562,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
-      "entry_price": 155.0399932861328,
-      "exit_date": "2026-08-14",
-      "exit_price": 160.10000610351562,
+      "entry_price": 154.04254552700252,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 9,
+      "hold_days": 12,
       "is_spring": true,
-      "mother_bar_index": 114,
-      "risk": 5.9499969482421875,
+      "mother_bar_index": 113,
+      "risk": 5.911712002572557,
       "sector": "Energy",
       "status": "open",
-      "stop_price": 149.08999633789062,
-      "target_price": 166.9399871826172,
+      "stop_price": 148.13083352442996,
+      "target_price": 165.86596953214763,
       "ticker": "XOM",
-      "yolo_conf": 0.21432650089263916
+      "yolo_conf": 0.21428444981575012
     },
     {
-      "R": 2.0,
+      "R": -1.0,
       "bars": [
         {
-          "close": 246.9499969482422,
-          "date": "2026-07-21",
-          "high": 253.5399932861328,
-          "low": 242.5500030517578,
-          "open": 247.00999450683594
+          "close": 48.162532806396484,
+          "date": "2026-07-15",
+          "high": 49.02399153633527,
+          "low": 48.07341612555793,
+          "open": 48.5487038309466
         },
         {
-          "close": 245.2100067138672,
-          "date": "2026-07-22",
-          "high": 251.36000061035156,
-          "low": 244.72999572753906,
-          "open": 251.17999267578125
+          "close": 48.6279182434082,
+          "date": "2026-07-16",
+          "high": 48.9645808257195,
+          "low": 48.08331800717689,
+          "open": 48.09321818139895
         },
         {
-          "close": 243.9600067138672,
-          "date": "2026-07-23",
-          "high": 245.5,
-          "low": 240.11000061035156,
-          "open": 245.5
+          "close": 48.053611755371094,
+          "date": "2026-07-17",
+          "high": 49.380458009322915,
+          "low": 47.95459490038624,
+          "open": 48.99428698673075
         },
         {
-          "close": 254.36000061035156,
-          "date": "2026-07-24",
-          "high": 256.1000061035156,
-          "low": 246.02000427246094,
-          "open": 247.52000427246094
-        },
-        {
-          "close": 265.8999938964844,
-          "date": "2026-07-27",
-          "high": 270.30999755859375,
-          "low": 256.2699890136719,
-          "open": 260.2200012207031
-        }
-      ],
-      "chart_path": "charts/FDS_2026-07-23.png",
-      "company_name": "FactSet Research Systems Inc.",
-      "confirmation_bar_index": 108,
-      "confirmation_date": "2026-07-23",
-      "confirmation_type": "pin",
-      "current_price": 283.489990234375,
-      "entry_date": "2026-07-24",
-      "entry_price": 247.52000427246094,
-      "exit_date": "2026-07-27",
-      "exit_price": 262.3400115966797,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 3,
-      "is_spring": true,
-      "mother_bar_index": 106,
-      "risk": 7.410003662109375,
-      "sector": "Financial Services",
-      "status": "target",
-      "stop_price": 240.11000061035156,
-      "target_price": 262.3400115966797,
-      "ticker": "FDS",
-      "yolo_conf": 0.3131066560745239
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 42.27000045776367,
+          "close": 48.063514709472656,
           "date": "2026-07-20",
-          "high": 42.47999954223633,
-          "low": 41.29999923706055,
-          "open": 41.709999084472656
+          "high": 48.7269359340512,
+          "low": 47.71694816971824,
+          "open": 48.27145236697481
         },
         {
-          "close": 41.58000183105469,
-          "date": "2026-07-21",
-          "high": 42.2599983215332,
-          "low": 41.380001068115234,
-          "open": 41.849998474121094
-        },
-        {
-          "close": 40.540000915527344,
-          "date": "2026-07-22",
-          "high": 42.2400016784668,
-          "low": 40.2599983215332,
-          "open": 42.0099983215332
-        },
-        {
-          "close": 40.040000915527344,
+          "close": 49.00419235229492,
           "date": "2026-07-23",
-          "high": 40.599998474121094,
-          "low": 39.959999084472656,
-          "open": 40.400001525878906
-        },
-        {
-          "close": 41.5099983215332,
-          "date": "2026-07-24",
-          "high": 41.9900016784668,
-          "low": 40.36000061035156,
-          "open": 40.380001068115234
+          "high": 49.31114687795378,
+          "low": 48.469492254549095,
+          "open": 48.627921493445896
         }
       ],
-      "chart_path": "charts/FIS_2026-07-24.png",
-      "company_name": "Fidelity National Information Services, Inc.",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 42.91999816894531,
-      "entry_date": "2026-07-27",
-      "entry_price": 42.16999816894531,
-      "exit_date": "2026-07-29",
-      "exit_price": 46.589996337890625,
+      "chart_path": "charts/FE_2026-07-23.png",
+      "company_name": "FirstEnergy Corp.",
+      "confirmation_bar_index": 105,
+      "confirmation_date": "2026-07-23",
+      "confirmation_type": "ice_cream",
+      "current_price": NaN,
+      "entry_date": "2026-07-24",
+      "entry_price": 49.29134086632228,
+      "exit_date": "2026-07-31",
+      "exit_price": 47.71694816971824,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 2,
+      "hold_days": 7,
       "is_spring": false,
-      "mother_bar_index": 105,
-      "risk": 2.2099990844726562,
-      "sector": "Technology",
-      "status": "target",
-      "stop_price": 39.959999084472656,
-      "target_price": 46.589996337890625,
-      "ticker": "FIS",
-      "yolo_conf": 0.33986416459083557
+      "mother_bar_index": 101,
+      "risk": 1.5743926966040362,
+      "sector": "Utilities",
+      "status": "stop",
+      "stop_price": 47.71694816971824,
+      "target_price": 52.44012625953035,
+      "ticker": "FE",
+      "yolo_conf": 0.6475677490234375
     },
     {
       "R": 2.0,
@@ -1138,10 +952,10 @@
       ],
       "chart_path": "charts/GILD_2026-07-23.png",
       "company_name": "Gilead Sciences, Inc.",
-      "confirmation_bar_index": 108,
+      "confirmation_bar_index": 107,
       "confirmation_date": "2026-07-23",
       "confirmation_type": "ice_cream",
-      "current_price": 138.36000061035156,
+      "current_price": NaN,
       "entry_date": "2026-07-24",
       "entry_price": 130.92999267578125,
       "exit_date": "2026-08-05",
@@ -1153,7 +967,7 @@
       },
       "hold_days": 12,
       "is_spring": true,
-      "mother_bar_index": 106,
+      "mother_bar_index": 105,
       "risk": 3.3199920654296875,
       "sector": "Healthcare",
       "status": "target",
@@ -1203,10 +1017,10 @@
       ],
       "chart_path": "charts/HIG_2026-08-04.png",
       "company_name": "The Hartford Insurance Group, Inc.",
-      "confirmation_bar_index": 116,
+      "confirmation_bar_index": 113,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "ice_cream",
-      "current_price": 138.02000427246094,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 141.99000549316406,
       "exit_date": "2026-08-11",
@@ -1218,17 +1032,17 @@
       },
       "hold_days": 6,
       "is_spring": true,
-      "mother_bar_index": 113,
+      "mother_bar_index": 110,
       "risk": 1.7100067138671875,
       "sector": "Financial Services",
       "status": "stop",
       "stop_price": 140.27999877929688,
       "target_price": 145.41001892089844,
       "ticker": "HIG",
-      "yolo_conf": 0.540840744972229
+      "yolo_conf": 0.44411787390708923
     },
     {
-      "R": 1.1111100029919219,
+      "R": NaN,
       "bars": [
         {
           "close": 281.8800048828125,
@@ -1268,22 +1082,22 @@
       ],
       "chart_path": "charts/HWM_2026-08-13.png",
       "company_name": "Howmet Aerospace Inc.",
-      "confirmation_bar_index": 122,
+      "confirmation_bar_index": 121,
       "confirmation_date": "2026-08-13",
       "confirmation_type": "pin",
-      "current_price": 289.17999267578125,
+      "current_price": NaN,
       "entry_date": "2026-08-14",
       "entry_price": 282.3800048828125,
-      "exit_date": "2026-08-14",
-      "exit_price": 289.17999267578125,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 3,
       "is_spring": false,
-      "mother_bar_index": 118,
+      "mother_bar_index": 117,
       "risk": 6.1199951171875,
       "sector": "Industrials",
       "status": "open",
@@ -1293,7 +1107,7 @@
       "yolo_conf": 0.569227933883667
     },
     {
-      "R": 1.1111100029919219,
+      "R": NaN,
       "bars": [
         {
           "close": 281.3399963378906,
@@ -1322,26 +1136,33 @@
           "high": 289.989990234375,
           "low": 281.7300109863281,
           "open": 282.3800048828125
+        },
+        {
+          "close": NaN,
+          "date": "2026-08-17",
+          "high": NaN,
+          "low": NaN,
+          "open": NaN
         }
       ],
       "chart_path": "charts/HWM_2026-08-13.png",
       "company_name": "Howmet Aerospace Inc.",
-      "confirmation_bar_index": 122,
+      "confirmation_bar_index": 121,
       "confirmation_date": "2026-08-13",
       "confirmation_type": "pin",
-      "current_price": 289.17999267578125,
+      "current_price": NaN,
       "entry_date": "2026-08-14",
       "entry_price": 282.3800048828125,
-      "exit_date": "2026-08-14",
-      "exit_price": 289.17999267578125,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 3,
       "is_spring": true,
-      "mother_bar_index": 120,
+      "mother_bar_index": 119,
       "risk": 6.1199951171875,
       "sector": "Industrials",
       "status": "open",
@@ -1351,137 +1172,7 @@
       "yolo_conf": 0.569227933883667
     },
     {
-      "R": -1.0,
-      "bars": [
-        {
-          "close": 167.3699951171875,
-          "date": "2026-07-20",
-          "high": 168.25,
-          "low": 161.89999389648438,
-          "open": 164.1300048828125
-        },
-        {
-          "close": 163.72000122070312,
-          "date": "2026-07-21",
-          "high": 165.7899932861328,
-          "low": 162.6199951171875,
-          "open": 163.27999877929688
-        },
-        {
-          "close": 158.92999267578125,
-          "date": "2026-07-22",
-          "high": 165.6999969482422,
-          "low": 157.44000244140625,
-          "open": 165.6999969482422
-        },
-        {
-          "close": 158.3800048828125,
-          "date": "2026-07-23",
-          "high": 160.2899932861328,
-          "low": 157.55999755859375,
-          "open": 159.47000122070312
-        },
-        {
-          "close": 163.25999450683594,
-          "date": "2026-07-24",
-          "high": 164.3300018310547,
-          "low": 158.30999755859375,
-          "open": 159.2100067138672
-        }
-      ],
-      "chart_path": "charts/PODD_2026-07-24.png",
-      "company_name": "Insulet Corporation",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 143.33999633789062,
-      "entry_date": "2026-07-27",
-      "entry_price": 165.6199951171875,
-      "exit_date": "2026-08-05",
-      "exit_price": 157.44000244140625,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 9,
-      "is_spring": false,
-      "mother_bar_index": 105,
-      "risk": 8.17999267578125,
-      "sector": "Healthcare",
-      "status": "stop",
-      "stop_price": 157.44000244140625,
-      "target_price": 181.97998046875,
-      "ticker": "PODD",
-      "yolo_conf": 0.6494510769844055
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 96.78607940673828,
-          "date": "2026-07-20",
-          "high": 101.28752747713973,
-          "low": 96.24710270433536,
-          "open": 100.93818522591499
-        },
-        {
-          "close": 96.92581176757812,
-          "date": "2026-07-21",
-          "high": 97.88399001877593,
-          "low": 96.31696814729767,
-          "open": 96.81601979572926
-        },
-        {
-          "close": 95.34880828857422,
-          "date": "2026-07-22",
-          "high": 97.28513115289627,
-          "low": 94.65013901532603,
-          "open": 96.15726953546482
-        },
-        {
-          "close": 95.78797912597656,
-          "date": "2026-07-23",
-          "high": 97.31507602365215,
-          "low": 93.95146501356449,
-          "open": 95.79796229159366
-        },
-        {
-          "close": 99.17154693603516,
-          "date": "2026-07-24",
-          "high": 99.30129762685341,
-          "low": 95.5883520411563,
-          "open": 95.84786103771685
-        }
-      ],
-      "chart_path": "charts/KKR_2026-07-24.png",
-      "company_name": "KKR & Co. Inc.",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 114.01000213623047,
-      "entry_date": "2026-07-27",
-      "entry_price": 99.8103348833599,
-      "exit_date": "2026-08-12",
-      "exit_price": 111.52807462295073,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 16,
-      "is_spring": false,
-      "mother_bar_index": 105,
-      "risk": 5.858869869795413,
-      "sector": "Financial Services",
-      "status": "target",
-      "stop_price": 93.95146501356449,
-      "target_price": 111.52807462295073,
-      "ticker": "KKR",
-      "yolo_conf": 0.5521208047866821
-    },
-    {
-      "R": null,
+      "R": NaN,
       "bars": [
         {
           "close": 63.97999954223633,
@@ -1510,96 +1201,40 @@
           "high": 64.19999694824219,
           "low": 63.13999938964844,
           "open": 63.13999938964844
+        },
+        {
+          "close": NaN,
+          "date": "2026-08-17",
+          "high": NaN,
+          "low": NaN,
+          "open": NaN
         }
       ],
       "chart_path": "charts/LYB_2026-08-14.png",
-      "company_name": "LyondellBasell Industries NV",
+      "company_name": "LyondellBasell Industries N.V.",
+      "confirmation_bar_index": 122,
       "confirmation_date": "2026-08-14",
       "confirmation_type": "ice_cream",
-      "current_price": 63.7599983215332,
-      "entry_date": null,
-      "entry_price": null,
-      "exit_date": null,
-      "exit_price": null,
+      "current_price": NaN,
+      "entry_date": "2026-08-17",
+      "entry_price": NaN,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": null,
+      "hold_days": 0,
       "is_spring": false,
-      "risk": null,
+      "mother_bar_index": 119,
+      "risk": NaN,
       "sector": "Basic Materials",
-      "status": "pending",
-      "stop_price": 61.900001525878906,
-      "target_price": 67.4799919128418,
-      "ticker": "LYB",
-      "yolo_conf": 0.1947895586490631
-    },
-    {
-      "R": 1.369750772558054,
-      "bars": [
-        {
-          "close": 252.61000061035156,
-          "date": "2026-07-28",
-          "high": 253.5800018310547,
-          "low": 249.11000061035156,
-          "open": 250.13999938964844
-        },
-        {
-          "close": 250.3300018310547,
-          "date": "2026-07-29",
-          "high": 252.8800048828125,
-          "low": 249.36000061035156,
-          "open": 251.44000244140625
-        },
-        {
-          "close": 247.0,
-          "date": "2026-07-30",
-          "high": 251.10000610351562,
-          "low": 246.74000549316406,
-          "open": 250.82000732421875
-        },
-        {
-          "close": 246.2899932861328,
-          "date": "2026-07-31",
-          "high": 248.72999572753906,
-          "low": 245.6300048828125,
-          "open": 247.4600067138672
-        },
-        {
-          "close": 249.47999572753906,
-          "date": "2026-08-03",
-          "high": 249.72000122070312,
-          "low": 246.30999755859375,
-          "open": 246.67999267578125
-        }
-      ],
-      "chart_path": "charts/MTB_2026-08-03.png",
-      "company_name": "M&T Bank Corporation",
-      "confirmation_bar_index": 115,
-      "confirmation_date": "2026-08-03",
-      "confirmation_type": "mark_up",
-      "current_price": 254.08999633789062,
-      "entry_date": "2026-08-04",
-      "entry_price": 249.1999969482422,
-      "exit_date": "2026-08-14",
-      "exit_price": 254.08999633789062,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 10,
-      "is_spring": false,
-      "mother_bar_index": 111,
-      "risk": 3.5699920654296875,
-      "sector": "Financial Services",
       "status": "open",
-      "stop_price": 245.6300048828125,
-      "target_price": 256.33998107910156,
-      "ticker": "MTB",
-      "yolo_conf": 0.019791096448898315
+      "stop_price": 61.900001525878906,
+      "target_price": NaN,
+      "ticker": "LYB",
+      "yolo_conf": 0.19107764959335327
     },
     {
       "R": 2.0,
@@ -1642,10 +1277,10 @@
       ],
       "chart_path": "charts/MTB_2026-08-07.png",
       "company_name": "M&T Bank Corporation",
-      "confirmation_bar_index": 119,
+      "confirmation_bar_index": 115,
       "confirmation_date": "2026-08-07",
       "confirmation_type": "ice_cream",
-      "current_price": 254.08999633789062,
+      "current_price": NaN,
       "entry_date": "2026-08-10",
       "entry_price": 249.39999389648438,
       "exit_date": "2026-08-13",
@@ -1657,17 +1292,17 @@
       },
       "hold_days": 3,
       "is_spring": true,
-      "mother_bar_index": 116,
+      "mother_bar_index": 112,
       "risk": 2.489990234375,
       "sector": "Financial Services",
       "status": "target",
       "stop_price": 246.91000366210938,
       "target_price": 254.37997436523438,
       "ticker": "MTB",
-      "yolo_conf": 0.7051912546157837
+      "yolo_conf": 0.6795065999031067
     },
     {
-      "R": -0.5278446505699922,
+      "R": NaN,
       "bars": [
         {
           "close": 273.7200012207031,
@@ -1707,22 +1342,22 @@
       ],
       "chart_path": "charts/MCD_2026-08-12.png",
       "company_name": "McDonald's Corporation",
-      "confirmation_bar_index": 122,
+      "confirmation_bar_index": 121,
       "confirmation_date": "2026-08-12",
       "confirmation_type": "ice_cream",
-      "current_price": 272.8299865722656,
+      "current_price": NaN,
       "entry_date": "2026-08-13",
       "entry_price": 277.3800048828125,
-      "exit_date": "2026-08-14",
-      "exit_price": 272.8299865722656,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 1,
+      "hold_days": 4,
       "is_spring": true,
-      "mother_bar_index": 120,
+      "mother_bar_index": 119,
       "risk": 8.6199951171875,
       "sector": "Consumer Cyclical",
       "status": "open",
@@ -1730,136 +1365,6 @@
       "target_price": 294.6199951171875,
       "ticker": "MCD",
       "yolo_conf": 0.15875068306922913
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 41.61000061035156,
-          "date": "2026-07-20",
-          "high": 41.68000030517578,
-          "low": 40.630001068115234,
-          "open": 40.95000076293945
-        },
-        {
-          "close": 40.86000061035156,
-          "date": "2026-07-21",
-          "high": 41.599998474121094,
-          "low": 40.63999938964844,
-          "open": 41.11000061035156
-        },
-        {
-          "close": 41.040000915527344,
-          "date": "2026-07-22",
-          "high": 41.400001525878906,
-          "low": 40.7400016784668,
-          "open": 41.369998931884766
-        },
-        {
-          "close": 40.040000915527344,
-          "date": "2026-07-23",
-          "high": 40.810001373291016,
-          "low": 39.66999816894531,
-          "open": 40.68000030517578
-        },
-        {
-          "close": 40.95000076293945,
-          "date": "2026-07-24",
-          "high": 41.08000183105469,
-          "low": 40.0099983215332,
-          "open": 40.040000915527344
-        }
-      ],
-      "chart_path": "charts/TAP_2026-07-24.png",
-      "company_name": "Molson Coors Beverage Company",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 42.77000045776367,
-      "entry_date": "2026-07-27",
-      "entry_price": 40.97999954223633,
-      "exit_date": "2026-07-29",
-      "exit_price": 43.60000228881836,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 2,
-      "is_spring": false,
-      "mother_bar_index": 105,
-      "risk": 1.3100013732910156,
-      "sector": "Consumer Defensive",
-      "status": "target",
-      "stop_price": 39.66999816894531,
-      "target_price": 43.60000228881836,
-      "ticker": "TAP",
-      "yolo_conf": 0.4533904194831848
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 40.86000061035156,
-          "date": "2026-07-21",
-          "high": 41.599998474121094,
-          "low": 40.63999938964844,
-          "open": 41.11000061035156
-        },
-        {
-          "close": 41.040000915527344,
-          "date": "2026-07-22",
-          "high": 41.400001525878906,
-          "low": 40.7400016784668,
-          "open": 41.369998931884766
-        },
-        {
-          "close": 40.040000915527344,
-          "date": "2026-07-23",
-          "high": 40.810001373291016,
-          "low": 39.66999816894531,
-          "open": 40.68000030517578
-        },
-        {
-          "close": 40.95000076293945,
-          "date": "2026-07-24",
-          "high": 41.08000183105469,
-          "low": 40.0099983215332,
-          "open": 40.040000915527344
-        },
-        {
-          "close": 41.130001068115234,
-          "date": "2026-07-27",
-          "high": 41.70000076293945,
-          "low": 40.52000045776367,
-          "open": 40.97999954223633
-        }
-      ],
-      "chart_path": "charts/TAP_2026-07-24.png",
-      "company_name": "Molson Coors Beverage Company",
-      "confirmation_bar_index": 109,
-      "confirmation_date": "2026-07-24",
-      "confirmation_type": "mark_up",
-      "current_price": 42.77000045776367,
-      "entry_date": "2026-07-27",
-      "entry_price": 40.97999954223633,
-      "exit_date": "2026-07-29",
-      "exit_price": 43.60000228881836,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 2,
-      "is_spring": false,
-      "mother_bar_index": 106,
-      "risk": 1.3100013732910156,
-      "sector": "Consumer Defensive",
-      "status": "target",
-      "stop_price": 39.66999816894531,
-      "target_price": 43.60000228881836,
-      "ticker": "TAP",
-      "yolo_conf": 0.4533904194831848
     },
     {
       "R": -1.0,
@@ -1902,10 +1407,10 @@
       ],
       "chart_path": "charts/TAP_2026-08-10.png",
       "company_name": "Molson Coors Beverage Company",
-      "confirmation_bar_index": 120,
+      "confirmation_bar_index": 116,
       "confirmation_date": "2026-08-10",
       "confirmation_type": "pin",
-      "current_price": 42.77000045776367,
+      "current_price": NaN,
       "entry_date": "2026-08-11",
       "entry_price": 42.0,
       "exit_date": "2026-08-12",
@@ -1917,79 +1422,14 @@
       },
       "hold_days": 1,
       "is_spring": true,
-      "mother_bar_index": 118,
+      "mother_bar_index": 114,
       "risk": 0.7099990844726562,
       "sector": "Consumer Defensive",
       "status": "stop",
       "stop_price": 41.290000915527344,
       "target_price": 43.41999816894531,
       "ticker": "TAP",
-      "yolo_conf": 0.3614518642425537
-    },
-    {
-      "R": -0.004248424179147823,
-      "bars": [
-        {
-          "close": 489.73504638671875,
-          "date": "2026-07-21",
-          "high": 495.8221887119217,
-          "low": 481.67209900331153,
-          "open": 490.6431310203592
-        },
-        {
-          "close": 488.6673278808594,
-          "date": "2026-07-22",
-          "high": 492.94825915925884,
-          "low": 481.94152055266596,
-          "open": 492.43935536059524
-        },
-        {
-          "close": 471.2441101074219,
-          "date": "2026-07-23",
-          "high": 483.4483299173449,
-          "low": 471.0146146314365,
-          "open": 478.98775522864923
-        },
-        {
-          "close": 470.5057067871094,
-          "date": "2026-07-24",
-          "high": 478.19943951010856,
-          "low": 467.38230241884895,
-          "open": 474.90641068949435
-        },
-        {
-          "close": 484.9351806640625,
-          "date": "2026-07-27",
-          "high": 490.18409792235474,
-          "low": 477.2613951903562,
-          "open": 477.9599311851967
-        }
-      ],
-      "chart_path": "charts/MCO_2026-07-27.png",
-      "company_name": "Moody's Corporation",
-      "confirmation_bar_index": 110,
-      "confirmation_date": "2026-07-27",
-      "confirmation_type": "ice_cream",
-      "current_price": 484.9599914550781,
-      "entry_date": "2026-07-28",
-      "entry_price": 485.0349875494137,
-      "exit_date": "2026-08-14",
-      "exit_price": 484.9599914550781,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 17,
-      "is_spring": false,
-      "mother_bar_index": 106,
-      "risk": 17.65268513056475,
-      "sector": "Financial Services",
-      "status": "open",
-      "stop_price": 467.38230241884895,
-      "target_price": 520.3403578105432,
-      "ticker": "MCO",
-      "yolo_conf": 0.7066464424133301
+      "yolo_conf": 0.3565359115600586
     },
     {
       "R": -1.0,
@@ -2032,10 +1472,10 @@
       ],
       "chart_path": "charts/NEE_2026-08-04.png",
       "company_name": "NextEra Energy, Inc.",
-      "confirmation_bar_index": 116,
+      "confirmation_bar_index": 115,
       "confirmation_date": "2026-08-04",
       "confirmation_type": "ice_cream",
-      "current_price": 86.19000244140625,
+      "current_price": NaN,
       "entry_date": "2026-08-05",
       "entry_price": 86.9000015258789,
       "exit_date": "2026-08-05",
@@ -2047,7 +1487,7 @@
       },
       "hold_days": 0,
       "is_spring": false,
-      "mother_bar_index": 113,
+      "mother_bar_index": 112,
       "risk": 1.9300003051757812,
       "sector": "Utilities",
       "status": "stop",
@@ -2057,7 +1497,7 @@
       "yolo_conf": 0.4520472586154938
     },
     {
-      "R": 0.8343826367891314,
+      "R": NaN,
       "bars": [
         {
           "close": 987.3099975585938,
@@ -2097,22 +1537,22 @@
       ],
       "chart_path": "charts/PH_2026-08-03.png",
       "company_name": "Parker-Hannifin Corporation",
-      "confirmation_bar_index": 112,
+      "confirmation_bar_index": 111,
       "confirmation_date": "2026-08-03",
       "confirmation_type": "mark_up",
-      "current_price": 1055.8499755859375,
+      "current_price": NaN,
       "entry_date": "2026-08-04",
       "entry_price": 1004.2100219726562,
-      "exit_date": "2026-08-14",
-      "exit_price": 1055.8499755859375,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 10,
+      "hold_days": 13,
       "is_spring": false,
-      "mother_bar_index": 108,
+      "mother_bar_index": 107,
       "risk": 61.8900146484375,
       "sector": "Industrials",
       "status": "open",
@@ -2162,10 +1602,10 @@
       ],
       "chart_path": "charts/PFE_2026-07-31.png",
       "company_name": "Pfizer, Inc.",
-      "confirmation_bar_index": 114,
+      "confirmation_bar_index": 113,
       "confirmation_date": "2026-07-31",
       "confirmation_type": "ice_cream",
-      "current_price": 26.790000915527344,
+      "current_price": NaN,
       "entry_date": "2026-08-03",
       "entry_price": 25.149999618530273,
       "exit_date": "2026-08-07",
@@ -2177,7 +1617,7 @@
       },
       "hold_days": 4,
       "is_spring": false,
-      "mother_bar_index": 111,
+      "mother_bar_index": 110,
       "risk": 0.6000003814697266,
       "sector": "Healthcare",
       "status": "target",
@@ -2227,10 +1667,10 @@
       ],
       "chart_path": "charts/PCG_2026-08-03.png",
       "company_name": "PG&E Corporation",
-      "confirmation_bar_index": 115,
+      "confirmation_bar_index": 113,
       "confirmation_date": "2026-08-03",
       "confirmation_type": "pin",
-      "current_price": 17.84000015258789,
+      "current_price": NaN,
       "entry_date": "2026-08-04",
       "entry_price": 17.270000457763672,
       "exit_date": "2026-08-06",
@@ -2242,14 +1682,14 @@
       },
       "hold_days": 2,
       "is_spring": true,
-      "mother_bar_index": 113,
+      "mother_bar_index": 111,
       "risk": 0.31999969482421875,
       "sector": "Utilities",
       "status": "stop",
       "stop_price": 16.950000762939453,
       "target_price": 17.90999984741211,
       "ticker": "PCG",
-      "yolo_conf": 0.6437753438949585
+      "yolo_conf": 0.6468105316162109
     },
     {
       "R": -1.0,
@@ -2292,10 +1732,10 @@
       ],
       "chart_path": "charts/PNC_2026-07-23.png",
       "company_name": "The PNC Financial Services Group, Inc.",
-      "confirmation_bar_index": 107,
+      "confirmation_bar_index": 106,
       "confirmation_date": "2026-07-23",
       "confirmation_type": "pin",
-      "current_price": 256.9700012207031,
+      "current_price": NaN,
       "entry_date": "2026-07-24",
       "entry_price": 249.5,
       "exit_date": "2026-07-30",
@@ -2307,7 +1747,7 @@
       },
       "hold_days": 6,
       "is_spring": true,
-      "mother_bar_index": 104,
+      "mother_bar_index": 103,
       "risk": 2.75,
       "sector": "Financial Services",
       "status": "stop",
@@ -2317,7 +1757,7 @@
       "yolo_conf": 0.6777088046073914
     },
     {
-      "R": -0.12050726163537308,
+      "R": NaN,
       "bars": [
         {
           "close": 341.20001220703125,
@@ -2357,22 +1797,22 @@
       ],
       "chart_path": "charts/SYK_2026-08-05.png",
       "company_name": "Stryker Corporation",
-      "confirmation_bar_index": 115,
+      "confirmation_bar_index": 114,
       "confirmation_date": "2026-08-05",
       "confirmation_type": "pin",
-      "current_price": 339.2099914550781,
+      "current_price": NaN,
       "entry_date": "2026-08-06",
       "entry_price": 340.45001220703125,
-      "exit_date": "2026-08-14",
-      "exit_price": 339.2099914550781,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 8,
+      "hold_days": 11,
       "is_spring": true,
-      "mother_bar_index": 113,
+      "mother_bar_index": 112,
       "risk": 10.290008544921875,
       "sector": "Healthcare",
       "status": "open",
@@ -2380,127 +1820,6 @@
       "target_price": 361.030029296875,
       "ticker": "SYK",
       "yolo_conf": 0.5742300748825073
-    },
-    {
-      "R": -1.0,
-      "bars": [
-        {
-          "close": 243.8000030517578,
-          "date": "2026-07-15",
-          "high": 246.19000244140625,
-          "low": 237.25,
-          "open": 237.49000549316406
-        },
-        {
-          "close": 239.57000732421875,
-          "date": "2026-07-16",
-          "high": 243.5,
-          "low": 238.0,
-          "open": 243.0
-        },
-        {
-          "close": 236.67999267578125,
-          "date": "2026-07-17",
-          "high": 239.25,
-          "low": 232.5,
-          "open": 235.63999938964844
-        },
-        {
-          "close": 238.97999572753906,
-          "date": "2026-07-20",
-          "high": 241.7899932861328,
-          "low": 236.75,
-          "open": 236.8000030517578
-        },
-        {
-          "close": 235.92999267578125,
-          "date": "2026-07-21",
-          "high": 239.3800048828125,
-          "low": 235.3000030517578,
-          "open": 237.8300018310547
-        }
-      ],
-      "chart_path": "charts/TTWO_2026-07-20.png",
-      "company_name": "Take-Two Interactive Software, Inc.",
-      "confirmation_bar_index": 105,
-      "confirmation_date": "2026-07-20",
-      "confirmation_type": "ice_cream",
-      "current_price": 246.9499969482422,
-      "entry_date": "2026-07-21",
-      "entry_price": 237.8300018310547,
-      "exit_date": "2026-07-23",
-      "exit_price": 232.5,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 2,
-      "is_spring": false,
-      "mother_bar_index": 102,
-      "risk": 5.3300018310546875,
-      "sector": "Communication Services",
-      "status": "stop",
-      "stop_price": 232.5,
-      "target_price": 248.49000549316406,
-      "ticker": "TTWO",
-      "yolo_conf": 0.0845765471458435
-    },
-    {
-      "R": null,
-      "bars": [
-        {
-          "close": 681.739990234375,
-          "date": "2026-08-11",
-          "high": 694.1699829101562,
-          "low": 673.1199951171875,
-          "open": 690.3800048828125
-        },
-        {
-          "close": 686.489990234375,
-          "date": "2026-08-12",
-          "high": 688.8499755859375,
-          "low": 676.72998046875,
-          "open": 686.6300048828125
-        },
-        {
-          "close": 673.6599731445312,
-          "date": "2026-08-13",
-          "high": 690.760009765625,
-          "low": 670.8099975585938,
-          "open": 688.3200073242188
-        },
-        {
-          "close": 679.6699829101562,
-          "date": "2026-08-14",
-          "high": 681.0,
-          "low": 672.6400146484375,
-          "open": 673.4400024414062
-        }
-      ],
-      "chart_path": "charts/TDY_2026-08-14.png",
-      "company_name": "Teledyne Technologies Incorpora",
-      "confirmation_date": "2026-08-14",
-      "confirmation_type": "mark_up",
-      "current_price": 679.6699829101562,
-      "entry_date": null,
-      "entry_price": null,
-      "exit_date": null,
-      "exit_price": null,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": null,
-      "is_spring": false,
-      "risk": null,
-      "sector": "Technology",
-      "status": "pending",
-      "stop_price": 670.8099975585938,
-      "target_price": 697.3899536132812,
-      "ticker": "TDY",
-      "yolo_conf": 0.416769415140152
     },
     {
       "R": -1.0,
@@ -2543,10 +1862,10 @@
       ],
       "chart_path": "charts/TER_2026-08-06.png",
       "company_name": "Teradyne, Inc.",
-      "confirmation_bar_index": 118,
+      "confirmation_bar_index": 117,
       "confirmation_date": "2026-08-06",
       "confirmation_type": "ice_cream",
-      "current_price": 418.7900085449219,
+      "current_price": NaN,
       "entry_date": "2026-08-07",
       "entry_price": 397.6000061035156,
       "exit_date": "2026-08-10",
@@ -2558,7 +1877,7 @@
       },
       "hold_days": 3,
       "is_spring": true,
-      "mother_bar_index": 116,
+      "mother_bar_index": 115,
       "risk": 33.339996337890625,
       "sector": "Technology",
       "status": "stop",
@@ -2566,71 +1885,6 @@
       "target_price": 464.2799987792969,
       "ticker": "TER",
       "yolo_conf": 0.29367050528526306
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 50.49952697753906,
-          "date": "2026-07-20",
-          "high": 52.1234327308861,
-          "low": 50.192567708645264,
-          "open": 51.9848071827608
-        },
-        {
-          "close": 50.87580108642578,
-          "date": "2026-07-21",
-          "high": 50.87580108642578,
-          "low": 50.22227792068091,
-          "open": 50.4599206478992
-        },
-        {
-          "close": 51.22236251831055,
-          "date": "2026-07-22",
-          "high": 51.36098806542774,
-          "low": 50.74707330936753,
-          "open": 50.994620008437614
-        },
-        {
-          "close": 50.697566986083984,
-          "date": "2026-07-23",
-          "high": 50.73717536624479,
-          "low": 50.04404382248277,
-          "open": 50.57874562286459
-        },
-        {
-          "close": 51.25206756591797,
-          "date": "2026-07-24",
-          "high": 51.52932244094469,
-          "low": 50.78668233428056,
-          "open": 50.90550369371321
-        }
-      ],
-      "chart_path": "charts/TFC_2026-07-23.png",
-      "company_name": "Truist Financial Corporation",
-      "confirmation_bar_index": 108,
-      "confirmation_date": "2026-07-23",
-      "confirmation_type": "pin",
-      "current_price": 53.099998474121094,
-      "entry_date": "2026-07-24",
-      "entry_price": 50.90550369371321,
-      "exit_date": "2026-08-06",
-      "exit_price": 52.62842343617408,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 13,
-      "is_spring": true,
-      "mother_bar_index": 105,
-      "risk": 0.8614598712304371,
-      "sector": "Financial Services",
-      "status": "target",
-      "stop_price": 50.04404382248277,
-      "target_price": 52.62842343617408,
-      "ticker": "TFC",
-      "yolo_conf": 0.6413032412528992
     },
     {
       "R": -1.0,
@@ -2673,10 +1927,10 @@
       ],
       "chart_path": "charts/UNH_2026-07-21.png",
       "company_name": "UnitedHealth Group Incorporated",
-      "confirmation_bar_index": 106,
+      "confirmation_bar_index": 105,
       "confirmation_date": "2026-07-21",
       "confirmation_type": "mark_up",
-      "current_price": 401.7300109863281,
+      "current_price": NaN,
       "entry_date": "2026-07-22",
       "entry_price": 434.95001220703125,
       "exit_date": "2026-07-27",
@@ -2688,7 +1942,7 @@
       },
       "hold_days": 5,
       "is_spring": false,
-      "mother_bar_index": 103,
+      "mother_bar_index": 102,
       "risk": 17.57000732421875,
       "sector": "Healthcare",
       "status": "stop",
@@ -2738,10 +1992,10 @@
       ],
       "chart_path": "charts/VTR_2026-08-05.png",
       "company_name": "Ventas, Inc.",
-      "confirmation_bar_index": 117,
+      "confirmation_bar_index": 114,
       "confirmation_date": "2026-08-05",
       "confirmation_type": "ice_cream",
-      "current_price": 91.5199966430664,
+      "current_price": NaN,
       "entry_date": "2026-08-06",
       "entry_price": 93.2699966430664,
       "exit_date": "2026-08-11",
@@ -2753,14 +2007,14 @@
       },
       "hold_days": 5,
       "is_spring": false,
-      "mother_bar_index": 114,
+      "mother_bar_index": 111,
       "risk": 4.819999694824219,
       "sector": "Real Estate",
       "status": "stop",
       "stop_price": 88.44999694824219,
       "target_price": 102.90999603271484,
       "ticker": "VTR",
-      "yolo_conf": 0.5032612681388855
+      "yolo_conf": 0.498333215713501
     },
     {
       "R": -1.0,
@@ -2803,10 +2057,10 @@
       ],
       "chart_path": "charts/VZ_2026-07-31.png",
       "company_name": "Verizon Communications Inc.",
-      "confirmation_bar_index": 114,
+      "confirmation_bar_index": 113,
       "confirmation_date": "2026-07-31",
       "confirmation_type": "ice_cream",
-      "current_price": 48.47999954223633,
+      "current_price": NaN,
       "entry_date": "2026-08-03",
       "entry_price": 47.31999969482422,
       "exit_date": "2026-08-05",
@@ -2818,7 +2072,7 @@
       },
       "hold_days": 2,
       "is_spring": true,
-      "mother_bar_index": 112,
+      "mother_bar_index": 111,
       "risk": 1.8499984741210938,
       "sector": "Communication Services",
       "status": "stop",
@@ -2828,79 +2082,79 @@
       "yolo_conf": 0.22070786356925964
     },
     {
-      "R": 2.0,
+      "R": NaN,
       "bars": [
         {
-          "close": 362.2033996582031,
-          "date": "2026-07-16",
-          "high": 366.0608651905648,
-          "low": 357.51645887561875,
-          "open": 357.5864204986797
+          "close": 124.97000122070312,
+          "date": "2026-07-28",
+          "high": 127.16000366210938,
+          "low": 119.81999969482422,
+          "open": 122.38999938964844
         },
         {
-          "close": 358.0061340332031,
-          "date": "2026-07-17",
-          "high": 365.901001374496,
-          "low": 357.90622371052876,
-          "open": 360.16472766219306
+          "close": 122.12999725341797,
+          "date": "2026-07-29",
+          "high": 124.37000274658203,
+          "low": 121.0199966430664,
+          "open": 123.0999984741211
         },
         {
-          "close": 352.09002685546875,
-          "date": "2026-07-20",
-          "high": 360.2546767261714,
-          "low": 352.09002685546875,
-          "open": 356.79694381571227
+          "close": 116.81999969482422,
+          "date": "2026-07-30",
+          "high": 123.05000305175781,
+          "low": 116.30000305175781,
+          "open": 122.25
         },
         {
-          "close": 359.0054931640625,
-          "date": "2026-07-21",
-          "high": 360.09477799723527,
-          "low": 345.47435347673047,
-          "open": 350.5010688799849
+          "close": 119.08000183105469,
+          "date": "2026-08-03",
+          "high": 119.72000122070312,
+          "low": 117.51000213623047,
+          "open": 117.76000213623047
         },
         {
-          "close": 358.176025390625,
-          "date": "2026-07-22",
-          "high": 362.9928861035027,
-          "low": 356.04741102385736,
-          "open": 357.04675820091967
+          "close": 122.16999816894531,
+          "date": "2026-08-04",
+          "high": 122.19999694824219,
+          "low": 118.55999755859375,
+          "open": 120.36000061035156
         }
       ],
-      "chart_path": "charts/WST_2026-07-21.png",
-      "company_name": "West Pharmaceutical Services, Inc.",
-      "confirmation_bar_index": 106,
-      "confirmation_date": "2026-07-21",
+      "chart_path": "charts/XYL_2026-08-04.png",
+      "company_name": "Xylem Inc.",
+      "confirmation_bar_index": 113,
+      "confirmation_date": "2026-08-04",
       "confirmation_type": "ice_cream",
-      "current_price": 349.4200134277344,
-      "entry_date": "2026-07-22",
-      "entry_price": 357.04675820091967,
-      "exit_date": "2026-07-23",
-      "exit_price": 380.19156764929807,
+      "current_price": NaN,
+      "entry_date": "2026-08-05",
+      "entry_price": 122.75,
+      "exit_date": "2026-08-17",
+      "exit_price": NaN,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 1,
+      "hold_days": 12,
       "is_spring": false,
-      "mother_bar_index": 103,
-      "risk": 11.572404724189198,
-      "sector": "Healthcare",
-      "status": "target",
-      "stop_price": 345.47435347673047,
-      "target_price": 380.19156764929807,
-      "ticker": "WST",
-      "yolo_conf": 0.49340227246284485
+      "mother_bar_index": 109,
+      "risk": 6.4499969482421875,
+      "sector": "Industrials",
+      "status": "open",
+      "stop_price": 116.30000305175781,
+      "target_price": 135.64999389648438,
+      "ticker": "XYL",
+      "yolo_conf": 0.14693057537078857
     }
   ],
-  "generated_at": "2026-08-17T07:49:41.045047+00:00",
+  "generated_at": "2026-08-18T07:34:31.691104+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-08-17T07:49:41.045047+00:00",
-    "run_id": "32007484235",
+    "generated_at": "2026-08-18T07:34:31.691104+00:00",
+    "run_id": "32112047228",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
