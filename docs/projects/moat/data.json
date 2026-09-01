@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01T09:55:52Z",
+  "updated_at": "2026-09-01T13:01:02Z",
   "stocks": [
     {
       "ticker": "AAPL",
@@ -228,551 +228,549 @@
       "ticker": "MMM",
       "company_name": "3M Company",
       "overall_moat": "Narrow",
-      "overall_score": 4.9,
-      "investment_implication": "3M\u2019s competitive advantage appears more episodic and portfolio/operational than structurally self-reinforcing, which limits how consistently it can defend high returns on invested capital. The strongest support for durability is the combination of IP and compliance/regulatory complexity, but weaker evidence on switching costs, network effects, and sustained pricing power suggests profitability can face periods of erosion as end-markets and mix change. Long-term investors should underwrite moat durability to 3M\u2019s ability to keep targeted IP defensible and to manage gross margin and portfolio actions without permanently damaging customer/price positioning.",
-      "key_strength": "High Barriers to Entry: 3M\u2019s sizable unexpired patent portfolio and ongoing patent grant activity, alongside compliance-driven capital and qualification burdens, can slow new entrants and protect select product lines.",
-      "key_risk": "Brand Loyalty & Pricing Power: Gross margin compression and indirect pricing-power evidence raise the risk that 3M cannot reliably translate brand/intangibles into sustained premium pricing, allowing competitive normalization to pressure ROIC.",
+      "overall_score": 5.1,
+      "investment_implication": "3M\u2019s competitive advantage appears more uneven by segment: while IP depth, compliance know-how, and ongoing capital/R&D create meaningful barriers, weaker evidence of durable pricing power and limited quantified switching costs/network effects cap long-term ROC sustainability. For long-term investors, the key is whether 3M can translate its scale and patent portfolio into steadier margins (less gross-to-net erosion) and segment-level cost/quality leadership that persists through portfolio and regulatory cycles.",
+      "key_strength": "High Barriers to Entry \u2014 Deep patent coverage plus regulatory/compliance and ongoing capital intensity make it difficult for new entrants to replicate 3M\u2019s technical and approval capabilities quickly.",
+      "key_risk": "Brand Loyalty & Pricing Power weakening/conditional pricing \u2014 Gross margin compression and evidence of active gross-to-net discounting suggest pricing power may be more tactical than structural, limiting the ability to defend returns in tougher demand or mix environments.",
       "criteria": {
         "brand_loyalty": {
-          "score": 5.8,
+          "score": 5.1,
           "confidence": "medium",
           "evidence": [
-            "Gross margin has compressed materially from 2021 to 2024: 2021 gross margin ~46.89% vs 2024 ~41.33% (down ~5.6 pp over ~3 years), indicating reduced pricing power vs prior period. ([marketscreener.com](https://www.marketscreener.com/quote/stock/3M-COMPANY-10697541/finances-ratios/?utm_source=openai))",
-            "3M\u2019s brand value has increased over time per Interbrand, but Interbrand\u2019s page indicates 3M brand value rose by 14% from 2024 (brand strength indicator), implying brand equity exists even as financial margins have pressured. ([interbrand.com](https://interbrand.com/best-global-brands/global/3m/?utm_source=openai))",
-            "3M\u2019s net sales and adjusted sales have shown softness in recent years (e.g., FY2024 adjusted sales organic growth up 2.1% YoY per FY2024 results release, but prior periods showed declines), consistent with a market where demand and cost conditions are not always favorable for sustained premium pricing. ([investors.3m.com](https://investors.3m.com/news-events/press-releases/detail/1874/3m-reports-fourth-quarter-and-full-year-2024-results?utm_source=openai))",
-            "Analyst/financial datasets that track profitability show gross margin ~39.91% for the most recently reported FY ending 2025-12-31 (TTM/final-year figures differ by source, but they continue the theme of gross margin below 2021 levels), consistent with only moderate pricing power today. ([alphaquery.com](https://www.alphaquery.com/stock/MMM/fundamentals/annual/gross-margin?utm_source=openai))"
+            "Gross margin has structurally declined: 3M gross margin was ~43.8% (2022) vs ~41.2% (2023) vs ~39.9\u201341.3% (2024), indicating margin pressure rather than consistent expansion.",
+            "Brand value indicator (indirect): Interbrand\u2019s Best Global Brands page for 3M shows brand value increasing by 14% from 2024 (as reported by Interbrand), but this does not translate into demonstrably strong current pricing power in financial results.",
+            "Pricing governance suggests active price/discount management: in earnings-call commentary, 3M discussed \u201ctightening down\u201d gross-to-net (volume discounts/rebates) and improving \u201csurgical pricing,\u201d implying pricing exists but is actively managed/discounted rather than freely premium.",
+            "Higher gross-to-net pressure risk in consumer/other categories: recent earnings-call transcript excerpts discuss disconnects between pricing/discounts and margins tied to volume/customer mix, consistent with pricing power being conditional rather than broad-based."
           ],
           "risks": [
-            "Company-specific, quantitative brand-loyalty metrics (e.g., NPS, retention/churn, repeat purchase rates) were not found in the sources retrieved; the brand component relies on third-party brand valuation strength rather than direct customer loyalty measurements.",
-            "Pricing power evidence is indirect here (inferential via gross margin compression/expansion); sources available did not provide a clear 3M price-vs-competitor or documented premium (e.g., \u201cwe raised prices X% above peers\u201d for the relevant years).",
-            "3M is a multi-segment conglomerate; gross margin changes may reflect mix, restructuring, and legal/operational headwinds rather than pure pricing power or brand erosion."
+            "3M\u2019s margin compression could be driven by mix, cost inflation/deflation timing, and portfolio changes (including the Health Care separation), which complicates isolating brand-driven pricing power from operational factors.",
+            "Public brand-loyalty metrics (e.g., NPS, repeat purchase rates) were not found in the quick company-specific search; without those, brand-loyalty scoring relies more on financial outcomes than direct retention data."
           ],
           "sources": [
-            "https://www.marketscreener.com/quote/stock/3M-COMPANY-10697541/finances-ratios/",
+            "https://www.sec.gov/Archives/edgar/data/66740/000006674025000006/mmm-20241231.htm",
             "https://interbrand.com/best-global-brands/global/3m/",
-            "https://investors.3m.com/news-events/press-releases/detail/1874/3m-reports-fourth-quarter-and-full-year-2024-results"
+            "https://www.morningstar.com/stocks/xnys/mmm/key-metrics"
           ]
         },
         "barriers_to_entry": {
           "score": 7.6,
           "confidence": "medium",
           "evidence": [
-            "Patent/IP barrier: At end of 2025, 3M owned ~11,375 unexpired patents globally, including ~4,015 US patents; between 2026 and 2028, ~740 (6.5%) of those worldwide patents are expected to expire (plus ~5,650 worldwide applications in process, including ~1,740 in the US).",
-            "Patent/IP renewal velocity (recent): In 2025, 3M was granted ~370 patents in the US and over ~970 patents in countries outside the US, indicating sustained follow-on protection rather than a thinning patent base.",
-            "Regulatory/compliance-driven capital intensity (environmental): In 2023, 3M expended ~ $316M on environmental-purpose capital projects (and expected aggregate ~$365M for 2024\u20132025), suggesting new entrants must fund significant compliance/pollution control infrastructure to compete at scale.",
-            "Regulatory license/approval complexity (procurement/product compliance): 3M\u2019s supplier and compliance materials reference mandatory compliance frameworks tied to chemical/product regulatory regimes and government/contract requirements (e.g., supplier obligations around regulatory compliance and chemical management/TSCA-style identity information), increasing the switching/qualification burden for new entrants into established supply chains."
+            "Scale of enforceable IP: 3M reported owning about 11,375 unexpired patents worldwide as of end-2025, including about 4,015 U.S. patents; it also disclosed that between 2026 and 2028 approximately 740 (6.5%) of these worldwide patents are expected to expire (implying a long runway of patent coverage).",
+            "Time horizon of patent protection: 3M\u2019s 2025 disclosure indicates only ~6.5% of unexpired worldwide patents expire in 2026\u20132028; this means a well-funded entrant would face ongoing incremental legal/technical risk for multiple years rather than a quick \u201cpatent cliff.\u201d",
+            "Regulatory/compliance burden for parts of the business: FDA medical-device oversight includes QMS requirements; FDA\u2019s Quality Management System Regulation (QMSR) took effect February 2, 2026, amending device CGMP/QMS requirements in 21 CFR Part 820 and incorporating ISO 13485:2016\u2014raising the quality-system and inspection readiness bar for new medical-device entrants (including in 3M\u2019s medical businesses).",
+            "Ongoing capital intensity (signal for replication cost): 3M\u2019s 2024 annual report states capital expenditures were $1.2B (and R&D also disclosed as $1.1B) for the year ended 2024, indicating meaningful ongoing spend that a new entrant would need to match to build manufacturing capability and innovation cadence."
           ],
           "risks": [
-            "Barrier score may be overstated if 3M\u2019s moat is more portfolio/scale-based than legally enforceable (many patents are not individually 'material' and enforcement/scope matters).",
-            "Time-to-parity depends heavily on which 3M product lines are targeted (e.g., adhesives, abrasives, filtration, electrical insulation) and on whether entrants can use similar chemistries/processes without infringing\u2014public patent counts don\u2019t fully capture freedom-to-operate.",
-            "Regulatory costs are real but are not exclusive to 3M; peers and well-funded entrants can also fund compliance, so the barrier is strongest where 3M\u2019s integrated know-how and IP scope block substitutes."
+            "Conglomerate/product diversity cuts both ways: barriers are likely uneven by segment (e.g., some categories are less IP- and more formulation/process- or distribution-driven), so averaging across the whole company may overstate difficulty in specific markets where IP is weaker or customers multi-source.",
+            "Patent-based barriers can erode faster than disclosed if competitive substitutes work around claims (license availability, design-around, and freedom-to-operate clearance), which can reduce the effective time-to-parity even when patent volumes are high."
           ],
           "sources": [
-            "https://s203.q4cdn.com/212458750/files/doc_financials/2025/q4/2677c1db-5f49-4514-8812-4e5cb80725fe.pdf",
-            "https://investors.3m.com/financials/sec-filings/content/0001308179-24-000309/mmm4298631-ars.pdf",
-            "https://multimedia.3m.com/mws/media/2551884O/3m-global-compliance-terms-v1-0-february-24-2025.pdf"
+            "https://s203.q4cdn.com/212458750/files/doc_financials/2025/ar/2677c1db-5f49-4514-8812-4e5cb80725fe.pdf",
+            "https://www.fda.gov/medical-devices/postmarket-requirements-devices/quality-management-system-regulation-qmsr",
+            "https://www.sec.gov/Archives/edgar/data/66740/000130817925000228/mmm013312-ars.pdf"
           ]
         },
         "switching_costs": {
-          "score": 3.6,
+          "score": 4.4,
           "confidence": "low",
           "evidence": [
-            "3M\u2019s posted standard Terms and Conditions of Sale are broadly transactional for product sales (not multi-year commitments/automatic renewal lock-in), including the ability for 3M to \u201ccancel a Customer Order without obligation or liability upon notice,\u201d which implies limited contractual customer lock-in. (Source: https://www.3m.com/3M/en_US/company-us/general-terms-and-conditions/)",
-            "3M supports electronic integration via EDI for trading partners (ANSI X12/EDIFACT) and documents that implementation involves \u201csales, marketing, manufacturing, logistics, information systems, finance, and customer service,\u201d but this is framed as interoperability rather than proprietary, non-portable data formats\u2014suggesting switching friction exists mainly as integration effort, not data format lock-in. (Source: https://www.3m.com/about3m/ec/edi_benefits.html ; https://www.3m.com/about3m/ec/edi.html)",
-            "Evidence located of fixed initial 3-year terms and exclusivity appears in a specific master supply arrangement involving 3M and Solventum (life/healthcare spinoff context), indicating that multi-year + exclusivity can occur\u2014but this is not demonstrated as broadly applicable across 3M\u2019s industrial end-markets in the sources found. (Source: https://www.lawinsider.com/contracts/e72ujXFXjqN)"
+            "3M\u2019s publicly posted \u201cGeneral Terms and Conditions of Sale for Products\u201d indicate largely standard, non-customer-specific commercial terms (e.g., standard net 30 payment terms; returns require advance 3M authorization), with no disclosed multi-year lock-in or termination/penalty structure in the base terms. (Source: 3M general sales terms page)",
+            "3M\u2019s supplier-facing materials describe operational integration expectations (e.g., invoices matching purchase orders; electronic source-to-pay via Ariba/EDI/SNC \u201cor per the signed contract\u201d), but these are about supply process enablement rather than clearly about customer/tenant lock-in or proprietary data formats. (Source: 3M Supplier Direct information)",
+            "In a disclosed 3M Transition Services\u2013style contract excerpt (spin/transition context), the agreement defines \u201cTransition Period\u201d as time needed for regulatory/qualification steps and third-party supplier scaling, implying that in some specialized 3M engagements migration requires re-qualification and ramp time\u2014but this is not customer churn/retention evidence for ongoing sales. (Source: 3M 8-K exhibit PDF)",
+            "3M\u2019s supplier agreements are often explicitly \u201cnot a requirements contract\u201d (example contract language shown in a 3M-related SEC filing excerpt), which generally reduces contractual quantity/commitment lock-in that would otherwise increase switching costs. (Source: 3M 8-K exhibit HTML)"
           ],
           "risks": [
-            "Public company disclosures for 3M do not provide customer churn/retention by customer segment (common for B2B industrials), so the switching-cost score can\u2019t be grounded in company-specific churn metrics with high confidence.",
-            "3M\u2019s switching costs are likely highly application-specific (e.g., product qualification, safety/regulatory approvals, custom formulations/material specs, and qualification cycles) but the web search results did not surface quantified migration/qualification cost or time for specific 3M product categories.",
-            "The only clear multi-year/exclusivity term evidence found was in a particular master supply agreement (3M\u2013Solventum), so extrapolating to overall 3M switching costs could under/overstate the true lock-in."
+            "The web evidence found is biased toward (a) general sales terms and (b) legal/contract boilerplate and a transition-contract exhibit; it does not directly quantify customer churn/retention, migration time/cost, or documented customer exits specifically for 3M\u2019s end-market offerings.",
+            "For many 3M businesses (specialty chemicals, abrasives, medical/adhesives, engineered materials), switching costs may be driven by qualification/ramp cycles and application engineering; however, the fetched sources do not provide company-specific numerical estimates (days/months/engineering-hours/$) or observed churn for those segments."
           ],
           "sources": [
             "https://www.3m.com/3M/en_US/company-us/general-terms-and-conditions/",
-            "https://www.3m.com/about3m/ec/edi_benefits.html",
-            "https://www.lawinsider.com/contracts/e72ujXFXjqN"
+            "https://www.3m.com/3M/en_US/suppliers-direct/prospective-suppliers/information/",
+            "https://investors.3m.com/financials/sec-filings/content/0001628280-24-014795/0001628280-24-014795.pdf"
           ]
         },
         "network_effects": {
           "score": 2.0,
           "confidence": "medium",
           "evidence": [
-            "3M (post-Health Care separation completed April 1, 2024) is a diversified manufacturer selling via \u201cnumerous distribution channels,\u201d including direct sales and multiple wholesaler/retailer/jobber/distributor/dealer channels; this indicates partner/route-to-market breadth but does not describe a platform where additional users increase product value (i.e., no measurable direct network effects). (Source: 3M 2024 Annual Report/10-K PDF)",
-            "3M\u2019s 2024 10-K does not disclose a user- or participant-count metric (e.g., app users, buyers/sellers, active marketplace participants) that grows over time; instead it reports as a traditional industrial enterprise by segments and net sales, implying network effects are not a disclosed driver of demand. (Source: 3M 2024 Annual Report/10-K PDF)",
-            "The 2024 10-K explicitly frames 3M\u2019s distribution success as \u201cconfidence of wholesalers, retailers, jobbers, distributors and dealers\u2026 developed through long association\u201d rather than as liquidity/network-density effects where growth on one side mechanically attracts more participants. (Source: 3M 2024 Annual Report/10-K PDF)",
-            "3M 2024 net sales disclosure (Americas included U.S. net sales to customers of $10.8B in 2024, $10.6B in 2023, $10.7B in 2022) reflects business momentum, but not cross-side marketplace liquidity, share-of-wallet, or marketplace \u201cactive participants\u201d growth tied to network effects. (Source: 3M 2024 Annual Report/10-K PDF)"
+            "3M is not a two-sided marketplace network business in its core model; it operates as a manufacturer with channel/partner relationships (e.g., supplier onboarding via \u201c3M Supplier Direct\u201d), which does not create scalable, measurable cross-side liquidity like a true platform. (3M Supplier Direct + partner pages) ",
+            "The closest \u201cnetwork\u201d product evidence found is the 3M\u2122 Pattern Marketplace (for installers) which is primarily a digital pattern library: it hosts nearly 4,500 paint protection film and automotive window tint patterns, and the value appears tied to content availability rather than user-to-user adoption or marketplace liquidity. (Pattern Marketplace product page + sell sheet)",
+            "3M discloses channel/partner strengthening as a go-to-market strategy, but does not disclose buyer/supplier count growth, activity, or marketplace liquidity metrics consistent with network effects that compound with participation. (3M 10-K / SEC filing language about partner confidence and channel performance)",
+            "No credible 3\u20135 year trend data for 3M-specific user/participant counts (active installers, active suppliers, or marketplace liquidity/share-of-wallet) was found in available sources; the evidence base for network-effects reinforcement (viral growth, cross-side engagement flywheels) is absent for 3M."
           ],
           "risks": [
-            "3M does run some digital/interactive initiatives (e.g., customer-facing platforms and \u201cNext Gear\u201d type experiences), but the web-sourced filings here do not provide participant counts, two-sided liquidity metrics, or any evidence that these platforms create measurable reinforcing network effects.",
-            "Conglomerates can have network effects embedded in specific sub-businesses (e.g., safety/standards ecosystems, installer/contractor dependencies), but 3M\u2019s 2024 10-K evidence located here does not quantify such effects at the company level.",
-            "If 3M\u2019s digital channels (B2B ordering, portals, or partner programs) have growing active-user cohorts that weren\u2019t captured in the sources reviewed, the network effects score could be understated."
+            "3M may have \u201cnetwork-like\u201d benefits in specific niches (e.g., standard setting, technical training communities, distributor install bases, or authenticated distribution) that were not quantified in accessible sources; this could understate true network effects.",
+            "3M has multiple digital/customer-facing tools; limited disclosure may hide internal participation metrics (e.g., retailer/program enrollment, digital asset usage) relevant to network effects."
           ],
           "sources": [
-            "https://investors.3m.com/financials/sec-filings/content/0001308179-25-000228/0001308179-25-000228.pdf",
-            "https://investors.3m.com/financials/sec-filings?form_type=Annual&year=2024",
-            "https://www.3m.com/3M/en_US/company-us/about-3m/annual-report/"
+            "https://www.3m.com/3M/en_US/suppliers-direct/",
+            "https://www.3m.com/3M/en_US/p/d/b5005533015/",
+            "https://investors.3m.com/financials/sec-filings/content/0000066740-26-000014/mmm-20251231.htm"
           ]
         },
         "economies_of_scale": {
-          "score": 5.4,
+          "score": 6.5,
           "confidence": "medium",
           "evidence": [
-            "3M\u2019s 2024 continuing-operations scale remains large: total net sales of $24.575B and cost of sales of $14.447B (gross profit $10.128B), with sizable segment cost bases (e.g., Safety & Industrial cost of sales $5.965B; Transportation & Electronics cost of sales $5.106B; Consumer cost of sales $2.912B).",
-            "Evidence consistent with operating leverage/productivity (a scale-enabling benefit, though not purely \u2018economies of scale\u2019): 2024 net sales were roughly flat vs. 2023 ($24.575B vs. $24.610B) while cost of sales fell ($14.447B vs. $14.983B), and 3M attributes underlying margin improvement to \u201cproductivity\u201d and \u201cspending discipline\u201d in its 2024 results narrative.",
-            "SG&A intensity improved in 2024 (supporting potential scale/overhead leverage): 2024 SG&A was $4.141B vs. $5.046B in 2023, while net sales were essentially flat; 3M also states SG&A measured as % of sales decreased in 2024 vs 2023 (and increased in 2023 vs 2022).",
-            "R&D intensity did not dramatically rise with revenue, indicating disciplined cost-to-growth rather than heavy incremental spend at scale: 2024 R&D was $1.077B vs. $1.022B in 2023 (with revenue essentially flat)."
+            "Scale supports operating leverage/productivity: 3M disclosed that operating profit growth of ~$650M at constant currency in 2025 was driven by ~$200M from volume growth and ~$550M of net productivity across supply chain and G&A (partly offset by growth/productivity investments and other headwinds).",
+            "Margin/operating leverage improvement (indicative of cost discipline at scale): 3M\u2019s FY2025 operating income margin is shown at 18.6% (GAAP) and 23.4% (adjusted) with commentary that outside special items, operating margins reflect benefits from growth, productivity, and lower restructuring costs.",
+            "R&D and SG&A intensity: for FY2024 (per 3M\u2019s annual report materials), R&D was $95.5M (10.1% of revenue) and SG&A was $175.9M (18.5% of revenue). This suggests scale supports sustaining overhead while still investing in R&D (though the cited figures appear from a specific report section/page and should be verified against the consolidated 3M totals).",
+            "Economies of scale via supply chain purchasing/efficiency is explicitly targeted: 3M\u2019s disclosures include supply chain/G&A productivity initiatives and planned productivity improvements; additionally, an older 3M disclosure describes Global Sourcing Effectiveness as generating savings by leveraging purchasing economies of scale (to be treated as structural evidence, not necessarily current magnitude).",
+            "Market share as a proxy for scale translating to cost leadership (adhesives sub-sector evidence): third-party market research estimates 3M is ~11% market share in pressure sensitive adhesives, supported by a broad tape/label/industrial adhesive portfolio (direct, but not full-economy-of-scale proof and may not map 1:1 to unit costs)."
           ],
           "risks": [
-            "Conglomerate footprint and portfolio churn/major events (e.g., 2024 Solventum separation) can confound \u2018true\u2019 unit-cost comparisons and overhead allocation, making it hard to isolate economies of scale from restructuring effects.",
-            "The evidence found here supports margin and overhead improvements from productivity/discipline, but it does not provide direct, company-specific unit cost metrics (e.g., cost per ton/sq yd, cost per unit) or procurement price/volume advantages vs. specific smaller competitors."
+            "Unit-cost leadership is not directly evidenced with company-specific cost-per-unit metrics or segment gross margin rollforwards that prove scale-driven lower manufacturing cost vs. similarly scaled peers.",
+            "Recent business transformation and restructuring dynamics (including litigation-related special items and product exits) can distort margins and operating leverage, making it harder to isolate true economies-of-scale effects.",
+            "Conglomerate mix can dilute scale advantages: large portions of 3M\u2019s costs/restructuring may be driven by portfolio reshaping rather than pure size-based cost leadership in each line of business."
           ],
           "sources": [
-            "https://investors.3m.com/financials/sec-filings/content/0001308179-25-000228/0001308179-25-000228.pdf",
-            "https://investors.3m.com/financials/sec-filings/content/0000066740-25-000006/mmm-20241231.htm"
+            "https://www.sec.gov/Archives/edgar/data/66740/000006674026000014/mmm-20251231.htm",
+            "https://d1io3yog0oux5.cloudfront.net/_ede879fb82f00fbcb56169196d94cfe8/3m/db/3222/30980/webcast_transcript/MMM-USQ_Transcript_2026-01-20.pdf",
+            "https://www.industryweek.com/leadership/companies-executives/article/55237591/3m-eyes-260-million-annual-savings-mostly-via-supply-chain-efficiency"
           ]
         }
       },
-      "analyzed_at": "2026-08-01T09:54:22Z"
+      "analyzed_at": "2026-09-01T12:59:56Z"
     },
     {
       "ticker": "AOS",
       "company_name": "A. O. Smith Corporation",
       "overall_moat": "Narrow",
-      "overall_score": 4.9,
-      "investment_implication": "A. O. Smith\u2019s moat looks more \u201ccompetitively sustainable\u201d than deeply defensive: the company benefits from some durable advantages (notably scale and partial product differentiation), but these are not strong enough to consistently protect margins across cycles and geographies. For long-term investors, the key is to underwrite continued cost discipline and product/aftermarket differentiation that can maintain returns on invested capital even when demand volatility weakens pricing and utilization. Competitive positioning appears resilient, but not fortress-like, implying the stock\u2019s long-run compounding will depend on execution rather than an impenetrable barrier set.",
-      "key_strength": "High Barriers to Entry \u2014 Product-specific patent coverage plus qualification/certification and distribution/scale frictions make it harder (though not impossible) for new entrants to replicate A. O. Smith\u2019s breadth quickly.",
-      "key_risk": "High Switching Costs \u2014 Warranty/service factors provide only limited evidence of true customer lock-in, so pricing power and installed-base economics could be pressured if competitors match offerings or if consumers/pros treat water heating as more of a commodity during downcycles.",
+      "overall_score": 5.7,
+      "investment_implication": "A. O. Smith\u2019s moat appears mid-strength: scale and some installed-base/aftermarket advantages support relatively resilient economics, but the durable, customer-level lock-in and clearly measured pricing power look less proven. For long-term investors, this suggests the company can sustain attractive returns when conditions are favorable, yet competitive pricing, product/experience substitutability, and mix shifts could more readily pressure margins than in a \u201cWide\u201d moat business.",
+      "key_strength": "Economies of Scale \u2014 demonstrated market leadership and strong financial scale support steadier margins and operating leverage than smaller peers.",
+      "key_risk": "Brand Loyalty & Pricing Power \u2014 gross margin stability does not conclusively prove durable premium pricing, and mixed consumer sentiment/limited access to retention/NPS-style KPIs increases the risk that pricing power weakens over time.",
       "criteria": {
         "brand_loyalty": {
           "score": 6.0,
           "confidence": "medium",
           "evidence": [
-            "Gross margin is high but not consistently expanding: A. O. Smith gross margin was ~35.4% (2022) and ~38.5% (2023), then ~38.1\u201338.2% (2024).",
-            "Segment profitability indicates some pricing benefits but also pressure/variability: North America segment margin was 24.9% (2023) vs 24.0% (2024), with management citing \u201cwater heater pricing benefits\u201d partially offset by lower/volatile volumes; Rest of World segment margin fell from 8.7% (2023) to 7.0% (2024), with 2024 declines driven by China volumes.",
-            "Customer loyalty / repeat purchase evidence exists in the company\u2019s disclosures, but the most concrete quantitative repeat-customer metric located in the sources is from a different company\u2019s SEC PDF (not A. O. Smith). For A. O. Smith specifically, repeat-customer share / churn figures were not found in the searched sources."
+            "Gross profit margin stayed in a relatively tight band around ~35\u201339% over the last ~4 years: 2022 gross margin 35.4%, 2023 38.5%, 2024 38.1% (i.e., no sustained compression).",
+            "2024 gross profit margin slightly declined to 38.1% from 38.5% in 2023, consistent with some cost/volume pressure but not a collapse in profitability.",
+            "A. O. Smith\u2019s brand presence in consumers\u2019 decisions is evidenced by third-party trust/brand surveys\u2014e.g., Lifestory Research\u2019s 2020 \u201cAmerica\u2019s Most Trusted Water Heater Brand\u201d listing ranks A. O. Smith as the most trusted (survey-based).",
+            "Brand loyalty evidence is mixed: customer review platforms and complaint aggregators show material negative experiences (e.g., ConsumerAffairs and BBB complaint pages include ongoing customer complaint themes), suggesting loyalty/support is not uniformly strong.",
+            "Premium pricing cannot be directly quantified from the sources retrieved (e.g., no accessible, company-specific price-vs-competitor delta and no contract/sector-specific ASP premium figures were found in the accessible materials)."
           ],
           "risks": [
-            "Limited direct brand-later metrics (e.g., NPS, retention/churn, brand surveys) located for A. O. Smith in the web results; scoring is therefore driven mainly by financial margin as a proxy for pricing power.",
-            "Margin variability by geography (North America vs China/Rest of World) suggests pricing power may be weaker in softer end-markets and more cycle/volume sensitive than brand-universal.",
-            "No company-specific, competitor-referenced premium pricing (e.g., A. O. Smith ASP vs private label/other heater OEMs; explicit % premium) was found in the sources, so premium-price ability is inferred only indirectly."
+            "Limited directly verifiable, company-specific NPS/retention/repeat-purchase metrics: the most important loyalty KPI evidence (e.g., NPS values) was not successfully retrievable from the investor materials during this run.",
+            "Gross margin resilience does not automatically prove pricing power: it may reflect product mix, cost recovery, contract indexation, or operating actions rather than durable brand-driven pricing premiums.",
+            "Customer-sentiment data is not consistently positive across review/complaint sources, which could indicate brand/experience friction that undermines pricing power over time."
           ],
           "sources": [
-            "https://aosmith.gcs-web.com/news-releases/news-release-details/o-smith-reports-2024-results-and-introduces-2025-guidance",
-            "https://www.macrotrends.net/stocks/charts/AOS/a-o-smith/gross-margin",
-            "https://investor.aosmith.com/news-releases/news-release-details/o-smith-reports-2023-and-introduces-2024-guidance"
+            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/dw9faf4a3d/pdf/2024-Annual-Report-AOSmith-Corporation-lores.pdf",
+            "https://www.suredividend.com/wp-content/uploads/2025/08/AOS-2025-08-14.pdf",
+            "https://www.lifestoryresearch.com/2020-americas-most-trusted-water-heater-brand"
           ]
         },
         "barriers_to_entry": {
-          "score": 6.2,
+          "score": 6.5,
           "confidence": "medium",
           "evidence": [
-            "Patents (company-listed coverage): A. O. Smith publishes product-specific US patent lists updated June 3, 2025. Examples include US8162232 (multiple condensing/top-fired water heater models), US11624528 (condensing top-fired models), US11371753 (condensing top-fired models), and US10612817 (condensing/heater models); heat-pump related examples include US8245669, US10544944, US9267209, US9057534, and US8977791 (e.g., ProLine\u00ae/Voltex\u00ae series) with some entries marked \u201cPatent(s) Pending.\u201d",
-            "Regulatory/standards requirements that new entrants must meet (not exclusive, but create qualification friction): DOE energy conservation standards apply to commercial and residential water heating equipment, with enforcement and certification/testing requirements (e.g., DOE commercial water heating equipment rule includes certified ratings, certification reports, record retention, and enforcement). Additionally, product listings and A. O. Smith technical/ordering documents reference design-testing/certification to relevant standards (e.g., ANSI Z21.10.3 / CSA 4.3 type requirements, AHRI thermal efficiency claims, and ASME/CSD-1 references in specification-type documents).",
-            "CAPEX intensity is moderate (harder for entrants than pure software, but not \u201cmust be decade+\u201d): A. O. Smith reported capital expenditures of $108.0 million in 2024 and $70.8 million in 2025, and guided 2026 capex between $70 million and $80 million\u2014suggesting ongoing maintenance/expansion rather than the massive, scale-dominant capex typical of true heavy manufacturing bottlenecks.",
-            "Time-to-compete drag from scale/distribution and recent acquisition activity (suggests industry consolidation rather than easy organic entry): A. O. Smith completed acquisition of Leonard Valve Company for $470 million on January 6, 2026 (water temperature valves/related component positioning). This indicates A. O. Smith is actively extending its ecosystem/components\u2014making it more difficult for a new entrant to match product breadth and installed-channel relationships quickly."
+            "IP scale (but not monopoly): A. O. Smith reports $95.0m R&D in 2025 and states it owns/uses patents, trade secrets, and licenses as part of its competitive position (FY 2025 Form 10-K).",
+            "Published patent notice list for residential water heaters includes multiple specific heat-pump models with U.S. patent numbers (e.g., US8245669, US10544944, US9267209, US9057534, US8977791, US8660701, US12007147, US11300325, US11009260, US10240817), indicating an active, technology-specific patent strategy for product lines.",
+            "Regulatory/compliance is meaningful but not a license monopoly: A. O. Smith installation materials describe that water heaters must meet applicable standards/codes (e.g., listings such as NSF-5 and being \u201clisted\u201d by Underwriters Laboratories) and that state installation codes can require specific additions to products (not an exclusive approval held only by A. O. Smith).",
+            "Capex intensity looks moderate (not prohibitive): A. O. Smith reported capital expenditures of $70.8m in 2025 vs $108.0m in 2024; management guided 2026 capex of $70m\u2013$80m\u2014suggesting a new entrant would need manufacturing capacity but is unlikely to face decade+ of uniquely massive capex based solely on A. O. Smith\u2019s spending."
           ],
           "risks": [
-            "Patent barriers are likely portfolio-specific and product-specific: the company\u2019s published lists show multiple US patents for particular models, but the source materials do not provide a complete, defense-in-depth view (e.g., total active patent counts, claim breadth, or litigation/validity status), so the true ability of patents to block entry is uncertain.",
-            "Regulation is not a monopoly: DOE/UL/CSA/AHRI-type compliance is a gating requirement, but it applies broadly to all manufacturers; it may reduce \u201cspeed of entry\u201d more than it prevents entry outright.",
-            "CAPEX evidence is indirect: while company-level capex is disclosed, it doesn\u2019t directly quantify the incremental, facility-by-facility capex a specific new entrant would need to reach parity (e.g., new production lines, toolings, heat-exchanger manufacturing, and certification throughput)."
+            "The evidence available from filings/pages retrieved does not provide a complete A. O. Smith-wide issued patent count and a per-patent expiry schedule; without that, the true strength of patent-driven exclusion vs competitive parity is hard to quantify precisely.",
+            "A. O. Smith\u2019s strongest barriers may come from distribution scale, brand, and installed base rather than formal regulatory licensing; those factors are not directly quantified in the sourced data gathered here.",
+            "Regulatory requirements appear standards-based (UL/NSF/code compliance) which can be met by other manufacturers; this may cap the barrier score even if compliance is operationally complex."
           ],
           "sources": [
-            "https://www.aosmith.com/about-us/patents.html",
-            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/v95d6ed5ffb85f505898bd124074912d0156524d8/pdf/patents/AOSmith-WH-patent-list-06032025.pdf",
-            "https://www.energy.gov/cmei/buildings/commercial-water-heating-equipment",
-            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/dw9faf4a3d/pdf/2025-Annual-Report.pdf",
-            "https://aosmith.gcs-web.com/news-releases/news-release-details/o-smith-completes-acquisition-leonard-valve-company"
+            "https://www.sec.gov/Archives/edgar/data/91142/000009114226000008/aos-20251231.htm",
+            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/dw9faf4a3d/pdf/patents/AOSmith-RetailWH-patent-list-06032025.pdf",
+            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/dw9faf4a3d/pdf/2025-Annual-Report.pdf"
           ]
         },
         "switching_costs": {
-          "score": 3.4,
+          "score": 4.2,
           "confidence": "medium",
           "evidence": [
-            "A. O. Smith\u2019s warranty terms are largely unit/part-based and do not indicate long-term commercial lock-in (e.g., commercial warranty guidance lists exclusions for service/labor/shipping/installation/handling as not covered, implying customers can replace with minimal contractual friction after the warranty period). Source: A. O. Smith Commercial Water Heater Limited Warranty PDF. ([assets.aosmith.com](https://assets.aosmith.com/damroot/Original/10004/100294198.pdf?utm_source=openai))",
-            "A. O. Smith warranties and service processes require warranty validation/registration-like steps (e.g., verification portal and documentation requirements), but this appears aimed at eligibility for reimbursement rather than ongoing multi-year contracts or proprietary workflow lock-in. Source: A. O. Smith warranty verification/portal pages. ([eportal.hotwater.com](https://eportal.hotwater.com/Warranty/Verify?utm_source=openai))",
-            "A. O. Smith provides industry service infrastructure (e.g., warranty/service guides) rather than proprietary, customer-owned platform integrations that would create hard data portability or workflow switching. Source: A. O. Smith Service & Warranty Guide PDF. ([assets.hotwater.com](https://assets.hotwater.com/damroot/Original/10009/ServiceWarrantyGuide.pdf?utm_source=openai))",
-            "The strongest company-specific 'switching cost' evidence found relates to replacement/servicing friction (parts availability, authorized service process), not to quantified churn/retention or explicit multi-year customer contracts. Evidence is therefore weak on churn/retention metrics. Source: A. O. Smith Service & Warranty Guide and related warranty/service pages. ([assets.hotwater.com](https://assets.hotwater.com/damroot/Original/10009/ServiceWarrantyGuide.pdf?utm_source=openai))"
+            "A. O. Smith\u2019s warranty/service model for water heaters contemplates customers moving to/within a company ecosystem (e.g., \u201cyearly Service Contract\u201d is offered; otherwise service is \u201cactual basis\u201d billed for labor and spares at prevailing company rates), indicating some post-purchase service tie-in but not a clearly enforced multi-year lock-in by default. (AOS HeatBot warranty terms, India; includes option for yearly service contract and actual-basis service after warranty.)",
+            "For commercial connectivity, A. O. Smith\u2019s iCOMM connectivity service provides remote viewing/management of water heater operation, including \u201ccurrent status, usage history, set points and other key parameters\u201d available in the iCOMM function on the A. O. Smith app, implying some workflow/data lock-in for connected units (but this is about device management rather than a switching barrier proven in churn/migration figures).",
+            "A. O. Smith supports warranty claims and service operations through an ePortal workflow: the wholesaler channel states partners can \u201cLogin to the ePortal to file a warranty claim,\u201d and the Service/Warranty Guide describes how to submit claims online (register at eportal.hotwater.com; steps for filing labor/service claims). This suggests operational embedding for channel partners handling claims, but it does not prove switching penalties or multi-year exclusivity.",
+            "A. O. Smith explicitly markets dealer network terms as having \u201cNo franchise fees or restrictive contracts,\u201d which is direct evidence against high contractual switching penalties for dealers/partners (at least on the dealer network side)."
           ],
           "risks": [
-            "My score may understate switching costs because A. O. Smith\u2019s Specialty Industrial Machinery segment could have industrial customer service agreements and installed-base parts/service lock-in that were not surfaced with specific contract-length/termination-penalty evidence in the sources found.",
-            "Public churn/retention metrics are not clearly disclosed in the searched sources; absence of evidence is not evidence of absence for switching friction in industrial aftermarket/service contracts."
+            "The analysis lacks company-reported churn/retention metrics for A. O. Smith\u2019s installed base (e.g., replacement cycle churn, connected-unit retention, or dealer attrition). Without these, the switching-cost score cannot be strongly anchored to quantified migration costs or realized customer losses.",
+            "A. O. Smith\u2019s business is largely replacement-driven and uses third-party installation/distribution networks; switching friction may be driven more by practical replacement/maintenance timing and parts/service availability than by formal contract structures, which may not show up in easily accessible public documents.",
+            "The iCOMM/ePortal evidence supports ecosystem features, but public sources found here do not quantify migration effort (e.g., data export/portability limits, shutoff/disabling processes, or quantified cost to move connected devices to another vendor)."
           ],
           "sources": [
             "https://assets.hotwater.com/damroot/Original/10009/ServiceWarrantyGuide.pdf",
-            "https://assets.aosmith.com/damroot/Original/10004/100294198.pdf",
-            "https://eportal.hotwater.com/Warranty/Verify"
+            "https://assets.aosmith.com/damroot/Original/10001/AOSCA80000.pdf",
+            "https://nawtmarketing.aosmith.com/NDR"
           ]
         },
         "network_effects": {
-          "score": 2.6,
-          "confidence": "low",
+          "score": 4.5,
+          "confidence": "medium",
           "evidence": [
-            "A. O. Smith\u2019s main \u201cnetwork-like\u201d capability appears to be its iCOMM remote monitoring ecosystem (apps + connected/registered water heaters/boilers), where customers/pros can monitor status and receive fault notifications remotely; iCOMM supports registering compatible units and managing alerts/fault history (no public installed-base or subscriber counts provided in the sources reviewed).",
-            "A. O. Smith positions iCOMM as usable across multiple product families and notes that it can be used on existing installations with advanced controls, implying potential reinforcement via service relationships tied to registered connected units rather than a broad external network of participants (no disclosed growth trend for connected units/users over 3\u20135 years found).",
-            "For participant growth / measurable network effects (e.g., number of registered iCOMM accounts or connected water heaters increasing year-over-year), the consulted sources did not provide quantitative metrics (installed base, active users, or growth rates) necessary to demonstrate accelerating direct network effects.",
-            "No marketplace cross-side liquidity metrics (buyers/sellers) are evidenced for A. O. Smith\u2019s core business in the reviewed materials; iCOMM is not presented as a two-sided platform where additional participants make the service more valuable via liquidity effects."
+            "A. O. Smith\u2019s franchise benefit is more \u201cinstalled-base replacement/aftermarket\u201d than classic network effects: the company states that ~80%\u201385% of water heater and boiler sales are replacement-driven (recurring demand tied to prior product installations). ([sec.gov](https://www.sec.gov/Archives/edgar/data/91142/000009114223000104/ex991aosid_presentation.htm?utm_source=openai))",
+            "Installed base scale is large but the company does not present public, accelerating participant counts typical of two-sided networks; instead it emphasizes market share and replacement stability. For example, its 2024 investor materials cite North America residential water heater market shares (AHRI + gas tankless) and show long-running replacement/new-construction splits. ([aosmith.gcs-web.com](https://aosmith.gcs-web.com/static-files/4bc22781-162c-41d0-ad90-927800218c7c))",
+            "Aftermarket/service is a measurable recurring revenue stream: in its 2023 10-K, A. O. Smith reports service revenue of $318.0M (2023) vs $296.3M (2022) vs $259.6M (2021), evidencing monetization of existing installed base (even if not a direct \u201cnetwork effect\u201d loop). ([content-archive.fast-edgar.com](https://content-archive.fast-edgar.com/20240228/AN22D222ZM22B262222B2242KPBM9K22V262/))",
+            "A. O. Smith explicitly highlights use of its installed base and service network to generate repeat business and leverage its customer base for maintenance/retrofit/replacement markets\u2014again indicating installed-base lock-in, but not evidence of accelerating liquidity/marketplace dynamics. ([sec.gov](https://www.sec.gov/Archives/edgar/data/833444/000110465926004571/tm2524665d9_ars.pdf?utm_source=openai))"
           ],
           "risks": [
-            "Network effects may exist but be poorly disclosed: the company may report iCOMM/service enrollment counts elsewhere in filings or investor materials not captured in the quick source set; missing these could understate the true magnitude.",
-            "iCOMM could generate indirect reinforcement (e.g., higher retention, lower churn, more upsell to service packages) that functions like a network/data flywheel, but without quantified metrics it is hard to distinguish retention effects from true network effects.",
-            "Connected-device adoption in a specific segment (e.g., commercial boilers/water heaters) could be growing materially even if total-company reporting does not break it out, again biasing the assessment."
+            "The core value driver appears to be replacement cycle + service/aftermarket monetization (installed-base lock-in), not network effects where product value rises mechanically with additional users; the web evidence found does not quantify cross-side effects or marketplace liquidity.",
+            "Competitive dynamics (e.g., Rheem/other rivals\u2019 share changes, distribution channel exclusivity shifts) are not sufficiently evidenced in the gathered sources to conclude whether A. O. Smith is \u201cwinning a network\u201d or whether competing networks are strengthening/weakening."
           ],
           "sources": [
-            "https://www.aosmithconnect.com/",
-            "https://www.aosmithconnect.com/applications/applications.html",
-            "https://www.aosmithconnect.com/compatible_products/compatible_products.html"
+            "https://www.sec.gov/Archives/edgar/data/91142/000009114224000041/aos-20231231.htm",
+            "https://www.sec.gov/Archives/edgar/data/91142/000009114223000104/ex991aosid_presentation.htm",
+            "https://aosmith.gcs-web.com/static-files/4bc22781-162c-41d0-ad90-927800218c7c"
           ]
         },
         "economies_of_scale": {
-          "score": 5.6,
+          "score": 7.2,
           "confidence": "medium",
           "evidence": [
-            "Scale at the company level: A. O. Smith reported 2024 net sales of $3,818.1M (down from $3,852.8M in 2023). Gross profit was $1,456.1M in 2024 vs. $1,484.8M in 2023, with gross margin slipping from 38.5% (2023) to 38.1% (2024) due to higher production costs/inefficiencies from volume volatility that outpaced pricing actions.",
-            "Operating leverage exists but is not consistently favorable: In 2024, company gross margin declined (38.5% -> 38.1%) and SG&A was $739.3M in 2024 vs. $727.4M in 2023 (increase driven by employee costs and higher selling/advertising to support strategic initiatives), implying scale is not always translating into lower per-unit costs during demand swings.",
-            "Cost-structure and volatility indicate scale helps, but not enough to guarantee cost leadership: Management explicitly attributed 2024 lower gross margin to \u201chigher production costs and operational inefficiencies associated with volume volatility\u201d that \u201coutpaced our pricing actions,\u201d suggesting unit-cost advantages from manufacturing scale can be overwhelmed when utilization falls.",
-            "Evidence of scale-related cost control programs, but not quantified as a per-unit unit-cost win: In 2024, the company discussed restructuring/improvement initiatives to improve its cost structure (including restructuring/impairment expenses of $6.3M in water treatment recognized in 2024) and continued strategic investments; however, the filings/released figures emphasize profitability improvement and restructuring rather than a directly stated \u201cunit cost per heater/boiler\u201d advantage vs. smaller peers."
+            "Scale/financial size: A. O. Smith reported 2025 net sales of $3,830.2M with gross profit margin of 38.8% (gross profit $1,487.4M on $2,342.8M cost of products sold) and SG&A of $759.4M (about 19.8% of sales).",
+            "Operating leverage: 2025 vs 2024 net sales rose $12.1M (+0.3%) while gross margin expanded from 38.1% to 38.8% (gross profit increased to $1,487.4M from $1,456.1M) and SG&A increased only modestly ($759.4M vs $739.3M) while management cited pricing actions and higher commercial volumes as key drivers.",
+            "Business scale anchored in market leadership in North America water heating: company cited leading North American water heater market share of 36% (residential) and 52% (commercial), indicating dominance that typically supports cost leadership via higher utilization and purchasing/logistics efficiency.",
+            "Segment scale and margin durability: North America segment sales were $2,984.2M in 2025 (vs $2,950.1M in 2024) with segment margin 24.4% vs 24.0%, while Rest of World sales declined to $880.4M (from $918.6M) with segment margin falling to 8.7% (from 7.0%), showing AOS can preserve profitability where it has the strongest scale/position."
           ],
           "risks": [
-            "The closest hard evidence to economies of scale (unit-cost and operating-leverage across up/down volumes) is difficult to isolate because A. O. Smith reports largely at segment/company margin level; management attributes margin movement to pricing/input costs and volume volatility rather than explicitly to scale-driven per-unit cost leadership.",
-            "Market-share dominance in core products is not directly supported by high-quality, company-specific quantitative disclosures in the sources pulled here; without defensible market share figures tied to cost per unit, scoring economies-of-scale leadership remains less certain."
+            "Evidence of unit-cost advantage is indirect: available filings provide gross margin/COGS totals rather than explicit per-unit manufacturing cost comparisons versus Rheem/Bradford White/Rinnai, so true unit-cost leadership cannot be fully quantified from the cited sources.",
+            "A portion of the economics may be mix/pricing and channel strategy rather than purely economies of scale (e.g., management attributes margin changes to pricing actions, mix (commercial vs residential), and water treatment profitability).",
+            "Input-cost exposure (e.g., steel, copper, aluminum, tariffs) can compress margins and reduce the scale advantage if competitors also have sufficient scale to offset costs."
           ],
           "sources": [
-            "https://www.sec.gov/Archives/edgar/data/91142/000009114225000036/aos-20241231.htm",
-            "https://aosmith.gcs-web.com/news-releases/news-release-details/o-smith-reports-2024-results-and-introduces-2025-guidance",
-            "https://www.fool.com/earnings/call-transcripts/2026/04/30/a-o-smith-aos-q1-2026-earnings-transcript/"
+            "https://www.sec.gov/Archives/edgar/data/91142/000009114226000008/aos-20251231.htm",
+            "https://investor.aosmith.com/static-files/8d095ee1-2a9a-403d-aece-13f1efaf9027",
+            "https://www.aosmith.com/on/demandware.static/-/Sites-aosmith-Library/default/dw9faf4a3d/pdf/2025-Annual-Report.pdf"
           ]
         }
       },
-      "analyzed_at": "2026-08-01T09:54:50Z"
+      "analyzed_at": "2026-09-01T13:00:12Z"
     },
     {
       "ticker": "ABT",
       "company_name": "Abbott Laboratories",
-      "overall_moat": "Narrow",
-      "overall_score": 6.8,
-      "investment_implication": "Abbott\u2019s moat is best characterized as a durable mid-strength advantage: meaningful scale, high practical switching friction in select workflows (notably PoCT/connected-care infrastructure), and manageable profitability support the ability to sustain returns, but the moat is less \u201cwinner-take-most\u201d than platform businesses. For long-term investors, the key is that moat strength is most likely to persist where Abbott combines clinical workflow embeddedness with disciplined execution\u2014however, competitive dynamics in devices/diabetes and weaker evidence of network effects mean returns are less protected against sustained share pressure. Overall, Abbott should be viewed as a quality compounder with a defensible but not unassailable competitive position.",
-      "key_strength": "Economies of Scale \u2014 Abbott\u2019s medical-device operating leverage and expanding segment economics (margin/earnings growth alongside rising medical devices revenue and targeted manufacturing capacity) indicate cost and execution advantages that are hard for smaller entrants to replicate quickly.",
-      "key_risk": "Network effects are weak/uncertain versus competitors \u2014 the installed-base advantage in diabetes care appears more like product/consumption-driven retention than a true compounding network dynamic, so aggressive competitive offerings (e.g., Dexcom and others) can erode share and dilute any installed-base-driven durability.",
+      "overall_moat": "Wide",
+      "overall_score": 7.0,
+      "investment_implication": "Abbott\u2019s moat is supported by durable scale and execution advantages in capital-intensive, highly regulated healthcare franchises, helping sustain strong profitability and competitive positioning over time. For long-term investors, the key implication is that Abbott\u2019s return on invested capital is more likely to remain resilient because barriers to entry and cost/operations advantages reduce the probability of disruptive competitive undercutting, even if pricing power varies by product/category.",
+      "key_strength": "Economies of Scale: Abbott\u2019s manufacturing/quality/commercial scale in medical devices and demonstrated operating leverage support sustained margins and cost absorption as volumes grow.",
+      "key_risk": "Regulatory-and-pricing-driven erosion by product/category: because medical device pricing and adoption can shift with reimbursement, procurement/tender cycles, and regulatory outcomes, Abbott\u2019s pricing power and margin durability may weaken unevenly across franchises.",
       "criteria": {
         "brand_loyalty": {
-          "score": 6.0,
+          "score": 7.2,
           "confidence": "medium",
           "evidence": [
-            "Gross margin stability: Abbott\u2019s gross margin was 55.18% (2023), 55.41% (2024), and 56.42% (2025) per company financial aggregates. (Timeframe: 3 years.)",
-            "SEC-reported margins level: Abbott\u2019s gross profit margin was 50.5% (2020), 52.2% (2021), and 51.5% (2022), showing durable mid-50s/low-50s profitability rather than clear margin erosion. ",
-            "Medical Devices scale (brand/installed base relevance): Abbott reported $19B in 2024 Medical Devices sales, representing 45% of total company revenue\u2014evidence of a large, ongoing commercial footprint that supports loyalty through ecosystem/installed base effects (e.g., therapies and device accessories).",
-            "Pricing actions management: Abbott stated it expects pricing actions (and new product launches) to contribute to improved volume growth in 2026 (company commentary)."
+            "High gross-margin level and slight recovery: Abbott reported gross profit margins of 51.5% (2022), 50.3% (2023), and 50.9% (2024) in its 2024 annual report (companywide gross margin).",
+            "Medical Devices segment profitability remained high and improved: operating margin profile for Medical Devices increased from 30.0% (2022) to 31.4% (2023) and to 32.4% (2024) per Abbott\u2019s 2024 10-K discussion.",
+            "Price-taking tests / pricing actions: Abbott reported an annual global net sales price change of +3.5% in 2024 (with CPI of 4.8% for 2024) in its 2024 Global Sustainability Report (and references pricing approach to the 10-K).",
+            "Demonstrated customer acceptance / momentum in key brands: Abbott\u2019s Q4 2024 results noted continued market share gains in U.S. infant formula and highlighted growth led by Ensure\u00ae and Glucerna\u00ae (adult nutrition market-leading brands), with growth described as led by these brands."
           ],
           "risks": [
-            "Limited direct, company-specific pricing-power metrics found: I did not find credible, current Abbott-vs-competitor device price-premium figures (e.g., percent premium vs Dexcom/Boston Scientific/Medtronic peers) in the searched sources\u2014so the premium-strength portion of the moat cannot be proven quantitatively here.",
-            "Brand-loyalty proxies are not strong/quantified in the sources retrieved: I did not find Abbott-specific NPS/customer retention or repeat-purchase rates for its medical device franchises (e.g., FreeStyle Libre sensors) from authoritative, company-released datasets.",
-            "Regulatory/quality events can pressure loyalty and willingness to pay: Abbott has had FreeStyle Libre device corrections/recalls (e.g., FDA recalls for readers), which can indicate potential friction even if replacements/support mitigate churn."
+            "\u201cBrand loyalty\u201d is likely uneven across Abbott\u2019s medical device categories: many device markets are clinician/institution-driven and can be influenced by clinical evidence, tenders, procurement cycles, recalls, and regulatory dynamics rather than consumer-style brand preference.",
+            "Gross margin is not expanding consistently: companywide gross margin dipped from 51.5% (2022) to 50.3% (2023) before modestly improving to 50.9% (2024), suggesting pricing power may be bounded by mix/rebates and competitive/regulatory pressure."
           ],
           "sources": [
-            "https://stockanalysis.com/stocks/abt/financials/",
-            "https://www.sec.gov/Archives/edgar/data/1800/000162828023004026/abt-20221231.htm",
-            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/inside-abbotts-largest-business-spotlight-on-medical-devices"
+            "https://www.sec.gov/Archives/edgar/data/1800/000162828025007110/abt-20241231.htm",
+            "https://www.abbottinvestor.com/static-files/2fe0dfeb-b0de-42b5-b03c-903592cc3fea",
+            "https://www.abbott.com/content/dam/corp/abbott/en-us/documents/pdfs/abbott-citizenship/Abbott-2024-Global-Sustainability-Report-June-2025.pdf"
           ]
         },
         "barriers_to_entry": {
           "score": 7.3,
           "confidence": "medium",
           "evidence": [
-            "Capital intensity: Abbott reported capital expenditures (principal uses including upgrading/expanding manufacturing and R&D facilities/equipment) of $2.2B in 2024 (and $2.2B in 2023; $1.8B in 2022) in its 2024 Form 10-K. (This is a proxy for the scale a well-funded entrant must match to build/upgrade manufacturing capacity.)",
-            "Regulatory/compliance friction (ongoing, facility-specific): FDA warning letter for Abbott Diabetes Care Inc. (Jan 23, 2026) cites failures related to Quality System Regulation conformity (21 CFR Part 820) for manufacturing FreeStyle Libre 3 CGM sensors, illustrating that entrants must pass and sustain stringent GMP/QSR compliance to compete.",
-            "Regulatory clearance gating for new device products: FDA 510(k) database shows FDA clearance for Abbott\u2019s FreeStyle Libre 3 (decision date 05/26/2022; 510(k) ID K213996), indicating that new entrants must obtain product-specific clearances (and demonstrate substantial equivalence or other pathways) before marketing comparable devices.",
-            "Time-lapse from regulatory approvals to product positioning: Abbott\u2019s FreeStyle Libre 3 received U.S. FDA clearance on 05/26/2022 (and related FDA records show the submission/decision timing), implying that even a capable entrant would face multi-quarter lead times for development, submissions, and market adoption before reaching parity."
+            "Capital intensity / scaling requirement: Abbott reported capital expenditures of $2.2B in 2024 (and $2.2B in 2025 per its 2025 annual report), primarily for \u201cupgrading and expanding manufacturing and research and development facilities and equipment\u201d (company-wide, including Medical Devices).",
+            "Regulatory/compliance barrier to entry (U.S. medical devices): FDA requires device manufacturers to register and list establishments/devices and (for first commercial distribution or significant changes) submit appropriate premarket pathways (e.g., 510(k), De Novo, or PMA). FDA\u2019s 510(k) rules specify manufacturers must notify FDA at least 90 days in advance. These requirements materially increase time and effort for new entrants.",
+            "Manufacturing quality-system barrier for serious devices: For PMA-regulated medical devices, FDA expects compliance with Quality System Regulation and links readiness for inspection to PMA submission content (including manufacturing/process validation concepts). This raises the \u201ctime to parity\u201d for competitors attempting to replicate Abbott-grade manufacturing quality and documentation.",
+            "Patent breadth indicator: Third-party patent aggregations attribute hundreds of Abbott U.S. utility patents over recent years (e.g., ~485 granted U.S. utility patents between 2015\u20132025 in one dataset), suggesting meaningful, ongoing patent coverage rather than a small/dated IP base."
           ],
           "risks": [
-            "Patent moat quantification is incomplete: publicly accessible sources found here do not provide an \u2018active patent count\u2019 or a defensible, device-specific Abbott patent expiry calendar; therefore the IP barrier component is under-measured in this review.",
-            "Regulatory clearance requirements apply to all manufacturers, not uniquely to Abbott; without evidence of exclusive approvals/licensing, the barrier is only partly firm-specific.",
-            "Within medical devices, some competitors can launch functionally similar products via existing predicates (510(k))\u2014so time-to-parity may be shorter for certain categories than the broader \u2018device-class\u2019 timeline suggests."
+            "Patent-count sources used here are third-party aggregations; they provide breadth but not an authoritative, complete view of which patents are currently active, claim coverage scope, or remaining life/expiry schedule.",
+            "Abbott\u2019s moat is likely strongest in specific franchises (e.g., diabetes care/vascular/structural heart) but barriers vary by product family; a single blended \u201cmedical devices\u201d entry-barrier score can overstate protection in segments where competitors can clear regulatory hurdles faster.",
+            "Regulatory burden is industry-wide; it may not be uniquely attributable to Abbott unless there is company-specific licensing, exclusive approvals, or demonstrated bottleneck assets (not fully established by the available sources)."
           ],
           "sources": [
             "https://www.sec.gov/Archives/edgar/data/1800/000162828025007110/abt-20241231.htm",
-            "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/abbott-diabetes-care-inc-722046-01232026",
-            "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?id=K213996"
+            "https://abbottinvestor.gcs-web.com/static-files/2db8f507-2fd9-4def-a76f-d7d32773cb5c",
+            "https://www.fda.gov/medical-devices/device-approvals-and-clearances/510k-clearances"
           ]
         },
         "switching_costs": {
-          "score": 7.5,
+          "score": 7.3,
           "confidence": "medium",
           "evidence": [
-            "Abbott\u2019s Abbott Point of Care \u201cPOC Link\u201d connectivity service includes strong ecosystem/data lock-in terms: customers grant Abbott broad perpetual rights to use/disclose/copy/modify and commercialize \u201cData\u201d collected and transferred through POC Link (including for product/service development and business purposes).",
-            "Abbott Point of Care ecosystem lock-in is reinforced by proprietary consumables: i-STAT test cartridges are single-use and configured for specific analytes; the system\u2019s operating model depends on using Abbott-approved cartridges to generate results (making migration to another vendor operationally disruptive).",
-            "Abbott equipment/service contracts can include explicit early termination economics and recovery fees: an Abbott \u201cEquipment Service Program Agreement\u201d addendum states termination without penalty can be contingent on upgrade, and otherwise requires paying a \u201ctermination fee equal to 50% of the total amount owed,\u201d indicating meaningful contractual friction.",
-            "Abbott also imposes equipment recovery-related costs upon early termination: a prior Abbott plan agreement states \u201cEquipment Recovery Fees\u201d equal to 50% of the then-current published list price if the customer terminates the plan prior to expiration (a mechanism that increases the cost of switching away)."
+            "Abbott\u2019s medical-device service agreements can include explicit early-termination costs/fees: e.g., an Abbott \u201cEquipment Service Program Agreement\u201d document states termination requires a fee equal to 50% of the total amount owed (termination fee) if Customer terminates by notice. (Source: Abbott PDF dated 08MAY2019) ",
+            "In the same Abbott service agreement framework, termination prior to the expiration of the plan term can require customer payment of an \u201cEquipment Recovery Fee\u201d that covers costs such as initial equipment operator training, costs incurred at installation, and costs associated with equipment re-certification (document specifies 90 days\u2019 written notice and the fee components).",
+            "For Abbott\u2019s FreeStyle Libre diabetes ecosystem, Abbott describes LibreView as a secure cloud-based data management system used by patients and healthcare professionals; data is shared through LibreView (account creation and upload flow), and patients must create/manage a LibreView account to share/view historical CGM data with clinicians.",
+            "Abbott provides export capability for LibreView users/professionals: LibreView professional quick-start guidance indicates the ability to export the Patient Dashboard view to a CSV file (i.e., switching away may be mitigated by data export, but workflow/history access still routes through Abbott\u2019s LibreView)."
           ],
           "risks": [
-            "Switching costs for Abbott vary materially by product line (e.g., PoCT/i-STAT vs. diabetes vs. cardiovascular/implantables); the evidence found is strongest for Point of Care connectivity/PoCT devices and equipment/service programs, which may not fully represent all Abbott medical device segments.",
-            "The web evidence includes specific contract terms found in documents and policy pages, but may not cover Abbott\u2019s broadest customer base (e.g., hospital system multi-site agreements or long-term enterprise contracts), so a higher or lower overall switching-cost score is possible."
+            "Hard retention/churn metrics for Abbott-specific device ecosystems (e.g., LibreView/Libre sensor churn, provider retention, or percentage of customers constrained by multi-year commitments) were not found in the web results; without quantitative churn/retention, switching-cost scoring relies more on contract/service-fee and workflow lock-in evidence.",
+            "The contract-termination fee evidence found appears to be from specific Abbott service agreement templates (or older/region-specific legal documents) rather than a company-wide disclosure of typical contract lengths and termination economics across Abbott\u2019s medical-device portfolio."
           ],
           "sources": [
-            "https://www.globalpointofcare.abbott/us/en/lp/poclink/terms-conditions.html",
             "https://www.e-abbott.com/media/policyUpdate/add/ServiceMAgree_AdditionalTerms_and_Conditions_to_Equipment_Service_Agreement08MAY2019.pdf",
-            "https://www.sec.gov/Archives/edgar/data/920527/000092052703000074/abbottagmt.htm"
+            "https://www.sec.gov/Archives/edgar/data/920527/000092052703000074/abbottagmt.htm",
+            "https://pro.libreview.io/articles/my-patients-dashboard-overview"
           ]
         },
         "network_effects": {
-          "score": 4.6,
+          "score": 6.2,
           "confidence": "medium",
           "evidence": [
-            "Diabetes Care installed base (direct-ish network effect driver): Abbott states FreeStyle Libre has ~7 million users (cited as \u201cused by about 7 million people\u201d for the portfolio) and also references ~4 million users elsewhere\u2014still indicative of a large, ongoing installed base that can create switching friction, though Abbott does not publish a unified, consistently updated \u201creaders/users\u201d growth series. (Sources: Abbott newsroom Libre 3 article and Diabetes Care business spotlight).",
-            "Cross-side/connected-care reinforcement (indirect network effect): LibreLinkUp enables caregivers to follow multiple connected Libre users; Abbott\u2019s support documentation specifies caregivers can follow up to 20 FreeStyle Libre portfolio app users via LibreLinkUp, implying value increases with additional participants in the same \u201ccare network\u201d (patient+caregiver).",
-            "App ecosystem dependency (data/interaction flywheel, limited marketplace aspect): Abbott notes device data upload to LibreView and transfer to connected LibreLinkUp users, meaning additional users in the same care workflow can increase engagement/retention for the participating network (patients and caregivers), even though this is not a traditional two-sided marketplace with liquidity metrics.",
-            "Growth signal in core installed base consumption (proxy for network expansion): Abbott reports FreeStyle Libre sales growth (e.g., Diabetes Care FreeStyle Libre sales $1.4B in FY2023 with +25.5% reported growth; FY2024 Diabetes Care spotlight indicates exceeding a 15% target CAGR for Libre sales), consistent with ongoing adoption that can reinforce installed base, but it is not direct evidence that network effects are accelerating beyond standard product/technology improvements."
+            "Abbott\u2019s FreeStyle Libre CGM technology is used by \u201cmore than 6 million\u201d people in \u201cover 60 countries\u201d (Abbott Newsroom; source dated 2025) and also cited as \u201cmore than 7 million\u201d people across \u201cover 60 countries\u201d (Abbott press release; 2025).",
+            "FreeStyle Libre adoption appears to be scaling: Abbott states it is exceeding a \u201c15% compound annual growth rate\u201d target for FreeStyle Libre sales (Abbott Newsroom \u201cSpotlight on Abbott\u2019s Medical Devices Business\u201d).",
+            "Diabetes Care CGM growth has been strong in recent financials: Abbott reports CGM systems sales of $1.8 billion in 2024, up 22.7% (reported) and 22.8% (organic) (Abbott Q4/FY2024 results).",
+            "Abbott\u2019s Diabetes Care CGM systems sales totaled $6.4 billion in 2024 vs $5.3 billion in 2023, indicating ongoing expansion in the installed base that would reinforce any direct network/attachment effects inside its CGM data+device ecosystem (Abbott 2024 Form 10-K).",
+            "Ecosystem reinforcement via integrations: Abbott highlights Libre connectivity integrations with multiple automated insulin delivery (AID) systems (Abbott 2024 Global Sustainability Report Summary)."
           ],
           "risks": [
-            "Network effects are likely weaker than in true winner-take-most platforms because (a) Abbott\u2019s CGM business is primarily a product/device subscription model (not a buyer\u2013seller marketplace) and (b) caregiver connectivity does not typically create tight exclusivity (patients can often use competing sensors/devices depending on access/reimbursement).",
-            "Important network-effect KPIs are not clearly available publicly for Abbott on a consistent basis (e.g., total active Libre readers/users over multiple years, LibreView/LibreLinkUp account counts, connected-care \u201cshare of network\u201d), limiting the ability to prove accelerating network effects rather than linear/competitive market growth.",
-            "Competitive pressure: Dexcom and other CGM providers can reduce retention and weaken any installed-base advantage; without market share trends for \u201cusers\u201d and \u201cconnected accounts\u201d over 3\u20135 years for Abbott specifically, it\u2019s difficult to demonstrate dominance driven by network effects vs. clinical/performance or distribution strength."
+            "The most clearly measurable \u201cnetwork effect\u201d for Abbott is likely within the Libre sensor+app/data+integration ecosystem, but public disclosures do not provide granular platform metrics (e.g., active app users, number of connected AID users, or two-sided marketplace liquidity), limiting how confidently network effects can be scored as strong/winner-take-most.",
+            "Abbott\u2019s CGM network value is competed against by other CGM ecosystems (notably Dexcom) where patients and clinicians can switch; if competitor integrations improve faster or pricing/access changes, Abbott\u2019s installed base growth may slow.",
+            "Any claimed reinforcement from \u201cdata flywheel\u201d is not quantified in the cited sources (e.g., data-driven model improvements directly increasing retention), reducing evidence for accelerating network effects specifically attributable to Abbott vs broader CGM adoption."
           ],
           "sources": [
-            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/freestyle-libre3-welcome-to-the-us",
-            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/inside-abbotts-largest-business-spotlight-on-medical-devices",
-            "https://www.support.freestyle.abbott/hc/en-us/articles/36336282993937-How-many-FreeStyle-Libre-portfolio-app-users-can-I-follow-with-the-LibreLinkUp-app"
+            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/abbott-opens-new-facility-to-meet-demand-for-diabetes-technology",
+            "https://abbott.mediaroom.com/2025-01-22-Abbott-Reports-Fourth-Quarter-and-Full-Year-2024-Results-Issues-2025-Financial-Outlook",
+            "https://www.sec.gov/Archives/edgar/data/1800/000162828025007110/abt-20241231.htm"
           ]
         },
         "economies_of_scale": {
           "score": 7.8,
           "confidence": "medium",
           "evidence": [
-            "Abbott\u2019s Medical Devices segment scaled up in 2024: Medical Devices sales (excluding FX) +13.7% in 2024 and operating earnings +16.0%, with segment operating margin rising from 30.0% (2022) to 31.4% (2023) and 32.4% (2024).",
-            "Group-level cost structure shows significant operating leverage during 2024: gross profit was 50.9% of net sales in 2024 (50.3% in 2023), while R&D was $2.8B (2024 vs $2.7B in 2023) and SG&A was $11.7B (2024 vs $10.9B in 2023) as sales scaled.",
-            "Supply-chain/manufacturing scale is explicitly tied to demand for a key CGM product: Abbott opened a 323,000-square-foot manufacturing site with the \u201chighest production of FreeStyle Libre sensors in the world\u201d to support growing global demand.",
-            "Abbott\u2019s Medical Devices revenue base is large and growing: full-year 2024 Medical Devices sales were about $19.0B (up more than $2B vs prior year), including CGM sales of $6.4B in 2024 (+21.8% excluding FX vs 2023).",
-            "R&D and SG&A intensity at the company level are sizable but not exploding with scale: 2024 R&D was $2.8B and 2024 SG&A was $11.7B (both disclosed in Abbott\u2019s 2024 Form 10-K), while gross margin improved to 50.9% in 2024."
+            "Scale and operating leverage at company level: Abbott reported gross profit of ~50.9% of net sales in 2024 and ~52.6% in 2025 (gross profit margin rising with revenue growth). ([sec.gov](https://www.sec.gov/Archives/edgar/data/1800/000162828026010185/abt-20251231.htm?utm_source=openai))",
+            "Operating leverage via segment profitability: Abbott\u2019s Medical Devices segment operating margin profile increased from 30.0% (2022) to 31.4% (2023) to 32.4% (2024), indicating cost discipline and beneficial mix/scale as revenue grew. ([abbottinvestor.com](https://www.abbottinvestor.com/static-files/2fe0dfeb-b0de-42b5-b03c-903592cc3fea?utm_source=openai))",
+            "Large, scale-heavy exposure inside Medical Devices: Medical Devices generated about $19B of sales in 2024 and represented ~45% of Abbott total company revenue, giving the company significant fixed-cost absorption across manufacturing, quality systems, and commercial infrastructure. ([abbott.com](https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/inside-abbotts-largest-business-spotlight-on-medical-devices?utm_source=openai))",
+            "Capacity scaling in a flagship product category (Diabetes Care/CGM): Abbott expanded manufacturing capacity with a new 323,000-square-foot site to produce FreeStyle Libre 3 sensors, supporting unit volume growth to sustain scale economics in a high-volume device franchise. ([abbott.com](https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/abbott-opens-new-facility-to-meet-demand-for-diabetes-technology?utm_source=openai))",
+            "Consolidated cost structure indicates SG&A not rising in line with revenue: Abbott\u2019s 2024 SG&A was $11.7B (vs. $10.9B in 2023) while gross margin improved; 2025 results also show SG&A of $12.332B alongside rising gross margin and segment operating margin expansion. ([abbottinvestor.com](https://www.abbottinvestor.com/static-files/2b75fde0-1c65-4b0e-b0b6-ea78d31cb652?utm_source=openai))"
           ],
           "risks": [
-            "The scoring is less about absolute unit cost (not directly disclosed as \u201ccost per unit\u201d in the filings found) and more about operating margin expansion and scale indicators; without direct unit-cost/cost-of-goods trend by product, the unit-economics proof is weaker.",
-            "Medical Devices is diversified (Diabetes Care, Structural Heart, Electrophysiology, Heart Failure, etc.); some cost benefits may be product- or mix-specific rather than universally structural economies of scale across all device categories.",
-            "Market share evidence used here is limited (I found strong Abbott scale indicators, but not a high-quality, company-specific global CGM market-share percentage from Abbott primary disclosures in the sources retrieved), reducing confidence that scale translates cleanly to cost leadership across the whole medical devices market."
+            "Abbott\u2019s unit-cost advantage is product- and category-dependent; Medical Devices includes diverse sub-portfolios (e.g., rhythm/structural heart vs. CGM) where manufacturing complexity and regulatory constraints can limit clean, uniform \u201clower COGS per unit\u201d proof.",
+            "Even with scale, competitive and pricing pressure can reduce the ability to translate volume into unit-cost or gross-margin advantage (e.g., reimbursement dynamics and competitive intensity in CGM/alternating testing channels)."
           ],
           "sources": [
-            "https://www.sec.gov/Archives/edgar/data/1800/000162828025007110/abt-20241231.htm",
-            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/abbott-opens-new-facility-to-meet-demand-for-diabetes-technology",
-            "https://abbott.mediaroom.com/2025-01-22-Abbott-Reports-Fourth-Quarter-and-Full-Year-2024-Results-Issues-2025-Financial-Outlook?asPDF=1"
+            "https://www.sec.gov/Archives/edgar/data/1800/000162828026010185/abt-20251231.htm",
+            "https://www.abbottinvestor.com/static-files/2fe0dfeb-b0de-42b5-b03c-903592cc3fea",
+            "https://www.abbott.com/en-us/corpnewsroom/strategy-and-strength/abbott-opens-new-facility-to-meet-demand-for-diabetes-technology"
           ]
         }
       },
-      "analyzed_at": "2026-08-01T09:55:13Z"
+      "analyzed_at": "2026-09-01T13:00:30Z"
     },
     {
       "ticker": "ABBV",
       "company_name": "AbbVie Inc.",
       "overall_moat": "Narrow",
-      "overall_score": 5.8,
-      "investment_implication": "AbbVie\u2019s moat is durable in the sense that its large, high-margin franchises benefit from ongoing legal and regulatory friction for competitors and strong cost absorption. However, the sustainability of excess returns is likely constrained by biologic exclusivity loss (e.g., Humira) and pricing erosion, which weakens long-run pricing power and reduces the strength of classic \u201clock-in\u201d and \u201cnetwork\u201d effects. For long-term investors, moat strength should be underwritten by pipeline/portfolio replacement and continued manufacturing scale benefits rather than by permanent category-wide switching protection.",
-      "key_strength": "High Barriers to Entry \u2014 Ongoing IP/patent thickets and the complexity/capex of biologics manufacturing and regulatory parity create meaningful time and cost barriers for would-be competitors.",
-      "key_risk": "Humira/biosimilar-driven pricing normalization \u2014 As key-originator exclusivities lapse and biosimilar penetration rises, net prices and franchise economics can compress, limiting the sustainability of high returns even if gross margins remain relatively resilient.",
+      "overall_score": 4.9,
+      "investment_implication": "AbbVie\u2019s moat appears concentrated in scale and certain patent/regulatory advantages, but it is not broadly self-reinforcing across franchises\u2014especially in immunology where Humira biosimilar entry has materially eroded pricing power. For long-term investors, the key implication is that AbbVie\u2019s return on invested capital will likely remain resilient only to the extent it can replace lost economics with durable next-generation franchises (e.g., growth platforms) while managing ongoing pricing and formulary pressure. Moat durability is therefore moderate: protectable pockets exist, but they are vulnerable to policy-driven pricing and biosimilar substitution.",
+      "key_strength": "High Barriers to Entry \u2014 Patents/regulatory approval hurdles and biologics manufacturing/R&D intensity make it difficult for new entrants to replicate AbbVie\u2019s capabilities and reach therapeutic parity quickly.",
+      "key_risk": "Humira biosimilar-driven pricing erosion \u2014 Loss of exclusivity has already produced large net price declines and highlights how quickly a major franchise\u2019s economics can deteriorate when biosimilar competition accelerates.",
       "criteria": {
         "brand_loyalty": {
-          "score": 6.7,
+          "score": 6.0,
           "confidence": "medium",
           "evidence": [
-            "Gross margin stayed very high and stable into 2024: Macrotrends reports AbbVie gross margin of 68.96% (FY2021) and 69.99% (FY2024), indicating sustained pricing/contracting power despite competitive pressures. (2021\u20132024) (source: https://www.macrotrends.net/stocks/charts/ABBV/abbvie/gross-margin)",
-            "Company-disclosed recent performance signal of pricing power: AbbVie\u2019s Q4 2024 press release states gross margin ratio of 70.9% on a GAAP basis, consistent with continued ability to defend economics. (Q4 2024) (source: https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-full-year-and-fourth-quarter-2024-financial)",
-            "Clear premium vs. biosimilar alternatives (but with competitive erosion reducing net price vs prior year): A study in JAMA Health Forum reports Q4 2023 Humira net price per prescription of $2,798 vs biosimilars ranging $3,452\u2013$4,793 (net price measures reflect rebates/contracting). This indicates AbbVie can maintain a pricing position while competition exists (Humira vs biosimilar basket; Q4 2023). (source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11645644/)",
-            "Evidence of pricing pressure post-exclusivity: A study (PMC) notes that Humira\u2019s annual net price decreased to $29,800 by end of 2023, a 38% drop vs ~$48,000 one year prior, consistent with biosimilar competition affecting pricing economics. (Net price, end-2022 vs end-2023) (source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11157442/)",
-            "Brand/loyalty signals are not well-captured in public patient NPS-style metrics for AbbVie: a generic Comparably page (not an AbbVie-published metric) shows an NPS of 22, but this is not a reliable, company-verified loyalty indicator for the scoring of brand moat. (source: https://www.comparably.com/brands/abbvie)"
+            "Gross margin has been relatively high but volatile over the last 3\u20134 fiscal years: 2021 gross margin 68.96%, 2022 70.00%, 2023 62.42%, and 2024 69.99% (rebased sources; implies pricing/mix pressure in 2023 but recovery by 2024).",
+            "Brand/pricing stickiness is partially supported by AbbVie\u2019s continued ability to maintain high gross margin levels in 2024 (~69.99%), despite major Humira erosion starting with biosimilar competition in 2023.",
+            "Humira pricing power weakened after biosimilar entry: a published analysis reports net price per prescription declined by ~43% from Q4 2022 ($5,007) to Q4 2023 (~$2,837), with Q4 2023 net price (~$2,798) lower than biosimilar net prices (range ~$3,452\u2013$4,793).",
+            "Regulatory/pricing pressure appears to be an active risk factor for AbbVie: its filings explicitly discuss ongoing pricing pressures in Europe and government-set pricing in Medicare Part D selections (e.g., Section 10-K language about continued pricing pressures and Part D price controls for certain drugs).",
+            "Implied competitive pricing constraints exist within its franchises: for immunology, AbbVie disclosed immunology revenue decreases tied to Humira biosimilar competition (e.g., full-year 2023 immunology portfolio net revenues down ~9% on a reported basis per AbbVie\u2019s results materials)."
           ],
           "risks": [
-            "Humira exclusivity ended in the US (Jan 31, 2023) and biosimilars have already driven net price declines (e.g., 38% annual net price drop by end-2023), which can limit long-run pricing power despite sustained high gross margin. (source: https://www.sec.gov/Archives/edgar/data/1551152/000155223000011/abbv-20221231.htm; pricing study: https://pmc.ncbi.nlm.nih.gov/articles/PMC11157442/)",
-            "The moat assessment is weakened by limited company-specific, audited brand-loyalty metrics (NPS/retention/repeat purchase) publicly attributed to AbbVie across its major brands; much of the evidence available is economic/financial rather than explicit loyalty research."
+            "Humira biosimilar competition is evidence of brand erosion and reduced pricing power in at least one flagship franchise; net pricing fell materially (~43% from Q4 2022 to Q4 2023).",
+            "High gross margin is not consistently expanding; the 2021\u21922023 period shows a large gross margin drop (68.96% to 62.42%), indicating that pricing power can be impaired by competitive/contracting dynamics.",
+            "Ongoing government pricing controls (Medicare Part D and European mandated reductions) can structurally limit premium pricing ability over time."
           ],
           "sources": [
             "https://www.macrotrends.net/stocks/charts/ABBV/abbvie/gross-margin",
-            "https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-full-year-and-fourth-quarter-2024-financial",
-            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11157442/"
+            "https://www.morningstar.com/stocks/xnys/abbv/key-metrics",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11645644/",
+            "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm",
+            "https://investors.abbvie.com/static-files/831c0d3d-8813-4942-b7af-a3dade33bea5"
           ]
         },
         "barriers_to_entry": {
           "score": 7.6,
           "confidence": "medium",
           "evidence": [
-            "Patent/IP barrier (example: Humira): FDA Purple Book patent-listing shows multiple AbbVie-listed Humira (adalimumab) patents with expiries extending well beyond 2026 (e.g., May 16, 2026; June 8, 2027; September 13, 2027; and dates into 2028\u20132034), creating a continuing legal runway that can delay biosimilar launch timing even after primary exclusivity lapses.",
-            "Capital intensity / scale needed: AbbVie reported 2024 capital expenditures of $974 million (cash investing in 2024 included capex of $974m), implying a high fixed-capex backdrop that a new entrant would need to match to build/qualify comparable manufacturing capacity for biologics and complex small molecules.",
-            "Regulatory/manufacturing compliance complexity: AbbVie highlights large, facility-level manufacturing investments (e.g., an \u201c185-acre\u201d Durham, NC campus described as its largest-ever capital investment) and domestic biologics capacity build-out via bioresearch/manufacturing expansions\u2014underscoring that competing requires not just market access but GMP-scale biologics infrastructure and technology transfer capability.",
-            "Time-to-parity constraint signaled by Humira market history: a Congressional Research Service analysis notes that Humira biosimilar entry occurred in 2023 after AbbVie\u2019s primary Humira patent expired earlier, reflecting how secondary patent thickets and related legal/regulatory dynamics can materially stretch biosimilar launch timelines versus straightforward \u201cexpiry-only\u201d generic assumptions."
+            "Patent/IP barrier (example datapoint, on-market biologic): FDA Purple Book lists Humira adalimumab (active) protection with a listed patent expiration of 02/24/2028 for one of AbbVie\u2019s listed Humira-related entries (Humira licensed 04/28/2017; expiration shown as 02/24/2028 in Purple Book interface).",
+            "Regulatory/compliance barrier: FDA biologic and biosimilar pathways still require full manufacturing and quality systems plus regulatory approval; AbbVie\u2019s own filings note biologics manufacturing is complex, facility- and validation-intensive, and subject to regulatory quality requirements (making \u201ccopying\u201d non-trivial even after scientific replication).",
+            "Manufacturing / CAPEX scale barrier: AbbVie is funding ongoing biologics/manufacturing expansions\u2014e.g., AbbVie reports a $70 million expansion at its AbbVie Bioresearch Center (Worcester, MA) and states this is part of a broader $10+ billion U.S. capital commitment to expand biologics manufacturing capabilities/capacity.",
+            "R&D scale and time-to-parity pressure: AbbVie\u2019s 2025 R&D expense was $9.096B (FY2025 figure shown in its reporting/earnings materials), which reflects the financial capacity required to sustain pipeline and reformulate/de-risk new entrants that would need years of development plus large clinical/IP spend to reach parity."
           ],
           "risks": [
-            "AbbVie\u2019s barrier varies by franchise and by mechanism: for many non-top-flagship molecules, competition can be faster if AbbVie\u2019s remaining IP estate is weaker or if biosimilar/generic paths are simpler.",
-            "Despite ongoing patent listings, actual launch timing depends on litigation outcomes, product-specific manufacturing comparability, and payer/segment adoption\u2014so patents may not fully translate into sustained economic exclusivity for every competitor attempt."
+            "Patent cliffs and evolving biosimilar competition can materially reduce near-term effective barriers (e.g., Humira/biosimilar ecosystem means protection is not absolute and can be segmented by indication/dose/formulation and patent layers).",
+            "The score is supported by limited, company-specific patent-portfolio statistics (count/expiry coverage) in the sources retrieved; without full portfolio sizing and a comprehensive expiration ladder for AbbVie\u2019s key assets, barrier strength may be overstated or understated."
           ],
           "sources": [
-            "https://www.sec.gov/Archives/edgar/data/1551152/000155115225000020/abbv-20241231.htm",
             "https://purplebooksearch.fda.gov/index.cfm?event=patentlist",
-            "https://www.abbvie.com/manufacturing-investments.html",
-            "https://www.congress.gov/crs_external_products/R/HTML/R46679.web.html"
+            "https://investors.abbvie.com/static-files/60f12d27-9a42-46e1-99df-2ddb6eb310bb",
+            "https://news.abbvie.com/2025-09-30-AbbVie-Begins-Construction-on-70-Million-Expansion-to-Further-Increase-Biologics-Manufacturing-and-R-D-Presence-in-the-U-S"
           ]
         },
         "switching_costs": {
-          "score": 4.5,
-          "confidence": "medium",
+          "score": 4.0,
+          "confidence": "low",
           "evidence": [
-            "Patient-level lock-in via AbbVie HUMIRA support programs: AbbVie is phasing out HUMIRA from its myAbbVie Assist Patient Assistance Program with an explicit cutoff\u2014effective July 1, 2026, myAbbVie Assist will no longer accept new HUMIRA patients\u2014indicating a structured support mechanism that affects ongoing continuity, though it is not a formal \u201cswitching penalty\u201d for payers. (Source: AbbVie program update page)",
-            "Documented switching/reversion behavior in Humira biosimilar substitution: a Truveta real-world study reported that after patients switched from Humira to biosimilars, more than 1 in 7 later returned to reference Humira (reported as ~13% in coverage of the study), showing some friction/benefit to remaining on AbbVie\u2019s originator rather than fully frictionless switching. (Sources: Truveta release + Center for Biosimilars write-up)",
-            "Medication adherence workflow support (real operational enablement): AbbVie\u2019s HUMIRA Complete patient support program historically included elements like nurse ambassador interactions, injection training, reminders, and an insulated bag for travel\u2014components that can increase practical dependence on AbbVie\u2019s program infrastructure during ongoing treatment. (Source: HUMIRA Complete/AbbVie-linked journal study on PSP components)",
-            "Cost/benefit headwinds for biosimilar switching (suggesting reduced \u201cmarket\u201d switching costs but still possible clinical/admin friction): AbbVie-managed savings programs for commercial patients and Medicare Part D have explicit participation terms (e.g., Medicare/Medicaid exclusions; requirements to stop participation if the patient begins receiving government program coverage), which changes the economics of switching but does not represent long-term contractual penalties. (Source: HUMIRA Complete cost/copay page)"
+            "AbbVie is actively phasing out patient assistance support for HUMIRA (adalimumab) through myAbbVie Assist, indicating patients/providers can change programs/products as biosimilars become available (i.e., switching away from AbbVie\u2019s originator is operationally feasible).",
+            "AbbVie\u2019s own investor materials flag HUMIRA loss of exclusivity and increased biosimilar competition as a direct driver of revenue declines, implying customers do not face inherent lock-in preventing product substitution once exclusivity ends.",
+            "Third-party analysis of adalimumab post-biosimilar competition reports large net spending/price decreases associated with biosimilar entry and rebates tied to maintaining formulary position\u2014suggesting that where \u201cswitching friction\u201d exists, it is driven by contracting/rebates rather than deep technical workflow/data lock-in."
           ],
           "risks": [
-            "Drug switching costs for AbbVie are likely driven more by payer formularies, pharmacy benefit manager contracting/rebate structures, and clinical considerations than by disclosed, company-specific multi-year termination penalties; these contract terms are not clearly evidenced in the sources retrieved for this answer.",
-            "The evidence found is more patient-program and real-world switching-pattern oriented than a direct measurement of payer churn/retention or explicit migration \u201ccost to switch\u201d across AbbVie vs competitors."
+            "As a general drug manufacturer, AbbVie typically does not provide long-lived, system-integrated platforms (unlike enterprise SaaS); publicly available evidence on \u201cswitching costs\u201d for providers/payers is often indirect (rebates/formulary dynamics) and may not capture true operational migration costs for specific specialty drug pathways.",
+            "Switching costs can vary sharply by product and payer contract design (e.g., formulary/tender/granting of access, exception processes), but the web evidence gathered here does not include AbbVie-specific, quantified churn/retention metrics at the payer-provider level."
           ],
           "sources": [
             "https://www.abbvie.com/patients/patient-support/patient-assistance/available-programs/humira-program-update.html",
-            "https://www.globenewswire.com/news-release/2026/06/29/3318977/0/en/new-study-examines-real-world-switching-patterns-after-patients-transition-from-humira-to-biosimilars.html",
-            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6750846/"
+            "https://investors.abbvie.com/static-files/62df4b7e-2544-4d8b-88cd-c863e8f23003",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11645644/"
           ]
         },
         "network_effects": {
-          "score": 2.8,
+          "score": 3.2,
           "confidence": "medium",
           "evidence": [
-            "AbbVie\u2019s biggest immunology franchise is primarily driven by drug efficacy and payer access rather than a scalable two-sided platform; in 2024, Immunology portfolio net revenues were $26.682B (+2.1% reported), including Humira $8.993B, Skyrizi $11.718B, and Rinvoq $5.971B\u2014sales persistence exists, but this is not presented as user-count-driven network effects. (AbbVie FY2024 results, issued Jan 31, 2025)",
-            "AbbVie publicly states HUMIRA support is being phased out within its myAbbVie Assist program, indicating that support programs can be adjusted due to biosimilar competition and patient access policy\u2014not reinforced by network growth. The company says effective July 1, 2026, myAbbVie Assist will no longer accept new HUMIRA patients. (AbbVie HUMIRA program update page)",
-            "Patient support is the closest analog to a \u201cnetwork\u201d mechanism (patient navigation, education, assistance), but AbbVie\u2019s materials describe programs for accessing AbbVie medicines (e.g., myAbbVie Assist) rather than a measurable, compounding marketplace liquidity metric. (AbbVie patient assistance program pages)",
-            "There is evidence that AbbVie-style patient support can improve adherence and reduce prescription abandonment, but published studies describe outcomes from support interventions and nurse-ambassador components\u2014not a direct network effect where the product becomes more valuable as more participants join. (Peer-reviewed study on participation in AbbVie\u2019s patient support program reducing prescription abandonment)"
+            "AbbVie\u2019s top-growth franchises (e.g., Skyrizi, Rinvoq) gained share largely from \u201cmarket share uptake\u2026 as well as market growth,\u201d not from user-side or participant-side network effects (Skyrizi +50% YoY in 2025; Rinvoq +39% YoY in 2025).",
+            "AbbVie\u2019s business model is primarily branded biologics/therapeutics facing payer formularies, biosimilar competition, and channel contracting; e.g., Humira 2025 net revenues decreased 49% driven by direct biosimilar competition after loss of exclusivity\u2014evidence against strong winner-take-most network dynamics.",
+            "AbbVie supports patients with assistance programs (e.g., U.S. patient assistance / myAbbVie Assist) and also notes program changes due to evolving biosimilar availability; while this can help access/adherence, it is not a platform liquidity/participant-network that becomes more valuable as more users join.",
+            "AbbVie reports \u201cGrowth Platform\u201d performance (93% of total net revenues in 2025; +19.6% vs. 2024), but this is framed as execution/market growth and share\u2014not as measurable marketplace liquidity or cross-side network effects."
           ],
           "risks": [
-            "AbbVie has multiple franchise \u201cecosystems\u201d (patient support, hub/nurse-ambassador services, and payer contracting) that could create some reinforcing effects, but the analysis may underweight qualitative persistence and overemphasize the lack of a formal, user-count network metric.",
-            "Competitive dynamics in biologics (biosimilar penetration and formulary position) can look like \u201cnetwork weakening,\u201d but without clear AbbVie participant/installed-base counts, it is difficult to isolate true network effects versus normal pharma switching dynamics and payer behavior."
+            "Prescription drugs can have indirect \u201cinstalled base\u201d effects (treatment continuity, switches avoided via coverage/support dynamics), which may mimic weak network effects; the public filings here do not quantify network-effect-like reinforcement (e.g., switching costs driven by platform participation).",
+            "Payer/benefit designs and rebate contracting can create path dependence that resembles network reinforcement, but AbbVie disclosures in the sourced materials do not provide user/participant counts or marketplace liquidity metrics needed to prove network effects."
           ],
           "sources": [
-            "https://news.abbvie.com/2025-01-31-AbbVie-Reports-Full-Year-and-Fourth-Quarter-2024-Financial-Results",
-            "https://www.abbvie.com/patients/patient-support/patient-assistance/available-programs/humira-program-update.html",
-            "https://pmc.ncbi.nlm.nih.gov/articles/PMC6750846/"
+            "https://investors.abbvie.com/static-files/f66414fa-2635-4b87-b6b1-d3f99148135d",
+            "https://investors.abbvie.com/node/19771",
+            "https://www.abbvie.com/patients/patient-support/patient-assistance.html"
           ]
         },
         "economies_of_scale": {
-          "score": 6.6,
+          "score": 6.5,
           "confidence": "medium",
           "evidence": [
-            "Scale/operating leverage: 2025 worldwide net revenues were $61.2B with operating earnings of $15.1B; gross margin was 70.0% in both 2025 and 2024, while SG&A as a % of net revenues fell to 23% in 2025 from 26% in 2024 (net leverage from revenue growth noted).",
-            "Unit cost proxy (cost of products sold as % of revenue): in 2025, cost of products sold was $18.204B on net revenues of $61.160B (implied COGS ~29.8%); in 2024, $16.904B on $56.334B (implied COGS ~30.0%), indicating broadly stable manufacturing/service cost intensity at AbbVie\u2019s scale.",
-            "Fixed-cost absorption: 2025 R&D expense decreased to $9.096B (15% of net revenues) vs $12.791B (23% of net revenues) in 2024; SG&A decreased to $14.010B (23% of net revenues) vs $14.752B (26% of net revenues) in 2024\u2014both consistent with scale supporting lower opex intensity (though 2024 contained large intangible impairment charges).",
-            "Economic scale in cash generation: 2025 cash flows from operations were $19.0B, supporting ongoing investment while maintaining high gross margin (70%)."
+            "AbbVie\u2019s scale shows up in cost structure: FY 2024 cost of products sold was $16.904B while FY 2024 net revenue was $61.16B, implying cost ratio ~27.6% (gross profit ~$44.3B; gross margin reported ~69.99%).",
+            "Operating leverage (scale-related): AbbVie reported FY 2024 GAAP SG&A of 25.5% of net revenues and FY 2024 GAAP R&D of 44.9% of net revenues; AbbVie also explicitly stated SG&A % increased in 2024 vs. 2023 but was partially offset by favorable leverage from revenue growth (i.e., costs not fully keeping pace with revenues).",
+            "Large, diversified revenue base supports spreading fixed commercial/manufacturing costs: FY 2024 net revenues were $61.16B with major growth/product engines including Skyrizi (Skyrizi net revenues increased 51% in 2024) which helps maintain high utilization and absorption of overhead at AbbVie scale.",
+            "Humira scale/economies-of-distribution: AbbVie\u2019s immunology portfolio remains extremely large even after erosion\u2014Humira global net revenues were $14.404B (FY 2023) and (per FY 2024 reporting context) AbbVie indicates it is positioned to absorb Humira erosion while sustaining modest operational revenue growth; continued high-volume branded demand supports scale economics vs smaller brands."
           ],
           "risks": [
-            "Economies-of-scale may be partially masked by composition/one-time items (e.g., 2024 had $4.5B intangible asset impairment charges, which affected R&D % and complicates clean interpretation of structural unit-cost advantages).",
-            "AbbVie\u2019s cost leadership versus peers is not directly evidenced by competitor-adjusted unit manufacturing costs or explicit bulk/purchasing supplier terms in the sources reviewed (most evidence is from AbbVie\u2019s consolidated margin/expense ratios).",
-            "Therapeutic competition and biosimilar pressure (e.g., Humira) can reduce volumes and pricing/rebates, which can erode scale-based unit economics even if fixed costs are absorbed."
+            "Economies of scale are partially offset by the bio/pharma reality that large portion of costs are R&D/intangibles and biologics manufacturing complexity; scale does not automatically translate into durable unit-cost leadership (R&D is very high as a % of revenue).",
+            "No direct, company-disclosed metric of \u2018unit cost per dose/vial\u2019 or explicit \u2018bulk procurement savings\u2019 vs smaller peers was found in the sources used; supply-chain \u2018scale advantage\u2019 evidence is more qualitative than quantified.",
+            "Competitive dynamics (biosimilar entry and pricing pressure\u2014especially Humira) can force AbbVie to undercut via pricing/contracting despite scale, limiting the ability to sustain wide unit-cost advantages."
           ],
           "sources": [
-            "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm",
-            "https://www.sec.gov/Archives/edgar/data/1551152/000155115225000020/abbv-20241231.htm"
+            "https://investors.abbvie.com/node/19771",
+            "https://www.morningstar.com/stocks/xnys/abbv/key-metrics",
+            "https://www.macrotrends.net/stocks/charts/ABBV/abbvie/gross-margin"
           ]
         }
       },
-      "analyzed_at": "2026-08-01T09:55:30Z"
+      "analyzed_at": "2026-09-01T13:00:43Z"
     },
     {
       "ticker": "ACN",
       "company_name": "Accenture plc",
-      "overall_moat": "Wide",
-      "overall_score": 6.8,
-      "investment_implication": "Accenture\u2019s moat is primarily sustained by relationship depth and practical switching frictions in large enterprise transformation and managed-service contracts, supported by scale in delivery economics and generally stable profitability. For long-term investors, this implies durability of returns on invested capital is more likely to come from recurring account momentum and disciplined cost leverage than from platform-like network effects or easily replicable IP. However, competitive intensity and AI-driven contract redesign could intermittently pressure margins, so investors should expect performance to be cyclical even if the underlying customer entrenchment remains strong.",
-      "key_strength": "High Switching Costs \u2014 Large, long-duration client relationships (notably 10+ year entrenchment for top clients) and termination/contract-structure frictions make it hard for enterprises to fully re-source work quickly without material disruption.",
-      "key_risk": "Low/uncertain network effects \u2014 Accenture does not clearly demonstrate self-reinforcing marketplace or cross-side user network effects, so differentiation may rely too heavily on services scale and contracting leverage that competitors can contest during AI/IT-services spend shifts.",
+      "overall_moat": "Narrow",
+      "overall_score": 6.0,
+      "investment_implication": "Accenture\u2019s competitive advantage appears durable but not unassailable: brand strength and meaningful customer contract structures support above-average economics, yet the services model still faces ongoing competitive and pricing pressure. For long-term investors, the moat is most likely to sustain returns through differentiated delivery and embedded client relationships rather than true structural network effects or regulatory/technical lock-in. Consequently, margins and ROIC durability will depend on keeping pricing discipline and renewal/managed-services mix ahead of wage/talent cost pressures.",
+      "key_strength": "High Switching Costs \u2014 Managed services and longer-term contract economics (e.g., notice/termination fees and non-cancelable commitments) increase client migration friction and help protect revenue continuity.",
+      "key_risk": "Competitive pricing pressure \u2014 If rival consultancies (and alternative delivery models) further intensify RFP-driven procurement and erode bill-rate/price realization, Accenture\u2019s brand-supported economics may compress faster than switching costs can offset.",
       "criteria": {
         "brand_loyalty": {
-          "score": 7.4,
+          "score": 7.3,
           "confidence": "medium",
           "evidence": [
-            "Gross margin remained highly stable and slightly expanded: 32.3% in fiscal 2023 vs 32.6% in fiscal 2024 (Accenture 2024 Form 10-K).",
-            "Brand strength is consistently top-tier in IT services branding: Brand Finance reported Accenture as the world\u2019s most valuable IT services brand (brand value up ~2% to $40.5B in its 2024 ranking).",
-            "High concentration of large, ongoing client relationships (a proxy for loyalty/renewals): Accenture reported 310 'Diamond clients' in FY2024, up 10 from the prior year, and record 125 quarterly client bookings >$100M in the year.",
-            "Large-scale repeat business and relationship building appear to be durable despite market headwinds: Accenture reported record bookings of $81.2B in FY2024 (+13% in USD / +14% in local currency) alongside stable-to-improving profitability (gross margin and operating margin)."
+            "Brand strength: Brand Finance ranked Accenture as the strongest IT Services brand in 2025 with a Brand Strength Index (BSI) of 89.6/100 (AAA+), and as the most valuable IT Services brand for the eighth consecutive year with brand value of USD 42.3B in 2026 (2% increase YoY).",
+            "Gross margin stability at a premium level: Accenture reported gross margin increasing to 32.6% in fiscal 2024 vs 32.3% in fiscal 2023 (FY2024 Form 10-K).",
+            "Gross margin level supports pricing power over time: independent market data shows Accenture gross margin around ~32% across FY2022\u2013FY2024 (e.g., 31.99% in FY2022, 32.34% in FY2023, 32.61% in FY2024) rather than drifting toward commodity-like margins.",
+            "Recent commentary flags pricing pressure, suggesting active pricing power but not near-immunity from competition: Accenture disclosures/earnings commentary include \u2018pressure in pricing\u2019 while still producing record bookings in periods discussed by management."
           ],
           "risks": [
-            "Direct, company-specific pricing power (e.g., explicit average rate/price increase vs competitors or contract renewal price uplift) is not quantified in the fetched sources, limiting the ability to confirm a 20%+ premium claim.",
-            "Generative-AI-driven changes in contract structures and increased competitive intensity can create pricing pressure and margin dilution during renewals (general industry risk is suggested, but not directly quantified for Accenture in the retrieved evidence).",
-            "Client loyalty metrics like NPS/cNPS, churn/retention percentages, and repeat-purchase rates were not found in the retrieved company-specific sources, reducing certainty on churn/retention quality."
+            "Pricing power may be constrained by competitive intensity in IT services (acceleration of alternative vendors and RFP-driven procurement), with management explicitly citing pricing pressure in recent periods.",
+            "Gross margin is affected by mix, contract structure, and optimization costs; without direct \u2018price premium vs competitors\u2019 metrics (e.g., bill rate premiums), margin stability may overstate brand-driven pricing power.",
+            "Accenture does not typically disclose customer-level retention/churn or NPS for its own services in a way that can be directly used as a \u2018near-zero churn\u2019 proxy."
           ],
           "sources": [
-            "https://www.accenture.com/content/dam/accenture/final/accenture-com/a-com-custom-component/iconic/document/Accenture-2024-10-K.pdf",
-            "https://brandfinance.com/press-releases/it-giants-navigate-economic-headwinds-accenture-tcs-and-infosys-lead-as-ai-demand-spurs-industry-evolution",
-            "https://www.accenture.com/~/media/Files/A/Accenture-IR-V3/home/accenture-fiscal-2024-annual-report.pdf"
+            "https://brandfinance.com/press-releases/usd167-2-billion-global-it-services-sector-records-steady-growth-as-dominant-players-continue-to-lead-ranking",
+            "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/annual-shareholder-meeting/2025/accenture-fiscal-2024-annual-report.pdf",
+            "https://www.sec.gov/Archives/edgar/data/1467373/000146737324000278/acn-20240831.htm"
           ]
         },
         "barriers_to_entry": {
-          "score": 6.0,
+          "score": 5.7,
           "confidence": "medium",
           "evidence": [
-            "R&D / innovation scale: Accenture reported investing $1.2B in R&D in fiscal 2024 (and $6.6B across 46 strategic acquisitions in the same year), indicating sustained funding requirements to build and refresh assets/platforms that new entrants would need to match to compete at comparable depth. (Accenture FY2024 Form 10-K, pdf)",
-            "IP protection exists but appears not to be a primary, easily quantifiable moat: Accenture states it invests in patents and pending patents, but the company-specific 10-K excerpt provides investment figures rather than a disclosed patent-count/expiry schedule in the sources retrieved; thus, patent barriers are likely present but difficult to measure precisely from the retrieved filings. (Accenture FY2024 Form 10-K, pdf)",
-            "Regulatory/compliance requirements are relevant for certain service lines (not an overall monopoly): Accenture Federal Services is an accredited FedRAMP Third-Party Assessment Organization (3PAO), which is a gatekeeping requirement for performing assessment services needed for FedRAMP authorization/maintenance workflows for cloud offerings. (Accenture 3PAO page + FedRAMP 3PAO obligations doc)",
-            "CAPEX intensity for a new entrant is not the main constraint: Accenture reports property, equipment and related depreciation in fiscal 2024 (net property & equipment about $1.521B as of Aug 31, 2024), consistent with an asset-light IT services model where service delivery depends more on people, processes, and platform/knowledge build than on massive upfront physical CAPEX. (Accenture FY2024 Form 10-K, pdf)"
+            "Patent/IP moat exists but is not fully quantified in Accenture\u2019s filings: Accenture discloses a \u201cglobal portfolio of patents and pending patent applications\u201d (covering AI, cloud, cybersecurity, blockchain, automation, XR, analytics, quantum) and says it protects IP via patents, trade secrets/copyright and \u201cconfidentiality procedures,\u201d plus proprietary platforms and \u201creusable knowledge capital,\u201d but it does not provide an updated portfolio count in the 2024 10-K excerpted evidence. ([investor.accenture.com](https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/accenture-2024-10-k.pdf))",
+            "IP is meaningful at the asset level, but enforcement is not guaranteed: Accenture explicitly warns that even with IP protection, competitors/other parties may reverse engineer or independently develop similar solutions, and enforcing rights could require \u201cconsiderable time, money and oversight\u201d and may be unsuccessful\u2014this reduces the expected barrier strength from patents alone. ([investor.accenture.com](https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/accenture-2024-10-k.pdf))",
+            "Capital intensity is relatively low for \u201cinformation technology services,\u201d implying barriers are more talent/relationships/software than fixed-asset scale: in fiscal 2024 Accenture reported \u201cPurchases of property and equipment\u201d of $516.5M (capital expenditures largely in leases/IT hardware context), versus ~$64.9B revenue\u2014indicating a new entrant does not face a decade-scale fixed-CAPEX requirement to start competing at a service level. ([investor.accenture.com](https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/accenture-2024-10-k.pdf))",
+            "R&D spend supports ongoing productization, but not a regulatory monopoly: Accenture\u2019s fiscal 2024 R&D costs were $1.15B and it states investments in patents/pending patents and \u201clearning and professional development\u201d (including $6.6B in fiscal 2024 \u201cinvestments\u201d across strategic acquisitions and learning/pro development), pointing to sustained innovation rather than government-locked market access. ([investor.accenture.com](https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/accenture-2024-10-k.pdf))",
+            "Regulatory/compliance barriers are mainly contract-and-process driven rather than licensing bottlenecks: in fiscal 2024 Accenture discloses it delivers work for the U.S. federal government through Accenture Federal Services (wholly owned subsidiary) accounting for ~37% of Health & Public Service industry group revenues and 17% of North America revenues, but the evidence located does not show a single entry-licensing requirement that prevents other firms from competing generally (i.e., barriers appear role/contract specific). ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737324000278/acn-20240831.htm?utm_source=openai))"
           ],
           "risks": [
-            "Barriers may be overstated if patents/platforms are not as defensible as peers (and the retrieved sources did not provide an Accenture-specific patent portfolio count or per-patent expiry timeline).",
-            "Time-to-parity could be shorter than implied if rivals can hire talent and implement competing delivery frameworks quickly, limiting how much Accenture\u2019s IP/funding translates into durable entry barriers."
+            "Patent portfolio size/expiry timeline is not numerically disclosed in the core evidence found (e.g., no total granted/pending count or WA/US expiry schedule in the 2024 10-K passages reviewed), which limits precision on the \u201chigh barriers\u201d portion of the moat.",
+            "Accenture\u2019s service business can be replicated by other large consultancies with similar delivery centers and partner ecosystems; if Accenture\u2019s differentiation is primarily execution/relationships (not protected IP), the barrier can be overstated by treating patents as a dominant constraint."
           ],
           "sources": [
-            "https://www.accenture.com/content/dam/accenture/final/accenture-com/a-com-custom-component/iconic/document/Accenture-2024-10-K.pdf",
-            "https://www.accenture.com/us-en/support/us-federal-government/3pao",
-            "https://www.fedramp.gov/assets/resources/documents/3PAO_Obligations_and_Performance_Standards.pdf"
+            "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/accenture-2024-10-k.pdf",
+            "https://www.sec.gov/Archives/edgar/data/1467373/000146737324000278/acn-20240831.htm",
+            "https://newsroom.accenture.com/news/2018/accenture-cloud-platform-awarded-us-patent-for-analytics-based-multi-cloud-tagging-capabilities"
           ]
         },
         "switching_costs": {
-          "score": 7.7,
+          "score": 7.4,
           "confidence": "medium",
           "evidence": [
-            "Accenture reports long-duration entrenchment in its largest accounts: it has partnered with 195 of its top 200 clients for 10+ years (FY2025 Form 10-K).",
-            "Accenture\u2019s service agreements can include multi-period payment obligations upon termination for convenience: in Accenture\u2019s Professional Services General Terms and Conditions (Colombia), if the Client terminates for convenience, it \u201cwill be obligated to make payment in full of the balance due for the then current Service Order Term\u201d and loses refunds of prepaid amounts for the then-current term.",
-            "Workflow/data lock-in depth is illustrated by Accenture\u2019s own transformation/migration work: an Accenture Federal Services cloud migration project involving a full financial management suite was planned as an 18-month journey with risks around business continuity and integration with many third-party applications; the case highlights a carefully orchestrated process with contingency planning to avoid disruption."
+            "Managed services contracts: Accenture\u2019s FY2025 Form 10-K states longer-term, larger/more complex contracts (majority of managed services) \u201cgenerally require a longer notice period for termination and often include an early termination charge to be paid to us,\u201d even though it may not fully cover costs/lost profits. (SEC filing, FY ended Aug 31, 2025)",
+            "Termination/notice variation by contract type: Accenture\u2019s FY2025 Form 10-K states many consulting contracts are \u201cless than 12 months\u201d and typically permit client termination with as little as \u201c30 days\u2019 notice,\u201d implying switching friction is materially higher for managed services than for shorter consulting work. (SEC filing, FY ended Aug 31, 2025)",
+            "Non-cancelable commitments that can create lock-in for clients: As of Aug 31, 2025 Accenture had $2.98B of commitments that \u201cwe cannot cancel or where we would be required to pay a termination fee\u201d (cloud hosting, software subscriptions, IT services and other obligations). This indicates contract structures often include cancellation/termination economics that can increase migration costs when integrated into delivery. (SEC filing, FY ended Aug 31, 2025)",
+            "Customer retention/relationship duration (proxy for churn and operational stickiness): Accenture reports that it has \u201clong-term relationships\u201d and has partnered with \u201c195 of our top 200 clients for 10+ years\u201d as of Aug 31, 2025. While not a churn metric, it is direct company-specific evidence consistent with meaningful ongoing embeddedness and switching friction for many large accounts. (Accenture FY2025 Form 10-K)"
           ],
           "risks": [
-            "Accenture does not publicly disclose a standardized client churn rate or % customer attrition by contract type in the materials reviewed, so switching cost scoring cannot be anchored to a specific churn/retention metric beyond \u201c10+ years\u201d for top accounts.",
-            "The termination/penalty language found is from a jurisdiction-specific Accenture General Terms document (Colombia); it may differ by country/contract template (and does not quantify actual dollar termination penalties).",
-            "Much of Accenture\u2019s work is services/outsourcing/managed services rather than proprietary software; without quantified data portability/integration specifics, the measured switching cost may be lower than the \u201c10+ years\u201d signal suggests."
+            "Churn/retention is not directly quantified in the sources retrieved: the FY2025 10-K excerpt found does not provide a client-level churn rate or dollar retention metric specifically for Accenture\u2019s services, so the switch-cost score relies on termination-charge/notice structure and relationship-duration evidence rather than explicit churn.",
+            "Switching-cost strength varies by service type: some consulting work appears relatively shorter and client-terminable with ~30 days\u2019 notice, so the moat may be uneven across Accenture\u2019s portfolio (managed services vs shorter projects)."
           ],
           "sources": [
-            "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-4/Accenture-2025-10-K.pdf",
-            "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/Accenture-7GTC-GTC-For-Professional-Services-Colombia-EN-ES-10-24-Nov-6.pdf",
-            "https://www.accenture.com/us-en/case-studies/us-federal-government/cloud-migration"
+            "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm"
           ]
         },
         "network_effects": {
-          "score": 2.5,
+          "score": 4.0,
           "confidence": "medium",
           "evidence": [
-            "Accenture is primarily a services firm; in its FY2024 Form 10-K it reports revenues ($64.9B) and bookings ($81.2B) but does not present any marketplace-style metrics (e.g., active two-sided users, GMV, liquidity, share-of-wallet) that would evidence accumulating network effects. ([accenture.com](https://www.accenture.com/content/dam/accenture/final/accenture-com/a-com-custom-component/iconic/document/Accenture-2024-10-K.pdf))",
-            "While Accenture describes participation in ecosystems (e.g., ecosystem partnerships pages) it frames this as partnerships delivered to clients rather than as Accenture operating a self-reinforcing, transaction marketplace with measurable cross-side liquidity. ([accenture.com](https://www.accenture.com/in-en/services/ecosystem-partners?utm_source=openai))",
-            "Accenture\u2019s \u2018platform\u2019 IP like myNav is positioned as a knowledge/recommendation engine built from a repository of 30,000+ cloud projects and 80+ industry solutions (i.e., internal analytics/accelerators). This suggests productization of know-how, but it is not evidence of user-count-driven direct or cross-side network effects. ([newsroom.accenture.com](https://newsroom.accenture.com/news/2019/accenture-launches-mynav-cloud-platform-to-help-enterprises-navigate-the-cloud-landscape?utm_source=openai))",
-            "Indirect evidence consistent with weak/limited network effects: Accenture reports workforce scale and utilization (e.g., 774,000+ people and 92% utilization for FY2024), which reinforces delivery capacity but is not the same as participant growth on a platform network. ([accenture.com](https://www.accenture.com/content/dam/accenture/final/accenture-com/a-com-custom-component/iconic/document/Accenture-2024-10-K.pdf))"
+            "Accenture shows strong \u201cclient-base depth\u201d (a proxy for recurring demand), with Diamond clients rising from 300 in fiscal 2023 to 310 in fiscal 2024 (+10 YoY), alongside $81B of full-fiscal-year new bookings in fiscal 2024 (FY ends Aug 31).",
+            "Accenture explicitly tracks large, repeat relationships via \u201cDiamond clients\u201d and \u201cquarterly client bookings,\u201d reporting 125 quarterly client bookings of >$100M in fiscal 2024 (with 19 more than the prior year), indicating expanding/renewing wallet share but not a classic per-user value/network-effect dynamic.",
+            "Accenture\u2019s platforms (e.g., myNav) are enabled by large internal solution repositories rather than a two-sided marketplace: myNav was built on a repository of >30,000 cloud projects and >80 industry solutions deployed worldwide\u2014suggesting a data/asset flywheel, but not evidence that the platform becomes more valuable as more external users join.",
+            "Accenture positions \u201cecosystem partnerships\u201d as an asset (technology ecosystem partners and ecosystem partners for client outcomes), but there is no company-specific evidence provided in filings that buyers attract sellers (cross-side marketplace liquidity/share-of-wallet) in a measurable two-sided network structure."
           ],
           "risks": [
-            "Accenture\u2019s ecosystem/platform language may under-disclose internal participant/network metrics; a deeper drill into investor decks, business unit segment disclosures (e.g., Industry X/Song offerings), or specific Accenture-run platforms could reveal measurable network effects not captured in the sources reviewed.",
-            "Some Accenture assets may exhibit data/learning or orchestration flywheel effects (e.g., SynOps-like learning loops), but the web-available evidence found here does not quantify these effects in user/participant or liquidity terms, which could lead to under-scoring."
+            "Accenture is primarily a services firm; \u201cnetwork effects\u201d are less structurally likely than in software marketplaces, and available company metrics emphasize large client relationships/ship-and-renew rather than user-driven network effects.",
+            "The strongest measurable reinforcement found relates to Accenture\u2019s asset repositories and client relationship depth (Diamond clients), which may reflect switching costs and contractual lock-in rather than true network effects."
           ],
           "sources": [
-            "https://www.accenture.com/content/dam/accenture/final/accenture-com/a-com-custom-component/iconic/document/Accenture-2024-10-K.pdf",
-            "https://www.accenture.com/in-en/services/ecosystem-partners",
+            "https://www.investor.accenture.com/~/media/Files/A/accenture-v4/investors/annual-shareholder-meeting/2025/accenture-fiscal-2024-annual-report.pdf",
+            "https://www.accenture.com/content/dam/accenture/final/corporate/company-information/document/Accenture-360-Value-Report-2024.pdf",
             "https://newsroom.accenture.com/news/2019/accenture-launches-mynav-cloud-platform-to-help-enterprises-navigate-the-cloud-landscape"
           ]
         },
         "economies_of_scale": {
-          "score": 7.6,
+          "score": 6.4,
           "confidence": "medium",
           "evidence": [
-            "Scale and cost structure: In FY2025 (ended Aug 31, 2025), Accenture generated $69.67B revenue and held SG&A at $11.39B, equal to 16.4% of revenue (down from 17.1% in FY2024). GAAP operating margin was 14.7% in FY2025 vs 14.8% in FY2024, despite some gross margin pressure (gross margin 31.9% in FY2025 vs 32.6% in FY2024).",
-            "Operating leverage (revenue growing with costs largely controlled): FY2025 revenues grew 7% YoY to $69.67B, while GAAP operating expenses rose such that operating expenses increased from 85.2% of revenues (FY2024) to 85.3% of revenues (FY2025)\u2014i.e., costs did not expand faster than revenue at the consolidated level.",
-            "Lower unit-cost positioning in service delivery economics: In FY2025, cost of services was $47.44B (68.1% of revenue) vs $43.73B (67.4% of revenue) in FY2024\u2014costs rose in dollars (+~8%) broadly tracking revenue growth (+7%), consistent with scale helping maintain relatively stable cost-of-services as a % of sales.",
-            "Economies-of-scale market position (ability to compete at scale): Accenture is described as maintaining top market share positions in IT services / managed services in 2024 market share research (Gartner market-share documents), supporting the idea that scale translates into continued share and pricing power / wins that sustain its cost structure."
+            "Scale/revenues: Accenture reported fiscal 2025 total revenues of $69.7B (+7% vs. $64.9B in fiscal 2024). ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm))",
+            "Operating leverage is mixed (suggests scale helps but not consistently): fiscal 2025 operating margin was 14.7% vs. 14.8% in fiscal 2024; operating income increased $630M (+7%), while cost of services rose 8% and increased as a % of revenue to 68.1% (from 67.4%), with gross margin down to 31.9% (from 32.6%). ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm))",
+            "Cost structure (partly scalable): sales & marketing expense decreased as a % of revenue to 10.1% (from 10.6%) and general & administrative decreased to 6.2% (from 6.6%), indicating some fixed/semifixed overhead leverage at scale\u2014even while cost of services (people/payroll) pressured margins. ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm))",
+            "Unit-cost proxy via gross margin: cost of services increased $3.7B (+8%) and gross margin declined 70 bps year-over-year (32.6% -> 31.9%), with Accenture attributing the gross margin decrease primarily to higher payroll costs\u2014implying scale benefits aren\u2019t fully translating into lower unit costs in FY25. ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm))"
           ],
           "risks": [
-            "Economies of scale may be weaker than it appears because Accenture\u2019s delivery model is highly labor/subcontractor driven; cost leadership can be cyclical with labor markets and utilization rather than structurally fixed.",
-            "The evidence base for true unit-cost advantage (e.g., cost per delivery hour, utilization/conversion, subcontractor/bench costs) is not directly quantified in the sources gathered here; much of the proof is indirect via margin and expense ratios.",
-            "Some margins moved slightly in the wrong direction (gross margin down FY2025 vs FY2024), indicating scale benefits are not consistently widening the gap every year."
+            "Economies-of-scale case is weakened in FY25 by margin pressure: cost of services rose as a % of revenue and gross margin declined, suggesting costs (primarily payroll) weren\u2019t being outgrown by revenue, limiting evidence of widening cost leadership this year. ([sec.gov](https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm))",
+            "Accenture\u2019s service delivery is heavily labor-driven; even with scale, unit economics may be constrained by wage inflation and demand-supply imbalances for skilled talent, reducing the durability of cost leadership evidence versus smaller competitors."
           ],
           "sources": [
-            "https://newsroom.accenture.com/content/4q-full-fy25-earnings/accenture-reports-fourth-quarter-and-full-year-fiscal-2025-results.pdf",
-            "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm",
-            "https://www.gartner.com/en/documents/6039535"
+            "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm"
           ]
         }
       },
-      "analyzed_at": "2026-08-01T09:55:52Z"
+      "analyzed_at": "2026-09-01T13:01:02Z"
     }
   ]
 }

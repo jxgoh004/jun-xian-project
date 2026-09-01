@@ -107,7 +107,7 @@
         ]
       },
       "moat": "Narrow",
-      "moat_score": 4.9
+      "moat_score": 5.1
     },
     {
       "ticker": "AOS",
@@ -215,7 +215,7 @@
         ]
       },
       "moat": "Narrow",
-      "moat_score": 4.9
+      "moat_score": 5.7
     },
     {
       "ticker": "ABT",
@@ -322,8 +322,8 @@
           8210.0
         ]
       },
-      "moat": "Narrow",
-      "moat_score": 6.8
+      "moat": "Wide",
+      "moat_score": 7.0
     },
     {
       "ticker": "ABBV",
@@ -431,7 +431,7 @@
         ]
       },
       "moat": "Narrow",
-      "moat_score": 5.8
+      "moat_score": 4.9
     },
     {
       "ticker": "ACN",
@@ -538,8 +538,8 @@
           13992.742
         ]
       },
-      "moat": "Wide",
-      "moat_score": 6.8
+      "moat": "Narrow",
+      "moat_score": 6.0
     },
     {
       "ticker": "ADBE",
@@ -645,7 +645,9 @@
           2344.0,
           1993.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMD",
@@ -751,7 +753,9 @@
           6315.0,
           7281.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AES",
@@ -857,7 +861,9 @@
           1683.0,
           1934.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AFL",
@@ -963,7 +969,9 @@
           835.0,
           895.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "A",
@@ -1069,7 +1077,9 @@
           1487.0,
           1498.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APD",
@@ -1175,7 +1185,9 @@
           1901.2,
           1881.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ABNB",
@@ -1281,7 +1293,9 @@
           186.0,
           209.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AKAM",
@@ -1387,7 +1401,9 @@
           577.914,
           741.841
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALB",
@@ -1493,7 +1509,9 @@
           593.502,
           603.805
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARE",
@@ -1599,7 +1617,9 @@
           6.672,
           7.661
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALGN",
@@ -1705,7 +1725,9 @@
           1101.757,
           1148.392
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALLE",
@@ -1811,7 +1833,9 @@
           437.7,
           559.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LNT",
@@ -1917,7 +1941,9 @@
           129.0,
           497.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ALL",
@@ -2023,7 +2049,9 @@
           19975.0,
           19744.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOGL",
@@ -2129,7 +2157,9 @@
           62886.0,
           69175.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GOOG",
@@ -2235,7 +2265,9 @@
           62886.0,
           69175.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MO",
@@ -2341,7 +2373,9 @@
           263.0,
           306.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMZN",
@@ -2447,7 +2481,9 @@
           67729.0,
           75532.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMCR",
@@ -2553,7 +2589,9 @@
           3639.0,
           3513.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEE",
@@ -2659,7 +2697,9 @@
           665.0,
           703.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AEP",
@@ -2765,7 +2805,9 @@
           1166.0,
           1266.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXP",
@@ -2881,7 +2923,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIG",
@@ -2987,7 +3031,9 @@
           10441.0,
           12761.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMT",
@@ -3093,7 +3139,9 @@
           650.3,
           718.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AWK",
@@ -3199,7 +3247,9 @@
           395.0,
           432.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMP",
@@ -3305,7 +3355,9 @@
           14920.0,
           15986.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AME",
@@ -3411,7 +3463,9 @@
           1119.257,
           1170.497
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AMGN",
@@ -3517,7 +3571,9 @@
           9570.0,
           10227.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APH",
@@ -3623,7 +3679,9 @@
           4717.1,
           5872.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADI",
@@ -3729,7 +3787,9 @@
           1436.075,
           2051.733
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AON",
@@ -3835,7 +3895,9 @@
           4209.0,
           5348.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APA",
@@ -3941,7 +4003,9 @@
           1062.0,
           1222.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APO",
@@ -4047,7 +4111,9 @@
           10945.0,
           11165.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AAPL",
@@ -4261,7 +4327,9 @@
           5185.0,
           6372.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APP",
@@ -4367,7 +4435,9 @@
           1819.366,
           2171.017
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "APTV",
@@ -4473,7 +4543,9 @@
           3477.0,
           2434.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ACGL",
@@ -4579,7 +4651,9 @@
           17519.0,
           19388.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADM",
@@ -4685,7 +4759,9 @@
           3594.0,
           4111.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ARES",
@@ -4791,7 +4867,9 @@
           188.139,
           188.139
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ANET",
@@ -4907,7 +4985,9 @@
           1886.9,
           2266.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AJG",
@@ -5013,7 +5093,9 @@
           5175.0,
           6076.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AIZ",
@@ -5119,7 +5201,9 @@
           8394.0,
           8358.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "T",
@@ -5225,7 +5309,9 @@
           8843.0,
           8521.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ATO",
@@ -5331,7 +5417,9 @@
           213.651,
           469.455
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADSK",
@@ -5437,7 +5525,9 @@
           1439.0,
           579.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ADP",
@@ -5543,7 +5633,9 @@
           3521.1,
           3521.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AZO",
@@ -5649,7 +5741,9 @@
           670.137,
           764.924
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVY",
@@ -5755,7 +5849,9 @@
           1503.9,
           1793.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AXON",
@@ -5861,7 +5957,9 @@
           777.486,
           768.637
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKR",
@@ -5967,7 +6065,9 @@
           5558.0,
           5553.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BALL",
@@ -6073,7 +6173,9 @@
           1410.0,
           2081.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAC",
@@ -6179,7 +6281,9 @@
           98186.0,
           96082.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BAX",
@@ -6285,7 +6389,9 @@
           1861.0,
           1856.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BDX",
@@ -6391,7 +6497,9 @@
           2994.0,
           2364.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRK-B",
@@ -6497,7 +6605,9 @@
           43539.0,
           48288.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BBY",
@@ -6603,7 +6713,9 @@
           1043.0,
           906.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TECH",
@@ -6709,7 +6821,9 @@
           216.585,
           214.562
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BIIB",
@@ -6815,7 +6929,9 @@
           1867.0,
           2398.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLK",
@@ -6921,7 +7037,9 @@
           5158.0,
           5444.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BX",
@@ -7027,7 +7145,9 @@
           6649.22,
           6910.121
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYZ",
@@ -7133,7 +7253,9 @@
           4268.512,
           4057.807
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BNY",
@@ -7239,7 +7361,9 @@
           6264.0,
           6627.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BA",
@@ -7345,7 +7469,9 @@
           2773.0,
           3485.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BKNG",
@@ -7451,7 +7577,9 @@
           3820.0,
           4341.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BSX",
@@ -7557,7 +7685,9 @@
           2926.0,
           3049.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BMY",
@@ -7663,7 +7793,9 @@
           9592.0,
           9077.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "AVGO",
@@ -7769,7 +7901,9 @@
           7145.0,
           10830.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BR",
@@ -7875,7 +8009,9 @@
           1129.4,
           1129.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BRO",
@@ -7981,7 +8117,9 @@
           2085.0,
           2138.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BF-B",
@@ -8087,7 +8225,9 @@
           832.0,
           832.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BLDR",
@@ -8193,7 +8333,9 @@
           1061.011,
           1296.685
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BG",
@@ -8299,7 +8441,9 @@
           3870.0,
           3931.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BXP",
@@ -8405,7 +8549,9 @@
           92.625,
           90.679
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHRW",
@@ -8511,7 +8657,9 @@
           2360.829,
           2542.172
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDNS",
@@ -8617,7 +8765,9 @@
           492.834,
           504.42
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPT",
@@ -8723,7 +8873,9 @@
           8.884,
           8.076
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COF",
@@ -8829,7 +8981,9 @@
           3492.0,
           3432.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAH",
@@ -8935,7 +9089,9 @@
           13242.0,
           13648.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCL",
@@ -9041,7 +9197,9 @@
           678.0,
           633.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CARR",
@@ -9147,7 +9305,9 @@
           2639.0,
           3246.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVNA",
@@ -9253,7 +9413,9 @@
           245.0,
           377.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CASY",
@@ -9359,7 +9521,9 @@
           243.502,
           243.502
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CAT",
@@ -9465,7 +9629,9 @@
           21569.0,
           24032.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBOE",
@@ -9571,7 +9737,9 @@
           391.4,
           570.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CBRE",
@@ -9677,7 +9845,9 @@
           8284.0,
           8783.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CDW",
@@ -9783,7 +9953,9 @@
           6312.4,
           7343.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COR",
@@ -9889,7 +10061,9 @@
           25225.299,
           25448.105
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNC",
@@ -9995,7 +10169,9 @@
           18105.0,
           18076.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CNP",
@@ -10101,7 +10277,9 @@
           806.0,
           777.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CF",
@@ -10207,7 +10385,9 @@
           444.0,
           718.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRL",
@@ -10313,7 +10493,9 @@
           518.728,
           524.81
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SCHW",
@@ -10419,7 +10601,9 @@
           107547.0,
           122848.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHTR",
@@ -10525,7 +10709,9 @@
           3680.0,
           3651.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVX",
@@ -10631,7 +10817,9 @@
           18075.0,
           24575.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMG",
@@ -10737,7 +10925,9 @@
           156.466,
           100.307
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CB",
@@ -10843,7 +11033,9 @@
           36568.0,
           39685.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CHD",
@@ -10949,7 +11141,9 @@
           593.4,
           576.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CIEN",
@@ -11055,7 +11249,9 @@
           975.856,
           1052.569
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CI",
@@ -11161,7 +11357,9 @@
           28768.0,
           30800.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CINF",
@@ -11277,7 +11475,9 @@
           3797.0,
           3948.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTAS",
@@ -11383,7 +11583,9 @@
           1555.19,
           1555.19
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSCO",
@@ -11489,7 +11691,9 @@
           6701.0,
           6480.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "C",
@@ -11595,7 +11799,9 @@
           62679.0,
           83322.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CFG",
@@ -11711,7 +11917,9 @@
           null,
           1080.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CLX",
@@ -11817,7 +12025,9 @@
           769.0,
           769.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CME",
@@ -11923,7 +12133,9 @@
           639.2,
           753.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMS",
@@ -12029,7 +12241,9 @@
           1306.0,
           1008.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KO",
@@ -12135,7 +12349,9 @@
           3038.0,
           3732.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTSH",
@@ -12241,7 +12457,9 @@
           4439.0,
           4780.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COHR",
@@ -12347,7 +12565,9 @@
           1343.278,
           1187.86
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COIN",
@@ -12453,7 +12673,9 @@
           177.079,
           171.562
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CL",
@@ -12559,7 +12781,9 @@
           1675.0,
           1962.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMCSA",
@@ -12665,7 +12889,9 @@
           13869.0,
           13955.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIX",
@@ -12771,7 +12997,9 @@
           2577.858,
           3278.811
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COP",
@@ -12877,7 +13105,9 @@
           5813.0,
           6957.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ED",
@@ -12983,7 +13213,9 @@
           2583.0,
           2559.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STZ",
@@ -13089,7 +13321,9 @@
           658.2,
           726.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CEG",
@@ -13195,7 +13429,9 @@
           3577.0,
           3767.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COO",
@@ -13301,7 +13537,9 @@
           829.0,
           809.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPRT",
@@ -13407,7 +13645,9 @@
           200.969,
           794.472
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GLW",
@@ -13513,7 +13753,9 @@
           2779.0,
           2932.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CPAY",
@@ -13619,7 +13861,9 @@
           2145.679,
           2630.917
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CTVA",
@@ -13725,7 +13969,9 @@
           5034.0,
           7759.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSGP",
@@ -13831,7 +14077,9 @@
           234.0,
           253.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "COST",
@@ -13937,7 +14185,9 @@
           3203.0,
           3750.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRH",
@@ -14043,7 +14293,9 @@
           4296.0,
           5534.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRWD",
@@ -14149,7 +14401,9 @@
           1361.844,
           933.887
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CCI",
@@ -14255,7 +14509,9 @@
           339.0,
           370.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CSX",
@@ -14361,7 +14617,9 @@
           909.0,
           1096.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CMI",
@@ -14477,7 +14735,9 @@
           5818.0,
           6585.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CVS",
@@ -14583,7 +14843,9 @@
           16316.0,
           19380.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHR",
@@ -14689,7 +14951,9 @@
           3913.0,
           3965.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DRI",
@@ -14795,7 +15059,9 @@
           44.6,
           44.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DDOG",
@@ -14901,7 +15167,9 @@
           741.262,
           827.345
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVA",
@@ -15007,7 +15275,9 @@
           2414.69,
           2467.056
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DECK",
@@ -15113,7 +15383,9 @@
           318.978,
           378.348
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DE",
@@ -15219,7 +15491,9 @@
           5386.0,
           7571.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DELL",
@@ -15325,7 +15599,9 @@
           17585.0,
           25854.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DAL",
@@ -15431,7 +15707,9 @@
           2850.0,
           4307.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DVN",
@@ -15537,7 +15815,9 @@
           1792.0,
           3162.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DXCM",
@@ -15643,7 +15923,9 @@
           1216.1,
           1257.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FANG",
@@ -15759,7 +16041,9 @@
           1386.0,
           1930.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLR",
@@ -15865,7 +16149,9 @@
           1061.113,
           1058.281
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DG",
@@ -15971,7 +16257,9 @@
           17.158,
           12.016
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DLTR",
@@ -16077,7 +16365,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "D",
@@ -16183,7 +16473,9 @@
           2531.0,
           2773.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DPZ",
@@ -16289,7 +16581,9 @@
           315.958,
           303.182
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DASH",
@@ -16395,7 +16689,9 @@
           1108.0,
           1100.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOV",
@@ -16501,7 +16797,9 @@
           1371.352,
           1522.327
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOW",
@@ -16607,7 +16905,9 @@
           4762.0,
           6430.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DHI",
@@ -16713,7 +17013,9 @@
           458.9,
           421.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DTE",
@@ -16819,7 +17121,9 @@
           2149.0,
           2109.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DUK",
@@ -16925,7 +17229,9 @@
           4230.0,
           4482.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DD",
@@ -17031,7 +17337,9 @@
           910.0,
           1751.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETN",
@@ -17137,7 +17445,9 @@
           5387.0,
           6673.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EBAY",
@@ -17243,7 +17553,9 @@
           1152.0,
           1386.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ECHO",
@@ -17349,7 +17661,9 @@
           1273.849,
           905.613
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ECL",
@@ -17455,7 +17769,9 @@
           3249.4,
           3452.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EIX",
@@ -17561,7 +17877,9 @@
           1463.0,
           1819.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EW",
@@ -17667,7 +17985,9 @@
           659.6,
           770.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ELV",
@@ -17773,7 +18093,9 @@
           10073.0,
           10991.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EME",
@@ -17879,7 +18201,9 @@
           4241.177,
           5098.309
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EMR",
@@ -17985,7 +18309,9 @@
           3101.0,
           3057.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ETR",
@@ -18091,7 +18417,9 @@
           703.41,
           739.153
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EOG",
@@ -18197,7 +18525,9 @@
           2681.0,
           3529.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQT",
@@ -18303,7 +18633,9 @@
           1457.959,
           835.14
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EFX",
@@ -18409,7 +18741,9 @@
           1012.7,
           1104.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EQIX",
@@ -18515,7 +18849,9 @@
           1001.0,
           1256.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ERIE",
@@ -18631,7 +18967,9 @@
           null,
           753.245
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ESS",
@@ -18737,7 +19075,9 @@
           10.259,
           9.866
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EL",
@@ -18843,7 +19183,9 @@
           1518.0,
           1746.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EG",
@@ -18949,7 +19291,9 @@
           10837.0,
           10687.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EVRG",
@@ -19055,7 +19399,9 @@
           10.0,
           12.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ES",
@@ -19161,7 +19507,9 @@
           1847.094,
           2080.805
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXC",
@@ -19267,7 +19615,9 @@
           3297.0,
           3059.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXE",
@@ -19373,7 +19723,9 @@
           1363.0,
           857.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPE",
@@ -19479,7 +19831,9 @@
           4166.0,
           5780.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXPD",
@@ -19585,7 +19939,9 @@
           2021.889,
           2631.118
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "EXR",
@@ -19691,7 +20047,9 @@
           142.12,
           115.38
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XOM",
@@ -19797,7 +20155,9 @@
           35744.0,
           60558.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FFIV",
@@ -19903,7 +20263,9 @@
           414.433,
           428.678
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDS",
@@ -20009,7 +20371,9 @@
           270.684,
           289.99
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FICO",
@@ -20115,7 +20479,9 @@
           529.148,
           592.53
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FAST",
@@ -20221,7 +20587,9 @@
           1245.3,
           1557.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FRT",
@@ -20327,7 +20695,9 @@
           249.755,
           262.108
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDX",
@@ -20433,7 +20803,9 @@
           12672.0,
           12672.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FDXF",
@@ -20539,7 +20911,9 @@
           1154.0,
           1140.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FERG",
@@ -20645,7 +21019,9 @@
           3964.0,
           3669.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FIS",
@@ -20751,7 +21127,9 @@
           1944.0,
           2413.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FITB",
@@ -20857,7 +21235,9 @@
           3238.0,
           3238.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FSLR",
@@ -20963,7 +21343,9 @@
           1294.04,
           1476.221
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FE",
@@ -21069,7 +21451,9 @@
           939.0,
           930.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FISV",
@@ -21175,7 +21559,9 @@
           3981.0,
           3909.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FLEX",
@@ -21281,7 +21667,9 @@
           4679.0,
           4679.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "F",
@@ -21387,7 +21775,9 @@
           64528.0,
           63331.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTNT",
@@ -21493,7 +21883,9 @@
           1691.2,
           1455.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FTV",
@@ -21599,7 +21991,9 @@
           683.6,
           657.8
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOXA",
@@ -21705,7 +22099,9 @@
           3455.0,
           3455.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FOX",
@@ -21811,7 +22207,9 @@
           3455.0,
           3455.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "BEN",
@@ -21917,7 +22315,9 @@
           1541.7,
           1566.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "FCX",
@@ -22023,7 +22423,9 @@
           977.0,
           716.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GRMN",
@@ -22129,7 +22531,9 @@
           1253.015,
           1153.215
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IT",
@@ -22235,7 +22639,9 @@
           1684.522,
           1202.212
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GE",
@@ -22341,7 +22747,9 @@
           9269.0,
           9789.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEHC",
@@ -22447,7 +22855,9 @@
           3719.0,
           3535.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEV",
@@ -22553,7 +22963,9 @@
           7866.0,
           8796.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GEN",
@@ -22659,7 +23071,9 @@
           216.0,
           235.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GNRC",
@@ -22765,7 +23179,9 @@
           602.739,
           669.204
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GD",
@@ -22871,7 +23287,9 @@
           2406.0,
           2398.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GIS",
@@ -22977,7 +23395,9 @@
           1646.8,
           1646.8
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GM",
@@ -23083,7 +23503,9 @@
           58320.0,
           61640.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPC",
@@ -23189,7 +23611,9 @@
           2370.939,
           2652.749
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GILD",
@@ -23295,7 +23719,9 @@
           4913.0,
           5055.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GPN",
@@ -23401,7 +23827,9 @@
           784.174,
           1576.986
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GL",
@@ -23507,7 +23935,9 @@
           768.592,
           727.521
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GDDY",
@@ -23613,7 +24043,9 @@
           83.1,
           92.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GS",
@@ -23719,7 +24151,9 @@
           185842.0,
           230286.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAL",
@@ -23825,7 +24259,9 @@
           4942.0,
           5325.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HIG",
@@ -23931,7 +24367,9 @@
           13507.0,
           14046.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HAS",
@@ -24037,7 +24475,9 @@
           1059.8,
           751.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HCA",
@@ -24143,7 +24583,9 @@
           10867.0,
           12281.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DOC",
@@ -24249,7 +24691,9 @@
           78.327,
           72.134
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSIC",
@@ -24355,7 +24799,9 @@
           1651.0,
           1763.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HSY",
@@ -24461,7 +24907,9 @@
           729.547,
           907.368
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPE",
@@ -24567,7 +25015,9 @@
           4916.0,
           5919.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HLT",
@@ -24673,7 +25123,9 @@
           1690.0,
           1790.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HD",
@@ -24779,7 +25231,9 @@
           5030.0,
           6059.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HONA",
@@ -24875,7 +25329,9 @@
           2156.0,
           2462.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HON",
@@ -24981,7 +25437,9 @@
           7621.0,
           8337.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HRL",
@@ -25087,7 +25545,9 @@
           784.812,
           728.472
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HST",
@@ -25193,7 +25653,9 @@
           153.0,
           224.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HWM",
@@ -25299,7 +25761,9 @@
           779.0,
           1040.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HPQ",
@@ -25405,7 +25869,9 @@
           5692.0,
           6125.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUBB",
@@ -25511,7 +25977,9 @@
           879.4,
           1150.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HUM",
@@ -25617,7 +26085,9 @@
           3270.0,
           5695.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HBAN",
@@ -25733,7 +26203,9 @@
           null,
           8578.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HII",
@@ -25839,7 +26311,9 @@
           339.0,
           452.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBM",
@@ -25945,7 +26419,9 @@
           8112.0,
           6044.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IEX",
@@ -26051,7 +26527,9 @@
           477.1,
           506.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IDXX",
@@ -26157,7 +26635,9 @@
           552.378,
           627.083
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ITW",
@@ -26263,7 +26743,9 @@
           3227.0,
           3564.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INCY",
@@ -26369,7 +26851,9 @@
           1024.407,
           1125.203
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IR",
@@ -26475,7 +26959,9 @@
           1518.0,
           1514.8
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PODD",
@@ -26581,7 +27067,9 @@
           511.3,
           580.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTC",
@@ -26687,7 +27175,9 @@
           3839.0,
           4033.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IBKR",
@@ -26793,7 +27283,9 @@
           90475.0,
           108939.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ICE",
@@ -26899,7 +27391,9 @@
           1552.0,
           1869.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IFF",
@@ -27005,7 +27499,9 @@
           1731.0,
           1424.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IP",
@@ -27111,7 +27607,9 @@
           3791.0,
           3773.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INTU",
@@ -27217,7 +27715,9 @@
           530.0,
           834.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ISRG",
@@ -27333,7 +27833,9 @@
           1527.3,
           1433.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IVZ",
@@ -27439,7 +27941,9 @@
           1150.8,
           1269.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "INVH",
@@ -27545,7 +28049,9 @@
           59.947,
           99.285
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IQV",
@@ -27651,7 +28157,9 @@
           1668.0,
           1626.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "IRM",
@@ -27757,7 +28265,9 @@
           1443.669,
           1487.128
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBHT",
@@ -27863,7 +28373,9 @@
           1160.371,
           1461.271
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JBL",
@@ -27969,7 +28481,9 @@
           4039.0,
           5473.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JKHY",
@@ -28075,7 +28589,9 @@
           324.636,
           288.856
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "J",
@@ -28181,7 +28697,9 @@
           1386.253,
           1661.062
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JNJ",
@@ -28287,7 +28805,9 @@
           17178.0,
           19046.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JCI",
@@ -28393,7 +28913,9 @@
           6269.0,
           6970.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "JPM",
@@ -28499,7 +29021,9 @@
           111599.0,
           179939.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KVUE",
@@ -28605,7 +29129,9 @@
           2382.0,
           2476.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KDP",
@@ -28711,7 +29237,9 @@
           1671.0,
           1539.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEY",
@@ -28817,7 +29345,9 @@
           2244.0,
           2174.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KEYS",
@@ -28923,7 +29453,9 @@
           939.0,
           1022.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMB",
@@ -29029,7 +29561,9 @@
           1783.0,
           1858.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KIM",
@@ -29135,7 +29669,9 @@
           281.351,
           289.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KMI",
@@ -29241,7 +29777,9 @@
           1714.0,
           1563.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KKR",
@@ -29347,7 +29885,9 @@
           487.526,
           476.797
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KLAC",
@@ -29453,7 +29993,9 @@
           2889.208,
           2889.208
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KHC",
@@ -29559,7 +30101,9 @@
           2254.0,
           2286.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "KR",
@@ -29665,7 +30209,9 @@
           2192.0,
           2101.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LHX",
@@ -29771,7 +30317,9 @@
           1371.0,
           1950.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LH",
@@ -29877,7 +30425,9 @@
           2103.8,
           2342.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LRCX",
@@ -29983,7 +30533,9 @@
           5339.682,
           5339.682
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LVS",
@@ -30089,7 +30641,9 @@
           742.0,
           622.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LDOS",
@@ -30195,7 +30749,9 @@
           1828.0,
           2968.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LEN",
@@ -30301,7 +30857,9 @@
           1310.019,
           1473.804
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LII",
@@ -30407,7 +30965,9 @@
           578.8,
           918.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LLY",
@@ -30513,7 +31073,9 @@
           17760.0,
           20083.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LIN",
@@ -30619,7 +31181,9 @@
           4966.0,
           5632.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYV",
@@ -30725,7 +31289,9 @@
           2009.055,
           2885.249
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LMT",
@@ -30831,7 +31397,9 @@
           3901.0,
           3356.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "L",
@@ -30937,7 +31505,9 @@
           10145.0,
           11723.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LOW",
@@ -31043,7 +31613,9 @@
           1090.0,
           1151.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LULU",
@@ -31149,7 +31721,9 @@
           190.657,
           164.973
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LITE",
@@ -31255,7 +31829,9 @@
           520.3,
           441.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LYB",
@@ -31361,7 +31937,9 @@
           2362.0,
           3754.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTB",
@@ -31477,7 +32055,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPC",
@@ -31583,7 +32163,9 @@
           10317.0,
           15740.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAR",
@@ -31689,7 +32271,9 @@
           2909.0,
           3338.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRSH",
@@ -31795,7 +32379,9 @@
           7015.0,
           8289.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MLM",
@@ -31901,7 +32487,9 @@
           715.0,
           1020.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRVL",
@@ -32007,7 +32595,9 @@
           2186.6,
           1871.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAS",
@@ -32113,7 +32703,9 @@
           1028.0,
           1342.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MA",
@@ -32219,7 +32811,9 @@
           4609.0,
           5047.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MKC",
@@ -32325,7 +32919,9 @@
           628.9,
           709.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCD",
@@ -32431,7 +33027,9 @@
           2466.0,
           2485.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCK",
@@ -32537,7 +33135,9 @@
           24247.0,
           30316.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDT",
@@ -32643,7 +33243,9 @@
           6643.0,
           6643.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRK",
@@ -32749,7 +33351,9 @@
           11775.0,
           12564.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "META",
@@ -32855,7 +33459,9 @@
           19769.0,
           21752.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MET",
@@ -32961,7 +33567,9 @@
           49059.0,
           50635.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MTD",
@@ -33067,7 +33675,9 @@
           778.243,
           731.48
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MGM",
@@ -33173,7 +33783,9 @@
           1122.94,
           1218.354
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCHP",
@@ -33279,7 +33891,9 @@
           889.7,
           957.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MU",
@@ -33493,7 +34107,9 @@
           80876.0,
           80876.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MAA",
@@ -33599,7 +34215,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MRNA",
@@ -33705,7 +34323,9 @@
           184.0,
           17.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TAP",
@@ -33811,7 +34431,9 @@
           703.0,
           1004.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MDLZ",
@@ -33917,7 +34539,9 @@
           3903.0,
           4397.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MPWR",
@@ -34023,7 +34647,9 @@
           255.626,
           343.62
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MNST",
@@ -34129,7 +34755,9 @@
           1618.072,
           1902.421
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MCO",
@@ -34235,7 +34863,9 @@
           2024.0,
           1919.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MS",
@@ -34341,7 +34971,9 @@
           114720.0,
           151010.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MOS",
@@ -34447,7 +35079,9 @@
           970.0,
           860.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSI",
@@ -34553,7 +35187,9 @@
           2200.0,
           2160.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "MSCI",
@@ -34659,7 +35295,9 @@
           986.712,
           884.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDAQ",
@@ -34765,7 +35403,9 @@
           943.0,
           1182.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTAP",
@@ -34871,7 +35511,9 @@
           1286.0,
           1286.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NFLX",
@@ -34977,7 +35619,9 @@
           2031.476,
           2003.958
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEM",
@@ -35083,7 +35727,9 @@
           1067.0,
           686.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWSA",
@@ -35189,7 +35835,9 @@
           1757.0,
           1757.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NWS",
@@ -35295,7 +35943,9 @@
           1757.0,
           1757.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NEE",
@@ -35401,7 +36051,9 @@
           4018.0,
           4708.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NKE",
@@ -35507,7 +36159,9 @@
           5931.0,
           5931.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NI",
@@ -35613,7 +36267,9 @@
           1197.5,
           846.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NDSN",
@@ -35719,7 +36375,9 @@
           553.324,
           606.689
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NSC",
@@ -35825,7 +36483,9 @@
           715.0,
           886.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NTRS",
@@ -35941,7 +36601,9 @@
           null,
           41.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOC",
@@ -36047,7 +36709,9 @@
           1375.0,
           2311.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NCLH",
@@ -36153,7 +36817,9 @@
           291.659,
           276.958
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NRG",
@@ -36259,7 +36925,9 @@
           4065.0,
           3534.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NUE",
@@ -36365,7 +37033,9 @@
           3105.0,
           3567.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVDA",
@@ -36471,7 +37141,9 @@
           38466.0,
           40710.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NVR",
@@ -36577,7 +37249,9 @@
           32.742,
           49.642
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NXPI",
@@ -36683,7 +37357,9 @@
           1055.0,
           1274.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORLY",
@@ -36789,7 +37465,9 @@
           389.793,
           457.785
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OXY",
@@ -36895,7 +37573,9 @@
           2575.0,
           3142.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ODFL",
@@ -37001,7 +37681,9 @@
           471.947,
           594.54
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OMC",
@@ -37107,7 +37789,9 @@
           14398.0,
           13462.8
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ON",
@@ -37213,7 +37897,9 @@
           908.0,
           897.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OKE",
@@ -37319,7 +38005,9 @@
           3010.0,
           3550.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ORCL",
@@ -37425,7 +38113,9 @@
           10385.0,
           10385.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "OTIS",
@@ -37531,7 +38221,9 @@
           3688.0,
           3985.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCAR",
@@ -37637,7 +38329,9 @@
           21735.6,
           21688.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PKG",
@@ -37743,7 +38437,9 @@
           1255.8,
           1432.8
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLTR",
@@ -37849,7 +38545,9 @@
           1042.065,
           1485.249
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PANW",
@@ -37955,7 +38653,9 @@
           2965.0,
           2852.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSKY",
@@ -38071,7 +38771,9 @@
           6615.0,
           6178.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PH",
@@ -38177,7 +38879,9 @@
           3170.0,
           3161.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PAYX",
@@ -38283,7 +38987,9 @@
           1507.6,
           1507.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PYPL",
@@ -38389,7 +39095,9 @@
           39038.0,
           40506.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNR",
@@ -38495,7 +39203,9 @@
           673.2,
           482.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEP",
@@ -38601,7 +39311,9 @@
           9265.0,
           13722.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFE",
@@ -38707,7 +39419,9 @@
           11874.0,
           12490.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PCG",
@@ -38813,7 +39527,9 @@
           2267.0,
           1884.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PM",
@@ -38919,7 +39635,9 @@
           4572.0,
           5179.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSX",
@@ -39025,7 +39743,9 @@
           9771.0,
           11717.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNW",
@@ -39131,7 +39851,9 @@
           579.831,
           775.549
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PNC",
@@ -39247,7 +39969,9 @@
           null,
           7090.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPG",
@@ -39353,7 +40077,9 @@
           2783.0,
           3912.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PPL",
@@ -39459,7 +40185,9 @@
           1108.0,
           1331.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PFG",
@@ -39565,7 +40293,9 @@
           22894.6,
           22385.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PG",
@@ -39671,7 +40401,9 @@
           6056.0,
           6056.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PGR",
@@ -39777,7 +40509,9 @@
           19445.0,
           21025.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PLD",
@@ -39883,7 +40617,9 @@
           601.344,
           601.344
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PRU",
@@ -39989,7 +40725,9 @@
           44077.0,
           44218.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PEG",
@@ -40095,7 +40833,9 @@
           1888.0,
           1903.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PTC",
@@ -40201,7 +40941,9 @@
           1001.085,
           824.107
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PSA",
@@ -40307,7 +41049,9 @@
           142.108,
           173.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PHM",
@@ -40413,7 +41157,9 @@
           252.308,
           252.308
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "PWR",
@@ -40519,7 +41265,9 @@
           6847.091,
           8532.311
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "QCOM",
@@ -40625,7 +41373,9 @@
           2855.0,
           4668.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DGX",
@@ -40731,7 +41481,9 @@
           1408.0,
           1666.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "Q",
@@ -40837,7 +41589,9 @@
           656.0,
           1138.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RL",
@@ -40943,7 +41697,9 @@
           491.7,
           388.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RJF",
@@ -41049,7 +41805,9 @@
           2821.0,
           3331.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RDDT",
@@ -41155,7 +41913,9 @@
           590.162,
           650.098
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RTX",
@@ -41261,7 +42021,9 @@
           14701.0,
           13942.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "O",
@@ -41367,7 +42129,9 @@
           1053.487,
           1134.987
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REG",
@@ -41473,7 +42237,9 @@
           210.449,
           208.313
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "REGN",
@@ -41579,7 +42345,9 @@
           5741.1,
           6565.4
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RF",
@@ -41685,7 +42453,9 @@
           571.0,
           495.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RSG",
@@ -41801,7 +42571,9 @@
           1897.0,
           2029.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RMD",
@@ -41907,7 +42679,9 @@
           939.492,
           998.837
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RVTY",
@@ -42013,7 +42787,9 @@
           744.671,
           691.38
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "HOOD",
@@ -42119,7 +42895,9 @@
           18420.0,
           23471.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROK",
@@ -42225,7 +43003,9 @@
           1931.0,
           1937.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROL",
@@ -42331,7 +43111,9 @@
           202.518,
           238.989
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROP",
@@ -42437,7 +43219,9 @@
           1001.0,
           927.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ROST",
@@ -42543,7 +43327,9 @@
           181.301,
           212.54
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "RCL",
@@ -42649,7 +43435,9 @@
           317.0,
           441.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPGI",
@@ -42755,7 +43543,9 @@
           3441.0,
           3438.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "CRM",
@@ -42861,7 +43651,9 @@
           14339.0,
           5080.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNDK",
@@ -42967,7 +43759,9 @@
           4708.0,
           2726.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBAC",
@@ -43073,7 +43867,9 @@
           171.256,
           175.976
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SLB",
@@ -43179,7 +43975,9 @@
           8689.0,
           9132.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STX",
@@ -43285,7 +44083,9 @@
           1534.0,
           1534.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SRE",
@@ -43391,7 +44191,9 @@
           1767.0,
           1442.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "NOW",
@@ -43497,7 +44299,9 @@
           2627.0,
           2201.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SHW",
@@ -43603,7 +44407,9 @@
           2791.2,
           3571.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SPG",
@@ -43709,7 +44515,9 @@
           934.077,
           880.807
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWKS",
@@ -43815,7 +44623,9 @@
           598.1,
           348.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SJM",
@@ -43921,7 +44731,9 @@
           656.3,
           656.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SW",
@@ -44027,7 +44839,9 @@
           4268.0,
           4922.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNA",
@@ -44133,7 +44947,9 @@
           881.4,
           942.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SOLV",
@@ -44239,7 +45055,9 @@
           1034.0,
           1310.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SO",
@@ -44345,7 +45163,9 @@
           2251.0,
           2301.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "LUV",
@@ -44451,7 +45271,9 @@
           98.0,
           78.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SWK",
@@ -44557,7 +45379,9 @@
           775.0,
           1279.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SBUX",
@@ -44663,7 +45487,9 @@
           1277.5,
           1304.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STT",
@@ -44769,7 +45595,9 @@
           5016.0,
           5563.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STLD",
@@ -44875,7 +45703,9 @@
           1682.66,
           2442.938
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "STE",
@@ -44981,7 +45811,9 @@
           1092.8,
           1013.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYK",
@@ -45087,7 +45919,9 @@
           4039.0,
           3743.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SMCI",
@@ -45193,7 +46027,9 @@
           2203.942,
           8413.396
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYF",
@@ -45299,7 +46135,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SNPS",
@@ -45405,7 +46243,9 @@
           1548.858,
           1267.305
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "SYY",
@@ -45511,7 +46351,9 @@
           5865.0,
           5755.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMUS",
@@ -45617,7 +46459,9 @@
           4874.0,
           5247.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TROW",
@@ -45723,7 +46567,9 @@
           931.2,
           941.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTWO",
@@ -45829,7 +46675,9 @@
           737.0,
           606.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPR",
@@ -45935,7 +46783,9 @@
           239.3,
           305.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRGP",
@@ -46041,7 +46891,9 @@
           1474.6,
           1952.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TGT",
@@ -46147,7 +46999,9 @@
           1265.0,
           1265.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TEL",
@@ -46253,7 +47107,9 @@
           3403.0,
           3749.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDY",
@@ -46359,7 +47215,9 @@
           992.4,
           937.7
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TER",
@@ -46465,7 +47323,9 @@
           786.913,
           1109.711
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSLA",
@@ -46571,7 +47431,9 @@
           4576.0,
           4087.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXN",
@@ -46677,7 +47539,9 @@
           1963.0,
           2520.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TPL",
@@ -46783,7 +47647,9 @@
           164.905,
           174.77
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TXT",
@@ -46889,7 +47755,9 @@
           1397.0,
           1440.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TMO",
@@ -46995,7 +47863,9 @@
           8900.0,
           9451.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TJX",
@@ -47101,7 +47971,9 @@
           602.0,
           642.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TKO",
@@ -47207,7 +48079,9 @@
           558.277,
           1059.9
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TTD",
@@ -47313,7 +48187,9 @@
           3770.194,
           3200.824
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSCO",
@@ -47419,7 +48295,9 @@
           27.045,
           205.995
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TT",
@@ -47525,7 +48403,9 @@
           3235.3,
           4234.6
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TDG",
@@ -47631,7 +48511,9 @@
           1617.0,
           1817.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRV",
@@ -47737,7 +48619,9 @@
           21888.0,
           23467.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TRMB",
@@ -47843,7 +48727,9 @@
           856.0,
           617.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TFC",
@@ -47949,7 +48835,9 @@
           1624.0,
           2122.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TYL",
@@ -48055,7 +48943,9 @@
           638.798,
           724.866
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "TSN",
@@ -48161,7 +49051,9 @@
           2524.0,
           2457.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "USB",
@@ -48267,7 +49159,9 @@
           7960.0,
           8582.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UBER",
@@ -48373,7 +49267,9 @@
           3827.0,
           4298.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UDR",
@@ -48479,7 +49375,9 @@
           149.979,
           171.667
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ULTA",
@@ -48595,7 +49493,9 @@
           null,
           248.24
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNP",
@@ -48701,7 +49601,9 @@
           1860.0,
           2130.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UAL",
@@ -48807,7 +49709,9 @@
           2391.0,
           2473.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UPS",
@@ -48913,7 +49817,9 @@
           11209.0,
           10710.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "URI",
@@ -49019,7 +49925,9 @@
           2510.0,
           2797.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UNH",
@@ -49125,7 +50033,9 @@
           23018.0,
           26587.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "UHS",
@@ -49231,7 +50141,9 @@
           2602.434,
           2801.108
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLO",
@@ -49337,7 +50249,9 @@
           9207.0,
           13928.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VEEV",
@@ -49443,7 +50357,9 @@
           1259.737,
           568.02
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTR",
@@ -49549,7 +50465,9 @@
           250.833,
           257.139
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VLTO",
@@ -49655,7 +50573,9 @@
           897.0,
           921.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSN",
@@ -49761,7 +50681,9 @@
           7.7,
           9.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRSK",
@@ -49867,7 +50789,9 @@
           413.0,
           400.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VZ",
@@ -49973,7 +50897,9 @@
           27097.0,
           26486.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRTX",
@@ -50079,7 +51005,9 @@
           2052.8,
           2134.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VRT",
@@ -50185,7 +51113,9 @@
           3109.0,
           3750.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VTRS",
@@ -50291,7 +51221,9 @@
           2577.6,
           2581.1
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VICI",
@@ -50397,7 +51329,9 @@
           2.357,
           4.619
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "V",
@@ -50503,7 +51437,9 @@
           3126.0,
           3527.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VST",
@@ -50609,7 +51545,9 @@
           2323.0,
           2293.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VMRK",
@@ -50715,7 +51653,9 @@
           null,
           null
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "VMC",
@@ -50821,7 +51761,9 @@
           887.7,
           1100.3
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WRB",
@@ -50927,7 +51869,9 @@
           6971.794,
           7402.649
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "GWW",
@@ -51033,7 +51977,9 @@
           2329.0,
           2825.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAB",
@@ -51139,7 +52085,9 @@
           1410.0,
           1720.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMT",
@@ -51245,7 +52193,9 @@
           11172.0,
           10662.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "DIS",
@@ -51351,7 +52301,9 @@
           10434.0,
           14553.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WBD",
@@ -51457,7 +52409,9 @@
           5294.0,
           4952.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WM",
@@ -51563,7 +52517,9 @@
           3435.0,
           3495.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WAT",
@@ -51669,7 +52625,9 @@
           828.844,
           1753.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WEC",
@@ -51775,7 +52733,9 @@
           2062.7,
           1529.2
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WFC",
@@ -51881,7 +52841,9 @@
           22981.0,
           30769.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WELL",
@@ -51987,7 +52949,9 @@
           2373.409,
           2553.021
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WST",
@@ -52093,7 +53057,9 @@
           574.4,
           712.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDC",
@@ -52199,7 +53165,9 @@
           2026.0,
           1894.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WY",
@@ -52305,7 +53273,9 @@
           303.0,
           373.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WSM",
@@ -52411,7 +53381,9 @@
           126.821,
           139.347
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WMB",
@@ -52517,7 +53489,9 @@
           1532.0,
           1557.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WTW",
@@ -52623,7 +53597,9 @@
           1833.0,
           1851.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WDAY",
@@ -52729,7 +53705,9 @@
           2332.0,
           1575.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "WYNN",
@@ -52835,7 +53813,9 @@
           402.641,
           336.629
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XEL",
@@ -52941,7 +53921,9 @@
           1330.0,
           1255.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "XYL",
@@ -53047,7 +54029,9 @@
           1759.0,
           1875.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "YUM",
@@ -53153,7 +54137,9 @@
           841.0,
           623.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBRA",
@@ -53259,7 +54245,9 @@
           801.0,
           990.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZBH",
@@ -53365,7 +54353,9 @@
           1704.4,
           1769.5
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     },
     {
       "ticker": "ZTS",
@@ -53471,7 +54461,9 @@
           1590.0,
           1571.0
         ]
-      }
+      },
+      "moat": null,
+      "moat_score": null
     }
   ]
 }
