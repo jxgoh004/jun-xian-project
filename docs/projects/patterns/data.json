@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-09-07",
+  "as_of_date": "2026-09-08",
   "detections": [
     {
       "R": -0.7192983630255251,
@@ -2299,14 +2299,14 @@
       "yolo_conf": 0.19802609086036682
     }
   ],
-  "generated_at": "2026-09-07T13:15:16.262687+00:00",
+  "generated_at": "2026-09-08T11:57:27.470782+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-09-07T13:15:16.262687+00:00",
-    "run_id": "34126308001",
+    "generated_at": "2026-09-08T11:57:27.470782+00:00",
+    "run_id": "34223370339",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
