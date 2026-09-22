@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-09-21",
+  "as_of_date": "2026-09-22",
   "detections": [
     {
       "R": -1.0,
@@ -45,7 +45,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 192.76400756835938,
+      "current_price": 186.11000061035156,
       "entry_date": "2026-09-03",
       "entry_price": 190.0,
       "exit_date": "2026-09-08",
@@ -64,7 +64,7 @@
       "stop_price": 185.44000244140625,
       "target_price": 199.1199951171875,
       "ticker": "ACN",
-      "yolo_conf": 0.3412894010543823
+      "yolo_conf": 0.34128981828689575
     },
     {
       "R": 2.0,
@@ -110,7 +110,7 @@
       "confirmation_bar_index": 110,
       "confirmation_date": "2026-08-28",
       "confirmation_type": "ice_cream",
-      "current_price": 135.94000244140625,
+      "current_price": 133.97000122070312,
       "entry_date": "2026-08-31",
       "entry_price": 136.97999572753906,
       "exit_date": "2026-09-02",
@@ -175,7 +175,7 @@
       "confirmation_bar_index": 123,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "pin",
-      "current_price": 135.94000244140625,
+      "current_price": 133.97000122070312,
       "entry_date": "2026-09-18",
       "entry_price": 136.85000610351562,
       "exit_date": "2026-09-18",
@@ -240,7 +240,7 @@
       "confirmation_bar_index": 123,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "pin",
-      "current_price": 135.94000244140625,
+      "current_price": 133.97000122070312,
       "entry_date": "2026-09-18",
       "entry_price": 136.85000610351562,
       "exit_date": "2026-09-18",
@@ -305,7 +305,7 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-08-25",
       "confirmation_type": "pin",
-      "current_price": 126.82499694824219,
+      "current_price": 127.91000366210938,
       "entry_date": "2026-08-26",
       "entry_price": 133.3800048828125,
       "exit_date": "2026-09-01",
@@ -324,7 +324,7 @@
       "stop_price": 130.7899932861328,
       "target_price": 138.56002807617188,
       "ticker": "APO",
-      "yolo_conf": 0.4003392457962036
+      "yolo_conf": 0.40033915638923645
     },
     {
       "R": -1.0,
@@ -370,7 +370,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-09-04",
       "confirmation_type": "ice_cream",
-      "current_price": 125.80999755859375,
+      "current_price": 126.66999816894531,
       "entry_date": "2026-09-08",
       "entry_price": 137.92250298907393,
       "exit_date": "2026-09-09",
@@ -435,7 +435,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 239.27999877929688,
+      "current_price": 236.61000061035156,
       "entry_date": "2026-09-03",
       "entry_price": 265.10169128837316,
       "exit_date": "2026-09-08",
@@ -454,7 +454,7 @@
       "stop_price": 259.34708069366195,
       "target_price": 276.6109124777956,
       "ticker": "AJG",
-      "yolo_conf": 0.6560366153717041
+      "yolo_conf": 0.6560368537902832
     },
     {
       "R": -1.0,
@@ -500,7 +500,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 283.5199890136719,
+      "current_price": 277.3800048828125,
       "entry_date": "2026-09-03",
       "entry_price": 286.3800048828125,
       "exit_date": "2026-09-09",
@@ -565,7 +565,7 @@
       "confirmation_bar_index": 118,
       "confirmation_date": "2026-09-10",
       "confirmation_type": "ice_cream",
-      "current_price": 94.1500015258789,
+      "current_price": 93.22000122070312,
       "entry_date": "2026-09-11",
       "entry_price": 88.1154132403312,
       "exit_date": "2026-09-14",
@@ -630,7 +630,7 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-08-25",
       "confirmation_type": "ice_cream",
-      "current_price": 215.6239013671875,
+      "current_price": 219.07000732421875,
       "entry_date": "2026-08-26",
       "entry_price": 219.33999633789062,
       "exit_date": "2026-08-31",
@@ -649,7 +649,7 @@
       "stop_price": 213.9600067138672,
       "target_price": 230.0999755859375,
       "ticker": "BIIB",
-      "yolo_conf": 0.37242963910102844
+      "yolo_conf": 0.3724293112754822
     },
     {
       "R": -1.0,
@@ -695,7 +695,7 @@
       "confirmation_bar_index": 111,
       "confirmation_date": "2026-08-31",
       "confirmation_type": "ice_cream",
-      "current_price": 66.12000274658203,
+      "current_price": 67.18000030517578,
       "entry_date": "2026-09-01",
       "entry_price": 72.11000061035156,
       "exit_date": "2026-09-01",
@@ -760,7 +760,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-09-09",
       "confirmation_type": "ice_cream",
-      "current_price": 273.3599853515625,
+      "current_price": 271.42999267578125,
       "entry_date": "2026-09-10",
       "entry_price": 290.989990234375,
       "exit_date": "2026-09-10",
@@ -779,7 +779,7 @@
       "stop_price": 287.79998779296875,
       "target_price": 297.3699951171875,
       "ticker": "CBOE",
-      "yolo_conf": 0.4721294045448303
+      "yolo_conf": 0.47212928533554077
     },
     {
       "R": -1.0,
@@ -825,7 +825,7 @@
       "confirmation_bar_index": 110,
       "confirmation_date": "2026-08-28",
       "confirmation_type": "mark_up",
-      "current_price": 142.57000732421875,
+      "current_price": 143.2100067138672,
       "entry_date": "2026-08-31",
       "entry_price": 149.33999633789062,
       "exit_date": "2026-08-31",
@@ -844,7 +844,7 @@
       "stop_price": 145.7100067138672,
       "target_price": 156.5999755859375,
       "ticker": "CBRE",
-      "yolo_conf": 0.33907294273376465
+      "yolo_conf": 0.33907264471054077
     },
     {
       "R": -1.0,
@@ -878,11 +878,11 @@
           "open": 132.72000122070312
         },
         {
-          "close": 126.6449966430664,
+          "close": 123.2699966430664,
           "date": "2026-09-21",
           "high": 127.6500015258789,
-          "low": 126.0,
-          "open": 132.72000122070312
+          "low": 122.20999908447266,
+          "open": 126.58999633789062
         }
       ],
       "chart_path": "charts/CF_2026-09-17.png",
@@ -890,11 +890,11 @@
       "confirmation_bar_index": 123,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "mark_up",
-      "current_price": 126.6449966430664,
+      "current_price": 123.2699966430664,
       "entry_date": "2026-09-18",
       "entry_price": 132.72000122070312,
       "exit_date": "2026-09-21",
-      "exit_price": 126.0,
+      "exit_price": 122.20999908447266,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
@@ -903,13 +903,13 @@
       "hold_days": 3,
       "is_spring": true,
       "mother_bar_index": 121,
-      "risk": 6.720001220703125,
+      "risk": 10.510002136230469,
       "sector": "Basic Materials",
       "status": "stop",
-      "stop_price": 126.0,
-      "target_price": 146.16000366210938,
+      "stop_price": 122.20999908447266,
+      "target_price": 153.74000549316406,
       "ticker": "CF",
-      "yolo_conf": 0.6139458417892456
+      "yolo_conf": 0.6139463186264038
     },
     {
       "R": -1.0,
@@ -955,7 +955,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-09-09",
       "confirmation_type": "ice_cream",
-      "current_price": 133.38999938964844,
+      "current_price": 135.0500030517578,
       "entry_date": "2026-09-10",
       "entry_price": 137.5500030517578,
       "exit_date": "2026-09-14",
@@ -974,7 +974,7 @@
       "stop_price": 133.8699951171875,
       "target_price": 144.91001892089844,
       "ticker": "C",
-      "yolo_conf": 0.24695751070976257
+      "yolo_conf": 0.24695733189582825
     },
     {
       "R": -1.0,
@@ -1020,7 +1020,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-09-09",
       "confirmation_type": "ice_cream",
-      "current_price": 133.38999938964844,
+      "current_price": 135.0500030517578,
       "entry_date": "2026-09-10",
       "entry_price": 137.5500030517578,
       "exit_date": "2026-09-14",
@@ -1039,7 +1039,7 @@
       "stop_price": 133.8699951171875,
       "target_price": 144.91001892089844,
       "ticker": "C",
-      "yolo_conf": 0.24695751070976257
+      "yolo_conf": 0.24695733189582825
     },
     {
       "R": -1.0,
@@ -1085,7 +1085,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 22.815000534057617,
+      "current_price": 22.93000030517578,
       "entry_date": "2026-09-03",
       "entry_price": 26.889999389648438,
       "exit_date": "2026-09-08",
@@ -1104,7 +1104,7 @@
       "stop_price": 26.270000457763672,
       "target_price": 28.12999725341797,
       "ticker": "CMCSA",
-      "yolo_conf": 0.4739270806312561
+      "yolo_conf": 0.473926842212677
     },
     {
       "R": -1.0,
@@ -1150,7 +1150,7 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-08-25",
       "confirmation_type": "ice_cream",
-      "current_price": 571.9650268554688,
+      "current_price": 575.3099975585938,
       "entry_date": "2026-08-26",
       "entry_price": 449.5799865722656,
       "exit_date": "2026-09-01",
@@ -1169,7 +1169,7 @@
       "stop_price": 424.0,
       "target_price": 500.7399597167969,
       "ticker": "DELL",
-      "yolo_conf": 0.6819760799407959
+      "yolo_conf": 0.6819759607315063
     },
     {
       "R": -1.0,
@@ -1215,7 +1215,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-08-26",
       "confirmation_type": "mark_up",
-      "current_price": 426.6300048828125,
+      "current_price": 435.42999267578125,
       "entry_date": "2026-08-27",
       "entry_price": 427.6199951171875,
       "exit_date": "2026-08-28",
@@ -1234,7 +1234,7 @@
       "stop_price": 406.95001220703125,
       "target_price": 468.9599609375,
       "ticker": "ETN",
-      "yolo_conf": 0.0992988646030426
+      "yolo_conf": 0.09929898381233215
     },
     {
       "R": -1.0,
@@ -1280,7 +1280,7 @@
       "confirmation_bar_index": 110,
       "confirmation_date": "2026-08-28",
       "confirmation_type": "mark_up",
-      "current_price": 281.6700134277344,
+      "current_price": 281.0199890136719,
       "entry_date": "2026-08-31",
       "entry_price": 325.239990234375,
       "exit_date": "2026-09-01",
@@ -1299,7 +1299,7 @@
       "stop_price": 315.3900146484375,
       "target_price": 344.93994140625,
       "ticker": "EXPE",
-      "yolo_conf": 0.6547582745552063
+      "yolo_conf": 0.6547579765319824
     },
     {
       "R": -1.0,
@@ -1345,7 +1345,7 @@
       "confirmation_bar_index": 116,
       "confirmation_date": "2026-09-08",
       "confirmation_type": "ice_cream",
-      "current_price": 382.20001220703125,
+      "current_price": 378.5799865722656,
       "entry_date": "2026-09-09",
       "entry_price": 416.8399963378906,
       "exit_date": "2026-09-09",
@@ -1364,7 +1364,7 @@
       "stop_price": 386.8299865722656,
       "target_price": 476.8600158691406,
       "ticker": "HUM",
-      "yolo_conf": 0.49468526244163513
+      "yolo_conf": 0.4946853816509247
     },
     {
       "R": -1.0,
@@ -1410,7 +1410,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-08-26",
       "confirmation_type": "ice_cream",
-      "current_price": 224.0449981689453,
+      "current_price": 222.52999877929688,
       "entry_date": "2026-08-27",
       "entry_price": 233.77999877929688,
       "exit_date": "2026-08-31",
@@ -1429,45 +1429,45 @@
       "stop_price": 228.5800018310547,
       "target_price": 244.17999267578125,
       "ticker": "IEX",
-      "yolo_conf": 0.6491820812225342
+      "yolo_conf": 0.6491820216178894
     },
     {
       "R": -1.0,
       "bars": [
         {
-          "close": 19.43000030517578,
+          "close": 19.200899124145508,
           "date": "2026-08-24",
-          "high": 19.559999465942383,
-          "low": 19.100000381469727,
-          "open": 19.100000381469727
+          "high": 19.329365451108877,
+          "low": 18.87479026431354,
+          "open": 18.87479026431354
         },
         {
-          "close": 19.329999923706055,
+          "close": 19.10207748413086,
           "date": "2026-08-25",
-          "high": 19.3799991607666,
-          "low": 19.174999237060547,
-          "open": 19.280000686645508
+          "high": 19.15148717395226,
+          "low": 18.948904429910364,
+          "open": 19.05266779430946
         },
         {
-          "close": 19.219999313354492,
+          "close": 18.99337387084961,
           "date": "2026-08-26",
-          "high": 19.469999313354492,
-          "low": 19.209999084472656,
-          "open": 19.420000076293945
+          "high": 19.24042608923409,
+          "low": 18.98349155593117,
+          "open": 19.191016399500732
         },
         {
-          "close": 19.200000762939453,
+          "close": 18.97361183166504,
           "date": "2026-08-27",
-          "high": 19.25,
-          "low": 18.985000610351562,
-          "open": 19.040000915527344
+          "high": 19.023021523236373,
+          "low": 18.76114676516226,
+          "open": 18.815498556806073
         },
         {
-          "close": 19.170000076293945,
+          "close": 18.9439640045166,
           "date": "2026-08-28",
-          "high": 19.389999389648438,
-          "low": 19.1299991607666,
-          "open": 19.260000228881836
+          "high": 19.161369276119064,
+          "low": 18.90443474521134,
+          "open": 19.032902953094613
         }
       ],
       "chart_path": "charts/KVUE_2026-08-27.png",
@@ -1475,11 +1475,11 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-08-27",
       "confirmation_type": "ice_cream",
-      "current_price": 17.545000076293945,
+      "current_price": 17.670000076293945,
       "entry_date": "2026-08-28",
-      "entry_price": 19.260000228881836,
+      "entry_price": 19.032902953094613,
       "exit_date": "2026-08-31",
-      "exit_price": 18.985000610351562,
+      "exit_price": 18.76114676516226,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
@@ -1488,13 +1488,13 @@
       "hold_days": 3,
       "is_spring": true,
       "mother_bar_index": 106,
-      "risk": 0.27499961853027344,
+      "risk": 0.271756187932354,
       "sector": "Consumer Defensive",
       "status": "stop",
-      "stop_price": 18.985000610351562,
-      "target_price": 19.809999465942383,
+      "stop_price": 18.76114676516226,
+      "target_price": 19.57641532895932,
       "ticker": "KVUE",
-      "yolo_conf": 0.53084397315979
+      "yolo_conf": 0.5308440923690796
     },
     {
       "R": -1.0,
@@ -1540,7 +1540,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 320.8500061035156,
+      "current_price": 320.989990234375,
       "entry_date": "2026-09-03",
       "entry_price": 333.4700012207031,
       "exit_date": "2026-09-04",
@@ -1605,7 +1605,7 @@
       "confirmation_bar_index": 114,
       "confirmation_date": "2026-09-03",
       "confirmation_type": "pin",
-      "current_price": 1054.7177734375,
+      "current_price": 1043.9599609375,
       "entry_date": "2026-09-04",
       "entry_price": 971.3400268554688,
       "exit_date": "2026-09-14",
@@ -1624,7 +1624,7 @@
       "stop_price": 918.8800048828125,
       "target_price": 1076.2600708007812,
       "ticker": "MU",
-      "yolo_conf": 0.03448745608329773
+      "yolo_conf": 0.034487515687942505
     },
     {
       "R": -1.0,
@@ -1670,7 +1670,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 60.665000915527344,
+      "current_price": 60.16999816894531,
       "entry_date": "2026-09-03",
       "entry_price": 62.16999816894531,
       "exit_date": "2026-09-03",
@@ -1689,7 +1689,7 @@
       "stop_price": 60.97999954223633,
       "target_price": 64.54999542236328,
       "ticker": "MDLZ",
-      "yolo_conf": 0.3228526711463928
+      "yolo_conf": 0.32285261154174805
     },
     {
       "R": -1.0,
@@ -1735,7 +1735,7 @@
       "confirmation_bar_index": 114,
       "confirmation_date": "2026-09-03",
       "confirmation_type": "mark_up",
-      "current_price": 93.97000122070312,
+      "current_price": 94.69000244140625,
       "entry_date": "2026-09-04",
       "entry_price": 96.822683440419,
       "exit_date": "2026-09-08",
@@ -1754,7 +1754,7 @@
       "stop_price": 94.29123831494319,
       "target_price": 101.88557369137062,
       "ticker": "NDAQ",
-      "yolo_conf": 0.6983236074447632
+      "yolo_conf": 0.6983234882354736
     },
     {
       "R": 2.0,
@@ -1800,7 +1800,7 @@
       "confirmation_bar_index": 119,
       "confirmation_date": "2026-09-11",
       "confirmation_type": "pin",
-      "current_price": 247.59010314941406,
+      "current_price": 242.39999389648438,
       "entry_date": "2026-09-14",
       "entry_price": 257.25,
       "exit_date": "2026-09-17",
@@ -1865,7 +1865,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-09-04",
       "confirmation_type": "ice_cream",
-      "current_price": 248.36000061035156,
+      "current_price": 244.8800048828125,
       "entry_date": "2026-09-08",
       "entry_price": 233.61000061035156,
       "exit_date": "2026-09-08",
@@ -1884,7 +1884,7 @@
       "stop_price": 231.52000427246094,
       "target_price": 237.7899932861328,
       "ticker": "DGX",
-      "yolo_conf": 0.6353373527526855
+      "yolo_conf": 0.635337233543396
     },
     {
       "R": -1.0,
@@ -1930,7 +1930,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-09-04",
       "confirmation_type": "ice_cream",
-      "current_price": 248.36000061035156,
+      "current_price": 244.8800048828125,
       "entry_date": "2026-09-08",
       "entry_price": 233.61000061035156,
       "exit_date": "2026-09-08",
@@ -1949,10 +1949,10 @@
       "stop_price": 231.52000427246094,
       "target_price": 237.7899932861328,
       "ticker": "DGX",
-      "yolo_conf": 0.6353373527526855
+      "yolo_conf": 0.635337233543396
     },
     {
-      "R": 1.2186095682206572,
+      "R": 0.8284754379632592,
       "bars": [
         {
           "close": 235.5,
@@ -1995,11 +1995,11 @@
       "confirmation_bar_index": 119,
       "confirmation_date": "2026-09-11",
       "confirmation_type": "pin",
-      "current_price": 248.36000061035156,
+      "current_price": 244.8800048828125,
       "entry_date": "2026-09-14",
       "entry_price": 237.49000549316406,
       "exit_date": "2026-09-21",
-      "exit_price": 248.36000061035156,
+      "exit_price": 244.8800048828125,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
@@ -2014,7 +2014,7 @@
       "stop_price": 228.57000732421875,
       "target_price": 255.3300018310547,
       "ticker": "DGX",
-      "yolo_conf": 0.34899085760116577
+      "yolo_conf": 0.3489910364151001
     },
     {
       "R": -1.0,
@@ -2060,7 +2060,7 @@
       "confirmation_bar_index": 111,
       "confirmation_date": "2026-08-31",
       "confirmation_type": "ice_cream",
-      "current_price": 32.26499938964844,
+      "current_price": 32.33000183105469,
       "entry_date": "2026-09-01",
       "entry_price": 34.849998474121094,
       "exit_date": "2026-09-03",
@@ -2079,7 +2079,7 @@
       "stop_price": 34.33000183105469,
       "target_price": 35.889991760253906,
       "ticker": "TSCO",
-      "yolo_conf": 0.4132236838340759
+      "yolo_conf": 0.4132238030433655
     },
     {
       "R": -1.0,
@@ -2125,7 +2125,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-09-04",
       "confirmation_type": "ice_cream",
-      "current_price": 32.26499938964844,
+      "current_price": 32.33000183105469,
       "entry_date": "2026-09-08",
       "entry_price": 34.9900016784668,
       "exit_date": "2026-09-09",
@@ -2190,7 +2190,7 @@
       "confirmation_bar_index": 116,
       "confirmation_date": "2026-09-08",
       "confirmation_type": "ice_cream",
-      "current_price": 375.989990234375,
+      "current_price": 371.1300048828125,
       "entry_date": "2026-09-09",
       "entry_price": 361.7631184613584,
       "exit_date": "2026-09-09",
@@ -2209,7 +2209,7 @@
       "stop_price": 361.33459494182165,
       "target_price": 362.6201655004318,
       "ticker": "TRV",
-      "yolo_conf": 0.3608689606189728
+      "yolo_conf": 0.3608688414096832
     },
     {
       "R": -1.0,
@@ -2255,7 +2255,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-08-27",
       "confirmation_type": "pin",
-      "current_price": 94.58000183105469,
+      "current_price": 95.18000030517578,
       "entry_date": "2026-08-28",
       "entry_price": 98.69000244140625,
       "exit_date": "2026-09-01",
@@ -2320,7 +2320,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-02",
       "confirmation_type": "ice_cream",
-      "current_price": 103.7300033569336,
+      "current_price": 104.2300033569336,
       "entry_date": "2026-09-03",
       "entry_price": 108.62000274658203,
       "exit_date": "2026-09-04",
@@ -2339,7 +2339,7 @@
       "stop_price": 106.13999938964844,
       "target_price": 113.58000946044922,
       "ticker": "DIS",
-      "yolo_conf": 0.6586846113204956
+      "yolo_conf": 0.658684492111206
     },
     {
       "R": -1.0,
@@ -2385,7 +2385,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-08-26",
       "confirmation_type": "ice_cream",
-      "current_price": 362.8974914550781,
+      "current_price": 361.7799987792969,
       "entry_date": "2026-08-27",
       "entry_price": 350.0,
       "exit_date": "2026-08-27",
@@ -2407,14 +2407,14 @@
       "yolo_conf": 0.19802609086036682
     }
   ],
-  "generated_at": "2026-09-21T13:34:57.159425+00:00",
+  "generated_at": "2026-09-22T12:19:37.929425+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-09-21T13:34:57.159425+00:00",
-    "run_id": "35606480960",
+    "generated_at": "2026-09-22T12:19:37.929425+00:00",
+    "run_id": "35726446803",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
