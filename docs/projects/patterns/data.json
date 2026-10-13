@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-10-12",
+  "as_of_date": "2026-10-13",
   "detections": [
     {
       "R": -1.0,
@@ -45,7 +45,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "pin",
-      "current_price": 128.6199951171875,
+      "current_price": 129.5,
       "entry_date": "2026-09-18",
       "entry_price": 136.85000610351562,
       "exit_date": "2026-09-18",
@@ -110,7 +110,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "pin",
-      "current_price": 128.6199951171875,
+      "current_price": 129.5,
       "entry_date": "2026-09-18",
       "entry_price": 136.85000610351562,
       "exit_date": "2026-09-18",
@@ -132,7 +132,7 @@
       "yolo_conf": 0.602830171585083
     },
     {
-      "R": 0.7082577380133659,
+      "R": -1.0,
       "bars": [
         {
           "close": 202.86000061035156,
@@ -175,22 +175,22 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-10-02",
       "confirmation_type": "pin",
-      "current_price": 212.7100067138672,
+      "current_price": 200.94500732421875,
       "entry_date": "2026-10-05",
       "entry_price": 207.75999450683594,
-      "exit_date": "2026-10-12",
-      "exit_price": 212.7100067138672,
+      "exit_date": "2026-10-13",
+      "exit_price": 200.77099609375,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 7,
+      "hold_days": 8,
       "is_spring": false,
       "mother_bar_index": 117,
       "risk": 6.9889984130859375,
       "sector": "Technology",
-      "status": "open",
+      "status": "stop",
       "stop_price": 200.77099609375,
       "target_price": 221.7379913330078,
       "ticker": "ANET",
@@ -240,7 +240,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-09-17",
       "confirmation_type": "mark_up",
-      "current_price": 114.94499969482422,
+      "current_price": 116.47000122070312,
       "entry_date": "2026-09-18",
       "entry_price": 132.72000122070312,
       "exit_date": "2026-09-21",
@@ -305,7 +305,7 @@
       "confirmation_bar_index": 119,
       "confirmation_date": "2026-10-01",
       "confirmation_type": "ice_cream",
-      "current_price": 430.5400085449219,
+      "current_price": 424.1000061035156,
       "entry_date": "2026-10-02",
       "entry_price": 446.55999755859375,
       "exit_date": "2026-10-08",
@@ -330,32 +330,39 @@
       "R": null,
       "bars": [
         {
-          "close": 475.3999938964844,
+          "close": 999.3499755859375,
           "date": "2026-10-08",
-          "high": 483.8550109863281,
-          "low": 469.9375,
-          "open": 471.0299987792969
+          "high": 1027.0,
+          "low": 973.364990234375,
+          "open": 985.9099731445312
         },
         {
-          "close": 474.1099853515625,
+          "close": 1004.72998046875,
           "date": "2026-10-09",
-          "high": 479.2799987792969,
-          "low": 470.92999267578125,
-          "open": 476.7900085449219
+          "high": 1010.0,
+          "low": 978.0399780273438,
+          "open": 1000.2999877929688
         },
         {
-          "close": 475.9549865722656,
+          "close": 996.7999877929688,
           "date": "2026-10-12",
-          "high": 476.6300048828125,
-          "low": 468.2200012207031,
-          "open": 471.0
+          "high": 1004.280029296875,
+          "low": 991.0,
+          "open": 999.989990234375
+        },
+        {
+          "close": 989.7050170898438,
+          "date": "2026-10-13",
+          "high": 1001.6962280273438,
+          "low": 963.47998046875,
+          "open": 974.5999755859375
         }
       ],
-      "chart_path": "charts/HUBB_2026-10-12.png",
-      "company_name": "Hubbell Incorporated",
-      "confirmation_date": "2026-10-12",
+      "chart_path": "charts/GEV_2026-10-13.png",
+      "company_name": "GE Vernova Inc.",
+      "confirmation_date": "2026-10-13",
       "confirmation_type": "ice_cream",
-      "current_price": 475.9549865722656,
+      "current_price": 989.7050170898438,
       "entry_date": null,
       "entry_price": null,
       "exit_date": null,
@@ -370,13 +377,120 @@
       "risk": null,
       "sector": "Industrials",
       "status": "pending",
-      "stop_price": 468.2200012207031,
-      "target_price": 491.4249572753906,
-      "ticker": "HUBB",
-      "yolo_conf": 0.37563544511795044
+      "stop_price": 963.47998046875,
+      "target_price": 1042.1550903320312,
+      "ticker": "GEV",
+      "yolo_conf": 0.4314660429954529
     },
     {
-      "R": 0.6325511975133405,
+      "R": null,
+      "bars": [
+        {
+          "close": 1004.72998046875,
+          "date": "2026-10-09",
+          "high": 1010.0,
+          "low": 978.0399780273438,
+          "open": 1000.2999877929688
+        },
+        {
+          "close": 996.7999877929688,
+          "date": "2026-10-12",
+          "high": 1004.280029296875,
+          "low": 991.0,
+          "open": 999.989990234375
+        },
+        {
+          "close": 989.7050170898438,
+          "date": "2026-10-13",
+          "high": 1001.6962280273438,
+          "low": 963.47998046875,
+          "open": 974.5999755859375
+        }
+      ],
+      "chart_path": "charts/GEV_2026-10-13.png",
+      "company_name": "GE Vernova Inc.",
+      "confirmation_date": "2026-10-13",
+      "confirmation_type": "ice_cream",
+      "current_price": 989.7050170898438,
+      "entry_date": null,
+      "entry_price": null,
+      "exit_date": null,
+      "exit_price": null,
+      "filters": {
+        "above_50sma": true,
+        "hh_hl": true,
+        "sma_cluster": true
+      },
+      "hold_days": null,
+      "is_spring": true,
+      "risk": null,
+      "sector": "Industrials",
+      "status": "pending",
+      "stop_price": 963.47998046875,
+      "target_price": 1042.1550903320312,
+      "ticker": "GEV",
+      "yolo_conf": 0.4314660429954529
+    },
+    {
+      "R": -1.0,
+      "bars": [
+        {
+          "close": 475.3999938964844,
+          "date": "2026-10-08",
+          "high": 483.8550109863281,
+          "low": 469.9375,
+          "open": 471.0299987792969
+        },
+        {
+          "close": 474.1099853515625,
+          "date": "2026-10-09",
+          "high": 479.2799987792969,
+          "low": 470.92999267578125,
+          "open": 476.7900085449219
+        },
+        {
+          "close": 474.04998779296875,
+          "date": "2026-10-12",
+          "high": 476.6300048828125,
+          "low": 468.2200012207031,
+          "open": 471.0
+        },
+        {
+          "close": 468.7799987792969,
+          "date": "2026-10-13",
+          "high": 474.30999755859375,
+          "low": 468.1700134277344,
+          "open": 471.1099853515625
+        }
+      ],
+      "chart_path": "charts/HUBB_2026-10-12.png",
+      "company_name": "Hubbell Incorporated",
+      "confirmation_bar_index": 126,
+      "confirmation_date": "2026-10-12",
+      "confirmation_type": "ice_cream",
+      "current_price": 468.7799987792969,
+      "entry_date": "2026-10-13",
+      "entry_price": 471.1099853515625,
+      "exit_date": "2026-10-13",
+      "exit_price": 468.1700134277344,
+      "filters": {
+        "above_50sma": true,
+        "hh_hl": true,
+        "sma_cluster": true
+      },
+      "hold_days": 0,
+      "is_spring": true,
+      "mother_bar_index": 124,
+      "risk": 2.939971923828125,
+      "sector": "Industrials",
+      "status": "stop",
+      "stop_price": 468.1700134277344,
+      "target_price": 476.98992919921875,
+      "ticker": "HUBB",
+      "yolo_conf": 0.3740652799606323
+    },
+    {
+      "R": 0.3679850810783399,
       "bars": [
         {
           "close": 229.69815063476562,
@@ -419,17 +533,17 @@
       "confirmation_bar_index": 119,
       "confirmation_date": "2026-10-01",
       "confirmation_type": "ice_cream",
-      "current_price": 235.11500549316406,
+      "current_price": 233.46499633789062,
       "entry_date": "2026-10-02",
       "entry_price": 231.1699981689453,
-      "exit_date": "2026-10-12",
-      "exit_price": 235.11500549316406,
+      "exit_date": "2026-10-13",
+      "exit_price": 233.46499633789062,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 10,
+      "hold_days": 11,
       "is_spring": true,
       "mother_bar_index": 117,
       "risk": 6.236660905436906,
@@ -484,7 +598,7 @@
       "confirmation_bar_index": 116,
       "confirmation_date": "2026-09-28",
       "confirmation_type": "ice_cream",
-      "current_price": 84.76000213623047,
+      "current_price": 87.12000274658203,
       "entry_date": "2026-09-29",
       "entry_price": 85.56999969482422,
       "exit_date": "2026-09-30",
@@ -549,7 +663,7 @@
       "confirmation_bar_index": 116,
       "confirmation_date": "2026-09-28",
       "confirmation_type": "ice_cream",
-      "current_price": 84.76000213623047,
+      "current_price": 87.12000274658203,
       "entry_date": "2026-09-29",
       "entry_price": 85.56999969482422,
       "exit_date": "2026-09-30",
@@ -614,7 +728,7 @@
       "confirmation_bar_index": 116,
       "confirmation_date": "2026-09-28",
       "confirmation_type": "ice_cream",
-      "current_price": 261.0299987792969,
+      "current_price": 261.4075012207031,
       "entry_date": "2026-09-29",
       "entry_price": 271.4599914550781,
       "exit_date": "2026-10-01",
@@ -679,7 +793,7 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-09-23",
       "confirmation_type": "mark_up",
-      "current_price": 237.5399932861328,
+      "current_price": 235.75999450683594,
       "entry_date": "2026-09-24",
       "entry_price": 193.5334520064671,
       "exit_date": "2026-09-25",
@@ -744,7 +858,7 @@
       "confirmation_bar_index": 121,
       "confirmation_date": "2026-10-05",
       "confirmation_type": "ice_cream",
-      "current_price": 201.47500610351562,
+      "current_price": 200.66000366210938,
       "entry_date": "2026-10-06",
       "entry_price": 189.7100067138672,
       "exit_date": "2026-10-08",
@@ -809,7 +923,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-09-25",
       "confirmation_type": "ice_cream",
-      "current_price": 282.1449890136719,
+      "current_price": 286.4200134277344,
       "entry_date": "2026-09-28",
       "entry_price": 257.20001220703125,
       "exit_date": "2026-09-29",
@@ -874,7 +988,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-09-29",
       "confirmation_type": "ice_cream",
-      "current_price": 98.68499755859375,
+      "current_price": 98.65499877929688,
       "entry_date": "2026-09-30",
       "entry_price": 95.9800033569336,
       "exit_date": "2026-10-01",
@@ -896,14 +1010,14 @@
       "yolo_conf": 0.06373929977416992
     }
   ],
-  "generated_at": "2026-10-12T16:27:39.915980+00:00",
+  "generated_at": "2026-10-13T14:46:16.686952+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-10-12T16:27:39.915980+00:00",
-    "run_id": "38277479978",
+    "generated_at": "2026-10-13T14:46:16.686952+00:00",
+    "run_id": "38416164335",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
