@@ -1,7 +1,7 @@
 {
-  "as_of_date": "2026-11-02",
+  "as_of_date": "2026-11-03",
   "detections": [],
-  "generated_at": "2026-11-02T16:48:03.086000+00:00",
+  "generated_at": "2026-11-03T14:49:42.575092+00:00",
   "pipeline_status": {
     "completed": false,
     "errors": [
@@ -9,214 +9,208 @@
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "ALGN",
-        "timestamp": "2026-11-02T16:48:16.449710+00:00"
+        "timestamp": "2026-11-03T14:49:54.837552+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "AAPL",
-        "timestamp": "2026-11-02T16:48:34.549892+00:00"
-      },
-      {
-        "message": "No module named 'six'",
-        "stage": "fetch_or_detect",
-        "ticker": "ANET",
-        "timestamp": "2026-11-02T16:48:39.873804+00:00"
+        "timestamp": "2026-11-03T14:50:12.063303+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "BLK",
-        "timestamp": "2026-11-02T16:48:54.791164+00:00"
+        "timestamp": "2026-11-03T14:50:31.012526+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "CCL",
-        "timestamp": "2026-11-02T16:49:10.349333+00:00"
+        "timestamp": "2026-11-03T14:50:45.735671+00:00"
+      },
+      {
+        "message": "No module named 'six'",
+        "stage": "fetch_or_detect",
+        "ticker": "DHR",
+        "timestamp": "2026-11-03T14:51:24.368192+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "DRI",
-        "timestamp": "2026-11-02T16:49:51.478563+00:00"
+        "timestamp": "2026-11-03T14:51:25.108483+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "FANG",
-        "timestamp": "2026-11-02T16:49:58.245084+00:00"
+        "timestamp": "2026-11-03T14:51:31.499474+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "DLTR",
-        "timestamp": "2026-11-02T16:50:00.437954+00:00"
+        "timestamp": "2026-11-03T14:51:33.672769+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "DOV",
-        "timestamp": "2026-11-02T16:50:03.450655+00:00"
+        "timestamp": "2026-11-03T14:51:36.556913+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "DTE",
-        "timestamp": "2026-11-02T16:50:05.826864+00:00"
+        "timestamp": "2026-11-03T14:51:38.878933+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "EMR",
-        "timestamp": "2026-11-02T16:50:14.215546+00:00"
+        "timestamp": "2026-11-03T14:51:47.046159+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "FAST",
-        "timestamp": "2026-11-02T16:50:31.585909+00:00"
+        "timestamp": "2026-11-03T14:52:03.186334+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "FTNT",
-        "timestamp": "2026-11-02T16:50:40.588756+00:00"
+        "timestamp": "2026-11-03T14:52:12.152036+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "GEV",
-        "timestamp": "2026-11-02T16:50:48.479549+00:00"
+        "timestamp": "2026-11-03T14:52:19.562390+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "HONA",
-        "timestamp": "2026-11-02T16:51:05.798350+00:00"
+        "timestamp": "2026-11-03T14:52:35.743685+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "HUBB",
-        "timestamp": "2026-11-02T16:51:10.552010+00:00"
+        "timestamp": "2026-11-03T14:52:40.259681+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "HUM",
-        "timestamp": "2026-11-02T16:51:11.351169+00:00"
+        "timestamp": "2026-11-03T14:52:41.000498+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "MRVL",
-        "timestamp": "2026-11-02T16:51:59.302413+00:00"
+        "timestamp": "2026-11-03T14:53:26.110684+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "MRK",
-        "timestamp": "2026-11-02T16:52:04.817120+00:00"
+        "timestamp": "2026-11-03T14:53:31.566800+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "NTAP",
-        "timestamp": "2026-11-02T16:52:19.506195+00:00"
+        "timestamp": "2026-11-03T14:53:45.239045+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "NWSA",
-        "timestamp": "2026-11-02T16:52:21.740896+00:00"
+        "timestamp": "2026-11-03T14:53:47.419585+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "OKE",
-        "timestamp": "2026-11-02T16:52:37.352253+00:00"
+        "timestamp": "2026-11-03T14:54:02.233822+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "PM",
-        "timestamp": "2026-11-02T16:52:48.160149+00:00"
+        "timestamp": "2026-11-03T14:54:12.500480+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "PPG",
-        "timestamp": "2026-11-02T16:52:51.464748+00:00"
+        "timestamp": "2026-11-03T14:54:15.525308+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "REGN",
-        "timestamp": "2026-11-02T16:53:06.854338+00:00"
+        "timestamp": "2026-11-03T14:54:30.378865+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "RCL",
-        "timestamp": "2026-11-02T16:53:14.521449+00:00"
-      },
-      {
-        "message": "No module named 'six'",
-        "stage": "fetch_or_detect",
-        "ticker": "SLB",
-        "timestamp": "2026-11-02T16:53:19.208707+00:00"
+        "timestamp": "2026-11-03T14:54:37.694850+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "STLD",
-        "timestamp": "2026-11-02T16:53:32.238412+00:00"
+        "timestamp": "2026-11-03T14:54:54.570330+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "SYK",
-        "timestamp": "2026-11-02T16:53:34.254174+00:00"
+        "timestamp": "2026-11-03T14:54:56.061817+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "TEL",
-        "timestamp": "2026-11-02T16:53:42.833818+00:00"
+        "timestamp": "2026-11-03T14:55:03.916175+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "TSN",
-        "timestamp": "2026-11-02T16:53:56.835612+00:00"
+        "timestamp": "2026-11-03T14:55:17.387717+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "VRSN",
-        "timestamp": "2026-11-02T16:54:08.702871+00:00"
+        "timestamp": "2026-11-03T14:55:28.274688+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "WAB",
-        "timestamp": "2026-11-02T16:54:19.941490+00:00"
+        "timestamp": "2026-11-03T14:55:38.566932+00:00"
       },
       {
         "message": "No module named 'six'",
         "stage": "fetch_or_detect",
         "ticker": "YUM",
-        "timestamp": "2026-11-02T16:54:34.023424+00:00"
+        "timestamp": "2026-11-03T14:55:52.347657+00:00"
       }
     ],
     "errors_truncated": 0,
-    "failed_count": 34,
-    "generated_at": "2026-11-02T16:48:03.086000+00:00",
-    "run_id": "41484814836",
+    "failed_count": 33,
+    "generated_at": "2026-11-03T14:49:42.575092+00:00",
+    "run_id": "41657451826",
     "schema_version": 1,
     "style_substitutions": [],
-    "succeeded_count": 469
+    "succeeded_count": 470
   },
   "schema_version": 1,
   "window_days": 20
