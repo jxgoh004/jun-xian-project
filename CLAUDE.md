@@ -24,6 +24,13 @@ Evaluates a company's competitive durability across 5 dimensions (Brand Loyalty,
 Runs the same DCF model as the calculator across all ~500 S&P 500 companies via a batch pipeline, and presents results as a filterable, sortable table. Clicking a row opens a per-stock overview with a spider chart, financial snapshot, and embedded price chart. Demonstrates: batch pipeline design, static-site data architecture, data visualisation.
 → See `docs/projects/screener/CLAUDE.md` for full detail.
 
+### 4. Options Skew Map (external repo: `jxgoh004/skew-map`)
+Maps 25-delta put-versus-call implied-volatility skew against 1-month return for ~140 large caps and sorts each name into four verdicts (contrarian bid, chase, hedged rally, fear). Refreshed every weekday by its own GitHub Actions workflow using free Cboe and Yahoo data. Demonstrates: options-market domain encoding, data-quality guards, static-site data architecture.
+→ Code, data and docs live in https://github.com/jxgoh004/skew-map (published at https://jxgoh004.github.io/skew-map/).
+
+### Adding future projects (hub and spoke)
+New projects live in their own repositories with their own GitHub Pages site. This repo is the hub: to list one, add a card in `docs/index.html` and one entry with the project's full URL in the `projects` map in the same file. Nothing else from the project is copied here.
+
 ## Tech stack
 
 | Layer | Stack |
