@@ -43,4 +43,4 @@ docs/projects/screener/
 - The screener is a **read-only, static page** — all filtering and sorting is done client-side in JS against the loaded JSON. No backend call needed
 - The batch script is run periodically (nightly via GitHub Actions or manually) to keep the snapshot fresh
 - Valuation labels are derived from the discount percentage: heavily negative means overvalued; positive means the model sees upside
-- The same dark theme as the moat page (`#080c12`, `Syne` + `DM Sans`) — these two tools are visually paired as the "analytical" side of the portfolio, distinct from the interactive calculator's warmer gold-accented theme
+- Shares the site-wide light neutral theme (`#edece7` ground, Host Grotesk, square corners, ink buttons); teal `#0d5c63` appears only in data marks, and green/red/yellow only where they carry valuation meaning

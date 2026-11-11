@@ -15,8 +15,11 @@
   <meta name="twitter:description" content="A collection of useful tools built by Goh Jun Xian — AI engineer building practical apps for everyday life. Currently featuring finance tools.">
   <meta name="twitter:image" content="https://jxgoh004.github.io/jun-xian-project/projects/calculator/thumbnail.png">
   <link rel="canonical" href="https://jxgoh004.github.io/jun-xian-project/">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#edece7">
   <link rel="icon" href="projects/calculator/img/logo_2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400..700&display=swap" rel="stylesheet">
 
   <!-- JSON-LD Person schema -->
   <script type="application/ld+json">
@@ -37,386 +40,679 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0d1117;
-      --surface: #161b22;
-      --border: #30363d;
-      --accent: #58a6ff;
-      --accent-hover: #79b8ff;
-      --text: #c9d1d9;
-      --text-bright: #f0f6fc;
-      --text-dim: #8b949e;
-      --radius: 8px;
+      --ground: #edece7;
+      --ground-alt: #e4e3df;
+      --paper: #f6f5f1;
+      --ink: #000;
+      --ink-2: #272726;
+      --ink-3: #444443;
+      --inverse: #141314;
+      --inverse-ink: #fcfcfd;
+      --inverse-ink-2: #c9c8c4;
+      --tint: #0d5c63;
+      --action: #141414;
+      --hairline: #cecdc9;
+      --margin: clamp(24px, 5vw, 72px);
+      --header-h: 84px;
+      --band-top: 96px;
+      --band-bottom: 64px;
+      --font: "Host Grotesk", "Helvetica Neue", Arial, sans-serif;
     }
+    html { background: var(--ground); scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--ground);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    ::selection { background: var(--ink); color: var(--inverse-ink); }
+    a { color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .closing :focus-visible { outline-color: var(--inverse-ink); }
+    [id] { scroll-margin-top: 24px; }
 
-    /* ── Accessibility utilities ── */
     .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
     .skip-nav {
-      position: absolute;
-      top: -100%;
-      left: 16px;
-      z-index: 10000;
-      padding: 8px 16px;
-      background: var(--accent);
-      color: #0d1117;
-      font-weight: 600;
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: top 0.1s;
+      position: absolute; top: -100%; left: 16px; z-index: 10000;
+      padding: 10px 16px; background: var(--action); color: var(--inverse-ink);
+      font-weight: 600; text-decoration: none;
     }
     .skip-nav:focus { top: 8px; }
 
-    /* ── Focus styles ── */
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-    /* Accessibility: visible keyboard focus ring on all interactive elements */
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    [tabindex]:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.4);
-      border-radius: 4px;
-    }
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 0 var(--margin); }
+    .band { padding-top: var(--band-top); padding-bottom: var(--band-bottom); }
+    .band-alt { background: var(--ground-alt); }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
+    /* ── Type ── */
+    .h-xl, .h-lg, .h-md { font-weight: 500; text-wrap: balance; }
+    .h-lg { font-size: clamp(40px, 4.8vw, 69px); line-height: 1.04; letter-spacing: -.035em; }
+    .h-md { font-size: clamp(32px, 3.1vw, 44px); line-height: 1.08; letter-spacing: -.03em; }
+    .sub { font-size: 18px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+    .text-link {
+      font-weight: 500; text-decoration: none; padding: 4px 0;
+      background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1.5px no-repeat;
+      transition: background-size .2s;
     }
+    .text-link:hover { background-size: 0 1.5px; background-position: 100% 100%; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 48px; padding: 0 22px;
+      font: 600 15px/1 var(--font); text-decoration: none; white-space: nowrap;
+      border: 1.5px solid var(--action); cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .btn-primary { background: var(--action); color: var(--inverse-ink); }
+    .btn-primary:hover { background: transparent; color: var(--ink); }
+    .btn-secondary { background: transparent; color: var(--ink); }
+    .btn-secondary:hover { background: var(--action); color: var(--inverse-ink); }
+    .btn:active { transform: translateY(1px); }
+    .btn-sm { height: 38px; padding: 0 18px; font-size: 13px; }
+    .btn-block { display: flex; width: 100%; }
 
     /* ── Header ── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .site-header { background: var(--ground); position: relative; z-index: 20; }
+    .site-header .wrap { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .wordmark { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; white-space: nowrap; }
+    .wordmark i { width: 26px; height: 26px; background: var(--ink); display: block; flex: none; }
+    .nav { display: flex; gap: 34px; }
+    .nav a, .header-actions .plain-link {
+      font-size: 15px; font-weight: 500; text-decoration: none; padding: 6px 0;
+      background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat;
+      transition: background-size .2s;
     }
-    header img { width: 34px; height: 34px; border-radius: 8px; }
-    header .site-name { font-size: 17px; font-weight: 600; color: var(--text-bright); }
-    .back-btn {
-      display: none;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      color: var(--text-dim);
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 5px 12px;
-      cursor: pointer;
-      transition: color 0.15s, border-color 0.15s;
-      margin-left: auto;
+    .nav a:hover, .header-actions .plain-link:hover { background-size: 100% 1.5px; }
+    .header-actions { display: flex; align-items: center; gap: 22px; }
+    .menu-btn, .back-btn {
+      display: none; align-items: center; gap: 8px; height: 38px; padding: 0 14px;
+      font: 600 13px/1 var(--font); background: none; border: 1.5px solid var(--ink); color: var(--ink); cursor: pointer;
+      transition: background .15s, color .15s;
     }
-    .back-btn:hover { color: var(--text-bright); border-color: var(--accent); }
-    body.viewing-project .back-btn { display: flex; }
-
-    /* ── Main layout ── */
-    main {
-      margin: 60px auto;
-      padding: 0 24px;
-      text-align: center;
-    }
+    .menu-btn:hover, .back-btn:hover { background: var(--action); color: var(--inverse-ink); }
+    .menu-btn i { display: block; width: 14px; height: 8px; border-top: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; }
+    .mobile-nav { display: none; }
+    body.viewing-project .nav,
+    body.viewing-project .header-actions > :not(.back-btn),
+    body.viewing-project .mobile-nav { display: none !important; }
+    body.viewing-project .back-btn { display: inline-flex; }
 
     /* ── Hero ── */
-    .hero {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .hero h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--text-bright);
-      line-height: 1.2;
-      margin-bottom: 6px;
-    }
-    .hero-title {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .hero-credential {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text-dim);
-      margin-bottom: 16px;
-    }
-    .hero-bio {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--text-bright);
-      max-width: 600px;
-      margin: 0 auto 12px;
-      line-height: 1.5;
-    }
-    .hero-bio-secondary {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-dim);
-      line-height: 1.6;
-      max-width: 560px;
-      margin: 0 auto 16px;
-    }
+    .hero { background: var(--ground-alt); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 72px; padding-top: var(--band-top); padding-bottom: var(--band-bottom); align-items: start; }
+    .hero h1 { font-size: clamp(60px, 7.25vw, 104px); font-weight: 500; line-height: .98; letter-spacing: -.035em; margin-top: -.06em; }
+    .hero h1 span { display: block; white-space: nowrap; }
+    .hero .lede { font-size: 18px; line-height: 1.5; color: var(--ink-2); max-width: 520px; margin-top: 32px; }
+    .hero .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .trust { display: flex; align-items: center; gap: 12px; margin-top: 26px; font-size: 14px; color: var(--ink-2); }
+    .mono { flex: none; width: 22px; height: 22px; background: var(--ink); color: var(--inverse-ink); font: 700 10px/22px var(--font); text-align: center; display: block; }
+    .facts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; margin-top: 64px; }
+    .facts b { display: block; font-size: 37px; font-weight: 500; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .facts span { display: block; font-size: 13px; font-weight: 500; color: var(--ink-3); margin-top: 10px; line-height: 1.35; }
 
-    /* ── CTA cluster ── */
-    .hero-ctas {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 0;
+    /* ── Browser frame + live screener miniature ── */
+    .frame {
+      text-decoration: none; color: var(--ink); background: var(--paper);
+      border: 1.5px solid var(--ink); aspect-ratio: 1 / 1; margin-top: 23px;
+      display: flex; flex-direction: column; overflow: hidden; position: relative;
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 9px 20px;
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0d1117;
-    }
-    .btn-primary:hover { background: var(--accent-hover); }
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border);
-    }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--text-bright); }
-    .hero-cta {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      padding: 7px 16px;
-      border-radius: 6px;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: background 0.15s;
-      margin-top: 4px;
-    }
-    .hero-cta:hover {
-      background: rgba(88, 166, 255, 0.1);
-      text-decoration: none;
-    }
+    .frame-bar { flex: none; height: 42px; display: flex; align-items: center; gap: 14px; padding: 0 14px; background: var(--hairline); border-bottom: 1.5px solid var(--ink); }
+    .frame-bar .dots { display: flex; gap: 6px; }
+    .frame-bar .dots i { width: 9px; height: 9px; background: var(--ink); display: block; }
+    .frame-bar .url { flex: 1; min-width: 0; height: 24px; background: var(--paper); font-size: 12px; line-height: 24px; padding: 0 10px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .shot { flex: 1; min-height: 0; padding: 22px 22px 0; display: flex; flex-direction: column; }
+    .shot-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .shot-head strong { font-size: 22px; font-weight: 500; letter-spacing: -.02em; }
+    .shot-head span { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+    .shot-tools { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .shot-tools span { font-size: 12px; font-weight: 500; padding: 5px 10px; background: var(--ground-alt); box-shadow: inset 0 1px 0 var(--hairline); white-space: nowrap; }
+    .shot-tools span.on { background: var(--ink); color: var(--inverse-ink); box-shadow: none; }
+    .shot table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .shot th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); text-align: left; padding: 0 0 8px; }
+    .shot td { padding: 0; height: 42px; white-space: nowrap; }
+    .shot tbody tr:nth-child(odd) td { background: var(--ground); }
+    .shot td:first-child, .shot th:first-child { padding-left: 10px; }
+    .shot .num { text-align: right; padding-right: 16px; }
+    .shot .tk { font-weight: 700; width: 66px; }
+    .shot .co { max-width: 0; width: 38%; overflow: hidden; text-overflow: ellipsis; color: var(--ink-2); }
+    .shot .disc { width: 128px; padding-right: 10px; }
+    .shot .empty { text-align: center; color: var(--ink-3); height: 120px; background: none !important; }
+    .bar { display: flex; align-items: center; gap: 8px; }
+    .bar u { flex: 1; min-width: 20px; height: 10px; background: var(--hairline); display: block; position: relative; text-decoration: none; }
+    .bar u::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--tint); }
+    .bar.over u::after { background: repeating-linear-gradient(135deg, var(--ink-3) 0 1.5px, transparent 1.5px 4px); }
+    .bar b { font-weight: 600; width: 46px; text-align: right; }
+    .frame-cta { position: absolute; right: 0; bottom: 0; background: var(--ink); color: var(--inverse-ink); font-size: 13px; font-weight: 600; padding: 10px 14px; transition: padding .15s; }
+    .frame:hover .frame-cta { padding-right: 22px; }
 
-    /* ── Projects section ── */
-    .projects-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .section-label {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-bright);
-      text-align: left;
-      margin-bottom: 16px;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      text-align: left;
-      text-decoration: none;
-      color: var(--text);
-      transition: border-color 0.2s, transform 0.2s;
-      display: block;
-      cursor: pointer;
-    }
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card h2 { font-size: 16px; color: var(--text-bright); margin-bottom: 6px; }
-    .card .card-benefit {
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .card p { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; }
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-    .tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2px 10px;
-      font-size: 12px;
-      color: var(--text-dim);
-    }
+    /* ── Built with ── */
+    .stack { padding: 52px 0 56px; }
+    .stack p { text-align: center; font-size: 14px; font-weight: 500; color: var(--ink-3); }
+    .stack ul { display: flex; justify-content: space-between; align-items: center; gap: 24px 40px; flex-wrap: wrap; margin-top: 32px; }
+    .stack li { display: flex; align-items: center; gap: 9px; font-size: 18px; font-weight: 700; letter-spacing: -.01em; line-height: 24px; white-space: nowrap; }
+    .stack li::before { content: ""; width: 12px; height: 12px; background: var(--ink); flex: none; }
 
-    /* ── Card thumbnail ── */
-    .card img {
-      width: 100%;
-      aspect-ratio: 16 / 7;
-      object-fit: cover;
-      border-radius: 4px;
-      margin-bottom: 12px;
-      display: block;
+    /* ── Tools (feature rows) ── */
+    .section-head { text-align: center; max-width: 900px; margin: 0 auto; }
+    .section-head .sub { max-width: 620px; margin: 20px auto 0; }
+    .rows { margin-top: 88px; display: grid; row-gap: 88px; }
+    .row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 88px; align-items: center; }
+    .row:nth-child(even) .fig { order: 2; }
+    .row-text { max-width: 480px; }
+    .row:nth-child(even) .row-text { justify-self: start; }
+    .row h3 { font-size: clamp(34px, 3.8vw, 55px); font-weight: 500; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+    .row .benefit { font-size: 18px; font-weight: 500; margin-top: 18px; }
+    .row .desc { color: var(--ink-2); margin-top: 8px; text-wrap: pretty; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .tag { font-size: 12px; font-weight: 500; padding: 5px 10px; background: var(--ground-alt); box-shadow: inset 0 1px 0 var(--hairline), inset 1px 0 0 var(--hairline); }
+    .row .text-link { display: inline-block; margin-top: 22px; font-size: 15px; }
+
+    /* figure: halftone plate of the tool's own screen + the crisp screenshot set on it */
+    .fig { display: block; position: relative; aspect-ratio: 4 / 3; text-decoration: none; overflow: hidden; }
+    .plate { position: absolute; inset: 0; isolation: isolate; background: #fff; overflow: hidden; mix-blend-mode: multiply; }
+    .plate .tone { position: absolute; inset: 0; filter: contrast(18); background: #fff; }
+    .plate .tone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 0 0; transform: scale(2.4); transform-origin: var(--ox, 30%) var(--oy, 40%); filter: grayscale(1) blur(2.5px) contrast(1.4) brightness(.74); }
+    .fig.dark .plate .tone img { filter: grayscale(1) invert(1) blur(2.5px) contrast(1.4) brightness(.74); }
+    .plate .tone::after { content: ""; position: absolute; inset: -30%; background: radial-gradient(closest-side, #555, #fff) 0 0 / 6px 6px; mix-blend-mode: multiply; transform: rotate(18deg); }
+    .plate::after { content: ""; position: absolute; inset: 0; background: var(--tint); mix-blend-mode: screen; }
+    .fig .crisp { position: absolute; left: 7%; right: 0; top: 12%; bottom: 0; border: 1.5px solid var(--ink); border-bottom: 0; border-right: 0; background: var(--paper); overflow: hidden; transition: top .25s ease; }
+    .fig .crisp img { display: block; position: absolute; top: 0; max-width: none; height: auto; width: calc(var(--z, 1.5) * 100%); left: calc(var(--sx, 0) * var(--z, 1.5) * -100% / 1440); margin-top: calc(var(--sy, 0) * var(--z, 1.5) * -100% / 1440); }
+    .fig:hover .crisp { top: 9%; }
+
+    /* ── Method (process) ── */
+    .split { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); column-gap: 96px; align-items: start; }
+    .split .sub { font-size: 16px; margin-top: 18px; }
+    .steps { display: grid; row-gap: 36px; counter-reset: step; }
+    .steps li { display: grid; grid-template-columns: 44px minmax(0,1fr); column-gap: 28px; position: relative; }
+    .steps li::before {
+      counter-increment: step; content: counter(step);
+      width: 44px; height: 44px; background: var(--ink); color: var(--inverse-ink);
+      font: 600 16px/44px var(--font); text-align: center; position: relative; z-index: 1;
     }
-    .card-thumbnail-placeholder {
-      width: 100%;
-      aspect-ratio: 16 / 7;
-      background: linear-gradient(135deg, #1c2128, #30363d);
-      border-radius: 4px;
-      margin-bottom: 16px;
-    }
+    .steps li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 44px; bottom: -36px; width: 2px; background: var(--ink); }
+    .steps h3 { font-size: 19px; font-weight: 500; line-height: 1.25; padding-top: 2px; }
+    .steps p { color: var(--ink-2); margin-top: 6px; max-width: 560px; }
+
+    /* ── About (quotes) ── */
+    .about .h-lg { max-width: 900px; }
+    .quote-mark { font-size: 128px; line-height: .8; height: 62px; display: block; margin-top: 56px; }
+    .lead-quote p { font-size: clamp(30px, 4.3vw, 62px); font-weight: 500; line-height: 1.1; letter-spacing: -.035em; max-width: 1180px; margin-top: 30px; text-wrap: balance; }
+    .byline > span:last-child { display: block; }
+    .byline { display: flex; align-items: center; gap: 14px; margin-top: 30px; }
+    .avatar { display: block; flex: none; width: 40px; height: 40px; background: var(--ink); color: var(--inverse-ink); font: 700 15px/40px var(--font); text-align: center; }
+    .byline > span:last-child > b { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; }
+    .byline > span:last-child > span { display: block; font-size: 13px; font-weight: 500; color: var(--ink-3); line-height: 1.4; }
+    .inset { background: var(--ground-alt); box-shadow: inset 0 1.5px 0 var(--hairline), inset 1.5px 0 0 var(--hairline); padding: 33px; }
+    .support { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; margin-top: 72px; }
+    .support blockquote { display: flex; flex-direction: column; }
+    .support .quote-mark { font-size: 64px; height: 30px; margin-top: 0; }
+    .support p { font-size: 18px; line-height: 1.5; color: var(--ink-2); margin-top: 18px; flex: 1; }
+
+    /* ── Ways in (plans) ── */
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-top: 72px; align-items: stretch; }
+    .plan { position: relative; display: flex; flex-direction: column; }
+    .plan.recommended { box-shadow: inset 0 0 0 1.5px var(--ink); background: var(--paper); }
+    .plan h3 { font-size: 18px; font-weight: 600; line-height: 26px; }
+    .plan .flag { position: absolute; top: 33px; right: 33px; background: var(--ink); color: var(--inverse-ink); font-size: 12px; font-weight: 600; line-height: 25px; padding: 0 9px; }
+    .plan .price { font-size: clamp(44px, 4.2vw, 60px); font-weight: 500; line-height: 1.1; letter-spacing: -.035em; margin-top: 20px; white-space: nowrap; }
+    .plan .price small { font-size: 16px; font-weight: 500; letter-spacing: 0; color: var(--ink-3); margin-left: 6px; }
+    .plan .for { color: var(--ink-2); margin-top: 10px; min-height: 48px; }
+    .plan .btn { margin-top: 18px; }
+    .plan ul { margin-top: 30px; display: grid; row-gap: 12px; }
+    .plan li { display: grid; grid-template-columns: 14px minmax(0,1fr); column-gap: 14px; align-items: start; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+    .plan li svg { margin-top: 4px; }
+
+    /* ── FAQ ── */
+    .faq-list { display: grid; row-gap: 8px; }
+    .faq-list details { background: var(--ground); box-shadow: inset 0 1.5px 0 var(--hairline), inset 1.5px 0 0 var(--hairline); }
+    .faq-list summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; font-size: 18px; font-weight: 500; line-height: 1.35; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary:hover { background: var(--paper); }
+    .faq-list summary i { flex: none; width: 16px; height: 16px; position: relative; }
+    .faq-list summary i::before, .faq-list summary i::after { content: ""; position: absolute; background: var(--ink); transition: transform .2s; }
+    .faq-list summary i::before { left: 0; right: 0; top: 7px; height: 2px; }
+    .faq-list summary i::after { top: 0; bottom: 0; left: 7px; width: 2px; }
+    .faq-list details[open] summary i::after { transform: scaleY(0); }
+    .faq-list .answer { padding: 0 64px 24px 24px; color: var(--ink-2); max-width: 760px; }
+    .faq-list .answer p + p { margin-top: 10px; }
+    .split .text-link { display: inline-block; margin-top: 22px; font-size: 15px; }
+
+    /* ── Closing ── */
+    .closing { background: var(--inverse); color: var(--inverse-ink); }
+    .closing .wrap { display: flex; align-items: center; justify-content: space-between; gap: 32px 48px; padding-top: 60px; padding-bottom: 60px; }
+    .closing .h-lg { font-size: clamp(34px, 4.1vw, 59px); }
+    .closing .actions { flex: none; }
+    .closing .actions { display: flex; gap: 14px; }
+    .closing .btn { border-color: var(--inverse-ink); }
+    .closing .btn-primary { background: var(--inverse-ink); color: var(--inverse); }
+    .closing .btn-primary:hover { background: transparent; color: var(--inverse-ink); }
+    .closing .btn-secondary { color: var(--inverse-ink); }
+    .closing .btn-secondary:hover { background: var(--inverse-ink); color: var(--inverse); }
+
+    /* ── Footer ── */
+    .site-footer { padding: 66px 0 34px; }
+    .footer-top { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); column-gap: 48px; row-gap: 40px; }
+    .footer-top p { color: var(--ink-3); font-size: 14px; max-width: 300px; margin-top: 16px; }
+    .footer-top h3 { font-size: 14px; font-weight: 600; line-height: 20px; }
+    .footer-top ul { margin-top: 14px; display: grid; row-gap: 8px; }
+    .footer-top li a, .footer-bottom a { font-size: 14px; color: var(--ink-2); text-decoration: none; }
+    .footer-top li a:hover, .footer-bottom a:hover { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: baseline; gap: 16px 32px; flex-wrap: wrap; margin-top: 72px; font-size: 13px; font-weight: 500; color: var(--ink-3); }
+    .footer-bottom .note { flex: 1 1 320px; }
+    .footer-bottom ul { display: flex; gap: 24px; }
+    .footer-bottom a { font-size: 13px; font-weight: 500; }
 
     /* ── Project iframe view ── */
-    #project-view {
-      max-width: none;
-      margin: 0;
-      padding: 0;
-      text-align: left;
-    }
-    #project-view iframe {
-      width: 100%;
-      height: calc(100vh - 63px);
-      border: none;
-      display: block;
-    }
+    #project-view iframe { width: 100%; height: calc(100vh - var(--header-h)); border: none; display: block; background: var(--ground); }
     body.viewing-project { overflow: hidden; }
-    body.viewing-project main { margin: 0; padding: 0; }
-
-    /* ── View fade transition ── */
     .view { transition: opacity 0.2s ease; }
     .view.hidden { opacity: 0; pointer-events: none; }
 
-    /* ── Mobile ── */
-    @media (max-width: 640px) {
-      main { padding: 0 16px; }
-      .hero h1 { font-size: 26px; }
-      .hero-bio { font-size: 16px; }
-      .hero-bio-secondary { font-size: 13px; }
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .nav { gap: 22px; }
+      .hero .wrap { column-gap: 40px; }
+      .facts { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 28px; }
+      .row { column-gap: 48px; }
+      .split { column-gap: 56px; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); }
+      .plans { gap: 16px; }
+      .inset { padding: 26px; }
+      .plan .flag { top: 26px; right: 26px; }
+    }
+    @media (max-width: 860px) {
+      :root { --header-h: 68px; --band-top: 64px; --band-bottom: 48px; }
+      .nav, .header-actions .plain-link, .header-actions .btn { display: none; }
+      .menu-btn { display: inline-flex; }
+      .mobile-nav { background: var(--ground); padding: 4px var(--margin) 28px; }
+      .mobile-nav.open { display: block; }
+      .mobile-nav a.item { display: block; font-size: 28px; font-weight: 500; letter-spacing: -.03em; text-decoration: none; padding: 10px 0; }
+      .mobile-nav .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+      .hero .wrap { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(52px, 16.4vw, 80px); }
+      .frame { margin-top: 48px; aspect-ratio: auto; }
+      .shot { padding: 18px 14px 0; }
+      .shot .co { display: none; }
+      .shot .disc { width: auto; }
+      .shot .num { padding-right: 12px; }
+      .frame-cta { position: static; text-align: center; margin-top: 4px; }
+      .facts { margin-top: 48px; }
+      .stack { padding: 40px 0 44px; }
+      .stack ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); justify-items: start; }
+      .section-head { text-align: left; margin: 0; }
+      .section-head .sub { margin-left: 0; }
+      .rows { margin-top: 48px; row-gap: 64px; }
+      .row { grid-template-columns: 1fr; row-gap: 28px; }
+      .row:nth-child(even) .fig { order: 0; }
+      .split { grid-template-columns: 1fr; row-gap: 40px; }
+      .quote-mark { margin-top: 36px; }
+      .support { grid-template-columns: 1fr; margin-top: 48px; }
+      .plans { grid-template-columns: 1fr; margin-top: 48px; }
+      .plan .for { min-height: 0; }
+      .faq-list summary { padding: 18px 16px; font-size: 17px; }
+      .faq-list .answer { padding: 0 16px 20px; }
+      .closing .wrap { padding-top: 48px; padding-bottom: 48px; flex-direction: column; align-items: flex-start; }
+      .footer-top { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .footer-top > div:first-child { grid-column: 1 / -1; }
+      .footer-bottom { margin-top: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-nav">Skip to main content</a>
-  <header>
-    <a href="#home" style="display:flex;align-items:center;">
-      <img src="projects/calculator/img/logo_2.png" alt="Goh Jun Xian portfolio home">
-    </a>
-    <span class="site-name">Portfolio</span>
-    <button class="back-btn" id="back-btn" aria-label="Back to portfolio">
-      ← Back
-    </button>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="#home" aria-label="Goh Jun Xian portfolio home"><i aria-hidden="true"></i>Goh Jun Xian</a>
+      <nav aria-label="Site">
+        <ul class="nav">
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#method">Method</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="plain-link" href="https://github.com/jxgoh004" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav"><i aria-hidden="true"></i>Menu</button>
+        <button class="back-btn" id="back-btn" aria-label="Back to portfolio">&larr; Back</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Site, mobile">
+      <a class="item" href="#tools">Tools</a>
+      <a class="item" href="#method">Method</a>
+      <a class="item" href="#about">About</a>
+      <a class="item" href="#faq">FAQ</a>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+        <a class="btn btn-secondary" href="https://github.com/jxgoh004" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </nav>
   </header>
 
   <main id="main-content">
-    <section id="home-view" class="view">
-      <section class="hero">
-        <h1>Goh Jun Xian</h1>
-        <p class="hero-title">AI Engineer &middot; Graph Analytics &middot; LLM Applications</p>
-        <p class="hero-credential">AI Singapore Associate AI Engineer (2025)</p>
-        <p class="hero-bio">I build useful tools &mdash; things I use every day and want to share with everyone. This is where they live.</p>
-        <p class="hero-bio-secondary">BSc Business Analytics graduate with 2 years of graph analytics (Neo4j) and LLM application experience. Recently completed AI Singapore's Associate AI Engineer deep-skilling program.</p>
+    <div id="home-view" class="view">
 
-        <nav class="hero-ctas" aria-label="Contact and profile links">
-          <a href="mailto:gohjunxian@email.com" class="btn btn-primary">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-5.97 3.582L15 12.617V5.383zM1 12.617l5.97-3.632L1 5.383v7.234zm6.832-2.218L2.122 14H13.88l-5.71-3.601-.338.203a.5.5 0 01-.47 0l-.339-.203z"/></svg>
-            Get in touch
-          </a>
-          <a href="https://github.com/gohjunxian" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer" class="hero-cta">LinkedIn</a>
-        </nav>
-      </section>
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div>
+            <h1 id="hero-title"><span>AI tools</span> <span>for stock</span> <span>research</span></h1>
+            <p class="lede">I build useful tools &mdash; things I use every day and want to share with everyone. This is where they live.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#screener" data-project="screener">Open the screener</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+            </div>
+            <p class="trust"><span class="mono" aria-hidden="true">jx</span>AI Singapore Associate AI Engineer (2025)</p>
+            <ul class="facts" aria-label="Key numbers">
+              <li><b>4</b><span>tools, free to use</span></li>
+              <li><b>500</b><span>S&amp;P 500 companies valued</span></li>
+              <li><b>20&#8239;yr</b><span>DCF projection per stock</span></li>
+              <li><b>~140</b><span>large caps in the skew map</span></li>
+            </ul>
+          </div>
 
-      <div class="projects-section">
-        <h2 class="section-label">Projects</h2>
-        <div class="projects">
-          <a href="#patterns" class="card" data-project="patterns"
-               aria-label="Open Inside Bar Pattern Scanner project">
-            <div class="card-thumbnail-placeholder" role="img" aria-label="Inside Bar Pattern Scanner preview"></div>
-            <h2>Inside Bar Pattern Scanner</h2>
-            <p class="card-benefit">AI-curated chart setups, updated every trading day</p>
-            <p>Computer-vision-graded inside-bar-spring detections across the S&amp;P 500, with backtested outcomes per setup type.</p>
-            <div class="tags" aria-label="Technologies used">
-              <span class="tag">Python</span>
-              <span class="tag">ONNX</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Finance</span>
+          <a class="frame" href="#screener" data-project="screener" aria-label="Open the S&amp;P 500 Stock Screener">
+            <div class="frame-bar" aria-hidden="true">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="url">jxgoh004.github.io/jun-xian-project/#screener</div>
             </div>
-          </a>
-          <a href="#screener" class="card" data-project="screener"
-               aria-label="Open S&P 500 Stock Screener project">
-            <div class="card-thumbnail-placeholder" role="img" aria-label="S&P 500 Stock Screener preview"></div>
-            <h2>S&amp;P 500 Stock Screener</h2>
-            <p class="card-benefit">Find undervalued stocks before the crowd does</p>
-            <p>DCF intrinsic values pre-calculated for every S&amp;P 500 company. Filter by sector, sort by discount, and jump straight to the full calculator.</p>
-            <div class="tags" aria-label="Technologies used">
-              <span class="tag">Python</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Finance</span>
-              <span class="tag">Data</span>
+            <div class="shot" aria-hidden="true">
+              <div class="shot-head"><strong>S&amp;P 500 Stock Screener</strong><span id="shot-date"></span></div>
+              <div class="shot-tools"><span class="on">Largest by market cap</span><span>All sectors</span><span>All valuations</span></div>
+              <table>
+                <thead><tr><th>Ticker</th><th class="co">Company</th><th class="num">Price</th><th class="num">Intrinsic</th><th>Discount</th></tr></thead>
+                <tbody id="shot-rows"><tr><td class="empty" colspan="5">Loading the latest valuations&hellip;</td></tr></tbody>
+              </table>
             </div>
-          </a>
-          <a href="#calculator" class="card" data-project="calculator"
-               aria-label="Open Intrinsic Value Calculator project">
-            <picture>
-              <source srcset="projects/calculator/thumbnail.webp" type="image/webp">
-              <img
-                src="projects/calculator/thumbnail.png"
-                alt="Intrinsic Value Calculator — DCF analysis dashboard showing stock valuation"
-                loading="lazy"
-                width="1854"
-                height="771">
-            </picture>
-            <h2>Intrinsic Value Calculator</h2>
-            <p class="card-benefit">Get a defensible stock valuation in seconds</p>
-            <p>Live data, 20-year DCF projections, margin-of-safety analysis — no spreadsheets needed.</p>
-            <div class="tags" aria-label="Technologies used">
-              <span class="tag">Python</span>
-              <span class="tag">Flask</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Finance</span>
-            </div>
-          </a>
-          <a href="#skew" class="card" data-project="skew"
-               aria-label="Open Options Skew Map project">
-            <div class="card-thumbnail-placeholder" role="img" aria-label="Options Skew Map preview"></div>
-            <h2>Options Skew Map</h2>
-            <p class="card-benefit">See what options traders are paying for, every trading day</p>
-            <p>Put-versus-call implied volatility across ~140 large caps, crossed with price action and sorted into four verdicts &mdash; built entirely on free data.</p>
-            <div class="tags" aria-label="Technologies used">
-              <span class="tag">Python</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Options</span>
-              <span class="tag">Data</span>
-            </div>
+            <span class="frame-cta" aria-hidden="true">Live data &middot; open the screener &rarr;</span>
           </a>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Built with -->
+      <section class="stack" aria-labelledby="stack-title">
+        <div class="wrap">
+          <p id="stack-title">Built with</p>
+          <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>JavaScript</li>
+            <li>ONNX</li>
+            <li>yfinance</li>
+            <li>FinViz</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section class="band" id="tools" aria-labelledby="tools-title" style="padding-top:40px">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 class="h-lg" id="tools-title">Four tools for one research day</h2>
+            <p class="sub">Each one takes a tedious, repeatable part of investment research and has it done before you sit down.</p>
+          </div>
+
+          <div class="rows">
+            <article class="row">
+              <a class="fig" href="#screener" data-project="screener" tabindex="-1" aria-hidden="true" style="--ox:20%;--oy:55%;--z:1.45;--sx:40;--sy:20">
+                <div class="plate"><div class="tone"><img src="img/shots/screener.webp" alt="" loading="lazy" width="1440" height="1080"></div></div>
+                <div class="crisp"><img src="img/shots/screener.webp" alt="" loading="lazy" width="1440" height="1080"></div>
+              </a>
+              <div class="row-text">
+                <h3>S&amp;P 500 Stock Screener</h3>
+                <p class="benefit">Find undervalued stocks before the crowd does</p>
+                <p class="desc">DCF intrinsic values pre-calculated for every S&amp;P 500 company. Filter by sector, sort by discount, and jump straight to the full calculator.</p>
+                <div class="tags" aria-label="Technologies used"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Finance</span><span class="tag">Data</span></div>
+                <a class="text-link" href="#screener" data-project="screener" aria-label="Open S&amp;P 500 Stock Screener project">Open the screener &rarr;</a>
+              </div>
+            </article>
+
+            <article class="row">
+              <a class="fig" href="#calculator" data-project="calculator" tabindex="-1" aria-hidden="true" style="--ox:70%;--oy:45%;--z:1.6;--sx:480;--sy:255">
+                <div class="plate"><div class="tone"><img src="img/shots/calculator.webp" alt="" loading="lazy" width="1440" height="1080"></div></div>
+                <div class="crisp"><img src="img/shots/calculator.webp" alt="" loading="lazy" width="1440" height="1080"></div>
+              </a>
+              <div class="row-text">
+                <h3>Intrinsic Value Calculator</h3>
+                <p class="benefit">Get a defensible stock valuation in seconds</p>
+                <p class="desc">Live data, 20-year DCF projections, margin-of-safety analysis &mdash; no spreadsheets needed.</p>
+                <div class="tags" aria-label="Technologies used"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">Finance</span></div>
+                <a class="text-link" href="#calculator" data-project="calculator" aria-label="Open Intrinsic Value Calculator project">Open the calculator &rarr;</a>
+              </div>
+            </article>
+
+            <article class="row">
+              <a class="fig" href="#patterns" data-project="patterns" tabindex="-1" aria-hidden="true" style="--ox:40%;--oy:60%;--z:1.45;--sx:85;--sy:55">
+                <div class="plate"><div class="tone"><img src="img/shots/patterns.webp" alt="" loading="lazy" width="1440" height="1080"></div></div>
+                <div class="crisp"><img src="img/shots/patterns.webp" alt="" loading="lazy" width="1440" height="1080"></div>
+              </a>
+              <div class="row-text">
+                <h3>Inside Bar Pattern Scanner</h3>
+                <p class="benefit">AI-curated chart setups, updated every trading day</p>
+                <p class="desc">Computer-vision-graded inside-bar-spring detections across the S&amp;P 500, with backtested outcomes per setup type.</p>
+                <div class="tags" aria-label="Technologies used"><span class="tag">Python</span><span class="tag">ONNX</span><span class="tag">Computer Vision</span><span class="tag">Finance</span></div>
+                <a class="text-link" href="#patterns" data-project="patterns" aria-label="Open Inside Bar Pattern Scanner project">Open the scanner &rarr;</a>
+              </div>
+            </article>
+
+            <article class="row">
+              <a class="fig dark" href="#skew" data-project="skew" tabindex="-1" aria-hidden="true" style="--ox:55%;--oy:50%;--z:1.5;--sx:300;--sy:20">
+                <div class="plate"><div class="tone"><img src="img/shots/skew.webp" alt="" loading="lazy" width="1440" height="1080"></div></div>
+                <div class="crisp"><img src="img/shots/skew.webp" alt="" loading="lazy" width="1440" height="1080"></div>
+              </a>
+              <div class="row-text">
+                <h3>Options Skew Map</h3>
+                <p class="benefit">See what options traders are paying for, every trading day</p>
+                <p class="desc">Put-versus-call implied volatility across ~140 large caps, crossed with price action and sorted into four verdicts &mdash; built entirely on free data.</p>
+                <div class="tags" aria-label="Technologies used"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Options</span><span class="tag">Data</span></div>
+                <a class="text-link" href="#skew" data-project="skew" aria-label="Open Options Skew Map project">Open the skew map &rarr;</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Method -->
+      <section class="band band-alt" id="method" aria-labelledby="method-title">
+        <div class="wrap split">
+          <div>
+            <h2 class="h-md" id="method-title">The groundwork, done before you start</h2>
+            <p class="sub">A lot of investment research is tedious and repeatable. The tools handle that part and leave the judgment call to you.</p>
+          </div>
+          <ol class="steps">
+            <li><div><h3>Fetch the data</h3><p>Financials come from Yahoo Finance and valuation metrics from FinViz. Scheduled jobs refresh the screener and the scanner every weekday after the US close.</p></div></li>
+            <li><div><h3>Run the model</h3><p>A 20-year, multi-phase DCF picks its own cash-flow base and a beta-driven discount rate. A vision model grades each chart pattern for quality.</p></div></li>
+            <li><div><h3>Make the call</h3><p>Every auto-filled input is shown with its source and stays editable. The result is a starting point for your own judgment, not a signal.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="band about" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <h2 class="h-lg" id="about-title">Who builds these</h2>
+          <figure class="lead-quote">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote><p>Investment research is full of tedious, repeatable groundwork. AI should handle that, so the human can focus on the judgment call at the end.</p></blockquote>
+            <figcaption class="byline">
+              <span class="avatar" aria-hidden="true">jx</span>
+              <span><b>Goh Jun Xian</b><span>AI Engineer &middot; Graph Analytics &middot; LLM Applications</span></span>
+            </figcaption>
+          </figure>
+          <div class="support">
+            <blockquote class="inset">
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <p>BSc Business Analytics graduate with 2 years of graph analytics (Neo4j) and LLM application experience. Recently completed AI Singapore's Associate AI Engineer deep-skilling program.</p>
+              <footer class="byline"><span class="avatar" aria-hidden="true">jx</span><span><b>Background</b><span>AI Singapore Associate AI Engineer (2025)</span></span></footer>
+            </blockquote>
+            <blockquote class="inset">
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <p>Each project encodes real finance domain knowledge &mdash; not just &ldquo;call an API and display the result&rdquo;, but deliberate choices about methodology, data sourcing, and what the output should actually mean.</p>
+              <footer class="byline"><span class="avatar" aria-hidden="true">jx</span><span><b>How the tools are built</b><span>Currently featuring finance tools</span></span></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ways in -->
+      <section class="band" id="ways-in" aria-labelledby="ways-title" style="padding-top:48px">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 class="h-lg" id="ways-title">Three ways in</h2>
+            <p class="sub">Nothing here costs anything. Pick the door that matches why you came.</p>
+          </div>
+          <div class="plans">
+            <article class="plan inset">
+              <h3>Use the tools</h3>
+              <p class="price">$0<small>no account</small></p>
+              <p class="for">Open any tool in your browser and start researching.</p>
+              <a class="btn btn-secondary btn-block" href="#screener" data-project="screener">Open the screener</a>
+              <ul>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>All four tools, with nothing to install</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>S&amp;P 500 valuations refreshed every weekday</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Every DCF input visible and editable</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Built entirely on free data sources</li>
+              </ul>
+            </article>
+
+            <article class="plan inset recommended">
+              <h3>Work with me</h3>
+              <span class="flag">Recommended</span>
+              <p class="price">Let&rsquo;s talk</p>
+              <p class="for">For roles, collaborations, or a process you want automated.</p>
+              <a class="btn btn-primary btn-block" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+              <ul>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>AI engineering and LLM applications</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Graph analytics with Neo4j</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Finance domain knowledge built into the tools</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>AI Singapore Associate AI Engineer (2025)</li>
+              </ul>
+            </article>
+
+            <article class="plan inset">
+              <h3>Read the code</h3>
+              <p class="price">Public<small>on GitHub</small></p>
+              <p class="for">See how the pipelines, models and pages are put together.</p>
+              <a class="btn btn-secondary btn-block" href="https://github.com/jxgoh004/jun-xian-project" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <ul>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Python and Flask backend</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Scheduled batch pipelines on GitHub Actions</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>ONNX vision model for chart patterns</li>
+                <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1.5 7.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Vanilla HTML, CSS and JavaScript pages</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="band band-alt" id="faq" aria-labelledby="faq-title" style="margin-top:32px">
+        <div class="wrap split">
+          <div>
+            <h2 class="h-md" id="faq-title">Questions worth asking first</h2>
+            <p class="sub">What the numbers mean, where they come from, and how far to trust them.</p>
+            <a class="text-link" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Ask me on LinkedIn &rarr;</a>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>Is this investment advice?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>No. Every figure is the output of a model with stated assumptions. Treat it as a starting point for your own research, not a recommendation to buy or sell anything.</p></div>
+            </details>
+            <details>
+              <summary>Where does the data come from?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>Financial statements come from Yahoo Finance. Valuation metrics, beta and growth estimates come from FinViz. Both are free sources, so figures can be delayed or occasionally wrong.</p></div>
+            </details>
+            <details>
+              <summary>How is intrinsic value calculated?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>With a 20-year, multi-phase discounted cash flow model. Years 1&ndash;5 use the primary growth rate, years 6&ndash;10 use half of it, and years 11&ndash;20 use a fixed 4%.</p><p>The cash flows are discounted at a rate derived from the stock&rsquo;s beta, adjusted for net debt, and divided by shares outstanding.</p></div>
+            </details>
+            <details>
+              <summary>How often is everything updated?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>The screener and the pattern scanner are rebuilt by scheduled jobs every weekday after the US market closes. The calculator fetches live data each time you look up a ticker.</p></div>
+            </details>
+            <details>
+              <summary>Why do some valuations look extreme?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>A DCF is very sensitive to its inputs, and one unusual year of cash flow or an optimistic growth estimate can swing the result a long way. Open the stock in the calculator to see every input and adjust the ones you disagree with.</p></div>
+            </details>
+            <details>
+              <summary>What is an inside bar spring?<i aria-hidden="true"></i></summary>
+              <div class="answer"><p>A bullish reversal pattern. After a wide mother bar, price coils into a narrow inside bar, briefly breaks below the mother low, and is recovered by the next bar.</p><p>The backtested edge is modest. The scanner lists setup candidates, not signals.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing -->
+      <section class="closing" aria-labelledby="closing-title">
+        <div class="wrap">
+          <h2 class="h-lg" id="closing-title">Have a process worth automating?</h2>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+            <a class="btn btn-secondary" href="https://github.com/jxgoh004" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="wrap">
+          <div class="footer-top">
+            <div>
+              <a class="wordmark" href="#home"><i aria-hidden="true"></i>Goh Jun Xian</a>
+              <p>A collection of useful tools from an AI engineer building practical apps for everyday life. Currently featuring finance tools.</p>
+            </div>
+            <nav aria-label="Tools">
+              <h3>Tools</h3>
+              <ul>
+                <li><a href="#screener" data-project="screener">S&amp;P 500 Stock Screener</a></li>
+                <li><a href="#calculator" data-project="calculator">Intrinsic Value Calculator</a></li>
+                <li><a href="#patterns" data-project="patterns">Inside Bar Pattern Scanner</a></li>
+                <li><a href="#skew" data-project="skew">Options Skew Map</a></li>
+              </ul>
+            </nav>
+            <nav aria-label="This site">
+              <h3>Site</h3>
+              <ul>
+                <li><a href="#method">Method</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ways-in">Ways in</a></li>
+                <li><a href="#faq">FAQ</a></li>
+              </ul>
+            </nav>
+            <nav aria-label="Profile">
+              <h3>Profile</h3>
+              <ul>
+                <li><a href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/jxgoh004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://github.com/jxgoh004/jun-xian-project" target="_blank" rel="noopener noreferrer">Source code</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-bottom">
+            <span>&copy; 2026 Goh Jun Xian</span>
+            <span class="note">Not investment advice. Data from Yahoo Finance and FinViz may be delayed or wrong.</span>
+            <ul aria-label="Social links">
+              <li><a href="https://www.linkedin.com/in/goh-jun-xian-5890ba10b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/jxgoh004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <section id="project-view" class="view hidden" style="display:none;" aria-label="Project viewer">
       <!-- iframe inserted dynamically by JS -->
@@ -428,6 +724,8 @@
   var homeView    = document.getElementById('home-view');
   var projectView = document.getElementById('project-view');
   var backBtn     = document.getElementById('back-btn');
+  var menuBtn     = document.getElementById('menu-btn');
+  var mobileNav   = document.getElementById('mobile-nav');
 
   var projects = {
     patterns:   'projects/patterns/index.html',
@@ -449,8 +747,21 @@
     el.classList.remove('hidden');
   }
 
+  function closeMenu() {
+    mobileNav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  // Section anchors (#tools, #faq …) live inside the home view.
+  function scrollToSection(hash) {
+    var target = (hash && hash !== 'home') ? document.getElementById(hash) : null;
+    if (target && homeView.contains(target)) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }
+
   function navigate() {
     var hash = location.hash.slice(1) || 'home';
+    closeMenu();
 
     if (!initialized) {
       if (projects[hash]) {
@@ -477,6 +788,7 @@
       fadeOut(homeView, function() {
         homeView.style.display = 'none';
         document.body.classList.add('viewing-project');
+        window.scrollTo(0, 0);
         projectView.style.display = 'block';
         if (!projectView.querySelector('iframe')) {
           var iframe = document.createElement('iframe');
@@ -488,21 +800,35 @@
         }
         requestAnimationFrame(function() { fadeIn(projectView); });
       });
-    } else {
+    } else if (document.body.classList.contains('viewing-project')) {
       fadeOut(projectView, function() {
         projectView.style.display = 'none';
         document.body.classList.remove('viewing-project');
         var iframe = projectView.querySelector('iframe');
         if (iframe) iframe.remove();
         homeView.style.display = '';
+        scrollToSection(hash);
         requestAnimationFrame(function() { fadeIn(homeView); });
       });
     }
+    // else: already on the home view — the browser scrolls to the section itself.
   }
 
   // Back button
   backBtn.addEventListener('click', function() {
     location.hash = '#home';
+  });
+
+  // Menu button (narrow screens)
+  menuBtn.addEventListener('click', function() {
+    var open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.addEventListener('click', function(e) {
+    if (e.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) { closeMenu(); menuBtn.focus(); }
   });
 
   // Screener → calculator link-through and back-link navigation from sub-pages
@@ -523,6 +849,34 @@
 
   window.addEventListener('hashchange', navigate);
   navigate();
+
+  // Hero: live miniature of the screener, read from the same snapshot the screener uses.
+  var rowsEl = document.getElementById('shot-rows');
+  function usd(v) { return '$' + Number(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function(c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  fetch('projects/screener/data.json').then(function(r) {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }).then(function(d) {
+    var rows = d.stocks.filter(function(s) {
+      return s.intrinsic_value != null && s.discount_pct != null && s.market_cap_m != null && s.current_price != null;
+    }).sort(function(a, b) { return b.market_cap_m - a.market_cap_m; }).slice(0, 9);
+    if (!rows.length) throw new Error('empty');
+    rowsEl.innerHTML = rows.map(function(s) {
+      var p = s.discount_pct, w = Math.min(100, Math.abs(p));
+      return '<tr><td class="tk">' + esc(s.ticker) + '</td><td class="co">' + esc(s.company_name) +
+        '</td><td class="num">' + usd(s.current_price) + '</td><td class="num">' + usd(s.intrinsic_value) +
+        '</td><td class="disc"><div class="bar' + (p < 0 ? ' over' : '') + '"><u style="--w:' + w + '%"></u><b>' +
+        (p >= 0 ? '+' : '−') + Math.abs(p).toFixed(0) + '%</b></div></td></tr>';
+    }).join('');
+    var dt = new Date(d.updated_at);
+    if (!isNaN(dt)) {
+      document.getElementById('shot-date').textContent = 'Updated ' +
+        dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+    }
+  }).catch(function() {
+    rowsEl.innerHTML = '<tr><td class="empty" colspan="5">Valuations for every S&amp;P 500 company &mdash; open the screener to see them.</td></tr>';
+  });
 })();
 </script>
 </body>

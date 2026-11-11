@@ -58,4 +58,4 @@ The moat page is a **static viewer** — it reads from the pre-generated `data.j
 - Parallel execution is key: running 5 agents sequentially would take ~5× longer. `asyncio.gather()` fires all criterion calls at once
 - Partial failure is handled gracefully — if one criterion agent errors, it's filled with a zero-score placeholder and the synthesizer still runs
 - The page is intentionally static for the portfolio — no live API needed, loads instantly, and the pre-computed results demonstrate the output quality
-- The dark blue-on-black theme with dot-grid background (`#080c12`, `Syne` display font) distinguishes this visually from the calculator, signalling a different tool with a different analytical purpose
+- Shares the site-wide light neutral theme (`#edece7` ground, Host Grotesk, square corners, ink buttons); teal `#0d5c63` carries the radar and score bars, and status colour appears only on the verdict

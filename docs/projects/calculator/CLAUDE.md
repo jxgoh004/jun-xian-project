@@ -45,4 +45,4 @@ shared/fetchers/finviz.py           # Pulls beta, P/E, 5Y growth estimate
 
 - All fields are editable after auto-fill — the calculator is a starting point, not a black box
 - Growth rate is capped at 25% by default (toggle to "Actual" to remove the cap) to prevent model blow-up on high-growth outliers
-- The dark GitHub-inspired theme (gold accent `#E8A838`, `DM Sans` + `Instrument Serif` typography) is intentional — it signals a developer-built tool, not a generic fintech dashboard
+- Shares the site-wide light neutral theme (`#edece7` ground, Host Grotesk, square corners, ink buttons); teal `#0d5c63` appears only in data marks, and green/red/yellow only where they carry valuation meaning

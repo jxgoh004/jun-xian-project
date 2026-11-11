@@ -38,7 +38,7 @@ New projects live in their own repositories with their own GitHub Pages site. Th
 | Backend | Python 3 · Flask 3.1.3 · Flask-CORS · Gunicorn |
 | Data | yfinance · FinViz (BeautifulSoup scraper) |
 | AI | OpenAI Responses API · `web_search` tool · `gpt-5.4-nano` |
-| Frontend | Vanilla HTML/CSS/JS · two distinct dark themes |
+| Frontend | Vanilla HTML/CSS/JS · one light neutral theme (Host Grotesk, square corners, teal only in data imagery) |
 | Deployment | Heroku (live backend) · GitHub Pages (static portfolio) |
 
 ## Repository layout
