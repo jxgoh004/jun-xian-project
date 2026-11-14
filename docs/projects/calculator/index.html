@@ -220,6 +220,8 @@
       line-height: 1.3;
       margin-bottom: 6px;
     }
+    .field-hint a { color: var(--ink); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+    .field-hint a:hover { text-decoration-thickness: 2px; }
     .field-hint { font-size: 12px; line-height: 1.35; color: var(--text-dim); margin-top: 5px; font-weight: 400; text-transform: none; letter-spacing: 0; }
 
     /* ── Inline toggle (Actual / ≤25%) ── */
@@ -715,6 +717,7 @@
             </div>
             <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" />
             <div class="field-hint" id="growthHint">Actual value from source — toggle to cap at 25%</div>
+            <div class="field-hint">Auto-filled from Yahoo Finance. Prefer a 5-year estimate? Look up <a id="finvizLink" href="https://finviz.com/" target="_blank" rel="noopener" onclick="setFinvizLink(this)">“EPS next 5Y” on FinViz ↗</a> and type it in here.</div>
           </div>
           <div class="field-row">
             <div class="field-group">
@@ -888,6 +891,16 @@ function onMethodChange() {
   const cfMap  = { ocf: lastData.ocf_millions, ni: lastData.ni_millions, fcf: lastData.fcf_millions, nfcf: lastData.normalized_fcf_millions };
   const cfVal  = cfMap[method];
   if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
+}
+
+// ── FinViz lookup link (opens the quote page for the current ticker) ────────
+// FinViz lists US tickers only, so anything with an exchange suffix (e.g. 0700.HK)
+// goes to the home page instead.
+function setFinvizLink(a) {
+  const t = document.getElementById('tickerInput').value.trim().toUpperCase();
+  a.href = t && !t.includes('.')
+    ? 'https://finviz.com/quote.ashx?t=' + encodeURIComponent(t)
+    : 'https://finviz.com/';
 }
 
 // ── Growth cap toggle ──────────────────────────────────────────────────────
@@ -1170,7 +1183,10 @@ function showVerifyPanel(d, method) {
     </a>
     <a href="https://finance.yahoo.com/quote/${sym}/analysis/" target="_blank" rel="noopener">
       Analyst Estimates (Yahoo Finance)
-    </a>`;
+    </a>${sym.includes('.') ? '' : `
+    <a href="https://finviz.com/quote.ashx?t=${encodeURIComponent(sym)}" target="_blank" rel="noopener">
+      EPS next 5Y (FinViz)
+    </a>`}`;
 }
 
 // ── Error helpers ──────────────────────────────────────────────────────────
