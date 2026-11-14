@@ -36,7 +36,7 @@ New projects live in their own repositories with their own GitHub Pages site. Th
 | Layer | Stack |
 |-------|-------|
 | Backend | Python 3 · Flask 3.1.3 · Flask-CORS · Gunicorn |
-| Data | yfinance · FinViz (BeautifulSoup scraper) |
+| Data | yfinance (Yahoo Finance) |
 | AI | OpenAI Responses API · `web_search` tool · `gpt-5.4-nano` |
 | Frontend | Vanilla HTML/CSS/JS · one light neutral theme (Host Grotesk, square corners, teal only in data imagery) |
 | Deployment | Render (live backend) · GitHub Pages (static portfolio) |
@@ -48,8 +48,7 @@ api_server.py                  # Flask API — live backend for the calculator
 
 shared/                        # cross-project code (imported by multiple projects)
   fetchers/
-    yahoo_finance.py           # TTM/annual financials from Yahoo Finance
-    finviz.py                  # Valuation metrics + beta from FinViz
+    yahoo_finance.py           # Financials, beta, share count and analyst growth from Yahoo Finance
 
 economic-moat/
   moat_analyzer.py             # Async orchestrator: 5 criterion agents + synthesizer
@@ -70,7 +69,7 @@ docs/                          # GitHub Pages root
 ## API endpoints (live backend)
 
 - `GET /` → serves `index.html`
-- `GET /api/fetch-stock/<symbol>` → financial data JSON (Yahoo + FinViz)
+- `GET /api/fetch-stock/<symbol>` → financial data JSON (Yahoo Finance)
 - `GET /api/health` → server status
 
 ---

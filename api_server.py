@@ -1,6 +1,6 @@
 """
 Flask API Server — Intrinsic Value Calculator
-Fetches stock data from Yahoo Finance (+ FinViz where available)
+Fetches stock data from Yahoo Finance
 and returns it as JSON for the web frontend.
 """
 
@@ -9,7 +9,7 @@ from flask_cors import CORS
 import math
 import os
 
-from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
+from shared.fetchers import YahooFinanceFetcher
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=BASE_DIR, static_url_path='')
@@ -199,49 +199,16 @@ def fetch_stock(symbol):
     yf_growth_cf  = safe_float(growth_rates.get("cash_flow_growth"))
     yf_growth_eps = safe_float(growth_rates.get("eps_growth"))
 
-    # Analyst consensus EPS growth (Yahoo) — used when FinViz is unavailable
+    # Analyst consensus EPS growth (Yahoo)
     yf_analyst = yf.get_analyst_growth_estimate()
 
-    # Beta (Yahoo Finance — may be overridden by FinViz below)
     beta = safe_float(info.get("beta"))
 
-    # ── 2. FinViz (optional, enhances growth + beta; fallback for price/shares) ─
-    finviz_growth_5y = None
-    finviz_beta      = None
-    finviz_ok        = False
-
-    try:
-        fv = FinVizFetcher(symbol)
-        if fv.fetch_data():
-            finviz_ok = True
-            fv_growth = fv.get_growth_estimates()
-            finviz_growth_5y = safe_float(fv_growth.get("EPS Growth Next 5 Years"))
-
-            fv_val = fv.get_valuation_metrics()
-            finviz_beta = safe_float(fv_val.get("Beta"))
-
-            fv_info = fv.get_company_info()
-
-            # Fallback: use FinViz data when Yahoo Finance omits fields
-            if current_price is None:
-                current_price = safe_float(fv_info.get("Current Price"))
-            if shares_millions is None:
-                shares_millions = to_millions_shares(fv_info.get("Shares Outstanding"))
-            if sector == "N/A" and fv_info.get("Sector"):
-                sector = fv_info["Sector"]
-            if industry == "N/A" and fv_info.get("Industry"):
-                industry = fv_info["Industry"]
-    except Exception:
-        pass
-
-    # ── 3. Decide best growth rate ────────────────────────────────────────────
-    # Priority: FinViz 5Y EPS estimate → Yahoo analyst estimate → Yahoo CF historical
-    #           → Yahoo EPS historical → 5% default
+    # ── 2. Decide best growth rate ────────────────────────────────────────────
+    # Priority: Yahoo analyst estimate → Yahoo CF historical → Yahoo EPS historical
+    #           → 5% default
     # No cap applied — the frontend lets the user choose between actual and ≤25%
-    if finviz_growth_5y is not None:
-        growth_1_5_pct  = round(finviz_growth_5y * 100, 2)
-        growth_source   = "FinViz (EPS next 5Y estimate)"
-    elif yf_analyst is not None:
+    if yf_analyst is not None:
         growth_1_5_pct  = round(yf_analyst["rate"] * 100, 2)
         growth_source   = ("Yahoo Finance (analyst long-term EPS growth)"
                            if yf_analyst["basis"] == "long_term"
@@ -260,10 +227,10 @@ def fetch_stock(symbol):
     growth_11_20_pct = 4.0   # Fixed long-term rate per the Excel model
 
     # Best beta, then look up discount rate from reference table
-    best_beta = finviz_beta if finviz_beta is not None else beta
+    best_beta = beta
     discount_rate_pct = beta_to_discount_rate(best_beta, exchange)
 
-    # ── 4. Build response ─────────────────────────────────────────────────────
+    # ── 3. Build response ─────────────────────────────────────────────────────
     result = {
         # Company
         "symbol":       symbol,
@@ -311,7 +278,6 @@ def fetch_stock(symbol):
         # Data source flags
         "sources": {
             "yahoo_finance": True,
-            "finviz":        finviz_ok,
         }
     }
 

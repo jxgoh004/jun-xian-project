@@ -24,7 +24,7 @@ import pandas as pd
 # Add project root to sys.path so fetcher modules resolve correctly
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
+from shared.fetchers import YahooFinanceFetcher
 
 # ---------------------------------------------------------------------------
 # Discount-rate lookup table (copied from api_server.py)
@@ -275,7 +275,7 @@ def process_ticker(ticker, index, total):
     growth_rates = yf.estimate_growth_rates()
     yf_growth_cf = safe_float(growth_rates.get("cash_flow_growth"))
     yf_growth_eps = safe_float(growth_rates.get("eps_growth"))
-    yf_analyst = yf.get_analyst_growth_estimate()  # used when FinViz is unavailable
+    yf_analyst = yf.get_analyst_growth_estimate()
 
     # Historical trend series for the Financial Trends charts
     try:
@@ -285,22 +285,6 @@ def process_ticker(ticker, index, total):
         trends = None
 
     beta = safe_float(info.get("beta"))
-
-    # ── FinViz (optional — enhances growth rate and beta) ────────────────────
-    finviz_growth_5y = None
-    finviz_beta = None
-
-    try:
-        fv = FinVizFetcher(ticker)
-        if fv.fetch_data():
-            fv_growth = fv.get_growth_estimates()
-            finviz_growth_5y = safe_float(
-                fv_growth.get("EPS Growth Next 5 Years")
-            )
-            fv_val = fv.get_valuation_metrics()
-            finviz_beta = safe_float(fv_val.get("Beta"))
-    except Exception:
-        pass  # FinViz failures are expected and silently ignored
 
     # ── Method selection (mirrors api_server.py exactly) ────────────────────
     # ni_m is not used for method selection here; we only need ni_cont_ops_m
@@ -332,14 +316,11 @@ def process_ticker(ticker, index, total):
         cash_flow_m = ocf_m
 
     # ── Growth rate priority ─────────────────────────────────────────────────
-    # FinViz 5Y EPS (as decimal from get_growth_estimates) -> multiply by 100 for pct
     # Yahoo analyst EPS growth estimate (as decimal) -> multiply by 100 for pct
     # Yahoo CF growth (as decimal) -> multiply by 100 for pct
     # Yahoo EPS growth (as decimal) -> multiply by 100 for pct
     # Default 5.0
-    if finviz_growth_5y is not None:
-        growth_1_5_pct = round(finviz_growth_5y * 100, 2)
-    elif yf_analyst is not None:
+    if yf_analyst is not None:
         growth_1_5_pct = round(yf_analyst["rate"] * 100, 2)
     elif yf_growth_cf is not None:
         growth_1_5_pct = round(yf_growth_cf * 100, 2)
@@ -349,7 +330,7 @@ def process_ticker(ticker, index, total):
         growth_1_5_pct = 5.0
 
     # ── Discount rate ────────────────────────────────────────────────────────
-    best_beta = finviz_beta if finviz_beta is not None else beta
+    best_beta = beta
     discount_rate_pct = beta_to_discount_rate(best_beta)
 
     # ── DCF calculation ──────────────────────────────────────────────────────

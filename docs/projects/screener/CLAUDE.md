@@ -9,7 +9,7 @@ The screener shows the same DCF methodology operating at scale — a batch pipel
 ## How it works
 
 1. **Batch pipeline** (`scripts/fetch_sp500.py`) — fetches all S&P 500 tickers from Wikipedia, then for each ticker:
-   - Pulls financials via `YahooFinanceFetcher` and `FinVizFetcher`
+   - Pulls financials via `YahooFinanceFetcher`
    - Applies the same 20-year multi-phase DCF logic as the calculator
    - Computes discount percentage vs. current price and a valuation label
    - Writes all results to `docs/projects/screener/data.json`

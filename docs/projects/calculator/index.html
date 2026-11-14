@@ -297,7 +297,6 @@
       background: var(--bg); color: var(--text-dim);
     }
     .source-pill.yf,
-    .source-pill.fv,
     .source-pill.def { background: var(--bg); color: var(--text-dim); }
 
     .verify-grid {
@@ -333,7 +332,6 @@
       margin-left: 4px; vertical-align: middle;
     }
     .vc-badge.yf,
-    .vc-badge.fv,
     .vc-badge.def { background: var(--surface2); color: var(--text-dim); }
 
     .verify-footer {
@@ -958,7 +956,7 @@ function cacheEntryToApiData(ticker, e) {
     growth_source:        'Nightly batch (S&P 500 snapshot)',
     beta:                 e.beta,
     discount_rate_pct:    e.discount_rate_pct,
-    sources:              { yahoo_finance: true, finviz: true },
+    sources:              { yahoo_finance: true },
     _from_cache:          true,
     _cache_updated_at:    calcCache.updated_at,
   };
@@ -1083,7 +1081,6 @@ function showVerifyPanel(d, method) {
     sources.innerHTML = `<span class="source-pill">S&amp;P 500 cache${dateStr ? ' · ' + dateStr : ''}</span>`;
   } else {
     if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
-    if (d.sources.finviz)        sources.innerHTML += `<span class="source-pill fv">FinViz</span>`;
   }
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">Negative Earnings → FCF</span>`;
@@ -1131,7 +1128,7 @@ function showVerifyPanel(d, method) {
 
   const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)', nfcf: 'Normalized FCF' }[method];
   const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions, nfcf: d.normalized_fcf_millions }[method];
-  const growthSrc   = d.sources.finviz && d.growth_source && d.growth_source.includes('FinViz') ? 'fv' : 'yf';
+  const growthSrc   = d.growth_source && d.growth_source.startsWith('Default') ? 'def' : 'yf';
 
   const cells = [
     { label: 'Company',         value: d.company_name,                                               sub: d.sector,              src: 'yf'  },
@@ -1143,7 +1140,7 @@ function showVerifyPanel(d, method) {
     { label: 'Total Debt',      value: fmtM(d.debt_millions),                                        sub: 'Current + LT Debt',   src: 'yf'  },
     { label: 'Cash & ST Inv',   value: fmtM(d.cash_millions),                                        sub: 'most recent quarter', src: 'yf'  },
     { label: 'Shares Out.',     value: fmtShares(d.shares_millions),                                 sub: 'millions',            src: 'yf'  },
-    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: d.sources.finviz ? 'FinViz' : 'Yahoo', src: d.sources.finviz ? 'fv' : 'yf' },
+    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: 'Yahoo', src: 'yf' },
     { label: 'Discount Rate',   value: d.discount_rate_pct !== null ? d.discount_rate_pct.toFixed(2) + '%' : '—', sub: 'from beta table', src: 'yf' },
     { label: 'Growth Yr 1–5',   value: d.growth_1_5_pct   !== null ? d.growth_1_5_pct.toFixed(2)   + '%' : '—', sub: d.growth_source,   src: growthSrc },
     { label: 'Growth Yr 6–10',  value: d.growth_6_10_pct  !== null ? d.growth_6_10_pct.toFixed(2)  + '%' : '—', sub: '½ of Yr 1–5',     src: growthSrc },
@@ -1153,7 +1150,7 @@ function showVerifyPanel(d, method) {
 
   grid.innerHTML = switchBanner + cells.map(c => `
     <div class="verify-cell">
-      <div class="vc-label">${c.label} <span class="vc-badge ${c.src}">${c.src === 'yf' ? 'YF' : c.src === 'fv' ? 'FV' : 'DEF'}</span></div>
+      <div class="vc-label">${c.label} <span class="vc-badge ${c.src}">${c.src === 'yf' ? 'YF' : 'DEF'}</span></div>
       <div class="vc-value">${c.value || '—'}</div>
       ${c.sub ? `<div class="vc-sub">${c.sub}</div>` : ''}
     </div>`).join('');
@@ -1171,8 +1168,8 @@ function showVerifyPanel(d, method) {
     <a href="https://finance.yahoo.com/quote/${sym}/cash-flow/" target="_blank" rel="noopener">
       Cash Flow (Yahoo Finance)
     </a>
-    <a href="https://finviz.com/quote.ashx?t=${sym}&p=d" target="_blank" rel="noopener">
-      Beta &amp; EPS (FinViz)
+    <a href="https://finance.yahoo.com/quote/${sym}/analysis/" target="_blank" rel="noopener">
+      Analyst Estimates (Yahoo Finance)
     </a>`;
 }
 

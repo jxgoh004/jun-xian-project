@@ -8,7 +8,7 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
 
 ## How it works
 
-1. **Data fetch** — the frontend calls `GET /api/fetch-stock/<symbol>` (Flask backend). The server pulls TTM/annual financials from Yahoo Finance and valuation metrics + beta from FinViz.
+1. **Data fetch** — the frontend calls `GET /api/fetch-stock/<symbol>` (Flask backend). The server pulls TTM/annual financials, beta, share count and analyst growth estimates from Yahoo Finance. (FinViz was retired as a source: it now blocks automated requests.)
 
 2. **Method auto-selection** — the calculator picks the most appropriate cash flow base:
    - Operating Cash Flow (OCF) by default
@@ -19,22 +19,21 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
    **Normalized FCF** = TTM OCF − average capex over every period Yahoo provides (TTM + up to four fiscal years). It smooths a temporary capex surge, such as a data-centre build-out, that would otherwise depress reported FCF. It is never auto-selected: whether capex is "growth" or "maintenance" is the user's judgment call. Computed in `YahooFinanceFetcher.get_normalized_free_cash_flow()`; not available when the page falls back to the nightly screener cache.
 
 3. **20-year multi-phase DCF model**
-   - Years 1–5: primary growth rate (sourced from FinViz 5Y estimate → Yahoo analyst EPS growth estimate → Yahoo historical → default 5%)
+   - Years 1–5: primary growth rate (sourced from Yahoo analyst EPS growth estimate → Yahoo historical → default 5%)
    - Years 6–10: half the primary rate (mean-reversion assumption)
    - Years 11–20: fixed 4% terminal growth
    - Intrinsic value = sum of discounted cash flows + terminal value, adjusted for net debt, divided by shares outstanding (all share classes — Yahoo's `impliedSharesOutstanding`, not the single-class `sharesOutstanding`)
 
 4. **Beta-driven discount rate** — uses a CAPM-style lookup table keyed on beta, with separate tables for US and HK/China-listed stocks. Higher-beta companies are discounted more heavily.
 
-5. **Verify panel** — after fetching, the UI surfaces key financial figures with source attribution (Yahoo vs. FinViz) so the user can sanity-check the auto-filled inputs before running the model.
+5. **Verify panel** — after fetching, the UI surfaces key financial figures with source attribution so the user can sanity-check the auto-filled inputs before running the model.
 
 ## Key files
 
 ```
 index.html                          # This page — all UI logic in vanilla JS
 api_server.py                       # Flask endpoint: /api/fetch-stock/<symbol>
-shared/fetchers/yahoo_finance.py    # Pulls TTM/annual financials
-shared/fetchers/finviz.py           # Pulls beta, P/E, 5Y growth estimate
+shared/fetchers/yahoo_finance.py    # Pulls financials, beta, share count, analyst growth
 ```
 
 ## UI layout
