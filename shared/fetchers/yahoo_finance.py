@@ -23,8 +23,14 @@ class YahooFinanceFetcher:
 
         for attempt in range(1, 4):
             try:
-                # Basic company info
-                self.info = self.ticker.info
+                # Basic company info. Yahoo rate-limits this endpoint on shared
+                # cloud hosts; the statements below come from endpoints that
+                # still answer, so carry on without it (see get_profile/get_beta).
+                try:
+                    self.info = self.ticker.info
+                except Exception as e:
+                    print(f"Company profile unavailable for {self.symbol}: {e}")
+                    self.info = {}
 
                 # Financial statements
                 self.financials = self.ticker.financials
@@ -111,6 +117,86 @@ class YahooFinanceFetcher:
         except Exception:
             pass
         return None
+
+    def get_profile(self):
+        """Company name, sector, industry, exchange and currencies.
+
+        Reads Yahoo's company profile (`info`) first. When Yahoo withholds it,
+        falls back to the price-chart metadata (name, exchange, trading currency)
+        and the search endpoint (sector, industry), which are separate endpoints.
+
+        `financial_currency` is the currency the statements are reported in. Only
+        the profile knows it, so it is None when the profile is unavailable — the
+        trading currency is NOT a safe substitute (TSM trades in USD, reports TWD).
+        """
+        info = self.info or {}
+        profile = {
+            "name":               info.get("longName") or info.get("shortName"),
+            "sector":             info.get("sector"),
+            "industry":           info.get("industry"),
+            "exchange":           info.get("exchange"),
+            "trading_currency":   info.get("currency"),
+            "financial_currency": info.get("financialCurrency"),
+        }
+
+        if not (profile["name"] and profile["exchange"] and profile["trading_currency"]):
+            try:
+                meta = self.ticker.history_metadata or {}
+                profile["name"] = profile["name"] or meta.get("longName") or meta.get("shortName")
+                profile["exchange"] = profile["exchange"] or meta.get("exchangeName")
+                profile["trading_currency"] = profile["trading_currency"] or meta.get("currency")
+            except Exception:
+                pass
+
+        if not (profile["sector"] and profile["industry"] and profile["name"]):
+            try:
+                quotes = yf.Search(self.symbol, max_results=5, news_count=0).quotes
+                match = next((q for q in quotes if q.get("symbol") == self.symbol), None)
+                if match:
+                    profile["name"] = profile["name"] or match.get("longname") or match.get("shortname")
+                    profile["sector"] = profile["sector"] or match.get("sector")
+                    profile["industry"] = profile["industry"] or match.get("industry")
+                    profile["exchange"] = profile["exchange"] or match.get("exchange")
+            except Exception:
+                pass
+
+        return profile
+
+    def get_beta(self):
+        """Beta, with its source: {"beta": float, "source": "yahoo" | "computed"} or None.
+
+        Uses Yahoo's published beta when the profile has it. Otherwise computes
+        it the way Yahoo does — five years of monthly returns against the S&P 500 —
+        from the price-history endpoint.
+        """
+        published = (self.info or {}).get("beta")
+        if isinstance(published, (int, float)) and published == published:
+            return {"beta": float(published), "source": "yahoo"}
+        try:
+            stock = self.ticker.history(period="5y", interval="1mo", auto_adjust=True)["Close"]
+            index = yf.Ticker("^GSPC").history(period="5y", interval="1mo", auto_adjust=True)["Close"]
+            return self._beta_from_prices(stock, index)
+        except Exception:
+            return None
+
+    @staticmethod
+    def _beta_from_prices(stock_close, index_close, min_months=24):
+        """Regression beta of monthly returns; None with under `min_months` of overlap."""
+        def monthly(series):
+            series = series.dropna()
+            series.index = pd.to_datetime(series.index).tz_localize(None).to_period("M")
+            return series[~series.index.duplicated(keep="last")].pct_change().dropna()
+
+        returns = pd.concat([monthly(stock_close), monthly(index_close)], axis=1, join="inner").dropna()
+        if len(returns) < min_months:
+            return None
+        variance = returns.iloc[:, 1].var()
+        if not variance or variance != variance:
+            return None
+        beta = returns.iloc[:, 0].cov(returns.iloc[:, 1]) / variance
+        if beta != beta:
+            return None
+        return {"beta": round(float(beta), 3), "source": "computed"}
 
     def get_current_eps(self):
         """Get current earnings per share (TTM)"""

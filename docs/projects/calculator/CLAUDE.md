@@ -32,6 +32,15 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
 
 The page calls the live API first. If the ticker is in the nightly screener snapshot with a FinViz-sourced growth rate, that rate replaces the API's Yahoo estimate (`applyScreenerGrowth`). The snapshot is also the fallback when the live server is offline, and it fills in beta, discount rate, company name, sector and industry when the live API returns them empty (`fillGapsFromSnapshot`) — Yahoo sometimes withholds the company profile from the API host. A link under the growth field opens FinViz so users can enter a figure by hand.
 
+## When Yahoo withholds the company profile
+
+Yahoo rate-limits its company-profile endpoint (HTTP 429) for the API host's shared address, while the price and statement endpoints keep answering. The API therefore does not depend on the profile:
+
+- **Name, exchange, trading currency** — from price-chart metadata; **sector, industry** — from Yahoo's search endpoint (`YahooFinanceFetcher.get_profile()`).
+- **Beta** — computed from five years of monthly returns against the S&P 500 (`get_beta()`, returned with `beta_source: "computed"`). Close to Yahoo's figure for US stocks; can differ noticeably for foreign companies.
+- **Reporting currency** — only the profile knows it. The API returns the trading currency with `currency_unverified: true`, and the page shows a "Reporting currency unconfirmed" warning (suppressed for S&P 500 tickers, which report in USD).
+- **Analyst growth** — unavailable; falls back to historical growth (S&P 500 tickers still get FinViz via the screener snapshot).
+
 ## Key files
 
 ```

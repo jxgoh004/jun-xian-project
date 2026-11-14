@@ -1005,7 +1005,9 @@ function fillGapsFromSnapshot(ticker, d) {
   const e = calcCache?.stocks?.[ticker];
   if (!e) return d;
   const blank = v => v == null || v === '' || v === 'N/A';
-  if (d.beta == null && e.beta != null) {
+  d.currency_unverified = false;   // S&P 500 constituents report in USD
+  // Prefer the screener's beta over one the API had to compute from prices
+  if ((d.beta == null || d.beta_source === 'computed') && e.beta != null) {
     d.beta = e.beta;
     if (e.discount_rate_pct != null) d.discount_rate_pct = e.discount_rate_pct;
     d._beta_from_snapshot = true;
@@ -1141,6 +1143,8 @@ function showVerifyPanel(d, method) {
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">Negative Earnings → FCF</span>`;
   else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);">OCF Inflated → FCF</span>`;
+  // Yahoo withheld the reporting currency: the figures may not be in the listing currency
+  if (d.currency_unverified) sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);" title="Yahoo did not return this company's reporting currency. If it reports in a currency other than ${d.currency || 'its listing currency'} (common for foreign companies listed in the US), set the currency and exchange rate before calculating.">⚠ Reporting currency unconfirmed</span>`;
 
   // Auto-switch / warning banner
   const grid = document.getElementById('verifyGrid');
@@ -1196,7 +1200,7 @@ function showVerifyPanel(d, method) {
     { label: 'Total Debt',      value: fmtM(d.debt_millions),                                        sub: 'Current + LT Debt',   src: 'yf'  },
     { label: 'Cash & ST Inv',   value: fmtM(d.cash_millions),                                        sub: 'most recent quarter', src: 'yf'  },
     { label: 'Shares Out.',     value: fmtShares(d.shares_millions),                                 sub: 'millions',            src: 'yf'  },
-    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: d._beta_from_snapshot ? 'nightly screener' : 'Yahoo', src: 'yf' },
+    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: d._beta_from_snapshot ? 'nightly screener' : (d.beta_source === 'computed' ? 'computed · 5Y monthly vs S&P 500' : 'Yahoo'), src: 'yf' },
     { label: 'Discount Rate',   value: d.discount_rate_pct !== null ? d.discount_rate_pct.toFixed(2) + '%' : '—', sub: 'from beta table', src: 'yf' },
     { label: 'Growth Yr 1–5',   value: d.growth_1_5_pct   !== null ? d.growth_1_5_pct.toFixed(2)   + '%' : '—', sub: d.growth_source,   src: growthSrc },
     { label: 'Growth Yr 6–10',  value: d.growth_6_10_pct  !== null ? d.growth_6_10_pct.toFixed(2)  + '%' : '—', sub: '½ of Yr 1–5',     src: growthSrc },

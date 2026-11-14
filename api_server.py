@@ -103,14 +103,16 @@ def fetch_stock(symbol):
     if not yf.fetch_all_data():
         return jsonify({"error": f"Could not fetch data for '{symbol}'. Check the ticker symbol."}), 404
 
-    info = yf.info or {}
-
-    # Company meta
-    company_name  = info.get("longName") or info.get("shortName") or symbol
-    sector        = info.get("sector", "N/A")
-    industry      = info.get("industry", "N/A")
-    currency      = info.get("financialCurrency") or info.get("currency") or "USD"
-    exchange      = info.get("exchange", "")
+    # Company meta — falls back to other Yahoo endpoints when the profile is withheld
+    profile       = yf.get_profile()
+    company_name  = profile["name"] or symbol
+    sector        = profile["sector"] or "N/A"
+    industry      = profile["industry"] or "N/A"
+    exchange      = profile["exchange"] or ""
+    # Statements are in the reporting currency, which only the profile knows.
+    # Without it we fall back to the trading currency and flag it as unconfirmed.
+    currency            = profile["financial_currency"] or profile["trading_currency"] or "USD"
+    currency_unverified = profile["financial_currency"] is None
 
     # Price
     current_price = safe_float(yf.get_last_price())
@@ -202,7 +204,9 @@ def fetch_stock(symbol):
     # Analyst consensus EPS growth (Yahoo)
     yf_analyst = yf.get_analyst_growth_estimate()
 
-    beta = safe_float(info.get("beta"))
+    beta_info   = yf.get_beta()
+    beta        = safe_float(beta_info["beta"]) if beta_info else None
+    beta_source = beta_info["source"] if beta_info and beta is not None else None
 
     # ── 2. Decide best growth rate ────────────────────────────────────────────
     # Priority: Yahoo analyst estimate → Yahoo CF historical → Yahoo EPS historical
@@ -273,7 +277,12 @@ def fetch_stock(symbol):
 
         # Discount
         "beta":              safe_float(best_beta),
+        "beta_source":       beta_source,   # "yahoo" | "computed" | None
         "discount_rate_pct": discount_rate_pct,
+
+        # True when Yahoo withheld the reporting currency and `currency` is the
+        # trading currency instead — wrong for foreign filers listed in the US
+        "currency_unverified": currency_unverified,
 
         # Data source flags
         "sources": {
