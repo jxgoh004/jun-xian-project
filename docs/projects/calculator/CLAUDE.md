@@ -39,7 +39,7 @@ shared/fetchers/finviz.py           # Pulls beta, P/E, 5Y growth estimate
 - **Search bar** — ticker input + Fetch button + Calculate button
 - **Left column** — editable input fields (cash flow, growth rates, discount rate, shares, debt, cash)
 - **Right column** — results: intrinsic value, margin of safety, 20-year cash flow table, source data verification panel
-- **Server status badge** — shows whether the live Heroku backend is reachable; inputs can still be entered manually if offline
+- **Server status badge** — shows whether the live Render backend is reachable; inputs can still be entered manually if offline
 
 ## Design choices worth noting
 
