@@ -113,10 +113,10 @@ def fetch_stock(symbol):
     exchange      = info.get("exchange", "")
 
     # Price
-    current_price = safe_float(info.get("currentPrice") or info.get("previousClose"))
+    current_price = safe_float(yf.get_last_price())
 
     # Shares outstanding (in millions)
-    shares_raw = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
+    shares_raw = yf.get_total_shares_outstanding()  # all share classes
     shares_millions = to_millions_shares(shares_raw)
 
     # Guard: yfinance returns an empty object for invalid tickers without raising.
@@ -142,6 +142,22 @@ def fetch_stock(symbol):
     ni_cont_ops_m = to_millions(ni_cont_ops_raw)  if ni_cont_ops_raw not in (None, "N/A") else None
     ni_m          = to_millions(ni_raw)            if ni_raw          not in (None, "N/A") else None
     fcf_m         = to_millions(fcf_raw)           if fcf_raw         not in (None, "N/A") else None
+
+    # ── Normalized FCF (TTM OCF − average capex over available periods) ──────
+    # Offered as an alternative basis; never auto-selected.
+    normalized_fcf_m = avg_capex_m = None
+    capex_history    = []
+    try:
+        nfcf = yf.get_normalized_free_cash_flow()
+    except Exception:
+        nfcf = None
+    if nfcf:
+        normalized_fcf_m = to_millions(nfcf["normalized_fcf"])
+        avg_capex_m      = to_millions(nfcf["avg_capex"])
+        capex_history    = [
+            {"period": p["period"], "capex_millions": to_millions(p["capex"])}
+            for p in nfcf["capex_periods"]
+        ]
 
     # ── Negative earnings detection ───────────────────────────────────────────
     negative_earnings = (
@@ -183,6 +199,9 @@ def fetch_stock(symbol):
     yf_growth_cf  = safe_float(growth_rates.get("cash_flow_growth"))
     yf_growth_eps = safe_float(growth_rates.get("eps_growth"))
 
+    # Analyst consensus EPS growth (Yahoo) — used when FinViz is unavailable
+    yf_analyst = yf.get_analyst_growth_estimate()
+
     # Beta (Yahoo Finance — may be overridden by FinViz below)
     beta = safe_float(info.get("beta"))
 
@@ -216,11 +235,17 @@ def fetch_stock(symbol):
         pass
 
     # ── 3. Decide best growth rate ────────────────────────────────────────────
-    # Priority: FinViz 5Y EPS estimate → Yahoo CF historical → Yahoo EPS historical → 5% default
+    # Priority: FinViz 5Y EPS estimate → Yahoo analyst estimate → Yahoo CF historical
+    #           → Yahoo EPS historical → 5% default
     # No cap applied — the frontend lets the user choose between actual and ≤25%
     if finviz_growth_5y is not None:
         growth_1_5_pct  = round(finviz_growth_5y * 100, 2)
         growth_source   = "FinViz (EPS next 5Y estimate)"
+    elif yf_analyst is not None:
+        growth_1_5_pct  = round(yf_analyst["rate"] * 100, 2)
+        growth_source   = ("Yahoo Finance (analyst long-term EPS growth)"
+                           if yf_analyst["basis"] == "long_term"
+                           else "Yahoo Finance (analyst EPS growth, next fiscal year)")
     elif yf_growth_cf is not None:
         growth_1_5_pct  = round(yf_growth_cf * 100, 2)
         growth_source   = "Yahoo Finance (historical CF growth)"
@@ -257,6 +282,9 @@ def fetch_stock(symbol):
         "ni_cont_ops_millions": ni_cont_ops_m,
         "ni_millions":          ni_m,
         "fcf_millions":         fcf_m,
+        "normalized_fcf_millions": normalized_fcf_m,
+        "avg_capex_millions":      avg_capex_m,
+        "capex_history":           capex_history,
 
         # Method recommendation
         "recommended_method": recommended_method,

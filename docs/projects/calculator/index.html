@@ -628,6 +628,7 @@
         <option value="ocf">Operating Cash Flow</option>
         <option value="ni">Net Income</option>
         <option value="fcf">Free Cash Flow</option>
+        <option value="nfcf">Normalized FCF</option>
       </select>
     </div>
     <button class="btn-fetch" id="fetchBtn" onclick="fetchStockData()">
@@ -673,7 +674,7 @@
           <div class="field-group">
             <label id="cfLabel">Operating Cash Flow (Current / TTM)</label>
             <input type="number" id="cashFlow" placeholder="e.g. 81945" />
-            <div class="field-hint">Most recent annual or TTM, in millions</div>
+            <div class="field-hint" id="cfHint">Most recent annual or TTM, in millions</div>
           </div>
 
           <div class="field-row">
@@ -865,15 +866,28 @@ let calcCache = null;
 
 // ── CF label + live method switch ─────────────────────────────────────────
 function updateCFLabel() {
-  const map = { ocf: 'Operating Cash Flow (Current / TTM)', ni: 'Net Income (Current / TTM)', fcf: 'Free Cash Flow (Current / TTM)' };
-  document.getElementById('cfLabel').textContent = map[document.getElementById('valuationMethod').value];
+  const map = { ocf: 'Operating Cash Flow (Current / TTM)', ni: 'Net Income (Current / TTM)', fcf: 'Free Cash Flow (Current / TTM)', nfcf: 'Normalized Free Cash Flow' };
+  const method = document.getElementById('valuationMethod').value;
+  document.getElementById('cfLabel').textContent = map[method];
+  document.getElementById('cfHint').textContent = method === 'nfcf'
+    ? normalizedFcfHint(lastData)
+    : 'Most recent annual or TTM, in millions';
+}
+
+// Explains how the normalized FCF figure was built, e.g. "TTM OCF − average capex of TTM + FY2025–FY2022"
+function normalizedFcfHint(d) {
+  const h = d && d.capex_history;
+  if (!h || !h.length || d.avg_capex_millions == null) {
+    return 'TTM operating cash flow − average capex, in millions (fetch live data to auto-fill)';
+  }
+  return `TTM operating cash flow − average capex of ${h.length} periods (${h.map(p => p.period).join(', ')}): ${fmtM(d.avg_capex_millions)}`;
 }
 
 function onMethodChange() {
   updateCFLabel();
   if (!lastData) return;
   const method = document.getElementById('valuationMethod').value;
-  const cfMap  = { ocf: lastData.ocf_millions, ni: lastData.ni_millions, fcf: lastData.fcf_millions };
+  const cfMap  = { ocf: lastData.ocf_millions, ni: lastData.ni_millions, fcf: lastData.fcf_millions, nfcf: lastData.normalized_fcf_millions };
   const cfVal  = cfMap[method];
   if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
 }
@@ -1012,7 +1026,7 @@ function populateFromData(d) {
   const method = methodSel.value;
 
   // Pick correct cash flow value based on recommended method
-  const cfMap = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions };
+  const cfMap = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions, nfcf: d.normalized_fcf_millions };
   const cfVal = cfMap[method];
   if (cfVal != null) setField('cashFlow', cfVal.toFixed(2));
 
@@ -1115,8 +1129,8 @@ function showVerifyPanel(d, method) {
       </div>`;
   }
 
-  const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)' }[method];
-  const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions }[method];
+  const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)', nfcf: 'Normalized FCF' }[method];
+  const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions, nfcf: d.normalized_fcf_millions }[method];
   const growthSrc   = d.sources.finviz && d.growth_source && d.growth_source.includes('FinViz') ? 'fv' : 'yf';
 
   const cells = [
@@ -1124,6 +1138,7 @@ function showVerifyPanel(d, method) {
     { label: 'Current Price',   value: fmtPrice(d.current_price, d.currency),                        sub: d.currency,            src: 'yf'  },
     { label: methodLabel,       value: fmtM(cfVal),                                                  sub: 'used for DCF',        src: 'yf'  },
     { label: 'OCF (TTM)',       value: fmtM(d.ocf_millions),                                         sub: 'Operating Cash Flow', src: 'yf'  },
+    { label: 'Normalized FCF',  value: fmtM(d.normalized_fcf_millions),                              sub: d.avg_capex_millions != null ? `OCF − avg capex ${fmtM(d.avg_capex_millions)} (${(d.capex_history || []).length} periods)` : 'needs live data', src: 'yf' },
     { label: 'NI Cont. Ops',    value: fmtM(d.ni_cont_ops_millions),                                sub: 'Net Income Cont. Ops TTM', src: 'yf' },
     { label: 'Total Debt',      value: fmtM(d.debt_millions),                                        sub: 'Current + LT Debt',   src: 'yf'  },
     { label: 'Cash & ST Inv',   value: fmtM(d.cash_millions),                                        sub: 'most recent quarter', src: 'yf'  },
@@ -1212,6 +1227,7 @@ function buildMethodComparison(g1, g2, g3, r, debt, cash, shares, exchangeRate, 
     ocf: { label: 'Operating Cash Flow', val: lastData.ocf_millions },
     ni:  { label: 'Net Income',           val: lastData.ni_millions  },
     fcf: { label: 'Free Cash Flow',       val: lastData.fcf_millions },
+    nfcf:{ label: 'Normalized FCF',       val: lastData.normalized_fcf_millions },
   };
 
   const rows = Object.entries(cfSources).map(([key, src]) => {
@@ -1260,7 +1276,7 @@ function calculate() {
   const stockName   = document.getElementById('stockName').value.trim() || 'Company';
   const ticker      = document.getElementById('tickerInput').value.trim().toUpperCase() || '—';
   const method      = document.getElementById('valuationMethod').value;
-  const methodLabel = { ocf: 'DCF (Operating)', ni: 'Net Income', fcf: 'Free Cash Flow' }[method];
+  const methodLabel = { ocf: 'DCF (Operating)', ni: 'Net Income', fcf: 'Free Cash Flow', nfcf: 'Normalized FCF' }[method];
   const exchangeRate = getVal('exchangeRate') || 1;
   const baseYear    = parseInt(document.getElementById('baseYear').value) || 2024;
 

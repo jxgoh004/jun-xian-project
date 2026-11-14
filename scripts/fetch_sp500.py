@@ -254,11 +254,9 @@ def process_ticker(ticker, index, total):
     company_name = info.get("longName") or info.get("shortName") or ticker
     sector = info.get("sector") or "N/A"
 
-    current_price = safe_float(
-        info.get("currentPrice") or info.get("previousClose")
-    )
+    current_price = safe_float(yf.get_last_price())
 
-    shares_raw = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
+    shares_raw = yf.get_total_shares_outstanding()  # all share classes
     shares_millions = to_millions(shares_raw)
 
     ocf_raw = yf.get_operating_cash_flow()
@@ -277,6 +275,7 @@ def process_ticker(ticker, index, total):
     growth_rates = yf.estimate_growth_rates()
     yf_growth_cf = safe_float(growth_rates.get("cash_flow_growth"))
     yf_growth_eps = safe_float(growth_rates.get("eps_growth"))
+    yf_analyst = yf.get_analyst_growth_estimate()  # used when FinViz is unavailable
 
     # Historical trend series for the Financial Trends charts
     try:
@@ -334,11 +333,14 @@ def process_ticker(ticker, index, total):
 
     # ── Growth rate priority ─────────────────────────────────────────────────
     # FinViz 5Y EPS (as decimal from get_growth_estimates) -> multiply by 100 for pct
+    # Yahoo analyst EPS growth estimate (as decimal) -> multiply by 100 for pct
     # Yahoo CF growth (as decimal) -> multiply by 100 for pct
     # Yahoo EPS growth (as decimal) -> multiply by 100 for pct
     # Default 5.0
     if finviz_growth_5y is not None:
         growth_1_5_pct = round(finviz_growth_5y * 100, 2)
+    elif yf_analyst is not None:
+        growth_1_5_pct = round(yf_analyst["rate"] * 100, 2)
     elif yf_growth_cf is not None:
         growth_1_5_pct = round(yf_growth_cf * 100, 2)
     elif yf_growth_eps is not None:

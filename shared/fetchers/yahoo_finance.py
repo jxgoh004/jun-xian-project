@@ -54,6 +54,64 @@ class YahooFinanceFetcher:
             
         return self.info.get('sharesOutstanding', self.info.get('impliedSharesOutstanding', 'N/A'))
     
+    def get_total_shares_outstanding(self):
+        """Total share count across all share classes, in the units of the quoted line.
+
+        Yahoo's `sharesOutstanding` covers only the quoted class (Alphabet: Class A
+        only, about half the company), which inflates any per-share value.
+        `impliedSharesOutstanding` is market cap / price, so it covers every class.
+        Falls back to `fast_info`, which uses a different Yahoo endpoint and can
+        still answer when `info` comes back empty.
+        """
+        info = self.info or {}
+        for key in ('impliedSharesOutstanding', 'sharesOutstanding'):
+            value = info.get(key)
+            if isinstance(value, (int, float)) and value == value and value > 0:
+                return value
+        try:
+            value = self.ticker.fast_info['shares']
+            if isinstance(value, (int, float)) and value == value and value > 0:
+                return value
+        except Exception:
+            pass
+        return None
+
+    def get_last_price(self):
+        """Latest price, falling back to `fast_info` when `info` is empty."""
+        info = self.info or {}
+        for key in ('currentPrice', 'previousClose'):
+            value = info.get(key)
+            if isinstance(value, (int, float)) and value == value and value > 0:
+                return value
+        try:
+            value = self.ticker.fast_info['last_price']
+            if isinstance(value, (int, float)) and value == value and value > 0:
+                return value
+        except Exception:
+            pass
+        return None
+
+    def get_analyst_growth_estimate(self):
+        """Forward EPS growth from Yahoo's analyst consensus.
+
+        Prefers the long-term (LTG) figure; Yahoo currently leaves that blank for
+        most stocks, so this usually returns next fiscal year's expected EPS growth.
+        Returns {"rate": decimal, "basis": "long_term" | "next_year"} or None.
+        """
+        try:
+            table = self.ticker.growth_estimates
+            if table is None or table.empty or 'stockTrend' not in table.columns:
+                return None
+            trend = table['stockTrend']
+            for row, basis in (('LTG', 'long_term'), ('+1y', 'next_year')):
+                if row in trend.index:
+                    value = trend.loc[row]
+                    if isinstance(value, (int, float)) and value == value and value > 0:
+                        return {"rate": float(value), "basis": basis}
+        except Exception:
+            pass
+        return None
+
     def get_current_eps(self):
         """Get current earnings per share (TTM)"""
         if not self.info:
@@ -318,7 +376,63 @@ class YahooFinanceFetcher:
                 pass
                 
         return 'N/A'
-    
+
+    def get_normalized_free_cash_flow(self, min_periods=3):
+        """Normalized FCF = TTM operating cash flow − average capex.
+
+        Smooths a temporary capex surge (e.g. a data-centre build-out) that would
+        otherwise depress reported FCF. The average covers every period Yahoo
+        provides: the trailing twelve months plus up to four fiscal years.
+
+        Returns a dict (raw currency units, capex as positive numbers) or None
+        when there is too little data:
+            {"normalized_fcf", "ocf", "avg_capex",
+             "capex_periods": [{"period": "TTM" | "FY2025", "capex": float}, ...]}
+        """
+        if self.cash_flow is None:
+            self.fetch_all_data()
+
+        capex_rows = ['Capital Expenditure', 'Capital Expenditures', 'Capex']
+
+        def _capex_series(frame):
+            if frame is None or frame.empty:
+                return None
+            for row_name in capex_rows:
+                if row_name in frame.index:
+                    return frame.loc[row_name].dropna()
+            return None
+
+        ocf = self.get_operating_cash_flow()
+        if not isinstance(ocf, (int, float)) or ocf != ocf:  # missing or NaN
+            return None
+
+        annual = _capex_series(self.cash_flow)
+        if annual is None or len(annual) == 0:
+            return None
+
+        periods = []
+
+        # TTM capex — skipped when the latest quarter is the fiscal year end,
+        # because it would then duplicate the latest fiscal year.
+        quarterly = _capex_series(self.quarterly_cashflow)
+        if quarterly is not None and len(quarterly) >= 4 and quarterly.index[0] != annual.index[0]:
+            periods.append({"period": "TTM", "capex": abs(float(quarterly.iloc[:4].sum()))})
+
+        for col, value in annual.items():
+            label = f"FY{col.year}" if hasattr(col, "year") else str(col)
+            periods.append({"period": label, "capex": abs(float(value))})
+
+        if len(periods) < min_periods:
+            return None
+
+        avg_capex = sum(p["capex"] for p in periods) / len(periods)
+        return {
+            "normalized_fcf": float(ocf) - avg_capex,
+            "ocf":            float(ocf),
+            "avg_capex":      avg_capex,
+            "capex_periods":  periods,
+        }
+
     def get_financial_trends(self):
         """
         Extract annual historical trends + TTM for the financial overview charts.
