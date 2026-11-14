@@ -24,7 +24,7 @@ import pandas as pd
 # Add project root to sys.path so fetcher modules resolve correctly
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from shared.fetchers import YahooFinanceFetcher
+from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
 
 # ---------------------------------------------------------------------------
 # Discount-rate lookup table (copied from api_server.py)
@@ -129,6 +129,25 @@ def compute_valuation_label(intrinsic_value, current_price):
 # ---------------------------------------------------------------------------
 # Ticker fetcher
 # ---------------------------------------------------------------------------
+
+def choose_growth_rate(finviz_5y, yahoo_analyst, yahoo_cf, yahoo_eps):
+    """Pick the Years 1-5 growth rate and record where it came from.
+
+    Inputs are decimals (0.18 = 18%) or None; `yahoo_analyst` is the dict from
+    YahooFinanceFetcher.get_analyst_growth_estimate(). Returns (pct, source).
+    The calculator reads `source` from the nightly snapshot: it reuses the value
+    only when it is "finviz_5y", because FinViz is not reachable from the live API.
+    """
+    if finviz_5y is not None:
+        return round(finviz_5y * 100, 2), "finviz_5y"
+    if yahoo_analyst is not None:
+        return round(yahoo_analyst["rate"] * 100, 2), "yahoo_analyst"
+    if yahoo_cf is not None:
+        return round(yahoo_cf * 100, 2), "yahoo_cf_history"
+    if yahoo_eps is not None:
+        return round(yahoo_eps * 100, 2), "yahoo_eps_history"
+    return 5.0, "default"
+
 
 def fetch_sp500_tickers():
     """
@@ -239,6 +258,7 @@ def process_ticker(ticker, index, total):
         "debt_m": None,
         "cash_m": None,
         "growth_1_5_pct": None,
+        "growth_source": None,
         "discount_rate_pct": None,
         "trends": None,
     }
@@ -286,6 +306,24 @@ def process_ticker(ticker, index, total):
 
     beta = safe_float(info.get("beta"))
 
+    # ── FinViz (optional — 5-year EPS growth estimate and beta) ──────────────
+    # Reachable from GitHub Actions, where this script runs nightly. It is
+    # blocked from the live API host, so the calculator reuses this value.
+    finviz_growth_5y = None
+    finviz_beta = None
+
+    try:
+        fv = FinVizFetcher(ticker)
+        if fv.fetch_data():
+            fv_growth = fv.get_growth_estimates()
+            finviz_growth_5y = safe_float(
+                fv_growth.get("EPS Growth Next 5 Years")
+            )
+            fv_val = fv.get_valuation_metrics()
+            finviz_beta = safe_float(fv_val.get("Beta"))
+    except Exception:
+        pass  # falls back to Yahoo below
+
     # ── Method selection (mirrors api_server.py exactly) ────────────────────
     # ni_m is not used for method selection here; we only need ni_cont_ops_m
     negative_earnings = (
@@ -316,21 +354,14 @@ def process_ticker(ticker, index, total):
         cash_flow_m = ocf_m
 
     # ── Growth rate priority ─────────────────────────────────────────────────
-    # Yahoo analyst EPS growth estimate (as decimal) -> multiply by 100 for pct
-    # Yahoo CF growth (as decimal) -> multiply by 100 for pct
-    # Yahoo EPS growth (as decimal) -> multiply by 100 for pct
-    # Default 5.0
-    if yf_analyst is not None:
-        growth_1_5_pct = round(yf_analyst["rate"] * 100, 2)
-    elif yf_growth_cf is not None:
-        growth_1_5_pct = round(yf_growth_cf * 100, 2)
-    elif yf_growth_eps is not None:
-        growth_1_5_pct = round(yf_growth_eps * 100, 2)
-    else:
-        growth_1_5_pct = 5.0
+    # FinViz 5Y EPS estimate → Yahoo analyst estimate → Yahoo CF history
+    # → Yahoo EPS history → 5% default
+    growth_1_5_pct, growth_source = choose_growth_rate(
+        finviz_growth_5y, yf_analyst, yf_growth_cf, yf_growth_eps
+    )
 
     # ── Discount rate ────────────────────────────────────────────────────────
-    best_beta = beta
+    best_beta = finviz_beta if finviz_beta is not None else beta
     discount_rate_pct = beta_to_discount_rate(best_beta)
 
     # ── DCF calculation ──────────────────────────────────────────────────────
@@ -413,6 +444,7 @@ def process_ticker(ticker, index, total):
         "debt_m": debt_m,
         "cash_m": cash_m,
         "growth_1_5_pct": growth_1_5_pct,
+        "growth_source": growth_source,
         "discount_rate_pct": discount_rate_pct,
         "trends": trends,
     }
@@ -504,7 +536,8 @@ def main():
                 "revenue_ttm_m": None, "shares_outstanding_m": None,
                 "ocf_m": None, "fcf_m": None, "ni_ttm_m": None,
                 "debt_m": None, "cash_m": None,
-                "growth_1_5_pct": None, "discount_rate_pct": None,
+                "growth_1_5_pct": None, "growth_source": None,
+                "discount_rate_pct": None,
                 "trends": None,
             }
 
@@ -529,7 +562,7 @@ def main():
         "company_name", "sector", "industry", "current_price",
         "ocf_m", "fcf_m", "ni_ttm_m", "debt_m", "cash_m",
         "shares_outstanding_m", "beta", "growth_1_5_pct",
-        "discount_rate_pct", "method",
+        "growth_source", "discount_rate_pct", "method",
     )
     calc_cache = {
         "updated_at": updated_at,

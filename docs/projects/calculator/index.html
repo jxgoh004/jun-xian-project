@@ -334,6 +334,7 @@
       margin-left: 4px; vertical-align: middle;
     }
     .vc-badge.yf,
+    .vc-badge.fv,
     .vc-badge.def { background: var(--surface2); color: var(--text-dim); }
 
     .verify-footer {
@@ -717,7 +718,7 @@
             </div>
             <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" />
             <div class="field-hint" id="growthHint">Actual value from source — toggle to cap at 25%</div>
-            <div class="field-hint">Auto-filled from Yahoo Finance. Prefer a 5-year estimate? Look up <a id="finvizLink" href="https://finviz.com/" target="_blank" rel="noopener" onclick="setFinvizLink(this)">“EPS next 5Y” on FinViz ↗</a> and type it in here.</div>
+            <div class="field-hint">S&amp;P 500 stocks use FinViz’s 5-year estimate from the nightly screener; other stocks use Yahoo Finance’s next-year estimate. To enter your own, look up <a id="finvizLink" href="https://finviz.com/" target="_blank" rel="noopener" onclick="setFinvizLink(this)">“EPS next 5Y” on FinViz ↗</a> and type it in here.</div>
           </div>
           <div class="field-row">
             <div class="field-group">
@@ -966,7 +967,7 @@ function cacheEntryToApiData(ticker, e) {
     growth_6_10_pct:      e.growth_1_5_pct !== null
                             ? Math.round(e.growth_1_5_pct / 2 * 100) / 100 : null,
     growth_11_20_pct:     4.0,
-    growth_source:        'Nightly batch (S&P 500 snapshot)',
+    growth_source:        e.growth_source === 'finviz_5y' ? 'FinViz 5Y EPS estimate (nightly screener)' : 'Nightly screener snapshot',
     beta:                 e.beta,
     discount_rate_pct:    e.discount_rate_pct,
     sources:              { yahoo_finance: true },
@@ -976,22 +977,45 @@ function cacheEntryToApiData(ticker, e) {
 }
 
 // ── Fetch stock data ────────────────────────────────────────────────────
+// Label for a growth figure taken from the nightly screener snapshot
+function snapshotDateLabel() {
+  return calcCache && calcCache.updated_at
+    ? new Date(calcCache.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    : '';
+}
+
+// FinViz's 5-year EPS growth estimate cannot be fetched by the live API (FinViz
+// blocks that host), but the nightly screener does get it. For S&P 500 tickers,
+// reuse the screener's FinViz figure in place of the API's Yahoo estimate.
+function applyScreenerGrowth(ticker, d) {
+  const e = calcCache?.stocks?.[ticker];
+  if (!e || e.growth_source !== 'finviz_5y' || e.growth_1_5_pct == null) return d;
+  const date = snapshotDateLabel();
+  d.growth_1_5_pct  = e.growth_1_5_pct;
+  d.growth_6_10_pct = Math.round(e.growth_1_5_pct / 2 * 100) / 100;
+  d.growth_source   = `FinViz 5Y EPS estimate (nightly screener${date ? ', ' + date : ''})`;
+  d.sources         = Object.assign({}, d.sources, { finviz_via_screener: true });
+  return d;
+}
+
 async function fetchStockData() {
   const ticker = document.getElementById('tickerInput').value.trim().toUpperCase();
   if (!ticker) { alert('Please enter a ticker symbol.'); return; }
 
-  // S&P 500 nightly cache — instant, no server needed
-  if (calcCache?.stocks?.[ticker]) {
+  // Nightly S&P 500 snapshot — used only when the live server can't answer
+  const useSnapshot = () => {
+    if (!calcCache?.stocks?.[ticker]) return false;
     hideError();
     document.getElementById('verifyPanel').classList.remove('visible');
     populateFromData(cacheEntryToApiData(ticker, calcCache.stocks[ticker]));
-    return;
-  }
+    return true;
+  };
 
-  // Fall back to live API for non-S&P 500 tickers
   const online = await checkServer();
   if (!online) {
-    showError(`"${ticker}" isn't in the nightly S&P 500 cache and the live server is offline. Try an S&P 500 ticker, or check back later.`);
+    if (!useSnapshot()) {
+      showError(`"${ticker}" isn't in the nightly S&P 500 snapshot and the live server is offline. Try an S&P 500 ticker, or check back later.`);
+    }
     return;
   }
 
@@ -1009,12 +1033,12 @@ async function fetchStockData() {
     const resp = await fetch(`${API}/api/fetch-stock/${ticker}`);
     const data = await resp.json();
     if (!resp.ok) {
-      showError(data.error || 'Failed to fetch data. Check the ticker symbol.');
+      if (!useSnapshot()) showError(data.error || 'Failed to fetch data. Check the ticker symbol.');
       return;
     }
-    populateFromData(data);
+    populateFromData(applyScreenerGrowth(ticker, data));
   } catch (err) {
-    showError('Network error: ' + err.message + '. Is the API server running?');
+    if (!useSnapshot()) showError('Network error: ' + err.message + '. Is the API server running?');
   } finally {
     btn.disabled = false;
     icon.innerHTML = '⬇';
@@ -1094,6 +1118,7 @@ function showVerifyPanel(d, method) {
     sources.innerHTML = `<span class="source-pill">S&amp;P 500 cache${dateStr ? ' · ' + dateStr : ''}</span>`;
   } else {
     if (d.sources.yahoo_finance) sources.innerHTML += `<span class="source-pill yf">Yahoo Finance</span>`;
+    if (d.sources.finviz_via_screener) sources.innerHTML += `<span class="source-pill yf">FinViz growth · via screener</span>`;
   }
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">Negative Earnings → FCF</span>`;
@@ -1141,7 +1166,7 @@ function showVerifyPanel(d, method) {
 
   const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)', nfcf: 'Normalized FCF' }[method];
   const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions, nfcf: d.normalized_fcf_millions }[method];
-  const growthSrc   = d.growth_source && d.growth_source.startsWith('Default') ? 'def' : 'yf';
+  const growthSrc   = !d.growth_source ? 'yf' : d.growth_source.startsWith('Default') ? 'def' : d.growth_source.startsWith('FinViz') ? 'fv' : 'yf';
 
   const cells = [
     { label: 'Company',         value: d.company_name,                                               sub: d.sector,              src: 'yf'  },
@@ -1163,7 +1188,7 @@ function showVerifyPanel(d, method) {
 
   grid.innerHTML = switchBanner + cells.map(c => `
     <div class="verify-cell">
-      <div class="vc-label">${c.label} <span class="vc-badge ${c.src}">${c.src === 'yf' ? 'YF' : 'DEF'}</span></div>
+      <div class="vc-label">${c.label} <span class="vc-badge ${c.src}">${c.src === 'yf' ? 'YF' : c.src === 'fv' ? 'FV' : 'DEF'}</span></div>
       <div class="vc-value">${c.value || '—'}</div>
       ${c.sub ? `<div class="vc-sub">${c.sub}</div>` : ''}
     </div>`).join('');
