@@ -30,7 +30,7 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
 
 ## Data flow for growth
 
-The page calls the live API first. If the ticker is in the nightly screener snapshot with a FinViz-sourced growth rate, that rate replaces the API's Yahoo estimate (`applyScreenerGrowth`). The snapshot is also the fallback when the live server is offline. A link under the growth field opens FinViz so users can enter a figure by hand.
+The page calls the live API first. If the ticker is in the nightly screener snapshot with a FinViz-sourced growth rate, that rate replaces the API's Yahoo estimate (`applyScreenerGrowth`). The snapshot is also the fallback when the live server is offline, and it fills in beta, discount rate, company name, sector and industry when the live API returns them empty (`fillGapsFromSnapshot`) — Yahoo sometimes withholds the company profile from the API host. A link under the growth field opens FinViz so users can enter a figure by hand.
 
 ## Key files
 

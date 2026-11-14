@@ -998,6 +998,24 @@ function applyScreenerGrowth(ticker, d) {
   return d;
 }
 
+// Yahoo sometimes withholds the company profile (name, sector, beta) from the
+// live API's host. For S&P 500 tickers, fill those gaps from the nightly
+// screener snapshot so the discount rate doesn't silently fall to its default.
+function fillGapsFromSnapshot(ticker, d) {
+  const e = calcCache?.stocks?.[ticker];
+  if (!e) return d;
+  const blank = v => v == null || v === '' || v === 'N/A';
+  if (d.beta == null && e.beta != null) {
+    d.beta = e.beta;
+    if (e.discount_rate_pct != null) d.discount_rate_pct = e.discount_rate_pct;
+    d._beta_from_snapshot = true;
+  }
+  if ((blank(d.company_name) || d.company_name === ticker) && !blank(e.company_name)) d.company_name = e.company_name;
+  if (blank(d.sector)   && !blank(e.sector))   d.sector   = e.sector;
+  if (blank(d.industry) && !blank(e.industry)) d.industry = e.industry;
+  return d;
+}
+
 async function fetchStockData() {
   const ticker = document.getElementById('tickerInput').value.trim().toUpperCase();
   if (!ticker) { alert('Please enter a ticker symbol.'); return; }
@@ -1036,7 +1054,7 @@ async function fetchStockData() {
       if (!useSnapshot()) showError(data.error || 'Failed to fetch data. Check the ticker symbol.');
       return;
     }
-    populateFromData(applyScreenerGrowth(ticker, data));
+    populateFromData(fillGapsFromSnapshot(ticker, applyScreenerGrowth(ticker, data)));
   } catch (err) {
     if (!useSnapshot()) showError('Network error: ' + err.message + '. Is the API server running?');
   } finally {
@@ -1178,7 +1196,7 @@ function showVerifyPanel(d, method) {
     { label: 'Total Debt',      value: fmtM(d.debt_millions),                                        sub: 'Current + LT Debt',   src: 'yf'  },
     { label: 'Cash & ST Inv',   value: fmtM(d.cash_millions),                                        sub: 'most recent quarter', src: 'yf'  },
     { label: 'Shares Out.',     value: fmtShares(d.shares_millions),                                 sub: 'millions',            src: 'yf'  },
-    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: 'Yahoo', src: 'yf' },
+    { label: 'Beta',            value: d.beta !== null ? d.beta.toFixed(2) : '—',                   sub: d._beta_from_snapshot ? 'nightly screener' : 'Yahoo', src: 'yf' },
     { label: 'Discount Rate',   value: d.discount_rate_pct !== null ? d.discount_rate_pct.toFixed(2) + '%' : '—', sub: 'from beta table', src: 'yf' },
     { label: 'Growth Yr 1–5',   value: d.growth_1_5_pct   !== null ? d.growth_1_5_pct.toFixed(2)   + '%' : '—', sub: d.growth_source,   src: growthSrc },
     { label: 'Growth Yr 6–10',  value: d.growth_6_10_pct  !== null ? d.growth_6_10_pct.toFixed(2)  + '%' : '—', sub: '½ of Yr 1–5',     src: growthSrc },
