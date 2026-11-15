@@ -396,7 +396,8 @@ def process_ticker(ticker, index, total):
     forward_eps = safe_float(info.get("forwardEps"))
     peg_ratio = safe_float(info.get("pegRatio"))
     div_yield_raw = safe_float(info.get("dividendYield"))
-    dividend_yield_pct = round(div_yield_raw * 100, 4) if div_yield_raw is not None else None
+    # yfinance (0.2.6x) already reports dividendYield in percent (0.38 = 0.38%).
+    dividend_yield_pct = round(div_yield_raw, 4) if div_yield_raw is not None else None
     wk52_high = safe_float(info.get("fiftyTwoWeekHigh"))
     wk52_low = safe_float(info.get("fiftyTwoWeekLow"))
     book_value_per_share = safe_float(info.get("bookValue"))

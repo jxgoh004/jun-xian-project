@@ -864,6 +864,13 @@ let calcCache = null;
     if (r.ok) calcCache = await r.json();
   } catch {}
   checkServer();
+  // Arriving from the screener or moat page with ?ticker=XYZ: fetch and value it straight away.
+  const linked = (new URLSearchParams(location.search).get('ticker') || '').trim().toUpperCase();
+  if (/^[A-Z0-9.\-]{1,10}$/.test(linked)) {
+    document.getElementById('tickerInput').value = linked;
+    await fetchStockData();
+    if (document.getElementById('cashFlow').value !== '') calculate();
+  }
 })();
 
 // ── CF label + live method switch ─────────────────────────────────────────

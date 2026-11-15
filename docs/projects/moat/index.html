@@ -1176,8 +1176,15 @@
       // Footer
       document.getElementById('footer-note').textContent =
         'AI analysis · gpt-5.4-nano + web search · ' + fmtDate(stock.analyzed_at);
-      document.getElementById('btn-calculator').href =
-        '../../index.html?ticker=' + encodeURIComponent(stock.ticker);
+      // Standalone: plain link to the calculator page. Inside the portfolio
+      // shell: ask the shell to switch project so its header and URL follow.
+      var calcBtn = document.getElementById('btn-calculator');
+      calcBtn.href = '../calculator/index.html?ticker=' + encodeURIComponent(stock.ticker);
+      calcBtn.addEventListener('click', function (e) {
+        if (window.parent === window) return;
+        e.preventDefault();
+        window.parent.postMessage({ type: 'navigate', project: 'calculator', ticker: stock.ticker }, '*');
+      });
 
       document.getElementById('main-content').style.display = '';
     }
