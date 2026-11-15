@@ -716,14 +716,14 @@
                 <button id="capCappedBtn"            onclick="setGrowthCap('capped')">≤ 25%</button>
               </div>
             </div>
-            <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" />
+            <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" oninput="onGrowth1to5Input()" />
             <div class="field-hint" id="growthHint">Actual value from source — toggle to cap at 25%</div>
             <div class="field-hint">S&amp;P 500 stocks use FinViz’s 5-year estimate from the nightly screener; other stocks use Yahoo Finance’s next-year estimate. To enter your own, look up <a id="finvizLink" href="https://finviz.com/" target="_blank" rel="noopener" onclick="setFinvizLink(this)">“EPS next 5Y” on FinViz ↗</a> and type it in here.</div>
           </div>
           <div class="field-row">
             <div class="field-group">
               <label>Years 6–10 (%)</label>
-              <input type="number" id="growth6to10" placeholder="e.g. 6.56" step="0.01" />
+              <input type="number" id="growth6to10" placeholder="e.g. 6.56" step="0.01" oninput="growth6to10Edited = true; this.classList.remove('auto-filled')" />
               <div class="field-hint">Typically ½ of Yr 1–5</div>
             </div>
             <div class="field-group">
@@ -760,7 +760,7 @@
             </div>
             <div class="field-group">
               <label>Exchange Rate <span style="font-weight:400;text-transform:none;letter-spacing:0;">(FS→listing)</span></label>
-              <input type="number" id="exchangeRate" value="1" min="0.0001" step="0.001" />
+              <input type="number" id="exchangeRate" value="1" min="0.000001" step="any" />
             </div>
           </div>
 
@@ -917,6 +917,17 @@ function setGrowthCap(mode) {
   const val = mode === 'capped' ? Math.min(raw, 25) : raw;
   setField('growth1to5', val.toFixed(2));
   setField('growth6to10', (val / 2).toFixed(2));
+  growth6to10Edited = false;
+}
+
+// Years 6–10 follows a hand-typed Years 1–5 at half the rate, until the user
+// types their own Years 6–10 figure.
+let growth6to10Edited = false;
+function onGrowth1to5Input() {
+  document.getElementById('growth1to5').classList.remove('auto-filled');
+  if (growth6to10Edited) return;
+  const g1 = parseFloat(document.getElementById('growth1to5').value);
+  if (!isNaN(g1)) setField('growth6to10', (g1 / 2).toFixed(2), false);
 }
 
 // ── Mark input as auto-filled ─────────────────────────────────────────────
@@ -1103,12 +1114,16 @@ function populateFromData(d) {
   // Discount rate
   if (d.discount_rate_pct != null) setField('discountRate', d.discount_rate_pct.toFixed(2));
 
-  // Currency
+  // Currency — statements may be in a different currency from the share price
   if (d.currency) {
     const sel = document.getElementById('fsCurrency');
-    const opt = [...sel.options].find(o => o.value === d.currency);
-    if (opt) sel.value = d.currency;
+    if (![...sel.options].some(o => o.value === d.currency)) sel.add(new Option(d.currency, d.currency));
+    sel.value = d.currency;
   }
+  // Reporting → listing currency rate; reset to 1 so a previous stock's rate never lingers
+  const fx = d.exchange_rate != null ? d.exchange_rate : 1;
+  setField('exchangeRate', String(+fx.toPrecision(6)), d.exchange_rate != null && d.exchange_rate !== 1);
+  growth6to10Edited = false;
 
   // Base year
   document.getElementById('baseYear').value = new Date().getFullYear() - 1;
@@ -1143,6 +1158,7 @@ function showVerifyPanel(d, method) {
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">Negative Earnings → FCF</span>`;
   else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);">OCF Inflated → FCF</span>`;
+  if (!d.currency_unverified && d.trading_currency && d.currency !== d.trading_currency && d.exchange_rate == null) sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);" title="The statements are in ${d.currency} but the share price is in ${d.trading_currency}, and no exchange rate could be fetched. Enter the ${d.currency}→${d.trading_currency} rate before calculating.">⚠ Enter exchange rate</span>`;
   // Yahoo withheld the reporting currency: the figures may not be in the listing currency
   if (d.currency_unverified) sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);" title="Yahoo did not return this company's reporting currency. If it reports in a currency other than ${d.currency || 'its listing currency'} (common for foreign companies listed in the US), set the currency and exchange rate before calculating.">⚠ Reporting currency unconfirmed</span>`;
 
@@ -1186,13 +1202,13 @@ function showVerifyPanel(d, method) {
       </div>`;
   }
 
-  const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: 'Free Cash Flow (TTM)', nfcf: 'Normalized FCF' }[method];
+  const methodLabel = { ocf: 'Oper. Cash Flow (TTM)', ni: 'Net Income', fcf: d.fcf_basis === 'annual' ? 'Free Cash Flow (last fiscal year)' : 'Free Cash Flow (TTM)', nfcf: 'Normalized FCF' }[method];
   const cfVal       = { ocf: d.ocf_millions, ni: d.ni_millions, fcf: d.fcf_millions, nfcf: d.normalized_fcf_millions }[method];
   const growthSrc   = !d.growth_source ? 'yf' : d.growth_source.startsWith('Default') ? 'def' : d.growth_source.startsWith('FinViz') ? 'fv' : 'yf';
 
   const cells = [
     { label: 'Company',         value: d.company_name,                                               sub: d.sector,              src: 'yf'  },
-    { label: 'Current Price',   value: fmtPrice(d.current_price, d.currency),                        sub: d.currency,            src: 'yf'  },
+    { label: 'Current Price',   value: fmtPrice(d.current_price, d.trading_currency || d.currency), sub: d.trading_currency || d.currency, src: 'yf'  },
     { label: methodLabel,       value: fmtM(cfVal),                                                  sub: 'used for DCF',        src: 'yf'  },
     { label: 'OCF (TTM)',       value: fmtM(d.ocf_millions),                                         sub: 'Operating Cash Flow', src: 'yf'  },
     { label: 'Normalized FCF',  value: fmtM(d.normalized_fcf_millions),                              sub: d.avg_capex_millions != null ? `OCF − avg capex ${fmtM(d.avg_capex_millions)} (${(d.capex_history || []).length} periods)` : 'needs live data', src: 'yf' },
@@ -1206,6 +1222,11 @@ function showVerifyPanel(d, method) {
     { label: 'Growth Yr 6–10',  value: d.growth_6_10_pct  !== null ? d.growth_6_10_pct.toFixed(2)  + '%' : '—', sub: '½ of Yr 1–5',     src: growthSrc },
     { label: 'Growth Yr 11–20', value: '4.00%',                                                     sub: 'fixed (long-term)',   src: 'def' },
     { label: 'Industry',        value: d.industry || '—',                                            sub: d.exchange,            src: 'yf'  },
+    // Only shown when the statements are in a different currency from the share price
+    ...(d.trading_currency && d.currency && d.trading_currency !== d.currency ? [{
+      label: 'Reporting Currency', value: d.currency,
+      sub: d.exchange_rate != null ? `1 ${d.currency} = ${+d.exchange_rate.toPrecision(4)} ${d.trading_currency} · applied` : `rate to ${d.trading_currency} not found — enter it`,
+      src: 'yf' }] : []),
   ];
 
   grid.innerHTML = switchBanner + cells.map(c => `

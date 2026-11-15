@@ -109,10 +109,18 @@ def fetch_stock(symbol):
     sector        = profile["sector"] or "N/A"
     industry      = profile["industry"] or "N/A"
     exchange      = profile["exchange"] or ""
-    # Statements are in the reporting currency, which only the profile knows.
-    # Without it we fall back to the trading currency and flag it as unconfirmed.
-    currency            = profile["financial_currency"] or profile["trading_currency"] or "USD"
+    # Statements are in the reporting currency; the share price is in the trading
+    # currency. If the reporting currency can't be determined we fall back to the
+    # trading currency and flag it as unconfirmed.
+    trading_currency    = profile["trading_currency"]
+    currency            = profile["financial_currency"] or trading_currency or "USD"
     currency_unverified = profile["financial_currency"] is None
+    # Reporting → trading currency, so the per-share value can be compared to price
+    exchange_rate = None
+    if not currency_unverified:
+        exchange_rate = yf.get_exchange_rate(currency, trading_currency or currency)
+        if exchange_rate is not None:
+            exchange_rate = round(exchange_rate, 6)
 
     # Price
     current_price = safe_float(yf.get_last_price())
@@ -129,7 +137,7 @@ def fetch_stock(symbol):
     # Cash flow values (in millions)
     ocf_raw          = yf.get_operating_cash_flow()           # TTM Operating Cash Flow
     ni_cont_ops_raw  = yf.get_net_income_continuing_ops_ttm() # TTM Net Income from Continuing Ops
-    fcf_raw          = yf.get_free_cash_flow()
+    fcf_raw, fcf_basis = yf.get_free_cash_flow_with_basis()  # TTM, else latest fiscal year
 
     # Net income (for the "Discounted Net Income" method) — annual fallback
     ni_raw = None
@@ -253,6 +261,7 @@ def fetch_stock(symbol):
         "ni_cont_ops_millions": ni_cont_ops_m,
         "ni_millions":          ni_m,
         "fcf_millions":         fcf_m,
+        "fcf_basis":            fcf_basis if fcf_m is not None else None,  # "ttm" | "annual"
         "normalized_fcf_millions": normalized_fcf_m,
         "avg_capex_millions":      avg_capex_m,
         "capex_history":           capex_history,
@@ -283,6 +292,10 @@ def fetch_stock(symbol):
         # True when Yahoo withheld the reporting currency and `currency` is the
         # trading currency instead — wrong for foreign filers listed in the US
         "currency_unverified": currency_unverified,
+        # Currency the share price is quoted in, and the rate that converts one
+        # unit of `currency` into it (None when it could not be fetched)
+        "trading_currency":    trading_currency or currency,
+        "exchange_rate":       exchange_rate,
 
         # Data source flags
         "sources": {

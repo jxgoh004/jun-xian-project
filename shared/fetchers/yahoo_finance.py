@@ -125,8 +125,9 @@ class YahooFinanceFetcher:
         falls back to the price-chart metadata (name, exchange, trading currency)
         and the search endpoint (sector, industry), which are separate endpoints.
 
-        `financial_currency` is the currency the statements are reported in. Only
-        the profile knows it, so it is None when the profile is unavailable — the
+        `financial_currency` is the currency the statements are reported in. When
+        the profile is unavailable it is read from the statements endpoint itself
+        (see `_statement_currency`), and is None only if that fails too — the
         trading currency is NOT a safe substitute (TSM trades in USD, reports TWD).
         """
         info = self.info or {}
@@ -160,7 +161,55 @@ class YahooFinanceFetcher:
             except Exception:
                 pass
 
+        if not profile["financial_currency"]:
+            profile["financial_currency"] = self._statement_currency()
+
         return profile
+
+    def _statement_currency(self):
+        """Currency the financial statements are reported in, or None.
+
+        Yahoo's statements endpoint tags every figure with a currency code, but
+        yfinance drops it when building its DataFrames. Ask the same endpoint for
+        one line item and read the tag.
+        """
+        try:
+            now = int(time.time())
+            response = self.ticker._data.get(
+                url=f"https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{self.symbol}",
+                params={"symbol": self.symbol, "type": "annualOperatingCashFlow,annualTotalRevenue",
+                        "period1": now - 3 * 365 * 86400, "period2": now},
+            )
+            for series in response.json()["timeseries"]["result"]:
+                for points in series.values():
+                    if not isinstance(points, list):
+                        continue
+                    for point in points:
+                        code = point.get("currencyCode") if isinstance(point, dict) else None
+                        if isinstance(code, str) and len(code) == 3:
+                            return code.upper()
+        except Exception:
+            pass
+        return None
+
+    @staticmethod
+    def get_exchange_rate(from_currency, to_currency):
+        """Units of `to_currency` per one unit of `from_currency`, or None.
+
+        Used to convert a per-share value in the reporting currency into the
+        currency the stock trades in.
+        """
+        if not from_currency or not to_currency:
+            return None
+        if from_currency == to_currency:
+            return 1.0
+        try:
+            rate = yf.Ticker(f"{from_currency}{to_currency}=X").fast_info["last_price"]
+            if isinstance(rate, (int, float)) and rate == rate and rate > 0:
+                return float(rate)
+        except Exception:
+            pass
+        return None
 
     def get_beta(self):
         """Beta, with its source: {"beta": float, "source": "yahoo" | "computed"} or None.
@@ -434,11 +483,60 @@ class YahooFinanceFetcher:
         """Get cash and short-term investments - prioritizes quarterly over annual data"""
         return self.get_cash_and_short_term_investments_quarterly()
     
-    def get_free_cash_flow(self):
-        """Get current free cash flow"""
+    def get_free_cash_flow_ttm(self):
+        """Free cash flow over the trailing twelve months, or None.
+
+        Sums the last four quarters of Yahoo's 'Free Cash Flow' row, or of
+        operating cash flow minus capex when that row is missing. Returns None
+        when fewer than four quarters are reported (e.g. half-yearly filers).
+        """
+        frame = self.quarterly_cashflow
+        if frame is None or frame.empty:
+            return None
+
+        def _last_four(row_names):
+            for row_name in row_names:
+                if row_name in frame.index:
+                    values = frame.loc[row_name].dropna()
+                    if len(values) < 4:
+                        return None
+                    # Four half-year periods would span two years, not one
+                    try:
+                        if abs((values.index[0] - values.index[3]).days) > 300:
+                            return None
+                    except Exception:
+                        pass
+                    return float(values.iloc[:4].sum())
+            return None
+
+        fcf = _last_four(['Free Cash Flow'])
+        if fcf is not None:
+            return fcf
+        ocf = _last_four(['Operating Cash Flow', 'Total Cash From Operating Activities',
+                          'Cash From Operating Activities'])
+        capex = _last_four(['Capital Expenditure', 'Capital Expenditures', 'Capex'])
+        if ocf is not None and capex is not None:
+            return ocf - abs(capex)
+        return None
+
+    def get_free_cash_flow_with_basis(self):
+        """(free cash flow, "ttm" | "annual"); value is 'N/A' when unavailable."""
         if self.cash_flow is None:
             self.fetch_all_data()
-            
+        ttm = self.get_free_cash_flow_ttm()
+        if ttm is not None:
+            return ttm, "ttm"
+        return self.get_free_cash_flow_annual(), "annual"
+
+    def get_free_cash_flow(self):
+        """Free cash flow — trailing twelve months, else the latest fiscal year."""
+        return self.get_free_cash_flow_with_basis()[0]
+
+    def get_free_cash_flow_annual(self):
+        """Free cash flow for the latest fiscal year"""
+        if self.cash_flow is None:
+            self.fetch_all_data()
+
         if self.cash_flow is not None and not self.cash_flow.empty:
             # Look for free cash flow
             fcf_rows = ['Free Cash Flow', 'Total Cash From Operating Activities']

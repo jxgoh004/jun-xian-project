@@ -32,13 +32,25 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
 
 The page calls the live API first. If the ticker is in the nightly screener snapshot with a FinViz-sourced growth rate, that rate replaces the API's Yahoo estimate (`applyScreenerGrowth`). The snapshot is also the fallback when the live server is offline, and it fills in beta, discount rate, company name, sector and industry when the live API returns them empty (`fillGapsFromSnapshot`) — Yahoo sometimes withholds the company profile from the API host. A link under the growth field opens FinViz so users can enter a figure by hand.
 
+## Currencies
+
+Statements are in the company's reporting currency (`currency`); the share price is in the listing currency (`trading_currency`). They differ for foreign filers — TSM reports in TWD and trades in USD, Tencent reports in CNY and trades in HKD. The API returns `exchange_rate` (one unit of reporting currency in listing currency, from Yahoo's `XXXYYY=X` pair) and the page fills the Exchange Rate field with it, so the per-share value is comparable to the price. The field resets to 1 on every fetch. If the rate cannot be fetched the page shows an "Enter exchange rate" warning.
+
+## Free cash flow basis
+
+`fcf_millions` is trailing twelve months (last four quarters of Yahoo's Free Cash Flow row, or OCF − capex), matching OCF. It falls back to the latest fiscal year for companies without four quarterly periods inside a year (half-yearly filers); `fcf_basis` is `"ttm"` or `"annual"` and the verify panel labels it accordingly. The nightly screener uses the same getter.
+
+## Growth inputs
+
+Typing a Years 1–5 rate sets Years 6–10 to half of it, until the user types their own Years 6–10 figure. A new fetch or the cap toggle restores the link.
+
 ## When Yahoo withholds the company profile
 
 Yahoo rate-limits its company-profile endpoint (HTTP 429) for the API host's shared address, while the price and statement endpoints keep answering. The API therefore does not depend on the profile:
 
 - **Name, exchange, trading currency** — from price-chart metadata; **sector, industry** — from Yahoo's search endpoint (`YahooFinanceFetcher.get_profile()`).
 - **Beta** — computed from five years of monthly returns against the S&P 500 (`get_beta()`, returned with `beta_source: "computed"`). Close to Yahoo's figure for US stocks; can differ noticeably for foreign companies.
-- **Reporting currency** — only the profile knows it. The API returns the trading currency with `currency_unverified: true`, and the page shows a "Reporting currency unconfirmed" warning (suppressed for S&P 500 tickers, which report in USD).
+- **Reporting currency** — read from the currency tag on Yahoo's statements endpoint (`_statement_currency()`), which yfinance otherwise discards. Only if that also fails does the API return the trading currency with `currency_unverified: true`, and the page shows a "Reporting currency unconfirmed" warning (suppressed for S&P 500 tickers, which report in USD).
 - **Analyst growth** — unavailable; falls back to historical growth (S&P 500 tickers still get FinViz via the screener snapshot).
 
 ## Key files
