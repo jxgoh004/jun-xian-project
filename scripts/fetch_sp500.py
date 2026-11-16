@@ -25,7 +25,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
-from shared.dcf_rules import MODEL_RULES, apply_growth_cap
+from shared.dcf_rules import MODEL_RULES, apply_growth_cap, rate_result, sector_basis
 
 # ---------------------------------------------------------------------------
 # Discount-rate lookup table (copied from api_server.py)
@@ -94,6 +94,54 @@ def calculate_intrinsic_value(cash_flow_m, growth_1_5_pct, discount_rate_pct,
                     - debt_adj / shares_millions
                     + cash_adj / shares_millions)
     return round(iv_per_share, 2), None
+
+
+# ---------------------------------------------------------------------------
+# One stock's valuation under the shared model rules
+# ---------------------------------------------------------------------------
+
+def value_stock(sector, method, ocf_m, fcf_m, ni_m, growth_applied_pct,
+                discount_rate_pct, shares_millions, debt_m, cash_m,
+                current_price, dcf_not_applicable=False):
+    """Apply the sector basis, run the DCF and rate the result.
+
+    `method` is the cash-flow method chosen for an ordinary company ('ocf' or
+    'fcf'). Financials override it with net income and skip the debt and cash
+    adjustment; REITs are not valued at all (see shared/dcf_rules.py).
+
+    Returns a dict with method, basis, intrinsic_value, discount_pct,
+    valuation_label, rating and rating_reason.
+    """
+    basis = sector_basis(sector)
+    intrinsic_value = None
+    have_rates = growth_applied_pct is not None and discount_rate_pct is not None
+
+    if basis == "earnings":
+        method = "ni"
+        if have_rates and ni_m is not None and ni_m > 0:
+            intrinsic_value, _ = calculate_intrinsic_value(
+                ni_m, growth_applied_pct, discount_rate_pct, shares_millions, 0, 0)
+    elif basis == "cash_flow" and have_rates and not dcf_not_applicable:
+        cash_flow_m = fcf_m if method == "fcf" else ocf_m
+        intrinsic_value, _ = calculate_intrinsic_value(
+            cash_flow_m, growth_applied_pct, discount_rate_pct,
+            shares_millions, debt_m, cash_m)
+
+    discount_pct, valuation_label = compute_valuation_label(intrinsic_value, current_price)
+    rating, rating_reason = rate_result(basis, intrinsic_value, current_price, sector)
+    if rating_reason == "no_data" and (
+            dcf_not_applicable or (basis == "earnings" and ni_m is not None and ni_m <= 0)):
+        rating_reason = "negative_earnings"
+
+    return {
+        "method": method,
+        "basis": basis,
+        "intrinsic_value": intrinsic_value,
+        "discount_pct": discount_pct,
+        "valuation_label": valuation_label,
+        "rating": rating,
+        "rating_reason": rating_reason,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -263,6 +311,9 @@ def process_ticker(ticker, index, total):
         "growth_capped": False,
         "growth_source": None,
         "discount_rate_pct": None,
+        "basis": None,
+        "rating": "not_rated",
+        "rating_reason": "no_data",
         "trends": None,
     }
 
@@ -350,12 +401,6 @@ def process_ticker(ticker, index, total):
 
     dcf_not_applicable = negative_earnings and (fcf_m is None or fcf_is_negative)
 
-    # ── Select cash flow base ────────────────────────────────────────────────
-    if method == "fcf":
-        cash_flow_m = fcf_m
-    else:
-        cash_flow_m = ocf_m
-
     # ── Growth rate priority ─────────────────────────────────────────────────
     # FinViz 5Y EPS estimate → Yahoo analyst estimate → Yahoo CF history
     # → Yahoo EPS history → 5% default
@@ -369,28 +414,22 @@ def process_ticker(ticker, index, total):
     best_beta = finviz_beta if finviz_beta is not None else beta
     discount_rate_pct = beta_to_discount_rate(best_beta)
 
-    # ── DCF calculation ──────────────────────────────────────────────────────
-    if dcf_not_applicable or cash_flow_m is None:
-        intrinsic_value = None
-        discount_pct = None
-        valuation_label = "N/A"
-    else:
-        intrinsic_value, err = calculate_intrinsic_value(
-            cash_flow_m=cash_flow_m,
-            growth_1_5_pct=growth_applied_pct,
-            discount_rate_pct=discount_rate_pct,
-            shares_millions=shares_millions,
-            debt_m=debt_m,
-            cash_m=cash_m,
-        )
-        if err:
-            intrinsic_value = None
-            discount_pct = None
-            valuation_label = "N/A"
-        else:
-            discount_pct, valuation_label = compute_valuation_label(
-                intrinsic_value, current_price
-            )
+    # ── DCF calculation (sector basis + plausibility rating) ─────────────────
+    valued = value_stock(
+        sector=info.get("sector") or "N/A",
+        method=method,
+        ocf_m=ocf_m, fcf_m=fcf_m, ni_m=ni_cont_ops_m,
+        growth_applied_pct=growth_applied_pct,
+        discount_rate_pct=discount_rate_pct,
+        shares_millions=shares_millions,
+        debt_m=debt_m, cash_m=cash_m,
+        current_price=current_price,
+        dcf_not_applicable=dcf_not_applicable,
+    )
+    method = valued["method"]
+    intrinsic_value = valued["intrinsic_value"]
+    discount_pct = valued["discount_pct"]
+    valuation_label = valued["valuation_label"]
 
     # ── Enriched fields for stock overview page ──────────────────────────────
     industry = info.get("industry") or "N/A"
@@ -454,6 +493,9 @@ def process_ticker(ticker, index, total):
         "growth_capped": growth_capped,
         "growth_source": growth_source,
         "discount_rate_pct": discount_rate_pct,
+        "basis": valued["basis"],
+        "rating": valued["rating"],
+        "rating_reason": valued["rating_reason"],
         "trends": trends,
     }
 
@@ -547,6 +589,7 @@ def main():
                 "growth_1_5_pct": None, "growth_applied_pct": None,
                 "growth_capped": False, "growth_source": None,
                 "discount_rate_pct": None,
+                "basis": None, "rating": "not_rated", "rating_reason": "no_data",
                 "trends": None,
             }
 
@@ -571,7 +614,7 @@ def main():
         "company_name", "sector", "industry", "current_price",
         "ocf_m", "fcf_m", "ni_ttm_m", "debt_m", "cash_m",
         "shares_outstanding_m", "beta", "growth_1_5_pct",
-        "growth_source", "discount_rate_pct", "method",
+        "growth_source", "discount_rate_pct", "method", "basis",
     )
     calc_cache = {
         "updated_at": updated_at,

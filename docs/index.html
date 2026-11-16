@@ -859,7 +859,8 @@
     return r.json();
   }).then(function(d) {
     var rows = d.stocks.filter(function(s) {
-      return s.intrinsic_value != null && s.discount_pct != null && s.market_cap_m != null && s.current_price != null;
+      return s.intrinsic_value != null && s.discount_pct != null && s.market_cap_m != null && s.current_price != null &&
+        (!s.rating || s.rating === 'rated');
     }).sort(function(a, b) { return b.market_cap_m - a.market_cap_m; }).slice(0, 9);
     if (!rows.length) throw new Error('empty');
     rowsEl.innerHTML = rows.map(function(s) {

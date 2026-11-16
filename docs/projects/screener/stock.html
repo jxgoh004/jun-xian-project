@@ -295,6 +295,8 @@
     .badge-slightly-overvalued  { background: rgba(163,39,31,.07); color: var(--red); }
     .badge-highly-overvalued    { background: rgba(163,39,31,.16); color: var(--red); }
     .badge-na                   { background: var(--surface2); color: var(--text-dim); }
+    .badge-low-confidence       { background: var(--yellow-bg); color: var(--yellow); }
+    .rating-note { margin-top: 14px; font-size: 13px; line-height: 1.45; color: var(--text-dim); max-width: 460px; }
 
     .moat-badge { text-decoration: none; }
     .moat-badge:hover { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
@@ -878,6 +880,38 @@
       if (abs >= 1000)    return sign + '$' + (abs / 1000).toFixed(2) + 'B';
       return sign + '$' + abs.toFixed(0) + 'M';
     }
+    var modelRules = {};   // published in data.json from shared/dcf_rules.py
+
+    function basisLabel(stock) {
+      if (stock.basis === 'not_rated') return '—';
+      return { ocf: 'Operating cash flow', fcf: 'Free cash flow', ni: 'Earnings' }[stock.method] || '—';
+    }
+
+    // One sentence on why the stock is valued the way it is, or why it is not.
+    function ratingNote(stock, rating) {
+      var max = modelRules.plausible_max_price_multiple || 3;
+      var min = modelRules.plausible_min_price_multiple || 1 / 3;
+      var flagged = 'The screener keeps it out of its default ranking; open it in the calculator to check the inputs.';
+      switch (stock.rating_reason) {
+        case 'negative_value':
+          return 'Low confidence: the model value is negative, which usually means debt outweighs the discounted cash flows. ' + flagged;
+        case 'above_price_multiple':
+          return 'Low confidence: the model value is more than ' + Math.round(max) + '× the share price, which points at the inputs rather than the stock. ' + flagged;
+        case 'below_price_multiple':
+          return 'Low confidence: the model value is less than 1/' + Math.round(1 / min) + ' of the share price, which points at the inputs rather than the stock. ' + flagged;
+        case 'reit':
+          return 'Not rated: a REIT is judged on funds from operations, which this model does not have. A cash-flow DCF would mislead.';
+        case 'negative_earnings':
+          return 'Not rated: earnings are negative, so there is nothing for the model to discount.';
+        case 'no_data':
+          return 'Not rated: not enough data to run the model.';
+      }
+      if (rating === 'rated' && stock.basis === 'earnings') {
+        return 'Financial company: valued on net income, with no debt or cash adjustment, because debt is its raw material.';
+      }
+      return '';
+    }
+
     function fmtPrice(val) {
       if (val == null) return '—';
       var n = Number(val);
@@ -1597,9 +1631,16 @@
       tickBadge.textContent = stock.ticker;
       badgesEl.appendChild(tickBadge);
 
+      // Rating (shared/dcf_rules.py): a verdict only when the model stands behind the number
+      var rating = stock.rating || (stock.intrinsic_value != null && stock.intrinsic_value > 0 ? 'rated' : 'not_rated');
       var valBadge = document.createElement('span');
-      valBadge.className = 'badge badge-' + labelToSlug(stock.valuation_label);
-      valBadge.textContent = stock.valuation_label || 'N/A';
+      if (rating === 'rated') {
+        valBadge.className = 'badge badge-' + labelToSlug(stock.valuation_label);
+        valBadge.textContent = stock.valuation_label || 'N/A';
+      } else {
+        valBadge.className = 'badge ' + (rating === 'low_confidence' ? 'badge-low-confidence' : 'badge-na');
+        valBadge.textContent = rating === 'low_confidence' ? 'Low confidence' : 'Not rated';
+      }
       badgesEl.appendChild(valBadge);
 
       if (moat) {
@@ -1633,7 +1674,15 @@
       addIvDivider();
       addIvItem('Discount to IV', stock.discount_pct != null ? fmtPct(stock.discount_pct, 1) : '—');
       addIvDivider();
-      addIvItem('Method', (stock.method || '—').toUpperCase());
+      addIvItem('Basis', basisLabel(stock));
+
+      var noteText = ratingNote(stock, rating);
+      if (noteText) {
+        var note = document.createElement('p');
+        note.className = 'rating-note';
+        note.textContent = noteText;
+        ivRow.parentNode.insertBefore(note, ivRow.nextSibling);
+      }
 
       // TradingView chart
       initChart(stock.ticker);
@@ -1688,7 +1737,7 @@
         { label: 'Intrinsic Value (DCF)', value: fmtPrice(stock.intrinsic_value) },
         { label: 'Discount to IV',        value: stock.discount_pct != null ? fmtPct(stock.discount_pct, 1) : '—',
           color: stock.discount_pct > 0 ? 'positive' : (stock.discount_pct < -10 ? 'negative' : null) },
-        { label: 'DCF Method',            value: (stock.method || '—').toUpperCase() },
+        { label: 'DCF Basis',             value: basisLabel(stock) },
         { label: 'Discount Rate',         value: fmtPct(stock.discount_rate_pct, 2) },
         // The DCF uses the capped rate; say so when it differs from the source figure above.
         { label: 'Growth Rate (1–5Y)',    value: stock.growth_capped
@@ -1792,6 +1841,7 @@
           moatData = moatJson.stocks.find(function(s) { return s.ticker === ticker; }) || null;
         }
 
+        modelRules = screenerData.model || {};
         populatePage(stock, moatData);
       })
       .catch(function(err) {

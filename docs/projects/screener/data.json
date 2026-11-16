@@ -1,7 +1,15 @@
 {
   "updated_at": "2026-11-16T14:51:22Z",
   "model": {
-    "growth_cap_pct": 25.0
+    "growth_cap_pct": 25.0,
+    "earnings_basis_sectors": [
+      "Financial Services"
+    ],
+    "not_rated_sectors": {
+      "Real Estate": "reit"
+    },
+    "plausible_max_price_multiple": 3.0,
+    "plausible_min_price_multiple": 0.3333
   },
   "stocks": [
     {
@@ -40,6 +48,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -151,6 +162,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -262,6 +276,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -373,6 +390,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -484,6 +504,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -595,6 +618,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -704,6 +730,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -813,6 +842,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -891,10 +923,10 @@
       "company_name": "Aflac Incorporated",
       "sector": "Financial Services",
       "current_price": 128.9151,
-      "intrinsic_value": 204.56,
-      "discount_pct": 36.98,
-      "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 112.5,
+      "discount_pct": -14.59,
+      "method": "ni",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Insurance - Life",
       "beta": 0.55,
       "market_cap_m": 63762.321408,
@@ -922,6 +954,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1031,6 +1066,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1140,6 +1178,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -1249,6 +1290,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1358,6 +1402,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -1467,6 +1514,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1545,10 +1595,10 @@
       "company_name": "Alexandria Real Estate Equities, Inc.",
       "sector": "Real Estate",
       "current_price": 43.78,
-      "intrinsic_value": 246.61,
-      "discount_pct": 82.25,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Office",
       "beta": 1.17,
       "market_cap_m": 7624.75264,
@@ -1576,6 +1626,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -1685,6 +1738,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1794,6 +1850,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1903,6 +1962,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -1981,9 +2043,9 @@
       "company_name": "The Allstate Corporation",
       "sector": "Financial Services",
       "current_price": 270.535,
-      "intrinsic_value": 449.11,
-      "discount_pct": 39.76,
-      "method": "ocf",
+      "intrinsic_value": 407.21,
+      "discount_pct": 33.56,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.12,
@@ -2012,6 +2074,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -2121,6 +2186,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -2230,6 +2298,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -2339,6 +2410,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -2448,6 +2522,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -2557,6 +2634,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -2666,6 +2746,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -2775,6 +2858,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -2853,9 +2939,9 @@
       "company_name": "American Express Company",
       "sector": "Financial Services",
       "current_price": 320.17,
-      "intrinsic_value": 698.64,
-      "discount_pct": 54.17,
-      "method": "ocf",
+      "intrinsic_value": 503.23,
+      "discount_pct": 36.38,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Credit Services",
       "beta": 1.08,
@@ -2884,6 +2970,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -2972,9 +3061,9 @@
       "company_name": "American International Group, Inc.",
       "sector": "Financial Services",
       "current_price": 83.575,
-      "intrinsic_value": 295.42,
-      "discount_pct": 71.71,
-      "method": "fcf",
+      "intrinsic_value": 152.79,
+      "discount_pct": 45.3,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Diversified",
       "beta": 0.47,
@@ -3003,6 +3092,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3081,10 +3173,10 @@
       "company_name": "American Tower Corporation",
       "sector": "Real Estate",
       "current_price": 192.73,
-      "intrinsic_value": 158.34,
-      "discount_pct": -21.72,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Slightly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Specialty",
       "beta": 0.84,
       "market_cap_m": 89381.15072,
@@ -3112,6 +3204,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -3221,6 +3316,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -3299,9 +3397,9 @@
       "company_name": "Ameriprise Financial, Inc.",
       "sector": "Financial Services",
       "current_price": 520.325,
-      "intrinsic_value": 2652.47,
-      "discount_pct": 80.38,
-      "method": "fcf",
+      "intrinsic_value": 1248.16,
+      "discount_pct": 58.31,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 1.11,
@@ -3330,6 +3428,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3439,6 +3540,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3548,6 +3652,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3657,6 +3764,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3766,6 +3876,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3844,10 +3957,10 @@
       "company_name": "Aon plc",
       "sector": "Financial Services",
       "current_price": 343.39,
-      "intrinsic_value": 362.38,
-      "discount_pct": 5.24,
-      "method": "ocf",
-      "valuation_label": "Fairly Valued",
+      "intrinsic_value": 471.99,
+      "discount_pct": 27.25,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Insurance Brokers",
       "beta": 0.61,
       "market_cap_m": 72852.660224,
@@ -3875,6 +3988,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -3984,6 +4100,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4062,10 +4181,10 @@
       "company_name": "Apollo Global Management, Inc.",
       "sector": "Financial Services",
       "current_price": 123.41,
-      "intrinsic_value": 781.56,
-      "discount_pct": 84.21,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 27.0,
+      "discount_pct": -357.07,
+      "method": "ni",
+      "valuation_label": "Highly Overvalued",
       "industry": "Asset Management",
       "beta": 1.49,
       "market_cap_m": 72865.284096,
@@ -4093,6 +4212,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -4202,6 +4324,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -4313,6 +4438,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4422,6 +4550,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4531,6 +4662,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4609,9 +4743,9 @@
       "company_name": "Arch Capital Group Ltd.",
       "sector": "Financial Services",
       "current_price": 111.48,
-      "intrinsic_value": 299.6,
-      "discount_pct": 62.79,
-      "method": "ocf",
+      "intrinsic_value": 210.13,
+      "discount_pct": 46.95,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Diversified",
       "beta": 0.21,
@@ -4640,6 +4774,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4749,6 +4886,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4827,10 +4967,10 @@
       "company_name": "Ares Management Corporation",
       "sector": "Financial Services",
       "current_price": 134.37,
-      "intrinsic_value": -86.57,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 93.46,
+      "discount_pct": -43.77,
+      "method": "ni",
+      "valuation_label": "Highly Overvalued",
       "industry": "Asset Management",
       "beta": 1.49,
       "market_cap_m": 44604.956672,
@@ -4858,6 +4998,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -4967,6 +5110,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -5055,10 +5201,10 @@
       "company_name": "Arthur J. Gallagher & Co.",
       "sector": "Financial Services",
       "current_price": 287.1,
-      "intrinsic_value": 334.76,
-      "discount_pct": 14.24,
-      "method": "fcf",
-      "valuation_label": "Slightly Undervalued",
+      "intrinsic_value": 224.98,
+      "discount_pct": -27.61,
+      "method": "ni",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Insurance Brokers",
       "beta": 0.46,
       "market_cap_m": 73616.75264,
@@ -5086,6 +5232,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -5164,9 +5313,9 @@
       "company_name": "Assurant, Inc.",
       "sector": "Financial Services",
       "current_price": 324.49,
-      "intrinsic_value": 911.18,
-      "discount_pct": 64.39,
-      "method": "fcf",
+      "intrinsic_value": 503.29,
+      "discount_pct": 35.53,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.5,
@@ -5195,6 +5344,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -5304,6 +5456,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -5413,6 +5568,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -5522,6 +5680,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -5631,6 +5792,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -5740,6 +5904,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -5849,6 +6016,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -5958,6 +6128,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -6067,6 +6240,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6176,6 +6352,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6254,10 +6433,10 @@
       "company_name": "Bank of America Corporation",
       "sector": "Financial Services",
       "current_price": 50.8,
-      "intrinsic_value": 31.45,
-      "discount_pct": -61.53,
-      "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "intrinsic_value": 122.46,
+      "discount_pct": 58.52,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Banks - Diversified",
       "beta": 1.19,
       "market_cap_m": 350530.633728,
@@ -6285,6 +6464,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6394,6 +6576,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6503,6 +6688,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6581,10 +6769,10 @@
       "company_name": "Berkshire Hathaway Inc.",
       "sector": "Financial Services",
       "current_price": 591.705,
-      "intrinsic_value": 486.31,
-      "discount_pct": -21.67,
-      "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "intrinsic_value": 635.29,
+      "discount_pct": 6.86,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Insurance - Diversified",
       "beta": 0.57,
       "market_cap_m": 1257088.745472,
@@ -6612,6 +6800,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -6721,6 +6912,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -6830,6 +7024,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -6939,6 +7136,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7017,10 +7217,10 @@
       "company_name": "BlackRock, Inc.",
       "sector": "Financial Services",
       "current_price": 1215.55,
-      "intrinsic_value": 916.16,
-      "discount_pct": -32.68,
-      "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "intrinsic_value": 1285.53,
+      "discount_pct": 5.44,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Asset Management",
       "beta": 1.37,
       "market_cap_m": 187709.407232,
@@ -7048,6 +7248,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7126,10 +7329,10 @@
       "company_name": "Blackstone Inc.",
       "sector": "Financial Services",
       "current_price": 119.8261,
-      "intrinsic_value": 91.52,
-      "discount_pct": -30.93,
-      "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "intrinsic_value": 115.7,
+      "discount_pct": -3.57,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Asset Management",
       "beta": 1.53,
       "market_cap_m": 147910.16448,
@@ -7157,6 +7360,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7266,6 +7472,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7375,6 +7584,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7453,9 +7665,9 @@
       "company_name": "The Bank of New York Mellon Corporation",
       "sector": "Financial Services",
       "current_price": 153.34,
-      "intrinsic_value": 398.04,
-      "discount_pct": 61.48,
-      "method": "ocf",
+      "intrinsic_value": 290.9,
+      "discount_pct": 47.29,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Diversified",
       "beta": 1.0,
@@ -7484,6 +7696,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7593,6 +7808,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7702,6 +7920,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7811,6 +8032,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -7920,6 +8144,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -8029,6 +8256,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -8138,6 +8368,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -8216,9 +8449,9 @@
       "company_name": "Brown & Brown, Inc.",
       "sector": "Financial Services",
       "current_price": 72.885,
-      "intrinsic_value": 75.94,
-      "discount_pct": 4.02,
-      "method": "ocf",
+      "intrinsic_value": 74.26,
+      "discount_pct": 1.85,
+      "method": "ni",
       "valuation_label": "Fairly Valued",
       "industry": "Insurance Brokers",
       "beta": 0.52,
@@ -8247,6 +8480,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -8356,6 +8592,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -8465,6 +8704,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -8543,10 +8785,10 @@
       "company_name": "BXP, Inc.",
       "sector": "Real Estate",
       "current_price": 64.12,
-      "intrinsic_value": 81.73,
-      "discount_pct": 21.55,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Office",
       "beta": 1.04,
       "market_cap_m": 11582.710784,
@@ -8574,6 +8816,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -8683,6 +8928,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -8792,6 +9040,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -8870,10 +9121,10 @@
       "company_name": "Camden Property Trust",
       "sector": "Real Estate",
       "current_price": 99.66,
-      "intrinsic_value": 82.55,
-      "discount_pct": -20.73,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Residential",
       "beta": 0.76,
       "market_cap_m": 9972.944896,
@@ -8901,6 +9152,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -8979,9 +9233,9 @@
       "company_name": "Capital One Financial Corporation",
       "sector": "Financial Services",
       "current_price": 194.46,
-      "intrinsic_value": 1035.77,
-      "discount_pct": 81.23,
-      "method": "fcf",
+      "intrinsic_value": 428.89,
+      "discount_pct": 54.66,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Credit Services",
       "beta": 1.09,
@@ -9010,6 +9264,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9119,6 +9376,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -9228,6 +9488,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9337,6 +9600,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9446,6 +9712,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9555,6 +9824,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -9664,6 +9936,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9742,10 +10017,10 @@
       "company_name": "Cboe Global Markets, Inc.",
       "sector": "Financial Services",
       "current_price": 377.06,
-      "intrinsic_value": 853.11,
-      "discount_pct": 55.8,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 492.24,
+      "discount_pct": 23.4,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 0.35,
       "market_cap_m": 39338.758144,
@@ -9773,6 +10048,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -9851,10 +10129,10 @@
       "company_name": "CBRE Group, Inc.",
       "sector": "Real Estate",
       "current_price": 133.36,
-      "intrinsic_value": 121.14,
-      "discount_pct": -10.09,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "valuation_label": "N/A",
       "industry": "Real Estate Services",
       "beta": 1.22,
       "market_cap_m": 38433.85344,
@@ -9882,6 +10160,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -9991,6 +10272,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -10100,6 +10384,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -10209,6 +10496,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -10318,6 +10608,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -10427,6 +10720,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -10536,6 +10832,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -10614,9 +10913,9 @@
       "company_name": "The Charles Schwab Corporation",
       "sector": "Financial Services",
       "current_price": 93.55,
-      "intrinsic_value": 368.07,
-      "discount_pct": 74.58,
-      "method": "ocf",
+      "intrinsic_value": 315.58,
+      "discount_pct": 70.36,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Capital Markets",
       "beta": 0.75,
@@ -10645,6 +10944,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -10754,6 +11056,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -10863,6 +11168,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -10972,6 +11280,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -11050,9 +11361,9 @@
       "company_name": "Chubb Limited",
       "sector": "Financial Services",
       "current_price": 381.54,
-      "intrinsic_value": 1114.92,
-      "discount_pct": 65.78,
-      "method": "fcf",
+      "intrinsic_value": 654.64,
+      "discount_pct": 41.72,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.28,
@@ -11081,6 +11392,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -11190,6 +11504,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -11299,6 +11616,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -11408,6 +11728,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -11486,9 +11809,9 @@
       "company_name": "Cincinnati Financial Corporation",
       "sector": "Financial Services",
       "current_price": 192.265,
-      "intrinsic_value": 567.52,
-      "discount_pct": 66.12,
-      "method": "ocf",
+      "intrinsic_value": 318.14,
+      "discount_pct": 39.57,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.48,
@@ -11517,6 +11840,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -11636,6 +11962,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -11745,6 +12074,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -11823,10 +12155,10 @@
       "company_name": "Citigroup Inc.",
       "sector": "Financial Services",
       "current_price": 123.7101,
-      "intrinsic_value": 96.49,
-      "discount_pct": -28.21,
-      "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "intrinsic_value": 565.82,
+      "discount_pct": 78.14,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Banks - Diversified",
       "beta": 1.15,
       "market_cap_m": 204765.51168,
@@ -11854,6 +12186,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -11932,9 +12267,9 @@
       "company_name": "Citizens Financial Group, Inc.",
       "sector": "Financial Services",
       "current_price": 65.26,
-      "intrinsic_value": 133.0,
-      "discount_pct": 50.93,
-      "method": "ocf",
+      "intrinsic_value": 258.16,
+      "discount_pct": 74.72,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 1.09,
@@ -11963,6 +12298,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2021,
@@ -12082,6 +12420,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -12160,9 +12501,9 @@
       "company_name": "CME Group Inc.",
       "sector": "Financial Services",
       "current_price": 320.8368,
-      "intrinsic_value": 264.44,
-      "discount_pct": -21.33,
-      "method": "ocf",
+      "intrinsic_value": 266.84,
+      "discount_pct": -20.24,
+      "method": "ni",
       "valuation_label": "Slightly Overvalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 0.16,
@@ -12191,6 +12532,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -12300,6 +12644,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -12409,6 +12756,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -12518,6 +12868,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -12627,6 +12980,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2023,
@@ -12705,10 +13061,10 @@
       "company_name": "Coinbase Global, Inc.",
       "sector": "Financial Services",
       "current_price": 120.5,
-      "intrinsic_value": 198.26,
-      "discount_pct": 39.22,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "ni",
+      "valuation_label": "N/A",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 3.36,
       "market_cap_m": 31903.991808,
@@ -12736,6 +13092,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "earnings",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -12845,6 +13204,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -12954,6 +13316,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13063,6 +13428,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13172,6 +13540,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13281,6 +13652,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -13390,6 +13764,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -13499,6 +13876,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13608,6 +13988,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13717,6 +14100,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -13826,6 +14212,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -13935,6 +14324,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -14013,10 +14405,10 @@
       "company_name": "CoStar Group, Inc.",
       "sector": "Real Estate",
       "current_price": 30.93,
-      "intrinsic_value": 47.09,
-      "discount_pct": 34.32,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "Real Estate Services",
       "beta": 0.78,
       "market_cap_m": 12444.294144,
@@ -14044,6 +14436,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -14153,6 +14548,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -14262,6 +14660,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -14371,6 +14772,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -14449,10 +14853,10 @@
       "company_name": "Crown Castle Inc.",
       "sector": "Real Estate",
       "current_price": 91.02,
-      "intrinsic_value": 179.86,
-      "discount_pct": 49.39,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Specialty",
       "beta": 0.9,
       "market_cap_m": 38727.294976,
@@ -14480,6 +14884,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -14589,6 +14996,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -14698,6 +15108,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -14817,6 +15230,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -14926,6 +15342,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -15035,6 +15454,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -15144,6 +15566,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -15253,6 +15678,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -15362,6 +15790,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -15471,6 +15902,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -15580,6 +16014,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -15689,6 +16126,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -15798,6 +16238,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -15907,6 +16350,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -16016,6 +16462,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -16104,10 +16553,10 @@
       "company_name": "Digital Realty Trust, Inc.",
       "sector": "Real Estate",
       "current_price": 180.6325,
-      "intrinsic_value": 18.58,
-      "discount_pct": -872.19,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Specialty",
       "beta": 1.0,
       "market_cap_m": 69541.871616,
@@ -16135,6 +16584,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -16244,6 +16696,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -16353,6 +16808,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -16462,6 +16920,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -16571,6 +17032,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -16680,6 +17144,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -16789,6 +17256,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -16898,6 +17368,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -17007,6 +17480,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -17116,6 +17592,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -17225,6 +17704,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -17334,6 +17816,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -17443,6 +17928,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -17552,6 +18040,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -17661,6 +18152,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -17770,6 +18264,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -17879,6 +18376,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -17988,6 +18488,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -18097,6 +18600,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -18206,6 +18712,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -18315,6 +18824,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -18424,6 +18936,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -18533,6 +19048,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -18642,6 +19160,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -18751,6 +19272,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -18829,7 +19353,7 @@
       "company_name": "Equinix, Inc.",
       "sector": "Real Estate",
       "current_price": 1053.82,
-      "intrinsic_value": -714.79,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -18860,6 +19384,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -18938,10 +19465,10 @@
       "company_name": "Erie Indemnity Company",
       "sector": "Financial Services",
       "current_price": 278.57,
-      "intrinsic_value": 223.81,
-      "discount_pct": -24.47,
-      "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "intrinsic_value": 176.33,
+      "discount_pct": -57.98,
+      "method": "ni",
+      "valuation_label": "Highly Overvalued",
       "industry": "Insurance Brokers",
       "beta": 0.22,
       "market_cap_m": 14566.388736,
@@ -18969,6 +19496,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -19057,7 +19587,7 @@
       "company_name": "Essex Property Trust, Inc.",
       "sector": "Real Estate",
       "current_price": 275.0053,
-      "intrinsic_value": -5.38,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -19088,6 +19618,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -19197,6 +19730,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -19275,9 +19811,9 @@
       "company_name": "Everest Group, Ltd.",
       "sector": "Financial Services",
       "current_price": 434.355,
-      "intrinsic_value": 2450.13,
-      "discount_pct": 82.27,
-      "method": "ocf",
+      "intrinsic_value": 1364.07,
+      "discount_pct": 68.16,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Reinsurance",
       "beta": 0.22,
@@ -19306,6 +19842,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -19415,6 +19954,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -19524,6 +20066,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -19633,6 +20178,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -19742,6 +20290,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -19851,6 +20402,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -19960,6 +20514,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -20069,6 +20626,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -20147,10 +20707,10 @@
       "company_name": "Extra Space Storage Inc.",
       "sector": "Real Estate",
       "current_price": 159.625,
-      "intrinsic_value": 67.75,
-      "discount_pct": -135.61,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Industrial",
       "beta": 1.08,
       "market_cap_m": 34822.643712,
@@ -20178,6 +20738,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -20287,6 +20850,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -20396,6 +20962,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -20474,10 +21043,10 @@
       "company_name": "FactSet Research Systems Inc.",
       "sector": "Financial Services",
       "current_price": 333.975,
-      "intrinsic_value": 453.03,
-      "discount_pct": 26.28,
-      "method": "fcf",
-      "valuation_label": "Slightly Undervalued",
+      "intrinsic_value": 365.24,
+      "discount_pct": 8.56,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 0.69,
       "market_cap_m": 11774.509056,
@@ -20505,6 +21074,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -20614,6 +21186,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -20723,6 +21298,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -20801,7 +21379,7 @@
       "company_name": "Federal Realty Investment Trust",
       "sector": "Real Estate",
       "current_price": 113.65,
-      "intrinsic_value": -3.26,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "ocf",
       "valuation_label": "N/A",
@@ -20832,6 +21410,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -20941,6 +21522,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -21050,6 +21634,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.0,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2023,
@@ -21159,6 +21746,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -21268,6 +21858,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -21346,10 +21939,10 @@
       "company_name": "Fifth Third Bancorp",
       "sector": "Financial Services",
       "current_price": 54.17,
-      "intrinsic_value": 41.14,
-      "discount_pct": -31.67,
-      "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "intrinsic_value": 79.25,
+      "discount_pct": 31.65,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 0.99,
       "market_cap_m": 48950.489088,
@@ -21377,6 +21970,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -21486,6 +22082,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -21595,6 +22194,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -21704,6 +22306,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -21813,6 +22418,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -21922,6 +22530,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -22031,6 +22642,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -22140,6 +22754,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -22249,6 +22866,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -22358,6 +22978,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -22436,10 +23059,10 @@
       "company_name": "Franklin Templeton Inc.",
       "sector": "Financial Services",
       "current_price": 35.74,
-      "intrinsic_value": -16.46,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 53.74,
+      "discount_pct": 33.49,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 1.59,
       "market_cap_m": 18316.750848,
@@ -22467,6 +23090,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -22576,6 +23202,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -22685,6 +23314,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -22794,6 +23426,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -22903,6 +23538,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23012,6 +23650,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23121,6 +23762,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -23230,6 +23874,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -23339,6 +23986,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23448,6 +24098,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23557,6 +24210,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -23666,6 +24322,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -23775,6 +24434,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23884,6 +24546,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -23993,6 +24658,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -24071,9 +24739,9 @@
       "company_name": "Globe Life Inc.",
       "sector": "Financial Services",
       "current_price": 161.59,
-      "intrinsic_value": 344.91,
-      "discount_pct": 53.15,
-      "method": "ocf",
+      "intrinsic_value": 308.26,
+      "discount_pct": 47.58,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Life",
       "beta": 0.46,
@@ -24102,6 +24770,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24211,6 +24882,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -24289,10 +24963,10 @@
       "company_name": "The Goldman Sachs Group, Inc.",
       "sector": "Financial Services",
       "current_price": 903.47,
-      "intrinsic_value": -5008.85,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 1885.68,
+      "discount_pct": 52.09,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Capital Markets",
       "beta": 1.27,
       "market_cap_m": 260591.992832,
@@ -24320,6 +24994,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24429,6 +25106,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24507,9 +25187,9 @@
       "company_name": "The Hartford Insurance Group, Inc.",
       "sector": "Financial Services",
       "current_price": 139.63,
-      "intrinsic_value": 480.06,
-      "discount_pct": 70.91,
-      "method": "fcf",
+      "intrinsic_value": 275.07,
+      "discount_pct": 49.24,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Diversified",
       "beta": 0.46,
@@ -24538,6 +25218,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24647,6 +25330,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24756,6 +25442,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -24834,10 +25523,10 @@
       "company_name": "Healthpeak Properties, Inc.",
       "sector": "Real Estate",
       "current_price": 20.0386,
-      "intrinsic_value": 75.96,
-      "discount_pct": 73.62,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Healthcare Facilities",
       "beta": 0.98,
       "market_cap_m": 14548.400128,
@@ -24865,6 +25554,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -24974,6 +25666,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -25083,6 +25778,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -25192,6 +25890,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -25301,6 +26002,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -25410,6 +26114,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -25519,6 +26226,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -25618,6 +26328,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -25727,6 +26440,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -25805,10 +26521,10 @@
       "company_name": "Host Hotels & Resorts, Inc.",
       "sector": "Real Estate",
       "current_price": 25.48,
-      "intrinsic_value": 16.55,
-      "discount_pct": -53.96,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Hotel & Motel",
       "beta": 1.1,
       "market_cap_m": 17697.230848,
@@ -25836,6 +26552,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -25945,6 +26664,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26054,6 +26776,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26163,6 +26888,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26272,6 +27000,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -26350,9 +27081,9 @@
       "company_name": "Huntington Bancshares Incorporated",
       "sector": "Financial Services",
       "current_price": 15.8099,
-      "intrinsic_value": 38.3,
-      "discount_pct": 58.72,
-      "method": "ocf",
+      "intrinsic_value": 30.89,
+      "discount_pct": 48.82,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 0.98,
@@ -26381,6 +27112,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -26500,6 +27234,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26609,6 +27346,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26718,6 +27458,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26827,6 +27570,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -26936,6 +27682,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27045,6 +27794,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27154,6 +27906,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27263,6 +28018,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27372,6 +28130,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27481,6 +28242,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27559,10 +28323,10 @@
       "company_name": "Interactive Brokers Group, Inc.",
       "sector": "Financial Services",
       "current_price": 80.315,
-      "intrinsic_value": 246.9,
-      "discount_pct": 67.47,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 101.06,
+      "discount_pct": 20.53,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Capital Markets",
       "beta": 1.38,
       "market_cap_m": 136844.009472,
@@ -27590,6 +28354,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27668,9 +28435,9 @@
       "company_name": "Intercontinental Exchange, Inc.",
       "sector": "Financial Services",
       "current_price": 179.37,
-      "intrinsic_value": 250.58,
-      "discount_pct": 28.42,
-      "method": "ocf",
+      "intrinsic_value": 210.45,
+      "discount_pct": 14.77,
+      "method": "ni",
       "valuation_label": "Slightly Undervalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 0.84,
@@ -27699,6 +28466,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -27808,6 +28578,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -27917,6 +28690,9 @@
       "growth_capped": true,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -28026,6 +28802,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -28135,6 +28914,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -28223,10 +29005,10 @@
       "company_name": "Invesco Ltd.",
       "sector": "Financial Services",
       "current_price": 29.21,
-      "intrinsic_value": 131.38,
-      "discount_pct": 77.77,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": null,
+      "discount_pct": null,
+      "method": "ni",
+      "valuation_label": "N/A",
       "industry": "Asset Management",
       "beta": 1.65,
       "market_cap_m": 12838.639616,
@@ -28254,6 +29036,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "earnings",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -28332,10 +29117,10 @@
       "company_name": "Invitation Homes Inc.",
       "sector": "Real Estate",
       "current_price": 27.17,
-      "intrinsic_value": 0.45,
-      "discount_pct": -5937.78,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Residential",
       "beta": 0.81,
       "market_cap_m": 15713.799168,
@@ -28363,6 +29148,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -28472,6 +29260,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -28550,7 +29341,7 @@
       "company_name": "Iron Mountain Incorporated",
       "sector": "Real Estate",
       "current_price": 113.46,
-      "intrinsic_value": -112.24,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -28581,6 +29372,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -28690,6 +29484,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -28799,6 +29596,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -28908,6 +29708,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29027,6 +29830,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29136,6 +29942,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29245,6 +30054,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -29323,10 +30135,10 @@
       "company_name": "JPMorgan Chase & Co.",
       "sector": "Financial Services",
       "current_price": 345.4,
-      "intrinsic_value": -818.6,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 581.18,
+      "discount_pct": 40.57,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Banks - Diversified",
       "beta": 1.02,
       "market_cap_m": 917247.557632,
@@ -29354,6 +30166,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29463,6 +30278,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29541,9 +30359,9 @@
       "company_name": "KeyCorp",
       "sector": "Financial Services",
       "current_price": 21.41,
-      "intrinsic_value": 35.71,
-      "discount_pct": 40.04,
-      "method": "ocf",
+      "intrinsic_value": 64.79,
+      "discount_pct": 66.95,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 1.07,
@@ -29572,6 +30390,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "earnings",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -29681,6 +30502,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29790,6 +30614,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -29868,10 +30695,10 @@
       "company_name": "Kimco Realty Corporation",
       "sector": "Real Estate",
       "current_price": 25.78,
-      "intrinsic_value": 17.48,
-      "discount_pct": -47.48,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Retail",
       "beta": 0.93,
       "market_cap_m": 17130.517504,
@@ -29899,6 +30726,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -30008,6 +30838,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30086,9 +30919,9 @@
       "company_name": "KKR & Co. Inc.",
       "sector": "Financial Services",
       "current_price": 97.8599,
-      "intrinsic_value": 163.12,
-      "discount_pct": 40.01,
-      "method": "ocf",
+      "intrinsic_value": 155.29,
+      "discount_pct": 36.98,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 1.71,
@@ -30117,6 +30950,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30226,6 +31062,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -30335,6 +31174,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30444,6 +31286,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -30553,6 +31398,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30662,6 +31510,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30771,6 +31622,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -30880,6 +31734,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -30989,6 +31846,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31098,6 +31958,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -31207,6 +32070,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31316,6 +32182,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31425,6 +32294,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31534,6 +32406,9 @@
       "growth_capped": true,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31643,6 +32518,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31721,10 +32599,10 @@
       "company_name": "Loews Corporation",
       "sector": "Financial Services",
       "current_price": 112.65,
-      "intrinsic_value": 103.46,
-      "discount_pct": -8.88,
-      "method": "fcf",
-      "valuation_label": "Fairly Valued",
+      "intrinsic_value": 102.02,
+      "discount_pct": -10.42,
+      "method": "ni",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.49,
       "market_cap_m": 22780.672,
@@ -31752,6 +32630,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -31861,6 +32742,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -31970,6 +32854,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -32079,6 +32966,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -32188,6 +33078,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -32266,9 +33159,9 @@
       "company_name": "M&T Bank Corporation",
       "sector": "Financial Services",
       "current_price": 220.7449,
-      "intrinsic_value": 689.45,
-      "discount_pct": 67.98,
-      "method": "ocf",
+      "intrinsic_value": 532.29,
+      "discount_pct": 58.53,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 0.64,
@@ -32297,6 +33190,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -32416,6 +33312,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -32525,6 +33424,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -32603,10 +33505,10 @@
       "company_name": "Marsh & McLennan Companies, Inc.",
       "sector": "Financial Services",
       "current_price": 210.4011,
-      "intrinsic_value": 169.83,
-      "discount_pct": -23.89,
-      "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "intrinsic_value": 192.73,
+      "discount_pct": -9.17,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Insurance Brokers",
       "beta": 0.52,
       "market_cap_m": 100048.73216,
@@ -32634,6 +33536,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -32743,6 +33648,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -32852,6 +33760,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -32961,6 +33872,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33039,9 +33953,9 @@
       "company_name": "Mastercard Incorporated",
       "sector": "Financial Services",
       "current_price": 664.46,
-      "intrinsic_value": 649.55,
-      "discount_pct": -2.3,
-      "method": "ocf",
+      "intrinsic_value": 668.84,
+      "discount_pct": 0.65,
+      "method": "ni",
       "valuation_label": "Fairly Valued",
       "industry": "Credit Services",
       "beta": 0.77,
@@ -33070,6 +33984,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33179,6 +34096,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33288,6 +34208,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33397,6 +34320,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -33506,6 +34432,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -33615,6 +34544,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33724,6 +34656,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33802,10 +34737,10 @@
       "company_name": "MetLife, Inc.",
       "sector": "Financial Services",
       "current_price": 102.63,
-      "intrinsic_value": 744.37,
-      "discount_pct": 86.21,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 141.93,
+      "discount_pct": 27.69,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Insurance - Life",
       "beta": 0.77,
       "market_cap_m": 64497.012736,
@@ -33833,6 +34768,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -33942,6 +34880,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -34051,6 +34992,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -34160,6 +35104,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -34269,6 +35216,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -34380,6 +35330,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -34458,10 +35411,10 @@
       "company_name": "Mid-America Apartment Communities, Inc.",
       "sector": "Real Estate",
       "current_price": 118.48,
-      "intrinsic_value": 5.21,
-      "discount_pct": -2174.09,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Residential",
       "beta": 0.7,
       "market_cap_m": 14090.021888,
@@ -34489,6 +35442,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -34598,6 +35554,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -34707,6 +35666,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -34816,6 +35778,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -34925,6 +35890,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35003,9 +35971,9 @@
       "company_name": "Moody's Corporation",
       "sector": "Financial Services",
       "current_price": 508.55,
-      "intrinsic_value": 384.98,
-      "discount_pct": -32.1,
-      "method": "ocf",
+      "intrinsic_value": 360.47,
+      "discount_pct": -41.08,
+      "method": "ni",
       "valuation_label": "Highly Overvalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 1.3,
@@ -35034,6 +36002,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35112,10 +36083,10 @@
       "company_name": "Morgan Stanley",
       "sector": "Financial Services",
       "current_price": 188.0875,
-      "intrinsic_value": -1139.37,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 333.76,
+      "discount_pct": 43.65,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Capital Markets",
       "beta": 1.22,
       "market_cap_m": 293988.990976,
@@ -35143,6 +36114,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35252,6 +36226,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "not_rated",
+      "rating_reason": "negative_earnings",
       "trends": {
         "years": [
           2022,
@@ -35361,6 +36338,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35439,9 +36419,9 @@
       "company_name": "MSCI Inc.",
       "sector": "Financial Services",
       "current_price": 661.35,
-      "intrinsic_value": 487.51,
-      "discount_pct": -35.66,
-      "method": "ocf",
+      "intrinsic_value": 495.14,
+      "discount_pct": -33.57,
+      "method": "ni",
       "valuation_label": "Highly Overvalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 1.19,
@@ -35470,6 +36450,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35548,10 +36531,10 @@
       "company_name": "Nasdaq, Inc.",
       "sector": "Financial Services",
       "current_price": 109.13,
-      "intrinsic_value": 126.24,
-      "discount_pct": 13.55,
-      "method": "ocf",
-      "valuation_label": "Slightly Undervalued",
+      "intrinsic_value": 114.94,
+      "discount_pct": 5.05,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 0.96,
       "market_cap_m": 60563.083264,
@@ -35579,6 +36562,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35688,6 +36674,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -35797,6 +36786,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -35906,6 +36898,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -36015,6 +37010,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -36124,6 +37122,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -36233,6 +37234,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -36342,6 +37346,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -36451,6 +37458,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -36560,6 +37570,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -36669,6 +37682,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -36747,9 +37763,9 @@
       "company_name": "Northern Trust Corporation",
       "sector": "Financial Services",
       "current_price": 178.09,
-      "intrinsic_value": 482.6,
-      "discount_pct": 63.1,
-      "method": "ocf",
+      "intrinsic_value": 408.24,
+      "discount_pct": 56.38,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 1.21,
@@ -36778,6 +37794,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -36897,6 +37916,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -37006,6 +38028,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -37115,6 +38140,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -37224,6 +38252,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -37333,6 +38364,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -37442,6 +38476,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -37551,6 +38588,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -37660,6 +38700,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -37769,6 +38812,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -37878,6 +38924,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -37987,6 +39036,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38096,6 +39148,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -38205,6 +39260,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38314,6 +39372,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38423,6 +39484,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2023,
@@ -38532,6 +39596,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38641,6 +39708,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38750,6 +39820,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38859,6 +39932,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -38968,6 +40044,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -39077,6 +40156,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -39186,6 +40268,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -39264,9 +40349,9 @@
       "company_name": "PayPal Holdings, Inc.",
       "sector": "Financial Services",
       "current_price": 59.39,
-      "intrinsic_value": 121.29,
-      "discount_pct": 51.03,
-      "method": "fcf",
+      "intrinsic_value": 93.9,
+      "discount_pct": 36.75,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Credit Services",
       "beta": 1.31,
@@ -39295,6 +40380,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -39404,6 +40492,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -39513,6 +40604,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -39622,6 +40716,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -39731,6 +40828,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -39840,6 +40940,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -39949,6 +41052,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -40058,6 +41164,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -40136,9 +41245,9 @@
       "company_name": "The PNC Financial Services Group, Inc.",
       "sector": "Financial Services",
       "current_price": 231.33,
-      "intrinsic_value": 417.63,
-      "discount_pct": 44.61,
-      "method": "ocf",
+      "intrinsic_value": 546.08,
+      "discount_pct": 57.64,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 0.9,
@@ -40167,6 +41276,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -40286,6 +41398,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -40395,6 +41510,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -40473,10 +41591,10 @@
       "company_name": "Principal Financial Group, Inc.",
       "sector": "Financial Services",
       "current_price": 113.28,
-      "intrinsic_value": 715.67,
-      "discount_pct": 84.17,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 129.22,
+      "discount_pct": 12.34,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Asset Management",
       "beta": 0.88,
       "market_cap_m": 24058.005504,
@@ -40504,6 +41622,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -40613,6 +41734,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -40691,10 +41815,10 @@
       "company_name": "The Progressive Corporation",
       "sector": "Financial Services",
       "current_price": 237.76,
-      "intrinsic_value": 299.19,
-      "discount_pct": 20.53,
-      "method": "ocf",
-      "valuation_label": "Slightly Undervalued",
+      "intrinsic_value": 214.1,
+      "discount_pct": -11.05,
+      "method": "ni",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.21,
       "market_cap_m": 137749.151744,
@@ -40722,6 +41846,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -40800,10 +41927,10 @@
       "company_name": "Prologis, Inc.",
       "sector": "Real Estate",
       "current_price": 128.9,
-      "intrinsic_value": 33.14,
-      "discount_pct": -288.96,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Industrial",
       "beta": 1.29,
       "market_cap_m": 125325.7216,
@@ -40831,6 +41958,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -40909,9 +42039,9 @@
       "company_name": "Prudential Financial, Inc.",
       "sector": "Financial Services",
       "current_price": 123.95,
-      "intrinsic_value": 650.02,
-      "discount_pct": 80.93,
-      "method": "fcf",
+      "intrinsic_value": 177.77,
+      "discount_pct": 30.28,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Life",
       "beta": 0.82,
@@ -40940,6 +42070,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41049,6 +42182,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41158,6 +42294,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -41236,10 +42375,10 @@
       "company_name": "Public Storage",
       "sector": "Real Estate",
       "current_price": 335.18,
-      "intrinsic_value": 154.21,
-      "discount_pct": -117.35,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Industrial",
       "beta": 0.9,
       "market_cap_m": 62626.189312,
@@ -41267,6 +42406,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -41376,6 +42518,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41485,6 +42630,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41594,6 +42742,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -41703,6 +42854,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41812,6 +42966,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -41921,6 +43078,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -41999,9 +43159,9 @@
       "company_name": "Raymond James Financial, Inc.",
       "sector": "Financial Services",
       "current_price": 168.34,
-      "intrinsic_value": 283.8,
-      "discount_pct": 40.68,
-      "method": "ocf",
+      "intrinsic_value": 359.03,
+      "discount_pct": 53.11,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 0.94,
@@ -42030,6 +43190,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -42139,6 +43302,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -42217,10 +43383,10 @@
       "company_name": "Realty Income Corporation",
       "sector": "Real Estate",
       "current_price": 59.22,
-      "intrinsic_value": 88.1,
-      "discount_pct": 32.78,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Retail",
       "beta": 0.65,
       "market_cap_m": 56476.864512,
@@ -42248,6 +43414,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -42326,10 +43495,10 @@
       "company_name": "Regency Centers Corporation",
       "sector": "Real Estate",
       "current_price": 76.41,
-      "intrinsic_value": 27.34,
-      "discount_pct": -179.48,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Retail",
       "beta": 0.81,
       "market_cap_m": 14285.863936,
@@ -42357,6 +43526,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -42466,6 +43638,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -42544,10 +43719,10 @@
       "company_name": "Regions Financial Corporation",
       "sector": "Financial Services",
       "current_price": 28.795,
-      "intrinsic_value": 24.24,
-      "discount_pct": -18.79,
-      "method": "ocf",
-      "valuation_label": "Slightly Overvalued",
+      "intrinsic_value": 60.61,
+      "discount_pct": 52.49,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 1.02,
       "market_cap_m": 24442.560512,
@@ -42575,6 +43750,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -42684,6 +43862,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2021,
@@ -42803,6 +43984,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -42912,6 +44096,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -42990,10 +44177,10 @@
       "company_name": "Robinhood Markets, Inc.",
       "sector": "Financial Services",
       "current_price": 75.05,
-      "intrinsic_value": 95.87,
-      "discount_pct": 21.72,
-      "method": "fcf",
-      "valuation_label": "Slightly Undervalued",
+      "intrinsic_value": 69.35,
+      "discount_pct": -8.22,
+      "method": "ni",
+      "valuation_label": "Fairly Valued",
       "industry": "Capital Markets",
       "beta": 2.54,
       "market_cap_m": 67581.87008,
@@ -43021,6 +44208,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -43130,6 +44320,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -43239,6 +44432,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -43348,6 +44544,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -43457,6 +44656,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -43566,6 +44768,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -43675,6 +44880,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -43753,9 +44961,9 @@
       "company_name": "S&P Global Inc.",
       "sector": "Financial Services",
       "current_price": 474.14,
-      "intrinsic_value": 389.42,
-      "discount_pct": -21.76,
-      "method": "ocf",
+      "intrinsic_value": 423.3,
+      "discount_pct": -12.01,
+      "method": "ni",
       "valuation_label": "Slightly Overvalued",
       "industry": "Financial Data & Stock Exchanges",
       "beta": 1.03,
@@ -43784,6 +44992,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -43893,6 +45104,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -44002,6 +45216,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -44080,10 +45297,10 @@
       "company_name": "SBA Communications Corporation",
       "sector": "Real Estate",
       "current_price": 190.335,
-      "intrinsic_value": 9.12,
-      "discount_pct": -1987.01,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Specialty",
       "beta": 0.97,
       "market_cap_m": 19876.302848,
@@ -44111,6 +45328,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -44220,6 +45440,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -44329,6 +45552,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -44438,6 +45664,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -44547,6 +45776,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -44656,6 +45888,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -44734,7 +45969,7 @@
       "company_name": "Simon Property Group, Inc.",
       "sector": "Real Estate",
       "current_price": 233.56,
-      "intrinsic_value": -27.19,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "ocf",
       "valuation_label": "N/A",
@@ -44765,6 +46000,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -44874,6 +46112,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2021,
@@ -44993,6 +46234,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -45102,6 +46346,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -45211,6 +46458,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -45320,6 +46570,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -45429,6 +46682,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -45538,6 +46794,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -45647,6 +46906,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -45756,6 +47018,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -45865,6 +47130,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -45943,10 +47211,10 @@
       "company_name": "State Street Corporation",
       "sector": "Financial Services",
       "current_price": 172.7325,
-      "intrinsic_value": 173.99,
-      "discount_pct": 0.72,
-      "method": "ocf",
-      "valuation_label": "Fairly Valued",
+      "intrinsic_value": 434.55,
+      "discount_pct": 60.25,
+      "method": "ni",
+      "valuation_label": "Highly Undervalued",
       "industry": "Asset Management",
       "beta": 1.37,
       "market_cap_m": 46996.721664,
@@ -45974,6 +47242,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -46083,6 +47354,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -46192,6 +47466,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -46301,6 +47578,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -46410,6 +47690,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2023,
@@ -46488,9 +47771,9 @@
       "company_name": "Synchrony Financial",
       "sector": "Financial Services",
       "current_price": 72.15,
-      "intrinsic_value": 526.72,
-      "discount_pct": 86.3,
-      "method": "fcf",
+      "intrinsic_value": 184.99,
+      "discount_pct": 61.0,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Credit Services",
       "beta": 1.4,
@@ -46519,6 +47802,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -46628,6 +47914,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -46737,6 +48026,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -46846,6 +48138,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -46924,9 +48219,9 @@
       "company_name": "T. Rowe Price Group, Inc.",
       "sector": "Financial Services",
       "current_price": 109.635,
-      "intrinsic_value": 115.81,
-      "discount_pct": 5.33,
-      "method": "ocf",
+      "intrinsic_value": 119.98,
+      "discount_pct": 8.62,
+      "method": "ni",
       "valuation_label": "Fairly Valued",
       "industry": "Asset Management",
       "beta": 1.44,
@@ -46955,6 +48250,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -47064,6 +48362,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -47173,6 +48474,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -47282,6 +48586,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -47391,6 +48698,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -47500,6 +48810,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -47609,6 +48922,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -47718,6 +49034,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -47827,6 +49146,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -47936,6 +49258,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48045,6 +49370,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48154,6 +49482,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48263,6 +49594,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48372,6 +49706,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -48481,6 +49818,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48590,6 +49930,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48699,6 +50042,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -48808,6 +50154,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -48886,9 +50235,9 @@
       "company_name": "The Travelers Companies, Inc.",
       "sector": "Financial Services",
       "current_price": 405.595,
-      "intrinsic_value": 1333.55,
-      "discount_pct": 69.59,
-      "method": "ocf",
+      "intrinsic_value": 714.19,
+      "discount_pct": 43.21,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.4,
@@ -48917,6 +50266,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49026,6 +50378,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49104,9 +50459,9 @@
       "company_name": "Truist Financial Corporation",
       "sector": "Financial Services",
       "current_price": 49.9551,
-      "intrinsic_value": 132.39,
-      "discount_pct": 62.27,
-      "method": "ocf",
+      "intrinsic_value": 116.47,
+      "discount_pct": 57.11,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 0.87,
@@ -49135,6 +50490,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49244,6 +50602,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49353,6 +50714,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49462,6 +50826,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49540,9 +50907,9 @@
       "company_name": "U.S. Bancorp",
       "sector": "Financial Services",
       "current_price": 60.86,
-      "intrinsic_value": 185.4,
-      "discount_pct": 67.17,
-      "method": "fcf",
+      "intrinsic_value": 131.1,
+      "discount_pct": 53.58,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Regional",
       "beta": 1.02,
@@ -49571,6 +50938,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49680,6 +51050,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -49758,7 +51131,7 @@
       "company_name": "UDR, Inc.",
       "sector": "Real Estate",
       "current_price": 36.52,
-      "intrinsic_value": -2.31,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "ocf",
       "valuation_label": "N/A",
@@ -49789,6 +51162,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -49898,6 +51274,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50017,6 +51396,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50126,6 +51508,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50235,6 +51620,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50344,6 +51732,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -50453,6 +51844,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50562,6 +51956,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -50671,6 +52068,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "above_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -50780,6 +52180,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -50858,10 +52261,10 @@
       "company_name": "Ventas, Inc.",
       "sector": "Real Estate",
       "current_price": 89.755,
-      "intrinsic_value": 95.06,
-      "discount_pct": 5.58,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Fairly Valued",
+      "valuation_label": "N/A",
       "industry": "REIT - Healthcare Facilities",
       "beta": 0.76,
       "market_cap_m": 47464.239104,
@@ -50889,6 +52292,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -50998,6 +52404,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51107,6 +52516,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51216,6 +52628,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51325,6 +52740,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51434,6 +52852,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51543,6 +52964,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51652,6 +53076,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -51730,10 +53157,10 @@
       "company_name": "VICI Properties Inc.",
       "sector": "Real Estate",
       "current_price": 25.15,
-      "intrinsic_value": 29.25,
-      "discount_pct": 14.02,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Diversified",
       "beta": 0.65,
       "market_cap_m": 27692.302336,
@@ -51761,6 +53188,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -51839,9 +53269,9 @@
       "company_name": "Visa Inc.",
       "sector": "Financial Services",
       "current_price": 429.595,
-      "intrinsic_value": 364.39,
-      "discount_pct": -17.89,
-      "method": "ocf",
+      "intrinsic_value": 365.19,
+      "discount_pct": -17.64,
+      "method": "ni",
       "valuation_label": "Slightly Overvalued",
       "industry": "Credit Services",
       "beta": 0.78,
@@ -51870,6 +53300,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -51979,6 +53412,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52057,7 +53493,7 @@
       "company_name": "Vivmark Residential",
       "sector": "Real Estate",
       "current_price": 64.755,
-      "intrinsic_value": -17.95,
+      "intrinsic_value": null,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -52088,6 +53524,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -52197,6 +53636,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52275,10 +53717,10 @@
       "company_name": "Vylor Inc.",
       "sector": "Financial Services",
       "current_price": 73.225,
-      "intrinsic_value": -230.77,
-      "discount_pct": null,
-      "method": "ocf",
-      "valuation_label": "N/A",
+      "intrinsic_value": 64.01,
+      "discount_pct": -14.4,
+      "method": "ni",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Shell Companies",
       "beta": 0.604,
       "market_cap_m": 48863.264768,
@@ -52306,6 +53748,9 @@
       "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -52374,10 +53819,10 @@
       "company_name": "W. R. Berkley Corporation",
       "sector": "Financial Services",
       "current_price": 78.39,
-      "intrinsic_value": 220.02,
-      "discount_pct": 64.37,
-      "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "intrinsic_value": 92.01,
+      "discount_pct": 14.8,
+      "method": "ni",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Insurance - Property & Casualty",
       "beta": 0.22,
       "market_cap_m": 29123.121152,
@@ -52405,6 +53850,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52514,6 +53962,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52623,6 +54074,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52732,6 +54186,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2023,
@@ -52841,6 +54298,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -52950,6 +54410,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -53059,6 +54522,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "below_price_multiple",
       "trends": {
         "years": [
           2022,
@@ -53168,6 +54634,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -53246,9 +54715,9 @@
       "company_name": "Wells Fargo & Company",
       "sector": "Financial Services",
       "current_price": 85.9506,
-      "intrinsic_value": 242.85,
-      "discount_pct": 64.61,
-      "method": "ocf",
+      "intrinsic_value": 206.44,
+      "discount_pct": 58.37,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Banks - Diversified",
       "beta": 0.91,
@@ -53277,6 +54746,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -53355,10 +54827,10 @@
       "company_name": "Welltower Inc.",
       "sector": "Real Estate",
       "current_price": 246.65,
-      "intrinsic_value": 188.9,
-      "discount_pct": -30.57,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "fcf",
-      "valuation_label": "Highly Overvalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Healthcare Facilities",
       "beta": 0.78,
       "market_cap_m": 180944.863232,
@@ -53386,6 +54858,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -53495,6 +54970,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -53604,6 +55082,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -53682,10 +55163,10 @@
       "company_name": "Weyerhaeuser Company",
       "sector": "Real Estate",
       "current_price": 21.04,
-      "intrinsic_value": 30.13,
-      "discount_pct": 30.17,
+      "intrinsic_value": null,
+      "discount_pct": null,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "N/A",
       "industry": "REIT - Specialty",
       "beta": 0.93,
       "market_cap_m": 15156.038656,
@@ -53713,6 +55194,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "not_rated",
+      "rating": "not_rated",
+      "rating_reason": "reit",
       "trends": {
         "years": [
           2022,
@@ -53822,6 +55306,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -53931,6 +55418,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -54009,9 +55499,9 @@
       "company_name": "Willis Towers Watson Public Limited Company",
       "sector": "Financial Services",
       "current_price": 339.39,
-      "intrinsic_value": 697.33,
-      "discount_pct": 51.33,
-      "method": "ocf",
+      "intrinsic_value": 594.28,
+      "discount_pct": 42.89,
+      "method": "ni",
       "valuation_label": "Highly Undervalued",
       "industry": "Insurance Brokers",
       "beta": 0.43,
@@ -54040,6 +55530,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "earnings",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -54149,6 +55642,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2023,
@@ -54258,6 +55754,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -54367,6 +55866,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "low_confidence",
+      "rating_reason": "negative_value",
       "trends": {
         "years": [
           2022,
@@ -54476,6 +55978,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -54585,6 +56090,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -54694,6 +56202,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -54803,6 +56314,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -54912,6 +56426,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,

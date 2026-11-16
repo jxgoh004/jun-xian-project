@@ -306,6 +306,34 @@
     .badge-slightly-overvalued  { background: rgba(163, 39, 31, 0.07); color: var(--red); }
     .badge-highly-overvalued    { background: rgba(163, 39, 31, 0.16); color: var(--red); }
     .badge-na                   { background: var(--surface2); color: var(--text-dim); }
+    .badge-low-confidence       { background: var(--yellow-bg); color: var(--yellow); }
+
+    /* Rating tabs: which results the model stands behind */
+    .rating-bar {
+      max-width: 1440px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px 14px;
+      flex-wrap: wrap;
+    }
+    .rating-tabs { display: flex; flex-wrap: wrap; }
+    .rating-tabs button {
+      height: 38px;
+      padding: 0 16px;
+      font: 600 13px/1 inherit;
+      font-family: inherit;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+      margin-right: -1.5px;
+      cursor: pointer;
+    }
+    .rating-tabs button[aria-pressed="true"] { background: var(--ink); color: var(--inverse-text); }
+    .rating-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; position: relative; }
+    .rating-note { font-size: 13px; color: var(--text-dim); flex: 1 1 320px; }
+    .empty-row td { text-align: center; color: var(--text-dim); padding: 36px 12px; cursor: default; }
+    tr.is-flagged .td-number, tr.is-flagged .td-company { color: var(--text-dim); }
 
     /* Moat badges */
     .moat-badge {
@@ -434,6 +462,15 @@
     <span id="row-count" aria-live="polite"></span>
   </div>
 
+  <div class="rating-bar" id="rating-bar" style="display:none;">
+    <div class="rating-tabs" role="group" aria-label="Filter by model confidence">
+      <button type="button" data-rating="rated" aria-pressed="true">Rated</button>
+      <button type="button" data-rating="low_confidence" aria-pressed="false">Low confidence</button>
+      <button type="button" data-rating="not_rated" aria-pressed="false">Not rated</button>
+    </div>
+    <span class="rating-note" id="rating-note"></span>
+  </div>
+
   <div id="loading-state">Loading screener data&hellip;</div>
 
   <div id="error-state" style="display:none;">
@@ -451,7 +488,7 @@
           <th data-col="current_price">Price</th>
           <th data-col="intrinsic_value">Intrinsic Value</th>
           <th data-col="discount_pct">Discount %</th>
-          <th data-col="method" class="col-method">Method</th>
+          <th data-col="method" class="col-method">Basis</th>
           <th data-col="valuation_label">Valuation</th>
           <th data-col="moat" class="col-moat">Moat</th>
         </tr>
@@ -470,7 +507,39 @@
     var filterText = '';
     var filterSector = '';
     var filterMoat = '';
+    var filterRating = 'rated';   // 'rated' | 'low_confidence' | 'not_rated'
+    var modelRules = {};          // published in data.json from shared/dcf_rules.py
     var debounceTimer;
+
+    // Older snapshots have no rating field: treat a valued stock as rated.
+    function ratingOf(s) {
+      return s.rating || (s.intrinsic_value != null && s.intrinsic_value > 0 ? 'rated' : 'not_rated');
+    }
+
+    function multipleText(v) {
+      var n = Number(v);
+      return (Math.abs(n - Math.round(n)) < 0.01 ? String(Math.round(n)) : n.toFixed(1)) + '×';
+    }
+
+    // Why a stock is flagged or unrated, in words.
+    function reasonText(s) {
+      var max = modelRules.plausible_max_price_multiple || 3;
+      var min = modelRules.plausible_min_price_multiple || 1 / 3;
+      switch (s.rating_reason) {
+        case 'negative_value':       return 'Model value is negative';
+        case 'above_price_multiple': return 'Model value is over ' + multipleText(max) + ' the price';
+        case 'below_price_multiple': return 'Model value is under 1/' + Math.round(1 / min) + ' of the price';
+        case 'reit':                 return 'REIT: needs funds from operations, not cash flow';
+        case 'negative_earnings':    return 'Earnings are negative';
+        default:                     return 'Not enough data';
+      }
+    }
+
+    var RATING_NOTES = {
+      rated: 'Results inside the range the model can speak to. Banks, insurers and asset managers are valued on earnings.',
+      low_confidence: 'The model produced a number, but one so far from the price that the inputs are the likelier explanation. Shown for transparency, not ranked.',
+      not_rated: 'No valuation: REITs need funds from operations, and companies with negative earnings have nothing to discount.'
+    };
 
     // ---------------------------------------------------------------------------
     // Helpers
@@ -496,8 +565,7 @@
     }
 
     function fmtMethod(val) {
-      if (!val) return '—';
-      return String(val).toUpperCase();
+      return { ocf: 'Operating cash flow', fcf: 'Free cash flow', ni: 'Earnings' }[val] || '—';
     }
 
     function labelToSlug(label) {
@@ -516,7 +584,9 @@
           s.company_name.toLowerCase().indexOf(q) !== -1;
         var matchSector = !filterSector || s.sector === filterSector;
         var matchMoat   = !filterMoat   || s.moat   === filterMoat;
-        return matchText && matchSector && matchMoat;
+        // A text search looks across every tab, so a ticker is never "missing".
+        var matchRating = !!q || ratingOf(s) === filterRating;
+        return matchText && matchSector && matchMoat && matchRating;
       }).sort(function (a, b) {
         var av = a[sortCol];
         var bv = b[sortCol];
@@ -601,7 +671,7 @@
         // Method
         var tdMethod = document.createElement('td');
         tdMethod.className = 'col-method td-dim';
-        tdMethod.textContent = fmtMethod(stock.method);
+        tdMethod.textContent = ratingOf(stock) === 'not_rated' ? '—' : fmtMethod(stock.method);
         tr.appendChild(tdMethod);
 
         // Valuation badge
@@ -609,9 +679,18 @@
         var valLabel = stock.valuation_label || 'N/A';
         tdVal.setAttribute('aria-label', 'Valuation: ' + valLabel);
         var badge = document.createElement('span');
-        var slug = labelToSlug(stock.valuation_label);
-        badge.className = 'badge badge-' + slug;
-        badge.textContent = valLabel;
+        var rating = ratingOf(stock);
+        if (rating === 'rated') {
+          badge.className = 'badge badge-' + labelToSlug(stock.valuation_label);
+          badge.textContent = valLabel;
+        } else {
+          // Flagged or unrated: say why instead of showing a verdict.
+          tr.className = 'is-flagged';
+          badge.className = 'badge ' + (rating === 'low_confidence' ? 'badge-low-confidence' : 'badge-na');
+          badge.textContent = reasonText(stock);
+          tdVal.setAttribute('aria-label',
+            (rating === 'low_confidence' ? 'Low confidence: ' : 'Not rated: ') + reasonText(stock));
+        }
         tdVal.appendChild(badge);
         tr.appendChild(tdVal);
 
@@ -638,9 +717,34 @@
         tbody.appendChild(tr);
       });
 
+      if (!rows.length) {
+        var emptyTr = document.createElement('tr');
+        emptyTr.className = 'empty-row';
+        var emptyTd = document.createElement('td');
+        emptyTd.colSpan = 9;
+        emptyTd.textContent = filterText
+          ? 'No stock matches "' + filterText + '". Check the ticker or clear the filters.'
+          : 'No stocks match these filters.';
+        emptyTr.appendChild(emptyTd);
+        tbody.appendChild(emptyTr);
+      }
+
       // Update row count
       var countEl = document.getElementById('row-count');
       countEl.textContent = 'Showing ' + rows.length + ' of ' + allStocks.length + ' stocks';
+
+      // Rating tabs: counts, pressed state, and what the current tab means
+      var counts = { rated: 0, low_confidence: 0, not_rated: 0 };
+      allStocks.forEach(function (s) { counts[ratingOf(s)]++; });
+      document.querySelectorAll('.rating-tabs button').forEach(function (btn) {
+        var key = btn.getAttribute('data-rating');
+        if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);
+        btn.textContent = btn.getAttribute('data-label') + ' (' + counts[key] + ')';
+        btn.setAttribute('aria-pressed', !filterText && key === filterRating ? 'true' : 'false');
+      });
+      document.getElementById('rating-note').textContent = filterText
+        ? 'Searching all stocks, whatever their rating.'
+        : RATING_NOTES[filterRating];
     }
 
     // ---------------------------------------------------------------------------
@@ -735,6 +839,8 @@
         })
         .then(function (data) {
           allStocks = data.stocks || [];
+          modelRules = data.model || {};
+          document.getElementById('rating-bar').style.display = '';
           displayUpdatedAt(data.updated_at);
           populateSectors();
           updateSortIndicators();
@@ -751,6 +857,15 @@
         filterText = this.value;
         renderTable();
       }, 150));
+
+      // --- Rating tabs ---
+      document.querySelectorAll('.rating-tabs button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterRating = btn.getAttribute('data-rating');
+          // The low-confidence and unrated lists have no meaningful discount order
+          renderTable();
+        });
+      });
 
       // --- Sector filter ---
       var sectorSelect = document.getElementById('sector-filter');

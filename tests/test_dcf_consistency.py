@@ -62,3 +62,79 @@ def test_python_and_javascript_dcf_agree():
         py_iv, err = calculate_intrinsic_value(cf, g, r, sh, debt, cash)
         assert err is None
         assert py_iv == pytest.approx(js_iv, abs=0.01), case
+
+
+# ── Sector basis and plausibility rating ────────────────────────────────────
+
+def test_sector_basis():
+    from shared.dcf_rules import sector_basis
+    assert sector_basis("Financial Services") == "earnings"
+    assert sector_basis("Real Estate") == "not_rated"
+    assert sector_basis("Technology") == "cash_flow"
+    assert sector_basis(None) == "cash_flow"
+
+
+def test_rate_result_thresholds():
+    from shared.dcf_rules import (PLAUSIBLE_MAX_PRICE_MULTIPLE,
+                                  PLAUSIBLE_MIN_PRICE_MULTIPLE, rate_result)
+    price = 100.0
+    assert rate_result("cash_flow", 150.0, price) == ("rated", None)
+    assert rate_result("cash_flow", price * PLAUSIBLE_MAX_PRICE_MULTIPLE + 1, price) == (
+        "low_confidence", "above_price_multiple")
+    assert rate_result("cash_flow", price * PLAUSIBLE_MIN_PRICE_MULTIPLE - 1, price) == (
+        "low_confidence", "below_price_multiple")
+    assert rate_result("cash_flow", -5.0, price) == ("low_confidence", "negative_value")
+    assert rate_result("cash_flow", None, price) == ("not_rated", "no_data")
+    assert rate_result("not_rated", 150.0, price, "Real Estate") == ("not_rated", "reit")
+
+
+def test_financials_are_valued_on_earnings_without_net_debt():
+    from scripts.fetch_sp500 import value_stock
+    common = dict(method="ocf", ocf_m=-50000.0, fcf_m=-60000.0, ni_m=5000.0,
+                  growth_applied_pct=8.0, discount_rate_pct=7.0, shares_millions=1000.0,
+                  current_price=100.0)
+    bank = value_stock(sector="Financial Services", debt_m=400000.0, cash_m=300000.0, **common)
+    assert bank["method"] == "ni" and bank["basis"] == "earnings"
+    expected, _ = calculate_intrinsic_value(5000.0, 8.0, 7.0, 1000.0, 0, 0)
+    assert bank["intrinsic_value"] == expected  # debt and cash ignored
+    assert bank["rating"] == "rated"
+
+    # The same figures for an ordinary company go through cash flow and net debt
+    other = value_stock(sector="Industrials", debt_m=400000.0, cash_m=300000.0, **common)
+    assert other["method"] == "ocf" and other["intrinsic_value"] < 0
+    assert (other["rating"], other["rating_reason"]) == ("low_confidence", "negative_value")
+
+
+def test_reits_and_loss_makers_are_not_rated():
+    from scripts.fetch_sp500 import value_stock
+    args = dict(method="ocf", ocf_m=900.0, fcf_m=400.0, ni_m=300.0, growth_applied_pct=5.0,
+                discount_rate_pct=7.0, shares_millions=100.0, debt_m=0.0, cash_m=0.0,
+                current_price=50.0)
+    reit = value_stock(sector="Real Estate", **args)
+    assert reit["intrinsic_value"] is None and reit["valuation_label"] == "N/A"
+    assert (reit["rating"], reit["rating_reason"]) == ("not_rated", "reit")
+
+    loss = value_stock(sector="Technology", dcf_not_applicable=True, **args)
+    assert (loss["rating"], loss["rating_reason"]) == ("not_rated", "negative_earnings")
+
+
+def test_snapshot_matches_the_rules():
+    """The committed snapshot must be what the rules produce, not a stale copy."""
+    from scripts.fetch_sp500 import value_stock
+    snap = json.loads((ROOT / "docs/projects/screener/data.json").read_text(encoding="utf-8"))
+    assert snap["model"] == json.loads(json.dumps(MODEL_RULES))
+    for s in snap["stocks"]:
+        if s.get("basis") is None:
+            continue
+        base = s["method"] if s["method"] in ("ocf", "fcf") else "ocf"
+        neg = s["ni_ttm_m"] is not None and s["ni_ttm_m"] < 0
+        v = value_stock(
+            sector=s["sector"], method=base, ocf_m=s["ocf_m"], fcf_m=s["fcf_m"],
+            ni_m=s["ni_ttm_m"], growth_applied_pct=s["growth_applied_pct"],
+            discount_rate_pct=s["discount_rate_pct"],
+            shares_millions=s["shares_outstanding_m"], debt_m=s["debt_m"], cash_m=s["cash_m"],
+            current_price=s["current_price"],
+            dcf_not_applicable=neg and (s["fcf_m"] is None or s["fcf_m"] < 0),
+        )
+        for key in ("intrinsic_value", "rating", "rating_reason", "basis"):
+            assert v[key] == s[key], (s["ticker"], key)

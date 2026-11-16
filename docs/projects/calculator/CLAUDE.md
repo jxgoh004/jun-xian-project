@@ -14,6 +14,7 @@ Jun Xian built this to show how finance domain knowledge can be encoded into a p
    - Operating Cash Flow (OCF) by default
    - Free Cash Flow (FCF) when earnings are negative or OCF > 1.5× Net Income
    - Net Income and Normalized FCF are available as manual alternatives
+   - **Financial companies** (sector Financial Services): Net Income is pre-selected, using trailing net income from continuing operations, and Total Debt and Cash are set to 0 — the screener's treatment, decided by `sector_basis()` in `shared/dcf_rules.py` and returned by the API as `basis: "earnings"`. **REITs** come back as `basis: "not_rated"` and the page shows a caution
    This mirrors how an analyst would manually decide which line to discount.
 
    **Normalized FCF** = TTM OCF − average capex over every period Yahoo provides (TTM + up to four fiscal years). It smooths a temporary capex surge, such as a data-centre build-out, that would otherwise depress reported FCF. It is never auto-selected: whether capex is "growth" or "maintenance" is the user's judgment call. Computed in `YahooFinanceFetcher.get_normalized_free_cash_flow()`; not available when the page falls back to the nightly screener cache.
@@ -72,4 +73,5 @@ shared/fetchers/yahoo_finance.py    # Pulls financials, beta, share count, analy
 
 - All fields are editable after auto-fill — the calculator is a starting point, not a black box
 - Growth rate is capped at 25% by default (toggle to "Actual" to remove the cap) to prevent model blow-up on high-growth outliers. The cap is defined once in `shared/dcf_rules.py`; the page reads it from the nightly snapshot's `model.growth_cap_pct` and the API's `growth_cap_pct`, and the hint under the field shows the source figure whenever the cap applied. The screener applies the same cap, so both tools give the same value for a ticker
+- A result that is negative, more than 3× the price or under 1/3 of it gets a "Low confidence" note beside the value — the same range the screener uses to keep results out of its default ranking (`model` in the API response and the snapshot)
 - Shares the site-wide light neutral theme (`#edece7` ground, Host Grotesk, square corners, ink buttons); teal `#0d5c63` appears only in data marks, and green/red/yellow only where they carry valuation meaning

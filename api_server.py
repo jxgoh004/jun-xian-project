@@ -10,7 +10,7 @@ import math
 import os
 
 from shared.fetchers import YahooFinanceFetcher
-from shared.dcf_rules import GROWTH_CAP_PCT
+from shared.dcf_rules import GROWTH_CAP_PCT, MODEL_RULES, sector_basis
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=BASE_DIR, static_url_path='')
@@ -189,6 +189,14 @@ def fetch_stock(symbol):
         recommended_method = "ocf"
         switch_reason      = None
 
+    # Sector basis (shared/dcf_rules.py): financials are valued on net income
+    # with no debt or cash adjustment; the page applies that when basis is
+    # "earnings". REITs come back as "not_rated" and the page warns.
+    basis = sector_basis(sector)
+    if basis == "earnings":
+        recommended_method = "ni"
+        switch_reason      = "financial_sector"
+
     auto_switch_to_fcf  = recommended_method == "fcf"
     # DCF is not applicable when all earnings bases are negative
     dcf_not_applicable  = negative_earnings and (fcf_m is None or fcf_is_negative)
@@ -262,6 +270,8 @@ def fetch_stock(symbol):
 
         # Method recommendation
         "recommended_method": recommended_method,
+        "basis":              basis,   # "cash_flow" | "earnings" | "not_rated"
+        "model":              MODEL_RULES,
         "auto_switch_to_fcf": auto_switch_to_fcf,
         "switch_reason":      switch_reason,
         "negative_earnings":  negative_earnings,

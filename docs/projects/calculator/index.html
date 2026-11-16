@@ -993,8 +993,9 @@ function cacheEntryToApiData(ticker, e) {
     ni_millions:          e.ni_ttm_m,
     fcf_millions:         e.fcf_m,
     recommended_method:   e.method,
+    basis:                e.basis || 'cash_flow',
     auto_switch_to_fcf:   e.method === 'fcf',
-    switch_reason:        switchReason,
+    switch_reason:        e.basis === 'earnings' ? 'financial_sector' : switchReason,
     negative_earnings:    negEarnings,
     dcf_not_applicable:   negEarnings && (e.fcf_m === null || fcfNeg),
     ocf_to_ni_ratio:      (e.ocf_m && e.ni_ttm_m && e.ni_ttm_m > 0)
@@ -1051,7 +1052,14 @@ function fillGapsFromSnapshot(ticker, d) {
     d._beta_from_snapshot = true;
   }
   if ((blank(d.company_name) || d.company_name === ticker) && !blank(e.company_name)) d.company_name = e.company_name;
-  if (blank(d.sector)   && !blank(e.sector))   d.sector   = e.sector;
+  if (blank(d.sector)   && !blank(e.sector)) {
+    d.sector = e.sector;
+    // The API chose the basis without knowing the sector; the snapshot knows it.
+    if (e.basis && e.basis !== d.basis) {
+      d.basis = e.basis;
+      if (e.basis === 'earnings') { d.recommended_method = 'ni'; d.switch_reason = 'financial_sector'; }
+    }
+  }
   if (blank(d.industry) && !blank(e.industry)) d.industry = e.industry;
   return d;
 }
@@ -1107,6 +1115,9 @@ async function fetchStockData() {
 // ── Populate fields from API response ──────────────────────────────────────
 function populateFromData(d) {
   clearAutoFill();
+  // Financials are valued on the same earnings figure the screener uses:
+  // trailing net income from continuing operations.
+  if (d.basis === 'earnings' && d.ni_cont_ops_millions != null) d.ni_millions = d.ni_cont_ops_millions;
   lastData = d;  // store for live method-switching and cap toggle
   setGrowthCapPct(d.growth_cap_pct);
   updateGrowthHint();
@@ -1130,6 +1141,12 @@ function populateFromData(d) {
   if (d.cash_millions   != null) setField('cashAndInv', d.cash_millions.toFixed(2));
   if (d.shares_millions != null) setField('shares',     d.shares_millions.toFixed(4));
   if (d.current_price   != null) setField('lastClose',  d.current_price.toFixed(2));
+  // Financial companies are valued on earnings with no debt or cash adjustment
+  // (shared/dcf_rules.py) — the same treatment the screener applies.
+  if (d.basis === 'earnings') {
+    setField('totalDebt',  '0.00');
+    setField('cashAndInv', '0.00');
+  }
 
   // Growth rates — apply current cap mode
   if (d.growth_1_5_pct != null) {
@@ -1186,6 +1203,8 @@ function showVerifyPanel(d, method) {
   if (d.dcf_not_applicable)    sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">⚠ Negative Metrics</span>`;
   else if (d.switch_reason === 'negative_earnings') sources.innerHTML += `<span class="source-pill" style="background:var(--red-bg);color:var(--red);">Negative Earnings → FCF</span>`;
   else if (d.switch_reason === 'ocf_inflated')      sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);">OCF Inflated → FCF</span>`;
+  else if (d.switch_reason === 'financial_sector')  sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);">Financial → Earnings</span>`;
+  if (d.basis === 'not_rated') sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);">REIT · not rated by the screener</span>`;
   if (!d.currency_unverified && d.trading_currency && d.currency !== d.trading_currency && d.exchange_rate == null) sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);" title="The statements are in ${d.currency} but the share price is in ${d.trading_currency}, and no exchange rate could be fetched. Enter the ${d.currency}→${d.trading_currency} rate before calculating.">⚠ Enter exchange rate</span>`;
   // Yahoo withheld the reporting currency: the figures may not be in the listing currency
   if (d.currency_unverified) sources.innerHTML += `<span class="source-pill" style="background:var(--yellow-bg);color:var(--yellow);" title="Yahoo did not return this company's reporting currency. If it reports in a currency other than ${d.currency || 'its listing currency'} (common for foreign companies listed in the US), set the currency and exchange rate before calculating.">⚠ Reporting currency unconfirmed</span>`;
@@ -1213,6 +1232,26 @@ function showVerifyPanel(d, method) {
           <div style="font-size:14px;font-weight:600;color:var(--red);">Recommended: Free Cash Flow</div>
           <div style="font-size:13px;color:var(--text);margin-top:2px;">
             Net Income from Continuing Operations is negative (${fmtM(d.ni_cont_ops_millions)}), so <strong style="color:var(--text-bright);">Free Cash Flow</strong> (${fmtM(d.fcf_millions)}) is pre-selected as the valuation basis — FCF can be positive even when GAAP earnings are negative due to non-cash charges. You can change the method using the dropdown above.
+          </div>
+        </div>
+      </div>`;
+  } else if (d.switch_reason === 'financial_sector') {
+    switchBanner = `
+      <div style="grid-column:1/-1;background:var(--yellow-bg);padding:12px 14px;display:flex;align-items:center;gap:12px;">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--yellow);">Financial company: valued on Net Income</div>
+          <div style="font-size:13px;color:var(--text);margin-top:2px;">
+            A bank's or insurer's operating cash flow is dominated by deposits, claims and client money, and its debt is raw material rather than financing. <strong style="color:var(--text-bright);">Net Income</strong> (${fmtM(d.ni_millions)}) is pre-selected and Total Debt and Cash are set to 0, the same treatment the screener applies. All three stay editable.
+          </div>
+        </div>
+      </div>`;
+  } else if (d.basis === 'not_rated') {
+    switchBanner = `
+      <div style="grid-column:1/-1;background:var(--yellow-bg);padding:12px 14px;display:flex;align-items:center;gap:12px;">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--yellow);">REIT: treat this result with caution</div>
+          <div style="font-size:13px;color:var(--text);margin-top:2px;">
+            A REIT is judged on funds from operations, which this model does not have, so the screener does not rate it. You can still run the numbers here, but a cash-flow DCF tends to mislead for this kind of company.
           </div>
         </div>
       </div>`;
@@ -1448,6 +1487,22 @@ function calculate() {
     }
   }
 
+  // Same plausibility range the screener uses (shared/dcf_rules.py)
+  const rules = (lastData && lastData.model) || (calcCache && calcCache.model) || {};
+  const maxMult = rules.plausible_max_price_multiple || 3;
+  const minMult = rules.plausible_min_price_multiple || 1 / 3;
+  let confidenceWhy = '';
+  if (lastClose > 0) {
+    if (ivFinal <= 0)                        confidenceWhy = 'the value is negative';
+    else if (ivFinal > lastClose * maxMult)  confidenceWhy = `the value is more than ${Math.round(maxMult)}× the share price`;
+    else if (ivFinal < lastClose * minMult)  confidenceWhy = `the value is less than 1/${Math.round(1 / minMult)} of the share price`;
+  }
+  const confidenceNote = confidenceWhy
+    ? `<div id="confidenceNote" style="margin:14px auto 0;max-width:420px;padding:8px 12px;background:var(--yellow-bg);color:var(--yellow);font-size:13px;line-height:1.4;">
+         <strong>Low confidence:</strong> ${confidenceWhy}. That usually points at the inputs rather than the stock; the screener would flag this result.
+       </div>`
+    : '';
+
   let phase1 = 0, phase2 = 0, phase3 = 0;
   let tableRows = '', runSum = 0;
   yearData.forEach(d => {
@@ -1495,6 +1550,7 @@ function calculate() {
       </div>
       <div class="mos-bar-wrap" style="max-width:280px;margin:16px auto 0;height:10px;"><div class="mos-bar" style="width:${mosW}%;background:${mosColor};"></div></div>
       ` : ''}
+      ${confidenceNote}
       <div style="margin-top:12px;font-size:12px;color:var(--text-dim);">${curr} · exchange ×${exchangeRate}</div>
     </div>
 
