@@ -47,6 +47,7 @@ New projects live in their own repositories with their own GitHub Pages site. Th
 api_server.py                  # Flask API — live backend for the calculator
 
 shared/                        # cross-project code (imported by multiple projects)
+  dcf_rules.py                 # Model rules shared by screener and calculator (Years 1–5 growth cap)
   fetchers/
     yahoo_finance.py           # Financials, beta, share count and analyst growth from Yahoo Finance
     finviz.py                  # 5Y EPS growth + beta from FinViz (nightly screener only — blocked from Render)

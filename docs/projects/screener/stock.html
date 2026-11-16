@@ -1690,7 +1690,10 @@
           color: stock.discount_pct > 0 ? 'positive' : (stock.discount_pct < -10 ? 'negative' : null) },
         { label: 'DCF Method',            value: (stock.method || '—').toUpperCase() },
         { label: 'Discount Rate',         value: fmtPct(stock.discount_rate_pct, 2) },
-        { label: 'Growth Rate (1–5Y)',    value: fmtPct(stock.growth_1_5_pct, 2) },
+        // The DCF uses the capped rate; say so when it differs from the source figure above.
+        { label: 'Growth Rate (1–5Y)',    value: stock.growth_capped
+            ? fmtPct(stock.growth_applied_pct, 2) + ' (capped; source ' + fmtPct(stock.growth_1_5_pct, 2) + ')'
+            : fmtPct(stock.growth_applied_pct != null ? stock.growth_applied_pct : stock.growth_1_5_pct, 2) },
       ];
 
       // Insert 52-week range row if data is available

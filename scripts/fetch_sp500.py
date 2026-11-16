@@ -25,6 +25,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from shared.fetchers import YahooFinanceFetcher, FinVizFetcher
+from shared.dcf_rules import MODEL_RULES, apply_growth_cap
 
 # ---------------------------------------------------------------------------
 # Discount-rate lookup table (copied from api_server.py)
@@ -258,6 +259,8 @@ def process_ticker(ticker, index, total):
         "debt_m": None,
         "cash_m": None,
         "growth_1_5_pct": None,
+        "growth_applied_pct": None,
+        "growth_capped": False,
         "growth_source": None,
         "discount_rate_pct": None,
         "trends": None,
@@ -359,6 +362,8 @@ def process_ticker(ticker, index, total):
     growth_1_5_pct, growth_source = choose_growth_rate(
         finviz_growth_5y, yf_analyst, yf_growth_cf, yf_growth_eps
     )
+    # growth_1_5_pct stays the source figure; the DCF uses the capped rate.
+    growth_applied_pct, growth_capped = apply_growth_cap(growth_1_5_pct)
 
     # ── Discount rate ────────────────────────────────────────────────────────
     best_beta = finviz_beta if finviz_beta is not None else beta
@@ -372,7 +377,7 @@ def process_ticker(ticker, index, total):
     else:
         intrinsic_value, err = calculate_intrinsic_value(
             cash_flow_m=cash_flow_m,
-            growth_1_5_pct=growth_1_5_pct,
+            growth_1_5_pct=growth_applied_pct,
             discount_rate_pct=discount_rate_pct,
             shares_millions=shares_millions,
             debt_m=debt_m,
@@ -445,6 +450,8 @@ def process_ticker(ticker, index, total):
         "debt_m": debt_m,
         "cash_m": cash_m,
         "growth_1_5_pct": growth_1_5_pct,
+        "growth_applied_pct": growth_applied_pct,
+        "growth_capped": growth_capped,
         "growth_source": growth_source,
         "discount_rate_pct": discount_rate_pct,
         "trends": trends,
@@ -537,7 +544,8 @@ def main():
                 "revenue_ttm_m": None, "shares_outstanding_m": None,
                 "ocf_m": None, "fcf_m": None, "ni_ttm_m": None,
                 "debt_m": None, "cash_m": None,
-                "growth_1_5_pct": None, "growth_source": None,
+                "growth_1_5_pct": None, "growth_applied_pct": None,
+                "growth_capped": False, "growth_source": None,
                 "discount_rate_pct": None,
                 "trends": None,
             }
@@ -553,7 +561,7 @@ def main():
             time.sleep(0.5)
 
     updated_at = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    output = {"updated_at": updated_at, "stocks": stocks}
+    output = {"updated_at": updated_at, "model": MODEL_RULES, "stocks": stocks}
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
@@ -567,6 +575,7 @@ def main():
     )
     calc_cache = {
         "updated_at": updated_at,
+        "model": MODEL_RULES,
         "stocks": {
             s["ticker"]: {k: s.get(k) for k in calc_fields}
             for s in stocks

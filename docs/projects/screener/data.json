@@ -1,5 +1,8 @@
 {
   "updated_at": "2026-11-14T17:16:03Z",
+  "model": {
+    "growth_cap_pct": 25.0
+  },
   "stocks": [
     {
       "ticker": "MMM",
@@ -33,6 +36,8 @@
       "debt_m": 14997.0,
       "cash_m": 5145.0,
       "growth_1_5_pct": 10.19,
+      "growth_applied_pct": 10.19,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -142,6 +147,8 @@
       "debt_m": 673.1,
       "cash_m": 234.5,
       "growth_1_5_pct": 2.2,
+      "growth_applied_pct": 2.2,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -251,6 +258,8 @@
       "debt_m": 31159.0,
       "cash_m": 4298.0,
       "growth_1_5_pct": 8.08,
+      "growth_applied_pct": 8.08,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -360,6 +369,8 @@
       "debt_m": 80903.0,
       "cash_m": 10774.0,
       "growth_1_5_pct": 21.77,
+      "growth_applied_pct": 21.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -469,6 +480,8 @@
       "debt_m": 10111.758,
       "cash_m": 12837.769,
       "growth_1_5_pct": 7.46,
+      "growth_applied_pct": 7.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -578,6 +591,8 @@
       "debt_m": 6363.0,
       "cash_m": 5639.0,
       "growth_1_5_pct": 13.42,
+      "growth_applied_pct": 13.42,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -658,10 +673,10 @@
       "company_name": "Advanced Micro Devices, Inc.",
       "sector": "Technology",
       "current_price": 534.06,
-      "intrinsic_value": 3811.91,
-      "discount_pct": 85.99,
+      "intrinsic_value": 228.1,
+      "discount_pct": -134.13,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Semiconductors",
       "beta": 2.53,
       "market_cap_m": 875905.024,
@@ -685,6 +700,8 @@
       "debt_m": 7079.0,
       "cash_m": 15776.0,
       "growth_1_5_pct": 84.85,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -792,6 +809,8 @@
       "debt_m": 33264.0,
       "cash_m": 2026.0,
       "growth_1_5_pct": 3.11,
+      "growth_applied_pct": 3.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -899,6 +918,8 @@
       "debt_m": 8817.0,
       "cash_m": 69089.0,
       "growth_1_5_pct": 2.89,
+      "growth_applied_pct": 2.89,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -1006,6 +1027,8 @@
       "debt_m": 3949.0,
       "cash_m": 1758.0,
       "growth_1_5_pct": 9.88,
+      "growth_applied_pct": 9.88,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -1113,6 +1136,8 @@
       "debt_m": 17667.5,
       "cash_m": 980.5,
       "growth_1_5_pct": 8.29,
+      "growth_applied_pct": 8.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -1220,6 +1245,8 @@
       "debt_m": 2371.0,
       "cash_m": 12590.0,
       "growth_1_5_pct": 23.46,
+      "growth_applied_pct": 23.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -1327,6 +1354,8 @@
       "debt_m": 7567.687,
       "cash_m": 3519.318,
       "growth_1_5_pct": 10.45,
+      "growth_applied_pct": 10.45,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -1434,6 +1463,8 @@
       "debt_m": 1881.352,
       "cash_m": 1845.999,
       "growth_1_5_pct": -12.41,
+      "growth_applied_pct": -12.41,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -1514,8 +1545,8 @@
       "company_name": "Alexandria Real Estate Equities, Inc.",
       "sector": "Real Estate",
       "current_price": 43.84,
-      "intrinsic_value": 1245.77,
-      "discount_pct": 96.48,
+      "intrinsic_value": 307.14,
+      "discount_pct": 85.73,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "REIT - Office",
@@ -1541,6 +1572,8 @@
       "debt_m": 12896.996,
       "cash_m": 508.855,
       "growth_1_5_pct": 49.32,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -1648,6 +1681,8 @@
       "debt_m": 146.459,
       "cash_m": 1144.931,
       "growth_1_5_pct": 8.46,
+      "growth_applied_pct": 8.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -1755,6 +1790,8 @@
       "debt_m": 2032.0,
       "cash_m": 388.1,
       "growth_1_5_pct": 10.84,
+      "growth_applied_pct": 10.84,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -1862,6 +1899,8 @@
       "debt_m": 12563.0,
       "cash_m": 26.0,
       "growth_1_5_pct": 7.73,
+      "growth_applied_pct": 7.73,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -1969,6 +2008,8 @@
       "debt_m": 7494.0,
       "cash_m": 6328.0,
       "growth_1_5_pct": -7.55,
+      "growth_applied_pct": -7.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -2076,6 +2117,8 @@
       "debt_m": 125102.0,
       "cash_m": 265098.0,
       "growth_1_5_pct": 18.99,
+      "growth_applied_pct": 18.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -2183,6 +2226,8 @@
       "debt_m": 125102.0,
       "cash_m": 265098.0,
       "growth_1_5_pct": 19.01,
+      "growth_applied_pct": 19.01,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -2290,6 +2335,8 @@
       "debt_m": 24061.0,
       "cash_m": 2697.0,
       "growth_1_5_pct": 4.58,
+      "growth_applied_pct": 4.58,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -2370,8 +2417,8 @@
       "company_name": "Amazon.com, Inc.",
       "sector": "Consumer Cyclical",
       "current_price": 266.66,
-      "intrinsic_value": 27.08,
-      "discount_pct": -884.71,
+      "intrinsic_value": 24.13,
+      "discount_pct": -1005.1,
       "method": "fcf",
       "valuation_label": "Highly Overvalued",
       "industry": "Internet Retail",
@@ -2397,6 +2444,8 @@
       "debt_m": 173125.0,
       "cash_m": 114226.0,
       "growth_1_5_pct": 26.8,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -2504,6 +2553,8 @@
       "debt_m": 14843.0,
       "cash_m": 832.0,
       "growth_1_5_pct": 6.06,
+      "growth_applied_pct": 6.06,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -2611,6 +2662,8 @@
       "debt_m": 22513.0,
       "cash_m": 40.0,
       "growth_1_5_pct": 8.04,
+      "growth_applied_pct": 8.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -2718,6 +2771,8 @@
       "debt_m": 54416.0,
       "cash_m": 670.0,
       "growth_1_5_pct": 8.39,
+      "growth_applied_pct": 8.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -2825,6 +2880,8 @@
       "debt_m": 59953.0,
       "cash_m": 43131.0,
       "growth_1_5_pct": 14.65,
+      "growth_applied_pct": 14.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -2942,6 +2999,8 @@
       "debt_m": 10410.0,
       "cash_m": 38459.0,
       "growth_1_5_pct": 10.27,
+      "growth_applied_pct": 10.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -3049,6 +3108,8 @@
       "debt_m": 37578.7,
       "cash_m": 1871.9,
       "growth_1_5_pct": 12.67,
+      "growth_applied_pct": 12.67,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -3156,6 +3217,8 @@
       "debt_m": 16334.0,
       "cash_m": 121.0,
       "growth_1_5_pct": 7.76,
+      "growth_applied_pct": 7.76,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -3263,6 +3326,8 @@
       "debt_m": 5992.0,
       "cash_m": 45348.0,
       "growth_1_5_pct": 13.64,
+      "growth_applied_pct": 13.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -3370,6 +3435,8 @@
       "debt_m": 6669.387,
       "cash_m": 666.152,
       "growth_1_5_pct": 11.93,
+      "growth_applied_pct": 11.93,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -3477,6 +3544,8 @@
       "debt_m": 54007.0,
       "cash_m": 13190.0,
       "growth_1_5_pct": 7.13,
+      "growth_applied_pct": 7.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -3557,10 +3626,10 @@
       "company_name": "Amphenol Corporation",
       "sector": "Technology",
       "current_price": 78.23,
-      "intrinsic_value": 206.22,
-      "discount_pct": 62.06,
+      "intrinsic_value": 110.98,
+      "discount_pct": 29.51,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Electronic Components",
       "beta": 1.28,
       "market_cap_m": 193170.325504,
@@ -3584,6 +3653,8 @@
       "debt_m": 17870.8,
       "cash_m": 5301.4,
       "growth_1_5_pct": 36.45,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -3664,10 +3735,10 @@
       "company_name": "Analog Devices, Inc.",
       "sector": "Technology",
       "current_price": 397.97,
-      "intrinsic_value": 935.46,
-      "discount_pct": 57.46,
+      "intrinsic_value": 499.01,
+      "discount_pct": 20.25,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Semiconductors",
       "beta": 1.26,
       "market_cap_m": 192842.514432,
@@ -3691,6 +3762,8 @@
       "debt_m": 9121.583,
       "cash_m": 2324.934,
       "growth_1_5_pct": 36.77,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -3798,6 +3871,8 @@
       "debt_m": 28041.0,
       "cash_m": 15316.0,
       "growth_1_5_pct": 11.0,
+      "growth_applied_pct": 11.0,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -3905,6 +3980,8 @@
       "debt_m": 3295.0,
       "cash_m": 75.0,
       "growth_1_5_pct": 5.66,
+      "growth_applied_pct": 5.66,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -4012,6 +4089,8 @@
       "debt_m": 15249.0,
       "cash_m": 269478.0,
       "growth_1_5_pct": 13.37,
+      "growth_applied_pct": 13.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -4119,6 +4198,8 @@
       "debt_m": 80111.0,
       "cash_m": 56722.0,
       "growth_1_5_pct": 8.53,
+      "growth_applied_pct": 8.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -4201,10 +4282,10 @@
       "company_name": "Applied Materials, Inc.",
       "sector": "Technology",
       "current_price": 370.5,
-      "intrinsic_value": 604.96,
-      "discount_pct": 38.76,
+      "intrinsic_value": 427.15,
+      "discount_pct": 13.26,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Semiconductor Equipment & Materials",
       "beta": 1.68,
       "market_cap_m": 294027.853824,
@@ -4228,6 +4309,8 @@
       "debt_m": 6544.0,
       "cash_m": 9233.0,
       "growth_1_5_pct": 31.72,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -4308,8 +4391,8 @@
       "company_name": "AppLovin Corporation",
       "sector": "Communication Services",
       "current_price": 409.1,
-      "intrinsic_value": 1160.9,
-      "discount_pct": 64.76,
+      "intrinsic_value": 591.7,
+      "discount_pct": 30.86,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Advertising Agencies",
@@ -4335,6 +4418,8 @@
       "debt_m": 3516.136,
       "cash_m": 3173.731,
       "growth_1_5_pct": 38.04,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -4442,6 +4527,8 @@
       "debt_m": 5356.0,
       "cash_m": 670.0,
       "growth_1_5_pct": 1.83,
+      "growth_applied_pct": 1.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -4549,6 +4636,8 @@
       "debt_m": 4286.0,
       "cash_m": 13160.0,
       "growth_1_5_pct": 2.72,
+      "growth_applied_pct": 2.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -4656,6 +4745,8 @@
       "debt_m": 8738.0,
       "cash_m": 756.0,
       "growth_1_5_pct": 19.87,
+      "growth_applied_pct": 19.87,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -4763,6 +4854,8 @@
       "debt_m": 14030.839,
       "cash_m": 1762.46,
       "growth_1_5_pct": 20.08,
+      "growth_applied_pct": 20.08,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -4843,10 +4936,10 @@
       "company_name": "Arista Networks, Inc.",
       "sector": "Technology",
       "current_price": 197.29,
-      "intrinsic_value": 304.09,
-      "discount_pct": 35.12,
+      "intrinsic_value": 177.47,
+      "discount_pct": -11.17,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Computer Hardware",
       "beta": 1.62,
       "market_cap_m": 249256.640512,
@@ -4870,6 +4963,8 @@
       "debt_m": null,
       "cash_m": 14359.0,
       "growth_1_5_pct": 35.94,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -4987,6 +5082,8 @@
       "debt_m": 12971.0,
       "cash_m": 1213.0,
       "growth_1_5_pct": 16.31,
+      "growth_applied_pct": 16.31,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5094,6 +5191,8 @@
       "debt_m": 2208.7,
       "cash_m": 4716.8,
       "growth_1_5_pct": 9.49,
+      "growth_applied_pct": 9.49,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5201,6 +5300,8 @@
       "debt_m": 159627.0,
       "cash_m": 10767.0,
       "growth_1_5_pct": 11.58,
+      "growth_applied_pct": 11.58,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5308,6 +5409,8 @@
       "debt_m": 10323.867,
       "cash_m": 520.953,
       "growth_1_5_pct": 7.25,
+      "growth_applied_pct": 7.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5415,6 +5518,8 @@
       "debt_m": 3478.0,
       "cash_m": 4155.0,
       "growth_1_5_pct": 15.75,
+      "growth_applied_pct": 15.75,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -5522,6 +5627,8 @@
       "debt_m": 4965.3,
       "cash_m": 3277.0,
       "growth_1_5_pct": 9.93,
+      "growth_applied_pct": 9.93,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5629,6 +5736,8 @@
       "debt_m": 9493.295,
       "cash_m": 326.115,
       "growth_1_5_pct": 12.32,
+      "growth_applied_pct": 12.32,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5736,6 +5845,8 @@
       "debt_m": 3615.0,
       "cash_m": 271.4,
       "growth_1_5_pct": 8.57,
+      "growth_applied_pct": 8.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -5843,6 +5954,8 @@
       "debt_m": 2868.037,
       "cash_m": 1655.155,
       "growth_1_5_pct": 22.65,
+      "growth_applied_pct": 22.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -5950,6 +6063,8 @@
       "debt_m": 18264.0,
       "cash_m": 4068.0,
       "growth_1_5_pct": 11.4,
+      "growth_applied_pct": 11.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -6057,6 +6172,8 @@
       "debt_m": 7284.0,
       "cash_m": 410.0,
       "growth_1_5_pct": 11.8,
+      "growth_applied_pct": 11.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -6164,6 +6281,8 @@
       "debt_m": 380917.0,
       "cash_m": 258281.0,
       "growth_1_5_pct": 14.91,
+      "growth_applied_pct": 14.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -6271,6 +6390,8 @@
       "debt_m": 8601.0,
       "cash_m": 1975.0,
       "growth_1_5_pct": -0.65,
+      "growth_applied_pct": -0.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -6378,6 +6499,8 @@
       "debt_m": 16808.0,
       "cash_m": 709.0,
       "growth_1_5_pct": 6.34,
+      "growth_applied_pct": 6.34,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -6485,6 +6608,8 @@
       "debt_m": 130783.0,
       "cash_m": 377435.0,
       "growth_1_5_pct": 4.63,
+      "growth_applied_pct": 4.63,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -6592,6 +6717,8 @@
       "debt_m": 1169.0,
       "cash_m": 2255.0,
       "growth_1_5_pct": 6.59,
+      "growth_applied_pct": 6.59,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -6699,6 +6826,8 @@
       "debt_m": 200.0,
       "cash_m": 350.036,
       "growth_1_5_pct": 8.28,
+      "growth_applied_pct": 8.28,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -6806,6 +6935,8 @@
       "debt_m": 7692.0,
       "cash_m": 1303.9,
       "growth_1_5_pct": 6.31,
+      "growth_applied_pct": 6.31,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -6913,6 +7044,8 @@
       "debt_m": 12740.0,
       "cash_m": 16207.0,
       "growth_1_5_pct": 15.85,
+      "growth_applied_pct": 15.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -7020,6 +7153,8 @@
       "debt_m": 14193.841,
       "cash_m": 3037.534,
       "growth_1_5_pct": 12.13,
+      "growth_applied_pct": 12.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -7100,8 +7235,8 @@
       "company_name": "Block, Inc.",
       "sector": "Technology",
       "current_price": 84.58,
-      "intrinsic_value": 381.42,
-      "discount_pct": 77.82,
+      "intrinsic_value": 171.13,
+      "discount_pct": 50.58,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Software - Infrastructure",
@@ -7127,6 +7262,8 @@
       "debt_m": 7266.567,
       "cash_m": 13601.459,
       "growth_1_5_pct": 41.3,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -7207,10 +7344,10 @@
       "company_name": "Bloom Energy Corporation",
       "sector": "Industrials",
       "current_price": 191.99,
-      "intrinsic_value": 7569.31,
-      "discount_pct": 97.46,
+      "intrinsic_value": 93.64,
+      "discount_pct": -105.03,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Electrical Equipment & Parts",
       "beta": 3.62,
       "market_cap_m": 56763.133952,
@@ -7234,6 +7371,8 @@
       "debt_m": 2476.449,
       "cash_m": 2486.702,
       "growth_1_5_pct": 124.59,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -7341,6 +7480,8 @@
       "debt_m": 41158.0,
       "cash_m": 125414.0,
       "growth_1_5_pct": 16.37,
+      "growth_applied_pct": 16.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -7421,10 +7562,10 @@
       "company_name": "The Boeing Company",
       "sector": "Industrials",
       "current_price": 171.5,
-      "intrinsic_value": 1522.34,
-      "discount_pct": 88.73,
+      "intrinsic_value": 181.52,
+      "discount_pct": 5.52,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Aerospace & Defense",
       "beta": 1.33,
       "market_cap_m": 135905.165312,
@@ -7448,6 +7589,8 @@
       "debt_m": 45920.0,
       "cash_m": 20714.0,
       "growth_1_5_pct": 65.01,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -7555,6 +7698,8 @@
       "debt_m": 20061.0,
       "cash_m": 15814.0,
       "growth_1_5_pct": 15.84,
+      "growth_applied_pct": 15.84,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -7662,6 +7807,8 @@
       "debt_m": 11829.0,
       "cash_m": 609.0,
       "growth_1_5_pct": 3.11,
+      "growth_applied_pct": 3.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -7769,6 +7916,8 @@
       "debt_m": 42877.0,
       "cash_m": 12581.0,
       "growth_1_5_pct": -4.86,
+      "growth_applied_pct": -4.86,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -7849,10 +7998,10 @@
       "company_name": "Broadcom Inc.",
       "sector": "Technology",
       "current_price": 347.01,
-      "intrinsic_value": 2556.44,
-      "discount_pct": 86.43,
+      "intrinsic_value": 346.57,
+      "discount_pct": -0.13,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Semiconductors",
       "beta": 1.5,
       "market_cap_m": 1656497.373184,
@@ -7876,6 +8025,8 @@
       "debt_m": 59419.0,
       "cash_m": 23975.0,
       "growth_1_5_pct": 65.13,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -7983,6 +8134,8 @@
       "debt_m": 3347.1,
       "cash_m": 284.1,
       "growth_1_5_pct": 9.77,
+      "growth_applied_pct": 9.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -8090,6 +8243,8 @@
       "debt_m": 7759.0,
       "cash_m": 1099.0,
       "growth_1_5_pct": 7.12,
+      "growth_applied_pct": 7.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -8197,6 +8352,8 @@
       "debt_m": 2442.0,
       "cash_m": 301.0,
       "growth_1_5_pct": 5.07,
+      "growth_applied_pct": 5.07,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -8304,6 +8461,8 @@
       "debt_m": 16746.0,
       "cash_m": 890.0,
       "growth_1_5_pct": 16.58,
+      "growth_applied_pct": 16.58,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -8411,6 +8570,8 @@
       "debt_m": 16590.522,
       "cash_m": 1471.631,
       "growth_1_5_pct": 10.15,
+      "growth_applied_pct": 10.15,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -8518,6 +8679,8 @@
       "debt_m": 1869.309,
       "cash_m": 193.132,
       "growth_1_5_pct": 17.43,
+      "growth_applied_pct": 17.43,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -8625,6 +8788,8 @@
       "debt_m": 2633.242,
       "cash_m": 1452.02,
       "growth_1_5_pct": 17.55,
+      "growth_applied_pct": 17.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -8732,6 +8897,8 @@
       "debt_m": 4228.3,
       "cash_m": 168.704,
       "growth_1_5_pct": 3.54,
+      "growth_applied_pct": 3.54,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -8839,6 +9006,8 @@
       "debt_m": 49127.0,
       "cash_m": 48889.0,
       "growth_1_5_pct": 11.98,
+      "growth_applied_pct": 11.98,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -8946,6 +9115,8 @@
       "debt_m": 8815.0,
       "cash_m": 5264.0,
       "growth_1_5_pct": 12.2,
+      "growth_applied_pct": 12.2,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -9053,6 +9224,8 @@
       "debt_m": 23912.0,
       "cash_m": 1220.0,
       "growth_1_5_pct": 10.82,
+      "growth_applied_pct": 10.82,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -9160,6 +9333,8 @@
       "debt_m": 11474.0,
       "cash_m": 1354.0,
       "growth_1_5_pct": 11.83,
+      "growth_applied_pct": 11.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -9267,6 +9442,8 @@
       "debt_m": 5228.0,
       "cash_m": 3606.0,
       "growth_1_5_pct": 19.4,
+      "growth_applied_pct": 19.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -9374,6 +9551,8 @@
       "debt_m": 2430.523,
       "cash_m": 524.059,
       "growth_1_5_pct": 11.13,
+      "growth_applied_pct": 11.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -9454,8 +9633,8 @@
       "company_name": "Caterpillar Inc.",
       "sector": "Industrials",
       "current_price": 600.2,
-      "intrinsic_value": 1264.03,
-      "discount_pct": 52.52,
+      "intrinsic_value": 1160.1,
+      "discount_pct": 48.26,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Farm & Heavy Construction Machinery",
@@ -9481,6 +9660,8 @@
       "debt_m": 45201.0,
       "cash_m": 7929.0,
       "growth_1_5_pct": 26.53,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -9588,6 +9769,8 @@
       "debt_m": 1444.3,
       "cash_m": 2703.8,
       "growth_1_5_pct": 16.77,
+      "growth_applied_pct": 16.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -9695,6 +9878,8 @@
       "debt_m": 7914.0,
       "cash_m": 1683.0,
       "growth_1_5_pct": 16.46,
+      "growth_applied_pct": 16.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -9802,6 +9987,8 @@
       "debt_m": 7124.3,
       "cash_m": 1538.7,
       "growth_1_5_pct": 10.95,
+      "growth_applied_pct": 10.95,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -9909,6 +10096,8 @@
       "debt_m": 11723.241,
       "cash_m": 2815.291,
       "growth_1_5_pct": 10.68,
+      "growth_applied_pct": 10.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -9989,8 +10178,8 @@
       "company_name": "Centene Corporation",
       "sector": "Healthcare",
       "current_price": 71.27,
-      "intrinsic_value": 1344.73,
-      "discount_pct": 94.7,
+      "intrinsic_value": 439.04,
+      "discount_pct": 83.77,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Healthcare Plans",
@@ -10016,6 +10205,8 @@
       "debt_m": 15542.0,
       "cash_m": 23586.0,
       "growth_1_5_pct": 47.16,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -10123,6 +10314,8 @@
       "debt_m": 24903.0,
       "cash_m": 557.0,
       "growth_1_5_pct": 9.11,
+      "growth_applied_pct": 9.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10230,6 +10423,8 @@
       "debt_m": 3332.0,
       "cash_m": 2820.0,
       "growth_1_5_pct": -1.27,
+      "growth_applied_pct": -1.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10337,6 +10532,8 @@
       "debt_m": 2434.811,
       "cash_m": 200.381,
       "growth_1_5_pct": 12.17,
+      "growth_applied_pct": 12.17,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -10444,6 +10641,8 @@
       "debt_m": 40682.0,
       "cash_m": 36657.0,
       "growth_1_5_pct": 23.8,
+      "growth_applied_pct": 23.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10551,6 +10750,8 @@
       "debt_m": 109928.0,
       "cash_m": 573.0,
       "growth_1_5_pct": 13.85,
+      "growth_applied_pct": 13.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10658,6 +10859,8 @@
       "debt_m": 33534.0,
       "cash_m": 12804.0,
       "growth_1_5_pct": 19.99,
+      "growth_applied_pct": 19.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10765,6 +10968,8 @@
       "debt_m": 5599.031,
       "cash_m": 899.371,
       "growth_1_5_pct": 9.37,
+      "growth_applied_pct": 9.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -10872,6 +11077,8 @@
       "debt_m": 18777.0,
       "cash_m": 44853.0,
       "growth_1_5_pct": 9.06,
+      "growth_applied_pct": 9.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -10979,6 +11186,8 @@
       "debt_m": 2206.9,
       "cash_m": 446.9,
       "growth_1_5_pct": 7.35,
+      "growth_applied_pct": 7.35,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -11059,10 +11268,10 @@
       "company_name": "Ciena Corporation",
       "sector": "Technology",
       "current_price": 280.54,
-      "intrinsic_value": 3993.16,
-      "discount_pct": 92.97,
+      "intrinsic_value": 198.24,
+      "discount_pct": -41.52,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Communication Equipment",
       "beta": 1.36,
       "market_cap_m": 39782.965248,
@@ -11086,6 +11295,8 @@
       "debt_m": 3229.843,
       "cash_m": 2630.001,
       "growth_1_5_pct": 87.95,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -11193,6 +11404,8 @@
       "debt_m": 31142.0,
       "cash_m": 7228.0,
       "growth_1_5_pct": 7.24,
+      "growth_applied_pct": 7.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -11300,6 +11513,8 @@
       "debt_m": 875.0,
       "cash_m": 20305.0,
       "growth_1_5_pct": 6.4,
+      "growth_applied_pct": 6.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -11417,6 +11632,8 @@
       "debt_m": 2428.845,
       "cash_m": 243.599,
       "growth_1_5_pct": 11.79,
+      "growth_applied_pct": 11.79,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -11524,6 +11741,8 @@
       "debt_m": 29533.0,
       "cash_m": 15918.0,
       "growth_1_5_pct": 14.18,
+      "growth_applied_pct": 14.18,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -11604,10 +11823,10 @@
       "company_name": "Citigroup Inc.",
       "sector": "Financial Services",
       "current_price": 124.01,
-      "intrinsic_value": 121.95,
-      "discount_pct": -1.69,
+      "intrinsic_value": 96.49,
+      "discount_pct": -28.52,
       "method": "ocf",
-      "valuation_label": "Fairly Valued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Banks - Diversified",
       "beta": 1.15,
       "market_cap_m": 205261.914112,
@@ -11631,6 +11850,8 @@
       "debt_m": 407303.0,
       "cash_m": 354841.0,
       "growth_1_5_pct": 28.39,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -11738,6 +11959,8 @@
       "debt_m": 17832.0,
       "cash_m": 13558.0,
       "growth_1_5_pct": 24.72,
+      "growth_applied_pct": 24.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -11855,6 +12078,8 @@
       "debt_m": 5158.0,
       "cash_m": 184.0,
       "growth_1_5_pct": 6.01,
+      "growth_applied_pct": 6.01,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -11962,6 +12187,8 @@
       "debt_m": 3425.1,
       "cash_m": 2329.5,
       "growth_1_5_pct": 8.4,
+      "growth_applied_pct": 8.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12069,6 +12296,8 @@
       "debt_m": 20001.0,
       "cash_m": 451.0,
       "growth_1_5_pct": 7.4,
+      "growth_applied_pct": 7.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12176,6 +12405,8 @@
       "debt_m": 41619.0,
       "cash_m": 16595.0,
       "growth_1_5_pct": 7.99,
+      "growth_applied_pct": 7.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12283,6 +12514,8 @@
       "debt_m": 1552.0,
       "cash_m": 1552.0,
       "growth_1_5_pct": 8.6,
+      "growth_applied_pct": 8.6,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12363,7 +12596,7 @@
       "company_name": "Coherent Corp.",
       "sector": "Technology",
       "current_price": 218.15,
-      "intrinsic_value": -79.44,
+      "intrinsic_value": -23.44,
       "discount_pct": null,
       "method": "ocf",
       "valuation_label": "N/A",
@@ -12390,6 +12623,8 @@
       "debt_m": 4000.598,
       "cash_m": 1752.929,
       "growth_1_5_pct": 59.89,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -12497,6 +12732,8 @@
       "debt_m": 6696.622,
       "cash_m": 9210.54,
       "growth_1_5_pct": 4.06,
+      "growth_applied_pct": 4.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -12604,6 +12841,8 @@
       "debt_m": 7716.0,
       "cash_m": 1527.0,
       "growth_1_5_pct": 6.12,
+      "growth_applied_pct": 6.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12711,6 +12950,8 @@
       "debt_m": 87366.0,
       "cash_m": 7596.0,
       "growth_1_5_pct": -4.64,
+      "growth_applied_pct": -4.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -12791,10 +13032,10 @@
       "company_name": "Comfort Systems USA, Inc.",
       "sector": "Industrials",
       "current_price": 1112.5,
-      "intrinsic_value": 2710.3,
-      "discount_pct": 58.95,
+      "intrinsic_value": 1241.14,
+      "discount_pct": 10.36,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Engineering & Construction",
       "beta": 1.65,
       "market_cap_m": 38921.818112,
@@ -12818,6 +13059,8 @@
       "debt_m": 49.555,
       "cash_m": 2158.027,
       "growth_1_5_pct": 40.73,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -12925,6 +13168,8 @@
       "debt_m": 23262.0,
       "cash_m": 9929.0,
       "growth_1_5_pct": 17.53,
+      "growth_applied_pct": 17.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13032,6 +13277,8 @@
       "debt_m": 27486.0,
       "cash_m": 100.0,
       "growth_1_5_pct": 6.71,
+      "growth_applied_pct": 6.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13139,6 +13386,8 @@
       "debt_m": 10315.7,
       "cash_m": 98.5,
       "growth_1_5_pct": 2.79,
+      "growth_applied_pct": 2.79,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13246,6 +13495,8 @@
       "debt_m": 23387.0,
       "cash_m": 603.0,
       "growth_1_5_pct": 21.81,
+      "growth_applied_pct": 21.81,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -13353,6 +13604,8 @@
       "debt_m": 2542.0,
       "cash_m": 154.7,
       "growth_1_5_pct": 7.25,
+      "growth_applied_pct": 7.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13460,6 +13713,8 @@
       "debt_m": 88.367,
       "cash_m": 4489.802,
       "growth_1_5_pct": 7.13,
+      "growth_applied_pct": 7.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -13540,10 +13795,10 @@
       "company_name": "Corning Incorporated",
       "sector": "Technology",
       "current_price": 114.08,
-      "intrinsic_value": 122.95,
-      "discount_pct": 7.21,
+      "intrinsic_value": 69.85,
+      "discount_pct": -63.32,
       "method": "fcf",
-      "valuation_label": "Fairly Valued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Electronic Components",
       "beta": 1.23,
       "market_cap_m": 98268.635136,
@@ -13567,6 +13822,8 @@
       "debt_m": 8200.0,
       "cash_m": 2537.0,
       "growth_1_5_pct": 35.02,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -13674,6 +13931,8 @@
       "debt_m": 11233.107,
       "cash_m": 3072.988,
       "growth_1_5_pct": 20.59,
+      "growth_applied_pct": 20.59,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -13754,8 +14013,8 @@
       "company_name": "CoStar Group, Inc.",
       "sector": "Real Estate",
       "current_price": 30.96,
-      "intrinsic_value": 8.39,
-      "discount_pct": -269.01,
+      "intrinsic_value": 4.26,
+      "discount_pct": -626.76,
       "method": "fcf",
       "valuation_label": "Highly Overvalued",
       "industry": "Real Estate Services",
@@ -13781,6 +14040,8 @@
       "debt_m": 1026.0,
       "cash_m": 500.0,
       "growth_1_5_pct": 35.41,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13888,6 +14149,8 @@
       "debt_m": 6162.0,
       "cash_m": 21301.0,
       "growth_1_5_pct": 9.71,
+      "growth_applied_pct": 9.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -13995,6 +14258,8 @@
       "debt_m": 19624.0,
       "cash_m": 5108.0,
       "growth_1_5_pct": 7.69,
+      "growth_applied_pct": 7.69,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -14075,8 +14340,8 @@
       "company_name": "CrowdStrike Holdings, Inc.",
       "sector": "Technology",
       "current_price": 226.61,
-      "intrinsic_value": 81.75,
-      "discount_pct": -177.2,
+      "intrinsic_value": 60.63,
+      "discount_pct": -273.76,
       "method": "fcf",
       "valuation_label": "Highly Overvalued",
       "industry": "Software - Infrastructure",
@@ -14102,6 +14367,8 @@
       "debt_m": 768.283,
       "cash_m": 5013.847,
       "growth_1_5_pct": 30.99,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -14182,8 +14449,8 @@
       "company_name": "Crown Castle Inc.",
       "sector": "Real Estate",
       "current_price": 90.83,
-      "intrinsic_value": 892.8,
-      "discount_pct": 89.83,
+      "intrinsic_value": 327.44,
+      "discount_pct": 72.26,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "REIT - Specialty",
@@ -14209,6 +14476,8 @@
       "debt_m": 17796.0,
       "cash_m": 133.0,
       "growth_1_5_pct": 42.66,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -14316,6 +14585,8 @@
       "debt_m": 18804.0,
       "cash_m": 1605.0,
       "growth_1_5_pct": 16.96,
+      "growth_applied_pct": 16.96,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -14423,6 +14694,8 @@
       "debt_m": 7519.0,
       "cash_m": 4185.0,
       "growth_1_5_pct": 17.62,
+      "growth_applied_pct": 17.62,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -14540,6 +14813,8 @@
       "debt_m": 60680.0,
       "cash_m": 14887.0,
       "growth_1_5_pct": 13.26,
+      "growth_applied_pct": 13.26,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -14647,6 +14922,8 @@
       "debt_m": 26482.0,
       "cash_m": 5682.0,
       "growth_1_5_pct": 9.49,
+      "growth_applied_pct": 9.49,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -14754,6 +15031,8 @@
       "debt_m": 2615.8,
       "cash_m": 220.5,
       "growth_1_5_pct": 8.44,
+      "growth_applied_pct": 8.44,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -14861,6 +15140,8 @@
       "debt_m": 986.595,
       "cash_m": 5233.587,
       "growth_1_5_pct": 22.53,
+      "growth_applied_pct": 22.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -14968,6 +15249,8 @@
       "debt_m": 10769.115,
       "cash_m": 566.302,
       "growth_1_5_pct": 21.99,
+      "growth_applied_pct": 21.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -15075,6 +15358,8 @@
       "debt_m": 539.52,
       "cash_m": 1209.722,
       "growth_1_5_pct": 9.0,
+      "growth_applied_pct": 9.0,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -15182,6 +15467,8 @@
       "debt_m": 63793.0,
       "cash_m": 10278.0,
       "growth_1_5_pct": 13.72,
+      "growth_applied_pct": 13.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -15262,8 +15549,8 @@
       "company_name": "Dell Technologies Inc.",
       "sector": "Technology",
       "current_price": 344.53,
-      "intrinsic_value": 3054.89,
-      "discount_pct": 88.72,
+      "intrinsic_value": 788.85,
+      "discount_pct": 56.33,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Computer Hardware",
@@ -15289,6 +15576,8 @@
       "debt_m": 34466.0,
       "cash_m": 11569.0,
       "growth_1_5_pct": 51.0,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -15396,6 +15685,8 @@
       "debt_m": 12851.0,
       "cash_m": 3787.0,
       "growth_1_5_pct": 18.94,
+      "growth_applied_pct": 18.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -15503,6 +15794,8 @@
       "debt_m": 10636.0,
       "cash_m": 413.0,
       "growth_1_5_pct": 10.16,
+      "growth_applied_pct": 10.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -15610,6 +15903,8 @@
       "debt_m": 1243.7,
       "cash_m": 1817.9,
       "growth_1_5_pct": 21.09,
+      "growth_applied_pct": 21.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -15717,6 +16012,8 @@
       "debt_m": 13230.0,
       "cash_m": 558.0,
       "growth_1_5_pct": 12.44,
+      "growth_applied_pct": 12.44,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -15834,6 +16131,8 @@
       "debt_m": 19494.615,
       "cash_m": 802.903,
       "growth_1_5_pct": -2.74,
+      "growth_applied_pct": -2.74,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -15941,6 +16240,8 @@
       "debt_m": 4570.815,
       "cash_m": 1589.59,
       "growth_1_5_pct": 10.88,
+      "growth_applied_pct": 10.88,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -16048,6 +16349,8 @@
       "debt_m": 2933.5,
       "cash_m": 1058.1,
       "growth_1_5_pct": 14.83,
+      "growth_applied_pct": 14.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -16155,6 +16458,8 @@
       "debt_m": 54646.0,
       "cash_m": 435.0,
       "growth_1_5_pct": 6.06,
+      "growth_applied_pct": 6.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -16262,6 +16567,8 @@
       "debt_m": 4885.904,
       "cash_m": 229.035,
       "growth_1_5_pct": 8.12,
+      "growth_applied_pct": 8.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -16342,10 +16649,10 @@
       "company_name": "DoorDash, Inc.",
       "sector": "Consumer Cyclical",
       "current_price": 171.51,
-      "intrinsic_value": 605.46,
-      "discount_pct": 71.67,
+      "intrinsic_value": 174.98,
+      "discount_pct": 1.98,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Internet Retail",
       "beta": 1.97,
       "market_cap_m": 74774.298624,
@@ -16369,6 +16676,8 @@
       "debt_m": 2832.0,
       "cash_m": 5982.0,
       "growth_1_5_pct": 50.15,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -16476,6 +16785,8 @@
       "debt_m": 3264.59,
       "cash_m": 1693.175,
       "growth_1_5_pct": 9.74,
+      "growth_applied_pct": 9.74,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -16583,6 +16894,8 @@
       "debt_m": 16495.0,
       "cash_m": 4142.0,
       "growth_1_5_pct": -48.32,
+      "growth_applied_pct": -48.32,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -16690,6 +17003,8 @@
       "debt_m": 7112.3,
       "cash_m": 2078.7,
       "growth_1_5_pct": 5.96,
+      "growth_applied_pct": 5.96,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -16797,6 +17112,8 @@
       "debt_m": 28519.0,
       "cash_m": 33.0,
       "growth_1_5_pct": 6.09,
+      "growth_applied_pct": 6.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -16904,6 +17221,8 @@
       "debt_m": 92789.0,
       "cash_m": 451.0,
       "growth_1_5_pct": 6.71,
+      "growth_applied_pct": 6.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -17011,6 +17330,8 @@
       "debt_m": 3094.0,
       "cash_m": 1652.0,
       "growth_1_5_pct": 21.33,
+      "growth_applied_pct": 21.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -17118,6 +17439,8 @@
       "debt_m": 20106.0,
       "cash_m": 818.0,
       "growth_1_5_pct": 16.25,
+      "growth_applied_pct": 16.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -17225,6 +17548,8 @@
       "debt_m": 6733.0,
       "cash_m": 1975.0,
       "growth_1_5_pct": 12.48,
+      "growth_applied_pct": 12.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -17332,6 +17657,8 @@
       "debt_m": 9656.235,
       "cash_m": 13968.699,
       "growth_1_5_pct": -68.8,
+      "growth_applied_pct": -68.8,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -17439,6 +17766,8 @@
       "debt_m": 13192.0,
       "cash_m": 722.3,
       "growth_1_5_pct": 12.65,
+      "growth_applied_pct": 12.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -17546,6 +17875,8 @@
       "debt_m": 41596.0,
       "cash_m": 171.0,
       "growth_1_5_pct": 1.54,
+      "growth_applied_pct": 1.54,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -17653,6 +17984,8 @@
       "debt_m": 623.7,
       "cash_m": 4644.7,
       "growth_1_5_pct": 14.45,
+      "growth_applied_pct": 14.45,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -17760,6 +18093,8 @@
       "debt_m": 30757.0,
       "cash_m": 35695.0,
       "growth_1_5_pct": 4.55,
+      "growth_applied_pct": 4.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -17867,6 +18202,8 @@
       "debt_m": 110.543,
       "cash_m": 774.752,
       "growth_1_5_pct": 21.65,
+      "growth_applied_pct": 21.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -17974,6 +18311,8 @@
       "debt_m": 12175.0,
       "cash_m": 1806.0,
       "growth_1_5_pct": 10.67,
+      "growth_applied_pct": 10.67,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -18081,6 +18420,8 @@
       "debt_m": 34812.523,
       "cash_m": 4205.04,
       "growth_1_5_pct": 14.16,
+      "growth_applied_pct": 14.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -18188,6 +18529,8 @@
       "debt_m": 7922.0,
       "cash_m": 5747.0,
       "growth_1_5_pct": 15.64,
+      "growth_applied_pct": 15.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -18295,6 +18638,8 @@
       "debt_m": 5552.552,
       "cash_m": 78.715,
       "growth_1_5_pct": 17.63,
+      "growth_applied_pct": 17.63,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -18402,6 +18747,8 @@
       "debt_m": 5206.7,
       "cash_m": 192.9,
       "growth_1_5_pct": 14.38,
+      "growth_applied_pct": 14.38,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -18509,6 +18856,8 @@
       "debt_m": 22647.0,
       "cash_m": 3597.0,
       "growth_1_5_pct": 16.24,
+      "growth_applied_pct": 16.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -18616,6 +18965,8 @@
       "debt_m": null,
       "cash_m": 383.837,
       "growth_1_5_pct": 3.65,
+      "growth_applied_pct": 3.65,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -18733,6 +19084,8 @@
       "debt_m": 6605.814,
       "cash_m": 174.724,
       "growth_1_5_pct": -13.5,
+      "growth_applied_pct": -13.5,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -18840,6 +19193,8 @@
       "debt_m": 7251.0,
       "cash_m": 3198.0,
       "growth_1_5_pct": 23.68,
+      "growth_applied_pct": 23.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -18947,6 +19302,8 @@
       "debt_m": 3590.0,
       "cash_m": 18620.0,
       "growth_1_5_pct": 15.25,
+      "growth_applied_pct": 15.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -19054,6 +19411,8 @@
       "debt_m": 16222.5,
       "cash_m": 18.7,
       "growth_1_5_pct": 9.06,
+      "growth_applied_pct": 9.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -19134,10 +19493,10 @@
       "company_name": "Everpure, Inc.",
       "sector": "Technology",
       "current_price": 107.99,
-      "intrinsic_value": 177.47,
-      "discount_pct": 39.15,
+      "intrinsic_value": 79.31,
+      "discount_pct": -36.16,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Computer Hardware",
       "beta": 1.46,
       "market_cap_m": 35985.211392,
@@ -19161,6 +19520,8 @@
       "debt_m": 175.034,
       "cash_m": 1007.891,
       "growth_1_5_pct": 40.97,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -19268,6 +19629,8 @@
       "debt_m": 29178.907,
       "cash_m": 525.406,
       "growth_1_5_pct": 3.21,
+      "growth_applied_pct": 3.21,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -19375,6 +19738,8 @@
       "debt_m": 53193.0,
       "cash_m": 1469.0,
       "growth_1_5_pct": 5.5,
+      "growth_applied_pct": 5.5,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -19482,6 +19847,8 @@
       "debt_m": 4632.0,
       "cash_m": 118.0,
       "growth_1_5_pct": 20.05,
+      "growth_applied_pct": 20.05,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -19589,6 +19956,8 @@
       "debt_m": 5460.0,
       "cash_m": 5567.0,
       "growth_1_5_pct": 22.85,
+      "growth_applied_pct": 22.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -19696,6 +20065,8 @@
       "debt_m": 575.835,
       "cash_m": 1092.464,
       "growth_1_5_pct": 14.55,
+      "growth_applied_pct": 14.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -19803,6 +20174,8 @@
       "debt_m": 13405.804,
       "cash_m": 114.824,
       "growth_1_5_pct": 4.19,
+      "growth_applied_pct": 4.19,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -19910,6 +20283,8 @@
       "debt_m": 34250.0,
       "cash_m": 12153.0,
       "growth_1_5_pct": 13.53,
+      "growth_applied_pct": 13.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -20017,6 +20392,8 @@
       "debt_m": 252.38,
       "cash_m": 1605.782,
       "growth_1_5_pct": 7.22,
+      "growth_applied_pct": 7.22,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -20124,6 +20501,8 @@
       "debt_m": 1370.022,
       "cash_m": 265.332,
       "growth_1_5_pct": 10.33,
+      "growth_applied_pct": 10.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -20231,6 +20610,8 @@
       "debt_m": 5259.104,
       "cash_m": 217.599,
       "growth_1_5_pct": 5.8,
+      "growth_applied_pct": 5.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -20338,6 +20719,8 @@
       "debt_m": 100.0,
       "cash_m": 211.9,
       "growth_1_5_pct": 12.36,
+      "growth_applied_pct": 12.36,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -20445,6 +20828,8 @@
       "debt_m": 4883.584,
       "cash_m": 109.728,
       "growth_1_5_pct": -10.56,
+      "growth_applied_pct": -10.56,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -20552,6 +20937,8 @@
       "debt_m": 19355.0,
       "cash_m": 11215.0,
       "growth_1_5_pct": 14.51,
+      "growth_applied_pct": 14.51,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -20659,6 +21046,8 @@
       "debt_m": 4421.0,
       "cash_m": 388.0,
       "growth_1_5_pct": 3.51,
+      "growth_applied_pct": 3.51,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.0,
       "trends": {
@@ -20766,6 +21155,8 @@
       "debt_m": 4904.0,
       "cash_m": 437.0,
       "growth_1_5_pct": 11.97,
+      "growth_applied_pct": 11.97,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -20873,6 +21264,8 @@
       "debt_m": 20769.0,
       "cash_m": 740.0,
       "growth_1_5_pct": 0.41,
+      "growth_applied_pct": 0.41,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -20980,6 +21373,8 @@
       "debt_m": 17519.0,
       "cash_m": 4086.0,
       "growth_1_5_pct": 15.35,
+      "growth_applied_pct": 15.35,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -21060,8 +21455,8 @@
       "company_name": "First Solar, Inc.",
       "sector": "Technology",
       "current_price": 171.39,
-      "intrinsic_value": 328.49,
-      "discount_pct": 47.82,
+      "intrinsic_value": 326.84,
+      "discount_pct": 47.56,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Solar",
@@ -21087,6 +21482,8 @@
       "debt_m": 107.668,
       "cash_m": 1624.075,
       "growth_1_5_pct": 25.1,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -21194,6 +21591,8 @@
       "debt_m": 30052.0,
       "cash_m": 48.0,
       "growth_1_5_pct": 7.77,
+      "growth_applied_pct": 7.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -21301,6 +21700,8 @@
       "debt_m": 24741.0,
       "cash_m": 193.0,
       "growth_1_5_pct": 1.33,
+      "growth_applied_pct": 1.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -21381,8 +21782,8 @@
       "company_name": "Flex Ltd.",
       "sector": "Technology",
       "current_price": 74.98,
-      "intrinsic_value": 324.92,
-      "discount_pct": 76.92,
+      "intrinsic_value": 108.28,
+      "discount_pct": 30.75,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Electronic Components",
@@ -21408,6 +21809,8 @@
       "debt_m": 5213.0,
       "cash_m": 3083.0,
       "growth_1_5_pct": 45.9,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -21515,6 +21918,8 @@
       "debt_m": 163082.0,
       "cash_m": 34107.0,
       "growth_1_5_pct": 24.22,
+      "growth_applied_pct": 24.22,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -21622,6 +22027,8 @@
       "debt_m": 497.1,
       "cash_m": 4799.0,
       "growth_1_5_pct": 16.71,
+      "growth_applied_pct": 16.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -21729,6 +22136,8 @@
       "debt_m": 3514.2,
       "cash_m": 377.3,
       "growth_1_5_pct": 9.8,
+      "growth_applied_pct": 9.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -21836,6 +22245,8 @@
       "debt_m": 6607.0,
       "cash_m": 4536.0,
       "growth_1_5_pct": 6.39,
+      "growth_applied_pct": 6.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -21943,6 +22354,8 @@
       "debt_m": 6607.0,
       "cash_m": 4536.0,
       "growth_1_5_pct": 6.39,
+      "growth_applied_pct": 6.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -22050,6 +22463,8 @@
       "debt_m": 17327.5,
       "cash_m": 4389.9,
       "growth_1_5_pct": 11.24,
+      "growth_applied_pct": 11.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -22130,8 +22545,8 @@
       "company_name": "Freeport-McMoRan Inc.",
       "sector": "Basic Materials",
       "current_price": 59.24,
-      "intrinsic_value": 410.74,
-      "discount_pct": 85.58,
+      "intrinsic_value": 183.46,
+      "discount_pct": 67.71,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Copper",
@@ -22157,6 +22572,8 @@
       "debt_m": 9398.0,
       "cash_m": 4335.0,
       "growth_1_5_pct": 40.36,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -22264,6 +22681,8 @@
       "debt_m": 173.491,
       "cash_m": 2339.472,
       "growth_1_5_pct": 13.53,
+      "growth_applied_pct": 13.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -22371,6 +22790,8 @@
       "debt_m": 2980.601,
       "cash_m": 1633.137,
       "growth_1_5_pct": 12.04,
+      "growth_applied_pct": 12.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -22478,6 +22899,8 @@
       "debt_m": 19325.0,
       "cash_m": 8764.0,
       "growth_1_5_pct": 18.64,
+      "growth_applied_pct": 18.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -22585,6 +23008,8 @@
       "debt_m": 9973.0,
       "cash_m": 2826.0,
       "growth_1_5_pct": 10.1,
+      "growth_applied_pct": 10.1,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -22665,8 +23090,8 @@
       "company_name": "GE Vernova Inc.",
       "sector": "Industrials",
       "current_price": 803.13,
-      "intrinsic_value": 786.28,
-      "discount_pct": -2.14,
+      "intrinsic_value": 731.77,
+      "discount_pct": -9.75,
       "method": "fcf",
       "valuation_label": "Fairly Valued",
       "industry": "Specialty Industrial Machinery",
@@ -22692,6 +23117,8 @@
       "debt_m": 2795.0,
       "cash_m": 16764.0,
       "growth_1_5_pct": 26.44,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -22799,6 +23226,8 @@
       "debt_m": 8116.0,
       "cash_m": 583.0,
       "growth_1_5_pct": 12.3,
+      "growth_applied_pct": 12.3,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -22879,10 +23308,10 @@
       "company_name": "Generac Holdings Inc.",
       "sector": "Industrials",
       "current_price": 190.77,
-      "intrinsic_value": 368.0,
-      "discount_pct": 48.16,
+      "intrinsic_value": 166.51,
+      "discount_pct": -14.57,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Specialty Industrial Machinery",
       "beta": 1.85,
       "market_cap_m": 11253.328896,
@@ -22906,6 +23335,8 @@
       "debt_m": 1311.196,
       "cash_m": 393.671,
       "growth_1_5_pct": 39.47,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -23013,6 +23444,8 @@
       "debt_m": 7016.0,
       "cash_m": 4388.0,
       "growth_1_5_pct": 10.06,
+      "growth_applied_pct": 10.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23120,6 +23553,8 @@
       "debt_m": 13615.6,
       "cash_m": 433.1,
       "growth_1_5_pct": -2.11,
+      "growth_applied_pct": -2.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23227,6 +23662,8 @@
       "debt_m": 128743.0,
       "cash_m": 27805.0,
       "growth_1_5_pct": 17.68,
+      "growth_applied_pct": 17.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -23334,6 +23771,8 @@
       "debt_m": 5110.237,
       "cash_m": 763.151,
       "growth_1_5_pct": 6.24,
+      "growth_applied_pct": 6.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23441,6 +23880,8 @@
       "debt_m": 26231.0,
       "cash_m": 6437.0,
       "growth_1_5_pct": 9.71,
+      "growth_applied_pct": 9.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23548,6 +23989,8 @@
       "debt_m": 23704.09,
       "cash_m": 5570.261,
       "growth_1_5_pct": 16.05,
+      "growth_applied_pct": 16.05,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23655,6 +24098,8 @@
       "debt_m": 2985.387,
       "cash_m": 741.012,
       "growth_1_5_pct": 7.05,
+      "growth_applied_pct": 7.05,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -23762,6 +24207,8 @@
       "debt_m": 3771.3,
       "cash_m": 1119.8,
       "growth_1_5_pct": 17.09,
+      "growth_applied_pct": 17.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -23869,6 +24316,8 @@
       "debt_m": 478171.0,
       "cash_m": 176767.0,
       "growth_1_5_pct": 16.08,
+      "growth_applied_pct": 16.08,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -23976,6 +24425,8 @@
       "debt_m": 7162.0,
       "cash_m": 1843.0,
       "growth_1_5_pct": 12.79,
+      "growth_applied_pct": 12.79,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -24083,6 +24534,8 @@
       "debt_m": 4375.0,
       "cash_m": 21855.0,
       "growth_1_5_pct": 3.09,
+      "growth_applied_pct": 3.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -24190,6 +24643,8 @@
       "debt_m": 3510.3,
       "cash_m": 1426.9,
       "growth_1_5_pct": 12.42,
+      "growth_applied_pct": 12.42,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -24297,6 +24752,8 @@
       "debt_m": 50493.0,
       "cash_m": 908.0,
       "growth_1_5_pct": 7.39,
+      "growth_applied_pct": 7.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -24377,8 +24834,8 @@
       "company_name": "Healthpeak Properties, Inc.",
       "sector": "Real Estate",
       "current_price": 19.98,
-      "intrinsic_value": 185.32,
-      "discount_pct": 89.22,
+      "intrinsic_value": 74.68,
+      "discount_pct": 73.25,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "REIT - Healthcare Facilities",
@@ -24404,6 +24861,8 @@
       "debt_m": 9382.345,
       "cash_m": 514.31,
       "growth_1_5_pct": 40.65,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -24511,6 +24970,8 @@
       "debt_m": 3524.0,
       "cash_m": 184.0,
       "growth_1_5_pct": 9.86,
+      "growth_applied_pct": 9.86,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -24618,6 +25079,8 @@
       "debt_m": 5050.843,
       "cash_m": 676.688,
       "growth_1_5_pct": 17.01,
+      "growth_applied_pct": 17.01,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -24698,8 +25161,8 @@
       "company_name": "Hewlett Packard Enterprise Company",
       "sector": "Technology",
       "current_price": 48.29,
-      "intrinsic_value": 34.95,
-      "discount_pct": -38.17,
+      "intrinsic_value": 9.07,
+      "discount_pct": -432.41,
       "method": "fcf",
       "valuation_label": "Highly Overvalued",
       "industry": "Communication Equipment",
@@ -24725,6 +25188,8 @@
       "debt_m": 20244.0,
       "cash_m": 6216.0,
       "growth_1_5_pct": 41.32,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -24832,6 +25297,8 @@
       "debt_m": 13357.0,
       "cash_m": 774.0,
       "growth_1_5_pct": 14.11,
+      "growth_applied_pct": 14.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -24939,6 +25406,8 @@
       "debt_m": 52896.0,
       "cash_m": 2085.0,
       "growth_1_5_pct": 5.33,
+      "growth_applied_pct": 5.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -25046,6 +25515,8 @@
       "debt_m": 15897.0,
       "cash_m": 1558.0,
       "growth_1_5_pct": 10.5,
+      "growth_applied_pct": 10.5,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.0,
       "trends": {
@@ -25143,6 +25614,8 @@
       "debt_m": 16593.0,
       "cash_m": 6186.0,
       "growth_1_5_pct": 2.78,
+      "growth_applied_pct": 2.78,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -25250,6 +25723,8 @@
       "debt_m": 2855.123,
       "cash_m": 868.446,
       "growth_1_5_pct": 6.48,
+      "growth_applied_pct": 6.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -25357,6 +25832,8 @@
       "debt_m": 5084.0,
       "cash_m": 1492.0,
       "growth_1_5_pct": 1.39,
+      "growth_applied_pct": 1.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -25437,8 +25914,8 @@
       "company_name": "Howmet Aerospace Inc.",
       "sector": "Industrials",
       "current_price": 220.82,
-      "intrinsic_value": 307.23,
-      "discount_pct": 28.13,
+      "intrinsic_value": 260.55,
+      "discount_pct": 15.25,
       "method": "ocf",
       "valuation_label": "Slightly Undervalued",
       "industry": "Aerospace & Defense",
@@ -25464,6 +25941,8 @@
       "debt_m": 4443.0,
       "cash_m": 507.0,
       "growth_1_5_pct": 28.0,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -25571,6 +26050,8 @@
       "debt_m": 9160.0,
       "cash_m": 4169.0,
       "growth_1_5_pct": 2.71,
+      "growth_applied_pct": 2.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -25678,6 +26159,8 @@
       "debt_m": 5120.2,
       "cash_m": 355.0,
       "growth_1_5_pct": 12.3,
+      "growth_applied_pct": 12.3,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -25758,8 +26241,8 @@
       "company_name": "Humana Inc.",
       "sector": "Healthcare",
       "current_price": 450.0,
-      "intrinsic_value": 315.41,
-      "discount_pct": -42.67,
+      "intrinsic_value": 275.44,
+      "discount_pct": -63.37,
       "method": "fcf",
       "valuation_label": "Highly Overvalued",
       "industry": "Healthcare Plans",
@@ -25785,6 +26268,8 @@
       "debt_m": 12504.0,
       "cash_m": 25109.0,
       "growth_1_5_pct": 28.9,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -25892,6 +26377,8 @@
       "debt_m": 23407.0,
       "cash_m": 17396.0,
       "growth_1_5_pct": 12.15,
+      "growth_applied_pct": 12.15,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -26009,6 +26496,8 @@
       "debt_m": 2704.0,
       "cash_m": 387.0,
       "growth_1_5_pct": 15.83,
+      "growth_applied_pct": 15.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -26116,6 +26605,8 @@
       "debt_m": 63817.0,
       "cash_m": 11058.0,
       "growth_1_5_pct": 7.77,
+      "growth_applied_pct": 7.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -26223,6 +26714,8 @@
       "debt_m": 1751.5,
       "cash_m": 602.1,
       "growth_1_5_pct": 10.09,
+      "growth_applied_pct": 10.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -26330,6 +26823,8 @@
       "debt_m": 848.877,
       "cash_m": 197.536,
       "growth_1_5_pct": 13.57,
+      "growth_applied_pct": 13.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -26437,6 +26932,8 @@
       "debt_m": 9372.0,
       "cash_m": 809.0,
       "growth_1_5_pct": 7.65,
+      "growth_applied_pct": 7.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -26544,6 +27041,8 @@
       "debt_m": 1789.0,
       "cash_m": 1337.0,
       "growth_1_5_pct": 13.53,
+      "growth_applied_pct": 13.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -26651,6 +27150,8 @@
       "debt_m": 37.412,
       "cash_m": 3854.572,
       "growth_1_5_pct": 10.06,
+      "growth_applied_pct": 10.06,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -26758,6 +27259,8 @@
       "debt_m": 4758.8,
       "cash_m": 1342.7,
       "growth_1_5_pct": 9.38,
+      "growth_applied_pct": 9.38,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -26865,6 +27368,8 @@
       "debt_m": 962.1,
       "cash_m": 584.4,
       "growth_1_5_pct": 24.2,
+      "growth_applied_pct": 24.2,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -26972,6 +27477,8 @@
       "debt_m": 50134.0,
       "cash_m": 54005.0,
       "growth_1_5_pct": 92.53,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -27079,6 +27586,8 @@
       "debt_m": 18.0,
       "cash_m": 5935.0,
       "growth_1_5_pct": 20.56,
+      "growth_applied_pct": 20.56,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -27186,6 +27695,8 @@
       "debt_m": 23304.0,
       "cash_m": 2976.0,
       "growth_1_5_pct": 12.85,
+      "growth_applied_pct": 12.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -27293,6 +27804,8 @@
       "debt_m": 6273.0,
       "cash_m": 272.0,
       "growth_1_5_pct": 2.04,
+      "growth_applied_pct": 2.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -27400,6 +27913,8 @@
       "debt_m": 9691.0,
       "cash_m": 815.0,
       "growth_1_5_pct": 161.75,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -27507,6 +28022,8 @@
       "debt_m": 7669.0,
       "cash_m": 7200.0,
       "growth_1_5_pct": 19.18,
+      "growth_applied_pct": 19.18,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -27614,6 +28131,8 @@
       "debt_m": null,
       "cash_m": 4042.5,
       "growth_1_5_pct": 16.26,
+      "growth_applied_pct": 16.26,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -27731,6 +28250,8 @@
       "debt_m": 9200.9,
       "cash_m": 1738.3,
       "growth_1_5_pct": 23.34,
+      "growth_applied_pct": 23.34,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -27838,6 +28359,8 @@
       "debt_m": 8740.203,
       "cash_m": 78.927,
       "growth_1_5_pct": -6.13,
+      "growth_applied_pct": -6.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -27945,6 +28468,8 @@
       "debt_m": 16067.0,
       "cash_m": 2422.0,
       "growth_1_5_pct": 10.11,
+      "growth_applied_pct": 10.11,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -28052,6 +28577,8 @@
       "debt_m": 17972.202,
       "cash_m": 188.16,
       "growth_1_5_pct": 13.37,
+      "growth_applied_pct": 13.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -28132,8 +28659,8 @@
       "company_name": "J.B. Hunt Transport Services, Inc.",
       "sector": "Industrials",
       "current_price": 232.85,
-      "intrinsic_value": 446.86,
-      "discount_pct": 47.89,
+      "intrinsic_value": 443.69,
+      "discount_pct": 47.52,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Integrated Freight & Logistics",
@@ -28159,6 +28686,8 @@
       "debt_m": 1123.837,
       "cash_m": 3.75,
       "growth_1_5_pct": 25.13,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -28239,8 +28768,8 @@
       "company_name": "Jabil Inc.",
       "sector": "Technology",
       "current_price": 254.25,
-      "intrinsic_value": 653.23,
-      "discount_pct": 61.08,
+      "intrinsic_value": 582.25,
+      "discount_pct": 56.33,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Electronic Components",
@@ -28266,6 +28795,8 @@
       "debt_m": 3379.0,
       "cash_m": 1739.0,
       "growth_1_5_pct": 27.11,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -28373,6 +28904,8 @@
       "debt_m": 85.0,
       "cash_m": 25.356,
       "growth_1_5_pct": 8.81,
+      "growth_applied_pct": 8.81,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -28490,6 +29023,8 @@
       "debt_m": 3694.074,
       "cash_m": 1179.112,
       "growth_1_5_pct": 15.84,
+      "growth_applied_pct": 15.84,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -28597,6 +29132,8 @@
       "debt_m": 44651.0,
       "cash_m": 17228.0,
       "growth_1_5_pct": 8.89,
+      "growth_applied_pct": 8.89,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -28704,6 +29241,8 @@
       "debt_m": 9277.0,
       "cash_m": 618.0,
       "growth_1_5_pct": 17.67,
+      "growth_applied_pct": 17.67,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -28811,6 +29350,8 @@
       "debt_m": 531499.0,
       "cash_m": 326271.0,
       "growth_1_5_pct": 11.07,
+      "growth_applied_pct": 11.07,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -28918,6 +29459,8 @@
       "debt_m": 28865.0,
       "cash_m": 1290.0,
       "growth_1_5_pct": 9.97,
+      "growth_applied_pct": 9.97,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -29025,6 +29568,8 @@
       "debt_m": 16658.0,
       "cash_m": 1540.0,
       "growth_1_5_pct": 17.53,
+      "growth_applied_pct": 17.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -29105,8 +29650,8 @@
       "company_name": "Keysight Technologies, Inc.",
       "sector": "Technology",
       "current_price": 297.68,
-      "intrinsic_value": 544.98,
-      "discount_pct": 45.38,
+      "intrinsic_value": 439.47,
+      "discount_pct": 32.26,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Scientific & Technical Instruments",
@@ -29132,6 +29677,8 @@
       "debt_m": 2517.0,
       "cash_m": 2605.0,
       "growth_1_5_pct": 29.05,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -29239,6 +29786,8 @@
       "debt_m": 6491.0,
       "cash_m": 1874.0,
       "growth_1_5_pct": 2.18,
+      "growth_applied_pct": 2.18,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -29346,6 +29895,8 @@
       "debt_m": 8472.021,
       "cash_m": 543.744,
       "growth_1_5_pct": 4.12,
+      "growth_applied_pct": 4.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -29453,6 +30004,8 @@
       "debt_m": 32964.0,
       "cash_m": 918.0,
       "growth_1_5_pct": 8.78,
+      "growth_applied_pct": 8.78,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -29560,6 +30113,8 @@
       "debt_m": 53623.86,
       "cash_m": 138258.021,
       "growth_1_5_pct": 18.94,
+      "growth_applied_pct": 18.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -29640,10 +30195,10 @@
       "company_name": "KLA Corporation",
       "sector": "Technology",
       "current_price": 152.32,
-      "intrinsic_value": 197.27,
-      "discount_pct": 22.79,
+      "intrinsic_value": 143.16,
+      "discount_pct": -6.4,
       "method": "ocf",
-      "valuation_label": "Slightly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Semiconductor Equipment & Materials",
       "beta": 1.5,
       "market_cap_m": 198467.239936,
@@ -29667,6 +30222,8 @@
       "debt_m": 5777.302,
       "cash_m": 4741.191,
       "growth_1_5_pct": 31.09,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -29774,6 +30331,8 @@
       "debt_m": 18003.0,
       "cash_m": 1904.0,
       "growth_1_5_pct": -6.67,
+      "growth_applied_pct": -6.67,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -29881,6 +30440,8 @@
       "debt_m": 15367.0,
       "cash_m": 2736.0,
       "growth_1_5_pct": 6.77,
+      "growth_applied_pct": 6.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -29988,6 +30549,8 @@
       "debt_m": 10996.0,
       "cash_m": 3021.0,
       "growth_1_5_pct": 13.54,
+      "growth_applied_pct": 13.54,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30095,6 +30658,8 @@
       "debt_m": 5851.9,
       "cash_m": 261.8,
       "growth_1_5_pct": 9.61,
+      "growth_applied_pct": 9.61,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30175,10 +30740,10 @@
       "company_name": "Lam Research Corporation",
       "sector": "Technology",
       "current_price": 225.92,
-      "intrinsic_value": 419.9,
-      "discount_pct": 46.2,
+      "intrinsic_value": 245.89,
+      "discount_pct": 8.12,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Semiconductor Equipment & Materials",
       "beta": 2.01,
       "market_cap_m": 282212.696064,
@@ -30202,6 +30767,8 @@
       "debt_m": 3735.444,
       "cash_m": 7437.384,
       "growth_1_5_pct": 35.42,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -30309,6 +30876,8 @@
       "debt_m": 15444.0,
       "cash_m": 2858.0,
       "growth_1_5_pct": 2.57,
+      "growth_applied_pct": 2.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30416,6 +30985,8 @@
       "debt_m": 6027.0,
       "cash_m": 630.0,
       "growth_1_5_pct": 2.54,
+      "growth_applied_pct": 2.54,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30523,6 +31094,8 @@
       "debt_m": 5881.699,
       "cash_m": 1465.255,
       "growth_1_5_pct": -8.99,
+      "growth_applied_pct": -8.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -30630,6 +31203,8 @@
       "debt_m": 1550.3,
       "cash_m": 45.5,
       "growth_1_5_pct": 3.15,
+      "growth_applied_pct": 3.15,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -30710,10 +31285,10 @@
       "company_name": "Eli Lilly and Company",
       "sector": "Healthcare",
       "current_price": 1443.5,
-      "intrinsic_value": 2931.58,
-      "discount_pct": 50.76,
+      "intrinsic_value": 1828.42,
+      "discount_pct": 21.05,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Drug Manufacturers - General",
       "beta": 0.39,
       "market_cap_m": 1285790.498816,
@@ -30737,6 +31312,8 @@
       "debt_m": 49503.0,
       "cash_m": 4885.0,
       "growth_1_5_pct": 33.63,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30844,6 +31421,8 @@
       "debt_m": 26702.0,
       "cash_m": 3947.0,
       "growth_1_5_pct": 9.34,
+      "growth_applied_pct": 9.34,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -30924,10 +31503,10 @@
       "company_name": "Live Nation Entertainment, Inc.",
       "sector": "Communication Services",
       "current_price": 178.45,
-      "intrinsic_value": 38604398.68,
-      "discount_pct": 100.0,
+      "intrinsic_value": 53.95,
+      "discount_pct": -230.77,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Entertainment",
       "beta": 1.16,
       "market_cap_m": 42060.046336,
@@ -30951,6 +31530,8 @@
       "debt_m": 9749.592,
       "cash_m": 8257.468,
       "growth_1_5_pct": 520.49,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -31058,6 +31639,8 @@
       "debt_m": 20498.0,
       "cash_m": 5960.0,
       "growth_1_5_pct": 18.9,
+      "growth_applied_pct": 18.9,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31165,6 +31748,8 @@
       "debt_m": 8938.0,
       "cash_m": 7683.0,
       "growth_1_5_pct": -0.35,
+      "growth_applied_pct": -0.35,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31272,6 +31857,8 @@
       "debt_m": 37556.0,
       "cash_m": 3172.0,
       "growth_1_5_pct": 4.45,
+      "growth_applied_pct": 4.45,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31379,6 +31966,8 @@
       "debt_m": 2141.127,
       "cash_m": 1389.737,
       "growth_1_5_pct": -13.65,
+      "growth_applied_pct": -13.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31459,10 +32048,10 @@
       "company_name": "Lumentum Holdings Inc.",
       "sector": "Technology",
       "current_price": 596.62,
-      "intrinsic_value": 2277.72,
-      "discount_pct": 73.81,
+      "intrinsic_value": 138.94,
+      "discount_pct": -329.41,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Communication Equipment",
       "beta": 1.67,
       "market_cap_m": 54104.43264,
@@ -31486,6 +32075,8 @@
       "debt_m": 1399.6,
       "cash_m": 1979.6,
       "growth_1_5_pct": 84.92,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -31566,10 +32157,10 @@
       "company_name": "LyondellBasell Industries N.V.",
       "sector": "Basic Materials",
       "current_price": 64.43,
-      "intrinsic_value": 282.11,
-      "discount_pct": 77.16,
+      "intrinsic_value": 36.7,
+      "discount_pct": -75.56,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Specialty Chemicals",
       "beta": 0.3,
       "market_cap_m": 20826.513408,
@@ -31593,6 +32184,8 @@
       "debt_m": 12331.0,
       "cash_m": 3227.0,
       "growth_1_5_pct": 55.52,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31700,6 +32293,8 @@
       "debt_m": 19948.0,
       "cash_m": 16138.0,
       "growth_1_5_pct": 11.17,
+      "growth_applied_pct": 11.17,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31790,8 +32385,8 @@
       "company_name": "Marathon Petroleum Corporation",
       "sector": "Energy",
       "current_price": 414.65,
-      "intrinsic_value": 1889.97,
-      "discount_pct": 78.06,
+      "intrinsic_value": 884.66,
+      "discount_pct": 53.13,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Oil & Gas Refining & Marketing",
@@ -31817,6 +32412,8 @@
       "debt_m": 33022.0,
       "cash_m": 13609.0,
       "growth_1_5_pct": 38.55,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -31924,6 +32521,8 @@
       "debt_m": 16843.0,
       "cash_m": 453.0,
       "growth_1_5_pct": 14.29,
+      "growth_applied_pct": 14.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -32031,6 +32630,8 @@
       "debt_m": 20533.0,
       "cash_m": 1842.0,
       "growth_1_5_pct": 8.88,
+      "growth_applied_pct": 8.88,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32138,6 +32739,8 @@
       "debt_m": 12823.0,
       "cash_m": 140.0,
       "growth_1_5_pct": 10.25,
+      "growth_applied_pct": 10.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -32218,10 +32821,10 @@
       "company_name": "Marvell Technology, Inc.",
       "sector": "Technology",
       "current_price": 156.76,
-      "intrinsic_value": 665.97,
-      "discount_pct": 76.46,
+      "intrinsic_value": 96.8,
+      "discount_pct": -61.94,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Semiconductors",
       "beta": 2.34,
       "market_cap_m": 141047.300096,
@@ -32245,6 +32848,8 @@
       "debt_m": 4962.9,
       "cash_m": 3932.8,
       "growth_1_5_pct": 63.91,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -32352,6 +32957,8 @@
       "debt_m": 3247.0,
       "cash_m": 610.0,
       "growth_1_5_pct": 9.48,
+      "growth_applied_pct": 9.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -32459,6 +33066,8 @@
       "debt_m": 23938.0,
       "cash_m": 10464.0,
       "growth_1_5_pct": 16.61,
+      "growth_applied_pct": 16.61,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32566,6 +33175,8 @@
       "debt_m": 5018.2,
       "cash_m": 331.1,
       "growth_1_5_pct": 5.12,
+      "growth_applied_pct": 5.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32673,6 +33284,8 @@
       "debt_m": 39820.0,
       "cash_m": 1193.0,
       "growth_1_5_pct": 5.94,
+      "growth_applied_pct": 5.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32780,6 +33393,8 @@
       "debt_m": 9208.0,
       "cash_m": 6528.0,
       "growth_1_5_pct": 15.37,
+      "growth_applied_pct": 15.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32887,6 +33502,8 @@
       "debt_m": 28153.0,
       "cash_m": 8819.0,
       "growth_1_5_pct": 7.72,
+      "growth_applied_pct": 7.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -32994,6 +33611,8 @@
       "debt_m": 53777.0,
       "cash_m": 9650.0,
       "growth_1_5_pct": 3.36,
+      "growth_applied_pct": 3.36,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -33101,6 +33720,8 @@
       "debt_m": 83669.0,
       "cash_m": 82449.0,
       "growth_1_5_pct": 19.48,
+      "growth_applied_pct": 19.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -33208,6 +33829,8 @@
       "debt_m": 21675.0,
       "cash_m": 120146.0,
       "growth_1_5_pct": 11.91,
+      "growth_applied_pct": 11.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -33315,6 +33938,8 @@
       "debt_m": 2023.684,
       "cash_m": 52.237,
       "growth_1_5_pct": 10.99,
+      "growth_applied_pct": 10.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -33422,6 +34047,8 @@
       "debt_m": 5668.986,
       "cash_m": 2395.957,
       "growth_1_5_pct": -20.33,
+      "growth_applied_pct": -20.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -33502,10 +34129,10 @@
       "company_name": "Microchip Technology Incorporated",
       "sector": "Technology",
       "current_price": 61.68,
-      "intrinsic_value": 182.14,
-      "discount_pct": 66.14,
+      "intrinsic_value": 54.74,
+      "discount_pct": -12.68,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Semiconductors",
       "beta": 1.87,
       "market_cap_m": 33567.71328,
@@ -33529,6 +34156,8 @@
       "debt_m": 5554.8,
       "cash_m": 457.0,
       "growth_1_5_pct": 46.51,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -33609,8 +34238,8 @@
       "company_name": "Micron Technology, Inc.",
       "sector": "Technology",
       "current_price": 778.31,
-      "intrinsic_value": 7763.21,
-      "discount_pct": 89.97,
+      "intrinsic_value": 3210.11,
+      "discount_pct": 75.75,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Semiconductors",
@@ -33636,6 +34265,8 @@
       "debt_m": 3283.0,
       "cash_m": 43434.0,
       "growth_1_5_pct": 42.36,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -33745,6 +34376,8 @@
       "debt_m": 35481.0,
       "cash_m": 64294.0,
       "growth_1_5_pct": 19.78,
+      "growth_applied_pct": 19.78,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -33852,6 +34485,8 @@
       "debt_m": 5839.258,
       "cash_m": 25.693,
       "growth_1_5_pct": -4.47,
+      "growth_applied_pct": -4.47,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -33959,6 +34594,8 @@
       "debt_m": 3599.0,
       "cash_m": 5171.0,
       "growth_1_5_pct": 29.4,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -34066,6 +34703,8 @@
       "debt_m": 21743.0,
       "cash_m": 1628.0,
       "growth_1_5_pct": 7.25,
+      "growth_applied_pct": 7.25,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -34146,10 +34785,10 @@
       "company_name": "Monolithic Power Systems, Inc.",
       "sector": "Technology",
       "current_price": 1390.54,
-      "intrinsic_value": 2534.67,
-      "discount_pct": 45.14,
+      "intrinsic_value": 738.93,
+      "discount_pct": -88.18,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Semiconductors",
       "beta": 1.71,
       "market_cap_m": 67813.855232,
@@ -34173,6 +34812,8 @@
       "debt_m": 21.371,
       "cash_m": 1091.234,
       "growth_1_5_pct": 49.79,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -34280,6 +34921,8 @@
       "debt_m": null,
       "cash_m": 3704.252,
       "growth_1_5_pct": 12.57,
+      "growth_applied_pct": 12.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -34387,6 +35030,8 @@
       "debt_m": 6911.0,
       "cash_m": 1621.0,
       "growth_1_5_pct": 11.49,
+      "growth_applied_pct": 11.49,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -34494,6 +35139,8 @@
       "debt_m": 416503.0,
       "cash_m": 105500.0,
       "growth_1_5_pct": 13.72,
+      "growth_applied_pct": 13.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -34601,6 +35248,8 @@
       "debt_m": 5913.1,
       "cash_m": 272.6,
       "growth_1_5_pct": -4.63,
+      "growth_applied_pct": -4.63,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -34708,6 +35357,8 @@
       "debt_m": 10111.0,
       "cash_m": 774.0,
       "growth_1_5_pct": 12.0,
+      "growth_applied_pct": 12.0,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -34815,6 +35466,8 @@
       "debt_m": 6716.9,
       "cash_m": 257.4,
       "growth_1_5_pct": 13.98,
+      "growth_applied_pct": 13.98,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -34922,6 +35575,8 @@
       "debt_m": 8740.0,
       "cash_m": 835.0,
       "growth_1_5_pct": 15.9,
+      "growth_applied_pct": 15.9,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -35029,6 +35684,8 @@
       "debt_m": 2488.0,
       "cash_m": 3576.0,
       "growth_1_5_pct": 15.4,
+      "growth_applied_pct": 15.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -35136,6 +35793,8 @@
       "debt_m": 15132.394,
       "cash_m": 8222.953,
       "growth_1_5_pct": 20.87,
+      "growth_applied_pct": 20.87,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -35243,6 +35902,8 @@
       "debt_m": 5221.0,
       "cash_m": 8827.0,
       "growth_1_5_pct": 18.72,
+      "growth_applied_pct": 18.72,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -35350,6 +36011,8 @@
       "debt_m": 1992.0,
       "cash_m": 1777.0,
       "growth_1_5_pct": 14.91,
+      "growth_applied_pct": 14.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -35457,6 +36120,8 @@
       "debt_m": 1992.0,
       "cash_m": 1777.0,
       "growth_1_5_pct": 14.91,
+      "growth_applied_pct": 14.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -35564,6 +36229,8 @@
       "debt_m": 113932.0,
       "cash_m": 5579.0,
       "growth_1_5_pct": 8.66,
+      "growth_applied_pct": 8.66,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -35671,6 +36338,8 @@
       "debt_m": 7893.0,
       "cash_m": 8368.0,
       "growth_1_5_pct": -4.68,
+      "growth_applied_pct": -4.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -35778,6 +36447,8 @@
       "debt_m": 17403.0,
       "cash_m": 70.0,
       "growth_1_5_pct": 9.55,
+      "growth_applied_pct": 9.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -35885,6 +36556,8 @@
       "debt_m": 1731.005,
       "cash_m": 113.431,
       "growth_1_5_pct": 11.19,
+      "growth_applied_pct": 11.19,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -35992,6 +36665,8 @@
       "debt_m": 16613.0,
       "cash_m": 1598.0,
       "growth_1_5_pct": 8.5,
+      "growth_applied_pct": 8.5,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -36099,6 +36774,8 @@
       "debt_m": 14000.4,
       "cash_m": 45699.1,
       "growth_1_5_pct": 17.16,
+      "growth_applied_pct": 17.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -36216,6 +36893,8 @@
       "debt_m": 14433.0,
       "cash_m": 3744.0,
       "growth_1_5_pct": 7.28,
+      "growth_applied_pct": 7.28,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -36323,6 +37002,8 @@
       "debt_m": 15086.503,
       "cash_m": 256.508,
       "growth_1_5_pct": -5.88,
+      "growth_applied_pct": -5.88,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -36430,6 +37111,8 @@
       "debt_m": 22923.0,
       "cash_m": 148.0,
       "growth_1_5_pct": 15.01,
+      "growth_applied_pct": 15.01,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -36510,8 +37193,8 @@
       "company_name": "Nucor Corporation",
       "sector": "Basic Materials",
       "current_price": 251.73,
-      "intrinsic_value": 1444.39,
-      "discount_pct": 82.57,
+      "intrinsic_value": 932.12,
+      "discount_pct": 72.99,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Steel",
@@ -36537,6 +37220,8 @@
       "debt_m": 7093.0,
       "cash_m": 3640.0,
       "growth_1_5_pct": 33.31,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -36617,10 +37302,10 @@
       "company_name": "NVIDIA Corporation",
       "sector": "Technology",
       "current_price": 162.85,
-      "intrinsic_value": 1605.35,
-      "discount_pct": 89.86,
+      "intrinsic_value": 224.08,
+      "discount_pct": 27.33,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Undervalued",
       "industry": "Semiconductors",
       "beta": 2.26,
       "market_cap_m": 3932339.044352,
@@ -36644,6 +37329,8 @@
       "debt_m": 33366.0,
       "cash_m": 62469.0,
       "growth_1_5_pct": 65.12,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -36751,6 +37438,8 @@
       "debt_m": 907.659,
       "cash_m": 1125.386,
       "growth_1_5_pct": -2.64,
+      "growth_applied_pct": -2.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -36858,6 +37547,8 @@
       "debt_m": 10978.0,
       "cash_m": 3627.0,
       "growth_1_5_pct": 22.3,
+      "growth_applied_pct": 22.3,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -36965,6 +37656,8 @@
       "debt_m": 8169.524,
       "cash_m": 194.445,
       "growth_1_5_pct": 11.0,
+      "growth_applied_pct": 11.0,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37072,6 +37765,8 @@
       "debt_m": 10895.0,
       "cash_m": 3884.0,
       "growth_1_5_pct": 24.36,
+      "growth_applied_pct": 24.36,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37179,6 +37874,8 @@
       "debt_m": 422.0,
       "cash_m": 2299.0,
       "growth_1_5_pct": 11.77,
+      "growth_applied_pct": 11.77,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37286,6 +37983,8 @@
       "debt_m": 19.998,
       "cash_m": 466.224,
       "growth_1_5_pct": 16.16,
+      "growth_applied_pct": 16.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -37393,6 +38092,8 @@
       "debt_m": 10018.3,
       "cash_m": 3796.4,
       "growth_1_5_pct": 14.48,
+      "growth_applied_pct": 14.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37473,8 +38174,8 @@
       "company_name": "ON Semiconductor Corporation",
       "sector": "Technology",
       "current_price": 71.06,
-      "intrinsic_value": 269.98,
-      "discount_pct": 73.68,
+      "intrinsic_value": 145.72,
+      "discount_pct": 51.24,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Semiconductors",
@@ -37500,6 +38201,8 @@
       "debt_m": 4463.0,
       "cash_m": 4367.7,
       "growth_1_5_pct": 36.91,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -37607,6 +38310,8 @@
       "debt_m": 28520.0,
       "cash_m": 186.0,
       "growth_1_5_pct": 8.1,
+      "growth_applied_pct": 8.1,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37687,7 +38392,7 @@
       "company_name": "Oracle Corporation",
       "sector": "Technology",
       "current_price": 125.35,
-      "intrinsic_value": -372.91,
+      "intrinsic_value": -332.61,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -37714,6 +38419,8 @@
       "debt_m": 125337.0,
       "cash_m": 37077.0,
       "growth_1_5_pct": 27.37,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -37821,6 +38528,8 @@
       "debt_m": 8275.0,
       "cash_m": 866.0,
       "growth_1_5_pct": 7.1,
+      "growth_applied_pct": 7.1,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -37928,6 +38637,8 @@
       "debt_m": 14959.1,
       "cash_m": 9399.7,
       "growth_1_5_pct": 15.94,
+      "growth_applied_pct": 15.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -38035,6 +38746,8 @@
       "debt_m": 4079.1,
       "cash_m": 684.9,
       "growth_1_5_pct": 16.09,
+      "growth_applied_pct": 16.09,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -38115,10 +38828,10 @@
       "company_name": "Palantir Technologies Inc.",
       "sector": "Technology",
       "current_price": 167.99,
-      "intrinsic_value": 645.93,
-      "discount_pct": 73.99,
+      "intrinsic_value": 72.4,
+      "discount_pct": -132.03,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Software - Infrastructure",
       "beta": 1.62,
       "market_cap_m": 404771.504128,
@@ -38142,6 +38855,8 @@
       "debt_m": 225.267,
       "cash_m": 10561.531,
       "growth_1_5_pct": 71.1,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -38249,6 +38964,8 @@
       "debt_m": 1774.0,
       "cash_m": 3071.0,
       "growth_1_5_pct": 13.62,
+      "growth_applied_pct": 13.62,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -38356,6 +39073,8 @@
       "debt_m": 17478.0,
       "cash_m": 711.0,
       "growth_1_5_pct": 11.92,
+      "growth_applied_pct": 11.92,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -38463,6 +39182,8 @@
       "debt_m": 4558.0,
       "cash_m": 934.2,
       "growth_1_5_pct": 7.63,
+      "growth_applied_pct": 7.63,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -38570,6 +39291,8 @@
       "debt_m": 13472.0,
       "cash_m": 10280.0,
       "growth_1_5_pct": 6.68,
+      "growth_applied_pct": 6.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -38677,6 +39400,8 @@
       "debt_m": 1484.1,
       "cash_m": 74.0,
       "growth_1_5_pct": 5.2,
+      "growth_applied_pct": 5.2,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -38784,6 +39509,8 @@
       "debt_m": 51881.0,
       "cash_m": 11163.0,
       "growth_1_5_pct": 3.61,
+      "growth_applied_pct": 3.61,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -38891,6 +39618,8 @@
       "debt_m": 62671.0,
       "cash_m": 14272.0,
       "growth_1_5_pct": -8.61,
+      "growth_applied_pct": -8.61,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -38998,6 +39727,8 @@
       "debt_m": 65026.0,
       "cash_m": 902.0,
       "growth_1_5_pct": 9.49,
+      "growth_applied_pct": 9.49,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39105,6 +39836,8 @@
       "debt_m": 47562.0,
       "cash_m": 6683.0,
       "growth_1_5_pct": 9.48,
+      "growth_applied_pct": 9.48,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39185,8 +39918,8 @@
       "company_name": "Phillips 66",
       "sector": "Energy",
       "current_price": 264.9,
-      "intrinsic_value": 7165.48,
-      "discount_pct": 96.3,
+      "intrinsic_value": 2071.12,
+      "discount_pct": 87.21,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Oil & Gas Refining & Marketing",
@@ -39212,6 +39945,8 @@
       "debt_m": 18530.0,
       "cash_m": 5848.0,
       "growth_1_5_pct": 48.66,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39319,6 +40054,8 @@
       "debt_m": 11427.932,
       "cash_m": 11.124,
       "growth_1_5_pct": 6.65,
+      "growth_applied_pct": 6.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39426,6 +40163,8 @@
       "debt_m": 79757.0,
       "cash_m": 30425.0,
       "growth_1_5_pct": 12.46,
+      "growth_applied_pct": 12.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -39543,6 +40282,8 @@
       "debt_m": 6841.0,
       "cash_m": 1642.0,
       "growth_1_5_pct": 7.52,
+      "growth_applied_pct": 7.52,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -39650,6 +40391,8 @@
       "debt_m": 20890.0,
       "cash_m": 393.0,
       "growth_1_5_pct": 8.27,
+      "growth_applied_pct": 8.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39757,6 +40500,8 @@
       "debt_m": 4503.8,
       "cash_m": 32557.5,
       "growth_1_5_pct": 9.6,
+      "growth_applied_pct": 9.6,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39864,6 +40609,8 @@
       "debt_m": 38925.0,
       "cash_m": 15365.0,
       "growth_1_5_pct": 4.46,
+      "growth_applied_pct": 4.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -39971,6 +40718,8 @@
       "debt_m": 8389.0,
       "cash_m": 14566.0,
       "growth_1_5_pct": -3.91,
+      "growth_applied_pct": -3.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -40078,6 +40827,8 @@
       "debt_m": 36832.482,
       "cash_m": 2273.497,
       "growth_1_5_pct": 0.99,
+      "growth_applied_pct": 0.99,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -40185,6 +40936,8 @@
       "debt_m": 25404.0,
       "cash_m": 86194.0,
       "growth_1_5_pct": 2.34,
+      "growth_applied_pct": 2.34,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -40292,6 +41045,8 @@
       "debt_m": 1423.315,
       "cash_m": 351.454,
       "growth_1_5_pct": 14.8,
+      "growth_applied_pct": 14.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -40399,6 +41154,8 @@
       "debt_m": 25634.0,
       "cash_m": 837.0,
       "growth_1_5_pct": 7.24,
+      "growth_applied_pct": 7.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -40506,6 +41263,8 @@
       "debt_m": 12192.033,
       "cash_m": 560.379,
       "growth_1_5_pct": 1.94,
+      "growth_applied_pct": 1.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -40613,6 +41372,8 @@
       "debt_m": 2192.141,
       "cash_m": 1803.849,
       "growth_1_5_pct": 0.13,
+      "growth_applied_pct": 0.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -40693,8 +41454,8 @@
       "company_name": "Qnity Electronics, Inc.",
       "sector": "Technology",
       "current_price": 118.36,
-      "intrinsic_value": 204.95,
-      "discount_pct": 42.25,
+      "intrinsic_value": 175.46,
+      "discount_pct": 32.54,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Semiconductor Equipment & Materials",
@@ -40720,6 +41481,8 @@
       "debt_m": 4019.0,
       "cash_m": 1124.0,
       "growth_1_5_pct": 27.76,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -40827,6 +41590,8 @@
       "debt_m": 15112.0,
       "cash_m": 7681.0,
       "growth_1_5_pct": 15.53,
+      "growth_applied_pct": 15.53,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -40907,10 +41672,10 @@
       "company_name": "Quanta Services, Inc.",
       "sector": "Industrials",
       "current_price": 602.01,
-      "intrinsic_value": 703.34,
-      "discount_pct": 14.41,
+      "intrinsic_value": 451.2,
+      "discount_pct": -33.42,
       "method": "fcf",
-      "valuation_label": "Slightly Undervalued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Engineering & Construction",
       "beta": 1.29,
       "market_cap_m": 90709.15584,
@@ -40934,6 +41699,8 @@
       "debt_m": 6991.077,
       "cash_m": 2315.271,
       "growth_1_5_pct": 32.99,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -41041,6 +41808,8 @@
       "debt_m": 5550.0,
       "cash_m": 797.0,
       "growth_1_5_pct": 9.85,
+      "growth_applied_pct": 9.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -41148,6 +41917,8 @@
       "debt_m": 1240.0,
       "cash_m": 1821.8,
       "growth_1_5_pct": 12.33,
+      "growth_applied_pct": 12.33,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -41255,6 +42026,8 @@
       "debt_m": 4472.0,
       "cash_m": 9977.0,
       "growth_1_5_pct": 15.5,
+      "growth_applied_pct": 15.5,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -41335,8 +42108,8 @@
       "company_name": "Reddit, Inc.",
       "sector": "Communication Services",
       "current_price": 98.45,
-      "intrinsic_value": 817.3,
-      "discount_pct": 87.95,
+      "intrinsic_value": 265.45,
+      "discount_pct": 62.91,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Internet Content & Information",
@@ -41362,6 +42135,8 @@
       "debt_m": 31.409,
       "cash_m": 3033.432,
       "growth_1_5_pct": 47.97,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -41469,6 +42244,8 @@
       "debt_m": 31388.876,
       "cash_m": 368.534,
       "growth_1_5_pct": 12.78,
+      "growth_applied_pct": 12.78,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -41576,6 +42353,8 @@
       "debt_m": 4887.056,
       "cash_m": 134.929,
       "growth_1_5_pct": -1.82,
+      "growth_applied_pct": -1.82,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -41683,6 +42462,8 @@
       "debt_m": 2707.0,
       "cash_m": 9301.1,
       "growth_1_5_pct": 20.29,
+      "growth_applied_pct": 20.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -41790,6 +42571,8 @@
       "debt_m": 9982.0,
       "cash_m": 10329.0,
       "growth_1_5_pct": 10.24,
+      "growth_applied_pct": 10.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -41897,6 +42680,8 @@
       "debt_m": 14055.0,
       "cash_m": 92.0,
       "growth_1_5_pct": 8.27,
+      "growth_applied_pct": 8.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42014,6 +42799,8 @@
       "debt_m": 409.604,
       "cash_m": 1010.742,
       "growth_1_5_pct": 9.08,
+      "growth_applied_pct": 9.08,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42121,6 +42908,8 @@
       "debt_m": 2634.062,
       "cash_m": 592.799,
       "growth_1_5_pct": 8.89,
+      "growth_applied_pct": 8.89,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -42228,6 +43017,8 @@
       "debt_m": 22140.0,
       "cash_m": 15733.0,
       "growth_1_5_pct": 20.3,
+      "growth_applied_pct": 20.3,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -42335,6 +43126,8 @@
       "debt_m": 3280.0,
       "cash_m": 433.0,
       "growth_1_5_pct": 10.5,
+      "growth_applied_pct": 10.5,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -42442,6 +43235,8 @@
       "debt_m": 727.149,
       "cash_m": 129.05,
       "growth_1_5_pct": 7.85,
+      "growth_applied_pct": 7.85,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42549,6 +43344,8 @@
       "debt_m": 9719.7,
       "cash_m": 311.0,
       "growth_1_5_pct": 10.03,
+      "growth_applied_pct": 10.03,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42656,6 +43453,8 @@
       "debt_m": 1018.512,
       "cash_m": 4288.124,
       "growth_1_5_pct": 15.1,
+      "growth_applied_pct": 15.1,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42763,6 +43562,8 @@
       "debt_m": 22355.0,
       "cash_m": 851.0,
       "growth_1_5_pct": 14.04,
+      "growth_applied_pct": 14.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -42870,6 +43671,8 @@
       "debt_m": 37379.0,
       "cash_m": 9173.0,
       "growth_1_5_pct": 12.82,
+      "growth_applied_pct": 12.82,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -42977,6 +43780,8 @@
       "debt_m": 13062.0,
       "cash_m": 2441.0,
       "growth_1_5_pct": 10.64,
+      "growth_applied_pct": 10.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -43084,6 +43889,8 @@
       "debt_m": 39288.0,
       "cash_m": 11403.0,
       "growth_1_5_pct": 13.91,
+      "growth_applied_pct": 13.91,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -43164,8 +43971,8 @@
       "company_name": "Sandisk Corporation",
       "sector": "Technology",
       "current_price": 885.01,
-      "intrinsic_value": 30509.51,
-      "discount_pct": 97.1,
+      "intrinsic_value": 4973.99,
+      "discount_pct": 82.21,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Computer Hardware",
@@ -43191,6 +43998,8 @@
       "debt_m": 177.0,
       "cash_m": 5136.0,
       "growth_1_5_pct": 61.76,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -43298,6 +44107,8 @@
       "debt_m": 12895.941,
       "cash_m": 443.512,
       "growth_1_5_pct": -3.39,
+      "growth_applied_pct": -3.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -43405,6 +44216,8 @@
       "debt_m": 12800.0,
       "cash_m": 3551.0,
       "growth_1_5_pct": 7.55,
+      "growth_applied_pct": 7.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -43485,8 +44298,8 @@
       "company_name": "Seagate Technology Holdings plc",
       "sector": "Technology",
       "current_price": 528.29,
-      "intrinsic_value": 12076.67,
-      "discount_pct": 95.63,
+      "intrinsic_value": 838.33,
+      "discount_pct": 36.98,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Computer Hardware",
@@ -43512,6 +44325,8 @@
       "debt_m": 2351.0,
       "cash_m": 1258.0,
       "growth_1_5_pct": 80.71,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -43619,6 +44434,8 @@
       "debt_m": 37474.0,
       "cash_m": 34.0,
       "growth_1_5_pct": 8.59,
+      "growth_applied_pct": 8.59,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -43726,6 +44543,8 @@
       "debt_m": 7524.0,
       "cash_m": 4607.0,
       "growth_1_5_pct": 18.65,
+      "growth_applied_pct": 18.65,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -43833,6 +44652,8 @@
       "debt_m": 11795.1,
       "cash_m": 264.2,
       "growth_1_5_pct": 8.7,
+      "growth_applied_pct": 8.7,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -43940,6 +44761,8 @@
       "debt_m": 28423.903,
       "cash_m": 569.941,
       "growth_1_5_pct": -18.8,
+      "growth_applied_pct": -18.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -44047,6 +44870,8 @@
       "debt_m": 15044.0,
       "cash_m": 1377.0,
       "growth_1_5_pct": 18.81,
+      "growth_applied_pct": 18.81,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -44164,6 +44989,8 @@
       "debt_m": 2472.8,
       "cash_m": 2606.1,
       "growth_1_5_pct": 18.8,
+      "growth_applied_pct": 18.8,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -44271,6 +45098,8 @@
       "debt_m": 6737.8,
       "cash_m": 43.2,
       "growth_1_5_pct": 9.16,
+      "growth_applied_pct": 9.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -44378,6 +45207,8 @@
       "debt_m": 14049.0,
       "cash_m": 723.0,
       "growth_1_5_pct": 22.19,
+      "growth_applied_pct": 22.19,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -44485,6 +45316,8 @@
       "debt_m": 1205.1,
       "cash_m": 1670.0,
       "growth_1_5_pct": 4.24,
+      "growth_applied_pct": 4.24,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -44592,6 +45425,8 @@
       "debt_m": 5068.0,
       "cash_m": 451.0,
       "growth_1_5_pct": 11.02,
+      "growth_applied_pct": 11.02,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -44699,6 +45534,8 @@
       "debt_m": 74001.0,
       "cash_m": 1740.0,
       "growth_1_5_pct": 7.84,
+      "growth_applied_pct": 7.84,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -44779,7 +45616,7 @@
       "company_name": "Southwest Airlines Co.",
       "sector": "Industrials",
       "current_price": 44.94,
-      "intrinsic_value": -1221.91,
+      "intrinsic_value": -83.7,
       "discount_pct": null,
       "method": "fcf",
       "valuation_label": "N/A",
@@ -44806,6 +45643,8 @@
       "debt_m": 5887.0,
       "cash_m": 3624.0,
       "growth_1_5_pct": 81.74,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -44913,6 +45752,8 @@
       "debt_m": 4704.7,
       "cash_m": 741.2,
       "growth_1_5_pct": 15.42,
+      "growth_applied_pct": 15.42,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -45020,6 +45861,8 @@
       "debt_m": 13276.9,
       "cash_m": 3864.2,
       "growth_1_5_pct": 16.29,
+      "growth_applied_pct": 16.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -45127,6 +45970,8 @@
       "debt_m": 26035.0,
       "cash_m": 143222.0,
       "growth_1_5_pct": 19.46,
+      "growth_applied_pct": 19.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -45207,8 +46052,8 @@
       "company_name": "Steel Dynamics, Inc.",
       "sector": "Basic Materials",
       "current_price": 229.43,
-      "intrinsic_value": 794.89,
-      "discount_pct": 71.14,
+      "intrinsic_value": 491.27,
+      "discount_pct": 53.3,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Steel",
@@ -45234,6 +46079,8 @@
       "debt_m": 4203.893,
       "cash_m": 928.558,
       "growth_1_5_pct": 33.86,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -45341,6 +46188,8 @@
       "debt_m": 1893.5,
       "cash_m": 531.1,
       "growth_1_5_pct": 9.93,
+      "growth_applied_pct": 9.93,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -45448,6 +46297,8 @@
       "debt_m": 14930.0,
       "cash_m": 3271.0,
       "growth_1_5_pct": 9.9,
+      "growth_applied_pct": 9.9,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -45555,6 +46406,8 @@
       "debt_m": 8646.017,
       "cash_m": 6897.497,
       "growth_1_5_pct": 24.31,
+      "growth_applied_pct": 24.31,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -45662,6 +46515,8 @@
       "debt_m": 17025.0,
       "cash_m": 15901.0,
       "growth_1_5_pct": 8.12,
+      "growth_applied_pct": 8.12,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -45769,6 +46624,8 @@
       "debt_m": 10037.36,
       "cash_m": 3607.669,
       "growth_1_5_pct": 21.68,
+      "growth_applied_pct": 21.68,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -45876,6 +46733,8 @@
       "debt_m": 13820.0,
       "cash_m": 3171.0,
       "growth_1_5_pct": 8.59,
+      "growth_applied_pct": 8.59,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -45983,6 +46842,8 @@
       "debt_m": 83666.0,
       "cash_m": 5620.0,
       "growth_1_5_pct": 21.19,
+      "growth_applied_pct": 21.19,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -46090,6 +46951,8 @@
       "debt_m": 418.6,
       "cash_m": 3774.3,
       "growth_1_5_pct": 0.64,
+      "growth_applied_pct": 0.64,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -46170,10 +47033,10 @@
       "company_name": "Take-Two Interactive Software, Inc.",
       "sector": "Communication Services",
       "current_price": 227.82,
-      "intrinsic_value": 232.19,
-      "discount_pct": 1.88,
+      "intrinsic_value": 119.69,
+      "discount_pct": -90.34,
       "method": "fcf",
-      "valuation_label": "Fairly Valued",
+      "valuation_label": "Highly Overvalued",
       "industry": "Electronic Gaming & Multimedia",
       "beta": 0.91,
       "market_cap_m": 42650.976256,
@@ -46197,6 +47060,8 @@
       "debt_m": 2519.8,
       "cash_m": 1673.6,
       "growth_1_5_pct": 37.21,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -46304,6 +47169,8 @@
       "debt_m": 2557.0,
       "cash_m": 782.0,
       "growth_1_5_pct": 14.16,
+      "growth_applied_pct": 14.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -46411,6 +47278,8 @@
       "debt_m": 19048.4,
       "cash_m": 142.6,
       "growth_1_5_pct": 21.05,
+      "growth_applied_pct": 21.05,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -46518,6 +47387,8 @@
       "debt_m": 15357.0,
       "cash_m": 5411.0,
       "growth_1_5_pct": 11.81,
+      "growth_applied_pct": 11.81,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -46625,6 +47496,8 @@
       "debt_m": 5639.0,
       "cash_m": 1697.0,
       "growth_1_5_pct": 13.75,
+      "growth_applied_pct": 13.75,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -46732,6 +47605,8 @@
       "debt_m": 2027.8,
       "cash_m": 562.4,
       "growth_1_5_pct": 10.31,
+      "growth_applied_pct": 10.31,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -46812,10 +47687,10 @@
       "company_name": "Teradyne, Inc.",
       "sector": "Technology",
       "current_price": 249.55,
-      "intrinsic_value": 1569.3,
-      "discount_pct": 84.1,
+      "intrinsic_value": 274.96,
+      "discount_pct": 9.24,
       "method": "ocf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Semiconductor Equipment & Materials",
       "beta": 1.75,
       "market_cap_m": 38960.930816,
@@ -46839,6 +47714,8 @@
       "debt_m": 82.869,
       "cash_m": 354.829,
       "growth_1_5_pct": 60.19,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -46946,6 +47823,8 @@
       "debt_m": 9267.0,
       "cash_m": 45216.0,
       "growth_1_5_pct": 19.79,
+      "growth_applied_pct": 19.79,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -47026,8 +47905,8 @@
       "company_name": "Texas Instruments Incorporated",
       "sector": "Technology",
       "current_price": 303.6,
-      "intrinsic_value": 818.33,
-      "discount_pct": 62.9,
+      "intrinsic_value": 461.47,
+      "discount_pct": 34.21,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Semiconductors",
@@ -47053,6 +47932,8 @@
       "debt_m": 13555.0,
       "cash_m": 8142.0,
       "growth_1_5_pct": 35.87,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -47160,6 +48041,8 @@
       "debt_m": 15.228,
       "cash_m": 369.558,
       "growth_1_5_pct": 6.88,
+      "growth_applied_pct": 6.88,
+      "growth_capped": false,
       "growth_source": "yahoo_cf_history",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47267,6 +48150,8 @@
       "debt_m": 3804.0,
       "cash_m": 1696.0,
       "growth_1_5_pct": 10.27,
+      "growth_applied_pct": 10.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47374,6 +48259,8 @@
       "debt_m": 41370.0,
       "cash_m": 6061.0,
       "growth_1_5_pct": 10.2,
+      "growth_applied_pct": 10.2,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47481,6 +48368,8 @@
       "debt_m": 2871.0,
       "cash_m": 6004.0,
       "growth_1_5_pct": 10.44,
+      "growth_applied_pct": 10.44,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47561,8 +48450,8 @@
       "company_name": "TKO Group Holdings, Inc.",
       "sector": "Communication Services",
       "current_price": 195.42,
-      "intrinsic_value": 2228.01,
-      "discount_pct": 91.23,
+      "intrinsic_value": 314.34,
+      "discount_pct": 37.83,
       "method": "fcf",
       "valuation_label": "Highly Undervalued",
       "industry": "Entertainment",
@@ -47588,6 +48477,8 @@
       "debt_m": 4617.973,
       "cash_m": 630.937,
       "growth_1_5_pct": 62.64,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47695,6 +48586,8 @@
       "debt_m": 2709.37,
       "cash_m": 198.876,
       "growth_1_5_pct": 3.27,
+      "growth_applied_pct": 3.27,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -47802,6 +48695,8 @@
       "debt_m": 4217.6,
       "cash_m": 1227.4,
       "growth_1_5_pct": 16.04,
+      "growth_applied_pct": 16.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
       "trends": {
@@ -47909,6 +48804,8 @@
       "debt_m": 34763.0,
       "cash_m": 2279.0,
       "growth_1_5_pct": 16.22,
+      "growth_applied_pct": 16.22,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -48016,6 +48913,8 @@
       "debt_m": 9813.0,
       "cash_m": 95552.0,
       "growth_1_5_pct": 4.76,
+      "growth_applied_pct": 4.76,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -48123,6 +49022,8 @@
       "debt_m": 1533.5,
       "cash_m": 214.5,
       "growth_1_5_pct": 14.76,
+      "growth_applied_pct": 14.76,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -48230,6 +49131,8 @@
       "debt_m": 65788.0,
       "cash_m": 45472.0,
       "growth_1_5_pct": 12.6,
+      "growth_applied_pct": 12.6,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -48337,6 +49240,8 @@
       "debt_m": 1020.189,
       "cash_m": 2891.471,
       "growth_1_5_pct": 16.88,
+      "growth_applied_pct": 16.88,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -48444,6 +49349,8 @@
       "debt_m": 1410.11,
       "cash_m": 879.394,
       "growth_1_5_pct": 16.23,
+      "growth_applied_pct": 16.23,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -48551,6 +49458,8 @@
       "debt_m": 8006.0,
       "cash_m": 740.0,
       "growth_1_5_pct": 5.93,
+      "growth_applied_pct": 5.93,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -48658,6 +49567,8 @@
       "debt_m": 73040.0,
       "cash_m": 49523.0,
       "growth_1_5_pct": 11.83,
+      "growth_applied_pct": 11.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -48765,6 +49676,8 @@
       "debt_m": 15664.0,
       "cash_m": 10068.0,
       "growth_1_5_pct": 5.29,
+      "growth_applied_pct": 5.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.0,
       "trends": {
@@ -48872,6 +49785,8 @@
       "debt_m": 5756.311,
       "cash_m": 1.184,
       "growth_1_5_pct": -14.73,
+      "growth_applied_pct": -14.73,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -48979,6 +49894,8 @@
       "debt_m": 2211.383,
       "cash_m": 213.451,
       "growth_1_5_pct": 11.56,
+      "growth_applied_pct": 11.56,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -49096,6 +50013,8 @@
       "debt_m": 30324.0,
       "cash_m": 3086.0,
       "growth_1_5_pct": 10.54,
+      "growth_applied_pct": 10.54,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -49203,6 +50122,8 @@
       "debt_m": 26398.0,
       "cash_m": 14653.0,
       "growth_1_5_pct": 17.94,
+      "growth_applied_pct": 17.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -49310,6 +50231,8 @@
       "debt_m": 26078.0,
       "cash_m": 6837.0,
       "growth_1_5_pct": 6.23,
+      "growth_applied_pct": 6.23,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -49417,6 +50340,8 @@
       "debt_m": 14671.0,
       "cash_m": 153.0,
       "growth_1_5_pct": 18.94,
+      "growth_applied_pct": 18.94,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -49524,6 +50449,8 @@
       "debt_m": 74331.0,
       "cash_m": 28549.0,
       "growth_1_5_pct": 18.46,
+      "growth_applied_pct": 18.46,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -49631,6 +50558,8 @@
       "debt_m": 5707.341,
       "cash_m": 168.749,
       "growth_1_5_pct": 4.55,
+      "growth_applied_pct": 4.55,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -49711,8 +50640,8 @@
       "company_name": "Valero Energy Corporation",
       "sector": "Energy",
       "current_price": 379.83,
-      "intrinsic_value": 5741.77,
-      "discount_pct": 93.38,
+      "intrinsic_value": 3120.44,
+      "discount_pct": 87.83,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Oil & Gas Refining & Marketing",
@@ -49738,6 +50667,8 @@
       "debt_m": 11001.0,
       "cash_m": 9840.0,
       "growth_1_5_pct": 36.44,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -49845,6 +50776,8 @@
       "debt_m": 151.695,
       "cash_m": 7242.947,
       "growth_1_5_pct": 12.58,
+      "growth_applied_pct": 12.58,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -49925,10 +50858,10 @@
       "company_name": "Ventas, Inc.",
       "sector": "Real Estate",
       "current_price": 88.92,
-      "intrinsic_value": 96.23,
-      "discount_pct": 7.6,
+      "intrinsic_value": 80.34,
+      "discount_pct": -10.68,
       "method": "fcf",
-      "valuation_label": "Fairly Valued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "REIT - Healthcare Facilities",
       "beta": 0.76,
       "market_cap_m": 47022.67392,
@@ -49952,6 +50885,8 @@
       "debt_m": 12436.652,
       "cash_m": 202.009,
       "growth_1_5_pct": 27.64,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50059,6 +50994,8 @@
       "debt_m": 2920.0,
       "cash_m": 1785.0,
       "growth_1_5_pct": 11.39,
+      "growth_applied_pct": 11.39,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50166,6 +51103,8 @@
       "debt_m": 1785.9,
       "cash_m": 476.1,
       "growth_1_5_pct": 13.41,
+      "growth_applied_pct": 13.41,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50273,6 +51212,8 @@
       "debt_m": 4456.5,
       "cash_m": 556.8,
       "growth_1_5_pct": 10.9,
+      "growth_applied_pct": 10.9,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50380,6 +51321,8 @@
       "debt_m": 166233.0,
       "cash_m": 4495.0,
       "growth_1_5_pct": 6.04,
+      "growth_applied_pct": 6.04,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50487,6 +51430,8 @@
       "debt_m": 4496.6,
       "cash_m": 6303.3,
       "growth_1_5_pct": 9.31,
+      "growth_applied_pct": 9.31,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50567,10 +51512,10 @@
       "company_name": "Vertiv Holdings Co",
       "sector": "Industrials",
       "current_price": 202.07,
-      "intrinsic_value": 521.19,
-      "discount_pct": 61.23,
+      "intrinsic_value": 198.36,
+      "discount_pct": -1.87,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Fairly Valued",
       "industry": "Electrical Equipment & Parts",
       "beta": 2.12,
       "market_cap_m": 77809.164288,
@@ -50594,6 +51539,8 @@
       "debt_m": 2928.5,
       "cash_m": 3711.7,
       "growth_1_5_pct": 44.03,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -50701,6 +51648,8 @@
       "debt_m": 13315.0,
       "cash_m": 2006.3,
       "growth_1_5_pct": 8.16,
+      "growth_applied_pct": 8.16,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50808,6 +51757,8 @@
       "debt_m": 16916.934,
       "cash_m": 270.321,
       "growth_1_5_pct": 5.23,
+      "growth_applied_pct": 5.23,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50915,6 +51866,8 @@
       "debt_m": 22071.0,
       "cash_m": 14083.0,
       "growth_1_5_pct": 13.57,
+      "growth_applied_pct": 13.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -50995,10 +51948,10 @@
       "company_name": "Vistra Corp.",
       "sector": "Utilities",
       "current_price": 133.01,
-      "intrinsic_value": 1722.01,
-      "discount_pct": 92.28,
+      "intrinsic_value": 113.38,
+      "discount_pct": -17.31,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Utilities - Independent Power Producers",
       "beta": 1.38,
       "market_cap_m": 45142.884352,
@@ -51022,6 +51975,8 @@
       "debt_m": 21146.0,
       "cash_m": 2743.0,
       "growth_1_5_pct": 73.47,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -51129,6 +52084,8 @@
       "debt_m": 17002.008,
       "cash_m": 111.876,
       "growth_1_5_pct": -28.49,
+      "growth_applied_pct": -28.49,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -51236,6 +52193,8 @@
       "debt_m": 4680.6,
       "cash_m": 106.6,
       "growth_1_5_pct": 12.9,
+      "growth_applied_pct": 12.9,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -51343,6 +52302,8 @@
       "debt_m": 127.0,
       "cash_m": 437.0,
       "growth_1_5_pct": 9.57,
+      "growth_applied_pct": 9.57,
+      "growth_capped": false,
       "growth_source": "yahoo_analyst",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -51440,6 +52401,8 @@
       "debt_m": 2838.94,
       "cash_m": 28100.09,
       "growth_1_5_pct": 5.52,
+      "growth_applied_pct": 5.52,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -51547,6 +52510,8 @@
       "debt_m": 2685.0,
       "cash_m": 768.0,
       "growth_1_5_pct": 12.83,
+      "growth_applied_pct": 12.83,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -51654,6 +52619,8 @@
       "debt_m": 6379.0,
       "cash_m": 489.0,
       "growth_1_5_pct": 16.71,
+      "growth_applied_pct": 16.71,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -51761,6 +52728,8 @@
       "debt_m": 50411.0,
       "cash_m": 11529.0,
       "growth_1_5_pct": 10.98,
+      "growth_applied_pct": 10.98,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -51868,6 +52837,8 @@
       "debt_m": 46041.0,
       "cash_m": 5185.0,
       "growth_1_5_pct": 12.57,
+      "growth_applied_pct": 12.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.37,
       "trends": {
@@ -51975,6 +52946,8 @@
       "debt_m": 23370.0,
       "cash_m": 247.0,
       "growth_1_5_pct": 9.23,
+      "growth_applied_pct": 9.23,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -52082,6 +53055,8 @@
       "debt_m": 5133.0,
       "cash_m": 593.0,
       "growth_1_5_pct": 12.29,
+      "growth_applied_pct": 12.29,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -52189,6 +53164,8 @@
       "debt_m": 22756.0,
       "cash_m": 58.8,
       "growth_1_5_pct": 7.52,
+      "growth_applied_pct": 7.52,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -52296,6 +53273,8 @@
       "debt_m": 221043.0,
       "cash_m": 181059.0,
       "growth_1_5_pct": 13.37,
+      "growth_applied_pct": 13.37,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -52376,10 +53355,10 @@
       "company_name": "Welltower Inc.",
       "sector": "Real Estate",
       "current_price": 244.46,
-      "intrinsic_value": 509.91,
-      "discount_pct": 52.06,
+      "intrinsic_value": 188.9,
+      "discount_pct": -29.41,
       "method": "fcf",
-      "valuation_label": "Highly Undervalued",
+      "valuation_label": "Slightly Overvalued",
       "industry": "REIT - Healthcare Facilities",
       "beta": 0.79,
       "market_cap_m": 179338.264576,
@@ -52403,6 +53382,8 @@
       "debt_m": 19195.152,
       "cash_m": 2274.91,
       "growth_1_5_pct": 42.52,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -52510,6 +53491,8 @@
       "debt_m": 222.4,
       "cash_m": 464.1,
       "growth_1_5_pct": 17.69,
+      "growth_applied_pct": 17.69,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.26,
       "trends": {
@@ -52590,8 +53573,8 @@
       "company_name": "Western Digital Corporation",
       "sector": "Technology",
       "current_price": 295.65,
-      "intrinsic_value": 5621.3,
-      "discount_pct": 94.74,
+      "intrinsic_value": 521.55,
+      "discount_pct": 43.31,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "Computer Hardware",
@@ -52617,6 +53600,8 @@
       "debt_m": 789.0,
       "cash_m": 1314.0,
       "growth_1_5_pct": 74.2,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -52697,8 +53682,8 @@
       "company_name": "Weyerhaeuser Company",
       "sector": "Real Estate",
       "current_price": 20.81,
-      "intrinsic_value": 165.97,
-      "discount_pct": 87.46,
+      "intrinsic_value": 30.13,
+      "discount_pct": 30.93,
       "method": "ocf",
       "valuation_label": "Highly Undervalued",
       "industry": "REIT - Specialty",
@@ -52724,6 +53709,8 @@
       "debt_m": 5354.0,
       "cash_m": 349.0,
       "growth_1_5_pct": 55.18,
+      "growth_applied_pct": 25.0,
+      "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -52831,6 +53818,8 @@
       "debt_m": 1527.946,
       "cash_m": 1028.936,
       "growth_1_5_pct": 10.57,
+      "growth_applied_pct": 10.57,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 7.74,
       "trends": {
@@ -52938,6 +53927,8 @@
       "debt_m": 33934.0,
       "cash_m": 1756.0,
       "growth_1_5_pct": 13.3,
+      "growth_applied_pct": 13.3,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -53045,6 +54036,8 @@
       "debt_m": 6532.0,
       "cash_m": 1978.0,
       "growth_1_5_pct": 16.78,
+      "growth_applied_pct": 16.78,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -53152,6 +54145,8 @@
       "debt_m": 2989.0,
       "cash_m": 3403.0,
       "growth_1_5_pct": 18.95,
+      "growth_applied_pct": 18.95,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -53259,6 +54254,8 @@
       "debt_m": 10734.229,
       "cash_m": 1792.358,
       "growth_1_5_pct": 4.69,
+      "growth_applied_pct": 4.69,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -53366,6 +54363,8 @@
       "debt_m": 40598.0,
       "cash_m": 2483.0,
       "growth_1_5_pct": 10.03,
+      "growth_applied_pct": 10.03,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -53473,6 +54472,8 @@
       "debt_m": 2895.0,
       "cash_m": 708.0,
       "growth_1_5_pct": 8.4,
+      "growth_applied_pct": 8.4,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.89,
       "trends": {
@@ -53580,6 +54581,8 @@
       "debt_m": 11600.0,
       "cash_m": 2108.0,
       "growth_1_5_pct": 8.47,
+      "growth_applied_pct": 8.47,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -53687,6 +54690,8 @@
       "debt_m": 2571.0,
       "cash_m": 182.0,
       "growth_1_5_pct": 16.13,
+      "growth_applied_pct": 16.13,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 8.11,
       "trends": {
@@ -53794,6 +54799,8 @@
       "debt_m": 7504.2,
       "cash_m": 399.9,
       "growth_1_5_pct": 5.51,
+      "growth_applied_pct": 5.51,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {
@@ -53901,6 +54908,8 @@
       "debt_m": 9049.0,
       "cash_m": 1531.0,
       "growth_1_5_pct": 1.62,
+      "growth_applied_pct": 1.62,
+      "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
       "trends": {

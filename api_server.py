@@ -10,6 +10,7 @@ import math
 import os
 
 from shared.fetchers import YahooFinanceFetcher
+from shared.dcf_rules import GROWTH_CAP_PCT
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=BASE_DIR, static_url_path='')
@@ -40,13 +41,6 @@ def to_millions_shares(val):
     """Convert shares (in units) to millions."""
     f = safe_float(val)
     return round(f / 1_000_000, 4) if f is not None else None
-
-
-def cap_growth(val, lo=0.01, hi=0.25):
-    """Clamp growth rate to reasonable bounds."""
-    if val is None:
-        return None
-    return round(max(lo, min(hi, val)) * 100, 2)  # return as percentage
 
 
 # Discount rate lookup tables keyed by beta threshold value.
@@ -283,6 +277,8 @@ def fetch_stock(symbol):
         "growth_6_10_pct":   growth_6_10_pct,
         "growth_11_20_pct":  growth_11_20_pct,
         "growth_source":     growth_source,
+        # The page caps Years 1-5 at this by default; growth_1_5_pct is the source figure
+        "growth_cap_pct":    GROWTH_CAP_PCT,
 
         # Discount
         "beta":              safe_float(best_beta),

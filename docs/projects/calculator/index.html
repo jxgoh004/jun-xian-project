@@ -712,12 +712,12 @@
             <div class="label-row">
               <label style="margin:0;">Years 1–5 Growth Rate (%)</label>
               <div class="cap-toggle">
-                <button id="capActualBtn" class="active" onclick="setGrowthCap('actual')">Actual</button>
-                <button id="capCappedBtn"            onclick="setGrowthCap('capped')">≤ 25%</button>
+                <button id="capActualBtn"            onclick="setGrowthCap('actual')">Actual</button>
+                <button id="capCappedBtn" class="active" onclick="setGrowthCap('capped')">≤ 25%</button>
               </div>
             </div>
             <input type="number" id="growth1to5" placeholder="e.g. 13.12" step="0.01" oninput="onGrowth1to5Input()" />
-            <div class="field-hint" id="growthHint">Actual value from source — toggle to cap at 25%</div>
+            <div class="field-hint" id="growthHint">Capped at 25% by default — switch to Actual to use the source value</div>
             <div class="field-hint">S&amp;P 500 stocks use FinViz’s 5-year estimate from the nightly screener; other stocks use Yahoo Finance’s next-year estimate. To enter your own, look up <a id="finvizLink" href="https://finviz.com/" target="_blank" rel="noopener" onclick="setFinvizLink(this)">“EPS next 5Y” on FinViz ↗</a> and type it in here.</div>
           </div>
           <div class="field-row">
@@ -838,7 +838,29 @@ const API = (window.location.hostname === 'localhost' || window.location.hostnam
   : 'https://jun-xian-project.onrender.com';
 
 let lastData = null;          // last successful API response
-let growthCapMode = 'actual'; // 'actual' | 'capped'
+let growthCapMode = 'capped'; // 'actual' | 'capped' — capped by default, same as the screener
+// The cap itself comes from the shared model rules (shared/dcf_rules.py), published
+// in the nightly snapshot and by the live API; 25 is only the offline fallback.
+let growthCapPct = 25;
+function setGrowthCapPct(v) {
+  if (typeof v !== 'number' || !(v > 0)) return;
+  growthCapPct = v;
+  document.getElementById('capCappedBtn').textContent = '≤ ' + v + '%';
+}
+function appliedGrowth(raw) {
+  return growthCapMode === 'capped' ? Math.min(raw, growthCapPct) : raw;
+}
+// Says what the cap did, so the figure in the field is never a silent edit.
+function updateGrowthHint() {
+  const raw = lastData && lastData.growth_1_5_pct;
+  const over = raw != null && raw > growthCapPct;
+  document.getElementById('growthHint').textContent =
+    growthCapMode === 'capped'
+      ? (over ? `Capped at ${growthCapPct}% (source: ${raw.toFixed(2)}%) — switch to Actual to use the source value`
+              : `Capped at ${growthCapPct}% by default — switch to Actual to use the source value`)
+      : (over ? `Source value, above the ${growthCapPct}% cap the screener uses — toggle to cap it`
+              : `Actual value from source — toggle to cap at ${growthCapPct}%`);
+}
 
 // ── Server health check ────────────────────────────────────────────────────
 async function checkServer() {
@@ -863,6 +885,7 @@ let calcCache = null;
     const r = await fetch('../screener/calculator_cache.json');
     if (r.ok) calcCache = await r.json();
   } catch {}
+  setGrowthCapPct(calcCache?.model?.growth_cap_pct);
   checkServer();
   // Arriving from the screener or moat page with ?ticker=XYZ: fetch and value it straight away.
   const linked = (new URLSearchParams(location.search).get('ticker') || '').trim().toUpperCase();
@@ -916,12 +939,9 @@ function setGrowthCap(mode) {
   growthCapMode = mode;
   document.getElementById('capActualBtn').classList.toggle('active', mode === 'actual');
   document.getElementById('capCappedBtn').classList.toggle('active', mode === 'capped');
-  document.getElementById('growthHint').textContent =
-    mode === 'actual' ? 'Actual value from source — toggle to cap at 25%'
-                      : 'Capped at 25% — toggle to use actual source value';
+  updateGrowthHint();
   if (!lastData || lastData.growth_1_5_pct == null) return;
-  const raw = lastData.growth_1_5_pct;
-  const val = mode === 'capped' ? Math.min(raw, 25) : raw;
+  const val = appliedGrowth(lastData.growth_1_5_pct);
   setField('growth1to5', val.toFixed(2));
   setField('growth6to10', (val / 2).toFixed(2));
   growth6to10Edited = false;
@@ -1088,6 +1108,8 @@ async function fetchStockData() {
 function populateFromData(d) {
   clearAutoFill();
   lastData = d;  // store for live method-switching and cap toggle
+  setGrowthCapPct(d.growth_cap_pct);
+  updateGrowthHint();
 
   // Company info
   setField('stockName', d.company_name);
@@ -1111,8 +1133,7 @@ function populateFromData(d) {
 
   // Growth rates — apply current cap mode
   if (d.growth_1_5_pct != null) {
-    const raw = d.growth_1_5_pct;
-    const g15 = growthCapMode === 'capped' ? Math.min(raw, 25) : raw;
+    const g15 = appliedGrowth(d.growth_1_5_pct);
     setField('growth1to5',  g15.toFixed(2));
     setField('growth6to10', (g15 / 2).toFixed(2));
   }

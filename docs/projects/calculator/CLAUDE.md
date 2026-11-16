@@ -71,5 +71,5 @@ shared/fetchers/yahoo_finance.py    # Pulls financials, beta, share count, analy
 ## Design choices worth noting
 
 - All fields are editable after auto-fill — the calculator is a starting point, not a black box
-- Growth rate is capped at 25% by default (toggle to "Actual" to remove the cap) to prevent model blow-up on high-growth outliers
+- Growth rate is capped at 25% by default (toggle to "Actual" to remove the cap) to prevent model blow-up on high-growth outliers. The cap is defined once in `shared/dcf_rules.py`; the page reads it from the nightly snapshot's `model.growth_cap_pct` and the API's `growth_cap_pct`, and the hint under the field shows the source figure whenever the cap applied. The screener applies the same cap, so both tools give the same value for a ticker
 - Shares the site-wide light neutral theme (`#edece7` ground, Host Grotesk, square corners, ink buttons); teal `#0d5c63` appears only in data marks, and green/red/yellow only where they carry valuation meaning

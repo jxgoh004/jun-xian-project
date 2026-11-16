@@ -11,7 +11,7 @@ The screener shows the same DCF methodology operating at scale — a batch pipel
 1. **Batch pipeline** (`scripts/fetch_sp500.py`) — fetches all S&P 500 tickers from Wikipedia, then for each ticker:
    - Pulls financials via `YahooFinanceFetcher`, and the 5-year EPS growth estimate and beta via `FinVizFetcher` (reachable from GitHub Actions; falls back to Yahoo). Each record stores `growth_source` so consumers know where the growth rate came from
    - Also writes `calculator_cache.json`, a slim per-ticker snapshot the calculator reads for FinViz growth and as its offline fallback
-   - Applies the same 20-year multi-phase DCF logic as the calculator
+   - Applies the same 20-year multi-phase DCF logic as the calculator, including the Years 1–5 growth cap from `shared/dcf_rules.py`. `growth_1_5_pct` stays the source figure; `growth_applied_pct` is what the DCF used and `growth_capped` says whether they differ (the stock page shows both when they do). `tests/test_dcf_consistency.py` checks the Python and JavaScript DCF agree
    - Computes discount percentage vs. current price and a valuation label
    - Writes all results to `docs/projects/screener/data.json`
 
