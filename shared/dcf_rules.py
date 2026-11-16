@@ -15,9 +15,11 @@ GROWTH_CAP_PCT = 25.0
 #     deposits, claims and client money, and debt is raw material rather than
 #     financing. They are valued on net income with no debt or cash adjustment.
 #   - REITs: the meaningful figure is funds from operations, which the free data
-#     sources do not provide. They are not rated.
+#     sources do not provide. They are not rated. This is decided by industry,
+#     not sector: the Real Estate sector also holds ordinary companies such as
+#     brokers and data providers, which a cash-flow DCF handles fine.
 EARNINGS_BASIS_SECTORS = ("Financial Services",)
-NOT_RATED_SECTORS = {"Real Estate": "reit"}
+NOT_RATED_INDUSTRY_PREFIXES = {"REIT": "reit"}
 
 # A result this far from the market price says more about the inputs than the
 # stock. It is still published, but flagged and kept out of the default ranking.
@@ -27,28 +29,36 @@ PLAUSIBLE_MIN_PRICE_MULTIPLE = round(1 / 3, 4)
 MODEL_RULES = {
     "growth_cap_pct": GROWTH_CAP_PCT,
     "earnings_basis_sectors": list(EARNINGS_BASIS_SECTORS),
-    "not_rated_sectors": NOT_RATED_SECTORS,
+    "not_rated_industry_prefixes": NOT_RATED_INDUSTRY_PREFIXES,
     "plausible_max_price_multiple": PLAUSIBLE_MAX_PRICE_MULTIPLE,
     "plausible_min_price_multiple": PLAUSIBLE_MIN_PRICE_MULTIPLE,
 }
 
 
-def sector_basis(sector):
-    """How a sector is valued: 'cash_flow', 'earnings' or 'not_rated'."""
-    if sector in NOT_RATED_SECTORS:
+def not_rated_reason(industry):
+    """Why an industry is not rated (e.g. 'reit'), or None if it is."""
+    for prefix, reason in NOT_RATED_INDUSTRY_PREFIXES.items():
+        if industry and industry.startswith(prefix):
+            return reason
+    return None
+
+
+def sector_basis(sector, industry=None):
+    """How a company is valued: 'cash_flow', 'earnings' or 'not_rated'."""
+    if not_rated_reason(industry):
         return "not_rated"
     if sector in EARNINGS_BASIS_SECTORS:
         return "earnings"
     return "cash_flow"
 
 
-def rate_result(basis, intrinsic_value, price, sector=None):
+def rate_result(basis, intrinsic_value, price, industry=None):
     """Return (rating, reason) for a valuation.
 
     rating is 'rated', 'low_confidence' or 'not_rated'; reason is None when rated.
     """
     if basis == "not_rated":
-        return "not_rated", NOT_RATED_SECTORS.get(sector, "sector")
+        return "not_rated", not_rated_reason(industry) or "industry"
     if intrinsic_value is None or price is None or price <= 0:
         return "not_rated", "no_data"
     if intrinsic_value <= 0:

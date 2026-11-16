@@ -102,7 +102,7 @@ def calculate_intrinsic_value(cash_flow_m, growth_1_5_pct, discount_rate_pct,
 
 def value_stock(sector, method, ocf_m, fcf_m, ni_m, growth_applied_pct,
                 discount_rate_pct, shares_millions, debt_m, cash_m,
-                current_price, dcf_not_applicable=False):
+                current_price, dcf_not_applicable=False, industry=None):
     """Apply the sector basis, run the DCF and rate the result.
 
     `method` is the cash-flow method chosen for an ordinary company ('ocf' or
@@ -112,7 +112,7 @@ def value_stock(sector, method, ocf_m, fcf_m, ni_m, growth_applied_pct,
     Returns a dict with method, basis, intrinsic_value, discount_pct,
     valuation_label, rating and rating_reason.
     """
-    basis = sector_basis(sector)
+    basis = sector_basis(sector, industry)
     intrinsic_value = None
     have_rates = growth_applied_pct is not None and discount_rate_pct is not None
 
@@ -128,7 +128,7 @@ def value_stock(sector, method, ocf_m, fcf_m, ni_m, growth_applied_pct,
             shares_millions, debt_m, cash_m)
 
     discount_pct, valuation_label = compute_valuation_label(intrinsic_value, current_price)
-    rating, rating_reason = rate_result(basis, intrinsic_value, current_price, sector)
+    rating, rating_reason = rate_result(basis, intrinsic_value, current_price, industry)
     if rating_reason == "no_data" and (
             dcf_not_applicable or (basis == "earnings" and ni_m is not None and ni_m <= 0)):
         rating_reason = "negative_earnings"
@@ -417,6 +417,7 @@ def process_ticker(ticker, index, total):
     # ── DCF calculation (sector basis + plausibility rating) ─────────────────
     valued = value_stock(
         sector=info.get("sector") or "N/A",
+        industry=info.get("industry"),
         method=method,
         ocf_m=ocf_m, fcf_m=fcf_m, ni_m=ni_cont_ops_m,
         growth_applied_pct=growth_applied_pct,

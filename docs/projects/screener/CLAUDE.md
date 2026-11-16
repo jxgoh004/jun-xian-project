@@ -15,7 +15,7 @@ The screener shows the same DCF methodology operating at scale — a batch pipel
    - Computes discount percentage vs. current price and a valuation label
    - Applies the sector basis and plausibility rating from `shared/dcf_rules.py` (`value_stock()`):
      - **Financial Services** — valued on trailing net income (`method: "ni"`, `basis: "earnings"`) with no debt or cash adjustment, because a bank's cash flow and debt are not what they are for an ordinary company
-     - **Real Estate** — `basis: "not_rated"`, no intrinsic value: a REIT needs funds from operations, which the data sources do not provide
+     - **REITs** (industry starting "REIT", not the whole Real Estate sector — brokers and data providers there are valued normally) — `basis: "not_rated"`, no intrinsic value: a REIT needs funds from operations, which the data sources do not provide
      - Every stock gets `rating` (`rated` / `low_confidence` / `not_rated`) and `rating_reason`. A value that is negative, over 3× the price or under 1/3 of it is `low_confidence`; the thresholds are published in `data.json` under `model`
    - Writes all results to `docs/projects/screener/data.json`
 

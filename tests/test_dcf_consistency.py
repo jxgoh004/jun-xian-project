@@ -69,7 +69,10 @@ def test_python_and_javascript_dcf_agree():
 def test_sector_basis():
     from shared.dcf_rules import sector_basis
     assert sector_basis("Financial Services") == "earnings"
-    assert sector_basis("Real Estate") == "not_rated"
+    assert sector_basis("Real Estate", "REIT - Residential") == "not_rated"
+    # Real Estate also holds ordinary companies (brokers, data providers)
+    assert sector_basis("Real Estate", "Real Estate Services") == "cash_flow"
+    assert sector_basis("Real Estate") == "cash_flow"
     assert sector_basis("Technology") == "cash_flow"
     assert sector_basis(None) == "cash_flow"
 
@@ -85,7 +88,7 @@ def test_rate_result_thresholds():
         "low_confidence", "below_price_multiple")
     assert rate_result("cash_flow", -5.0, price) == ("low_confidence", "negative_value")
     assert rate_result("cash_flow", None, price) == ("not_rated", "no_data")
-    assert rate_result("not_rated", 150.0, price, "Real Estate") == ("not_rated", "reit")
+    assert rate_result("not_rated", 150.0, price, "REIT - Office") == ("not_rated", "reit")
 
 
 def test_financials_are_valued_on_earnings_without_net_debt():
@@ -110,9 +113,12 @@ def test_reits_and_loss_makers_are_not_rated():
     args = dict(method="ocf", ocf_m=900.0, fcf_m=400.0, ni_m=300.0, growth_applied_pct=5.0,
                 discount_rate_pct=7.0, shares_millions=100.0, debt_m=0.0, cash_m=0.0,
                 current_price=50.0)
-    reit = value_stock(sector="Real Estate", **args)
+    reit = value_stock(sector="Real Estate", industry="REIT - Retail", **args)
     assert reit["intrinsic_value"] is None and reit["valuation_label"] == "N/A"
     assert (reit["rating"], reit["rating_reason"]) == ("not_rated", "reit")
+
+    broker = value_stock(sector="Real Estate", industry="Real Estate Services", **args)
+    assert broker["basis"] == "cash_flow" and broker["intrinsic_value"] is not None
 
     loss = value_stock(sector="Technology", dcf_not_applicable=True, **args)
     assert (loss["rating"], loss["rating_reason"]) == ("not_rated", "negative_earnings")
@@ -129,7 +135,7 @@ def test_snapshot_matches_the_rules():
         base = s["method"] if s["method"] in ("ocf", "fcf") else "ocf"
         neg = s["ni_ttm_m"] is not None and s["ni_ttm_m"] < 0
         v = value_stock(
-            sector=s["sector"], method=base, ocf_m=s["ocf_m"], fcf_m=s["fcf_m"],
+            sector=s["sector"], industry=s["industry"], method=base, ocf_m=s["ocf_m"], fcf_m=s["fcf_m"],
             ni_m=s["ni_ttm_m"], growth_applied_pct=s["growth_applied_pct"],
             discount_rate_pct=s["discount_rate_pct"],
             shares_millions=s["shares_outstanding_m"], debt_m=s["debt_m"], cash_m=s["cash_m"],

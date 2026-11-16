@@ -192,7 +192,7 @@ def fetch_stock(symbol):
     # Sector basis (shared/dcf_rules.py): financials are valued on net income
     # with no debt or cash adjustment; the page applies that when basis is
     # "earnings". REITs come back as "not_rated" and the page warns.
-    basis = sector_basis(sector)
+    basis = sector_basis(sector, industry)
     if basis == "earnings":
         recommended_method = "ni"
         switch_reason      = "financial_sector"

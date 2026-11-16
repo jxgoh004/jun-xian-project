@@ -5,8 +5,8 @@
     "earnings_basis_sectors": [
       "Financial Services"
     ],
-    "not_rated_sectors": {
-      "Real Estate": "reit"
+    "not_rated_industry_prefixes": {
+      "REIT": "reit"
     },
     "plausible_max_price_multiple": 3.0,
     "plausible_min_price_multiple": 0.3333
@@ -10129,10 +10129,10 @@
       "company_name": "CBRE Group, Inc.",
       "sector": "Real Estate",
       "current_price": 133.36,
-      "intrinsic_value": null,
-      "discount_pct": null,
+      "intrinsic_value": 121.14,
+      "discount_pct": -10.09,
       "method": "ocf",
-      "valuation_label": "N/A",
+      "valuation_label": "Slightly Overvalued",
       "industry": "Real Estate Services",
       "beta": 1.22,
       "market_cap_m": 38433.85344,
@@ -10160,9 +10160,9 @@
       "growth_capped": false,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 6.63,
-      "basis": "not_rated",
-      "rating": "not_rated",
-      "rating_reason": "reit",
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
@@ -14405,10 +14405,10 @@
       "company_name": "CoStar Group, Inc.",
       "sector": "Real Estate",
       "current_price": 30.93,
-      "intrinsic_value": null,
-      "discount_pct": null,
+      "intrinsic_value": 47.09,
+      "discount_pct": 34.32,
       "method": "fcf",
-      "valuation_label": "N/A",
+      "valuation_label": "Highly Undervalued",
       "industry": "Real Estate Services",
       "beta": 0.78,
       "market_cap_m": 12444.294144,
@@ -14436,9 +14436,9 @@
       "growth_capped": true,
       "growth_source": "finviz_5y",
       "discount_rate_pct": 5.15,
-      "basis": "not_rated",
-      "rating": "not_rated",
-      "rating_reason": "reit",
+      "basis": "cash_flow",
+      "rating": "rated",
+      "rating_reason": null,
       "trends": {
         "years": [
           2022,
