@@ -1,17 +1,22 @@
 """
-run_moat_analysis.py — Monthly Economic Moat Batch Runner
+run_moat_analysis.py — Economic Moat Batch Runner
 
 Reads tickers from the existing screener data.json, runs moat analysis for
 each company via moat_analyzer.py, and writes results to:
   - docs/projects/moat/data.json        (full moat reports)
   - docs/projects/screener/data.json    (patched with moat + moat_score fields)
 
+Stocks that are due (never rated, rated under an older methodology, or older
+than STALE_DAYS) are processed most-undervalued first, because the moat matters
+most where the DCF says a stock is cheap. --limit caps how many due stocks one
+run processes, so repeated runs work through the whole index.
+
 Usage:
-    python economic-moat/run_moat_analysis.py              # all S&P 500 stocks
-    python economic-moat/run_moat_analysis.py --limit 5    # test run (first 5)
-    python economic-moat/run_moat_analysis.py --ticker AAPL  # single stock
+    python economic-moat/run_moat_analysis.py              # every due stock
+    python economic-moat/run_moat_analysis.py --limit 5    # the 5 most urgent due stocks
+    python economic-moat/run_moat_analysis.py --ticker AAPL,MSFT  # named stocks, always re-run
     python economic-moat/run_moat_analysis.py --seed       # write empty data.json and exit
-    python economic-moat/run_moat_analysis.py --force      # re-analyse even if < 30 days old
+    python economic-moat/run_moat_analysis.py --force      # treat every stock as due
 
 Requires:
     OPENAI_API_KEY environment variable
@@ -34,6 +39,7 @@ _PROJ_ROOT  = os.path.dirname(_THIS_DIR)
 sys.path.insert(0, _THIS_DIR)   # so moat_analyzer / moat_prompts resolve
 
 from moat_analyzer import analyze_company
+from moat_scoring import METHODOLOGY_VERSION
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -42,7 +48,7 @@ SCREENER_DATA   = os.path.join(_PROJ_ROOT, "docs", "projects", "screener", "data
 MOAT_OUTPUT_DIR = os.path.join(_PROJ_ROOT, "docs", "projects", "moat")
 MOAT_DATA       = os.path.join(MOAT_OUTPUT_DIR, "data.json")
 
-STALE_DAYS = 30   # re-analyse if older than this
+STALE_DAYS = 90   # moats move slowly; re-analyse if older than this
 
 
 # ---------------------------------------------------------------------------
@@ -60,8 +66,11 @@ def write_json(path: str, data: dict) -> None:
         json.dump(data, f, indent=2)
 
 
-def is_fresh(analyzed_at: str | None, stale_days: int = STALE_DAYS) -> bool:
-    """Return True if the record was analysed within stale_days."""
+def is_fresh(record: dict | None, stale_days: int = STALE_DAYS) -> bool:
+    """True if the record uses the current methodology and is within stale_days."""
+    if not record or record.get("methodology") != METHODOLOGY_VERSION:
+        return False
+    analyzed_at = record.get("analyzed_at")
     if not analyzed_at:
         return False
     try:
@@ -74,6 +83,22 @@ def is_fresh(analyzed_at: str | None, stale_days: int = STALE_DAYS) -> bool:
 def build_moat_index(moat_data: dict) -> dict:
     """Build a ticker → record lookup from existing moat data.json."""
     return {s["ticker"]: s for s in moat_data.get("stocks", [])}
+
+
+def urgency(stock: dict, moat_index: dict) -> tuple:
+    """Sort key: unrated stocks first, then the most undervalued."""
+    discount = stock.get("discount_pct")
+    return (
+        stock["ticker"] in moat_index,
+        -(discount if discount is not None else float("-inf")),
+    )
+
+
+def save(moat_index: dict) -> str:
+    """Write the moat data.json and return its timestamp."""
+    updated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    write_json(MOAT_DATA, {"updated_at": updated_at, "stocks": list(moat_index.values())})
+    return updated_at
 
 
 # ---------------------------------------------------------------------------
@@ -125,89 +150,92 @@ async def run(args: argparse.Namespace) -> None:
 
     moat_index = build_moat_index(moat_data)
 
+    if not os.path.exists(SCREENER_DATA):
+        print(f"[error] Screener data not found at {SCREENER_DATA}.")
+        sys.exit(1)
+    stocks = load_json(SCREENER_DATA).get("stocks", [])
+
     # Determine tickers to process
+    skipped = 0
     if args.ticker:
-        ticker = args.ticker.strip().upper()
-        if not os.path.exists(SCREENER_DATA):
-            print(f"[error] Screener data not found. Cannot look up company details for {ticker}.")
+        stock_map = {s["ticker"]: s for s in stocks}
+        wanted    = [t.strip().upper() for t in args.ticker.split(",") if t.strip()]
+        missing   = [t for t in wanted if t not in stock_map]
+        if missing:
+            print(f"[error] not found in screener data.json: {', '.join(missing)}")
             sys.exit(1)
-        screener = load_json(SCREENER_DATA)
-        stock_map = {s["ticker"]: s for s in screener.get("stocks", [])}
-        if ticker not in stock_map:
-            print(f"[error] {ticker} not found in screener data.json.")
-            sys.exit(1)
-        work_list = [stock_map[ticker]]
+        work_list = [stock_map[t] for t in wanted]
     else:
-        if not os.path.exists(SCREENER_DATA):
-            print(f"[error] Screener data not found at {SCREENER_DATA}.")
-            sys.exit(1)
-        screener  = load_json(SCREENER_DATA)
-        work_list = screener.get("stocks", [])
-        if args.limit:
-            work_list = work_list[: args.limit]
+        due = [s for s in stocks if args.force or not is_fresh(moat_index.get(s["ticker"]))]
+        skipped = len(stocks) - len(due)
+        due.sort(key=lambda s: urgency(s, moat_index))
+        work_list = due[: args.limit] if args.limit else due
+        print(f"{len(due)} stock(s) due, {skipped} fresh (< {STALE_DAYS} days, current methodology).")
 
     total = len(work_list)
     print(f"Processing {total} ticker(s)...\n")
 
     updated = 0
-    skipped = 0
+    failed  = 0
+    totals  = {"input_tokens": 0, "output_tokens": 0, "web_searches": 0, "page_opens": 0,
+               "standard_tier_retries": 0}
 
     for i, stock in enumerate(work_list, start=1):
-        ticker       = stock["ticker"]
-        company_name = stock.get("company_name", ticker)
-        sector       = stock.get("sector", "N/A")
-        industry     = stock.get("industry", "N/A")
-
-        existing = moat_index.get(ticker)
-        if not args.force and existing and is_fresh(existing.get("analyzed_at")):
-            print(f"[{i}/{total}] {ticker}: skipped (fresh, < {STALE_DAYS} days old)")
-            skipped += 1
-            continue
-
-        print(f"[{i}/{total}] {ticker}: analysing {company_name}...")
+        ticker = stock["ticker"]
+        print(f"[{i}/{total}] {ticker}: analysing {stock.get('company_name', ticker)}...")
         try:
-            result = await analyze_company(ticker, company_name, sector, industry)
+            result = await analyze_company(stock)
             moat_index[ticker] = result
             updated += 1
-            moat_label = result["overall_moat"]
-            score      = result["overall_score"]
-            print(f"[{i}/{total}] {ticker}: {moat_label} ({score}) OK")
+            for field in totals:
+                totals[field] += result["usage"][field]
+            print(
+                f"[{i}/{total}] {ticker}: {result['overall_moat']} ({result['overall_score']}), "
+                f"trend {result['moat_trend']}, "
+                f"financial evidence {result['financial_evidence']['tier']} OK"
+            )
+            save(moat_index)   # after every stock, so an interrupted run keeps its work
         except Exception as exc:
-            print(f"[{i}/{total}] {ticker}: ERROR - {exc}", file=sys.stderr)
+            failed += 1
+            print(f"[{i}/{total}] {ticker}: ERROR - {exc} (previous rating kept)", file=sys.stderr)
 
         # Rate limiting — 1 s between stocks to avoid API throttling
         if i < total:
             time.sleep(1)
 
-    # Rebuild moat data.json
-    updated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    moat_data  = {
-        "updated_at": updated_at,
-        "stocks":     list(moat_index.values()),
-    }
-    write_json(MOAT_DATA, moat_data)
+    updated_at = save(moat_index)
     print(f"\nMoat data written -> {MOAT_DATA}")
 
     # Patch screener
     patch_screener(moat_index)
 
-    print(f"\nDone. updated={updated}, skipped={skipped}, total={total}")
+    print(f"\nDone. updated={updated}, failed={failed}, fresh={skipped}, processed={total}")
+    if updated:
+        print(
+            f"Usage: {totals['input_tokens']:,} input tokens, "
+            f"{totals['output_tokens']:,} output tokens, {totals['web_searches']} web searches "
+            f"(per stock: {totals['input_tokens'] // updated:,} in, "
+            f"{totals['output_tokens'] // updated:,} out, "
+            f"{totals['web_searches'] / updated:.1f} searches, "
+            f"{totals['page_opens'] / updated:.1f} page opens); "
+            f"{totals['standard_tier_retries']} call(s) fell back to the standard tier"
+        )
     print(f"updated_at: {updated_at}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Monthly Economic Moat batch analysis for S&P 500 stocks."
+        description="Economic Moat batch analysis for S&P 500 stocks."
     )
     parser.add_argument(
         "--ticker", type=str, default=None,
-        metavar="TICKER",
-        help="Analyse a single ticker (e.g. AAPL) instead of the full list.",
+        metavar="TICKERS",
+        help="Analyse these tickers (comma-separated, e.g. AAPL,MSFT), fresh or not.",
     )
     parser.add_argument(
         "--limit", type=int, default=None,
         metavar="N",
-        help="Process only the first N tickers (for testing).",
+        help="Process at most N due tickers, most urgent first.",
     )
     parser.add_argument(
         "--seed", action="store_true",
@@ -215,7 +243,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--force", action="store_true",
-        help="Re-analyse all tickers even if their data is still fresh.",
+        help="Treat every ticker as due, even if its rating is still fresh.",
     )
     args = parser.parse_args()
 

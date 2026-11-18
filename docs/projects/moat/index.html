@@ -639,7 +639,7 @@
 
     <div id="empty-state" style="display:none;">
       <h2>No moat data yet</h2>
-      <p>Run the monthly batch analysis to generate moat reports.<br><br>
+      <p>Run the batch analysis to generate moat reports.<br><br>
          <code>python economic-moat/run_moat_analysis.py --ticker &lt;TICKER&gt;</code></p>
     </div>
 
@@ -677,6 +677,10 @@
                 <span class="ip-label">Key Risk</span>
                 <span class="ip-value" id="pill-risk">—</span>
               </div>
+              <div class="info-pill" id="pill-trend-wrap" style="display:none;">
+                <span class="ip-label">Moat Trend</span>
+                <span class="ip-value" id="pill-trend">—</span>
+              </div>
               <div class="info-pill">
                 <span class="ip-label">Analysed</span>
                 <span class="ip-value" id="pill-date">—</span>
@@ -708,6 +712,20 @@
           </div>
         </div>
       </div>
+
+      <!-- How the rating was reached (methodology 2+ records only) -->
+      <section class="panel anim anim-2" id="basis-section" style="display:none; margin-bottom:12px;" aria-label="How the rating was reached">
+        <div class="panel-header">
+          <span class="panel-header-title">How this rating was reached</span>
+        </div>
+        <div class="panel-body">
+          <p class="hero-implication" id="basis-summary" style="margin-bottom:20px;"></p>
+          <div class="criterion-body-inner" style="padding:0; background:transparent;">
+            <div class="evidence-col"><h4 id="basis-fin-title">Financial evidence</h4><ul class="ev-list" id="basis-fin"></ul></div>
+            <div class="risks-col"><h4>Bear case</h4><ul class="rk-list" id="basis-bear"></ul></div>
+          </div>
+        </div>
+      </section>
 
       <!-- Criterion detail cards -->
       <section class="criteria-section anim anim-3" id="criteria-section" aria-label="Criterion details"></section>
@@ -1004,7 +1022,7 @@
         row.innerHTML =
           '<span class="sr-label">' + CRITERION_LABELS[key] + '</span>' +
           '<div class="sr-bar-track"><div class="sr-bar-fill" id="bar-' + key + '" style="background:' + color + '"></div></div>' +
-          '<span class="sr-num">' + score.toFixed(1) + '</span>';
+          '<span class="sr-num">' + (c.failed ? 'n/a' : score.toFixed(1)) + '</span>';
         container.appendChild(row);
         // Animate bar after a short delay
         setTimeout(function() {
@@ -1046,7 +1064,7 @@
             '<div class="criterion-conf conf-' + conf + '">' + conf + ' confidence</div>' +
           '</div>' +
           '<div class="criterion-score-wrap">' +
-            '<span class="criterion-score-num">' + score.toFixed(1) + '</span>' +
+            '<span class="criterion-score-num">' + (c.failed ? 'n/a' : score.toFixed(1)) + '</span>' +
             '<span class="criterion-score-denom"> /10</span>' +
           '</div>' +
           '<div class="expand-icon" aria-hidden="true">›</div>';
@@ -1119,6 +1137,45 @@
       });
     }
 
+    // ── Rating basis ───────────────────────────────────────────────────────────
+    function modelNote(stock) {
+      var m = stock.models;
+      if (!m) return 'gpt-5.4-nano';
+      return m.agents === m.synthesizer ? m.agents : m.agents + ' agents, ' + m.synthesizer + ' summary';
+    }
+
+    // Explains the fixed scoring rule for this stock. Records rated before the
+    // rule existed carry no `scoring` block and the section stays hidden.
+    function renderBasis(stock) {
+      var sc  = stock.scoring;
+      var fin = stock.financial_evidence;
+      if (!sc || !fin) return;
+
+      var sources = (sc.top_sources || []).map(function(k) { return CRITERION_LABELS[k] || k; });
+      var summary = 'The score rests on the strongest moat sources (' + sources.join(' and ') +
+        '), which give ' + sc.source_score.toFixed(1) + '.';
+      if (sc.haircut > 0) summary += ' The bear case takes off ' + sc.haircut.toFixed(1) + '.';
+      if (sc.capped) {
+        summary += ' The result is capped at ' + sc.cap.toFixed(1) +
+          ' because the financial evidence is ' + fin.tier + '.';
+      }
+      document.getElementById('basis-summary').textContent = summary;
+      document.getElementById('basis-fin-title').textContent = 'Financial evidence: ' + fin.tier;
+
+      function fill(id, items, empty) {
+        var ul = document.getElementById(id);
+        ul.innerHTML = '';
+        (items && items.length ? items : [empty]).forEach(function(text) {
+          var li = document.createElement('li');
+          li.textContent = text;
+          ul.appendChild(li);
+        });
+      }
+      fill('basis-fin', fin.reasons, 'No financial history available.');
+      fill('basis-bear', stock.bear_case, 'No specific bear case found.');
+      document.getElementById('basis-section').style.display = '';
+    }
+
     // ── Populate page ──────────────────────────────────────────────────────────
     function populatePage(stock) {
       var moat     = stock.overall_moat  || 'N/A';
@@ -1159,6 +1216,13 @@
       document.getElementById('pill-strength').textContent = stock.key_strength || '—';
       document.getElementById('pill-risk').textContent     = stock.key_risk     || '—';
       document.getElementById('pill-date').textContent     = fmtDate(stock.analyzed_at);
+      if (stock.moat_trend) {
+        document.getElementById('pill-trend').textContent =
+          stock.moat_trend.charAt(0).toUpperCase() + stock.moat_trend.slice(1);
+        document.getElementById('pill-trend-wrap').style.display = '';
+      }
+
+      renderBasis(stock);
 
       // Score rows
       renderScoreRows(criteria);
@@ -1175,7 +1239,7 @@
 
       // Footer
       document.getElementById('footer-note').textContent =
-        'AI analysis · gpt-5.4-nano + web search · ' + fmtDate(stock.analyzed_at);
+        'AI analysis · ' + modelNote(stock) + ' + web search · ' + fmtDate(stock.analyzed_at);
       // Standalone: plain link to the calculator page. Inside the portfolio
       // shell: ask the shell to switch project so its header and URL follow.
       var calcBtn = document.getElementById('btn-calculator');

@@ -37,7 +37,7 @@ New projects live in their own repositories with their own GitHub Pages site. Th
 |-------|-------|
 | Backend | Python 3 · Flask 3.1.3 · Flask-CORS · Gunicorn |
 | Data | yfinance (Yahoo Finance) · FinViz (screener only; BeautifulSoup scraper) |
-| AI | OpenAI Responses API · `web_search` tool · `gpt-5.4-nano` |
+| AI | OpenAI Responses API · `web_search` tool · `gpt-5.4-nano` agents · `gpt-6.1-terra` synthesizer |
 | Frontend | Vanilla HTML/CSS/JS · one light neutral theme (Host Grotesk, square corners, teal only in data imagery) |
 | Deployment | Render (live backend) · GitHub Pages (static portfolio) |
 
@@ -53,9 +53,10 @@ shared/                        # cross-project code (imported by multiple projec
     finviz.py                  # 5Y EPS growth + beta from FinViz (nightly screener only — blocked from Render)
 
 economic-moat/
-  moat_analyzer.py             # Async orchestrator: 5 criterion agents + synthesizer
-  moat_prompts.py              # System prompts for each criterion
-  run_moat_analysis.py         # Batch runner with 30-day result cache
+  moat_analyzer.py             # Async orchestrator: 5 criterion agents + skeptic + synthesizer
+  moat_scoring.py              # Deterministic rating rules (fact sheet, financial cap, score, label)
+  moat_prompts.py              # System prompts for each agent
+  run_moat_analysis.py         # Batch runner with 90-day result cache
 
 scripts/
   fetch_sp500.py               # Batch DCF across ~500 S&P 500 tickers → data.json
