@@ -242,7 +242,7 @@
 
     .td-company {
       color: var(--text);
-      max-width: 240px;
+      max-width: 190px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -400,6 +400,11 @@
       outline: 2px solid var(--ink);
       outline-offset: 2px;
     }
+
+    /* Keep the Moat column (last) on screen: drop secondary columns as the
+       window narrows, before the table outgrows its container. */
+    @media (max-width: 1480px) { .col-sector { display: none; } }
+    @media (max-width: 1230px) { .col-method { display: none; } }
 
     /* Mobile: hide sector, method, and moat columns */
     @media (max-width: 640px) {
