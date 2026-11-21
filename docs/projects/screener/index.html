@@ -334,6 +334,156 @@
     .rating-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; position: relative; }
     .rating-note { font-size: 13px; color: var(--text-dim); flex: 1 1 320px; }
     .empty-row td { text-align: center; color: var(--text-dim); padding: 36px 12px; cursor: default; }
+
+    /* ── View and size toggles (same look as the rating tabs) ── */
+    .seg { display: flex; flex: 0 0 auto; }
+    .seg button {
+      height: 44px;
+      padding: 0 16px;
+      font: 600 13px/1 inherit;
+      font-family: inherit;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+      margin-right: -1.5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .seg button[aria-pressed="true"] { background: var(--ink); color: var(--inverse-text); }
+    .seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; position: relative; }
+    .seg.small button { height: 32px; padding: 0 12px; font-size: 12px; }
+
+    /* ── Sector strip: one block per sector, coloured by median discount ── */
+    .strip-caption,
+    .sector-row {
+      max-width: calc(1440px - 2 * var(--margin));
+      width: calc(100% - 2 * var(--margin));
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .strip-caption { margin-bottom: 6px; font-size: 12px; color: var(--text-dim); }
+    .sector-row { display: flex; gap: 2px; margin-bottom: 14px; }
+    .sector-strip {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sector-strip button {
+      flex: 1 1 0;
+      min-width: 96px;
+      height: 76px;
+      padding: 7px 8px;
+      border: 0;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sector-strip button .nm { font-size: 11px; font-weight: 600; line-height: 1.15; }
+    .sector-strip button .md { font-size: 17px; font-weight: 500; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .sector-strip button .md small { display: block; font-size: 10.5px; font-weight: 500; letter-spacing: 0; opacity: .8; margin-top: 4px; }
+    .sector-strip button.hm-u3, .sector-strip button.hm-o3 { color: #fcfcfd; }
+    .sector-strip button[aria-pressed="true"] { box-shadow: inset 0 0 0 2.5px var(--ink); }
+    .sector-strip button:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .sector-strip button:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+    .open-map {
+      flex: 0 0 auto;
+      min-width: 118px;
+      padding: 0 14px;
+      border: 0;
+      cursor: pointer;
+      background: var(--ink);
+      color: var(--inverse-text);
+      font: 600 13px/1.25 inherit;
+      font-family: inherit;
+      text-align: left;
+    }
+    .open-map:hover { background: #000; }
+    .open-map:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+    @media (max-width: 640px) {
+      /* The strip scrolls sideways; the map button gets its own full-width line */
+      .sector-row { flex-direction: column; gap: 8px; }
+      .open-map { height: 40px; text-align: center; }
+    }
+
+    /* ── Sector heat map ── */
+    .map-bar {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--margin) 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px 20px;
+      flex-wrap: wrap;
+    }
+    .map-legend { display: flex; align-items: center; gap: 4px 12px; flex-wrap: wrap; font-size: 12px; color: var(--text-dim); flex: 1 1 420px; }
+    .map-legend .scale { display: flex; align-items: center; gap: 6px; }
+    .map-legend .scale i { display: block; width: 22px; height: 12px; }
+    .map-legend .key { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .map-legend .key i { display: block; width: 14px; height: 12px; box-shadow: inset 0 0 0 1px var(--border); }
+    .map-size { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); }
+
+    #map-wrap {
+      max-width: calc(1440px - 2 * var(--margin));
+      width: calc(100% - 2 * var(--margin));
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    #heatmap { position: relative; height: clamp(520px, 72vh, 780px); background: var(--bg); }
+    .hm-sector { position: absolute; }
+    .hm-sector-head {
+      position: absolute; left: 0; right: 0; top: 0; height: 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 0 5px;
+      font: 600 11px/1 inherit; font-family: inherit; letter-spacing: .02em;
+      background: var(--ink); color: var(--inverse-text);
+      border: 0; cursor: pointer; width: 100%; text-align: left;
+      white-space: nowrap; overflow: hidden;
+    }
+    .hm-sector-head span:first-child { overflow: hidden; text-overflow: ellipsis; }
+    .hm-sector-head span:last-child { font-weight: 500; opacity: .85; flex: none; }
+    .hm-sector-head:focus-visible { outline: 2px solid var(--tint); outline-offset: -2px; }
+    .hm-cell {
+      position: absolute;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      overflow: hidden; text-decoration: none; text-align: center;
+      box-shadow: inset 0 0 0 1px var(--bg);
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    .hm-cell b { font-weight: 700; line-height: 1.05; }
+    .hm-cell span { font-weight: 500; line-height: 1.1; margin-top: 2px; }
+    .hm-cell:hover, .hm-cell:focus-visible { box-shadow: inset 0 0 0 2px var(--ink); outline: none; z-index: 2; }
+    .hm-u3 { background: #17603a; color: #fcfcfd; }
+    .hm-u2 { background: #709c83; }
+    .hm-u1 { background: #b8cbbe; }
+    .hm-0  { background: #e4e3df; }
+    .hm-o1 { background: #dfbbb6; }
+    .hm-o2 { background: #c47973; }
+    .hm-o3 { background: #a3271f; color: #fcfcfd; }
+    .hm-flag { background: repeating-linear-gradient(135deg, #cfcec9 0 1.5px, #edece7 1.5px 5px); color: var(--text-dim); }
+    .hm-nr   { background: #edece7; color: var(--text-dim); }
+    #map-tip {
+      position: absolute; z-index: 5; pointer-events: none; display: none;
+      width: 250px; padding: 10px 12px;
+      background: var(--ink); color: var(--inverse-text);
+      font-size: 12px; line-height: 1.45;
+    }
+    #map-tip strong { display: block; font-size: 13px; font-weight: 600; }
+    #map-tip .tip-dim { opacity: .75; }
+    #map-tip .tip-row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+    @media (max-width: 640px) {
+      #heatmap { height: 1180px; }
+      #map-wrap { margin-bottom: 24px; }
+      .seg button { height: 40px; padding: 0 12px; }
+    }
     tr.is-flagged .td-number, tr.is-flagged .td-company { color: var(--text-dim); }
 
     /* Moat badges */
@@ -466,6 +616,15 @@
       <option value="None">None</option>
     </select>
     <span id="row-count" aria-live="polite"></span>
+    <div class="seg" id="view-toggle" style="display:none;">
+      <button type="button" data-view="table">&larr; Back to table</button>
+    </div>
+  </div>
+
+  <p class="strip-caption" id="strip-caption" style="display:none;">Median discount to intrinsic value by sector, rated stocks only. Click a sector to filter.</p>
+  <div class="sector-row" id="sector-row" style="display:none;">
+    <div class="sector-strip" id="sector-strip" role="group" aria-label="Sectors by median discount"></div>
+    <button type="button" class="open-map" id="open-map">Open the heat map &rarr;</button>
   </div>
 
   <div class="rating-bar" id="rating-bar" style="display:none;">
@@ -475,6 +634,26 @@
       <button type="button" data-rating="not_rated" aria-pressed="false">Not rated</button>
     </div>
     <span class="rating-note" id="rating-note"></span>
+  </div>
+
+  <div class="map-bar" id="map-bar" style="display:none;">
+    <div class="map-legend" aria-label="Colour key">
+      <span>Discount to intrinsic value</span>
+      <span class="scale" aria-hidden="true">
+        <span>below &minus;60%</span>
+        <i class="hm-o3"></i><i class="hm-o2"></i><i class="hm-o1"></i><i class="hm-0"></i><i class="hm-u1"></i><i class="hm-u2"></i><i class="hm-u3"></i>
+        <span>above +50%</span>
+      </span>
+      <span class="key"><i class="hm-flag"></i>Low confidence</span>
+      <span class="key"><i class="hm-nr"></i>Not rated</span>
+    </div>
+    <div class="map-size">
+      <span id="map-size-label">Cell size</span>
+      <div class="seg small" id="size-toggle" role="group" aria-labelledby="map-size-label">
+        <button type="button" data-size="cap" aria-pressed="true">Market cap</button>
+        <button type="button" data-size="equal" aria-pressed="false">Equal</button>
+      </div>
+    </div>
   </div>
 
   <div id="loading-state">Loading screener data&hellip;</div>
@@ -503,6 +682,11 @@
     </table>
   </div>
 
+  <div id="map-wrap" style="display:none;">
+    <div id="heatmap"></div>
+    <div id="map-tip" role="status"></div>
+  </div>
+
   <script>
     // ---------------------------------------------------------------------------
     // State
@@ -514,6 +698,7 @@
     var filterSector = '';
     var filterMoat = '';
     var filterRating = 'rated';   // 'rated' | 'low_confidence' | 'not_rated'
+    var pendingMapView = false;   // set by ?view=map, applied once data has loaded
     var modelRules = {};          // published in data.json from shared/dcf_rules.py
     var debounceTimer;
 
@@ -582,7 +767,7 @@
     // ---------------------------------------------------------------------------
     // Filter + sort
     // ---------------------------------------------------------------------------
-    function getFiltered() {
+    function getFiltered(ignoreRating) {
       return allStocks.filter(function (s) {
         var q = filterText.toLowerCase();
         var matchText = !q ||
@@ -591,7 +776,7 @@
         var matchSector = !filterSector || s.sector === filterSector;
         var matchMoat   = !filterMoat   || s.moat   === filterMoat;
         // A text search looks across every tab, so a ticker is never "missing".
-        var matchRating = !!q || ratingOf(s) === filterRating;
+        var matchRating = ignoreRating || !!q || ratingOf(s) === filterRating;
         return matchText && matchSector && matchMoat && matchRating;
       }).sort(function (a, b) {
         var av = a[sortCol];
@@ -751,6 +936,289 @@
       document.getElementById('rating-note').textContent = filterText
         ? 'Searching all stocks, whatever their rating.'
         : RATING_NOTES[filterRating];
+
+      renderStrip();
+      if (viewMode === 'map') renderMap();
+    }
+
+
+    // ---------------------------------------------------------------------------
+    // Sector heat map: a treemap of every stock, grouped by sector, coloured by
+    // the discount to intrinsic value. Flagged and unrated stocks keep their
+    // place in the map but carry no valuation colour.
+    // ---------------------------------------------------------------------------
+    var viewMode = 'table';   // 'table' | 'map'
+    var sizeMode = 'cap';     // 'cap' (market cap) | 'equal'
+    var HEAD_H = 20;
+
+    // Squarified treemap: lays items (each with a positive `value`) into a
+    // rectangle so the cells stay as close to square as possible.
+    function squarify(items, x, y, w, h) {
+      var total = items.reduce(function (a, it) { return a + it.value; }, 0);
+      var out = [];
+      if (!total || w <= 0 || h <= 0) return out;
+      var scale = (w * h) / total;
+      var rest = items.map(function (it) { return { it: it, area: it.value * scale }; });
+      var row = [];
+
+      function worst(r, side) {
+        var s = 0, mx = 0, mn = Infinity;
+        r.forEach(function (e) { s += e.area; if (e.area > mx) mx = e.area; if (e.area < mn) mn = e.area; });
+        return Math.max((side * side * mx) / (s * s), (s * s) / (side * side * mn));
+      }
+      function flush() {
+        var s = row.reduce(function (a, e) { return a + e.area; }, 0);
+        if (w >= h) {
+          var cw = s / h, yy = y;
+          row.forEach(function (e) { var ch = e.area / cw; out.push({ it: e.it, x: x, y: yy, w: cw, h: ch }); yy += ch; });
+          x += cw; w -= cw;
+        } else {
+          var rh = s / w, xx = x;
+          row.forEach(function (e) { var rw = e.area / rh; out.push({ it: e.it, x: xx, y: y, w: rw, h: rh }); xx += rw; });
+          y += rh; h -= rh;
+        }
+        row = [];
+      }
+      while (rest.length) {
+        var side = Math.min(w, h);
+        if (!row.length || worst(row.concat([rest[0]]), side) <= worst(row, side)) row.push(rest.shift());
+        else flush();
+      }
+      if (row.length) flush();
+      return out;
+    }
+
+    function heatClass(s) {
+      var rating = ratingOf(s);
+      if (rating === 'low_confidence') return 'hm-flag';
+      if (rating !== 'rated' || s.discount_pct == null) return 'hm-nr';
+      var d = s.discount_pct;
+      if (d > 50) return 'hm-u3';
+      if (d > 30) return 'hm-u2';
+      if (d > 10) return 'hm-u1';
+      if (d >= -10) return 'hm-0';
+      if (d >= -30) return 'hm-o1';
+      if (d >= -60) return 'hm-o2';
+      return 'hm-o3';
+    }
+
+    function median(nums) {
+      if (!nums.length) return null;
+      var a = nums.slice().sort(function (p, q) { return p - q; });
+      var m = Math.floor(a.length / 2);
+      return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
+    }
+
+    function signedPct(v) {
+      return (v < 0 ? '−' : '+') + Math.abs(v).toFixed(0) + '%';
+    }
+
+    function tipRow(label, value) {
+      var row = document.createElement('div');
+      row.className = 'tip-row';
+      var a = document.createElement('span'); a.className = 'tip-dim'; a.textContent = label;
+      var b = document.createElement('span'); b.textContent = value;
+      row.appendChild(a); row.appendChild(b);
+      return row;
+    }
+
+    function showTip(stock, cell) {
+      var tip = document.getElementById('map-tip');
+      var wrap = document.getElementById('map-wrap');
+      tip.textContent = '';
+      var name = document.createElement('strong');
+      name.textContent = stock.ticker + ' · ' + stock.company_name;
+      tip.appendChild(name);
+      var sub = document.createElement('div');
+      sub.className = 'tip-dim';
+      sub.textContent = stock.industry && stock.industry !== 'N/A' ? stock.industry : stock.sector;
+      tip.appendChild(sub);
+      tip.appendChild(tipRow('Price', fmtPrice(stock.current_price)));
+      var rating = ratingOf(stock);
+      if (rating !== 'not_rated') {
+        tip.appendChild(tipRow('Intrinsic value', fmtPrice(stock.intrinsic_value)));
+        if (stock.discount_pct != null) tip.appendChild(tipRow('Discount', fmtDiscount(stock.discount_pct)));
+        tip.appendChild(tipRow('Basis', fmtMethod(stock.method)));
+      }
+      var verdict = document.createElement('div');
+      verdict.style.marginTop = '4px';
+      verdict.textContent = rating === 'rated'
+        ? (stock.valuation_label || '')
+        : (rating === 'low_confidence' ? 'Low confidence: ' : 'Not rated: ') + reasonText(stock);
+      tip.appendChild(verdict);
+
+      tip.style.display = 'block';
+      var wr = wrap.getBoundingClientRect(), cr = cell.getBoundingClientRect();
+      var left = cr.left - wr.left + cr.width / 2 - tip.offsetWidth / 2;
+      left = Math.max(0, Math.min(left, wr.width - tip.offsetWidth));
+      var top = cr.bottom - wr.top + 6;
+      if (top + tip.offsetHeight > wr.height) top = cr.top - wr.top - tip.offsetHeight - 6;
+      tip.style.left = left + 'px';
+      tip.style.top = Math.max(0, top) + 'px';
+    }
+
+    function hideTip() { document.getElementById('map-tip').style.display = 'none'; }
+
+    function renderMap() {
+      var host = document.getElementById('heatmap');
+      host.textContent = '';
+      hideTip();
+      var stocks = getFiltered(true);
+      var W = host.clientWidth, H = host.clientHeight;
+
+      document.getElementById('row-count').textContent =
+        'Showing ' + stocks.length + ' of ' + allStocks.length + ' stocks';
+
+      if (!stocks.length) {
+        var empty = document.createElement('p');
+        empty.style.cssText = 'padding:48px 12px;text-align:center;color:var(--text-dim);';
+        empty.textContent = filterText
+          ? 'No stock matches "' + filterText + '". Check the ticker or clear the filters.'
+          : 'No stocks match these filters.';
+        host.appendChild(empty);
+        return;
+      }
+
+      // Group by sector
+      var groups = {};
+      stocks.forEach(function (s) {
+        var key = s.sector && s.sector !== 'N/A' ? s.sector : 'Other';
+        (groups[key] = groups[key] || []).push(s);
+      });
+      var sectors = Object.keys(groups).map(function (name) {
+        var list = groups[name].map(function (s) {
+          return { stock: s, value: sizeMode === 'equal' ? 1 : Math.max(s.market_cap_m || 0, 1) };
+        }).sort(function (a, b) { return b.value - a.value; });
+        var rated = groups[name].filter(function (s) { return ratingOf(s) === 'rated' && s.discount_pct != null; });
+        return {
+          name: name,
+          items: list,
+          value: list.reduce(function (a, it) { return a + it.value; }, 0),
+          // A median of a handful of stocks says nothing about a sector
+          median: rated.length >= 5 ? median(rated.map(function (s) { return s.discount_pct; })) : null,
+          ratedCount: rated.length
+        };
+      }).sort(function (a, b) { return b.value - a.value; });
+
+      squarify(sectors, 0, 0, W, H).forEach(function (sr) {
+        var sec = sr.it;
+        var box = document.createElement('div');
+        box.className = 'hm-sector';
+        box.setAttribute('role', 'group');
+        box.setAttribute('aria-label', sec.name);
+        box.style.cssText = 'left:' + sr.x + 'px;top:' + sr.y + 'px;width:' + sr.w + 'px;height:' + sr.h + 'px;';
+
+        // Header: sector name and the median discount of its rated stocks
+        var head = document.createElement('button');
+        head.type = 'button';
+        head.className = 'hm-sector-head';
+        var hName = document.createElement('span'); hName.textContent = sec.name;
+        var hMed = document.createElement('span');
+        hMed.textContent = sec.median == null ? '' : 'median ' + signedPct(sec.median);
+        head.appendChild(hName);
+        if (sr.w > 150) head.appendChild(hMed);
+        head.title = sec.name + (sec.median == null ? '' :
+          ': median discount ' + signedPct(sec.median) + ' across ' + sec.ratedCount + ' rated stocks') +
+          (filterSector ? '. Click to show all sectors.' : '. Click to show only this sector.');
+        head.setAttribute('aria-label', head.title);
+        head.addEventListener('click', function () {
+          filterSector = filterSector ? '' : (sec.name === 'Other' ? 'N/A' : sec.name);
+          document.getElementById('sector-filter').value = filterSector;
+          renderTable();
+        });
+        box.appendChild(head);
+
+        squarify(sec.items, 0, HEAD_H, sr.w, Math.max(sr.h - HEAD_H, 0)).forEach(function (cr) {
+          var s = cr.it.stock;
+          var cell = document.createElement('a');
+          cell.className = 'hm-cell ' + heatClass(s);
+          cell.href = 'stock.html?ticker=' + encodeURIComponent(s.ticker);
+          cell.style.cssText = 'left:' + cr.x + 'px;top:' + cr.y + 'px;width:' + cr.w + 'px;height:' + cr.h + 'px;';
+          var rating = ratingOf(s);
+          var figure = rating === 'rated' && s.discount_pct != null ? signedPct(s.discount_pct)
+            : (rating === 'low_confidence' ? 'low conf.' : 'n/r');
+          cell.setAttribute('aria-label', s.ticker + ', ' + s.company_name + ': ' +
+            (rating === 'rated' ? 'discount ' + signedPct(s.discount_pct) + ', ' + s.valuation_label
+              : (rating === 'low_confidence' ? 'low confidence, ' : 'not rated, ') + reasonText(s)));
+
+          var small = Math.min(cr.w, cr.h * 1.6);
+          if (cr.w >= 30 && cr.h >= 16) {
+            var t = document.createElement('b');
+            t.textContent = s.ticker;
+            t.style.fontSize = Math.max(10, Math.min(22, small / 4.2)) + 'px';
+            cell.appendChild(t);
+            if (cr.w >= 44 && cr.h >= 34) {
+              var f = document.createElement('span');
+              f.textContent = figure;
+              f.style.fontSize = Math.max(10, Math.min(15, small / 6)) + 'px';
+              cell.appendChild(f);
+            }
+          }
+          cell.addEventListener('mouseenter', function () { showTip(s, cell); });
+          cell.addEventListener('focus', function () { showTip(s, cell); });
+          cell.addEventListener('mouseleave', hideTip);
+          cell.addEventListener('blur', hideTip);
+          box.appendChild(cell);
+        });
+        host.appendChild(box);
+      });
+    }
+
+    // Sector strip: one block per sector, ranked by the median discount of its
+    // rated stocks. A sector with fewer than five rated stocks shows no figure.
+    // It is the overview above the table and the way into the full heat map.
+    function renderStrip() {
+      var strip = document.getElementById('sector-strip');
+      strip.textContent = '';
+      var groups = {};
+      allStocks.forEach(function (s) {
+        if (!s.sector || s.sector === 'N/A') return;
+        (groups[s.sector] = groups[s.sector] || []).push(s);
+      });
+      Object.keys(groups).map(function (name) {
+        var rated = groups[name].filter(function (s) { return ratingOf(s) === 'rated' && s.discount_pct != null; });
+        return {
+          name: name, total: groups[name].length, rated: rated.length,
+          med: rated.length >= 5 ? median(rated.map(function (s) { return s.discount_pct; })) : null
+        };
+      }).sort(function (a, b) {
+        if (a.med == null) return b.med == null ? a.name.localeCompare(b.name) : 1;
+        if (b.med == null) return -1;
+        return b.med - a.med;
+      }).forEach(function (r) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = r.med == null ? 'hm-nr' : heatClass({ rating: 'rated', discount_pct: r.med });
+        b.setAttribute('aria-pressed', filterSector === r.name ? 'true' : 'false');
+        var nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = r.name;
+        var md = document.createElement('span'); md.className = 'md';
+        md.textContent = r.med == null ? '—' : signedPct(r.med);
+        var sm = document.createElement('small'); sm.textContent = r.rated + ' of ' + r.total + ' rated';
+        md.appendChild(sm);
+        b.appendChild(nm); b.appendChild(md);
+        b.title = r.name + ': ' + (r.med == null ? 'too few rated stocks for a median'
+          : 'median discount ' + signedPct(r.med)) + ' (' + r.rated + ' of ' + r.total + ' stocks rated)';
+        b.setAttribute('aria-label', b.title);
+        b.addEventListener('click', function () {
+          filterSector = filterSector === r.name ? '' : r.name;
+          document.getElementById('sector-filter').value = filterSector;
+          renderTable();
+        });
+        strip.appendChild(b);
+      });
+    }
+
+    function setView(mode) {
+      viewMode = mode;
+      var isMap = mode === 'map';
+      document.getElementById('sector-row').style.display = isMap ? 'none' : '';
+      document.getElementById('strip-caption').style.display = isMap ? 'none' : '';
+      document.getElementById('view-toggle').style.display = isMap ? '' : 'none';
+      document.getElementById('table-wrap').style.display = isMap ? 'none' : '';
+      document.getElementById('rating-bar').style.display = isMap ? 'none' : '';
+      document.getElementById('map-bar').style.display = isMap ? '' : 'none';
+      document.getElementById('map-wrap').style.display = isMap ? '' : 'none';
+      renderTable();
     }
 
     // ---------------------------------------------------------------------------
@@ -847,11 +1315,14 @@
           allStocks = data.stocks || [];
           modelRules = data.model || {};
           document.getElementById('rating-bar').style.display = '';
+          document.getElementById('sector-row').style.display = '';
+          document.getElementById('strip-caption').style.display = '';
           displayUpdatedAt(data.updated_at);
           populateSectors();
           updateSortIndicators();
           showTable();
           renderTable();
+          if (pendingMapView) setView('map');
         })
         .catch(function () {
           showError();
@@ -863,6 +1334,31 @@
         filterText = this.value;
         renderTable();
       }, 150));
+
+      document.getElementById('open-map').addEventListener('click', function () { setView('map'); });
+
+      // --- Back to the table from the heat map, and the map's cell-size toggle ---
+      document.querySelectorAll('#view-toggle button').forEach(function (btn) {
+        btn.addEventListener('click', function () { setView(btn.getAttribute('data-view')); });
+      });
+      document.querySelectorAll('#size-toggle button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          sizeMode = btn.getAttribute('data-size');
+          document.querySelectorAll('#size-toggle button').forEach(function (b) {
+            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+          });
+          renderMap();
+        });
+      });
+      // Re-lay the map when the page width changes
+      var mapResizeTimer;
+      window.addEventListener('resize', function () {
+        if (viewMode !== 'map') return;
+        clearTimeout(mapResizeTimer);
+        mapResizeTimer = setTimeout(renderMap, 120);
+      });
+      // A link such as index.html?view=map opens straight on the heat map
+      if (/[?&]view=map\b/.test(window.location.search)) pendingMapView = true;
 
       // --- Rating tabs ---
       document.querySelectorAll('.rating-tabs button').forEach(function (btn) {

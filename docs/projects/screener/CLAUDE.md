@@ -41,6 +41,8 @@ docs/projects/screener/
 
 - **Search + filters** — text search by ticker/company, sector dropdown, sort by discount % or other metrics
 - **Rating tabs** — Rated (default), Low confidence, Not rated. Flagged and unrated rows show the reason in place of a valuation label. A text search looks across all three tabs
+- **Sector strip** — a row of blocks above the table, one per sector, ranked by the median discount of its rated stocks and coloured on the heat map's scale (no figure when fewer than five are rated). Clicking a block filters the table to that sector. An "Open the heat map" button ends the row; on phones the strip scrolls sideways and the button sits on its own line
+- **Heat map view** — opened from the sector strip ("Back to table" returns); it swaps the table for a treemap of every stock, grouped by sector and coloured by discount to intrinsic value (seven steps from deep red to deep green; hatched = low confidence, blank = not rated). Each sector header shows the median discount of its rated stocks (hidden when fewer than five are rated) and zooms to that sector when clicked. Cells can be sized by market cap or equally, link to the stock page, and show a tooltip on hover or focus. `index.html?view=map` opens straight on the map. The treemap layout (`squarify`) is hand-written — no charting library
 - **Results table** — each row shows ticker, company, sector, current price, intrinsic value, discount %, valuation label (Undervalued / Fair / Overvalued / Highly Overvalued), and key ratios
 - Clicking a row navigates to `stock.html?ticker=<SYMBOL>`
 
