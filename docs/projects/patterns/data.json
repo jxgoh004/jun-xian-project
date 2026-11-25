@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-11-24",
+  "as_of_date": "2026-11-25",
   "detections": [
     {
       "R": -1.0,
@@ -45,7 +45,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-10-28",
       "confirmation_type": "ice_cream",
-      "current_price": 166.00999450683594,
+      "current_price": 165.50999450683594,
       "entry_date": "2026-10-29",
       "entry_price": 152.97999572753906,
       "exit_date": "2026-10-29",
@@ -64,10 +64,10 @@
       "stop_price": 150.75999450683594,
       "target_price": 157.4199981689453,
       "ticker": "ALGN",
-      "yolo_conf": 0.2806582450866699
+      "yolo_conf": 0.28065815567970276
     },
     {
-      "R": -0.3651665920879913,
+      "R": -0.31917557172533567,
       "bars": [
         {
           "close": 129.34487915039062,
@@ -110,17 +110,17 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-11-04",
       "confirmation_type": "pin",
-      "current_price": 127.33999633789062,
+      "current_price": 127.66999816894531,
       "entry_date": "2026-11-05",
       "entry_price": 129.96019573940004,
-      "exit_date": "2026-11-24",
-      "exit_price": 127.33999633789062,
+      "exit_date": "2026-11-25",
+      "exit_price": 127.66999816894531,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 19,
+      "hold_days": 20,
       "is_spring": true,
       "mother_bar_index": 111,
       "risk": 7.175353546246754,
@@ -129,7 +129,7 @@
       "stop_price": 122.78484219315328,
       "target_price": 144.31090283189354,
       "ticker": "AEP",
-      "yolo_conf": 0.35181039571762085
+      "yolo_conf": 0.3518102765083313
     },
     {
       "R": -1.0,
@@ -175,7 +175,7 @@
       "confirmation_bar_index": 110,
       "confirmation_date": "2026-10-30",
       "confirmation_type": "pin",
-      "current_price": 353.1300048828125,
+      "current_price": 352.8500061035156,
       "entry_date": "2026-11-02",
       "entry_price": 342.40984426922995,
       "exit_date": "2026-11-03",
@@ -194,10 +194,10 @@
       "stop_price": 334.09615339970134,
       "target_price": 359.0372260082872,
       "ticker": "AAPL",
-      "yolo_conf": 0.6757847666740417
+      "yolo_conf": 0.6757846474647522
     },
     {
-      "R": 1.2601222759604638,
+      "R": 2.0,
       "bars": [
         {
           "close": 3308.68994140625,
@@ -228,10 +228,10 @@
           "open": 3236.1298828125
         },
         {
-          "close": 3337.800048828125,
+          "close": 3355.68994140625,
           "date": "2026-11-24",
-          "high": 3344.429931640625,
-          "low": 3272.010009765625,
+          "high": 3364.889892578125,
+          "low": 3270.8701171875,
           "open": 3278.070068359375
         }
       ],
@@ -240,26 +240,26 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "mark_up",
-      "current_price": 3337.800048828125,
+      "current_price": 3409.389892578125,
       "entry_date": "2026-11-24",
       "entry_price": 3278.070068359375,
-      "exit_date": "2026-11-24",
-      "exit_price": 3337.800048828125,
+      "exit_date": "2026-11-25",
+      "exit_price": 3372.870361328125,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": true,
       "mother_bar_index": 123,
       "risk": 47.400146484375,
       "sector": "Consumer Cyclical",
-      "status": "open",
+      "status": "target",
       "stop_price": 3230.669921875,
       "target_price": 3372.870361328125,
       "ticker": "AZO",
-      "yolo_conf": 0.5925271511077881
+      "yolo_conf": 0.5925272703170776
     },
     {
       "R": -1.0,
@@ -305,7 +305,7 @@
       "confirmation_bar_index": 123,
       "confirmation_date": "2026-11-18",
       "confirmation_type": "ice_cream",
-      "current_price": 65.3499984741211,
+      "current_price": 66.98999786376953,
       "entry_date": "2026-11-19",
       "entry_price": 64.0999984741211,
       "exit_date": "2026-11-19",
@@ -324,7 +324,7 @@
       "stop_price": 64.05999755859375,
       "target_price": 64.18000030517578,
       "ticker": "BALL",
-      "yolo_conf": 0.683499813079834
+      "yolo_conf": 0.6834997534751892
     },
     {
       "R": -1.0,
@@ -370,7 +370,7 @@
       "confirmation_bar_index": 118,
       "confirmation_date": "2026-11-11",
       "confirmation_type": "pin",
-      "current_price": 72.86000061035156,
+      "current_price": 72.78500366210938,
       "entry_date": "2026-11-12",
       "entry_price": 72.74001982653917,
       "exit_date": "2026-11-17",
@@ -389,75 +389,10 @@
       "stop_price": 72.65012418272951,
       "target_price": 72.91981111415848,
       "ticker": "TECH",
-      "yolo_conf": 0.29248347878456116
+      "yolo_conf": 0.29248327016830444
     },
     {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 1128.6800537109375,
-          "date": "2026-10-20",
-          "high": 1150.2099609375,
-          "low": 1123.8399658203125,
-          "open": 1138.8900146484375
-        },
-        {
-          "close": 1149.5999755859375,
-          "date": "2026-10-21",
-          "high": 1149.699951171875,
-          "low": 1126.2900390625,
-          "open": 1136.260009765625
-        },
-        {
-          "close": 1137.2900390625,
-          "date": "2026-10-22",
-          "high": 1159.989990234375,
-          "low": 1132.3699951171875,
-          "open": 1139.780029296875
-        },
-        {
-          "close": 1118.25,
-          "date": "2026-10-23",
-          "high": 1132.9599609375,
-          "low": 1105.469970703125,
-          "open": 1124.969970703125
-        },
-        {
-          "close": 1127.6600341796875,
-          "date": "2026-10-26",
-          "high": 1135.0,
-          "low": 1121.0999755859375,
-          "open": 1123.93994140625
-        }
-      ],
-      "chart_path": "charts/BLK_2026-10-26.png",
-      "company_name": "BlackRock, Inc.",
-      "confirmation_bar_index": 106,
-      "confirmation_date": "2026-10-26",
-      "confirmation_type": "ice_cream",
-      "current_price": 1142.614990234375,
-      "entry_date": "2026-10-27",
-      "entry_price": 1134.280029296875,
-      "exit_date": "2026-11-04",
-      "exit_price": 1191.900146484375,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 8,
-      "is_spring": false,
-      "mother_bar_index": 102,
-      "risk": 28.81005859375,
-      "sector": "Financial Services",
-      "status": "target",
-      "stop_price": 1105.469970703125,
-      "target_price": 1191.900146484375,
-      "ticker": "BLK",
-      "yolo_conf": 0.04927098751068115
-    },
-    {
-      "R": null,
+      "R": 0.33333385661135617,
       "bars": [
         {
           "close": 61.2400016784668,
@@ -474,101 +409,45 @@
           "open": 62.5
         },
         {
-          "close": 62.15999984741211,
+          "close": 62.68000030517578,
           "date": "2026-11-24",
-          "high": 62.400001525878906,
+          "high": 62.70000076293945,
           "low": 60.72999954223633,
           "open": 61.04999923706055
+        },
+        {
+          "close": 63.970001220703125,
+          "date": "2026-11-25",
+          "high": 64.01000213623047,
+          "low": 62.190101623535156,
+          "open": 63.15999984741211
         }
       ],
       "chart_path": "charts/BXP_2026-11-24.png",
       "company_name": "BXP, Inc.",
+      "confirmation_bar_index": 127,
       "confirmation_date": "2026-11-24",
-      "confirmation_type": "ice_cream",
-      "current_price": 62.15999984741211,
-      "entry_date": null,
-      "entry_price": null,
-      "exit_date": null,
-      "exit_price": null,
+      "confirmation_type": "mark_up",
+      "current_price": 63.970001220703125,
+      "entry_date": "2026-11-25",
+      "entry_price": 63.15999984741211,
+      "exit_date": "2026-11-25",
+      "exit_price": 63.970001220703125,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": null,
+      "hold_days": 0,
       "is_spring": true,
-      "risk": null,
+      "mother_bar_index": 125,
+      "risk": 2.4300003051757812,
       "sector": "Real Estate",
-      "status": "pending",
+      "status": "open",
       "stop_price": 60.72999954223633,
-      "target_price": 65.02000045776367,
+      "target_price": 68.02000045776367,
       "ticker": "BXP",
-      "yolo_conf": 1.704692840576172e-05
-    },
-    {
-      "R": 2.0,
-      "bars": [
-        {
-          "close": 26.92282485961914,
-          "date": "2026-10-20",
-          "high": 27.659073367644705,
-          "low": 25.917944600675135,
-          "open": 26.14678010942775
-        },
-        {
-          "close": 27.16160774230957,
-          "date": "2026-10-21",
-          "high": 27.549632011322956,
-          "low": 26.703940524601137,
-          "open": 27.01236851469507
-        },
-        {
-          "close": 26.942724227905273,
-          "date": "2026-10-22",
-          "high": 27.509834443226772,
-          "low": 26.62434669633389,
-          "open": 26.693991544155157
-        },
-        {
-          "close": 25.977642059326172,
-          "date": "2026-10-23",
-          "high": 26.365664438139376,
-          "low": 25.7289093759475,
-          "open": 26.365664438139376
-        },
-        {
-          "close": 26.723840713500977,
-          "date": "2026-10-26",
-          "high": 27.002420110666765,
-          "low": 26.037337960508484,
-          "open": 26.16667812380977
-        }
-      ],
-      "chart_path": "charts/CCL_2026-10-26.png",
-      "company_name": "Carnival Corporation Ltd.",
-      "confirmation_bar_index": 106,
-      "confirmation_date": "2026-10-26",
-      "confirmation_type": "ice_cream",
-      "current_price": 28.170000076293945,
-      "entry_date": "2026-10-27",
-      "entry_price": 27.3605954351935,
-      "exit_date": "2026-11-04",
-      "exit_price": 30.6239675536855,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 8,
-      "is_spring": false,
-      "mother_bar_index": 102,
-      "risk": 1.6316860592460003,
-      "sector": "Consumer Cyclical",
-      "status": "target",
-      "stop_price": 25.7289093759475,
-      "target_price": 30.6239675536855,
-      "ticker": "CCL",
-      "yolo_conf": 0.0854860246181488
+      "yolo_conf": 1.6987323760986328e-05
     },
     {
       "R": -1.0,
@@ -614,7 +493,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-11-06",
       "confirmation_type": "mark_up",
-      "current_price": 341.69000244140625,
+      "current_price": 330.1300048828125,
       "entry_date": "2026-11-09",
       "entry_price": 343.44000244140625,
       "exit_date": "2026-11-20",
@@ -633,10 +512,10 @@
       "stop_price": 311.67999267578125,
       "target_price": 406.96002197265625,
       "ticker": "CRL",
-      "yolo_conf": 0.48771366477012634
+      "yolo_conf": 0.4877133071422577
     },
     {
-      "R": 1.4802639504222939,
+      "R": 2.0,
       "bars": [
         {
           "close": 60.75,
@@ -667,7 +546,7 @@
           "open": 59.380001068115234
         },
         {
-          "close": 61.48749923706055,
+          "close": 61.31999969482422,
           "date": "2026-11-24",
           "high": 62.150001525878906,
           "low": 59.2400016784668,
@@ -679,29 +558,29 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "ice_cream",
-      "current_price": 61.48749923706055,
+      "current_price": 62.35499954223633,
       "entry_date": "2026-11-24",
       "entry_price": 59.79999923706055,
-      "exit_date": "2026-11-24",
-      "exit_price": 61.48749923706055,
+      "exit_date": "2026-11-25",
+      "exit_price": 62.07999801635742,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": false,
       "mother_bar_index": 123,
       "risk": 1.1399993896484375,
       "sector": "Healthcare",
-      "status": "open",
+      "status": "target",
       "stop_price": 58.65999984741211,
       "target_price": 62.07999801635742,
       "ticker": "COO",
-      "yolo_conf": 0.4377591907978058
+      "yolo_conf": 0.43775907158851624
     },
     {
-      "R": 0.4590160175434208,
+      "R": 1.289616529504465,
       "bars": [
         {
           "close": 92.58000183105469,
@@ -732,10 +611,10 @@
           "open": 91.08000183105469
         },
         {
-          "close": 93.18000030517578,
+          "close": 93.66000366210938,
           "date": "2026-11-24",
-          "high": 93.25499725341797,
-          "low": 90.84500122070312,
+          "high": 93.9000015258789,
+          "low": 90.8499984741211,
           "open": 91.5
         }
       ],
@@ -744,17 +623,17 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "ice_cream",
-      "current_price": 93.18000030517578,
+      "current_price": 96.22000122070312,
       "entry_date": "2026-11-24",
       "entry_price": 91.5,
-      "exit_date": "2026-11-24",
-      "exit_price": 93.18000030517578,
+      "exit_date": "2026-11-25",
+      "exit_price": 96.22000122070312,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": false,
       "mother_bar_index": 123,
       "risk": 3.660003662109375,
@@ -763,7 +642,7 @@
       "stop_price": 87.83999633789062,
       "target_price": 98.82000732421875,
       "ticker": "CRH",
-      "yolo_conf": 0.653069019317627
+      "yolo_conf": 0.6530691385269165
     },
     {
       "R": -1.0,
@@ -809,7 +688,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-11-10",
       "confirmation_type": "ice_cream",
-      "current_price": 82.2300033569336,
+      "current_price": 84.58999633789062,
       "entry_date": "2026-11-11",
       "entry_price": 88.43000030517578,
       "exit_date": "2026-11-17",
@@ -828,7 +707,7 @@
       "stop_price": 86.5,
       "target_price": 92.29000091552734,
       "ticker": "CCI",
-      "yolo_conf": 0.244960755109787
+      "yolo_conf": 0.24496084451675415
     },
     {
       "R": -1.0,
@@ -874,7 +753,7 @@
       "confirmation_bar_index": 112,
       "confirmation_date": "2026-11-03",
       "confirmation_type": "ice_cream",
-      "current_price": 229.4149932861328,
+      "current_price": 228.93499755859375,
       "entry_date": "2026-11-04",
       "entry_price": 235.3300018310547,
       "exit_date": "2026-11-05",
@@ -893,7 +772,7 @@
       "stop_price": 227.1999969482422,
       "target_price": 251.5900115966797,
       "ticker": "DHR",
-      "yolo_conf": 0.5258828997612
+      "yolo_conf": 0.5258827805519104
     },
     {
       "R": 2.0,
@@ -939,7 +818,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-10-28",
       "confirmation_type": "ice_cream",
-      "current_price": 238.52000427246094,
+      "current_price": 241.17999267578125,
       "entry_date": "2026-10-29",
       "entry_price": 219.4199981689453,
       "exit_date": "2026-11-18",
@@ -958,10 +837,10 @@
       "stop_price": 210.9600067138672,
       "target_price": 236.33998107910156,
       "ticker": "DRI",
-      "yolo_conf": 0.2239721417427063
+      "yolo_conf": 0.22397246956825256
     },
     {
-      "R": 0.9466866012928191,
+      "R": 1.3299700980607714,
       "bars": [
         {
           "close": 239.22000122070312,
@@ -992,10 +871,10 @@
           "open": 228.92999267578125
         },
         {
-          "close": 238.52000427246094,
+          "close": 240.1999969482422,
           "date": "2026-11-24",
-          "high": 238.77999877929688,
-          "low": 231.9600067138672,
+          "high": 240.74000549316406,
+          "low": 231.9499969482422,
           "open": 231.9499969482422
         }
       ],
@@ -1004,17 +883,17 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "ice_cream",
-      "current_price": 238.52000427246094,
+      "current_price": 241.17999267578125,
       "entry_date": "2026-11-24",
       "entry_price": 231.9499969482422,
-      "exit_date": "2026-11-24",
-      "exit_price": 238.52000427246094,
+      "exit_date": "2026-11-25",
+      "exit_price": 241.17999267578125,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": false,
       "mother_bar_index": 123,
       "risk": 6.94000244140625,
@@ -1023,10 +902,10 @@
       "stop_price": 225.00999450683594,
       "target_price": 245.8300018310547,
       "ticker": "DRI",
-      "yolo_conf": 0.45039916038513184
+      "yolo_conf": 0.45039939880371094
     },
     {
-      "R": 0.2439690896669653,
+      "R": -1.0,
       "bars": [
         {
           "close": 84.30000305175781,
@@ -1069,26 +948,26 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "ice_cream",
-      "current_price": 84.37000274658203,
+      "current_price": 82.08000183105469,
       "entry_date": "2026-11-24",
       "entry_price": 83.45999908447266,
-      "exit_date": "2026-11-24",
-      "exit_price": 84.37000274658203,
+      "exit_date": "2026-11-25",
+      "exit_price": 79.7300033569336,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": false,
       "mother_bar_index": 122,
       "risk": 3.7299957275390625,
       "sector": "Industrials",
-      "status": "open",
+      "status": "stop",
       "stop_price": 79.7300033569336,
       "target_price": 90.91999053955078,
       "ticker": "DAL",
-      "yolo_conf": 0.5864890813827515
+      "yolo_conf": 0.5864889621734619
     },
     {
       "R": 2.0,
@@ -1134,7 +1013,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-10-28",
       "confirmation_type": "mark_up",
-      "current_price": 155.53500366210938,
+      "current_price": 153.14999389648438,
       "entry_date": "2026-10-29",
       "entry_price": 128.39999389648438,
       "exit_date": "2026-11-04",
@@ -1153,7 +1032,7 @@
       "stop_price": 122.56999969482422,
       "target_price": 140.0599822998047,
       "ticker": "DLTR",
-      "yolo_conf": 0.17970848083496094
+      "yolo_conf": 0.179708331823349
     },
     {
       "R": 2.0,
@@ -1199,7 +1078,7 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-10-27",
       "confirmation_type": "ice_cream",
-      "current_price": 137.83999633789062,
+      "current_price": 137.67999267578125,
       "entry_date": "2026-10-28",
       "entry_price": 132.36000061035156,
       "exit_date": "2026-10-29",
@@ -1218,7 +1097,7 @@
       "stop_price": 131.3800048828125,
       "target_price": 134.3199920654297,
       "ticker": "DTE",
-      "yolo_conf": 0.19401615858078003
+      "yolo_conf": 0.1940162479877472
     },
     {
       "R": -1.0,
@@ -1264,7 +1143,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-11-10",
       "confirmation_type": "mark_up",
-      "current_price": 113.03500366210938,
+      "current_price": 114.76499938964844,
       "entry_date": "2026-11-11",
       "entry_price": 122.7300033569336,
       "exit_date": "2026-11-12",
@@ -1283,7 +1162,7 @@
       "stop_price": 120.2300033569336,
       "target_price": 127.7300033569336,
       "ticker": "EBAY",
-      "yolo_conf": 0.680228590965271
+      "yolo_conf": 0.6802288293838501
     },
     {
       "R": -1.0,
@@ -1329,7 +1208,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "ice_cream",
-      "current_price": 107.0250015258789,
+      "current_price": 108.94000244140625,
       "entry_date": "2026-11-16",
       "entry_price": 110.5,
       "exit_date": "2026-11-16",
@@ -1348,7 +1227,65 @@
       "stop_price": 109.55000305175781,
       "target_price": 112.39999389648438,
       "ticker": "EL",
-      "yolo_conf": 0.5358498096466064
+      "yolo_conf": 0.5358500480651855
+    },
+    {
+      "R": 0.5498539333657926,
+      "bars": [
+        {
+          "close": 192.55999755859375,
+          "date": "2026-11-20",
+          "high": 199.2899932861328,
+          "low": 192.13999938964844,
+          "open": 195.6999969482422
+        },
+        {
+          "close": 195.52999877929688,
+          "date": "2026-11-23",
+          "high": 198.77999877929688,
+          "low": 194.1199951171875,
+          "open": 196.3000030517578
+        },
+        {
+          "close": 197.80999755859375,
+          "date": "2026-11-24",
+          "high": 197.8800048828125,
+          "low": 191.8699951171875,
+          "open": 194.8300018310547
+        },
+        {
+          "close": 197.30999755859375,
+          "date": "2026-11-25",
+          "high": 197.7449951171875,
+          "low": 194.80999755859375,
+          "open": 195.3800048828125
+        }
+      ],
+      "chart_path": "charts/EXPD_2026-11-24.png",
+      "company_name": "Expeditors International of Washington, Inc.",
+      "confirmation_bar_index": 127,
+      "confirmation_date": "2026-11-24",
+      "confirmation_type": "ice_cream",
+      "current_price": 197.30999755859375,
+      "entry_date": "2026-11-25",
+      "entry_price": 195.3800048828125,
+      "exit_date": "2026-11-25",
+      "exit_price": 197.30999755859375,
+      "filters": {
+        "above_50sma": true,
+        "hh_hl": true,
+        "sma_cluster": true
+      },
+      "hold_days": 0,
+      "is_spring": true,
+      "mother_bar_index": 125,
+      "risk": 3.510009765625,
+      "sector": "Industrials",
+      "status": "open",
+      "stop_price": 191.8699951171875,
+      "target_price": 202.4000244140625,
+      "ticker": "EXPD",
+      "yolo_conf": 0.1939639151096344
     },
     {
       "R": -1.0,
@@ -1394,7 +1331,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-10-29",
       "confirmation_type": "mark_up",
-      "current_price": 52.095001220703125,
+      "current_price": 52.540000915527344,
       "entry_date": "2026-10-30",
       "entry_price": 53.060001373291016,
       "exit_date": "2026-11-20",
@@ -1459,7 +1396,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "pin",
-      "current_price": 51.17499923706055,
+      "current_price": 51.255001068115234,
       "entry_date": "2026-11-16",
       "entry_price": 54.4900016784668,
       "exit_date": "2026-11-16",
@@ -1478,7 +1415,7 @@
       "stop_price": 53.439998626708984,
       "target_price": 56.59000778198242,
       "ticker": "FITB",
-      "yolo_conf": 0.5397599935531616
+      "yolo_conf": 0.5397601127624512
     },
     {
       "R": -1.0,
@@ -1524,7 +1461,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "pin",
-      "current_price": 14.805000305175781,
+      "current_price": 14.819999694824219,
       "entry_date": "2026-11-16",
       "entry_price": 15.829999923706055,
       "exit_date": "2026-11-16",
@@ -1589,7 +1526,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "pin",
-      "current_price": 14.805000305175781,
+      "current_price": 14.819999694824219,
       "entry_date": "2026-11-16",
       "entry_price": 15.829999923706055,
       "exit_date": "2026-11-16",
@@ -1654,7 +1591,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "mark_up",
-      "current_price": 107.91999816894531,
+      "current_price": 110.07499694824219,
       "entry_date": "2026-11-16",
       "entry_price": 110.19999694824219,
       "exit_date": "2026-11-18",
@@ -1673,7 +1610,7 @@
       "stop_price": 106.87999725341797,
       "target_price": 116.83999633789062,
       "ticker": "KMB",
-      "yolo_conf": 0.4271499216556549
+      "yolo_conf": 0.42715004086494446
     },
     {
       "R": -1.0,
@@ -1719,7 +1656,7 @@
       "confirmation_bar_index": 117,
       "confirmation_date": "2026-11-10",
       "confirmation_type": "mark_up",
-      "current_price": 93.13999938964844,
+      "current_price": 92.97460174560547,
       "entry_date": "2026-11-11",
       "entry_price": 100.7897629465979,
       "exit_date": "2026-11-16",
@@ -1738,7 +1675,7 @@
       "stop_price": 95.31119463053858,
       "target_price": 111.74689957871655,
       "ticker": "KKR",
-      "yolo_conf": 0.29122528433799744
+      "yolo_conf": 0.29122525453567505
     },
     {
       "R": -1.0,
@@ -1784,7 +1721,7 @@
       "confirmation_bar_index": 112,
       "confirmation_date": "2026-11-03",
       "confirmation_type": "pin",
-      "current_price": 107.55000305175781,
+      "current_price": 106.76000213623047,
       "entry_date": "2026-11-04",
       "entry_price": 110.52999877929688,
       "exit_date": "2026-11-12",
@@ -1849,7 +1786,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "ice_cream",
-      "current_price": 496.5174865722656,
+      "current_price": 488.4700012207031,
       "entry_date": "2026-11-16",
       "entry_price": 524.0776192631334,
       "exit_date": "2026-11-17",
@@ -1868,7 +1805,7 @@
       "stop_price": 495.5527257166581,
       "target_price": 581.1274063560842,
       "ticker": "MSFT",
-      "yolo_conf": 0.027781754732131958
+      "yolo_conf": 0.027781695127487183
     },
     {
       "R": -1.0,
@@ -1914,7 +1851,7 @@
       "confirmation_bar_index": 109,
       "confirmation_date": "2026-10-29",
       "confirmation_type": "pin",
-      "current_price": 84.49500274658203,
+      "current_price": 86.0250015258789,
       "entry_date": "2026-10-30",
       "entry_price": 95.77253196317047,
       "exit_date": "2026-11-02",
@@ -1936,7 +1873,7 @@
       "yolo_conf": 0.3280729353427887
     },
     {
-      "R": 0.2802513468170755,
+      "R": 0.487166341397571,
       "bars": [
         {
           "close": 109.9568099975586,
@@ -1979,17 +1916,17 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-10-27",
       "confirmation_type": "mark_up",
-      "current_price": 121.52999877929688,
+      "current_price": 123.7699966430664,
       "entry_date": "2026-10-28",
       "entry_price": 118.49608420262966,
-      "exit_date": "2026-11-24",
-      "exit_price": 121.52999877929688,
+      "exit_date": "2026-11-25",
+      "exit_price": 123.7699966430664,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 27,
+      "hold_days": 28,
       "is_spring": true,
       "mother_bar_index": 105,
       "risk": 10.825691334313191,
@@ -1998,7 +1935,7 @@
       "stop_price": 107.67039286831647,
       "target_price": 140.14746687125603,
       "ticker": "PPG",
-      "yolo_conf": 0.34550613164901733
+      "yolo_conf": 0.345505952835083
     },
     {
       "R": -1.0,
@@ -2044,7 +1981,7 @@
       "confirmation_bar_index": 120,
       "confirmation_date": "2026-11-13",
       "confirmation_type": "mark_up",
-      "current_price": 35.26499938964844,
+      "current_price": 35.494998931884766,
       "entry_date": "2026-11-16",
       "entry_price": 35.880001068115234,
       "exit_date": "2026-11-18",
@@ -2063,10 +2000,10 @@
       "stop_price": 35.06999969482422,
       "target_price": 37.500003814697266,
       "ticker": "PPL",
-      "yolo_conf": 0.6495066285133362
+      "yolo_conf": 0.6495068669319153
     },
     {
-      "R": 0.8571318664409909,
+      "R": 1.0504180130276453,
       "bars": [
         {
           "close": 195.5399932861328,
@@ -2109,17 +2046,17 @@
       "confirmation_bar_index": 113,
       "confirmation_date": "2026-11-04",
       "confirmation_type": "ice_cream",
-      "current_price": 196.14999389648438,
+      "current_price": 196.3800048828125,
       "entry_date": "2026-11-05",
       "entry_price": 195.1300048828125,
-      "exit_date": "2026-11-24",
-      "exit_price": 196.14999389648438,
+      "exit_date": "2026-11-25",
+      "exit_price": 196.3800048828125,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 19,
+      "hold_days": 20,
       "is_spring": false,
       "mother_bar_index": 110,
       "risk": 1.19000244140625,
@@ -2174,7 +2111,7 @@
       "confirmation_bar_index": 115,
       "confirmation_date": "2026-11-06",
       "confirmation_type": "ice_cream",
-      "current_price": 75.12999725341797,
+      "current_price": 75.20999908447266,
       "entry_date": "2026-11-09",
       "entry_price": 73.26000213623047,
       "exit_date": "2026-11-16",
@@ -2193,7 +2130,7 @@
       "stop_price": 71.69000244140625,
       "target_price": 76.4000015258789,
       "ticker": "PEG",
-      "yolo_conf": 0.5100652575492859
+      "yolo_conf": 0.5100653767585754
     },
     {
       "R": 2.0,
@@ -2239,7 +2176,7 @@
       "confirmation_bar_index": 107,
       "confirmation_date": "2026-10-27",
       "confirmation_type": "mark_up",
-      "current_price": 977.344970703125,
+      "current_price": 979.0,
       "entry_date": "2026-10-28",
       "entry_price": 806.2383777185262,
       "exit_date": "2026-10-29",
@@ -2258,72 +2195,7 @@
       "stop_price": 795.7989795925937,
       "target_price": 827.1171739703911,
       "ticker": "REGN",
-      "yolo_conf": 0.4749334454536438
-    },
-    {
-      "R": 0.5317832446588299,
-      "bars": [
-        {
-          "close": 287.80999755859375,
-          "date": "2026-10-20",
-          "high": 296.95001220703125,
-          "low": 280.1099853515625,
-          "open": 281.2900085449219
-        },
-        {
-          "close": 288.45001220703125,
-          "date": "2026-10-21",
-          "high": 293.8800048828125,
-          "low": 283.25,
-          "open": 290.2200012207031
-        },
-        {
-          "close": 286.1300048828125,
-          "date": "2026-10-22",
-          "high": 291.04998779296875,
-          "low": 283.9100036621094,
-          "open": 285.42999267578125
-        },
-        {
-          "close": 276.4800109863281,
-          "date": "2026-10-23",
-          "high": 280.0,
-          "low": 274.20001220703125,
-          "open": 280.0
-        },
-        {
-          "close": 280.6000061035156,
-          "date": "2026-10-26",
-          "high": 286.69000244140625,
-          "low": 277.3599853515625,
-          "open": 278.19000244140625
-        }
-      ],
-      "chart_path": "charts/RCL_2026-10-26.png",
-      "company_name": "Royal Caribbean Cruises Ltd.",
-      "confirmation_bar_index": 106,
-      "confirmation_date": "2026-10-26",
-      "confirmation_type": "ice_cream",
-      "current_price": 313.7200012207031,
-      "entry_date": "2026-10-27",
-      "entry_price": 300.0,
-      "exit_date": "2026-11-24",
-      "exit_price": 313.7200012207031,
-      "filters": {
-        "above_50sma": true,
-        "hh_hl": true,
-        "sma_cluster": true
-      },
-      "hold_days": 28,
-      "is_spring": false,
-      "mother_bar_index": 102,
-      "risk": 25.79998779296875,
-      "sector": "Consumer Cyclical",
-      "status": "open",
-      "stop_price": 274.20001220703125,
-      "target_price": 351.5999755859375,
-      "ticker": "RCL",
-      "yolo_conf": 0.2610324025154114
+      "yolo_conf": 0.4749336838722229
     },
     {
       "R": -1.0,
@@ -2369,7 +2241,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-10-28",
       "confirmation_type": "mark_up",
-      "current_price": 322.69000244140625,
+      "current_price": 332.0249938964844,
       "entry_date": "2026-10-29",
       "entry_price": 306.989990234375,
       "exit_date": "2026-10-30",
@@ -2388,10 +2260,10 @@
       "stop_price": 297.0,
       "target_price": 326.969970703125,
       "ticker": "SYK",
-      "yolo_conf": 0.10277560353279114
+      "yolo_conf": 0.1027754545211792
     },
     {
-      "R": 0.1476721786869366,
+      "R": -0.43338733913069033,
       "bars": [
         {
           "close": 106.3499984741211,
@@ -2434,17 +2306,17 @@
       "confirmation_bar_index": 126,
       "confirmation_date": "2026-11-23",
       "confirmation_type": "ice_cream",
-      "current_price": 107.43000030517578,
+      "current_price": 103.80999755859375,
       "entry_date": "2026-11-24",
       "entry_price": 106.51000213623047,
-      "exit_date": "2026-11-24",
-      "exit_price": 107.43000030517578,
+      "exit_date": "2026-11-25",
+      "exit_price": 103.80999755859375,
       "filters": {
         "above_50sma": true,
         "hh_hl": true,
         "sma_cluster": true
       },
-      "hold_days": 0,
+      "hold_days": 1,
       "is_spring": false,
       "mother_bar_index": 122,
       "risk": 6.230003356933594,
@@ -2453,7 +2325,7 @@
       "stop_price": 100.27999877929688,
       "target_price": 118.97000885009766,
       "ticker": "UAL",
-      "yolo_conf": 0.3013719618320465
+      "yolo_conf": 0.3013717532157898
     },
     {
       "R": -1.0,
@@ -2499,7 +2371,7 @@
       "confirmation_bar_index": 118,
       "confirmation_date": "2026-11-11",
       "confirmation_type": "mark_up",
-      "current_price": 414.8399963378906,
+      "current_price": 422.3349914550781,
       "entry_date": "2026-11-12",
       "entry_price": 429.3399963378906,
       "exit_date": "2026-11-17",
@@ -2518,7 +2390,7 @@
       "stop_price": 416.42999267578125,
       "target_price": 455.1600036621094,
       "ticker": "V",
-      "yolo_conf": 0.26682180166244507
+      "yolo_conf": 0.26682186126708984
     },
     {
       "R": -1.0,
@@ -2564,7 +2436,7 @@
       "confirmation_bar_index": 123,
       "confirmation_date": "2026-11-18",
       "confirmation_type": "ice_cream",
-      "current_price": 84.5,
+      "current_price": 86.02999877929688,
       "entry_date": "2026-11-19",
       "entry_price": 82.2300033569336,
       "exit_date": "2026-11-20",
@@ -2629,7 +2501,7 @@
       "confirmation_bar_index": 108,
       "confirmation_date": "2026-10-28",
       "confirmation_type": "ice_cream",
-      "current_price": 166.2949981689453,
+      "current_price": 167.75999450683594,
       "entry_date": "2026-10-29",
       "entry_price": 152.52000427246094,
       "exit_date": "2026-11-04",
@@ -2648,17 +2520,17 @@
       "stop_price": 146.13999938964844,
       "target_price": 165.28001403808594,
       "ticker": "YUM",
-      "yolo_conf": 0.3598068356513977
+      "yolo_conf": 0.35980668663978577
     }
   ],
-  "generated_at": "2026-11-24T18:35:52.025649+00:00",
+  "generated_at": "2026-11-25T17:46:27.904416+00:00",
   "pipeline_status": {
     "completed": true,
     "errors": [],
     "errors_truncated": 0,
     "failed_count": 0,
-    "generated_at": "2026-11-24T18:35:52.025649+00:00",
-    "run_id": "45461169807",
+    "generated_at": "2026-11-25T17:46:27.904416+00:00",
+    "run_id": "45668173128",
     "schema_version": 1,
     "style_substitutions": [],
     "succeeded_count": 503
